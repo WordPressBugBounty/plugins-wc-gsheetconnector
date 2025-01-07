@@ -2,10 +2,10 @@
 Contributors: westerndeal, abdullah17, gsheetconnector
 Author URI: https://www.gsheetconnector.com/
 Tags:  woocommerce, woocommerce addon, woocommerce google sheets, sync woocommerce with google sheets, woocommerce orders sync to google sheets,
-Tested up to: 6.5
+Tested up to: 6.7.1
 Requires at least: 5.3
 Requires PHP: 7.4
-Stable tag: 1.3.16
+Stable tag: 1.3.17
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -101,6 +101,13 @@ Please double-check those items and hopefully getting them right will fix the is
 Make sure to <a href="https://www.gsheetconnector.com/how-to-enable-debugging-in-wordpress">enable debug log from wp-config.php</a> if submitted order is not showing in sheet, It will helps to show the conflict issue (if there is any) or shows what is making an issue.
 
 == Changelog ==
+
+= 1.3.17 (07-01-2025) =
+- Added: A Dashboard Widget has been added.
+- Added: Showcased the "Manual Method" button on the Integration tab.
+- Added: The "Copy Log" button has been added.
+- Fixed: Undefined error when clicking the "Copy to Clipboard" button in the System Info tab.
+- Fixed: The issue with the Debug Log view and the close button has been fixed.
 
 = 1.3.16 (27-07-2024) =
 - Fixed: The issue of the Shipping Method Title Field displaying code in the sheet has been resolved.

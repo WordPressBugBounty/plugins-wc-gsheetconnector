@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                <div class="gs-woo-gs-card">
                 <h2>
                   <span><?php echo __('Beta Opt-in', 'wc-gsheetconnector'); ?></span>
-                  <span class="pro-ver">PRO</span>
+                  <span class="pro-ver"><?php echo __('PRO', 'wc-gsheetconnector'); ?></span>
                 </h2>
                 <hr/>
 

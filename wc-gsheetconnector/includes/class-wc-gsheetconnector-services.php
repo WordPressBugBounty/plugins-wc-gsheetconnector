@@ -889,57 +889,74 @@ class wc_gsheetconnector_Service {
 
 	public function get_adding_extra_order_row() {
 		$extra_rows = array();
-		global $wpdb;
-		$already_in_header = "'_billing_address_1','_billing_address_2','_billing_address_index','_billing_city','_billing_company','_billing_country','_billing_first_name','_billing_last_name','_billing_postcode','_billing_state','_cart_hash','_cart_discount_tax','_completed_date','_date_completed','_date_paid','_order_currency','_order_tax','_order_total','_paid_date','_payment_method','_pos','_shipping_address_1','_shipping_address_2','_shipping_address_index','_shipping_city','_shipping_company','_shipping_country','_shipping_first_name','_shipping_last_name','_shipping_postcode','_shipping_state','_wc'";
+        global $wpdb;
 
-		$query = "SELECT DISTINCT(wpm.meta_key) 
-		FROM {$wpdb->prefix}posts AS wp 
-		INNER JOIN {$wpdb->prefix}postmeta AS wpm ON wp.ID = wpm.post_id
-		WHERE post_type = 'shop_order' AND wpm.meta_key NOT IN ({$already_in_header}) ORDER BY wpm.meta_key";
+       // List of meta keys to exclude
+       $already_in_header = "'_billing_address_1','_billing_address_2','_billing_address_index','_billing_city','_billing_company','_billing_country','_billing_first_name','_billing_last_name','_billing_postcode','_billing_state','_cart_hash','_cart_discount_tax','_completed_date','_date_completed','_date_paid','_order_currency','_order_tax','_order_total','_paid_date','_payment_method','_pos','_shipping_address_1','_shipping_address_2','_shipping_address_index','_shipping_city','_shipping_company','_shipping_country','_shipping_first_name','_shipping_last_name','_shipping_postcode','_shipping_state','_wc'";
 
-		$all_extra_order_headers = $wpdb->get_results( $query, ARRAY_A );
+      // Query to get distinct meta keys for shop orders not in the exclusion list
+      $query = $wpdb->prepare(
+           "SELECT DISTINCT(wpm.meta_key) 
+           FROM {$wpdb->prefix}posts AS wp 
+           INNER JOIN {$wpdb->prefix}postmeta AS wpm ON wp.ID = wpm.post_id
+           WHERE wp.post_type = %s 
+           AND wpm.meta_key NOT IN ($already_in_header) 
+           ORDER BY wpm.meta_key",
+           'shop_order'
+          );
 
-		if ( ! empty( $all_extra_order_headers ) ) {
-			$extra_rows = array_column( $all_extra_order_headers, 'meta_key' );
-		}
+     $all_extra_order_headers = $wpdb->get_results($query, ARRAY_A);
 
-		return $extra_rows;
+     if (!empty($all_extra_order_headers)) {
+       $extra_rows = array_column($all_extra_order_headers, 'meta_key');
+    }
+
+       return $extra_rows;
 	}
 
 	public function get_adding_extra_product_item_row() {
 		$extra_rows = array();
-		global $wpdb;
+        global $wpdb;
 
-		$already_in_header = "'_product_id','_variation_id','_qty','_line_subtotal','_line_subtotal_tax','_line_total'";
+         $already_in_header = "'_product_id','_variation_id','_qty','_line_subtotal','_line_subtotal_tax','_line_total'";
 
-		$query1                   = "SELECT DISTINCT(woim.meta_key) 
-		FROM {$wpdb->prefix}woocommerce_order_items AS woi 
-		INNER JOIN {$wpdb->prefix}posts AS wp ON wp.ID = woi.order_id
-		INNER JOIN {$wpdb->prefix}woocommerce_order_itemmeta AS woim ON woi.order_item_id = woim.order_item_id
-		WHERE order_item_type='line_item' AND woim.meta_key NOT IN ({$already_in_header})";
-		$all_extra_order_itemmeta = $wpdb->get_results( $query1, ARRAY_A );
+       // Query 1: Get extra meta keys for order items
+      $query1 = "SELECT DISTINCT(woim.meta_key) 
+         FROM {$wpdb->prefix}woocommerce_order_items AS woi 
+         INNER JOIN {$wpdb->prefix}posts AS wp ON wp.ID = woi.order_id
+         INNER JOIN {$wpdb->prefix}woocommerce_order_itemmeta AS woim ON woi.order_item_id = woim.order_item_id
+        WHERE order_item_type='line_item' AND woim.meta_key NOT IN ({$already_in_header})";
 
-		if ( ! empty( $all_extra_order_itemmeta ) ) {
-			$extra_rows = array_column( $all_extra_order_itemmeta, 'meta_key' );
-		}
+       $all_extra_order_itemmeta = $wpdb->get_results($query1, ARRAY_A);
 
-		/** compatible thirt-party plugins related to product meta */
-		$allProductQry  = "SELECT ID FROM {$wpdb->prefix}posts WHERE post_type = 'product'";
-		$allProductArr  = $wpdb->get_results( $allProductQry, ARRAY_A );
-		$allProductClmn = array_column( $allProductArr, 'ID' );
-		$allProductIds  = implode( ',', $allProductClmn );
+      if (!empty($all_extra_order_itemmeta)) {
+        $extra_rows = array_column($all_extra_order_itemmeta, 'meta_key');
+      }
 
-		$query2 = "SELECT DISTINCT(pm.meta_key) FROM `{$wpdb->prefix}postmeta` AS pm WHERE pm.post_id IN ($allProductIds) AND pm.meta_key  NOT IN ($already_in_header)";
+     // Query 2: Get all product IDs
+    $allProductQry = "SELECT ID FROM {$wpdb->prefix}posts WHERE post_type = 'product'";
+    $allProductArr = $wpdb->get_results($allProductQry, ARRAY_A);
+    $allProductClmn = array_column($allProductArr, 'ID');
 
-		$all_extra_post_itemmeta = $wpdb->get_results( $query2, ARRAY_A );
+    // Check if there are product IDs before proceeding
+   if (!empty($allProductClmn)) {
+    $allProductIds = implode(',', $allProductClmn);
 
-		if ( ! empty( $all_extra_post_itemmeta ) ) {
-			$extra_rows_new = array_column( $all_extra_post_itemmeta, 'meta_key' );
-			$extra_rows     = array_merge( $extra_rows, $extra_rows_new );
+    // Query 3: Get extra meta keys for product postmeta
+    $query2 = "SELECT DISTINCT(pm.meta_key) 
+        FROM `{$wpdb->prefix}postmeta` AS pm 
+        WHERE pm.post_id IN ($allProductIds) AND pm.meta_key NOT IN ({$already_in_header})";
 
-		}
+    $all_extra_post_itemmeta = $wpdb->get_results($query2, ARRAY_A);
 
-		return $extra_rows;
+    if (!empty($all_extra_post_itemmeta)) {
+        $extra_rows_new = array_column($all_extra_post_itemmeta, 'meta_key');
+        $extra_rows = array_merge($extra_rows, $extra_rows_new);
+       }
+   }
+
+    return $extra_rows;
+
 	}
 
 	public function get_adding_extra_product_row(){

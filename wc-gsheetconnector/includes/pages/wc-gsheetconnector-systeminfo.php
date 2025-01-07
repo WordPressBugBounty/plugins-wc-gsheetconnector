@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="system-debug-logs" id="opener" >
    <div class="info-container">
       <h2 class="systemifo"><span><?php echo esc_html(__('Debug Constants', 'wc-gsheetconnector')); ?></span>
-    <span class="pro-ver">PRO</span>
+    <span class="pro-ver"><?php echo esc_html(__('PRO', 'wc-gsheetconnector')); ?></span>
       
 </h2>
 <form method="post" style="pointer-events: none;">
@@ -350,45 +350,57 @@ if ( ! defined( 'ABSPATH' ) ) {
 </style>
 
 <script>
-    function copySystemInfo() {
-        const systemInfoContainer = document.querySelector('.info-container');
-        const systemInfoElements = systemInfoContainer.querySelectorAll('.info-content h3, .info-content td');
-        let systemInfoText = ''; // Initialize with an empty string
+   function copySystemInfo() {
+    const systemInfoContainer = document.querySelector('.info-container');
+    const systemInfoElements = systemInfoContainer.querySelectorAll('.info-content h3, .info-content td');
+    let systemInfoText = '';
+    let currentRow = '';
 
-        let currentHeading = ''; // To keep track of the current heading
+    systemInfoElements.forEach((element) => {
+        if (element.innerText) {
+            const tagName = element.tagName.toLowerCase();
 
-        systemInfoElements.forEach((element) => {
-            if (element.innerText) {
-                const tagName = element.tagName.toLowerCase();
-                if (tagName === 'h3') {
-                    if (currentHeading !== '') {
-                        systemInfoText += '\n'; // Add a newline before the next heading
-                    }
-                    currentHeading = element.innerText;
-                    systemInfoText += `${currentHeading}\n`; // Add heading on a new line
-                } else if (tagName === 'td') {
-                    systemInfoText += ` ${element.innerText}\n`; // Add value on a new line
+            // Handle section headers (h3 tags)
+            if (tagName === 'h3') {
+                if (currentRow !== '') {
+                    systemInfoText += currentRow.trim() + '\n\n'; // Add two newlines between sections
+                }
+                systemInfoText += `**${element.innerText}**\n\n`; // Make h3 bold and add extra space after it
+                currentRow = '';
+            }
+
+            // Handle table data (td tags)
+            else if (tagName === 'td') {
+                const labelElement = element.previousElementSibling;
+
+                // Check if label element exists and has text
+                if (labelElement && labelElement.innerText) {
+                    let label = labelElement.innerText.trim(); // Keep the label as is (no underscores)
+                    currentRow += `${label}: ${element.innerText.trim()}\n`; // Format the row as key-value pair
                 }
             }
+        }
+    });
+
+    // Add the last row to the final text
+    systemInfoText += currentRow.trim();
+
+    // Copy the formatted text to the clipboard
+    navigator.clipboard.writeText(systemInfoText.trim())
+        .then(() => {
+            const messageElement = document.createElement('div');
+            messageElement.textContent = 'System info copied!';
+            messageElement.classList.add('copy-success-message');
+            document.body.appendChild(messageElement);
+
+            setTimeout(() => {
+                messageElement.remove();
+            }, 3000);
+        })
+        .catch((error) => {
+            console.error('Unable to copy system info:', error);
         });
-
-        // Copy the formatted text to the clipboard
-        navigator.clipboard.writeText(systemInfoText.trim())
-            .then(() => {
-                const messageElement = document.createElement('div');
-                messageElement.textContent = 'System info copied!';
-                messageElement.classList.add('copy-success-message');
-                document.body.appendChild(messageElement);
-
-                setTimeout(() => {
-                    messageElement.remove();
-                }, 3000);
-            })
-            .catch((error) => {
-                console.error('Unable to copy system info:', error);
-            });
-    }
-
+}
 
     
   jQuery(document).ready(function($) {

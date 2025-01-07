@@ -75,7 +75,69 @@ body {
 	-webkit-text-fill-color: transparent;
 }
 
+.card-wcgs {
+    position: relative;
+    margin-top: 20px;
+    padding: .7em 2em 1em;
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid #b5bfc9;
+    border-radius: 6px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, .05);
+    display: flex;
+    align-items: center;
+}
+.dropdownoption-wcgs label {
+    font-weight: bold;
+    color: #e27730;
+    margin-right: 10px;
+}
+.dropdownoption-wcgs select {
+    margin: 0;
+    width: 100%;
+    min-height: 38px;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    border-color: #ddd;
+    font-weight: bold;
+    /* margin-left: 40px; */
+}
+.int-meth-btn-wcgs {
+  display: inline-block;
+}
 
+ #save-method-api-wcgs{
+font-size:13px;
+  font-weight:500;
+    border-radius:5px;
+  color:#fff;
+  background: #5fb78c;
+  padding:7px 20px !important;
+  border:none;
+  transition-property: color;
+    transition-property: background;
+    transition-duration: .4s;
+    -webkit-transition-duration: 0.4s;
+    transition-timing-function: ease-in-out, ease-out;
+
+ }
+ #save-method-api-wcgs:hover{
+  background: #516f7a;
+ }
+.wc-system-Error-logs {
+	 width: 100%;
+    margin-bottom: 15px !important;
+    border: none;
+    padding: 20px;
+	box-sizing: border-box;
+    border-radius: 6px;
+    background: #fff;
+    border: 1px solid #b5bfc9;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, .05);
+}
 
 .gsheet-page .gsheet-mode-selector {
     font-size: 14px;
@@ -443,7 +505,7 @@ input.woo-save-btn:hover {
   color: #fff;
     text-decoration: none;
     text-shadow: none;
-    padding: 10px 20px;
+    padding: 11px 20px !important;
     font-weight: bold;
     border: none;
     background: #5fb78c;
@@ -2069,7 +2131,7 @@ button.design-syn-ele {
   border: 1px solid #b5bfc9;
   box-shadow: 3px 3px 3px rgba(0,0,0,.05);
 }
-.gs-woo-list-set12, .gs-woo-list-set13, .gs-woo-list-set7 {
+.gs-woo-list-set12, .gs-woo-list-set13, .gs-woo-list-set7, .gs-woo-list-set8 {
  display: flex;
  align-items: center;
  justify-content: flex-start;
@@ -2230,10 +2292,16 @@ button.design-syn-ele {
 .flex {
   display: flex;
 }
+#copy-logs-btn {
+    padding: 10px 20px;
+    font-weight: bold;
+    margin: 0 0 20px;
+    cursor: pointer;
+}
 
 .card-wp {
   padding: 15px;
-  margin: 12px;
+  margin-bottom: 20px;
   border-radius: 5px;
   background-color: #fff;
   display: flex;
@@ -2244,6 +2312,7 @@ button.design-syn-ele {
   background:#fff;
   border: 1px solid #b5bfc9;
   box-shadow: 3px 3px 3px rgba(0,0,0,.05);
+  margin-top: 20px;
 }
 
 .gs-woo-in-fields,
@@ -2405,9 +2474,11 @@ span.tooltiptext.tooltip-right {
 }
 
 .gs-woo-in-fields p button {
-	 padding: 10px 15px;
-    background-color: #516f7a;
+	 padding: 11px 15px;
+    background-color: #5fb78c;
     color: #fff;
+	width: auto;
+	margin-left: 10px;
     text-decoration: none;
     text-shadow: none;
     display: inline-block;
@@ -2425,8 +2496,26 @@ span.tooltiptext.tooltip-right {
 }
 
 .gs-woo-in-fields p button:hover {
-  background-color: #479C4B;
+  background-color: #516f7a;
 }
+
+
+.blinking-button-wc  {
+    animation: blink 1s infinite;
+}
+@keyframes blink {
+ 0% {
+box-shadow: none;
+}
+ 50% {
+box-shadow: 0 0 20px #7dbc4f;
+}
+ 100% {
+box-shadow: none;
+}
+}
+
+
 
 .gs-woo-in-fields p .gs-woo-debug-view {
   text-decoration: none;
@@ -2780,8 +2869,6 @@ span.tooltiptext.tooltip-right {
   padding: 10px;
   text-align: center;
   position: relative;
-  border: 1px solid #E5E5E5;
-  border-radius: 10px;
   font-size: 14px;
   border-color: white;
   display: flex;

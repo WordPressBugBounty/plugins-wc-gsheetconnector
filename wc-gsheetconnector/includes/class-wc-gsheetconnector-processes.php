@@ -31,7 +31,28 @@ class GS_Processes {
 	// get sheet names
 	add_action( 'wp_ajax_get_tab_list', array( $this, 'get_woo_tab_list_by_sheetname' ) );
 
-    }
+    // Display widget to dashboard
+	add_action( 'wp_dashboard_setup', array( $this, 'add_woo_gs_connector_summary_widget' ) );
+   }
+
+
+   /**
+	 * Add widget to the dashboard
+	 *
+	 * @since 1.0
+	 */
+	public function add_woo_gs_connector_summary_widget() {
+		wp_add_dashboard_widget( 'woo_gs_dashboard', __( "<img style='width:30px;margin-right: 10px;' src='" . WC_GSHEETCONNECTOR_URL . "assets/img/woocommerce-gsc.png'><span>WooCommerce - GSheetConnector</span>", 'wc-gsheetconnector' ), array( $this, 'woo_gs_connector_summary_dashboard' ) );
+	}
+
+	/**
+	 * Display widget conetents
+	 *
+	 * @since 1.0
+	 */
+	public function woo_gs_connector_summary_dashboard() {
+		include_once WC_GSHEETCONNECTOR_ROOT . '/includes/pages/wc-gsheetconnector-dashboard-widget.php';
+	}
 
     /**
      * AJAX function - verifies the token
@@ -166,7 +187,7 @@ class GS_Processes {
 	}
 
 	if ( ! empty( $tablist ) ) {
-	    $html = '<option value="">' . __( "Select", "gs-woocommerce" ) . '</option>';
+	    $html = '<option value="">' . __( "Select", "wc-gsheetconnector" ) . '</option>';
 	    foreach ( $tablist as $tab ) {
 		$html .= '<option value="' . $tab . '">' . $tab . '</option>';
 	    }

@@ -131,7 +131,7 @@ if($show_setting == 1){
 
             <div class="gs-woo-cards1">
                 <span class="woo-pointer">
-                    All Orders <label for="pro" class="button-woo-toggle tooltip11">
+                  <?php echo esc_html( __( 'All Orders ', 'wc-gsheetconnector' ) ); ?> <label for="pro" class="button-woo-toggle tooltip11">
                         <span class="tooltiptext11"><?php _e('Upgrade To Pro', 'wc-gsheetconnector'); ?></span>
                     </label>
                 </span>
@@ -204,8 +204,8 @@ if($show_setting == 1){
                 ?>
             <span class="gs-woo-cards1" <?php echo ($width == "1") ? "style='width:20%'" : "" ?>>
                 <span class="woo-pointer">
-                    <?php echo $state_name; ?>
-                    <label for="pro" class="button-woo-toggle tooltip11">
+                    <?php echo esc_html($state_name,'wc-gsheetconnector'); ?>
+                   <label for="pro" class="button-woo-toggle tooltip11">
                         <span class="tooltiptext11"><?php _e('Upgrade To Pro', 'wc-gsheetconnector'); ?></span>
                     </label>
                   
@@ -325,7 +325,7 @@ if($show_setting == 1){
                   
                 </span>
             </div>
-            <br class="clear">
+            
                  <?php 
                      foreach ( $product_categories as $key => $category ) {
                       ?>
@@ -383,7 +383,7 @@ if($show_setting == 1){
                   
                 </span>
             </div>
-            <br class="clear">
+             
                  <?php 
                      foreach ( $order_categories as $key => $category ) {
                       ?>

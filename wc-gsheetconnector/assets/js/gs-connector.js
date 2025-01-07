@@ -121,34 +121,8 @@ jQuery(document).ready(function () {
       });
    });
 
-   /**
-     * Display Error logs
-     */
-    jQuery(document).ready(function($) {
-       // Hide .wc-system-Error-logs initially
-       $('.wc-system-Error-logs').hide();
+  
 
-       // Add a variable to track the state
-       var isOpen = false;
-
-       // Function to toggle visibility and button text
-       function toggleLogs() {
-           $('.wc-system-Error-logs').toggle();
-           // Change button text based on visibility
-           $('.wcgsc-logs').text(isOpen ? 'View' : 'Close');
-           isOpen = !isOpen; // Toggle the state
-       }
-
-       // Toggle visibility and button text when clicking .wcgsc-logs button
-       $('.wcgsc-logs').on('click', function() {
-           toggleLogs();
-       });
-
-       // Toggle visibility and button text when clicking .wc-system-Error-logs element
-       $('.wc-system-Error-logs').on('click', function() {
-           toggleLogs();
-       });
-   });
 
 
    jQuery(document).on('submit', '#gsSettingFormFree', function (event) {
@@ -241,4 +215,68 @@ jQuery(document).ready(function () {
          }
       });
    });
+});
+
+
+ /**
+     * Display Error logs
+     */
+    jQuery(document).ready(function($) {
+    // Hide .wc-system-Error-logs initially
+    $('.wc-system-Error-logs').hide();
+
+    // Add a variable to track the state
+    var isOpen = false;
+
+    // Function to toggle visibility and button text
+    function toggleLogs() {
+        if (isOpen) {
+            $('.wc-system-Error-logs').hide(); // Hide the logs
+            $('.wcgsc-logs').text('View');     // Change button text to "View"
+        } else {
+            $('.wc-system-Error-logs').show(); // Show the logs
+            $('.wcgsc-logs').text('Close');    // Change button text to "Close"
+        }
+        isOpen = !isOpen; // Toggle the state
+    }
+
+    // Toggle visibility and button text when clicking .wcgsc-logs button
+    $('.wcgsc-logs').on('click', function(e) {
+        e.stopPropagation(); // Ensure only the button click triggers toggle
+        toggleLogs();
+    });
+
+    // Prevent closing the logs when clicking inside the .wc-system-Error-logs div
+    $('.wc-system-Error-logs').on('click', function(event) {
+        event.stopPropagation(); // Prevent the click from affecting anything outside
+    });
+
+    // Optional: Close the logs when clicking outside the div, if needed
+    $(document).on('click', function(event) {
+        if (isOpen && !$(event.target).closest('.wc-system-Error-logs, .wcgsc-logs').length) {
+            toggleLogs(); // Close the logs if clicked outside the button or the logs div
+        }
+    });
+});
+
+
+// Msg Hide ///
+	
+jQuery(document).ready(function($) {
+    // Check if the message has already been hidden by looking in localStorage
+    if (localStorage.getItem('googleDriveMsgHidden') === 'true') {
+        jQuery('#google-drive-msg').hide(); // Hide the message if it's already hidden
+    }
+
+    // On button click, hide the #google-drive-msg div and store the hidden state in localStorage
+    jQuery('.button_woogsc-free').on('click', function() {
+        jQuery('#google-drive-msg').hide(); // Hide the message
+        localStorage.setItem('googleDriveMsgHidden', 'true'); // Save the hidden state in localStorage
+    });
+
+    // On #deactivate-log click, show the #google-drive-msg div and clear localStorage
+    jQuery('#gs-woo-deactivate-log').on('click', function() {
+        jQuery('#google-drive-msg').show(); // Show the message
+        localStorage.removeItem('googleDriveMsgHidden'); // Remove the hidden state from localStorage
+    });
 });

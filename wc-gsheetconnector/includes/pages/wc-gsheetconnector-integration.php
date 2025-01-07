@@ -11,7 +11,25 @@ if (isset($_GET['code'])) {
 
 ?>
 <!-- save code, alert and css -->
-
+<div class="card-wcgs dropdownoption-wcgs">
+    <div class="lbl-drop-down-select">
+        <label for="wcgs_dro_option"><?php echo esc_html__('Choose Google API Setting :', 'wc-gsheetconnector'); ?></label>
+    </div>
+    <div class="drop-down-select-btn">
+        <select id="wcgs_dro_option" name="wcgs_dro_option">
+            <option value="wcgs_existing" selected><?php echo esc_html__('Use Existing Client/Secret Key (Auto Google API Configuration)', 'wc-gsheetconnector'); ?>
+            </option>
+            <option value="wcgs_manual" disabled=""><?php echo esc_html__('Use Manual Client/Secret Key (Use Your Google API Configuration) (Upgrade To PRO)', 'wc-gsheetconnector'); ?></option>
+        </select>
+        <p class="int-meth-btn-wcgs"><a href="https://www.gsheetconnector.com/woocommerce-google-sheet-connector-pro" target="_blank"><input type="button" name="save-method-api-wcgs" id="save-method-api-wcgs"
+                value="<?php _e('Upgrade To PRO', 'wc-gsheetconnector'); ?>" class="button button-primary" />
+            </a>
+            <span class="tooltip"> <img src="<?php echo WC_GSHEETCONNECTOR_URL; ?>assets/img/help.png"
+                        class="help-icon"> <span
+                        class="tooltiptext tooltip-right"><?php _e('Manual Client/Secret Key (Use Your Google API Configuration) method is available in the PRO version of the plugin.', 'wc-gsheetconnector'); ?></span></span>
+        </p>
+    </div>
+</div> 
 <input type="hidden" name="redirect_auth" id="redirect_auth"
     value="<?php echo (isset($header)) ? esc_attr($header) : ''; ?>">
 <div class="card-wp">
@@ -34,7 +52,7 @@ if (isset($_GET['code'])) {
     </div>
     <?php } ?>
     <p>
-      <label style="/* color: #1d9838; *//* font-size: 14px; */color: #242628;font-size: 14px;font-weight: 600;line-height: 2.3;"> Google Access Code </label>
+      <label style="/* color: #1d9838; *//* font-size: 14px; */color: #242628;font-size: 14px;font-weight: 600;line-height: 2.3;"> <?php echo esc_html__('Google Access Code', 'wc-gsheetconnector'); ?> </label>
       <?php if (!empty(get_option('gs_woo_token')) && get_option('gs_woo_token') !== "") { ?>
       <input type="text" name="gs-woo-code" id="gs-woo-code" value=""
                 placeholder="<?php echo __('Currently Active', 'wc-gsheetconnector'); ?>" disabled />
@@ -49,12 +67,12 @@ if (isset($_GET['code'])) {
       <input type="text" name="gs-woo-code" id="gs-woo-code" value="<?php echo esc_attr($Code); ?>" readonly placeholder="<?php echo esc_html__('Click on Sign In With Google', 'wc-gsheetconnector'); ?>" oncopy="return false;" onpaste="return false;" oncut="return false;" />
       <?php if (empty($Code)) { ?>
       <a href="https://oauth.gsheetconnector.com/index.php?client_admin_url=<?php echo $redirct_uri; ?>&plugin=woocommercegsheetconnector"
-                    class="button_woogsc"> <img src="<?php echo WC_GSHEETCONNECTOR_URL ?>/assets/img/btn_google_signin_dark_pressed_web.gif"> </a>
+                    class="button_woogsc"> <img class="button_woogsc-free" src="<?php echo WC_GSHEETCONNECTOR_URL ?>/assets/img/btn_google_signin_dark_pressed_web.gif"> </a>
       <?php } ?>
       <?php } ?>
       <br>
       <?php if (!empty($_GET['code'])) { ?>
-      <button type="button" name="save-gs-woo-code" id="save-gs-woo-code">Save & Authenticate</button>
+      <button type="button" name="save-gs-woo-code" class="blinking-button-wc" id="save-gs-woo-code"><?php echo esc_html__('Click here to Save Authentication Code', 'wc-gsheetconnector'); ?></button>
       <?php } ?>
       <span class="loading-sign">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> </p>
     <span id="deactivate-msg"></span>
@@ -105,31 +123,7 @@ if (isset($_GET['code'])) {
                         class="clear-loading-sign">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
     <p id="gs-woo-validation-message"></p>
     </p>
-    <!-- display content error logs -->
-    <div class="wc-system-Error-logs" >
-      <div class="wcdisplayLogs">
-        <?php
-                    $wcexistDebugFile = get_option('wcfgs_debug_log_file');
-                    // check if debug unique log file exist or not
-                    if (!empty($wcexistDebugFile) && file_exists($wcexistDebugFile)) {
-                      $displaywcfreeLogs =  nl2br(file_get_contents($wcexistDebugFile));
-                    if(!empty($displaywcfreeLogs)){
-                      echo __($displaywcfreeLogs, 'wc-gsheetconnector');
-                   
-                    }
-                    else{
-                      echo esc_html(__('No errors found.', 'wc-gsheetconnector'));
-                       
-                     }
-                }
-               else{
-                    // check if debug unique log file not exist
-                 echo esc_html(__('No log file exists as no errors are generated.', 'wc-gsheetconnector'));
-                 }
-                    
-               ?>
-      </div>
-    </div>
+   
     <div id="wc-gsc-cta" class="wc-gsc-privacy-box">
       <div class="wc-gsc-table">
         <div class="wc-gsc-less-free"> <i class="dashicons dashicons-lock"></i>
@@ -140,6 +134,66 @@ if (isset($_GET['code'])) {
     </div>
   </div>
 </div>
+
+
+ <!-- display content error logs -->
+    <div class="wc-system-Error-logs">
+    <button id="copy-logs-btn" onclick="copyLogs()"><?php echo __('Copy Logs', 'wc-gsheetconnector'); ?></button>
+
+    <div class="wcdisplayLogs" id="log-content">
+        <?php
+        $wcexistDebugFile = get_option('wcfgs_debug_log_file');
+        // check if debug unique log file exists or not
+        if (!empty($wcexistDebugFile) && file_exists($wcexistDebugFile)) {
+            $displaywcfreeLogs = nl2br(file_get_contents($wcexistDebugFile));
+            if (!empty($displaywcfreeLogs)) {
+                // Display the logs within a span to enable copying
+                echo '<span id="log-text">' . esc_html($displaywcfreeLogs) . '</span>';
+            } else {
+                echo esc_html(__('No errors found.', 'wc-gsheetconnector'));
+            }
+        } else {
+            // check if debug unique log file does not exist
+            echo esc_html(__('No log file exists as no errors are generated.', 'wc-gsheetconnector'));
+        }
+        ?>
+    </div>
+</div>
+
+<script>
+function copyLogs() {
+    // Get the log content element
+    var logContentElement = document.getElementById('log-text');
+
+    // Check if the element exists before trying to copy
+    if (logContentElement) {
+        var logContent = logContentElement.textContent;
+
+        // Create a temporary textarea to copy the content
+        var tempTextarea = document.createElement('textarea');
+        tempTextarea.value = logContent;
+        document.body.appendChild(tempTextarea);
+
+        // Select the content and copy to clipboard
+        tempTextarea.select();
+        document.execCommand('copy');
+
+        // Remove the temporary textarea
+        document.body.removeChild(tempTextarea);
+
+        // Alert the user that logs are copied
+        alert('Logs copied to clipboard');
+    } else {
+        // If the log content is not available, alert the user
+        alert('No logs available to copy.');
+    }
+}
+
+</script>
+
+
+
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     var googleDriveMsg = document.getElementById('google-drive-msg');
