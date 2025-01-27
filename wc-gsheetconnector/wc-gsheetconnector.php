@@ -5,10 +5,11 @@
  * Description: Send your WooCommerce data to your Google Sheets spreadsheet.
  * Author: GSheetConnector
  * Author URI: https://www.gsheetconnector.com/
- * Version: 1.3.17
+ * Version: 1.3.18
  * Text Domain: wc-gsheetconnector
  * Domain Path:  /languages
  * WooCommerce requires at least: 3.2.0
+ * Requires Plugins: woocommerce
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -65,8 +66,8 @@ if ( ! function_exists( 'gs_woofree' ) ) {
 
 
 // Declare some global constants
-define( 'WC_GSHEETCONNECTOR_VERSION', '1.3.17' );
-define( 'WC_GSHEETCONNECTOR_DB_VERSION', '1.3.17' );
+define( 'WC_GSHEETCONNECTOR_VERSION', '1.3.18' );
+define( 'WC_GSHEETCONNECTOR_DB_VERSION', '1.3.18' );
 define( 'WC_GSHEETCONNECTOR_ROOT', dirname( __FILE__ ) );
 define( 'WC_GSHEETCONNECTOR_URL', plugins_url( '/', __FILE__ ) );
 define( 'WC_GSHEETCONNECTOR_BASE_FILE', basename( dirname( __FILE__ ) ) . '/wc-gsheetconnector.php' );

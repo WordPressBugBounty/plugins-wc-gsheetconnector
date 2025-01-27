@@ -1,5 +1,5 @@
 <?php
-   /**
+    /**
      * @package     Freemius
      * @copyright   Copyright (c) 2015, Freemius, Inc.
      * @license     https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License Version 3
@@ -17,6 +17,7 @@
          */
         function fs_html_get_allowed_kses_list() {
             $common_attributes = array(
+                'id'     => true,
                 'class'  => true,
                 'style'  => true,
                 'data-*' => true,
@@ -48,6 +49,7 @@
                 'strong' => $common_attributes,
                 'u'      => $common_attributes,
                 'b'      => $common_attributes,
+                'i'      => $common_attributes,
                 'hr'     => $common_attributes,
                 'span'   => $common_attributes,
                 'p'      => $common_attributes,

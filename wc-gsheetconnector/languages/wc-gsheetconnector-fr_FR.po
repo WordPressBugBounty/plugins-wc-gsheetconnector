@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce GSheetConnector\n"
-"POT-Creation-Date: 2025-01-07 18:10+0530\n"
-"PO-Revision-Date: 2025-01-07 18:10+0530\n"
+"POT-Creation-Date: 2025-01-27 18:44+0530\n"
+"PO-Revision-Date: 2025-01-27 18:44+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -73,8 +73,8 @@ msgid "There's something wrong with your code..."
 msgstr "Il ya quelque chose de mal avec votre code ..."
 
 #: includes/class-wc-gsheetconnector-utility.php:183
-#: includes/pages/wc-gsheetconnector-dashboard-widget.php:62
-#: includes/pages/wc-gsheetconnector-dashboard-widget.php:71
+#: includes/pages/wc-gsheetconnector-dashboard-widget.php:69
+#: includes/pages/wc-gsheetconnector-dashboard-widget.php:78
 msgid "Administrator"
 msgstr "Administrateur"
 
@@ -82,11 +82,11 @@ msgstr "Administrateur"
 msgid "Made with ♥ by the GSheetConnector Team"
 msgstr "Réalisé par ♥ l’équipe GSheetConnector"
 
-#: includes/pages/admin-footer.php:15 wc-gsheetconnector.php:152
+#: includes/pages/admin-footer.php:15 wc-gsheetconnector.php:153
 msgid "Support"
 msgstr "Support"
 
-#: includes/pages/admin-footer.php:16 wc-gsheetconnector.php:151
+#: includes/pages/admin-footer.php:16 wc-gsheetconnector.php:152
 msgid "Docs"
 msgstr "Docs"
 
@@ -190,11 +190,11 @@ msgstr "Obtenir des mises à jour pour les versions préliminaires"
 msgid "Save"
 msgstr "Sauvegarder"
 
-#: includes/pages/wc-gsheetconnector-dashboard-widget.php:46
+#: includes/pages/wc-gsheetconnector-dashboard-widget.php:53
 msgid "Sheet URL"
 msgstr "URL de la feuille"
 
-#: includes/pages/wc-gsheetconnector-dashboard-widget.php:55
+#: includes/pages/wc-gsheetconnector-dashboard-widget.php:62
 msgid "Permission To Access GSheetConnector WooCommerce"
 msgstr "Autorisation d’accéder à GSheetConnector WooCommerce"
 
@@ -389,7 +389,7 @@ msgid "Next steps…"
 msgstr "Prochaines étapes..."
 
 #: includes/pages/wc-gsheetconnector-integration.php:221
-#: wc-gsheetconnector.php:465
+#: wc-gsheetconnector.php:466
 msgid "Upgrade to PRO"
 msgstr "Passez à la version PRO"
 
@@ -1310,15 +1310,15 @@ msgstr ""
 msgid "Click to Sync Order"
 msgstr "Cliquez pour synchroniser l’ordre"
 
-#: wc-gsheetconnector.php:151
+#: wc-gsheetconnector.php:152
 msgid "View Documentation"
 msgstr "Voir la documentation"
 
-#: wc-gsheetconnector.php:152
+#: wc-gsheetconnector.php:153
 msgid "Get Support"
 msgstr "Obtenir de l’aide"
 
-#: wc-gsheetconnector.php:351
+#: wc-gsheetconnector.php:352
 msgid ""
 "GSheetConnector WooCommerce Add-on requires WooCommerce plugin to be "
 "installed and activated."
@@ -1326,7 +1326,7 @@ msgstr ""
 "L’add-on GSheetConnector WooCommerce nécessite l’installation et "
 "l’activation du plugin WooCommerce."
 
-#: wc-gsheetconnector.php:464
+#: wc-gsheetconnector.php:465
 msgid "Settings"
 msgstr "Préférences"
 

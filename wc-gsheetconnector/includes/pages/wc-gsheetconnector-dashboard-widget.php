@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
    $gs_woo_settings = get_option( 'gs_woo_settings' );
    
    $selected_sheet_key = isset($gs_woo_settings) ? $gs_woo_settings : "";
-   $sheetName	=	"Google Sheet Not Connected ";
+   $sheetName	=	"Google Sheet Not Connected";
 	if ( ! empty( $sheet_data ) ) {
 		foreach ( $sheet_data as $key => $value ) {
 			if ( $selected_sheet_key !== "" && $key == $selected_sheet_key ) {
@@ -26,6 +26,13 @@ if (!defined('ABSPATH')) {
 		}
 
 	}
+	
+   $sheet_url = "#"; // Default URL or placeholder
+   if (is_string($selected_sheet_key) && !empty($selected_sheet_key)) {
+       $sheet_url = "https://docs.google.com/spreadsheets/d/" . $selected_sheet_key;
+   }
+
+
    ?>
    <div class="main-content">
       <div class="gs_woo_dash_widget">
@@ -47,7 +54,7 @@ if (!defined('ABSPATH')) {
 			  </tr>
 			  
 			   	<tr> 
-				<td><a href="https://docs.google.com/spreadsheets/d/<?php echo $selected_sheet_key; ?>" target="_blank"><?php echo __($sheetName, "wc-gsheetconnector"); ?></a></td>
+				<td><a href="<?php echo $sheet_url; ?>" target="_blank"><?php echo __($sheetName, "wc-gsheetconnector"); ?></a></td>
 			  </tr> 	  
 		  </tbody></table>
 			 <table class="widget-table">

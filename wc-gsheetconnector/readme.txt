@@ -5,7 +5,8 @@ Tags:  woocommerce, woocommerce addon, woocommerce google sheets, sync woocommer
 Tested up to: 6.7.1
 Requires at least: 5.3
 Requires PHP: 7.4
-Stable tag: 1.3.17
+Requires Plugins: woocommerce
+Stable tag: 1.3.18
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -101,6 +102,10 @@ Please double-check those items and hopefully getting them right will fix the is
 Make sure to <a href="https://www.gsheetconnector.com/how-to-enable-debugging-in-wordpress">enable debug log from wp-config.php</a> if submitted order is not showing in sheet, It will helps to show the conflict issue (if there is any) or shows what is making an issue.
 
 == Changelog ==
+
+= 1.3.18 (27-01-2025) =
+- Fixed: Minor UI Changes.
+- Added: Require plugins added.
 
 = 1.3.17 (07-01-2025) =
 - Added: A Dashboard Widget has been added.
