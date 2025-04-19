@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce GSheetConnector\n"
-"POT-Creation-Date: 2025-01-27 18:43+0530\n"
-"PO-Revision-Date: 2025-01-27 18:43+0530\n"
+"POT-Creation-Date: 2025-04-19 20:06+0530\n"
+"PO-Revision-Date: 2025-04-19 20:06+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_GB\n"
@@ -58,20 +58,20 @@ msgstr "Pro"
 msgid "Buy Pro"
 msgstr "Buy now"
 
-#: includes/class-wc-gsheetconnector-services.php:469
+#: includes/class-wc-gsheetconnector-services.php:606
 msgid "WooCommerce Data Settings saved successfully."
 msgstr "Forminator Data Settings saved successfully."
 
-#: includes/class-wc-gsheetconnector-services.php:543
+#: includes/class-wc-gsheetconnector-services.php:682
 msgid "Please select Google Sheet Name and Check Atleast on Google Sheet Tab !"
 msgstr ""
 "Please select Google Sheet Name and Check Atleast on Google Sheet Tab !"
 
-#: includes/class-wc-gsheetconnector-utility.php:78
+#: includes/class-wc-gsheetconnector-utility.php:83
 msgid "There's something wrong with your code..."
 msgstr "There's something wrong with your code..."
 
-#: includes/class-wc-gsheetconnector-utility.php:183
+#: includes/class-wc-gsheetconnector-utility.php:237
 #: includes/pages/wc-gsheetconnector-dashboard-widget.php:69
 #: includes/pages/wc-gsheetconnector-dashboard-widget.php:78
 msgid "Administrator"
@@ -81,11 +81,11 @@ msgstr "Administrator"
 msgid "Made with ♥ by the GSheetConnector Team"
 msgstr "Made with ♥ by the GSheetConnector Team"
 
-#: includes/pages/admin-footer.php:15 wc-gsheetconnector.php:153
+#: includes/pages/admin-footer.php:15 wc-gsheetconnector.php:161
 msgid "Support"
 msgstr "Support"
 
-#: includes/pages/admin-footer.php:16 wc-gsheetconnector.php:152
+#: includes/pages/admin-footer.php:16 wc-gsheetconnector.php:160
 msgid "Docs"
 msgstr "Docs"
 
@@ -97,41 +97,45 @@ msgstr "VIP Circle"
 msgid "Free Plugins"
 msgstr "Free"
 
-#: includes/pages/google-sheet-settings.php:41
+#: includes/pages/google-sheet-settings.php:39
 msgid "WC GSheetConnector"
 msgstr "WC GSheetConnector"
 
-#: includes/pages/google-sheet-settings.php:41
+#: includes/pages/google-sheet-settings.php:40
 msgid "Version :"
 msgstr "Version :"
 
-#: includes/pages/google-sheet-settings.php:44
+#: includes/pages/google-sheet-settings.php:46
 msgid "DASHBOARD"
 msgstr "DASHBOARD"
 
-#: includes/pages/google-sheet-settings.php:50
+#: includes/pages/google-sheet-settings.php:52
 msgid "Integration"
 msgstr "Integration"
 
-#: includes/pages/google-sheet-settings.php:51
+#: includes/pages/google-sheet-settings.php:53
 msgid "WooCommerce Data Settings"
 msgstr "WooCommerce Data Settings"
 
-#: includes/pages/google-sheet-settings.php:52
+#: includes/pages/google-sheet-settings.php:54
 msgid "Role Settings"
 msgstr "Role Settings"
 
-#: includes/pages/google-sheet-settings.php:53
+#: includes/pages/google-sheet-settings.php:55
 msgid "System Status"
 msgstr "System Status"
 
-#: includes/pages/google-sheet-settings.php:54
+#: includes/pages/google-sheet-settings.php:56
 msgid "Beta - Version"
 msgstr "Beta Version"
 
-#: includes/pages/google-sheet-settings.php:55
+#: includes/pages/google-sheet-settings.php:57
 msgid "Sync"
 msgstr "Sync"
+
+#: includes/pages/google-sheet-settings.php:58
+msgid "Extension"
+msgstr ""
 
 #: includes/pages/pro-popup.php:9
 msgid "GSheetConnector for WC PRO Features"
@@ -187,6 +191,27 @@ msgstr "Get updates for pre-release versions"
 #: includes/pages/wc-gsheetconnector-systeminfo.php:79
 msgid "Save"
 msgstr "Save"
+
+#: includes/pages/wc-extension.php:289 includes/pages/wc-extension.php:414
+#: includes/pages/wc-extension.php:430
+msgid "Activate"
+msgstr "Activate"
+
+#: includes/pages/wc-extension.php:314
+#: includes/pages/wc-gsheetconnector-integration.php:221
+#: wc-gsheetconnector.php:523
+msgid "Upgrade to PRO"
+msgstr "Upgrade to Pro"
+
+#: includes/pages/wc-extension.php:346
+msgid "Already using PRO version"
+msgstr "( Fetch your sheets automatically using PRO )"
+
+#: includes/pages/wc-extension.php:407
+msgid "Activated"
+msgstr ""
+"GSheetConnector WooCommerce Add-on requires WooCommerce plugin to be "
+"installed and activated."
 
 #: includes/pages/wc-gsheetconnector-dashboard-widget.php:53
 msgid "Sheet URL"
@@ -380,11 +405,6 @@ msgstr "No log file exists as no errors are generated"
 #: includes/pages/wc-gsheetconnector-integration.php:213
 msgid "Next steps…"
 msgstr "Next steps"
-
-#: includes/pages/wc-gsheetconnector-integration.php:221
-#: wc-gsheetconnector.php:466
-msgid "Upgrade to PRO"
-msgstr "Upgrade to Pro"
 
 #: includes/pages/wc-gsheetconnector-integration.php:222
 msgid "Sync Orders, Order wise data and much more..."
@@ -1263,15 +1283,15 @@ msgstr "Order Insert Sync Configuration: Sheet to WooCommerce Insert"
 msgid "Click to Sync Order"
 msgstr "Click to Sync Order"
 
-#: wc-gsheetconnector.php:152
+#: wc-gsheetconnector.php:160
 msgid "View Documentation"
 msgstr "View documentation"
 
-#: wc-gsheetconnector.php:153
+#: wc-gsheetconnector.php:161
 msgid "Get Support"
 msgstr "Get support"
 
-#: wc-gsheetconnector.php:352
+#: wc-gsheetconnector.php:401
 msgid ""
 "GSheetConnector WooCommerce Add-on requires WooCommerce plugin to be "
 "installed and activated."
@@ -1279,7 +1299,7 @@ msgstr ""
 "GSheetConnector WooCommerce Add-on requires WooCommerce plugin to be "
 "installed and activated."
 
-#: wc-gsheetconnector.php:465
+#: wc-gsheetconnector.php:522
 msgid "Settings"
 msgstr "Settings"
 

@@ -6,7 +6,7 @@
  */
 
 // Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit;
 }
 
@@ -15,7 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0
  */
-class wc_gsheetconnector_Service {
+class wc_gsheetconnector_Service
+{
 
 	public $class_name = 'wc_gsheetconnector_Service';
 	public $status_and_sheets;
@@ -28,153 +29,154 @@ class wc_gsheetconnector_Service {
 	public $subscriptions_headers_pro;
 	public $_gfgsc_googlesheet;
 
-	public function __construct() {
+	public function __construct()
+	{
 
 		$this->status_and_sheets = array(
-			'wc-pending'    => 'Pending Orders',
+			'wc-pending' => 'Pending Orders',
 			'wc-processing' => 'Processing Orders',
-			'wc-on-hold'    => 'On Hold Orders',
-			'wc-failed'     => 'Failed Orders',
-			'wc-completed'  => 'Completed Orders',
-			'wc-cancelled'  => 'Cancelled Orders',
-			'wc-refunded'   => 'Refunded Orders',
-			'wc-trash'      => 'Trashed Orders',
+			'wc-on-hold' => 'On Hold Orders',
+			'wc-failed' => 'Failed Orders',
+			'wc-completed' => 'Completed Orders',
+			'wc-cancelled' => 'Cancelled Orders',
+			'wc-refunded' => 'Refunded Orders',
+			'wc-trash' => 'Trashed Orders',
 		);
 
-		$this->status_and_sheets = apply_filters( 'poolexpress_status_and_sheets', $this->status_and_sheets );
+		$this->status_and_sheets = apply_filters('poolexpress_status_and_sheets', $this->status_and_sheets);
 
-		$class_name       = $this->class_name;
+		$class_name = $this->class_name;
 		$order_class_name = 'WC_Order';
 
-		$order_id_column_name = apply_filters( 'poolexpress_order_id_column_name', 'Order Id' );
+		$order_id_column_name = apply_filters('poolexpress_order_id_column_name', 'Order Id');
 
 		$this->sheet_headers = array(
-			$order_id_column_name    => array(
-				'class'         => $order_class_name,
+			$order_id_column_name => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_id',
 			),
-			'Status'                 => array(
-				'class'         => $order_class_name,
+			'Status' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_status',
 			),
 			'Product name(QTY)(SKU)' => array(
-				'class'         => $class_name,
+				'class' => $class_name,
 				'function_name' => 'extract_product_qty_sku',
 			),
-			'Tax Total'              => array(
-				'class'         => $order_class_name,
+			'Tax Total' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_total_tax',
 			),
-			'Order Total'            => array(
-				'class'         => $order_class_name,
+			'Order Total' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_total',
 			),
-			'Payment Method'         => array(
-				'class'         => $order_class_name,
+			'Payment Method' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_payment_method_title',
 			),
-			'Billing First name'     => array(
-				'class'         => $order_class_name,
+			'Billing First name' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_billing_first_name',
 			),
-			'Billing Last Name'      => array(
-				'class'         => $order_class_name,
+			'Billing Last Name' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_billing_last_name',
 			),
-			'Billing Address 1'      => array(
-				'class'         => $order_class_name,
+			'Billing Address 1' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_billing_address_1',
 			),
-			'Billing Address 2'      => array(
-				'class'         => $order_class_name,
+			'Billing Address 2' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_billing_address_2',
 			),
-			'Billing City'           => array(
-				'class'         => $order_class_name,
+			'Billing City' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_billing_city',
 			),
-			'Billing State'          => array(
-				'class'         => $order_class_name,
+			'Billing State' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_billing_state',
 			),
-			'Billing Postcode'       => array(
-				'class'         => $order_class_name,
+			'Billing Postcode' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_billing_postcode',
 			),
-			'Billing Country'        => array(
-				'class'         => $order_class_name,
+			'Billing Country' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_billing_country',
 			),
-			'Billing Company Name'   => array(
-				'class'         => $order_class_name,
+			'Billing Company Name' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_billing_company',
 			),
-			'Shipping First Name'    => array(
-				'class'         => $order_class_name,
+			'Shipping First Name' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_shipping_first_name',
 			),
-			'Shipping Last Name'     => array(
-				'class'         => $order_class_name,
+			'Shipping Last Name' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_shipping_last_name',
 			),
-			'Shipping Address 1'     => array(
-				'class'         => $order_class_name,
+			'Shipping Address 1' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_shipping_address_1',
 			),
-			'Shipping Address 2'     => array(
-				'class'         => $order_class_name,
+			'Shipping Address 2' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_shipping_address_2',
 			),
-			'Shipping City'          => array(
-				'class'         => $order_class_name,
+			'Shipping City' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_shipping_city',
 			),
-			'Shipping State'         => array(
-				'class'         => $order_class_name,
+			'Shipping State' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_shipping_state',
 			),
-			'Shipping Postcode'      => array(
-				'class'         => $order_class_name,
+			'Shipping Postcode' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_shipping_postcode',
 			),
-			'Shipping Country'       => array(
-				'class'         => $order_class_name,
+			'Shipping Country' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_shipping_country',
 			),
-			'Shipping Method Title'  => array(
-				'class'         => $order_class_name,
+			'Shipping Method Title' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_shipping_to_display',
 			),
-			'Shipping Company Name'  => array(
-				'class'         => $order_class_name,
+			'Shipping Company Name' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_shipping_company',
 			),
-			'Coupons Codes'          => array(
-				'class'         => $order_class_name,
+			'Coupons Codes' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_coupon_codes',
 			),
-			'Email'                  => array(
-				'class'         => $order_class_name,
+			'Email' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_billing_email',
 			),
-			'Phone'                  => array(
-				'class'         => $order_class_name,
+			'Phone' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_billing_phone',
 			),
-			'Customer Note'          => array(
-				'class'         => $order_class_name,
+			'Customer Note' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_customer_note',
 			),
-			'Created Date'           => array(
-				'class'         => $order_class_name,
+			'Created Date' => array(
+				'class' => $order_class_name,
 				'function_name' => 'get_date_created',
 			),
 
 		);
 
-		$this->sheet_headers = apply_filters( 'poolexpress_sheet_headers', $this->sheet_headers );
+		$this->sheet_headers = apply_filters('poolexpress_sheet_headers', $this->sheet_headers);
 
-		$this->sheet_headers_pro    = array(
+		$this->sheet_headers_pro = array(
 			'Currency',
 			'Product ID',
 			'Product Image',
@@ -199,7 +201,7 @@ class wc_gsheetconnector_Service {
 			'Shipping Tax',
 			'Cart Tax',
 		);
-		$this->product_headers_pro  = array(
+		$this->product_headers_pro = array(
 			'Product ID',
 			'Product Name',
 			'Product Status',
@@ -390,165 +392,303 @@ class wc_gsheetconnector_Service {
 
 		);
 
-		add_filter( 'gscwoo_tab_headers', array( $this, 'add_status_header_in_all_orders' ), 10, 2 );
+		add_filter('gscwoo_tab_headers', array($this, 'add_status_header_in_all_orders'), 10, 2);
 	}
 
-	public function init() {
+	public function init()
+	{
 		try {
-			add_action( 'admin_init', array( $this, 'execute_post_data' ) );
-			add_action( 'woocommerce_order_status_changed', array( $this, 'woocommerce_order_status_changed' ), 10, 4 );
-			add_action( 'woocommerce_process_shop_order_meta', array( $this, 'woocommerce_process_shop_order_meta' ), 1000, 2 );
-			add_filter( 'gscwoo_row_values', array( $this, 'change_status_to_uppercase' ), 10, 2 );
-			add_action( 'wp_trash_post', array( $this, 'wp_trash_post' ), 10, 1 );
-			add_action( 'transition_post_status', array( $this, 'transition_post_status' ), 10, 3 );
-		} catch ( Exception $e ) {
+			add_action('admin_init', array($this, 'execute_post_data'));
+			add_action('woocommerce_order_status_changed', array($this, 'woocommerce_order_status_changed'), 10, 4);
+			add_action('woocommerce_process_shop_order_meta', array($this, 'woocommerce_process_shop_order_meta'), 1000, 2);
+			add_filter('gscwoo_row_values', array($this, 'change_status_to_uppercase'), 10, 2);
+			add_action('wp_trash_post', array($this, 'wp_trash_post'), 10, 1);
+			add_action('transition_post_status', array($this, 'transition_post_status'), 10, 3);
+			add_action('wp_ajax_install_plugin', array($this, 'install_plugin'));
+
+			add_action('wp_ajax_activate_plugin', array($this, 'activate_plugin'));
+			add_action("wp_ajax_deactivate_plugin", array($this, "deactivate_plugin"));
+
+		} catch (Exception $e) {
 			$data['ERROR_MSG'] = $e->getMessage();
 			$data['TRACE_STK'] = $e->getTraceAsString();
-			wc_gsheetconnector_utility::gs_debug_log( $data );
+			wc_gsheetconnector_utility::gs_debug_log($data);
 		}
 	}
 
-	public function woocommerce_process_shop_order_meta( $order_id, $order ) {
+	function deactivate_plugin()
+	{
+		if (!current_user_can('activate_plugins')) {
+			error_log('Error: User lacks permission.');
+			wp_send_json_error('You do not have permission to deactivate plugins.');
+		}
+
+		if (!isset($_POST['plugin_slug'])) {
+			error_log('Error: Plugin slug missing.');
+			wp_send_json_error('Plugin slug is missing.');
+		}
+
+		$plugin_slug = sanitize_text_field($_POST['plugin_slug']);
+
+		if (empty($plugin_slug)) {
+			error_log('Error: Plugin slug is empty.');
+			wp_send_json_error('Invalid plugin.');
+		}
+
+		// Ensure plugin exists before attempting to deactivate
+		if (!file_exists(WP_PLUGIN_DIR . '/' . $plugin_slug)) {
+			error_log("Error: Plugin file does not exist - " . $plugin_slug);
+			wp_send_json_error('Plugin not found.');
+		}
+
+		deactivate_plugins($plugin_slug);
+
+		if (is_plugin_active($plugin_slug)) {
+			error_log("Error: Plugin deactivation failed - " . $plugin_slug);
+			wp_send_json_error('Failed to deactivate plugin.');
+		}
+
+		//error_log("Success: Plugin deactivated - " . $plugin_slug);
+		wp_send_json_success('Plugin deactivated successfully.');
+	}
+
+
+
+	function install_plugin()
+	{
+		if (!isset($_POST['plugin_slug'], $_POST['download_url'])) {
+			wp_send_json_error(['message' => 'Missing required parameters.']);
+		}
+
+		$plugin_slug = sanitize_text_field($_POST['plugin_slug']);
+		$download_url = esc_url_raw($_POST['download_url']);
+
+		if (empty($plugin_slug) || empty($download_url)) {
+			wp_send_json_error(['message' => 'Invalid plugin data.']);
+		}
+
+		include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+		include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+		include_once ABSPATH . 'wp-admin/includes/file.php';
+		include_once ABSPATH . 'wp-admin/includes/update.php';
+
+		$upgrader = new Plugin_Upgrader(new WP_Ajax_Upgrader_Skin());
+
+		// Get the list of installed plugins
+		$installed_plugins = get_plugins();
+		$plugin_path = '';
+
+		// Find the correct plugin file path
+		foreach ($installed_plugins as $path => $details) {
+			if (strpos($path, $plugin_slug . '/') === 0) {
+				$plugin_path = $path;
+				break;
+			}
+		}
+
+		// Check if the plugin is already installed
+		if ($plugin_path) {
+			// Plugin is installed, check for updates
+			$update_plugins = get_site_transient('update_plugins');
+
+			if (isset($update_plugins->response[$plugin_path])) {
+				// Upgrade the plugin
+				$result = $upgrader->upgrade($plugin_path);
+
+				if (is_wp_error($result)) {
+					wp_send_json_error(['message' => 'Upgrade failed: ' . $result->get_error_message()]);
+				}
+
+				wp_send_json_success(['message' => 'Plugin upgraded successfully.']);
+			} else {
+				wp_send_json_error(['message' => 'No updates available for this plugin.']);
+			}
+		} else {
+			// Plugin is NOT installed, install it
+			$result = $upgrader->install($download_url);
+
+			if (is_wp_error($result)) {
+				wp_send_json_error(['message' => 'Installation failed: ' . $result->get_error_message()]);
+			}
+
+			wp_send_json_success();
+		}
+	}
+
+
+	function activate_plugin()
+	{
+		if (!current_user_can('activate_plugins')) {
+			wp_send_json_error(['message' => 'Permission denied.']);
+		}
+
+		if (!isset($_POST['plugin_slug'])) {
+			wp_send_json_error(['message' => 'Missing plugin slug.']);
+		}
+
+		$plugin_slug = sanitize_text_field($_POST['plugin_slug']);
+
+		include_once ABSPATH . 'wp-admin/includes/plugin.php';
+
+		$activated = activate_plugin($plugin_slug);
+
+		if (is_wp_error($activated)) {
+			wp_send_json_error(['message' => $activated->get_error_message()]);
+		}
+
+		wp_send_json_success();
+	}
+
+
+
+	public function woocommerce_process_shop_order_meta($order_id, $order)
+	{
 		try {
-			$order          = new WC_Order( $order_id );
+			$order = new WC_Order($order_id);
 			$current_status = $order->get_status();
-			$this->woocommerce_order_status_changed( $order_id, $current_status, $current_status, $order );
-		} catch ( Exception $e ) {
+			$this->woocommerce_order_status_changed($order_id, $current_status, $current_status, $order);
+		} catch (Exception $e) {
 			$data['ERROR_MSG'] = $e->getMessage();
 			$data['TRACE_STK'] = $e->getTraceAsString();
-			wc_gsheetconnector_utility::gs_debug_log( $data );
+			wc_gsheetconnector_utility::gs_debug_log($data);
 		}
 	}
 
-	public function transition_post_status( $new_status, $old_status, $post ) {
+	public function transition_post_status($new_status, $old_status, $post)
+	{
 		try {
 
 			global $post_type;
-			if ( ( $post_type !== 'shop_order' ) || ( isset( $_REQUEST['action'] ) && sanitize_text_field( $_REQUEST['action'] != 'untrash' ) ) ) {
+			if (($post_type !== 'shop_order') || (isset($_REQUEST['action']) && sanitize_text_field($_REQUEST['action'] != 'untrash'))) {
 				return;
 			}
 
-			if ( $old_status == 'trash' || $old_status == 'wc-trash' ) {
+			if ($old_status == 'trash' || $old_status == 'wc-trash') {
 				$order_id = $post->ID;
-				$order    = wc_get_order( $order_id );
+				$order = wc_get_order($order_id);
 
-				$old_status = str_replace( 'wc-', '', $old_status );
-				$new_status = str_replace( 'wc-', '', $new_status );
+				$old_status = str_replace('wc-', '', $old_status);
+				$new_status = str_replace('wc-', '', $new_status);
 
-				$this->woocommerce_order_status_changed( $order_id, $old_status, $new_status, $order );
+				$this->woocommerce_order_status_changed($order_id, $old_status, $new_status, $order);
 			}
-		} catch ( Exception $e ) {
+		} catch (Exception $e) {
 			$data['ERROR_MSG'] = $e->getMessage();
 			$data['TRACE_STK'] = $e->getTraceAsString();
-			wc_gsheetconnector_utility::gs_debug_log( $data );
+			wc_gsheetconnector_utility::gs_debug_log($data);
 		}
 	}
-	public function wp_trash_post( $order_id ) {
+	public function wp_trash_post($order_id)
+	{
 		try {
 			global $post_type;
-			if ( $post_type !== 'shop_order' ) {
+			if ($post_type !== 'shop_order') {
 				return;
 			}
 
-			$order = wc_get_order( $order_id, $order );
+			$order = wc_get_order($order_id, $order);
 
-			$new_status     = 'trash';
+			$new_status = 'trash';
 			$current_status = $order->get_status();
 
-			$this->woocommerce_order_status_changed( $order_id, $current_status, $new_status, $order );
-		} catch ( Exception $e ) {
+			$this->woocommerce_order_status_changed($order_id, $current_status, $new_status, $order);
+		} catch (Exception $e) {
 			$data['ERROR_MSG'] = $e->getMessage();
 			$data['TRACE_STK'] = $e->getTraceAsString();
-			wc_gsheetconnector_utility::gs_debug_log( $data );
+			wc_gsheetconnector_utility::gs_debug_log($data);
 		}
 	}
 
-  public function woocommerce_success_notice_free() {
-	     $success_msg = wc_gsheetconnector_utility::instance()->admin_notice( array(
-	    'type'		 => 'update',
-	    'message'	 => __( 'WooCommerce Data Settings saved successfully.', 'wc-gsheetconnector' )
-	     ) );
-	     echo $success_msg;
-     }
+	public function woocommerce_success_notice_free()
+	{
+		$success_msg = wc_gsheetconnector_utility::instance()->admin_notice(array(
+			'type' => 'update',
+			'message' => __('WooCommerce Data Settings saved successfully.', 'wc-gsheetconnector')
+		));
+		echo $success_msg;
+	}
 
-	public function execute_post_data() {
+	public function execute_post_data()
+	{
 		try {
 
-			if ( isset( $_POST ['woo-save-btn'] ) ) {
+			if (isset($_POST['woo-save-btn'])) {
 				// Check if the nonce is set.
-				if ( ! isset( $_POST['gs-woo-nonce'] ) ) {
+				if (!isset($_POST['gs-woo-nonce'])) {
 					return;
 				}
 
 				// Verify the nonce.
-				$nonce = sanitize_text_field( $_POST['gs-woo-nonce'] );
+				$nonce = sanitize_text_field($_POST['gs-woo-nonce']);
 
-				if ( ! wp_verify_nonce( $nonce, 'gs-woo-nonce' ) ) {
+				if (!wp_verify_nonce($nonce, 'gs-woo-nonce')) {
 					return;
 				}
 
 
 				// adminitrator or super admin check role.
 				$current_role = wc_gsheetconnector_utility::instance()->get_current_user_role();
-				if ( $current_role !== 'administrator' || ( ! is_super_admin() ) ) {
+				if ($current_role !== 'administrator' || (!is_super_admin())) {
 					return;
 				}
 
 				// Fetch dropdown fields
-				$selected_sheet_id = isset( $_POST['gs-woo-sheet-id'] ) ? sanitize_text_field( $_POST['gs-woo-sheet-id'] ) : '';
+				$selected_sheet_id = isset($_POST['gs-woo-sheet-id']) ? sanitize_text_field($_POST['gs-woo-sheet-id']) : '';
 
-				if ( $selected_sheet_id != '' ) {
-					update_option( 'gs_woo_settings', $selected_sheet_id );
+				if ($selected_sheet_id != '') {
+					update_option('gs_woo_settings', $selected_sheet_id);
 
 					// Get Spreadsheet name from id
-					$sheet_data             = get_option( 'gs_woo_sheet_feeds' );
-					$gscwoo_spreadsheetName = $sheet_data[ $selected_sheet_id ]['sheet_name'];
+					$sheet_data = get_option('gs_woo_sheet_feeds');
+					$gscwoo_spreadsheetName = $sheet_data[$selected_sheet_id]['sheet_name'];
 
 					// Get order states and save it to database
-					$order_states = isset( $_POST['wc_order_state'] ) ? array_map( 'sanitize_text_field', $_POST['wc_order_state'] ) : array();
+					$order_states = isset($_POST['wc_order_state']) ? array_map('sanitize_text_field', $_POST['wc_order_state']) : array();
 
-					update_option( 'gscwc_order_states', $order_states );
+					update_option('gscwc_order_states', $order_states);
 
-					if ( ! empty( $order_states ) ) {
+					if (!empty($order_states)) {
 						// Check for existing sheet tabs
 						include_once WC_GSHEETCONNECTOR_ROOT . '/lib/google-sheets.php';
 						$gscwoo_client = new GSCWOO_googlesheet();
 
 						$gscwoo_client->auth();
-						$gscwoo_client->setSpreadsheetId( $selected_sheet_id );
+						$gscwoo_client->setSpreadsheetId($selected_sheet_id);
 
 						// $gscwoo_client->ciu_tabs_and_headers( $selected_sheet_id, $gscwoo_spreadsheetName, $order_states );
-						$this->create_remove_sheet_and_headers( $selected_sheet_id, $order_states );
-						add_action( 'admin_notices', array( $this, 'woocommerce_success_notice_free' ) );
+						$this->create_remove_sheet_and_headers($selected_sheet_id, $order_states);
+						add_action('admin_notices', array($this, 'woocommerce_success_notice_free'));
 					} else {
-						add_action( 'admin_notices', array( $this, 'error_message' ) );
+						add_action('admin_notices', array($this, 'error_message'));
 					}
 				}
 			} else {
-				add_action( 'admin_notices', array( $this, 'error_message' ) );
+				add_action('admin_notices', array($this, 'error_message'));
 			}
-		} catch ( Exception $e ) {
+		} catch (Exception $e) {
 			$data['ERROR_MSG'] = $e->getMessage();
 			$data['TRACE_STK'] = $e->getTraceAsString();
-			wc_gsheetconnector_utility::gs_debug_log( $data );
+			wc_gsheetconnector_utility::gs_debug_log($data);
 		}
 	}
 
-	public function error_message() {
-		if ( is_admin() && ( isset( $_GET['page'] ) && ( $_GET['page'] == 'woocommerce-gsheet-config' ) ) ) {
-			if ( isset( $_POST ['woo-save-btn'] ) ) {
+	public function error_message()
+	{
+		if (is_admin() && (isset($_GET['page']) && ($_GET['page'] == 'woocommerce-gsheet-config'))) {
+			if (isset($_POST['woo-save-btn'])) {
 				$plugin_error = wc_gsheetconnector_utility::instance()->admin_notice(
 					array(
-						'type'    => 'error',
-						'message' => __( 'Please select Google Sheet Name and Check Atleast on Google Sheet Tab !', 'wc-gsheetconnector' ),
+						'type' => 'error',
+						'message' => __('Please select Google Sheet Name and Check Atleast on Google Sheet Tab !', 'wc-gsheetconnector'),
 					)
 				);
-				echo esc_attr( $plugin_error, 'wc-gsheetconnector' );
+				echo esc_attr($plugin_error, 'wc-gsheetconnector');
 			}
 		}
 	}
 
-	public function create_remove_sheet_and_headers( $spreadsheet_id, $order_states ) {
+	public function create_remove_sheet_and_headers($spreadsheet_id, $order_states)
+	{
 
 		try {
 			$gscwoo_client = $this->get_googlesheet_object();
@@ -556,31 +696,31 @@ class wc_gsheetconnector_Service {
 
 			$status_and_sheets = $this->status_and_sheets;
 
-			$available_sheets = $gscwoo_client->get_sheet_tabs( $spreadsheet_id );
+			$available_sheets = $gscwoo_client->get_sheet_tabs($spreadsheet_id);
 
-			$removable_sheets          = array();
-			$add_sheets                = array();
+			$removable_sheets = array();
+			$add_sheets = array();
 			$working_order_states_data = array();
 
-			foreach ( $status_and_sheets as $wc_status => $associated_tab ) {
+			foreach ($status_and_sheets as $wc_status => $associated_tab) {
 
-				if ( in_array( $wc_status, $order_states ) ) {
+				if (in_array($wc_status, $order_states)) {
 
-					if ( ! in_array( $associated_tab, $available_sheets ) ) {
+					if (!in_array($associated_tab, $available_sheets)) {
 						$add_sheets[] = $associated_tab;
 					}
 
-					$working_order_states_data[ $wc_status ] = $associated_tab;
-				} elseif ( in_array( $associated_tab, $available_sheets ) ) {
-						$sheet_id                      = array_search( $associated_tab, $available_sheets );
-						$removable_sheets[ $sheet_id ] = $associated_tab;
+					$working_order_states_data[$wc_status] = $associated_tab;
+				} elseif (in_array($associated_tab, $available_sheets)) {
+					$sheet_id = array_search($associated_tab, $available_sheets);
+					$removable_sheets[$sheet_id] = $associated_tab;
 				}
 			}
 
 			$sheet_update_requests = array();
 
-			if ( $add_sheets ) {
-				foreach ( $add_sheets as $sheetName ) {
+			if ($add_sheets) {
+				foreach ($add_sheets as $sheetName) {
 					$sheet_update_requests[] = array(
 						'addSheet' => array(
 							'properties' => array(
@@ -591,8 +731,8 @@ class wc_gsheetconnector_Service {
 				}
 			}
 
-			if ( $removable_sheets ) {
-				foreach ( $removable_sheets as $sheet_id => $sheetName ) {
+			if ($removable_sheets) {
+				foreach ($removable_sheets as $sheet_id => $sheetName) {
 					$sheet_update_requests[] = array(
 						'deleteSheet' => array(
 							'sheetId' => (int) $sheet_id,
@@ -601,245 +741,250 @@ class wc_gsheetconnector_Service {
 				}
 			}
 
-			if ( $sheet_update_requests ) {
-				$gscwoo_client->perform_sheet_tab_updates( $spreadsheet_id, $sheet_update_requests );
+			if ($sheet_update_requests) {
+				$gscwoo_client->perform_sheet_tab_updates($spreadsheet_id, $sheet_update_requests);
 			}
 
 			/* NOW SET HEADERS */
 
-			foreach ( $working_order_states_data as $wc_status => $associated_tab ) {
-				$headers = apply_filters( 'gscwoo_tab_headers', $sheet_headers, $wc_status );
+			foreach ($working_order_states_data as $wc_status => $associated_tab) {
+				$headers = apply_filters('gscwoo_tab_headers', $sheet_headers, $wc_status);
 
-				$header_names = array_keys( $headers );
+				$header_names = array_keys($headers);
 
 				// $gscwoo_client->add_row_to_sheet( $spreadsheet_id, $associated_tab, $header_names, $order, true );
-				$gscwoo_client->add_row_to_sheet( $spreadsheet_id, $associated_tab, $header_names, '', true );
+				$gscwoo_client->add_row_to_sheet($spreadsheet_id, $associated_tab, $header_names, '', true);
 			}
-		} catch ( Exception $e ) {
+		} catch (Exception $e) {
 			$data['ERROR_MSG'] = $e->getMessage();
 			$data['TRACE_STK'] = $e->getTraceAsString();
-			wc_gsheetconnector_utility::gs_debug_log( $data );
+			wc_gsheetconnector_utility::gs_debug_log($data);
 		}
 	}
 
-	public function add_status_header_in_all_orders( $headers, $wc_status ) {
+	public function add_status_header_in_all_orders($headers, $wc_status)
+	{
 		try {
-			if ( $wc_status != 'all' ) {
-				unset( $headers['Status'] );
+			if ($wc_status != 'all') {
+				unset($headers['Status']);
 			}
 
 			return $headers;
-		} catch ( Exception $e ) {
+		} catch (Exception $e) {
 			$data['ERROR_MSG'] = $e->getMessage();
 			$data['TRACE_STK'] = $e->getTraceAsString();
-			wc_gsheetconnector_utility::gs_debug_log( $data );
+			wc_gsheetconnector_utility::gs_debug_log($data);
 		}
 	}
 
-	public function change_status_to_uppercase( $header_value, $cell_name ) {
+	public function change_status_to_uppercase($header_value, $cell_name)
+	{
 
 		try {
-			if ( $cell_name == 'Status' ) {
-				$header_value = ucwords( $header_value );
+			if ($cell_name == 'Status') {
+				$header_value = ucwords($header_value);
 			}
 
 			return $header_value;
-		} catch ( Exception $e ) {
+		} catch (Exception $e) {
 			$data['ERROR_MSG'] = $e->getMessage();
 			$data['TRACE_STK'] = $e->getTraceAsString();
-			wc_gsheetconnector_utility::gs_debug_log( $data );
+			wc_gsheetconnector_utility::gs_debug_log($data);
 		}
 	}
 
-	public function create_save_array( $order, $header_cells, $custom_status = false ) {
+	public function create_save_array($order, $header_cells, $custom_status = false)
+	{
 
 		try {
 			$create_value_array = array();
-			$send_row_data      = array();
+			$send_row_data = array();
 
 			$order_data = $order->get_data();
-			$wc_status  = $order->get_status();
+			$wc_status = $order->get_status();
 
-			if ( $custom_status ) {
+			if ($custom_status) {
 				$wc_status = $custom_status;
 			}
 
 			$sheet_headers = $this->sheet_headers;
-			$sheet_headers = apply_filters( 'gscwoo_tab_headers', $sheet_headers, $wc_status );
+			$sheet_headers = apply_filters('gscwoo_tab_headers', $sheet_headers, $wc_status);
 
-			foreach ( $sheet_headers as $header_name => $header_data ) {
-				$class         = $header_data['class'];
+			foreach ($sheet_headers as $header_name => $header_data) {
+				$class = $header_data['class'];
 				$function_name = $header_data['function_name'];
 
 				$header_value = $function_name;
-				if ( $class && class_exists( $class ) ) {
-					if ( method_exists( $class, $function_name ) ) {
+				if ($class && class_exists($class)) {
+					if (method_exists($class, $function_name)) {
 
-						if ( $class == 'WC_Order' ) {
-                          if($function_name == "get_shipping_to_display"){
-                          	$header_value = "";
-                          	// Get the shipping methods
-                            $shipping_methods = $order->get_shipping_methods();
-                            // Loop through shipping methods and get the title
-                            if(!empty($shipping_methods)){
-                            foreach ($shipping_methods as $shipping_method) {
-                              $shipping_method_title = $shipping_method->get_name();
-                            
+						if ($class == 'WC_Order') {
+							if ($function_name == "get_shipping_to_display") {
+								$header_value = "";
+								// Get the shipping methods
+								$shipping_methods = $order->get_shipping_methods();
+								// Loop through shipping methods and get the title
+								if (!empty($shipping_methods)) {
+									foreach ($shipping_methods as $shipping_method) {
+										$shipping_method_title = $shipping_method->get_name();
 
 
-                               $clean_text  = strip_tags($shipping_method_title);
-                               // Decode HTML entities
-                               $clean_text = html_entity_decode($clean_text);
 
-                               // Remove special characters (if any remain)
-                               $header_value = preg_replace('/[^\w\s]/u', '', $clean_text);
+										$clean_text = strip_tags($shipping_method_title);
+										// Decode HTML entities
+										$clean_text = html_entity_decode($clean_text);
 
-                                }	
-                            }
-                             
-								
+										// Remove special characters (if any remain)
+										$header_value = preg_replace('/[^\w\s]/u', '', $clean_text);
+
+									}
+								}
+
+
+							} else {
+								$header_value = $order->$function_name();
 							}
-                         else{
-	                        $header_value = $order->$function_name();
-                             }
 
 						} else {
-							$header_value = $class::$function_name( $order, $order_data );
+							$header_value = $class::$function_name($order, $order_data);
 						}
 					}
-				} elseif ( function_exists( $function_name ) ) {
-					$header_value = $function_name( $order, $order_data );
+				} elseif (function_exists($function_name)) {
+					$header_value = $function_name($order, $order_data);
 				}
 
-				if ( is_array( $header_value ) ) {
-					$header_value = implode( ', ', $header_value );
+				if (is_array($header_value)) {
+					$header_value = implode(', ', $header_value);
 				}
-				if ( is_a( $header_value, 'WC_DateTime' ) ) {
-					$header_value = $header_value->date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ) );
+				if (is_a($header_value, 'WC_DateTime')) {
+					$header_value = $header_value->date(get_option('date_format') . ' ' . get_option('time_format'));
 				}
 
-				$create_value_array[ $header_name ] = apply_filters( 'gscwoo_row_values', $header_value, $header_name );
+				$create_value_array[$header_name] = apply_filters('gscwoo_row_values', $header_value, $header_name);
 
 			}
 
 			$entry_cells = $create_value_array;
-			if ( $entry_cells && $header_cells ) {
+			if ($entry_cells && $header_cells) {
 
-				foreach ( $header_cells as $index => $cellName ) {
+				foreach ($header_cells as $index => $cellName) {
 
-					if ( isset( $entry_cells[ $cellName ] ) ) {
-						$send_row_data[ $index ] = $entry_cells[ $cellName ];
+					if (isset($entry_cells[$cellName])) {
+						$send_row_data[$index] = $entry_cells[$cellName];
 					}
 				}
 
-				foreach ( $header_cells as $index => $cellName ) {
-					if ( ! isset( $send_row_data[ $index ] ) ) {
-						$send_row_data[ $index ] = '';
+				foreach ($header_cells as $index => $cellName) {
+					if (!isset($send_row_data[$index])) {
+						$send_row_data[$index] = '';
 					}
 				}
 			}
 
 			return $send_row_data;
 
-		} catch ( Exception $e ) {
+		} catch (Exception $e) {
 			$data['ERROR_MSG'] = $e->getMessage();
 			$data['TRACE_STK'] = $e->getTraceAsString();
-			wc_gsheetconnector_utility::gs_debug_log( $data );
+			wc_gsheetconnector_utility::gs_debug_log($data);
 		}
 	}
 
-	public function woocommerce_order_status_changed( $order_id, $old_status, $new_status, $order ) {
+	public function woocommerce_order_status_changed($order_id, $old_status, $new_status, $order)
+	{
 
 		try {
 			$new_wc_status = 'wc-' . $new_status;
 			$old_wc_status = 'wc-' . $old_status;
 
-			$adding_sheet   = '';
+			$adding_sheet = '';
 			$removing_sheet = '';
 
 			$data_update_only = false;
-			if ( $new_wc_status == $old_wc_status ) {
+			if ($new_wc_status == $old_wc_status) {
 				$data_update_only = true;
 			}
 
-            $gscwoo_client  = $this->get_googlesheet_object();
-			$spreadsheet_id = get_option( 'gs_woo_settings' );
-			
-            if( ! $spreadsheet_id ) {
-			    return;
-		      }
+			$gscwoo_client = $this->get_googlesheet_object();
+			$spreadsheet_id = get_option('gs_woo_settings');
 
-
-			if ( isset( $this->status_and_sheets[ $new_wc_status ] ) && $this->status_and_sheets[ $new_wc_status ] != '' ) {
-				$adding_sheet = $this->status_and_sheets[ $new_wc_status ];
-			}
-
-			if ( isset( $this->status_and_sheets[ $old_wc_status ] ) && $this->status_and_sheets[ $old_wc_status ] != '' ) {
-				$removing_sheet = $this->status_and_sheets[ $old_wc_status ];
+			if (!$spreadsheet_id) {
+				return;
 			}
 
 
-
-			$header_row = $gscwoo_client->get_header_row( $spreadsheet_id, $adding_sheet );
-			$insert_row = $this->create_save_array( $order, $header_row );
-
-			if ( ! $data_update_only && $this->status_is_enabled( $new_wc_status ) ) {
-				$gscwoo_client->add_row_to_sheet( $spreadsheet_id, $adding_sheet, $insert_row, $order );
+			if (isset($this->status_and_sheets[$new_wc_status]) && $this->status_and_sheets[$new_wc_status] != '') {
+				$adding_sheet = $this->status_and_sheets[$new_wc_status];
 			}
 
-			if ( ! $data_update_only && $this->status_is_enabled( $old_wc_status ) ) {
-				$header_removing_row  = $gscwoo_client->get_header_row( $spreadsheet_id, $removing_sheet );
-				$order_id_column_name = apply_filters( 'poolexpress_order_id_column_name', 'Order Id' );
-				$order_id_key         = array_search( $order_id_column_name, $header_removing_row );
-				$gscwoo_client->remove_row_by_order_id( $spreadsheet_id, $removing_sheet, $order_id, $order_id_key );
+			if (isset($this->status_and_sheets[$old_wc_status]) && $this->status_and_sheets[$old_wc_status] != '') {
+				$removing_sheet = $this->status_and_sheets[$old_wc_status];
 			}
 
-			if ( $data_update_only && $this->status_is_enabled( $new_wc_status ) ) {
-				$header_removing_row  = $gscwoo_client->get_header_row( $spreadsheet_id, $adding_sheet );
-				$order_id_column_name = apply_filters( 'poolexpress_order_id_column_name', 'Order Id' );
-				$order_id_key         = array_search( $order_id_column_name, $header_removing_row );
-				$gscwoo_client->update_row_by_order_id( $spreadsheet_id, $adding_sheet, $insert_row, $order_id, $order_id_key );
+
+
+			$header_row = $gscwoo_client->get_header_row($spreadsheet_id, $adding_sheet);
+			$insert_row = $this->create_save_array($order, $header_row);
+
+			if (!$data_update_only && $this->status_is_enabled($new_wc_status)) {
+				$gscwoo_client->add_row_to_sheet($spreadsheet_id, $adding_sheet, $insert_row, $order);
 			}
 
-			if ( $this->status_is_enabled( 'all' ) ) {
-				$all_sheet            = $this->status_and_sheets['all'];
-				$header_all_row       = $gscwoo_client->get_header_row( $spreadsheet_id, $all_sheet );
-				$order_id_column_name = apply_filters( 'poolexpress_order_id_column_name', 'Order Id' );
-				$order_id_key         = array_search( $order_id_column_name, $header_all_row );
-				$insert_row           = $this->create_save_array( $order, $header_all_row, 'all' );
-				$gscwoo_client->update_row_by_order_id( $spreadsheet_id, $all_sheet, $insert_row, $order_id, $order_id_key );
+			if (!$data_update_only && $this->status_is_enabled($old_wc_status)) {
+				$header_removing_row = $gscwoo_client->get_header_row($spreadsheet_id, $removing_sheet);
+				$order_id_column_name = apply_filters('poolexpress_order_id_column_name', 'Order Id');
+				$order_id_key = array_search($order_id_column_name, $header_removing_row);
+				$gscwoo_client->remove_row_by_order_id($spreadsheet_id, $removing_sheet, $order_id, $order_id_key);
 			}
 
-			remove_action( 'woocommerce_process_shop_order_meta', array( $this, 'woocommerce_process_shop_order_meta' ), 1000, 2 );
-		} catch ( Exception $e ) {
+			if ($data_update_only && $this->status_is_enabled($new_wc_status)) {
+				$header_removing_row = $gscwoo_client->get_header_row($spreadsheet_id, $adding_sheet);
+				$order_id_column_name = apply_filters('poolexpress_order_id_column_name', 'Order Id');
+				$order_id_key = array_search($order_id_column_name, $header_removing_row);
+				$gscwoo_client->update_row_by_order_id($spreadsheet_id, $adding_sheet, $insert_row, $order_id, $order_id_key);
+			}
+
+			if ($this->status_is_enabled('all')) {
+				$all_sheet = $this->status_and_sheets['all'];
+				$header_all_row = $gscwoo_client->get_header_row($spreadsheet_id, $all_sheet);
+				$order_id_column_name = apply_filters('poolexpress_order_id_column_name', 'Order Id');
+				$order_id_key = array_search($order_id_column_name, $header_all_row);
+				$insert_row = $this->create_save_array($order, $header_all_row, 'all');
+				$gscwoo_client->update_row_by_order_id($spreadsheet_id, $all_sheet, $insert_row, $order_id, $order_id_key);
+			}
+
+			remove_action('woocommerce_process_shop_order_meta', array($this, 'woocommerce_process_shop_order_meta'), 1000, 2);
+		} catch (Exception $e) {
 			$data['ERROR_MSG'] = $e->getMessage();
 			$data['TRACE_STK'] = $e->getTraceAsString();
-			wc_gsheetconnector_utility::gs_debug_log( $data );
+			wc_gsheetconnector_utility::gs_debug_log($data);
 		}
 
 		// exit;
 	}
 
-	public function status_is_enabled( $wc_status ) {
+	public function status_is_enabled($wc_status)
+	{
 
 		try {
-			$selected_order_states = get_option( 'gscwc_order_states' );
-			if ( in_array( $wc_status, $selected_order_states ) ) {
+			$selected_order_states = get_option('gscwc_order_states');
+			if (in_array($wc_status, $selected_order_states)) {
 				return true;
 			}
 
 			return false;
-		} catch ( Exception $e ) {
+		} catch (Exception $e) {
 			$data['ERROR_MSG'] = $e->getMessage();
 			$data['TRACE_STK'] = $e->getTraceAsString();
-			wc_gsheetconnector_utility::gs_debug_log( $data );
+			wc_gsheetconnector_utility::gs_debug_log($data);
 		}
 	}
 
-	public function get_googlesheet_object() {
+	public function get_googlesheet_object()
+	{
 
 		try {
-			if ( $this->_gfgsc_googlesheet ) {
+			if ($this->_gfgsc_googlesheet) {
 				return $this->_gfgsc_googlesheet;
 			}
 
@@ -848,145 +993,149 @@ class wc_gsheetconnector_Service {
 
 			$this->_gfgsc_googlesheet = $google_sheet;
 			return $google_sheet;
-		} catch ( Exception $e ) {
+		} catch (Exception $e) {
 			$data['ERROR_MSG'] = $e->getMessage();
 			$data['TRACE_STK'] = $e->getTraceAsString();
-			wc_gsheetconnector_utility::gs_debug_log( $data );
+			wc_gsheetconnector_utility::gs_debug_log($data);
 		}
 	}
 
-	public function extract_product_qty_sku( $order, $order_data = false ) {
+	public function extract_product_qty_sku($order, $order_data = false)
+	{
 
 		try {
 
-			$value       = array();
+			$value = array();
 			$order_items = $order->get_items();
 
-			foreach ( $order_items as $item ) {
-				$sku          = '';
+			foreach ($order_items as $item) {
+				$sku = '';
 				$variation_id = $item->get_variation_id();
-				$product_id   = $item->get_product_id();
-				$product      = $item->get_product();
-				if ( method_exists( $product, 'get_sku' ) ) {
+				$product_id = $item->get_product_id();
+				$product = $item->get_product();
+				if (method_exists($product, 'get_sku')) {
 					$sku = $product->get_sku();
 				}
 
-				$create_product_name  = $item->get_name();
+				$create_product_name = $item->get_name();
 				$create_product_name .= '(' . $item->get_quantity() . ')';
 				$create_product_name .= $sku ? '(' . $sku . ')' : '';
 
 				$value[] = $create_product_name;
 			}
 
-			$value = implode( ', ', $value );
+			$value = implode(', ', $value);
 			return $value;
-		} catch ( Exception $e ) {
+		} catch (Exception $e) {
 			$data['ERROR_MSG'] = $e->getMessage();
 			$data['TRACE_STK'] = $e->getTraceAsString();
-			wc_gsheetconnector_utility::gs_debug_log( $data );
+			wc_gsheetconnector_utility::gs_debug_log($data);
 		}
 	}
 
-	public function get_adding_extra_order_row() {
+	public function get_adding_extra_order_row()
+	{
 		$extra_rows = array();
-        global $wpdb;
+		global $wpdb;
 
-       // List of meta keys to exclude
-       $already_in_header = "'_billing_address_1','_billing_address_2','_billing_address_index','_billing_city','_billing_company','_billing_country','_billing_first_name','_billing_last_name','_billing_postcode','_billing_state','_cart_hash','_cart_discount_tax','_completed_date','_date_completed','_date_paid','_order_currency','_order_tax','_order_total','_paid_date','_payment_method','_pos','_shipping_address_1','_shipping_address_2','_shipping_address_index','_shipping_city','_shipping_company','_shipping_country','_shipping_first_name','_shipping_last_name','_shipping_postcode','_shipping_state','_wc'";
+		// List of meta keys to exclude
+		$already_in_header = "'_billing_address_1','_billing_address_2','_billing_address_index','_billing_city','_billing_company','_billing_country','_billing_first_name','_billing_last_name','_billing_postcode','_billing_state','_cart_hash','_cart_discount_tax','_completed_date','_date_completed','_date_paid','_order_currency','_order_tax','_order_total','_paid_date','_payment_method','_pos','_shipping_address_1','_shipping_address_2','_shipping_address_index','_shipping_city','_shipping_company','_shipping_country','_shipping_first_name','_shipping_last_name','_shipping_postcode','_shipping_state','_wc'";
 
-      // Query to get distinct meta keys for shop orders not in the exclusion list
-      $query = $wpdb->prepare(
-           "SELECT DISTINCT(wpm.meta_key) 
+		// Query to get distinct meta keys for shop orders not in the exclusion list
+		$query = $wpdb->prepare(
+			"SELECT DISTINCT(wpm.meta_key) 
            FROM {$wpdb->prefix}posts AS wp 
            INNER JOIN {$wpdb->prefix}postmeta AS wpm ON wp.ID = wpm.post_id
            WHERE wp.post_type = %s 
            AND wpm.meta_key NOT IN ($already_in_header) 
            ORDER BY wpm.meta_key",
-           'shop_order'
-          );
+			'shop_order'
+		);
 
-     $all_extra_order_headers = $wpdb->get_results($query, ARRAY_A);
+		$all_extra_order_headers = $wpdb->get_results($query, ARRAY_A);
 
-     if (!empty($all_extra_order_headers)) {
-       $extra_rows = array_column($all_extra_order_headers, 'meta_key');
-    }
+		if (!empty($all_extra_order_headers)) {
+			$extra_rows = array_column($all_extra_order_headers, 'meta_key');
+		}
 
-       return $extra_rows;
+		return $extra_rows;
 	}
 
-	public function get_adding_extra_product_item_row() {
+	public function get_adding_extra_product_item_row()
+	{
 		$extra_rows = array();
-        global $wpdb;
+		global $wpdb;
 
-         $already_in_header = "'_product_id','_variation_id','_qty','_line_subtotal','_line_subtotal_tax','_line_total'";
+		$already_in_header = "'_product_id','_variation_id','_qty','_line_subtotal','_line_subtotal_tax','_line_total'";
 
-       // Query 1: Get extra meta keys for order items
-      $query1 = "SELECT DISTINCT(woim.meta_key) 
+		// Query 1: Get extra meta keys for order items
+		$query1 = "SELECT DISTINCT(woim.meta_key) 
          FROM {$wpdb->prefix}woocommerce_order_items AS woi 
          INNER JOIN {$wpdb->prefix}posts AS wp ON wp.ID = woi.order_id
          INNER JOIN {$wpdb->prefix}woocommerce_order_itemmeta AS woim ON woi.order_item_id = woim.order_item_id
         WHERE order_item_type='line_item' AND woim.meta_key NOT IN ({$already_in_header})";
 
-       $all_extra_order_itemmeta = $wpdb->get_results($query1, ARRAY_A);
+		$all_extra_order_itemmeta = $wpdb->get_results($query1, ARRAY_A);
 
-      if (!empty($all_extra_order_itemmeta)) {
-        $extra_rows = array_column($all_extra_order_itemmeta, 'meta_key');
-      }
+		if (!empty($all_extra_order_itemmeta)) {
+			$extra_rows = array_column($all_extra_order_itemmeta, 'meta_key');
+		}
 
-     // Query 2: Get all product IDs
-    $allProductQry = "SELECT ID FROM {$wpdb->prefix}posts WHERE post_type = 'product'";
-    $allProductArr = $wpdb->get_results($allProductQry, ARRAY_A);
-    $allProductClmn = array_column($allProductArr, 'ID');
+		// Query 2: Get all product IDs
+		$allProductQry = "SELECT ID FROM {$wpdb->prefix}posts WHERE post_type = 'product'";
+		$allProductArr = $wpdb->get_results($allProductQry, ARRAY_A);
+		$allProductClmn = array_column($allProductArr, 'ID');
 
-    // Check if there are product IDs before proceeding
-   if (!empty($allProductClmn)) {
-    $allProductIds = implode(',', $allProductClmn);
+		// Check if there are product IDs before proceeding
+		if (!empty($allProductClmn)) {
+			$allProductIds = implode(',', $allProductClmn);
 
-    // Query 3: Get extra meta keys for product postmeta
-    $query2 = "SELECT DISTINCT(pm.meta_key) 
+			// Query 3: Get extra meta keys for product postmeta
+			$query2 = "SELECT DISTINCT(pm.meta_key) 
         FROM `{$wpdb->prefix}postmeta` AS pm 
         WHERE pm.post_id IN ($allProductIds) AND pm.meta_key NOT IN ({$already_in_header})";
 
-    $all_extra_post_itemmeta = $wpdb->get_results($query2, ARRAY_A);
+			$all_extra_post_itemmeta = $wpdb->get_results($query2, ARRAY_A);
 
-    if (!empty($all_extra_post_itemmeta)) {
-        $extra_rows_new = array_column($all_extra_post_itemmeta, 'meta_key');
-        $extra_rows = array_merge($extra_rows, $extra_rows_new);
-       }
-   }
+			if (!empty($all_extra_post_itemmeta)) {
+				$extra_rows_new = array_column($all_extra_post_itemmeta, 'meta_key');
+				$extra_rows = array_merge($extra_rows, $extra_rows_new);
+			}
+		}
 
-    return $extra_rows;
+		return $extra_rows;
 
 	}
 
-	public function get_adding_extra_product_row(){
+	public function get_adding_extra_product_row()
+	{
 		$extra_rows = array();
 		global $wpdb;
 
 		$already_in_header = "'_product_id','_variation_id','_qty','_line_subtotal','_line_subtotal_tax','_line_total'";
-		
-		
-		
+
+
+
 		/** compatible thirt-party plugins related to product meta */
 		$allProductQry = "SELECT ID FROM {$wpdb->prefix}posts WHERE post_type = 'product'";
 		$allProductArr = $wpdb->get_results($allProductQry, ARRAY_A);
 		$allProductClmn = array_column($allProductArr, 'ID');
-		$allProductIds = implode(',',$allProductClmn);
+		$allProductIds = implode(',', $allProductClmn);
 
-        if(!empty($allProductIds)){
-	    $query2 = "SELECT DISTINCT(pm.meta_key) FROM `{$wpdb->prefix}postmeta` AS pm WHERE pm.post_id IN ($allProductIds) AND pm.meta_key  NOT IN ($already_in_header)";
+		if (!empty($allProductIds)) {
+			$query2 = "SELECT DISTINCT(pm.meta_key) FROM `{$wpdb->prefix}postmeta` AS pm WHERE pm.post_id IN ($allProductIds) AND pm.meta_key  NOT IN ($already_in_header)";
 
-		$all_extra_post_itemmeta = $wpdb->get_results($query2, ARRAY_A);
+			$all_extra_post_itemmeta = $wpdb->get_results($query2, ARRAY_A);
 
-		if(!empty($all_extra_post_itemmeta)){
-			$extra_rows_new = array_column($all_extra_post_itemmeta, 'meta_key');
-			// $extra_rows = array_merge($extra_rows,$extra_rows_new);
-			$extra_rows = $extra_rows_new;
+			if (!empty($all_extra_post_itemmeta)) {
+				$extra_rows_new = array_column($all_extra_post_itemmeta, 'meta_key');
+				// $extra_rows = array_merge($extra_rows,$extra_rows_new);
+				$extra_rows = $extra_rows_new;
+
+			}
 
 		}
 
-        }
-		
 		return $extra_rows;
 	}
 }
