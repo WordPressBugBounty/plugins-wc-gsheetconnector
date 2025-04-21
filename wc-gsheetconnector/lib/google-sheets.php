@@ -1304,16 +1304,16 @@ class GSCWOO_googlesheet
 	{
 
 		try {
-			$google_account = get_option("wpgs_email_account");
-			if (false && $google_account) {
-				return $google_account;
-			} else {
+			// $google_account = get_option("wpgs_email_account");
+			// if (false && $google_account) {
+			// 	return $google_account;
+			// } else {
 				$google_sheet = new GSCWOO_googlesheet();
 				$google_sheet->auth();
 				$email = $google_sheet->gsheet_get_google_account_email();
 				update_option("wpgs_email_account", $email);
 				return $email;
-			}
+			// }
 		} catch (Exception $e) {
 			wc_gsheetconnector_utility::gs_debug_log($e->getMessage());
 			return false;

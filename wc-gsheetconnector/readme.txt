@@ -6,7 +6,7 @@ Tested up to: 6.7.1
 Requires at least: 5.3
 Requires PHP: 7.4
 Requires Plugins: woocommerce
-Stable tag: 1.3.19
+Stable tag: 1.3.20
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,14 +80,13 @@ Enjoy!
 
 == Screenshots ==
 
-1. Google Sheet Integration without authentication.
-2. Permission page if user is already logged-in to there account. 
-3. Permission popup-1 after logged-in to your account.
-4. Permission popup-2 after logged-in to your account.
-5. After successful integration - Displays "Currently Active".
-6. WooCommerce Google Sheet settings page.
-7. Google Sheet Tab Creation as per order status.
-8. Google Sheet headers with form submitted data.
+1. Google Sheet Integration Shown with Authentication along with Permissions.
+2. Fetch Sheets.
+3. Google Sheet Tab Creation as per order status and Google Sheet headers with form submitted data.
+4. Role Settings.
+5. System Status.
+6. Beta-version.
+7. 2 way sync settings.
 
 == Frequently Asked Questions ==
 
@@ -102,6 +101,9 @@ Please double-check those items and hopefully getting them right will fix the is
 Make sure to <a href="https://www.gsheetconnector.com/how-to-enable-debugging-in-wordpress">enable debug log from wp-config.php</a> if submitted order is not showing in sheet, It will helps to show the conflict issue (if there is any) or shows what is making an issue.
 
 == Changelog ==
+
+= 1.3.20 (21-04-2025) =
+- Fixed: Connected Email display issue.
 
 = 1.3.19 (19-04-2025) =
 - Added: Moved saving of credentials to database for Auto API Integration.
