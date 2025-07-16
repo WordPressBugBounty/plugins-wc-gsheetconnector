@@ -44,14 +44,12 @@ class wc_gsheetconnector_utility
      */
     public function logger($message)
     {
-        if (WP_DEBUG === true) {
-            if (is_array($message) || is_object($message)) {
-                error_log(print_r($messagerror_loge, true));
-            } else {
-                error_log($message);
-            }
+        if ( defined( 'WP_DEBUG' ) && WP_DEBUG === true ) {
+            // Use your internal logging function instead of error_log
+            
         }
     }
+
 
     /**
      * Display error or success message in the admin section
@@ -63,9 +61,9 @@ class wc_gsheetconnector_utility
      */
     public function admin_notice($data = array())
     {
-        // extract message and type from the $data array
-        $message = isset($data['message']) ? $data['message'] : "";
-        $message_type = isset($data['type']) ? $data['type'] : "";
+        $message = isset($data['message']) ? $data['message'] : '';
+        $message_type = isset($data['type']) ? $data['type'] : '';
+        
         switch ($message_type) {
             case 'error':
                 $admin_notice = '<div id="message" class="error notice is-dismissible">';
@@ -81,14 +79,16 @@ class wc_gsheetconnector_utility
                 break;
             default:
                 $message = __('There\'s something wrong with your code...', 'wc-gsheetconnector');
-                $admin_notice = "<div id=\"message\" class=\"error\">\n";
+                $admin_notice = "<div id=\"message\" class=\"error\">";
                 break;
         }
 
-        $admin_notice .= "    <p>" . __($message, 'wc-gsheetconnector') . "</p>\n";
+        $admin_notice .= '<p>' . esc_html( $message ) . '</p>';
         $admin_notice .= "</div>\n";
+
         return $admin_notice;
     }
+
 
     /**
      * Utility function to get the current user's role
@@ -112,7 +112,7 @@ class wc_gsheetconnector_utility
     public function save_api_credentials()
     {
         // Create a nonce
-        $nonce = wp_create_nonce('woogsc_api_free_creds');
+        $nonce = wp_create_nonce('wcgsc_api_free_creds');
 
         // Prepare parameters for the API call
         $params = array(
@@ -131,7 +131,7 @@ class wc_gsheetconnector_utility
         // Check for errors
         if (is_wp_error($response)) {
             // Handle error
-            self::gs_debug_log(__METHOD__ . ' Error: ' . $response->get_error_message());
+           
         } else {
             // API call was successful, process the data
             $response = wp_remote_retrieve_body($response);
@@ -142,72 +142,12 @@ class wc_gsheetconnector_utility
                 $api_creds = wp_parse_args($decoded_response->api_creds);
                 if (is_multisite()) {
                     // If it's a multisite, update the site option (network-wide)
-                    update_site_option('woogsc_api_free_creds', $api_creds);
+                    update_site_option('wcgsc_api_free_creds', $api_creds);
                 } else {
                     // If it's not a multisite, update the regular option
-                    update_option('woogsc_api_free_creds', $api_creds);
+                    update_option('wcgsc_api_free_creds', $api_creds);
                 }
             }
-        }
-    }
-
-    public static function gs_debug_log($error)
-    {
-        try {
-            if (!is_dir(WC_GSHEETCONNECTOR_PATH . 'logs')) {
-                mkdir(WC_GSHEETCONNECTOR_PATH . 'logs', 0755, true);
-            }
-        } catch (Exception $e) {
-
-        }
-        try {
-            // check if debug log file exists or not
-            $wclogFilePathToDelete = WC_GSHEETCONNECTOR_PATH . "logs/log.txt";
-            // Check if the log file exists before attempting to delete
-            if (file_exists($wclogFilePathToDelete)) {
-                unlink($wclogFilePathToDelete);
-            }
-            // check if debug unique log file exists or not
-            $wcexistDebugFile = get_option('wcfgs_debug_log_file');
-            if (!empty($wcexistDebugFile) && file_exists($wcexistDebugFile)) {
-                $wclog = fopen($wcexistDebugFile, 'a');
-                if (is_array($error)) {
-                    fwrite($wclog, print_r(date_i18n('j F Y H:i:s', current_time('timestamp')) . " \t PHP " . phpversion(), TRUE));
-                    fwrite($wclog, print_r($error, TRUE));
-                } else {
-                    $result = fwrite($wclog, print_r(date_i18n('j F Y H:i:s', current_time('timestamp')) . " \t PHP " . phpversion() . " \t $error \r\n", TRUE));
-                }
-                fclose($wclog);
-            } else {
-                // if unique log file not exists then create new file code
-                // Your log content (you can customize this)
-                $wc_unique_log_content = "Log created at " . date('Y-m-d H:i:s');
-                // Create the log file
-                $wclogfileName = 'log-' . uniqid() . '.txt';
-                // Define the file path
-                $wclogUniqueFile = WC_GSHEETCONNECTOR_PATH . "logs/" . $wclogfileName;
-                if (file_put_contents($wclogUniqueFile, $wc_unique_log_content)) {
-                    // save debug unique file in table
-                    update_option('wcfgs_debug_log_file', $wclogUniqueFile);
-                    // Success message
-                    // echo "Log file created successfully: " . $logUniqueFile;
-                    $wclog = fopen($wclogUniqueFile, 'a');
-                    if (is_array($error)) {
-                        fwrite($wclog, print_r(date_i18n('j F Y H:i:s', current_time('timestamp')) . " \t PHP " . phpversion(), TRUE));
-                        fwrite($wclog, print_r($error, TRUE));
-                    } else {
-                        $result = fwrite($wclog, print_r(date_i18n('j F Y H:i:s', current_time('timestamp')) . " \t PHP " . phpversion() . " \t $error \r\n", TRUE));
-                    }
-                    fclose($wclog);
-
-                } else {
-                    // Error message
-                    echo "Error - Not able to create Log File.";
-                }
-            }
-
-        } catch (Exception $e) {
-
         }
     }
 
@@ -216,8 +156,7 @@ class wc_gsheetconnector_utility
      * @param string $setting_name
      * @param array $selected_roles
      */
-    public function gs_woocommerce_checkbox_roles_multi($setting_name, $selected_roles)
-    {
+    public function wcgsc_checkbox_roles_multi($setting_name, $selected_roles) {
         $selected_row = '';
         $checked = '';
         $roles = array();
@@ -229,38 +168,34 @@ class wc_gsheetconnector_utility
             }
         }
 
-        // changes checkbox convert to toggle
-        $selected_row .= "<label class='toggle-role'> <input type='checkbox' class='woforms-gs-checkbox' disabled='disabled' checked='checked'/>";
+        // Static Administrator role (always on)
+        $selected_row .= "<div class='role-name'><label class='toggle-role'> <input type='checkbox' class='woforms-gs-checkbox' disabled='disabled' checked='checked'/>";
         $selected_row .= "<span class='slider-role'></span>";
         $selected_row .= "</label>";
-        $selected_row .= "<label style='margin-left:10px;'>";
-        $selected_row .= __("Administrator", "wc-gsheetconnector");
-        $selected_row .= "</label>";
-        $selected_row .= "<span></span>";
+        $selected_row .= "<label>" . esc_html__( "Administrator", "wc-gsheetconnector" ) . "</label>";
+        $selected_row .= "</div>";
+
         foreach ($system_roles as $role => $display_name) {
             if ($role === "administrator") {
                 continue;
             }
-            if (!empty($roles) && is_array($roles) && in_array(esc_attr($role), $roles)) { // preselect specified role
-                $checked = " ' checked='checked' ";
+
+            if (!empty($roles) && is_array($roles) && in_array( esc_attr($role), $roles )) {
+                $checked = " checked='checked' ";
             } else {
                 $checked = '';
             }
 
-
-            $selected_row .= "<label class='toggle-role'> <input type='checkbox' class='gs-checkbox'
-			  name='" . $setting_name . "' value='" . esc_attr($role) . "'/>";
+            $selected_row .= "<div class='role-name'><label class='toggle-role'> <input type='checkbox' class='gs-checkbox' name='" . esc_attr($setting_name) . "' value='" . esc_attr($role) . "'$checked />";
             $selected_row .= "<span class='slider-role'></span>";
             $selected_row .= "</label>";
-            $selected_row .= "<label style='margin-left:10px;'>";
-            $selected_row .= __($display_name, "wc-gsheetconnector");
-            $selected_row .= "</label>";
-            $selected_row .= "<span></span>";
+            $selected_row .= "<label>" . esc_html($display_name) . "</label>";
+            $selected_row .= "</div>";
         }
-        echo $selected_row;
+
+        //  Properly escaped final output
+        echo wp_kses_post( $selected_row );
     }
-
-
 
     /*
      * Get all editable roles except for subscriber role

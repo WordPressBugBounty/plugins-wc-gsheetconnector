@@ -14,26 +14,60 @@ if ( ! defined( 'ABSPATH' ) ) {
  * wc_gsheetconnector_Service class
  * @since 1.0
  */
-class GS_Processes {
+class wc_gsheetconnector_processes {
 
     public function __construct() {
-	add_action( 'wp_ajax_verify_gs_woo_integation', array( $this, 'verify_gs_woo_integation' ) );
+	    if ( ! get_option( 'wcgsc_options_migrated' ) ) {
+            $this->maybe_migrate_old_options();
+        }
+		add_action( 'wp_ajax_wcgsc_verify_integration', array( $this, 'wcgsc_verify_integration' ) );
 
-	//deactivate google sheet integration
-	add_action( 'wp_ajax_deactivate_gs_woo_integation', array( $this, 'deactivate_gs_woo_integation' ) );
+		//deactivate google sheet integration
+		add_action( 'wp_ajax_wcgsc_deactivate_integration', array( $this, 'wcgsc_deactivate_integration' ) );
 
-	// clear debug log data
-	add_action( 'wp_ajax_gs_woo_clear_log', array( $this, 'gs_woo_clear_logs' ) );
+		// get sheet name and tab name
+		add_action( 'wp_ajax_wcgsc_sync_google_account', array( $this, 'wcgsc_sync_google_account' ) );
 
-	// get sheet name and tab name
-	add_action( 'wp_ajax_sync_woo_google_account', array( $this, 'sync_woo_google_account' ) );
+		// get sheet names
+		add_action( 'wp_ajax_wcgsc_get_tab_list', array( $this, 'wcgsc_get_tab_list_by_sheetname' ) );
 
-	// get sheet names
-	add_action( 'wp_ajax_get_tab_list', array( $this, 'get_woo_tab_list_by_sheetname' ) );
+	    // Display widget to dashboard
+		add_action( 'wp_dashboard_setup', array( $this, 'wcgsc_add_summary_widget' ) );
+    }
 
-    // Display widget to dashboard
-	add_action( 'wp_dashboard_setup', array( $this, 'add_woo_gs_connector_summary_widget' ) );
-   }
+    private function maybe_migrate_old_options() {
+		$option_map = array(
+			'gs_woo_token'        => 'wcgsc_token',
+			'gs_woo_feeds'        => 'wcgsc_feeds',
+			'gs_woo_sheetId'      => 'wcgsc_sheetId',
+			'gs_woo_access_code'  => 'wcgsc_access_code',
+			'gs_woo_verify'       => 'wcgsc_verify',
+			'gs_woo_settings'     => 'wcgsc_settings',
+			'gs_woo_sheet_feeds'  => 'wcgsc_sheet_feeds',
+			'woogsc_api_free_creds'  => 'wcgsc_api_free_creds',
+			'gscwc_order_states' => 'wcgsc_order_states',
+			'wpgs_email_account' => 'wcgsc_email_account',
+			'is_new_client_secret_woogsc'  => 'is_new_client_secret_wcgsc',
+		);
+
+		foreach ( $option_map as $old_key => $new_key ) {
+			// Only copy if new key doesn't already exist
+			if ( get_option( $new_key, '' ) === '' ) {
+				$old_value = get_option( $old_key );
+				if ( $old_value !== false ) {
+					update_option( $new_key, $old_value );
+				}
+			}
+		}
+
+		// Optional: delete old options after successful migration
+		foreach ( array_keys( $option_map ) as $old_key ) {
+			delete_option( $old_key );
+		}
+
+		// Set migration complete flag
+        update_option( 'wcgsc_options_migrated', 1 );
+	}
 
 
    /**
@@ -41,16 +75,28 @@ class GS_Processes {
 	 *
 	 * @since 1.0
 	 */
-	public function add_woo_gs_connector_summary_widget() {
-		wp_add_dashboard_widget( 'woo_gs_dashboard', __( "<img style='width:30px;margin-right: 10px;' src='" . WC_GSHEETCONNECTOR_URL . "assets/img/woocommerce-gsc.png'><span>WooCommerce - GSheetConnector</span>", 'wc-gsheetconnector' ), array( $this, 'woo_gs_connector_summary_dashboard' ) );
+	public function wcgsc_add_summary_widget() {
+		$image_url = esc_url( WC_GSHEETCONNECTOR_URL . 'assets/img/woocommerce-gsc.png' );
+		// phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Plugin-bundled static image, not a Media Library attachment
+		$title = "<img style='width:30px;margin-right: 10px; vertical-align:middle;' src='{$image_url}' alt='WooCommerce GSheetConnector' />";
+
+		$title .= '<span style="vertical-align:middle;">' . esc_html__( 'WooCommerce - GSheetConnector', 'wc-gsheetconnector' ) . '</span>';
+
+		wp_add_dashboard_widget(
+			'wc_gsheetconnector_dashboard',
+			$title,
+			array( $this, 'wcgsc_summary_dashboard' )
+		);
 	}
+
+
 
 	/**
 	 * Display widget conetents
 	 *
 	 * @since 1.0
 	 */
-	public function woo_gs_connector_summary_dashboard() {
+	public function wcgsc_summary_dashboard() {
 		include_once WC_GSHEETCONNECTOR_ROOT . '/includes/pages/wc-gsheetconnector-dashboard-widget.php';
 	}
 
@@ -59,142 +105,137 @@ class GS_Processes {
      *
      * @since 1.0
      */
-    public function verify_gs_woo_integation($Code="") {
-	// nonce checksave_gs_woo_settings
-	check_ajax_referer( 'gs-ajax-nonce', 'security' );
+    public function wcgsc_verify_integration($Code = "") {
+			// nonce check
+			check_ajax_referer( 'wcgsc-ajax-nonce', 'security' );
 
-		/* sanitize incoming data */
-		$Code = sanitize_text_field( $_POST[ "code" ] );
+			/* validate and sanitize incoming data */
+			if ( isset( $_POST['code'] ) ) {
+				$Code = sanitize_text_field( wp_unslash( $_POST['code'] ) );
+			} else {
+				wp_send_json_error( 'Missing code.' );
+				return;
+			}
 
-		if ( ! empty( $Code ) ) {
-		    update_option( 'gs_woo_access_code', $Code );
-		} else {
-		    return;
+			if ( ! empty( $Code ) ) {
+				update_option( 'wcgsc_access_code', $Code );
+			} else {
+				wp_send_json_error( 'Empty code.' );
+				return;
+			}
+
+			if ( get_option( 'wcgsc_access_code' ) !== '' ) {
+				include_once( WC_GSHEETCONNECTOR_ROOT . '/lib/google-sheets.php' );
+				GSCWOO_googlesheet::preauth( get_option( 'wcgsc_access_code' ) );
+				wp_send_json_success();
+			} else {
+				update_option( 'wcgsc_verify', 'invalid' );
+				wp_send_json_error();
+			}
 		}
 
-		if ( get_option( 'gs_woo_access_code' ) != '' ) {
-		    include_once( WC_GSHEETCONNECTOR_ROOT . '/lib/google-sheets.php');
-		    GSCWOO_googlesheet::preauth( get_option( 'gs_woo_access_code' ) );
-		    //update_option( 'gs_woo_verify', 'valid' );
-		    wp_send_json_success();
-		} else {
-		    update_option( 'gs_woo_verify', 'invalid' );
-		    wp_send_json_error();
-		}
-    }
 
-   /**
+    /**
      * AJAX function - deactivate activation
      * @since 1.2
      */
-    public function deactivate_gs_woo_integation() {
-	// nonce check
-	check_ajax_referer( 'gs-ajax-nonce', 'security' );
+    public function wcgsc_deactivate_integration() {
+		// nonce check
+		check_ajax_referer( 'wcgsc-ajax-nonce', 'security' );
 
-	if ( get_option( 'gs_woo_token' ) !== '' ) {
-	    delete_option( 'gs_woo_feeds' );
-	    delete_option( 'gs_woo_sheetId' );
-	    delete_option( 'gs_woo_token' );
-	    delete_option( 'gs_woo_access_code' );
-	    delete_option( 'gs_woo_verify' );
+		if ( get_option( 'wcgsc_token' ) !== '' ) {
+		    delete_option( 'wcgsc_feeds' );
+		    delete_option( 'wcgsc_sheetId' );
+		    delete_option( 'wcgsc_token' );
+		    delete_option( 'wcgsc_access_code' );
+		    delete_option( 'wcgsc_verify' );
 
-	    wp_send_json_success();
-	} else {
-	    wp_send_json_error();
-	}
+		    wp_send_json_success();
+		} else {
+		    wp_send_json_error();
+		}
     }
-
-    /**
-     * AJAX function - clear log file
-     * @since 1.0
-     */
-    public function gs_woo_clear_logs() {
-	  // nonce check
-	  check_ajax_referer( 'gs-ajax-nonce', 'security' );
-
-	  $wcexistDebugFile = get_option('wcfgs_debug_log_file');
-      $clear_file_msg ='';
-      // check if debug unique log file exist or not then exists to clear file
-      if (!empty($wcexistDebugFile) && file_exists($wcexistDebugFile)) {
-       
-        $handle = fopen ( $wcexistDebugFile, 'w');
-        
-        fclose( $handle );
-        $clear_file_msg ='Logs are cleared.';
-       }
-       else{
-        $clear_file_msg = 'No log file exists to clear logs.';
-       }
-     
-      
-      wp_send_json_success($clear_file_msg);
-   }
 
     /**
      * Function - sync with google account to fetch sheet and tab name
      * @since 1.0
      */
-    public function sync_woo_google_account() {
-	$return_ajax = false;
+    public function wcgsc_sync_google_account() {
+			$return_ajax = false;
+			$init = '';
 
-	if ( isset( $_POST[ 'isajax' ] ) && $_POST[ 'isajax' ] == 'yes' ) {
-	    // nonce check
-	    check_ajax_referer( 'gs-ajax-nonce', 'security' );
-	    $init		 = sanitize_text_field( $_POST[ 'isinit' ] );
-	    $return_ajax	 = true;
-	}
+			if ( isset( $_POST['isajax'] ) && $_POST['isajax'] === 'yes' ) {
+				// nonce check
+				check_ajax_referer( 'wcgsc-ajax-nonce', 'security' );
 
-	include_once( WC_GSHEETCONNECTOR_ROOT . '/lib/google-sheets.php');
+				if ( isset( $_POST['isinit'] ) ) {
+					$init = sanitize_text_field( wp_unslash( $_POST['isinit'] ) );
+				}
 
-	$doc		 = new GSCWOO_googlesheet();
-	$doc->auth();
-	// Get all spreadsheets
-	$spreadsheetFeed = $doc->get_spreadsheets();
+				$return_ajax = true;
+			}
 
-	foreach ( $spreadsheetFeed as $sheetfeeds ) {
-	    $sheetId	 = $sheetfeeds[ 'id' ];
-	    $sheetname	 = $sheetfeeds[ 'title' ];
+			include_once( WC_GSHEETCONNECTOR_ROOT . '/lib/google-sheets.php' );
 
-	    $sheet_array[ $sheetId ] = array(
-		"sheet_name"	 => $sheetname
-	    );
-	}
-	update_option( 'gs_woo_sheet_feeds', $sheet_array );
+			$doc = new GSCWOO_googlesheet();
+			$doc->auth();
 
-	if ( $return_ajax == true ) {
-	    if ( $init == 'yes' ) {
-		wp_send_json_success( array( "success" => 'yes' ) );
-	    } else {
-		wp_send_json_success( array( "success" => 'no' ) );
-	    }
-	}
-    }
+			// Get all spreadsheets
+			$spreadsheetFeed = $doc->get_spreadsheets();
+			$sheet_array = array();
+
+			foreach ( $spreadsheetFeed as $sheetfeeds ) {
+				$sheetId   = $sheetfeeds['id'];
+				$sheetname = $sheetfeeds['title'];
+
+				$sheet_array[ $sheetId ] = array(
+					'sheet_name' => $sheetname,
+				);
+			}
+
+			update_option( 'wcgsc_sheet_feeds', $sheet_array );
+
+			if ( $return_ajax === true ) {
+				if ( $init === 'yes' ) {
+					wp_send_json_success( array( 'success' => 'yes' ) );
+				} else {
+					wp_send_json_success( array( 'success' => 'no' ) );
+				}
+			}
+		}
+
 
     /**
      * AJAX function - Fetch tab list by sheet name
      * @since 1.0
      */
-    public function get_woo_tab_list_by_sheetname() {
-	// nonce check
-	check_ajax_referer( 'gs-ajax-nonce', 'security' );
+    public function wcgsc_get_tab_list_by_sheetname() {
+		// nonce check
+		check_ajax_referer( 'wcgsc-ajax-nonce', 'security' );
 
-	$sheetname	 = sanitize_text_field( $_POST[ 'sheetname' ] );
-	$sheet_data	 = get_option( 'gs_woo_feeds' );
-	$html		 = "";
-	$tablist	 = "";
-	if ( ! empty( $sheet_data ) && array_key_exists( $sheetname, $sheet_data ) ) {
-	    $tablist = $sheet_data[ $sheetname ];
+		if ( ! isset( $_POST['sheetname'] ) ) {
+			wp_send_json_error( 'Missing sheetname' );
+			return;
+		}
+
+		$sheetname = sanitize_text_field( wp_unslash( $_POST['sheetname'] ) );
+		$sheet_data = get_option( 'wcgsc_feeds' );
+		$html = '';
+		$tablist = '';
+
+		if ( ! empty( $sheet_data ) && array_key_exists( $sheetname, $sheet_data ) ) {
+			$tablist = $sheet_data[ $sheetname ];
+		}
+
+		if ( ! empty( $tablist ) ) {
+			$html = '<option value="">' . esc_html__( "Select", "wc-gsheetconnector" ) . '</option>';
+			foreach ( $tablist as $tab ) {
+				$html .= '<option value="' . esc_attr( $tab ) . '">' . esc_html( $tab ) . '</option>';
+			}
+		}
+
+		wp_send_json_success( $html );
 	}
-
-	if ( ! empty( $tablist ) ) {
-	    $html = '<option value="">' . __( "Select", "wc-gsheetconnector" ) . '</option>';
-	    foreach ( $tablist as $tab ) {
-		$html .= '<option value="' . $tab . '">' . $tab . '</option>';
-	    }
-	}
-	wp_send_json_success( htmlentities( $html ) );
-    }
-
 }
 
-$gs_processes = new GS_Processes();
+$wc_gsheetconnector_processes = new wc_gsheetconnector_processes();

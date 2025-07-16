@@ -1,3 +1,8 @@
+<div id="plugin-manager-data"
+     data-ajaxurl="<?php echo esc_url(admin_url('admin-ajax.php')); ?>"
+     data-plugin-nonce="<?php echo esc_attr(wp_create_nonce('plugin_manager_nonce')); ?>"
+     data-deactivate-nonce="<?php echo esc_attr(wp_create_nonce('deactivate_plugin_nonce')); ?>">
+</div>
 <!-- tab extenion page  -->
 <div class="wrap">
     <h2></h2>
@@ -286,7 +291,7 @@
                                             data-plugin="<?php echo esc_attr($details['pro_plugin_active']); ?>">
                                             <img src="<?php echo esc_url(WC_GSHEETCONNECTOR_URL . 'assets/img/ajax-loader.gif'); ?>"
                                                 alt="Loading..." class="loaderimg" />
-                                            <?php _e('Activate', 'gsheetconnector'); ?>
+                                           <?php esc_html_e('Activate', 'wc-gsheetconnector'); ?>
                                         </button>
                                     </div>
                                 </div>
@@ -411,7 +416,7 @@
                                         data-plugin="<?php echo esc_attr($data['connector']); ?>">
                                         <img src="<?php echo esc_url(WC_GSHEETCONNECTOR_URL . 'assets/img/ajax-loader.gif'); ?>"
                                             alt="Loading..." class="loaderimg" />
-                                        <?php _e('Activate', 'gsheetconnector'); ?>
+                                       <?php esc_html_e('Activate', 'wc-gsheetconnector'); ?>
                                     </button>
 
                                 <?php else: ?>
@@ -427,7 +432,7 @@
                                         data-plugin="<?php echo esc_attr($data['connector']); ?>" style="display: none;">
                                         <img src="<?php echo esc_url(WC_GSHEETCONNECTOR_URL . 'assets/img/ajax-loader.gif'); ?>"
                                             alt="Loading..." class="loaderimg" />
-                                        <?php _e('Activate', 'gsheetconnector'); ?>
+                                       <?php esc_html_e('Activate', 'wc-gsheetconnector'); ?>
                                     </button>
                                 <?php endif; ?>
                             </div>

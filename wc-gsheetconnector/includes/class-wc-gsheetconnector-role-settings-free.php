@@ -4,9 +4,8 @@
  * @since 1.0
  */
 // Exit if accessed directly
-if (!defined('ABSPATH')) {
-   exit;
-}
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 
 /**
  * WPF_Role_Settings Class
@@ -17,13 +16,13 @@ class wc_gsheetconnector_role_settings_free {
    /**
     * @var string group name
     */
-   protected $gs_group_name = 'gs-woo-settings';
+   protected $gs_group_name = 'wcgsc-settings';
 
    /**
     * @var string roles that can access Google Sheet page
      @since 1.0
     */
-   protected $gs_woo_page_roles_setting_option_name = 'gs_woo_page_roles_setting';
+   protected $gs_woo_page_roles_setting_option_name = 'wcgsc_page_roles_setting';
 
    
    /**
@@ -36,7 +35,7 @@ class wc_gsheetconnector_role_settings_free {
 
    // White list our options using the Settings API
    public function init_settings() {
-      register_setting('gs_woo-settings', $this->gs_woo_page_roles_setting_option_name, array($this, 'validate_gs_woo_access_roles'));
+      register_setting('wcgsc-settings', $this->gs_woo_page_roles_setting_option_name, array($this, 'validate_wcgsc_access_roles'));
    }
 
    /**
@@ -45,7 +44,7 @@ class wc_gsheetconnector_role_settings_free {
     * @return array $roles
     * @since 1.0
     */
-   public function validate_gs_woo_access_roles($selected_roles) {
+   public function validate_wcgsc_access_roles($selected_roles) {
       $roles = array();
       $system_roles = wc_gsheetconnector_utility::instance()->get_system_roles();
 
@@ -64,48 +63,46 @@ class wc_gsheetconnector_role_settings_free {
 
    public function add_role_setting_page_free() {
       if ( ! current_user_can( 'administrator' ) ) {
-      ?>
-      <span class="per_not_allo"><?php echo __('Permission Not Allowed', 'wc-gsheetconnector'); ?> </span>
-      <?php
-        return;
+         ?>
+         <span class="per_not_allo"><?php echo esc_html( __( 'Permission Not Allowed', 'wc-gsheetconnector' ) ); ?></span>
+         <?php
+         return;
       }
-      $gs_woo_page_roles = get_option($this->gs_woo_page_roles_setting_option_name);
-
-      //$gs_woo_tab_roles = get_option($this->gs_woo_tab_roles_setting_option_name);
+      $gs_woo_page_roles = get_option( $this->gs_woo_page_roles_setting_option_name );
       ?>
-      <form id="gs_woo_gs_settings_form" method="post" action="options.php">
-      <?php
-      // adds nonce and option_page fields for the settings page
-      settings_fields('gs_woo-settings');
-      settings_errors();
-      ?>
-         <div class="wrap gs-form" id="opener">
+      <form id="wcgsc_settings_form" method="post" action="options.php">
+         <?php
+         settings_fields( 'wcgsc-settings' );
+         settings_errors();
+         ?>
+         <div class="wrap wcgsc-form" id="opener">
             <div class="card" id="googlesheet">
-               <div class="wrap gs-form">
-                  <div class="gs_woo-gs-card">
-                  	 
-                    <h2>
-                <span class="title1"> <?php echo __('Roles that can access Google Sheet Page', 'wc-gsheetconnector'); ?>      </span>
-                 <span class="pro-ver"><?php echo __('PRO', 'wc-gsheetconnector'); ?> </span>
-                 
-                            </h2>
-				      <?php
-				      wc_gsheetconnector_utility::instance()->gs_woocommerce_checkbox_roles_multi(
-				              $this->gs_woo_page_roles_setting_option_name . '[]', $gs_woo_page_roles);   
-                  
-				      ?>
+               <div class="wrap wcgsc-form">
+                  <div class="wcgsc-card">
+                     <h2>
+                        <span class="title1"><?php echo esc_html( __( 'Roles that can access Google Sheet Page', 'wc-gsheetconnector' ) ); ?></span>
+                        <span class="pro-ver"><?php echo esc_html( __( 'PRO', 'wc-gsheetconnector' ) ); ?></span>
+                     </h2>
+                     <?php
+                     wc_gsheetconnector_utility::instance()->wcgsc_checkbox_roles_multi(
+                        $this->gs_woo_page_roles_setting_option_name . '[]',
+                        $gs_woo_page_roles
+                     );
+                     ?>
                      <br/>
                      <div class="select-info">
-                        <input type="submit" class="button button-primary button-large" name="gs_woo_gs_settings" value="<?php echo __("Buy Pro", "wc-gsheetconnector"); ?>"/>
+                        <input type="submit" class="button button-primary button-large" name="gs_woo_gs_settings"
+                               value="<?php echo esc_attr( __( 'Buy Pro', 'wc-gsheetconnector' ) ); ?>"/>
                      </div>
                   </div>
                </div>
-           </div>
-       </div>
-    </form>
-<!-- popup file include here -->
-<?php include( WC_GSHEETCONNECTOR_PATH . "includes/pages/pro-popup.php" ) ;
+            </div>
+         </div>
+      </form>
+
+      <?php include( WC_GSHEETCONNECTOR_PATH . 'includes/pages/pro-popup.php' );
    }
+
 
 }
 

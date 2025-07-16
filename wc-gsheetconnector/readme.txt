@@ -1,12 +1,12 @@
-=== WooCommerce Google Sheet Connector ===
+=== GSheetConnector for WC ===
 Contributors: westerndeal, abdullah17, gsheetconnector
 Author URI: https://www.gsheetconnector.com/
 Tags:  woocommerce, woocommerce addon, woocommerce google sheets, sync woocommerce with google sheets, woocommerce orders sync to google sheets,
-Tested up to: 6.7.1
+Tested up to: 6.8
 Requires at least: 5.3
 Requires PHP: 7.4
 Requires Plugins: woocommerce
-Stable tag: 1.3.20
+Stable tag: 1.4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,7 @@ Google Sheet Integration for WooCommerce Plugin, Addon plugin of WooCommerce - H
 
 == Description ==
 
-WooCommerce Google Spreadsheet Addon Plugin to connect with Google Sheets!
+Google Spreadsheet addon plugin for WooCommerce to connect your store data directly with Google Sheets.
 
 This plugin is a bridge between your [WooCommerce](https://wordpress.org/plugins/woocommerce/) orders and [Google Sheets](https://www.google.com/sheets/about/). Whenever any new order is placed in **WooCommerce** a new row with the order details will be added or moved to the appropriate **Google Sheet Tabs as per the order status.**
 
@@ -47,7 +47,7 @@ This plugin is a bridge between your [WooCommerce](https://wordpress.org/plugins
 
 **Compatible with various WooCommerce Addons.**
 
-* **Upgrade to [WooCommerce Google Sheet PRO Version](https://www.gsheetconnector.com/wc-gsheetconnector-pro?wp-repo)**
+* **Upgrade to [GSheetConnector for WC PRO Version](https://www.gsheetconnector.com/wc-gsheetconnector-pro?wp-repo)**
 
 ➜ Custom Google API Integration Settings
 ➜ Allowing to Create a New Sheet from Plugin Settings
@@ -57,7 +57,10 @@ This plugin is a bridge between your [WooCommerce](https://wordpress.org/plugins
 ➜ Syncronize Existing Orders, Products and Users
 ➜ Freeze Header Settings
 ➜ Header Color and Row Odd/Even Colors.
-Refer to the features and benefits page for more detailed information on the features of the  [WooCommerce Google Sheet PRO Plugin](https://www.gsheetconnector.com/wc-gsheetconnector-pro?wp-repo)
+Refer to the features and benefits page for more detailed information on the features of the  [GSheetCnnector for WC PRO Plugin](https://www.gsheetconnector.com/wc-gsheetconnector-pro?wp-repo)
+
+**This plugin is not affiliated with or endorsed by WooCommerce or Automattic.**
+
 
 > <strong>Google Sheet Connector Contact Form Addons</strong>
 [CF7 Google Sheet Connector](https://www.gsheetconnector.com/cf7-google-sheet-connector-pro?utm_source=wordpress.org&utm_medium=referral&utm_campaign=WPGSC&utm_content=plugin+repos+description)
@@ -101,6 +104,20 @@ Please double-check those items and hopefully getting them right will fix the is
 Make sure to <a href="https://www.gsheetconnector.com/how-to-enable-debugging-in-wordpress">enable debug log from wp-config.php</a> if submitted order is not showing in sheet, It will helps to show the conflict issue (if there is any) or shows what is making an issue.
 
 == Changelog ==
+
+= 1.4.3 (16-07-2025) =
+- Fixed: Solved  Licensing/Trademark issues in main plugin file and readme.
+- Removed direct links to 5-star reviews to comply with WordPress plugin guidelines.
+- Updated “Tested Up To” value to reflect compatibility with the latest WordPress version.
+- Replaced static <script> and <link> tags with wp_enqueue_script and wp_enqueue_style for proper asset loading and dependency management.
+- Eliminated all remote file inclusions to improve security and meet WordPress repository requirements.
+- Removed plugin folder write operations and any instructions requiring users to manually edit/write files inside the plugin directory.
+- Escaped all variables and options before outputting to the frontend or admin interface.
+- Replaced generic function/class/constant/option names with properly prefixed versions to avoid naming collisions.
+- Corrected text domain to match the plugin slug for consistent internationalization support.
+- Blocked direct file access by adding appropriate file-level checks (e.g., defined( 'ABSPATH' ) || exit;).
+- Implemented proper nonce verification and security best practices throughout AJAX and form submissions.
+- Passed Plugin Check review with all critical issues resolved.
 
 = 1.3.20 (21-04-2025) =
 - Fixed: Connected Email display issue.

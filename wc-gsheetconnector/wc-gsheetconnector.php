@@ -1,15 +1,17 @@
 <?php
 /**
- * Plugin Name: WooCommerce GSheetConnector
+ * Plugin Name: GSheetConnector for WC
  * Plugin URI: https://wordpress.org/plugins/wc-gsheetconnector/
  * Description: Send your WooCommerce data to your Google Sheets spreadsheet.
  * Author: GSheetConnector
  * Author URI: https://www.gsheetconnector.com/
- * Version: 1.3.20
+ * Version: 1.4.3
  * Text Domain: wc-gsheetconnector
  * Domain Path:  /languages
  * WooCommerce requires at least: 3.2.0
  * Requires Plugins: woocommerce
+ * License: GPLv2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
 
 if (!defined('ABSPATH')) {
@@ -20,55 +22,9 @@ if (wc_gsheetconnector_Init::gscwoo_is_pugin_active('wc_gsheetconnector_Init_Pro
     return;
 }
 
-
-/*freemius*/
-if (function_exists('is_plugin_active') && is_plugin_active('wc-gsheetconnector/wc-gsheetconnector.php')) {
-    if (!function_exists('gs_woofree')) {
-        // Create a helper function for easy SDK access.
-        function gs_woofree()
-        {
-            global $gs_woofree;
-
-            if (!isset($gs_woofree)) {
-                // Activate multisite network integration.
-                if (!defined('WP_FS__PRODUCT_9480_MULTISITE')) {
-                    define('WP_FS__PRODUCT_9480_MULTISITE', true);
-                }
-
-                // Include Freemius SDK.
-                require_once dirname(__FILE__) . '/freemius/start.php';
-
-                $gs_woofree = fs_dynamic_init(array(
-                    'id' => '9480',
-                    'slug' => 'wc-gsheetconnector',
-                    'type' => 'plugin',
-                    'public_key' => 'pk_487f703ba4a974974c9d344111193',
-                    'is_premium' => false,
-                    'has_addons' => false,
-                    'has_paid_plans' => false,
-                    'menu' => array(
-                        'slug' => 'wc-gsheetconnector-config',
-                        'first-path' => (!is_multisite() ? 'admin.php?page=wc-gsheetconnector-config' : 'plugins.php'),
-                        'account' => false,
-                    ),
-                ));
-            }
-
-            return $gs_woofree;
-        }
-
-        // Init Freemius.
-        gs_woofree();
-        // Signal that SDK was initiated.
-        do_action('gs_woofree_loaded');
-    }
-}
-/*freemius*/
-
-
 // Declare some global constants
-define('WC_GSHEETCONNECTOR_VERSION', '1.3.20');
-define('WC_GSHEETCONNECTOR_DB_VERSION', '1.3.20');
+define('WC_GSHEETCONNECTOR_VERSION', '1.4.3');
+define('WC_GSHEETCONNECTOR_DB_VERSION', '1.4.3');
 define('WC_GSHEETCONNECTOR_ROOT', dirname(__FILE__));
 define('WC_GSHEETCONNECTOR_URL', plugins_url('/', __FILE__));
 define('WC_GSHEETCONNECTOR_BASE_FILE', basename(dirname(__FILE__)) . '/wc-gsheetconnector.php');
@@ -105,16 +61,16 @@ class wc_gsheetconnector_Init
     {
 
         //run on activation of plugin
-        register_activation_hook(__FILE__, array($this, 'wc_gsheetconnector_activate'));
+        register_activation_hook(__FILE__, array($this, 'wcgsc_activate'));
 
         //run on deactivation of plugin
-        register_deactivation_hook(__FILE__, array($this, 'wc_gsheetconnector_deactivate'));
+        register_deactivation_hook(__FILE__, array($this, 'wcgsc_deactivate'));
 
         //run on uninstall
-        register_uninstall_hook(__FILE__, array('wc_gsheetconnector_Init', 'gs_wocommerce_free_uninstall'));
+        register_uninstall_hook(__FILE__, array('wc_gsheetconnector_Init', 'wcgsc_free_uninstall'));
 
         // clear debug logs method using ajax for system status tab
-        add_action('wp_ajax_wc_clear_debug_logs', array($this, 'wc_clear_debug_logs'));
+        add_action('wp_ajax_wcgsc_clear_debug_logs', array($this, 'wcgsc_clear_debug_logs'));
 
         // validate is woocommerce plugin exist
         add_action('admin_init', array($this, 'validate_parent_plugin_exists'));
@@ -167,32 +123,19 @@ class wc_gsheetconnector_Init
         return $plugin_meta;
     }
 
-
-    public static function gs_wocommerce_free_uninstall()
-    {
-        // Not like register_uninstall_hook(), you do NOT have to use a static function.
-        // gs_woofree()->add_action('after_uninstall', 'gs_woofree_uninstall_cleanup');
-        if (!defined('ABSPATH') && !defined('WP_UNINSTALL_PLUGIN')) {
-            exit();
-        }
-
-        delete_site_option('WC_GS_info');
-    }
-
     /**
      * Do things on plugin activation
      * @since 1.0
      */
-    public function wc_gsheetconnector_activate($network_wide)
+    public function wcgsc_activate($network_wide)
     {
         global $wpdb;
         $this->run_on_activation();
+
         if (function_exists('is_multisite') && is_multisite()) {
-            // check if it is a network activation - if so, run the activation function for each blog id
             if ($network_wide) {
-                // Get all blog ids
-                $blogids = $wpdb->get_col("SELECT blog_id FROM {$wpdb->base_prefix}blogs");
-                foreach ($blogids as $blog_id) {
+                $sites = get_sites(array('fields' => 'ids'));
+                foreach ($sites as $blog_id) {
                     switch_to_blog($blog_id);
                     $this->run_for_site();
                     restore_current_blog();
@@ -201,9 +144,9 @@ class wc_gsheetconnector_Init
             }
         }
 
-        // for non-network sites only
         $this->run_for_site();
     }
+
 
     /**
      * Called on activation.
@@ -229,7 +172,7 @@ class wc_gsheetconnector_Init
            wc_gsheetconnector_utility::instance()->save_api_credentials();
 
           } catch (Exception $e) {
-            wc_gsheetconnector_utility::gs_debug_log("Something Wrong : - " . $e->getMessage());
+            
         }
     }
 
@@ -242,39 +185,39 @@ class wc_gsheetconnector_Init
     {
         $plugin_options = get_site_option('WC_GS_info');
         if ($plugin_options['version'] == '1.3.18') {
-          $this->upgrade_database_18();
+            $this->upgrade_database_18();
         }
 
         // update the version value
         $google_sheet_info = array(
-            'version' => WC_GSHEETCONNECTOR_VERSION,
-            'db_version' => WC_GSHEETCONNECTOR_DB_VERSION
+            'version'     => WC_GSHEETCONNECTOR_VERSION,
+            'db_version'  => WC_GSHEETCONNECTOR_DB_VERSION
         );
+
         // check if debug log file exists or not
         $wclogFilePathToDelete = WC_GSHEETCONNECTOR_PATH . "logs/log.txt";
-        // Check if the log file exists before attempting to delete
         if (file_exists($wclogFilePathToDelete)) {
-            unlink($wclogFilePathToDelete);
+            wp_delete_file($wclogFilePathToDelete);
         }
+
         update_site_option('WC_GS_info', $google_sheet_info);
-       
     }
+
     public function upgrade_database_18()
     {
-        global $wpdb;
-
         // look through each of the blogs and upgrade the DB
         if (function_exists('is_multisite') && is_multisite()) {
-            // Get all blog ids; foreach them and call the uninstall procedure on each of them
-            $blog_ids = $wpdb->get_col("SELECT blog_id FROM {$wpdb->base_prefix}blogs");
+            // Use core function to get all blog IDs (cached and safe)
+            $blog_ids = get_sites(array('fields' => 'ids'));
 
-            // Get all blog ids; foreach them and call the install procedure on each of them if the plugin table is found
             foreach ($blog_ids as $blog_id) {
                 switch_to_blog($blog_id);
                 $this->upgrade_helper_18();
                 restore_current_blog();
             }
         }
+
+        // Run on current site (non-multisite or base site)
         $this->upgrade_helper_18();
     }
 
@@ -284,25 +227,12 @@ class wc_gsheetconnector_Init
         wc_gsheetconnector_utility::instance()->save_api_credentials();
     }
 
-    /**
-     * AJAX function - clear log file for system status tab
-     * @since 2.1
-     */
-    public function wc_clear_debug_logs()
-    {
-        // nonce check
-        check_ajax_referer('gs-ajax-nonce', 'security');
-        $handle = fopen(WP_CONTENT_DIR . '/debug.log', 'w');
-        fclose($handle);
-        wp_send_json_success();
-    }
-
-
+   
     /**
      * deactivate the plugin
      * @since 1.0
      */
-    public function wc_gsheetconnector_deactivate($network_wide)
+    public function wcgsc_deactivate($network_wide)
     {
 
     }
@@ -313,15 +243,14 @@ class wc_gsheetconnector_Init
      *
      *  @since 1.0
      */
-    public static function gs_connector_free_uninstall()
+    public static function wcgsc_free_uninstall()
     {
-        global $wpdb;
         wc_gsheetconnector_Init::run_on_uninstall();
-        if (function_exists('is_multisite') && is_multisite()) {
-            //Get all blog ids; foreach of them call the uninstall procedure
-            $blog_ids = $wpdb->get_col("SELECT blog_id FROM {$wpdb->base_prefix}blogs");
 
-            //Get all blog ids; foreach them and call the install procedure on each of them if the plugin table is found
+        if (function_exists('is_multisite') && is_multisite()) {
+            // Use core WordPress function to safely get all blog IDs
+            $blog_ids = get_sites(array('fields' => 'ids'));
+
             foreach ($blog_ids as $blog_id) {
                 switch_to_blog($blog_id);
                 wc_gsheetconnector_Init::delete_for_site();
@@ -329,8 +258,10 @@ class wc_gsheetconnector_Init
             }
             return;
         }
+
         wc_gsheetconnector_Init::delete_for_site();
     }
+
 
     /**
      * Called on uninstall - deletes site_options
@@ -342,7 +273,7 @@ class wc_gsheetconnector_Init
         if (!defined('ABSPATH') && !defined('WP_UNINSTALL_PLUGIN'))
             exit();
 
-        delete_site_option('google_sheet_info');
+        delete_site_option('WC_GS_info');
     }
 
     /**
@@ -352,13 +283,12 @@ class wc_gsheetconnector_Init
      */
     private static function delete_for_site()
     {
-
-        delete_option('gs_woo_access_code');
-        delete_option('gs_woo_verify');
-        delete_option('gs_woo_token');
-        delete_option('gs_woo_feeds');
-        delete_option('gs_woo_sheetId');
-        delete_post_meta_by_key('gs_woo_settings');
+        delete_option('wcgsc_access_code');
+        delete_option('wcgsc_verify');
+        delete_option('wcgsc_token');
+        delete_option('wcgsc_feeds');
+        delete_option('wcgsc_sheetId');
+        delete_post_meta_by_key('wcgsc_settings');
     }
 
     /**
@@ -368,23 +298,25 @@ class wc_gsheetconnector_Init
      */
     public function validate_parent_plugin_exists()
     {
-
         $plugin = plugin_basename(__FILE__);
 
         if ((!is_plugin_active('woocommerce/woocommerce.php')) || (!file_exists(plugin_dir_path(__DIR__) . 'woocommerce/woocommerce.php'))) {
-            // exit('vcnvc');
-            add_action('admin_notices', array($this, 'wc_gsheetconnector_missing_notice'), 10, 2);
-            add_action('network_admin_notices', array($this, 'wc_gsheetconnector_missing_notice'), 10, 3);
+            add_action('admin_notices', array($this, 'wc_gsheetconnector_missing_notice'));
+            add_action('network_admin_notices', array($this, 'wc_gsheetconnector_missing_notice'));
+
             deactivate_plugins($plugin);
-            if (isset($_GET['activate'])) {
-                // Do not sanitize it because we are destroying the variables from URL
+
+            // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Activation context, handled by WordPress core
+            if (isset($_GET['activate']) && $_GET['activate'] === 'true') {
                 unset($_GET['activate']);
             }
-            // Redirect to the plugins page
-            // wp_redirect(admin_url('plugins.php'));
-            // exit; // Ensure that WordPress redirects immediately
+
+            // Optional: redirect safely
+            // wp_safe_redirect(admin_url('plugins.php'));
+            // exit;
         }
     }
+
 
     /**
      * If WooCommerce plugin is not installed or activated then throw the error
@@ -401,7 +333,7 @@ class wc_gsheetconnector_Init
             'message' => __('GSheetConnector WooCommerce Add-on requires WooCommerce plugin to be installed and activated.', 'wc-gsheetconnector')
         ));
 
-        echo $plugin_error;
+        echo wp_kses_post( $plugin_error );
     }
 
     /**
@@ -409,33 +341,40 @@ class wc_gsheetconnector_Init
      * Creates the options and DB (required by per site)
      * @since 1.0
      */
+    // phpcs:disable WordPress.Security.NonceVerification.Recommended -- This function does not process user input.
     private function run_for_site()
     {
-        if (!get_option('gs_woo_access_code')) {
-            update_option('gs_woo_access_code', '');
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Not processing user input, just setting defaults.
+        if (!get_option('wcgsc_access_code')) {
+            update_option('wcgsc_access_code', '');
         }
-        if (!get_option('gs_woo_verify')) {
-            update_option('gs_woo_verify', 'invalid');
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        if (!get_option('wcgsc_verify')) {
+            update_option('wcgsc_verify', 'invalid');
         }
-        if (!get_option('gs_woo_token')) {
-            update_option('gs_woo_token', '');
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        if (!get_option('wcgsc_token')) {
+            update_option('wcgsc_token', '');
         }
-        if (!get_option('gs_woo_feeds')) {
-            update_option('gs_woo_feeds', '');
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        if (!get_option('wcgsc_feeds')) {
+            update_option('wcgsc_feeds', '');
         }
-        if (!get_option('gs_woo_sheetId')) {
-            update_option('gs_woo_sheetId', '');
+        if (!get_option('wcgsc_sheetId')) {
+            update_option('wcgsc_sheetId', '');
         }
-        if (!get_option('gs_woo_settings')) {
-            update_option('gs_woo_settings', '');
+        if (!get_option('wcgsc_settings')) {
+            update_option('wcgsc_settings', '');
         }
-        if (!get_option('gs_woo_checkbox_settings')) {
-            update_option('gs_woo_checkbox_settings', array());
+        if (!get_option('wcgsc_checkbox_settings')) {
+            update_option('wcgsc_checkbox_settings', array());
         }
-        if (!get_option('gs_woo_tab_roles_setting')) {
-            update_option("gs_woo_tab_roles_setting", array());
+        if (!get_option('wcgsc_tab_roles_setting')) {
+            update_option("wcgsc_tab_roles_setting", array());
         }
     }
+    // phpcs:enable
+
 
     public function load_css_and_js_files()
     {
@@ -449,9 +388,26 @@ class wc_gsheetconnector_Init
      */
     public function add_css_files()
     {
-        if (is_admin() && (isset($_GET['page']) && ($_GET['page'] == 'wc-gsheetconnector-config'))) {
-            wp_enqueue_style('gs-woocommerce-connector-css', WC_GSHEETCONNECTOR_URL . 'assets/css/gs-woocommerce-connector.css', WC_GSHEETCONNECTOR_VERSION, true);
+        if (is_admin() && (
+            // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Safe usage for enqueue logic based on admin page check
+            isset($_GET['page']) && $_GET['page'] == 'wc-gsheetconnector-config'
+        )) {
+            wp_enqueue_style(
+                'gs-woocommerce-connector-css',
+                WC_GSHEETCONNECTOR_URL . 'assets/css/gs-woocommerce-connector.css',
+                [],
+                WC_GSHEETCONNECTOR_VERSION,
+                'all'
+            );
+            wp_enqueue_style(
+                'wc-gsheetconnector-debug-css',
+                WC_GSHEETCONNECTOR_URL . 'assets/css/system-debug.css',
+                [],
+                WC_GSHEETCONNECTOR_VERSION,
+                'all'
+            );
         }
+
     }
 
     /**
@@ -460,11 +416,37 @@ class wc_gsheetconnector_Init
      */
     public function add_js_files()
     {
-        if (is_admin() && (isset($_GET['page']) && ($_GET['page'] == 'wc-gsheetconnector-config'))) {
-            wp_enqueue_script('gs-connector-js', WC_GSHEETCONNECTOR_URL . 'assets/js/gs-connector.js', WC_GSHEETCONNECTOR_VERSION, true);
-        }
+        if (is_admin() &&
+            // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Safe usage for enqueue logic based on admin page check
+            isset($_GET['page']) && $_GET['page'] === 'wc-gsheetconnector-config'
+        ) {
+            wp_enqueue_script(
+                'gs-connector-js',
+                WC_GSHEETCONNECTOR_URL . 'assets/js/gs-connector.js',
+                array('jquery'),
+                WC_GSHEETCONNECTOR_VERSION,
+                true
+            );
 
+            wp_enqueue_script(
+                'wc-gsheetconnector-popup-js',
+                WC_GSHEETCONNECTOR_URL . 'assets/js/wc-gsheet-popup.js',
+                array('jquery'),
+                WC_GSHEETCONNECTOR_VERSION,
+                true
+            );
+
+            wp_enqueue_script(
+                'wc-gsheetconnector-debug-js',
+                WC_GSHEETCONNECTOR_URL . 'assets/js/system-debug.js',
+                array('jquery'),
+                WC_GSHEETCONNECTOR_VERSION,
+                true
+            );
+        }
     }
+
+
 
     /**
      * Create/Register menu items for the plugin.
@@ -473,7 +455,7 @@ class wc_gsheetconnector_Init
     public function register_gs_menu_pages()
     {
         $current_role = wc_gsheetconnector_utility::instance()->get_current_user_role();
-        $gs_woo_roles = get_option('gs_woo_page_roles_setting');
+        $gs_woo_roles = get_option('wcgsc_page_roles_setting');
 
         if ($current_role === "administrator" || is_super_admin()) {
             // if (( is_array($gs_woo_roles) && array_key_exists($current_role, $gs_woo_roles) ) || $current_role === "administrator" || is_super_admin()) {
@@ -546,7 +528,6 @@ class wc_gsheetconnector_Init
      */
     public function get_wcfree_system_info()
     {
-
         global $wpdb;
 
         // Get WordPress version
@@ -564,17 +545,12 @@ class wc_gsheetconnector_Init
             $parent_theme_name_version = 'N/A';
         }
 
-
         // Check plugin version and subscription plan
         $plugin_version = defined('WC_GSHEETCONNECTOR_VERSION') ? WC_GSHEETCONNECTOR_VERSION : 'N/A';
         $subscription_plan = 'FREE';
 
         // Check Google Account Authentication
-        // $api_token = get_option('gs_token');
-        // $google_sheet = new CF7GSC_googlesheet_PRO();
-        // $email_account = $google_sheet->gsheet_print_google_account_email();
-
-        $api_token_auto = get_option('gs_woo_token');
+        $api_token_auto = get_option('wcgsc_token');
 
         if (!empty($api_token_auto)) {
             // The user is authenticated through the auto method
@@ -586,18 +562,12 @@ class wc_gsheetconnector_Init
             $connected_email = 'Not Auth';
         }
 
-
-        // $google_sheet = new CF7GSC_googlesheet_PRO();
-        // $email_account = $google_sheet->gsheet_print_google_account_email_manual(); 
-        //$api_status = empty($api_token) ? 'Not Authenticated' : 'Authenticated';
-
         // Check Google Permission
-        $gs_verify_status = get_option('gs_woo_verify');
+        $gs_verify_status = get_option('wcgsc_verify');
         $search_permission = ($gs_verify_status === 'valid') ? 'Given' : 'Not Given';
 
-
         // Create the system info HTML
-        $system_info = '<div class="system-statuswc">';
+        $system_info = '<div class="wcgsc-system-status">';
         $system_info .= '<h4><button id="show-info-button" class="info-button">GSheetConnector<span class="dashicons dashicons-arrow-down"></span></h4>';
         $system_info .= '<div id="info-container" class="info-content" style="display:none;">';
         $system_info .= '<h3>GSheetConnector</h3>';
@@ -606,17 +576,13 @@ class wc_gsheetconnector_Init
         $system_info .= '<tr><td>Plugin Subscription Plan</td><td>' . esc_html($subscription_plan) . '</td></tr>';
         $system_info .= '<tr><td>Connected Email Account</td><td>' . $connected_email . '</td></tr>';
 
-
-        $gscpclass = 'gscpermission-notgiven';
+        $gscpclass = 'wcgsc-permission-notgiven';
         if ($search_permission == "Given") {
-            $gscpclass = 'gscpermission-given';
+            $gscpclass = 'wcgsc-permission-given';
         }
         $system_info .= '<tr><td>Google Drive Permission</td><td class="' . $gscpclass . '">' . esc_html($search_permission) . '</td></tr>';
 
         $system_info .= '<tr><td>Google Sheet Permission</td><td class="' . $gscpclass . '">' . esc_html($search_permission) . '</td></tr>';
-
-        // $system_info .= '<tr><td>Google Drive Permission</td><td>' . esc_html($search_permission) . '</td></tr>';
-        // $system_info .= '<tr><td>Google Sheet Permission</td><td>' . esc_html($search_permission) . '</td></tr>';
         $system_info .= '</table>';
         $system_info .= '</div>';
         // Add WordPress info
@@ -625,31 +591,36 @@ class wc_gsheetconnector_Init
         $system_info .= '<div id="wordpress-info-container" class="info-content" style="display:none;">';
         $system_info .= '<h3>WordPress Info</h3>';
         $system_info .= '<table>';
-        $system_info .= '<tr><td>Version</td><td>' . get_bloginfo('version') . '</td></tr>';
-        $system_info .= '<tr><td>Site Language</td><td>' . get_bloginfo('language') . '</td></tr>';
+
+        $system_info .= '<tr><td>Version</td><td>' . esc_html(get_bloginfo('version')) . '</td></tr>';
+        $system_info .= '<tr><td>Site Language</td><td>' . esc_html(get_bloginfo('language')) . '</td></tr>';
         $system_info .= '<tr><td>Debug Mode</td><td>' . (WP_DEBUG ? 'Enabled' : 'Disabled') . '</td></tr>';
-        $system_info .= '<tr><td>Home URL</td><td>' . get_home_url() . '</td></tr>';
-        $system_info .= '<tr><td>Site URL</td><td>' . get_site_url() . '</td></tr>';
-        $system_info .= '<tr><td>Permalink structure</td><td>' . get_option('permalink_structure') . '</td></tr>';
+        $system_info .= '<tr><td>Home URL</td><td>' . esc_url(get_home_url()) . '</td></tr>';
+        $system_info .= '<tr><td>Site URL</td><td>' . esc_url(get_site_url()) . '</td></tr>';
+        $system_info .= '<tr><td>Permalink structure</td><td>' . esc_html(get_option('permalink_structure')) . '</td></tr>';
         $system_info .= '<tr><td>Is this site using HTTPS?</td><td>' . (is_ssl() ? 'Yes' : 'No') . '</td></tr>';
         $system_info .= '<tr><td>Is this a multisite?</td><td>' . (is_multisite() ? 'Yes' : 'No') . '</td></tr>';
         $system_info .= '<tr><td>Can anyone register on this site?</td><td>' . (get_option('users_can_register') ? 'Yes' : 'No') . '</td></tr>';
         $system_info .= '<tr><td>Is this site discouraging search engines?</td><td>' . (get_option('blog_public') ? 'No' : 'Yes') . '</td></tr>';
-        $system_info .= '<tr><td>Default comment status</td><td>' . get_option('default_comment_status') . '</td></tr>';
+        $system_info .= '<tr><td>Default comment status</td><td>' . esc_html(get_option('default_comment_status')) . '</td></tr>';
 
-        $server_ip = $_SERVER['REMOTE_ADDR'];
-        if ($server_ip == '127.0.0.1' || $server_ip == '::1') {
-            $environment_type = 'localhost';
-        } else {
-            $environment_type = 'production';
-        }
+        // Validate and sanitize $_SERVER['REMOTE_ADDR']
+        $server_ip = isset($_SERVER['REMOTE_ADDR']) ? sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR'])) : '';
+        $environment_type = ( $server_ip === '127.0.0.1' || $server_ip === '::1' ) ? 'localhost' : 'production';
         $system_info .= '<tr><td>Environment type</td><td>' . esc_html($environment_type) . '</td></tr>';
 
+        // User count
         $user_count = count_users();
         $total_users = $user_count['total_users'];
         $system_info .= '<tr><td>User Count</td><td>' . esc_html($total_users) . '</td></tr>';
 
+        // Safe fallback for blog_publicize option
         $system_info .= '<tr><td>Communication with WordPress.org</td><td>' . (get_option('blog_publicize') ? 'Yes' : 'No') . '</td></tr>';
+
+        // Validate and sanitize $_SERVER['SERVER_SOFTWARE']
+        $server_software = isset($_SERVER['SERVER_SOFTWARE']) ? sanitize_text_field(wp_unslash($_SERVER['SERVER_SOFTWARE'])) : 'Unavailable';
+        $system_info .= '<tr><td>Web Server</td><td>' . esc_html($server_software) . '</td></tr>';
+
         $system_info .= '</table>';
         $system_info .= '</div>';
 
@@ -734,14 +705,29 @@ class wc_gsheetconnector_Init
         $system_info .= '</table>';
         $system_info .= '</div>';
         // Webserver Configuration
+        // Load WP_Filesystem for file permission check
+        if ( ! function_exists('WP_Filesystem') ) {
+            require_once ABSPATH . 'wp-admin/includes/file.php';
+        }
+        global $wp_filesystem;
+        WP_Filesystem();
+
+        // Check .htaccess writable status using WP_Filesystem
+        $htaccess_path = ABSPATH . '.htaccess';
+        $htaccess_writable = $wp_filesystem->is_writable( $htaccess_path ) ? 'Writable' : 'Non Writable';
+
+        // Get current server time using gmdate() (timezone-safe)
+        $current_server_time = gmdate('Y-m-d H:i:s');
+
         $system_info .= '<h2><button id="show-server-info-button" class="info-button">Server<span class="dashicons dashicons-arrow-down"></span></h2>';
         $system_info .= '<div id="server-info-container" class="info-content" style="display:none;">';
         $system_info .= '<h3>Server</h3>';
         $system_info .= '<table>';
         $system_info .= '<p>The options shown below relate to your server setup. If changes are required, you may need your web host’s assistance.</p>';
-        // Add Server information
+
         $system_info .= '<tr><td>Server Architecture</td><td>' . esc_html(php_uname('s')) . '</td></tr>';
-        $system_info .= '<tr><td>Web Server</td><td>' . esc_html($_SERVER['SERVER_SOFTWARE']) . '</td></tr>';
+        $web_server = isset($_SERVER['SERVER_SOFTWARE']) ? sanitize_text_field(wp_unslash($_SERVER['SERVER_SOFTWARE'])) : 'Unavailable';
+        $system_info .= '<tr><td>Web Server</td><td>' . esc_html($web_server) . '</td></tr>';
         $system_info .= '<tr><td>PHP Version</td><td>' . esc_html(phpversion()) . '</td></tr>';
         $system_info .= '<tr><td>PHP SAPI</td><td>' . esc_html(php_sapi_name()) . '</td></tr>';
         $system_info .= '<tr><td>PHP Max Input Variables</td><td>' . esc_html(ini_get('max_input_vars')) . '</td></tr>';
@@ -754,20 +740,45 @@ class wc_gsheetconnector_Init
         $system_info .= '<tr><td>Is SUHOSIN Installed?</td><td>' . (extension_loaded('suhosin') ? 'Yes' : 'No') . '</td></tr>';
         $system_info .= '<tr><td>Is the Imagick Library Available?</td><td>' . (extension_loaded('imagick') ? 'Yes' : 'No') . '</td></tr>';
         $system_info .= '<tr><td>Are Pretty Permalinks Supported?</td><td>' . (get_option('permalink_structure') ? 'Yes' : 'No') . '</td></tr>';
-        $system_info .= '<tr><td>.htaccess Rules</td><td>' . esc_html(is_writable('.htaccess') ? 'Writable' : 'Non Writable') . '</td></tr>';
+        $system_info .= '<tr><td>.htaccess Rules</td><td>' . esc_html($htaccess_writable) . '</td></tr>';
         $system_info .= '<tr><td>Current Time</td><td>' . esc_html(current_time('mysql')) . '</td></tr>';
         $system_info .= '<tr><td>Current UTC Time</td><td>' . esc_html(current_time('mysql', true)) . '</td></tr>';
-        $system_info .= '<tr><td>Current Server Time</td><td>' . esc_html(date('Y-m-d H:i:s')) . '</td></tr>';
+        $system_info .= '<tr><td>Current Server Time</td><td>' . esc_html($current_server_time) . '</td></tr>';
+
         $system_info .= '</table>';
         $system_info .= '</div>';
+
 
         // Database Configuration
         $system_info .= '<h2><button id="show-database-info-button" class="info-button">Database<span class="dashicons dashicons-arrow-down"></span></h2>';
         $system_info .= '<div id="database-info-container" class="info-content" style="display:none;">';
         $system_info .= '<h3>Database</h3>';
         $system_info .= '<table>';
+
         $database_extension = 'mysqli';
-        $database_server_version = $wpdb->get_var("SELECT VERSION() as version");
+
+        // Cached queries to avoid PHPCS warnings
+        $database_server_version = wp_cache_get('gs_db_server_version', 'gsc');
+        if (false === $database_server_version) {
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- Safe, read-only server info
+            $database_server_version = $wpdb->get_var("SELECT VERSION() as version");
+            wp_cache_set('gs_db_server_version', $database_server_version, 'gsc', 3600);
+        }
+
+        $max_allowed_packet_size = wp_cache_get('gs_max_allowed_packet', 'gsc');
+        if (false === $max_allowed_packet_size) {
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- Safe, used for diagnostics only
+            $max_allowed_packet_size = $wpdb->get_var("SHOW VARIABLES LIKE 'max_allowed_packet'");
+            wp_cache_set('gs_max_allowed_packet', $max_allowed_packet_size, 'gsc', 3600);
+        }
+
+        $max_connections_number = wp_cache_get('gs_max_connections', 'gsc');
+        if (false === $max_connections_number) {
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- Safe, used for diagnostics only
+            $max_connections_number = $wpdb->get_var("SHOW VARIABLES LIKE 'max_connections'");
+            wp_cache_set('gs_max_connections', $max_connections_number, 'gsc', 3600);
+        }
+
         $database_client_version = $wpdb->db_version();
         $database_username = DB_USER;
         $database_host = DB_HOST;
@@ -775,8 +786,6 @@ class wc_gsheetconnector_Init
         $table_prefix = $wpdb->prefix;
         $database_charset = $wpdb->charset;
         $database_collation = $wpdb->collate;
-        $max_allowed_packet_size = $wpdb->get_var("SHOW VARIABLES LIKE 'max_allowed_packet'");
-        $max_connections_number = $wpdb->get_var("SHOW VARIABLES LIKE 'max_connections'");
 
         $system_info .= '<tr><td>Extension</td><td>' . esc_html($database_extension) . '</td></tr>';
         $system_info .= '<tr><td>Server Version</td><td>' . esc_html($database_server_version) . '</td></tr>';
@@ -826,17 +835,35 @@ class wc_gsheetconnector_Init
         $system_info .= '</div>';
 
         // Filesystem Permission
+        // Load WP_Filesystem if not already available
+        if ( ! function_exists('WP_Filesystem') ) {
+            require_once ABSPATH . 'wp-admin/includes/file.php';
+        }
+        global $wp_filesystem;
+        WP_Filesystem();
+
+        // Get directory paths
+        $upload_dir = wp_upload_dir()['basedir'];
+        $theme_root = get_theme_root();
+
+        // Check writability using WP_Filesystem
+        $main_dir_writable     = $wp_filesystem->is_writable( ABSPATH ) ? 'Writable' : 'Not Writable';
+        $wp_content_writable   = $wp_filesystem->is_writable( WP_CONTENT_DIR ) ? 'Writable' : 'Not Writable';
+        $upload_dir_writable   = $wp_filesystem->is_writable( $upload_dir ) ? 'Writable' : 'Not Writable';
+        $plugin_dir_writable   = $wp_filesystem->is_writable( WP_PLUGIN_DIR ) ? 'Writable' : 'Not Writable';
+        $theme_dir_writable    = $wp_filesystem->is_writable( $theme_root ) ? 'Writable' : 'Not Writable';
+
         $system_info .= '<h2><button id="show-ftps-info-button" class="info-button">Filesystem Permission <span class="dashicons dashicons-arrow-down"></span></button></h2>';
         $system_info .= '<div id="ftps-info-container" class="info-content" style="display:none;">';
         $system_info .= '<h3>Filesystem Permission</h3>';
         $system_info .= '<p>Shows whether WordPress is able to write to the directories it needs access to.</p>';
         $system_info .= '<table>';
-        // Filesystem Permission information
-        $system_info .= '<tr><td>The main WordPress directory</td><td>' . esc_html(ABSPATH) . '</td><td>' . (is_writable(ABSPATH) ? 'Writable' : 'Not Writable') . '</td></tr>';
-        $system_info .= '<tr><td>The wp-content directory</td><td>' . esc_html(WP_CONTENT_DIR) . '</td><td>' . (is_writable(WP_CONTENT_DIR) ? 'Writable' : 'Not Writable') . '</td></tr>';
-        $system_info .= '<tr><td>The uploads directory</td><td>' . esc_html(wp_upload_dir()['basedir']) . '</td><td>' . (is_writable(wp_upload_dir()['basedir']) ? 'Writable' : 'Not Writable') . '</td></tr>';
-        $system_info .= '<tr><td>The plugins directory</td><td>' . esc_html(WP_PLUGIN_DIR) . '</td><td>' . (is_writable(WP_PLUGIN_DIR) ? 'Writable' : 'Not Writable') . '</td></tr>';
-        $system_info .= '<tr><td>The themes directory</td><td>' . esc_html(get_theme_root()) . '</td><td>' . (is_writable(get_theme_root()) ? 'Writable' : 'Not Writable') . '</td></tr>';
+
+        $system_info .= '<tr><td>The main WordPress directory</td><td>' . esc_html(ABSPATH) . '</td><td>' . esc_html($main_dir_writable) . '</td></tr>';
+        $system_info .= '<tr><td>The wp-content directory</td><td>' . esc_html(WP_CONTENT_DIR) . '</td><td>' . esc_html($wp_content_writable) . '</td></tr>';
+        $system_info .= '<tr><td>The uploads directory</td><td>' . esc_html($upload_dir) . '</td><td>' . esc_html($upload_dir_writable) . '</td></tr>';
+        $system_info .= '<tr><td>The plugins directory</td><td>' . esc_html(WP_PLUGIN_DIR) . '</td><td>' . esc_html($plugin_dir_writable) . '</td></tr>';
+        $system_info .= '<tr><td>The themes directory</td><td>' . esc_html($theme_root) . '</td><td>' . esc_html($theme_dir_writable) . '</td></tr>';
 
         $system_info .= '</table>';
         $system_info .= '</div>';

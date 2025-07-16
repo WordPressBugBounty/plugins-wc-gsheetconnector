@@ -11,20 +11,18 @@ if (!defined('ABSPATH')) {
 ?>
 <div class="dashboard-content">
    <?php
-   $gs_woo_page_roles = get_option('gs_woo_page_roles_setting');
-   $sheet_data = get_option( 'gs_woo_sheet_feeds' );
-   $gs_woo_settings = get_option( 'gs_woo_settings' );
+   $gs_woo_page_roles = get_option('wcgsc_page_roles_setting');
+   $sheet_data = get_option( 'wcgsc_sheet_feeds' );
+   $wc_gsheetconnector_settings = get_option( 'wcgsc_settings' );
    
-   $selected_sheet_key = isset($gs_woo_settings) ? $gs_woo_settings : "";
+   $selected_sheet_key = isset($wc_gsheetconnector_settings) ? $wc_gsheetconnector_settings : "";
    $sheetName	=	"Google Sheet Not Connected";
 	if ( ! empty( $sheet_data ) ) {
 		foreach ( $sheet_data as $key => $value ) {
 			if ( $selected_sheet_key !== "" && $key == $selected_sheet_key ) {
 				$sheetName = $value['sheet_name'];
 			}
-			
 		}
-
 	}
 	
    $sheet_url = "#"; // Default URL or placeholder
@@ -32,11 +30,10 @@ if (!defined('ABSPATH')) {
        $sheet_url = "https://docs.google.com/spreadsheets/d/" . $selected_sheet_key;
    }
 
-
    ?>
    <div class="main-content">
-      <div class="gs_woo_dash_widget">
-         <div class="gs_woo_conn_sheet">
+      <div class="wcgsc_dash_widget">
+         <div class="wcgsc_conn_sheet">
 			 
 			 <style>
 			  .widget-table { border:1px solid #eee; width:100%; margin-bottom: 30px; }
@@ -46,36 +43,34 @@ if (!defined('ABSPATH')) {
 		  </style>
 			 
 			 
-			 
-			 
 			 <table class="widget-table">
 			  <tbody><tr> 
-				<th><?php echo __("Sheet URL", "wc-gsheetconnector"); ?></th>
+				<th><?php esc_html_e("Sheet URL", "wc-gsheetconnector"); ?></th>
 			  </tr>
 			  
 			   	<tr> 
-				<td><a href="<?php echo $sheet_url; ?>" target="_blank"><?php echo __($sheetName, "wc-gsheetconnector"); ?></a></td>
+				<td><a href="<?php echo esc_url($sheet_url); ?>" target="_blank"><?php echo esc_html($sheetName); ?></a></td>
 			  </tr> 	  
 		  </tbody></table>
 			 <table class="widget-table">
 			  <tbody><tr> 
-				<th><?php echo __("Permission To Access GSheetConnector WooCommerce", "wc-gsheetconnector"); ?></th>
+				<th><?php esc_html_e("Permission To Access GSheetConnector WooCommerce", "wc-gsheetconnector"); ?></th>
 			  </tr>
 			  
 			   	<tr> 
 				<td><?php
 	         if ( ! empty( $gs_woo_page_roles ) ) {
 	         	?>
-	         	 <?php echo __("Administrator", "wc-gsheetconnector"); ?> 
+	         	 <?php esc_html_e("Administrator", "wc-gsheetconnector"); ?> 
 	         	<?php 
 	         	foreach ($gs_woo_page_roles as $key => $value) {
 	         		?>
-	         		 <?php echo __($value, "wc-gsheetconnector"); ?> 
+	         		 <?php echo esc_html($value); ?> 
 	         		<?php
 	         	}
 	         }else { 
 	         	?>
-	         	 <a  href='<?php echo admin_url('admin.php?page=wc-gsheetconnector-config&tab=role_settings'); ?>'> <?php echo __("Administrator", "wc-gsheetconnector"); ?> </a>
+	         	 <a  href='<?php echo esc_url(admin_url('admin.php?page=wc-gsheetconnector-config&tab=role_settings')); ?>'> <?php esc_html_e("Administrator", "wc-gsheetconnector"); ?> </a>
 	        <?php  }
 	          ?></td>
 			  </tr> 	  

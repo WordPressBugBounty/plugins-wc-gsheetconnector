@@ -79,18 +79,6 @@ class Batch
     {
         $body = '';
         $classes = [];
-        $batchHttpTemplate = <<<EOF
---%s
-Content-Type: application/http
-Content-Transfer-Encoding: binary
-MIME-Version: 1.0
-Content-ID: %s
-
-%s
-%s%s
-
-
-EOF;
 
         /** @var RequestInterface $request */
         foreach ($this->requests as $key => $request) {
@@ -105,26 +93,29 @@ EOF;
 
             $headers = '';
             foreach ($request->getHeaders() as $name => $values) {
-                $headers .= sprintf("%s:%s\r\n", $name, implode(', ', $values));
+                $headers .= sprintf("%s: %s\r\n", $name, implode(', ', $values));
             }
 
-            $body .= sprintf(
-                $batchHttpTemplate,
-                $this->boundary,
-                $key,
-                $firstLine,
-                $headers,
-                $content ? "\n" . $content : ''
-            );
+            $part = '--' . $this->boundary . "\r\n";
+            $part .= "Content-Type: application/http\r\n";
+            $part .= "Content-Transfer-Encoding: binary\r\n";
+            $part .= "MIME-Version: 1.0\r\n";
+            $part .= "Content-ID: {$key}\r\n\r\n";
+            $part .= $firstLine . "\r\n";
+            $part .= $headers . "\r\n";
+            $part .= $content ? $content . "\r\n" : '';
+
+            $body .= $part;
 
             $classes['response-' . $key] = $request->getHeaderLine('X-Php-Expected-Class');
         }
 
-        $body .= "--{$this->boundary}--";
+        $body .= '--' . $this->boundary . '--';
         $body = trim($body);
-        $url = $this->rootUrl . '/' . $this->batchPath;
+
+        $url = rtrim($this->rootUrl, '/') . '/' . ltrim($this->batchPath, '/');
         $headers = [
-            'Content-Type' => sprintf('multipart/mixed; boundary=%s', $this->boundary),
+            'Content-Type'   => sprintf('multipart/mixed; boundary=%s', $this->boundary),
             'Content-Length' => (string) strlen($body),
         ];
 
@@ -139,6 +130,7 @@ EOF;
 
         return $this->parseResponse($response, $classes);
     }
+
 
     public function parseResponse(ResponseInterface $response, $classes = [])
     {

@@ -5,14 +5,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 $wc_free_system_log = new wc_gsheetconnector_Init();
 ?>
-<div class="system-statuswc">
-   <div class="info-container">
+<div class="wcgsc-system-status">
+  <div class="info-container">
     <h2 class="systemifo"><?php echo esc_html(__('System Info', 'wc-gsheetconnector')); ?></h2>
-      <button onclick="copySystemInfo()" class="copy"><?php echo esc_html(__('Copy System Info to Clipboard', 'wc-gsheetconnector')); ?></button>
-      <?php echo $wc_free_system_log->get_wcfree_system_info(); ?>
-   </div>
+    <button onclick="copySystemInfo()" class="copy-system-info"><?php echo esc_html(__('Copy System Info to Clipboard', 'wc-gsheetconnector')); ?></button>
+    <?php echo wp_kses_post($wc_free_system_log->get_wcfree_system_info()); ?>
+  </div>
 </div>
-
 
 <?php
 // Exit if accessed directly
@@ -30,55 +29,57 @@ if ( ! defined( 'ABSPATH' ) ) {
 <form method="post" style="pointer-events: none;">
 <table>
   <tr>
-    <th><?php echo __('Key', 'wc-gsheetconnector' ); ?></th>
-    <th><?php echo __('Info', 'wc-gsheetconnector' ); ?></th>
-    <th><?php echo __('Status', 'wc-gsheetconnector' ); ?></th>
+    <th><?php echo esc_html__( 'Key', 'wc-gsheetconnector' ); ?></th>
+    <th><?php echo esc_html__( 'Info', 'wc-gsheetconnector' ); ?></th>
+    <th><?php echo esc_html__( 'Status', 'wc-gsheetconnector' ); ?></th>
   </tr>
   <tr>
-    <th><?php echo __('WP_DEBUG', 'wc-gsheetconnector' ); ?></th>
-    <td><?php echo __('Enable WP_DEBUG mode', 'wc-gsheetconnector' ); ?></td>
+    <th><?php echo esc_html__( 'WP_DEBUG', 'wc-gsheetconnector' ); ?></th>
+    <td><?php echo esc_html__( 'Enable WP_DEBUG mode', 'wc-gsheetconnector' ); ?></td>
     <td>
-    	<label class="switch">
-  <input type="checkbox" name="wpgsc-debug" value="">
-  <span class="slider round"></span>
-</label>
+      <label class="switch">
+        <input type="checkbox" name="wpgsc-debug" value="">
+        <span class="slider round"></span>
+      </label>
     </td>
   </tr>
   <tr>
-    <th><?php echo __('WP_DEBUG_LOG', 'wc-gsheetconnector' ); ?></th>
-    <td><?php echo __('Enable Debug logging to the /wp-content/debug.log file', 'wc-gsheetconnector' ); ?></td>
+    <th><?php echo esc_html__( 'WP_DEBUG_LOG', 'wc-gsheetconnector' ); ?></th>
+    <td><?php echo esc_html__( 'Enable Debug logging to the /wp-content/debug.log file', 'wc-gsheetconnector' ); ?></td>
     <td>
-    	<label class="switch">
-  <input type="checkbox" name="wpgsc-debug-log" value="">
-  <span class="slider round"></span>
-</label>
+      <label class="switch">
+        <input type="checkbox" name="wpgsc-debug-log" value="">
+        <span class="slider round"></span>
+      </label>
     </td>
   </tr>
   <tr>
-    <th><?php echo __('SCRIPT_DEBUG', 'wc-gsheetconnector' ); ?></th>
-    <td><?php echo __('Use the “dev” versions of core CSS and JavaScript files', 'wc-gsheetconnector' ); ?></td>
+    <th><?php echo esc_html__( 'SCRIPT_DEBUG', 'wc-gsheetconnector' ); ?></th>
+    <td><?php echo esc_html__( 'Use the “dev” versions of core CSS and JavaScript files', 'wc-gsheetconnector' ); ?></td>
     <td>
-    	<label class="switch">
-  <input type="checkbox" name="wpgsc-script-debug" value="">
-  <span class="slider round"></span>
-</label>
+      <label class="switch">
+        <input type="checkbox" name="wpgsc-script-debug" value="">
+        <span class="slider round"></span>
+      </label>
     </td>
   </tr>
   <tr>
-    <th><?php echo __('SAVEQUERIES', 'wc-gsheetconnector' ); ?></th>
-    <td>Enable database query logging, turn it off when not debuging cause it will effect site performace. The array is stored in the global $wpdb->queries.</td>
+    <th><?php echo esc_html__( 'SAVEQUERIES', 'wc-gsheetconnector' ); ?></th>
+    <td><?php echo esc_html__( 'Enable database query logging, turn it off when not debugging because it will affect site performance. The array is stored in the global $wpdb->queries.', 'wc-gsheetconnector' ); ?></td>
     <td>
-    	<label class="switch">
-  <input type="checkbox" name="wpgsc-savequeries" value="">
-  <span class="slider round"></span>
-</label>
+      <label class="switch">
+        <input type="checkbox" name="wpgsc-savequeries" value="">
+        <span class="slider round"></span>
+      </label>
     </td>
   </tr>
 </table>
 
-<h2><input type="submit" class="button button-primary button-large debug-logs-save" name="gs_woo_debug_settings" value="<?php echo __("Save", "wc-gsheetconnector"); ?>"/>
-               <span class="beta-loading-sign-woogsc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-           </h2>
+<h2>
+  <input type="submit" class="button button-primary button-large debug-logs-save" name="gs_woo_debug_settings" value="<?php echo esc_attr__( "Save", "wc-gsheetconnector" ); ?>" />
+  <span class="beta-loading-sign-woogsc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+</h2>
+
            </form>
 
             </div>
@@ -87,423 +88,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div class="system-Error">
     <div class="error-container">
-        <h2 class="systemerror"><?php echo __("Error Log", "wc-gsheetconnector"); ?> </h2>
-        <p><?php echo __("If you have", "wc-gsheetconnector"); ?> <a href="https://www.gsheetconnector.com/how-to-enable-debugging-in-wordpress" target="_blank"><?php echo __("WP_DEBUG_LOG", "wc-gsheetconnector"); ?></a> <?php echo __("enabled, errors are stored in a log file. Here you can find the last 100 lines in reversed order so that you or the GSheetConnector support team can view it easily. The file cannot be edited here.", "wc-gsheetconnector"); ?></p>
-        <button onclick="copyErrorLog()" class="copy"><?php echo __("Copy Error Log to Clipboard", "wc-gsheetconnector"); ?></button>
-         <button class="clear-content-logs-wc"><?php echo __("Clear", "wc-gsheetconnector"); ?></button>
-         <span class="clear-loading-sign-logs-wc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <div class="clear-content-logs-msg-wc"></div>
-        <input type="hidden" name="gs-ajax-nonce" id="gs-ajax-nonce"
-                    value="<?php echo wp_create_nonce('gs-ajax-nonce'); ?>" />
-        
-        <div class="copy-message" style="display: none;"><?php echo __("Copied", "wc-gsheetconnector"); ?></div> <!-- Add a hidden div for the copy message -->
-        <?php echo $wc_free_system_log->display_error_log(); ?>
+        <h2 class="systemerror"><?php echo esc_html__( "Error Log", "wc-gsheetconnector" ); ?> </h2>
+        <p>
+          <?php echo esc_html__( "If you have", "wc-gsheetconnector" ); ?>
+          <a href="https://www.gsheetconnector.com/how-to-enable-debugging-in-wordpress" target="_blank">
+            <?php echo esc_html__( "WP_DEBUG_LOG", "wc-gsheetconnector" ); ?>
+          </a>
+          <?php echo esc_html__( "enabled, errors are stored in a log file. Here you can find the last 100 lines in reversed order so that you or the GSheetConnector support team can view it easily. The file cannot be edited here.", "wc-gsheetconnector" ); ?>
+        </p>
+        <button onclick="copyErrorLog()" class="copy-error-log"><?php echo esc_html__( "Copy Error Log to Clipboard", "wc-gsheetconnector" ); ?></button>
+        <button class="wcgsc-clear-content-logs"><?php echo esc_html__( "Clear", "wc-gsheetconnector" ); ?></button>
+        <input type="hidden" name="gs-ajax-nonce" id="gs-ajax-nonce" value="<?php echo esc_attr( wp_create_nonce('gs-ajax-nonce') ); ?>" />
+        <div class="copy-message" style="display: none;"><?php echo esc_html__( "Copied", "wc-gsheetconnector" ); ?></div>
+        <?php echo wp_kses_post( $wc_free_system_log->display_error_log() ); ?>
     </div>
 </div>
-<style>
-.info-button .dashicons {
-    font-size: 21px; /* Adjust the size as needed */
-    vertical-align: middle; /* Align the icon vertically with the button text */
-    margin-left: 8px; /* Add space between the icon and button text */
-}
-  
-.systemerror{
-/*  color: #0073e6;*/
-  font-size: 20px;
-  margin-left: -2px;
-  color: #242628;
-  position: relative;
-  z-index: 1;
-}
-.clear-content-logs-msg-wc{
-    font-size: 14px;
-    font-weight: bold;
-    color: green;
-}
-/* Style for the "Clear" button */
-.clear-content-logs-wc {
-  margin: 1rem 0;
-  display: inline-flex;
-  align-items: center;
-  margin: 0.5rem 0 1rem;
-  font-size: 14px;
-  line-height: 38px;
-  height: auto;
-  min-height: 30px;
-  padding: 0 20px;
-  color: #6b7278;
-  border: 1px solid #7f868d;
-  border-radius: 3px;
-  background: #f8f9fa;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  margin-left: -2px;
-}
-
-.clear-content-logs-wc:hover {
-  color: #069de3;
-  border-color: #069de3;
-  background: #f8f9fa;;
-}
-
-/* Style for the paragraph text */
-.error-container p {
-  font-size: 16px; /* Adjust the font size as needed */
-  margin: 10px 0; /* Add margin for spacing */
-  color: #333; /* Text color */
-  line-height: 1.5; /* Line height for readability */
-}
-
-/* Style for the link within the paragraph */
-.error-container a {
-    color: #007BFF; /* Link color (blue) */
-    text-decoration: underline; /* Underline the link */
-}
-
-.error-container a:hover {
-    text-decoration: none; /* Remove underline on hover */
-}
-
-/* Style for the "Copied" message */
-.copy-message {
-    display: none;
-    background-color: #4CAF50; /* Green background color */
-    color: #fff; /* White text color */
-    font-size: 14px;
-    padding: 10px 15px;
-    border-radius: 5px;
-    position: absolute;
-    top: 50%; /* Position it vertically centered */
-    left: 50%; /* Position it horizontally centered */
-    transform: translate(-50%, -50%); /* Center it precisely */
-    z-index: 999; /* Ensure it appears above other elements */
-    opacity: 0.9; /* Adjust the opacity as needed */
-    transition: opacity 0.3s ease;
-}
-
-.copy-message.show {
-    display: block;
-}
-.errorlog {
-    cursor: default;
-    font-family: monospace;
-    border: 1px solid #ccc;
-    padding: 10px;
-    background-color: #32344b;
-    width: 100%;
-    height: 400px; /* Set a fixed height for the "screen" */  
-    border-color: #32344b;
-    color: azure;
-}
-.systemifo{
-/*  color: #0073e6;*/
-  font-size: 20px;
-  margin-left: -2px;
-  color: #242628;
-  position: relative;
-  z-index: 1;
-}
-.system-Error {
-  position: relative;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1px solid #b5bfc9;
-  margin: 20px auto;
-  width: 100%;
-  box-sizing: border-box; /* Add box-sizing property */
-  overflow: hidden; /* or overflow: auto; depending on your content */
-}
-.system-statuswc {
-  position: relative;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1px solid #b5bfc9;
-  margin: 20px auto;
-  width: 100%;
-  box-sizing: border-box; /* Add box-sizing property */
-  overflow: hidden; /* or overflow: auto; depending on your content */
-}
-
-
-.info-button {
-  background-color: white;
-  color: #2c3338;
-  padding: 13px 17px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  font-weight: 400;
-  flex-grow: 1;
-  font-size: 14px;
-  margin: 0;
-  border: 1px solid #c5c5c5;
-  border-radius: 3px;
-  background: #f8f9fa;
-  box-sizing: border-box; /* Add box-sizing property */
-  overflow: hidden; /* or overflow: auto; depending on your content */
-}
-
-.info-button:hover {
-    background-color: white;
-}
-
-.info-button span {
-    font-size: 16px;
-    margin-left: 26px;
-}
-
-.info-content {
-    display: none;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 20px;
-    width: 100%; /* Make the content width 100% to match the card width */
-
-}
-.info-content tr:nth-child(even) {
-    background-color: #ffffff; /* Light background color for even rows */
-}
-  
-.info-content tr:nth-child(odd) {
-    background-color: #f5f5f5; /* Dark background color for odd rows */
-}
-
-.info-content h3 {
-    color: #0073e6;
-}
-
-.info-content table {
-    width: 100%; /* Make the table width 100% to match the content width */
-    border-collapse: collapse;
-}
-
-.info-content td {
-    padding: 8px 0;
-/*    border-bottom: 1px solid #ccc;*/
-}
-
-.info-content tr:last-child td {
-    border-bottom: none;
-}
-.copy-success-message {
-   position: fixed;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   padding: 10px;
-   background-color: #4CAF50;
-   color: #fff;
-   font-weight: bold;
-   border-radius: 4px;
-   z-index: 9999;
-}
-.copy {
-  margin: 1rem 0;
-  display: inline-flex;
-  align-items: center;
-  margin: 0.5rem 0 1rem;
-  font-size: 14px;
-  line-height: 38px;
-  height: auto;
-  min-height: 30px;
-  padding: 0 20px;
-  color: #6b7278;
-  border: 1px solid #7f868d;
-  border-radius: 3px;
-  background: #f8f9fa;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  margin-left: -2px;
-}
-
-.copy:hover {
-  color: #069de3;
-  border-color: #069de3;
-  background: #f8f9fa;;
-}
-
-.copy:focus {
-  outline: none;
-}
-/* Media query for screens smaller than 768px */
-@media (max-width: 768px) {
-    .info-button .dashicons {
-        font-size: 18px; /* Adjust the size for smaller screens */
-    }
-
-    .systemerror {
-        font-size: 16px; /* Adjust the size for smaller screens */
-    }
-
-    /* Adjust other styles for smaller screens */
-    .info-button {
-        font-size: 12px;
-    }
-}
-
-</style>
-
-<script>
-   function copySystemInfo() {
-    const systemInfoContainer = document.querySelector('.info-container');
-    const systemInfoElements = systemInfoContainer.querySelectorAll('.info-content h3, .info-content td');
-    let systemInfoText = '';
-    let currentRow = '';
-
-    systemInfoElements.forEach((element) => {
-        if (element.innerText) {
-            const tagName = element.tagName.toLowerCase();
-
-            // Handle section headers (h3 tags)
-            if (tagName === 'h3') {
-                if (currentRow !== '') {
-                    systemInfoText += currentRow.trim() + '\n\n'; // Add two newlines between sections
-                }
-                systemInfoText += `**${element.innerText}**\n\n`; // Make h3 bold and add extra space after it
-                currentRow = '';
-            }
-
-            // Handle table data (td tags)
-            else if (tagName === 'td') {
-                const labelElement = element.previousElementSibling;
-
-                // Check if label element exists and has text
-                if (labelElement && labelElement.innerText) {
-                    let label = labelElement.innerText.trim(); // Keep the label as is (no underscores)
-                    currentRow += `${label}: ${element.innerText.trim()}\n`; // Format the row as key-value pair
-                }
-            }
-        }
-    });
-
-    // Add the last row to the final text
-    systemInfoText += currentRow.trim();
-
-    // Copy the formatted text to the clipboard
-    navigator.clipboard.writeText(systemInfoText.trim())
-        .then(() => {
-            const messageElement = document.createElement('div');
-            messageElement.textContent = 'System info copied!';
-            messageElement.classList.add('copy-success-message');
-            document.body.appendChild(messageElement);
-
-            setTimeout(() => {
-                messageElement.remove();
-            }, 3000);
-        })
-        .catch((error) => {
-            console.error('Unable to copy system info:', error);
-        });
-}
-
-    
-  jQuery(document).ready(function($) {
-      $("#show-info-button").click(function() {
-          $("#info-container").slideToggle();
-      });
-      $("#show-wordpress-info-button").click(function() {
-          $("#wordpress-info-container").slideToggle();
-      });
-      $("#show-Drop-info-button").click(function() {
-          $("#Drop-info-container").slideToggle();
-      });
-      $("#show-active-info-button").click(function() {
-          $("#active-info-container").slideToggle();
-      });
-      $("#show-netplug-info-button").click(function() {
-          $("#netplug-info-container").slideToggle();
-      });
-      $("#show-acplug-info-button").click(function() {
-          $("#acplug-info-container").slideToggle();
-      });
-      $("#show-server-info-button").click(function() {
-          $("#server-info-container").slideToggle();
-      });
-      $("#show-database-info-button").click(function() {
-          $("#database-info-container").slideToggle();
-      });
-      $("#show-wrcons-info-button").click(function() {
-          $("#wrcons-info-container").slideToggle();
-      });
-      $("#show-ftps-info-button").click(function() {
-          $("#ftps-info-container").slideToggle();
-      });
-  });
-  // JavaScript function to copy the error log to the clipboard
-  function copyErrorLog() {
-      // Select the textarea containing the error log
-      var textarea = document.querySelector('.errorlog');
-      // Select the message div
-      var copyMessage = document.querySelector('.copy-message');
-
-      // Check if the textarea and message div exist
-      if (textarea && copyMessage) {
-          // Select the text within the textarea
-          textarea.select();
-
-          try {
-              // Attempt to copy the selected text to the clipboard
-              document.execCommand('copy');
-              // Display the "Copied" message
-              copyMessage.style.display = 'block';
-
-              // Hide the message after a few seconds (e.g., 3 seconds)
-              setTimeout(function() {
-                  copyMessage.style.display = 'none';
-              }, 3000);
-          } catch (err) {
-              console.error('Unable to copy error log: ' + err);
-              alert('Error log copy failed. Please copy it manually.');
-          }
-
-          // Deselect the text
-          textarea.blur();
-      } else {
-          alert('Error log textarea or copy message not found.');
-      }
-  }
-
-  // Add an event listener to call the copyErrorLog function when the button is clicked
-  document.addEventListener('DOMContentLoaded', function() {
-      var copyButton = document.querySelector('.copy');
-
-      if (copyButton) {
-          copyButton.addEventListener('click', function(event) {
-              event.preventDefault();
-              copyErrorLog();
-          });
-      }
-  });
-
-  // JavaScript function to clear the error log textarea
-  function clearErrorLog() {
-      var textarea = document.querySelector('.errorlog');
-
-      if (textarea) {
-          // Clear the textarea content
-          textarea.value = '';
-      }
-  }
-
-  // Add an event listener to call the clearErrorLog function when the "Clear" button is clicked
-  document.addEventListener('DOMContentLoaded', function() {
-      var clearButton = document.querySelector('.clear');
-
-      if (clearButton) {
-          clearButton.addEventListener('click', function(event) {
-              event.preventDefault();
-              clearErrorLog();
-          });
-      }
-  });
-
-</script>
-
 <!-- popup file include herre -->
 <?php include( WC_GSHEETCONNECTOR_PATH . "includes/pages/pro-popup.php" ) ;?>
