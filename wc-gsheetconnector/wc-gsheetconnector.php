@@ -5,7 +5,7 @@
  * Description: Send your WooCommerce data to your Google Sheets spreadsheet.
  * Author: GSheetConnector
  * Author URI: https://www.gsheetconnector.com/
- * Version: 1.4.3
+ * Version: 1.4.4
  * Text Domain: wc-gsheetconnector
  * Domain Path:  /languages
  * WooCommerce requires at least: 3.2.0
@@ -22,9 +22,54 @@ if (wc_gsheetconnector_Init::gscwoo_is_pugin_active('wc_gsheetconnector_Init_Pro
     return;
 }
 
+/*freemius*/
+if (function_exists('is_plugin_active') && is_plugin_active('wc-gsheetconnector/wc-gsheetconnector.php')) {
+    if (!function_exists('gs_woofree')) {
+        // Create a helper function for easy SDK access.
+        function gs_woofree()
+        {
+            global $gs_woofree;
+
+            if (!isset($gs_woofree)) {
+                // Activate multisite network integration.
+                if (!defined('WP_FS__PRODUCT_9480_MULTISITE')) {
+                    define('WP_FS__PRODUCT_9480_MULTISITE', true);
+                }
+
+                // Include Freemius SDK.
+                require_once dirname(__FILE__) . '/lib/vendor/freemius/start.php';
+
+                $gs_woofree = fs_dynamic_init(array(
+                    'id' => '9480',
+                    'slug' => 'wc-gsheetconnector',
+                    'type' => 'plugin',
+                    'public_key' => 'pk_487f703ba4a974974c9d344111193',
+                    'is_premium' => false,
+                    'has_addons' => false,
+                    'has_paid_plans' => false,
+                    'is_org_compliant' => true, 
+                    'menu' => array(
+                        'slug' => 'wc-gsheetconnector-config',
+                        'first-path' => (!is_multisite() ? 'admin.php?page=wc-gsheetconnector-config' : 'plugins.php'),
+                        'account' => false,
+                    ),
+                ));
+            }
+
+            return $gs_woofree;
+        }
+
+        // Init Freemius.
+        gs_woofree();
+        // Signal that SDK was initiated.
+        do_action('gs_woofree_loaded');
+    }
+}
+/*freemius*/
+
 // Declare some global constants
-define('WC_GSHEETCONNECTOR_VERSION', '1.4.3');
-define('WC_GSHEETCONNECTOR_DB_VERSION', '1.4.3');
+define('WC_GSHEETCONNECTOR_VERSION', '1.4.4');
+define('WC_GSHEETCONNECTOR_DB_VERSION', '1.4.4');
 define('WC_GSHEETCONNECTOR_ROOT', dirname(__FILE__));
 define('WC_GSHEETCONNECTOR_URL', plugins_url('/', __FILE__));
 define('WC_GSHEETCONNECTOR_BASE_FILE', basename(dirname(__FILE__)) . '/wc-gsheetconnector.php');
@@ -193,12 +238,6 @@ class wc_gsheetconnector_Init
             'version'     => WC_GSHEETCONNECTOR_VERSION,
             'db_version'  => WC_GSHEETCONNECTOR_DB_VERSION
         );
-
-        // check if debug log file exists or not
-        $wclogFilePathToDelete = WC_GSHEETCONNECTOR_PATH . "logs/log.txt";
-        if (file_exists($wclogFilePathToDelete)) {
-            wp_delete_file($wclogFilePathToDelete);
-        }
 
         update_site_option('WC_GS_info', $google_sheet_info);
     }

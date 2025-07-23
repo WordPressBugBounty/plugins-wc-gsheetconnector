@@ -30,7 +30,7 @@ jQuery(document).ready(function () {
          
    });  
 
-  /**
+   /**
     * deactivate the api code
     * @since 1.0
     */
@@ -104,7 +104,7 @@ jQuery(document).ready(function () {
    jQuery(document).on('click', '.debug-clear', function () {
       jQuery(".clear-loading-sign").addClass("loading");
       var data = {
-         action: 'wcgsc_clear_logs',
+         action: 'wcgsc_clear_log',
          security: jQuery('#wcgsc-ajax-nonce').val()
       };
       jQuery.post(ajaxurl, data, function (response) {
@@ -120,7 +120,68 @@ jQuery(document).ready(function () {
       });
    });
 
-  jQuery(document).on('submit', '#gsSettingFormFree', function (event) {
+   /**
+    * Display Error logs
+    */
+   jQuery(document).ready(function($) {
+      // Hide .wc-system-Error-logs initially
+      $('.wc-system-Error-logs').hide();
+
+      // Add a variable to track the state
+      var isOpen = false;
+
+      // Function to toggle visibility and button text
+      function toggleLogs() {
+           if (isOpen) {
+               $('.wc-system-Error-logs').hide(); // Hide the logs
+               $('.wcgsc-logs').text('View');     // Change button text to "View"
+           } else {
+               $('.wc-system-Error-logs').show(); // Show the logs
+               $('.wcgsc-logs').text('Close');    // Change button text to "Close"
+           }
+           isOpen = !isOpen; // Toggle the state
+      }
+
+      // Toggle visibility and button text when clicking .wcgsc-logs button
+      $('.wcgsc-logs').on('click', function(e) {
+           e.stopPropagation(); // Ensure only the button click triggers toggle
+           toggleLogs();
+      });
+
+      // Prevent closing the logs when clicking inside the .wc-system-Error-logs div
+      $('.wc-system-Error-logs').on('click', function(event) {
+           event.stopPropagation(); // Prevent the click from affecting anything outside
+      });
+
+      // Optional: Close the logs when clicking outside the div, if needed
+      $(document).on('click', function(event) {
+           if (isOpen && !$(event.target).closest('.wc-system-Error-logs, .wcgsc-logs').length) {
+               toggleLogs(); // Close the logs if clicked outside the button or the logs div
+           }
+      });
+   });
+
+   // Msg Hide /// 
+   jQuery(document).ready(function($) {
+       // Check if the message has already been hidden by looking in localStorage
+       if (localStorage.getItem('googleDriveMsgHidden') === 'true') {
+           jQuery('#google-drive-msg').hide(); // Hide the message if it's already hidden
+       }
+
+       // On button click, hide the #google-drive-msg div and store the hidden state in localStorage
+       jQuery('.button_wcgsc').on('click', function() {
+           jQuery('#google-drive-msg').hide(); // Hide the message
+           localStorage.setItem('googleDriveMsgHidden', 'true'); // Save the hidden state in localStorage
+       });
+
+       // On #deactivate-log click, show the #google-drive-msg div and clear localStorage
+       jQuery('#gs-woo-deactivate-log').on('click', function() {
+           jQuery('#google-drive-msg').show(); // Show the message
+           localStorage.removeItem('googleDriveMsgHidden'); // Remove the hidden state from localStorage
+       });
+   });
+
+   jQuery(document).on('submit', '#gsSettingFormFree', function (event) {
       console.log('prevent the subitting the form');
       jQuery('#error_spread').html('');
       jQuery('#error_gsTabName').html('');
@@ -129,7 +190,6 @@ jQuery(document).ready(function () {
       var spreadsheetsName = jQuery('#wcgsc-sheet-id').val();
       var gsTabName = jQuery('input.wcgsc_order_state:checked').length;
       
-
       if(spreadsheetsName == ""){
          jQuery('#error_spread').html('* Please Select Spreadsheet Name !');
          submit = false;
@@ -144,6 +204,7 @@ jQuery(document).ready(function () {
          window.scrollTo({ top: 0, behavior: 'smooth' });
       }
    });
+
    jQuery(".wcgsc-list-set32").hide();
    jQuery(".wcgsc-list-set33").hide();
    jQuery(".wcgsc-list-set34").hide();
@@ -152,7 +213,6 @@ jQuery(document).ready(function () {
    jQuery(document).on("click", ".wcgsc-list-set", function (event){
       var $this = jQuery(this);
       var $id = $this.attr( "data-id" );
-      
       
       if($id == "31" || $id == "32" || $id == "33" || $id == "34" || $id == "35" || $id == "36"){
          if(jQuery(".wcgsc-list-set"+$id).css("display") == "none") { 
@@ -182,7 +242,9 @@ jQuery(document).ready(function () {
          } 
       }
    });
-});
+   });
+
+
 
 
  /**
@@ -254,4 +316,140 @@ jQuery(document).ready(function () {
          jQuery(this).prev('h2').hide();
       }
    });
+});
+
+/**
+ * Clear debug for system status tab
+ */
+jQuery(document).on('click', '.wcgsc-clear-content-logs', function () {
+
+   jQuery(".wcgsc-clear-loading-sign-logs").addClass("loading");
+      var data = {
+         action: 'wcgsc_log_systeminfo',
+         security: jQuery('#wcgsc-ajax-nonce').val()
+      };
+
+   jQuery.post(ajaxurl, data, function ( response ) {
+      if (response == -1) {
+         return false; // Invalid nonce
+      }
+      
+      if (response.success) {
+         jQuery(".wcgsc-clear-loading-sign-logs").removeClass("loading");
+         jQuery('.wcgsc-clear-content-logs-msg').html('Logs are cleared.');
+         setTimeout(function () {
+         location.reload();
+         }, 1000);
+      }
+   });
+});
+
+jQuery(document).ready(function ($) {
+   $('.install-plugin-btn').on('click', function () {
+       var button = $(this);
+       var pluginSlug = button.data('plugin');
+       var downloadUrl = button.data('download');
+       var loader = button.find('.loaderimg');
+
+       loader.css('display', 'inline-block'); // Show loader
+
+       button.html('<img src="' + loader.attr('src') + '" alt="Loading..."> Installing...')
+           .prop('disabled', true);
+
+       $.ajax({
+           url: ajaxurl,
+           type: 'POST',
+           data: {
+               action: 'install_plugin',
+               plugin_slug: pluginSlug,
+               download_url: downloadUrl,
+               security: pluginInstallData.nonce,  // for install
+           },
+           success: function (response) {
+               if (response.success) {
+                   // Hide the "Install" button
+                   button.hide();
+
+                   // Show the corresponding "Activate" button
+                   button.closest('.button-bar').find('.activate-plugin-btn').show();
+               } else {
+                   alert('Installation failed: ' + (response.data?.message || 'Unknown error'));
+                   button.html('Install').prop('disabled', false);
+               }
+           },
+
+           error: function () {
+               button.html('Install').prop('disabled', false);
+               alert('Error installing the plugin.');
+           }
+       });
+   });
+
+   // Plugin Activation
+   $(document).on('click', '.activate-plugin-btn', function () {
+       var button = $(this);
+       var pluginSlug = button.data('plugin');
+       var loader = button.find('.loaderimg');
+       loader.css('display', 'inline-block'); // Show loader
+
+       button.html('<img src="' + loader.attr('src') + '" alt="Loading..."> Activating...')
+           .prop('disabled', true);
+
+       $.ajax({
+           url: ajaxurl,
+           type: 'POST',
+           data: {
+               action: 'wc_gsheetconnector_activate_plugin',
+               plugin_slug: pluginSlug,
+               security: pluginActivateData.nonce, // for activate
+           },
+           success: function (response) {
+               if (response.success) {
+                   button.text('Activated').prop('disabled', true);
+                   loader.hide();
+                   location.reload();
+
+               } else {
+                   button.html('Activate').prop('disabled', false);
+                   alert('Activation failed: ' + (response.data?.message || 'Unknown error'));
+               }
+           },
+           error: function () {
+               button.html('Activate').prop('disabled', false);
+               alert('Error activating the plugin.');
+           }
+       });
+   });
+    $('.deactivate-plugin').on('click', function () {
+        var pluginSlug = $(this).data('plugin');
+
+        if (!pluginSlug) {
+            alert('Plugin slug not found.');
+            return;
+        }
+
+        $.ajax({
+            url: pluginDeactivateData.ajax_url,
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                action: 'wc_gsheetconnector_deactivate_plugin',
+                plugin_slug: pluginSlug,
+                security: pluginDeactivateData.nonce // for deactivate
+            },
+            success: function (response) {
+                if (response.success) {
+                    alert(response.data);
+                    location.reload();
+                } else {
+                    alert('Error: ' + response.data);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error(xhr.responseText);
+                alert('AJAX error: ' + error);
+            }
+        });
+    });
+
 });

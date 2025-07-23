@@ -404,11 +404,118 @@ class wc_gsheetconnector_Service
 			add_filter('gscwoo_row_values', array($this, 'change_status_to_uppercase'), 10, 2);
 			add_action('wp_trash_post', array($this, 'wp_trash_post'), 10, 1);
 			add_action('transition_post_status', array($this, 'transition_post_status'), 10, 3);
+
+			add_action('wp_ajax_install_plugin', array($this, 'install_plugin'));
+			add_action('wp_ajax_wc_gsheetconnector_activate_plugin', array($this, 'activate_plugin'));
+			add_action("wp_ajax_wc_gsheetconnector_deactivate_plugin", array($this, "deactivate_plugin"));
 		} catch (Exception $e) {
 			$data['ERROR_MSG'] = $e->getMessage();
 			$data['TRACE_STK'] = $e->getTraceAsString();
 			
 		}
+	}
+
+	function deactivate_plugin() {
+	    check_ajax_referer('deactivate_plugin_nonce', 'security');
+
+	    if (!current_user_can('activate_plugins')) {
+	        wp_send_json_error('You do not have permission to deactivate plugins.');
+	    }
+
+	    $plugin_slug = isset($_POST['plugin_slug']) ? sanitize_text_field(wp_unslash($_POST['plugin_slug'])) : '';
+
+	    if (!$plugin_slug || !file_exists(WP_PLUGIN_DIR . '/' . $plugin_slug)) {
+	        wp_send_json_error('Invalid plugin.');
+	    }
+
+	    deactivate_plugins($plugin_slug);
+
+	    if (is_plugin_active($plugin_slug)) {
+	        wp_send_json_error('Failed to deactivate plugin.');
+	    }
+
+	    wp_send_json_success('Plugin deactivated successfully.');
+	}
+
+	function install_plugin() {
+		check_ajax_referer('install_plugin_nonce', 'security');
+
+		if (!isset($_POST['plugin_slug'], $_POST['download_url'])) {
+			wp_send_json_error(['message' => 'Missing required parameters.']);
+		}
+
+		$plugin_slug   = sanitize_text_field(wp_unslash($_POST['plugin_slug']));
+		$download_url  = esc_url_raw(wp_unslash($_POST['download_url']));
+
+		if (empty($plugin_slug) || empty($download_url)) {
+			wp_send_json_error(['message' => 'Invalid plugin data.']);
+		}
+
+		include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+		include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+		include_once ABSPATH . 'wp-admin/includes/file.php';
+		include_once ABSPATH . 'wp-admin/includes/update.php';
+
+		$upgrader = new Plugin_Upgrader(new WP_Ajax_Upgrader_Skin());
+
+		$installed_plugins = get_plugins();
+		$plugin_path = '';
+
+		foreach ($installed_plugins as $path => $details) {
+			if (strpos($path, $plugin_slug . '/') === 0) {
+				$plugin_path = $path;
+				break;
+			}
+		}
+
+		if ($plugin_path) {
+			$update_plugins = get_site_transient('update_plugins');
+
+			if (isset($update_plugins->response[$plugin_path])) {
+				$result = $upgrader->upgrade($plugin_path);
+
+				if (is_wp_error($result)) {
+					wp_send_json_error(['message' => 'Upgrade failed: ' . $result->get_error_message()]);
+				}
+
+				wp_send_json_success(['message' => 'Plugin upgraded successfully.']);
+			} else {
+				wp_send_json_error(['message' => 'No updates available for this plugin.']);
+			}
+		} else {
+			$result = $upgrader->install($download_url);
+
+			if (is_wp_error($result)) {
+				wp_send_json_error(['message' => 'Installation failed: ' . $result->get_error_message()]);
+			}
+
+			wp_send_json_success();
+		}
+	}
+
+	function activate_plugin() {
+		check_ajax_referer('activate_plugin_nonce', 'security');
+
+		if (!current_user_can('activate_plugins')) {
+			wp_send_json_error(['message' => 'Permission denied.']);
+		}
+
+		if (!isset($_POST['plugin_slug'])) {
+			wp_send_json_error(['message' => 'Missing plugin slug.']);
+		}
+
+		// Fix: unslash before sanitizing
+		$plugin_slug = sanitize_text_field(wp_unslash($_POST['plugin_slug']));
+
+		include_once ABSPATH . 'wp-admin/includes/plugin.php';
+
+		$activated = activate_plugin($plugin_slug);
+
+		if (is_wp_error($activated)) {
+			wp_send_json_error(['message' => $activated->get_error_message()]);
+		}
+
+		wp_send_json_success();
 	}
 
 	public function woocommerce_process_shop_order_meta($order_id, $order)
@@ -512,7 +619,12 @@ class wc_gsheetconnector_Service
 
 					// Get Spreadsheet name from ID
 					$sheet_data = get_option('wcgsc_feeds');
-					$gscwoo_spreadsheetName = isset($sheet_data[$selected_sheet_id]['sheet_name']) ? $sheet_data[$selected_sheet_id]['sheet_name'] : '';
+					// $gscwoo_spreadsheetName = isset($sheet_data[$selected_sheet_id]['sheet_name']) ? $sheet_data[$selected_sheet_id]['sheet_name'] : '';
+					if (is_array($sheet_data) && isset($sheet_data[$selected_sheet_id]['sheet_name'])) {
+		             $gscwoo_spreadsheetName = $sheet_data[$selected_sheet_id]['sheet_name'];
+	               } else {
+		            $gscwoo_spreadsheetName = '';
+	             }
 
 					// Get order states and sanitize
 					$order_states = isset($_POST['wcgsc_order_state']) ? array_map('sanitize_text_field', wp_unslash($_POST['wcgsc_order_state'])) : array();
@@ -900,6 +1012,138 @@ class wc_gsheetconnector_Service
 			$data['TRACE_STK'] = $e->getTraceAsString();
 			
 		}
+	}
+
+	public function get_adding_extra_order_row() {
+		$extra_rows = wp_cache_get( 'gsc_extra_order_meta_keys', 'gsc_cache' );
+		if ( false !== $extra_rows ) {
+			return $extra_rows;
+		}
+
+		global $wpdb;
+
+		$excluded_keys = array(
+			'_billing_address_1', '_billing_address_2', '_billing_address_index',
+			'_billing_city', '_billing_company', '_billing_country',
+			'_billing_first_name', '_billing_last_name', '_billing_postcode',
+			'_billing_state', '_cart_hash', '_cart_discount_tax',
+			'_completed_date', '_date_completed', '_date_paid',
+			'_order_currency', '_order_tax', '_order_total',
+			'_paid_date', '_payment_method', '_pos',
+			'_shipping_address_1', '_shipping_address_2', '_shipping_address_index',
+			'_shipping_city', '_shipping_company', '_shipping_country',
+			'_shipping_first_name', '_shipping_last_name', '_shipping_postcode',
+			'_shipping_state', '_wc'
+		);
+
+		$placeholders = implode(',', array_fill(0, count($excluded_keys), '%s'));
+		$sql = "
+			SELECT DISTINCT wpm.meta_key
+			FROM {$wpdb->prefix}posts AS wp
+			INNER JOIN {$wpdb->prefix}postmeta AS wpm ON wp.ID = wpm.post_id
+			WHERE wp.post_type = %s
+			AND wpm.meta_key NOT IN ($placeholders)
+			ORDER BY wpm.meta_key
+		";
+		$params = array_merge(['shop_order'], $excluded_keys);
+		$query = $wpdb->prepare($sql, ...$params);
+
+		$results = $wpdb->get_results( $query, ARRAY_A );
+		$extra_rows = ! empty( $results ) ? array_column( $results, 'meta_key' ) : array();
+
+		wp_cache_set( 'gsc_extra_order_meta_keys', $extra_rows, 'gsc_cache', 1800 );
+		return $extra_rows;
+	}
+
+	public function get_adding_extra_product_item_row() {
+		$cache_key = 'gsc_extra_product_item_meta_keys';
+		$extra_rows = wp_cache_get( $cache_key, 'gsc_cache' );
+		if ( false !== $extra_rows ) {
+			return $extra_rows;
+		}
+
+		global $wpdb;
+		$excluded_keys = array(
+			'_product_id', '_variation_id', '_qty',
+			'_line_subtotal', '_line_subtotal_tax', '_line_total'
+		);
+		$placeholders = implode(',', array_fill(0, count($excluded_keys), '%s'));
+
+		// Order Item Meta
+		$sql1 = "
+			SELECT DISTINCT(woim.meta_key)
+			FROM {$wpdb->prefix}woocommerce_order_items AS woi
+			INNER JOIN {$wpdb->prefix}posts AS wp ON wp.ID = woi.order_id
+			INNER JOIN {$wpdb->prefix}woocommerce_order_itemmeta AS woim ON woi.order_item_id = woim.order_item_id
+			WHERE order_item_type = %s
+			AND woim.meta_key NOT IN ($placeholders)
+		";
+		$params1 = array_merge(['line_item'], $excluded_keys);
+		$query1 = $wpdb->prepare($sql1, ...$params1);
+		$all_extra_order_itemmeta = $wpdb->get_results($query1, ARRAY_A);
+
+		$extra_rows = !empty($all_extra_order_itemmeta) ? array_column($all_extra_order_itemmeta, 'meta_key') : [];
+
+		// Product Post Meta
+		$product_ids = $wpdb->get_col( $wpdb->prepare("SELECT ID FROM {$wpdb->prefix}posts WHERE post_type = %s", 'product') );
+
+		if (!empty($product_ids)) {
+			$product_placeholders = implode(',', array_fill(0, count($product_ids), '%d'));
+			$excluded_placeholders = implode(',', array_fill(0, count($excluded_keys), '%s'));
+			$sql2 = "
+				SELECT DISTINCT(meta_key)
+				FROM {$wpdb->prefix}postmeta
+				WHERE post_id IN ($product_placeholders)
+				AND meta_key NOT IN ($excluded_placeholders)
+			";
+			$params2 = array_merge($product_ids, $excluded_keys);
+			$query2 = $wpdb->prepare($sql2, ...$params2);
+			$extra_post_meta = $wpdb->get_results($query2, ARRAY_A);
+			if (!empty($extra_post_meta)) {
+				$extra_rows = array_merge($extra_rows, array_column($extra_post_meta, 'meta_key'));
+			}
+		}
+
+		wp_cache_set($cache_key, $extra_rows, 'gsc_cache', 1800);
+		return $extra_rows;
+	}
+
+	public function get_adding_extra_product_row() {
+		$cache_key = 'gsc_extra_product_postmeta_keys';
+		$extra_rows = wp_cache_get($cache_key, 'gsc_cache');
+		if (false !== $extra_rows) {
+			return $extra_rows;
+		}
+
+		global $wpdb;
+		$excluded_keys = array(
+			'_product_id', '_variation_id', '_qty',
+			'_line_subtotal', '_line_subtotal_tax', '_line_total'
+		);
+
+		$product_ids = $wpdb->get_col( $wpdb->prepare("SELECT ID FROM {$wpdb->prefix}posts WHERE post_type = %s", 'product') );
+
+		if (!empty($product_ids)) {
+			$product_placeholders = implode(',', array_fill(0, count($product_ids), '%d'));
+			$excluded_placeholders = implode(',', array_fill(0, count($excluded_keys), '%s'));
+
+			$sql = "
+				SELECT DISTINCT(pm.meta_key)
+				FROM {$wpdb->prefix}postmeta AS pm
+				WHERE pm.post_id IN ($product_placeholders)
+				AND pm.meta_key NOT IN ($excluded_placeholders)
+			";
+			$params = array_merge($product_ids, $excluded_keys);
+			$query = $wpdb->prepare($sql, ...$params);
+			$all_extra_post_itemmeta = $wpdb->get_results($query, ARRAY_A);
+
+			if (!empty($all_extra_post_itemmeta)) {
+				$extra_rows = array_column($all_extra_post_itemmeta, 'meta_key');
+			}
+		}
+
+		wp_cache_set($cache_key, $extra_rows, 'gsc_cache', 1800);
+		return $extra_rows;
 	}
 }
 

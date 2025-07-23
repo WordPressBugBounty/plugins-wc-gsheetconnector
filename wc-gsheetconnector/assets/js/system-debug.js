@@ -107,8 +107,5 @@ jQuery(document).ready(function ($) {
         copyErrorLog();
     });
 
-    $('.wcgsc-clear-content-logs').on('click', function (e) {
-        e.preventDefault();
-        clearErrorLog();
-    });
+  
 });

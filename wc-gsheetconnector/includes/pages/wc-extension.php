@@ -1,3 +1,6 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+?>
 <div id="plugin-manager-data"
      data-ajaxurl="<?php echo esc_url(admin_url('admin-ajax.php')); ?>"
      data-plugin-nonce="<?php echo esc_attr(wp_create_nonce('plugin_manager_nonce')); ?>"
@@ -270,6 +273,7 @@
                                 <div class="addon-item-header">
                                     <div class="plugin-premium">PRO</div>
                                     <a href="<?php echo esc_url($details['buyLink']); ?>" target="_blank">
+                                        <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Image is not from WP Media Library -->
                                         <img src="<?php echo esc_url($details['img']); ?>" alt="<?php echo esc_attr($details['name']); ?>">
                                     </a>
                                     <div class="addon-item-header-meta">
@@ -289,6 +293,7 @@
                                     <div class="button-bar">
                                         <button class="activate-plugin-btn button button-free proactive"
                                             data-plugin="<?php echo esc_attr($details['pro_plugin_active']); ?>">
+                                            <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Safe static plugin image -->
                                             <img src="<?php echo esc_url(WC_GSHEETCONNECTOR_URL . 'assets/img/ajax-loader.gif'); ?>"
                                                 alt="Loading..." class="loaderimg" />
                                            <?php esc_html_e('Activate', 'wc-gsheetconnector'); ?>
@@ -306,6 +311,7 @@
                                 <div class="addon-item-header">
                                     <div class="plugin-free">Free</div>
                                     <a href="<?php echo esc_url($details['buyLink']); ?>" target="_blank">
+                                        <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Image is not from WP Media Library -->
                                         <img src="<?php echo esc_url($details['img']); ?>" alt="<?php echo esc_attr($details['name']); ?>">
                                     </a>
                                     <div class="addon-item-header-meta">
@@ -316,7 +322,7 @@
                                         </div>
                                         <div class="addon-item-header-meta-excerpt">
                                             <a href="<?php echo esc_url($details['buyLink']); ?>" target="_blank" class="addon-link">
-                                                <?php _e('Upgrade to PRO', 'gsheetconnector'); ?>
+                                               <?php esc_html_e( 'Upgrade to PRO', 'wc-gsheetconnector' ); ?>
                                             </a>
                                         </div>
                                     </div>
@@ -339,6 +345,7 @@
                         <div class="addon-item-header">
                             <div class="plugin-premium">PRO</div>
                             <a href="<?php echo esc_url($details['link']); ?>" target="_blank">
+                                <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Image is not from WP Media Library -->
                                 <img src="<?php echo esc_url($details['img']); ?>" alt="<?php echo esc_attr($details['name']); ?>">
                             </a>
                             <div class="addon-item-header-meta">
@@ -348,7 +355,7 @@
                                     </a>
                                 </div>
                                 <div class="addon-item-header-meta-excerpt">
-                                    <strong><?php _e('Already using PRO version', 'gsheetconnector'); ?></strong>
+                                   <strong><?php esc_html_e( 'Already using PRO version', 'wc-gsheetconnector' ); ?></strong>
                                 </div>
                             </div>
                         </div>
@@ -392,6 +399,7 @@
                         <div class="addon-item-header">
                             <div class="plugin-free">Free</div>
                             <a href="<?php echo esc_url($data['url']); ?>" target="_blank">
+                                <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Image is not from WP Media Library -->
                                 <img src="<?php echo esc_url($data['img']); ?>" alt="<?php echo esc_attr($data['name']); ?>">
                             </a>
                             <div class="addon-item-header-meta">
@@ -409,11 +417,12 @@
                             <div class="button-bar">
                                 <?php if ($is_free_active): ?>
                                     <button class="button button-secondary" disabled>
-                                        <?php _e('Activated', 'gsheetconnector'); ?>
+                                        <?php esc_html_e( 'Activated', 'wc-gsheetconnector' ); ?>
                                     </button>
                                 <?php elseif ($is_free_installed && !$is_free_active): ?>
                                     <button class="activate-plugin-btn button button-free"
                                         data-plugin="<?php echo esc_attr($data['connector']); ?>">
+                                        <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Safe static plugin image -->
                                         <img src="<?php echo esc_url(WC_GSHEETCONNECTOR_URL . 'assets/img/ajax-loader.gif'); ?>"
                                             alt="Loading..." class="loaderimg" />
                                        <?php esc_html_e('Activate', 'wc-gsheetconnector'); ?>
@@ -423,6 +432,7 @@
                                     <button class="install-plugin-btn button "
                                         data-download="<?php echo esc_url($data['downloadLink']); ?>"
                                         data-plugin="<?php echo esc_attr($plugin); ?>">
+                                        <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Safe static plugin image -->
                                         <img src="<?php echo esc_url(WC_GSHEETCONNECTOR_URL . 'assets/img/ajax-loader.gif'); ?>"
                                             alt="Loading..." class="loaderimg" />
                                         <?php echo esc_html($data['button']); ?>
@@ -430,6 +440,7 @@
                                     <!-- Ensure Activate button exists but is hidden -->
                                     <button class="activate-plugin-btn button button-free"
                                         data-plugin="<?php echo esc_attr($data['connector']); ?>" style="display: none;">
+                                        <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Safe static plugin image -->
                                         <img src="<?php echo esc_url(WC_GSHEETCONNECTOR_URL . 'assets/img/ajax-loader.gif'); ?>"
                                             alt="Loading..." class="loaderimg" />
                                        <?php esc_html_e('Activate', 'wc-gsheetconnector'); ?>
@@ -444,6 +455,7 @@
                     <div class="addon-item-header">
 
                         <a href="<?php echo esc_url($data['buyLink']); ?>" target="_blank">
+                            <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Image is not from WP Media Library -->
                             <img src="<?php echo esc_url($data['img']); ?>" alt="<?php echo esc_attr($data['name']); ?>">
                         </a>
                         <div class="addon-item-header-meta">
@@ -511,17 +523,18 @@
                             <?php } else { ?>
                                 <div class="plugin-free">Free</div>
                             <?php } ?>
-                            <a href="<?php echo $data['link']; ?>" target="_blank">
-                                <img src="<?php echo $data['img']; ?>" alt="logo">
+                            <a href="<?php echo esc_url( $data['link'] ); ?>" target="_blank" rel="noopener noreferrer">
+                                <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Image is not from WP Media Library -->
+                                <img src="<?php echo esc_url( $data['img'] ); ?>" alt="<?php echo esc_attr__( 'logo', 'wc-gsheetconnector' ); ?>">
                             </a>
                             <div class="addon-item-header-meta">
                                 <div class="addon-item-meta-title">
-                                    <a href="<?php echo $data['link']; ?>" target="_blank">
-                                        <?php echo $data['name']; ?>
+                                    <a href="<?php echo esc_url( $data['link'] ); ?>" target="_blank" rel="noopener noreferrer">
+                                        <?php echo esc_html( $data['name'] ); ?>
                                     </a>
                                 </div>
                                 <div class="addon-item-header-meta-excerpt">
-                                    <?php echo $data['text']; ?>
+                                   <?php echo wp_kses_post( $data['text'] ); ?>
                                 </div>
                             </div>
                         </div>

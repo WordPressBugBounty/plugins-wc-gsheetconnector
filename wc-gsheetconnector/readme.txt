@@ -6,7 +6,7 @@ Tested up to: 6.8
 Requires at least: 5.3
 Requires PHP: 7.4
 Requires Plugins: woocommerce
-Stable tag: 1.4.3
+Stable tag: 1.4.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -104,6 +104,11 @@ Please double-check those items and hopefully getting them right will fix the is
 Make sure to <a href="https://www.gsheetconnector.com/how-to-enable-debugging-in-wordpress">enable debug log from wp-config.php</a> if submitted order is not showing in sheet, It will helps to show the conflict issue (if there is any) or shows what is making an issue.
 
 == Changelog ==
+
+= 1.4.4 (23-07-2025) =
+- Added: Extension tab added.
+- Moved freemius folder under Library folder insider vendor folder.
+- Added: Debug logs file will be created under wp-upload folder.
 
 = 1.4.3 (16-07-2025) =
 - Fixed: Solved  Licensing/Trademark issues in main plugin file and readme.

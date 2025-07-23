@@ -150,6 +150,17 @@ if (isset($_GET['code'])) {
 
     <?php } 
        ?>
+
+    <p>
+       <label><?php esc_html_e('Debug Log', 'wc-gsheetconnector'); ?></label>
+       <button class="wcgsc-logs"><?php echo esc_html__('View', 'wc-gsheetconnector'); ?></button>
+          <!-- <label><a href="<?php echo esc_url(plugins_url('/logs/log.txt', __FILE__)); ?>" target="_blank"
+                        class="gs-woo-debug-view"><?php esc_html_e('View', 'wc-gsheetconnector'); ?></a></label> -->
+        <label><a class="debug-clear"><?php echo esc_html__('Clear', 'wc-gsheetconnector'); ?></a></label>
+          <span
+                            class="clear-loading-sign">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <p id="wcgsc-validation-message"></p>
+    </p>
     
     <div id="wc-gsc-cta" class="wc-gsc-privacy-box">
       <div class="wc-gsc-table">
@@ -160,6 +171,29 @@ if (isset($_GET['code'])) {
       </div>
     </div>
   </div>
+</div>
+
+<!-- display content error logs -->
+<div class="wc-system-Error-logs">
+    <button id="copy-logs-btn" onclick="copyLogs()"><?php echo esc_html__('Copy Logs', 'wc-gsheetconnector'); ?></button>
+    <div class="wcdisplayLogs" id="log-content">
+        <?php
+        $wcexistDebugFile = get_option('wcfgs_debug_log_file');
+        // check if debug unique log file exists or not
+        if (!empty($wcexistDebugFile) && file_exists($wcexistDebugFile)) {
+            $displaywcfreeLogs = nl2br(file_get_contents($wcexistDebugFile));
+            if (!empty($displaywcfreeLogs)) {
+                // Display the logs within a span to enable copying
+                echo '<span id="log-text">' . esc_html($displaywcfreeLogs) . '</span>';
+            } else {
+                echo esc_html(__('No errors found.', 'wc-gsheetconnector'));
+            }
+        } else {
+            // check if debug unique log file does not exist
+            echo esc_html(__('No log file exists as no errors are generated.', 'wc-gsheetconnector'));
+        }
+        ?>
+    </div>
 </div>
 
 <div class="two-col wc-free-box-help12">

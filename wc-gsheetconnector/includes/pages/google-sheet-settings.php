@@ -25,6 +25,8 @@ if ($active_tab === 'integration') {
   $active_tab_name = 'Beta - Version';
 } elseif ($active_tab === 'product_sheet_to_woocommerce') {
   $active_tab_name = '2 Way Sync';
+} elseif ($active_tab === 'extension') {
+  $active_tab_name = 'Extension';
 }
 
 // Check plugin version and subscription plan
@@ -54,6 +56,7 @@ $plugin_version = defined('WC_GSHEETCONNECTOR_VERSION') ? WC_GSHEETCONNECTOR_VER
     'system_status' => __('System Status', 'wc-gsheetconnector'),
     'beta_version' => __('Beta - Version', 'wc-gsheetconnector'),
     'product_sheet_to_woocommerce' => __("Sync", 'wc-gsheetconnector'),
+    'extension' => __("Extension", 'wc-gsheetconnector'),
   );
   echo '<div id="icon-themes" class="icon32"><br></div>';
   echo '<h2 class="nav-tab-wrapper">';
@@ -83,6 +86,9 @@ $plugin_version = defined('WC_GSHEETCONNECTOR_VERSION') ? WC_GSHEETCONNECTOR_VER
       break;
     case 'product_sheet_to_woocommerce':
       include(WC_GSHEETCONNECTOR_PATH . 'includes/pages/wc-product-sheet.php');
+      break;
+    case 'extension':
+      include(WC_GSHEETCONNECTOR_PATH . 'includes/pages/wc-extension.php');
       break;
   }
   ?>

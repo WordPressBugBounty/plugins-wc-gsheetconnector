@@ -20,72 +20,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<div class="system-debug-logs" id="opener" >
-   <div class="info-container">
-      <h2 class="systemifo"><span><?php echo esc_html(__('Debug Constants', 'wc-gsheetconnector')); ?></span>
-    <span class="pro-ver"><?php echo esc_html(__('PRO', 'wc-gsheetconnector')); ?></span>
-      
-</h2>
-<form method="post" style="pointer-events: none;">
-<table>
-  <tr>
-    <th><?php echo esc_html__( 'Key', 'wc-gsheetconnector' ); ?></th>
-    <th><?php echo esc_html__( 'Info', 'wc-gsheetconnector' ); ?></th>
-    <th><?php echo esc_html__( 'Status', 'wc-gsheetconnector' ); ?></th>
-  </tr>
-  <tr>
-    <th><?php echo esc_html__( 'WP_DEBUG', 'wc-gsheetconnector' ); ?></th>
-    <td><?php echo esc_html__( 'Enable WP_DEBUG mode', 'wc-gsheetconnector' ); ?></td>
-    <td>
-      <label class="switch">
-        <input type="checkbox" name="wpgsc-debug" value="">
-        <span class="slider round"></span>
-      </label>
-    </td>
-  </tr>
-  <tr>
-    <th><?php echo esc_html__( 'WP_DEBUG_LOG', 'wc-gsheetconnector' ); ?></th>
-    <td><?php echo esc_html__( 'Enable Debug logging to the /wp-content/debug.log file', 'wc-gsheetconnector' ); ?></td>
-    <td>
-      <label class="switch">
-        <input type="checkbox" name="wpgsc-debug-log" value="">
-        <span class="slider round"></span>
-      </label>
-    </td>
-  </tr>
-  <tr>
-    <th><?php echo esc_html__( 'SCRIPT_DEBUG', 'wc-gsheetconnector' ); ?></th>
-    <td><?php echo esc_html__( 'Use the “dev” versions of core CSS and JavaScript files', 'wc-gsheetconnector' ); ?></td>
-    <td>
-      <label class="switch">
-        <input type="checkbox" name="wpgsc-script-debug" value="">
-        <span class="slider round"></span>
-      </label>
-    </td>
-  </tr>
-  <tr>
-    <th><?php echo esc_html__( 'SAVEQUERIES', 'wc-gsheetconnector' ); ?></th>
-    <td><?php echo esc_html__( 'Enable database query logging, turn it off when not debugging because it will affect site performance. The array is stored in the global $wpdb->queries.', 'wc-gsheetconnector' ); ?></td>
-    <td>
-      <label class="switch">
-        <input type="checkbox" name="wpgsc-savequeries" value="">
-        <span class="slider round"></span>
-      </label>
-    </td>
-  </tr>
-</table>
-
-<h2>
-  <input type="submit" class="button button-primary button-large debug-logs-save" name="gs_woo_debug_settings" value="<?php echo esc_attr__( "Save", "wc-gsheetconnector" ); ?>" />
-  <span class="beta-loading-sign-woogsc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-</h2>
-
-           </form>
-
-            </div>
-
-  </div>
-
 <div class="system-Error">
     <div class="error-container">
         <h2 class="systemerror"><?php echo esc_html__( "Error Log", "wc-gsheetconnector" ); ?> </h2>
@@ -98,7 +32,9 @@ if ( ! defined( 'ABSPATH' ) ) {
         </p>
         <button onclick="copyErrorLog()" class="copy-error-log"><?php echo esc_html__( "Copy Error Log to Clipboard", "wc-gsheetconnector" ); ?></button>
         <button class="wcgsc-clear-content-logs"><?php echo esc_html__( "Clear", "wc-gsheetconnector" ); ?></button>
-        <input type="hidden" name="gs-ajax-nonce" id="gs-ajax-nonce" value="<?php echo esc_attr( wp_create_nonce('gs-ajax-nonce') ); ?>" />
+        <span class="wcgsc-clear-loading-sign-logs">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span class="wcgsc-clear-content-logs-msg"></span>
+        <input type="hidden" name="wcgsc-ajax-nonce" id="wcgsc-ajax-nonce" value="<?php echo esc_attr( wp_create_nonce('wcgsc-ajax-nonce') ); ?>" />
         <div class="copy-message" style="display: none;"><?php echo esc_html__( "Copied", "wc-gsheetconnector" ); ?></div>
         <?php echo wp_kses_post( $wc_free_system_log->display_error_log() ); ?>
     </div>

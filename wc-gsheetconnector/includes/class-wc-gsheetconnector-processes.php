@@ -28,12 +28,76 @@ class wc_gsheetconnector_processes {
 		// get sheet name and tab name
 		add_action( 'wp_ajax_wcgsc_sync_google_account', array( $this, 'wcgsc_sync_google_account' ) );
 
+		// clear debug log data
+		add_action( 'wp_ajax_wcgsc_clear_log', array( $this, 'wcgsc_clear_logs' ) );
+
 		// get sheet names
 		add_action( 'wp_ajax_wcgsc_get_tab_list', array( $this, 'wcgsc_get_tab_list_by_sheetname' ) );
 
 	    // Display widget to dashboard
 		add_action( 'wp_dashboard_setup', array( $this, 'wcgsc_add_summary_widget' ) );
+
+		add_action('wp_ajax_wcgsc_log_systeminfo', array($this, 'wcgsc_log_systeminfo'));
     }
+
+    /**
+    * AJAX function - clear log file for system status tab
+    * @since 2.1
+    */
+    public function wcgsc_log_systeminfo() {
+        // nonce check
+        check_ajax_referer( 'wcgsc-ajax-nonce', 'security' );
+
+        // Initialize WP_Filesystem
+        if ( ! function_exists( 'WP_Filesystem' ) ) {
+            require_once ABSPATH . 'wp-admin/includes/file.php';
+        }
+        global $wp_filesystem;
+        WP_Filesystem();
+
+        $log_file = WP_CONTENT_DIR . '/debug.log';
+
+        // Clear the log file using WP_Filesystem
+        if ( $wp_filesystem->exists( $log_file ) || $wp_filesystem->put_contents( $log_file, '', FS_CHMOD_FILE ) ) {
+            $wp_filesystem->put_contents( $log_file, '', FS_CHMOD_FILE );
+        }
+
+        wp_send_json_success();
+    }
+
+    /**
+     * AJAX function - clear log file
+     * @since 1.0
+     */
+    public function wcgsc_clear_logs() {
+	    // nonce check
+	    check_ajax_referer( 'wcgsc-ajax-nonce', 'security' );
+
+	    $wcexistDebugFile = get_option('wcfgs_debug_log_file');
+	    $clear_file_msg = '';
+
+	    if ( ! empty( $wcexistDebugFile ) && file_exists( $wcexistDebugFile ) ) {
+
+	        // Load WP_Filesystem API
+	        if ( ! function_exists( 'WP_Filesystem' ) ) {
+	            require_once ABSPATH . 'wp-admin/includes/file.php';
+	        }
+	        global $wp_filesystem;
+	        WP_Filesystem();
+
+	        // Clear file using WP_Filesystem
+	        if ( $wp_filesystem->put_contents( $wcexistDebugFile, '', FS_CHMOD_FILE ) ) {
+	            $clear_file_msg = 'Logs are cleared.';
+	        } else {
+	            $clear_file_msg = 'Failed to clear log file.';
+	        }
+
+	    } else {
+	        $clear_file_msg = 'No log file exists to clear logs.';
+	    }
+
+	    wp_send_json_success( $clear_file_msg );
+	}
 
     private function maybe_migrate_old_options() {
 		$option_map = array(

@@ -9,6 +9,11 @@ $sheet_data = get_option( 'wcgsc_sheet_feeds' );
 // Get order states/ Tab names
 $selected_order_states = get_option( 'wcgsc_order_states' );
 $woo_service = new wc_gsheetconnector_Service();
+
+$adding_extra_order_row = $woo_service->get_adding_extra_order_row();
+$adding_extra_product_item_row = $woo_service->get_adding_extra_product_item_row();
+$adding_extra_product_row = $woo_service->get_adding_extra_product_row();
+
 ?>
 <?php
 // Check if the user is authenticated
