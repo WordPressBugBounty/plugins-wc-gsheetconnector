@@ -17,16 +17,15 @@ if ($active_tab === 'integration') {
   $active_tab_name = 'Integration';
 } elseif ($active_tab === 'settings') {
   $active_tab_name = 'WooCommerce Data Settings';
-} elseif ($active_tab === 'role_settings') {
-  $active_tab_name = 'Role Settings';
-} elseif ($active_tab === 'system_status') {
-  $active_tab_name = 'System Status';
-} elseif ($active_tab === 'beta_version') {
-  $active_tab_name = 'Beta - Version';
+} elseif ($active_tab === 'wc_settings') {
+  $active_tab_name = 'Settings';
 } elseif ($active_tab === 'product_sheet_to_woocommerce') {
   $active_tab_name = '2 Way Sync';
 } elseif ($active_tab === 'extension') {
   $active_tab_name = 'Extension';
+}
+elseif ($active_tab === 'form_feed_settings') {
+  $active_tab_name = 'Form Feed Settings';
 }
 
 // Check plugin version and subscription plan
@@ -41,32 +40,43 @@ $plugin_version = defined('WC_GSHEETCONNECTOR_VERSION') ? WC_GSHEETCONNECTOR_VER
     <small><?php echo esc_html(__('Version :', 'wc-gsheetconnector')); ?>
       <?php echo esc_html($plugin_version, 'wc-gsheetconnector'); ?> </small>
   </h1>
-  <a href="https://support.gsheetconnector.com/kb" title="gsheet Knowledge Base" target="_blank"
-    class="button gsheet-help"><i class="dashicons dashicons-editor-help"></i></a>
+   
+	 
+	<ul> 
+		<li><a href="<?php echo admin_url( 'admin.php?page=wc-gsheetconnector-config&tab=extension', 'wc-gsheetconnector' ); ?>" title="Extensions">
+          <i class="fa-solid fa-puzzle-piece"></i></a></li>
+		<li><a href="https://www.gsheetconnector.com/docs/woocommerce-gsheetconnector/installation-process-free-version" title="Document" target="_blank"><i class="fa-regular fa-file-lines"></i></a></li>
+		<li><a href="https://www.gsheetconnector.com/support" title="Support" target="_blank"><i class="fa-regular fa-life-ring"></i></a></li>
+		<li><a href="https://wordpress.org/plugins/wc-gsheetconnector/#developers" title="Changelog" target="_blank"><i class="fa-solid fa-bullhorn"></i></a></li>
+	</ul>
+	
 </div>
-<span class="wcgsc-dashboard"><?php echo esc_html(__('DASHBOARD', 'wc-gsheetconnector')); ?></span>
-<span class="wcgsc-divider"> / </span>
-<span class="wcgsc-modules"> <?php echo esc_html($active_tab_name); ?></span>
-<div class="wrap">
+
+<div class="breadcrumb">
+	<span class="wcgsc-dashboard"><?php echo esc_html(__('DASHBOARD', 'wc-gsheetconnector')); ?></span>
+	<span class="wcgsc-divider"> / </span>
+	<span class="wcgsc-modules"> <?php echo esc_html($active_tab_name); ?></span>
+</div>
+
   <?php
-  $tabs = array(
-    'integration' => __('Integration', 'wc-gsheetconnector'),
-    'settings' => __('WooCommerce Data Settings', 'wc-gsheetconnector'),
-    'role_settings' => __('Role Settings', 'wc-gsheetconnector'),
-    'system_status' => __('System Status', 'wc-gsheetconnector'),
-    'beta_version' => __('Beta - Version', 'wc-gsheetconnector'),
-    'product_sheet_to_woocommerce' => __("Sync", 'wc-gsheetconnector'),
-    'extension' => __("Extension", 'wc-gsheetconnector'),
-  );
+ $tabs = array(
+    'integration'               => esc_html__( 'Integration', 'wc-gsheetconnector' ),
+    'settings'                  => esc_html__( 'WooCommerce Data Settings', 'wc-gsheetconnector' ),
+    'wc_settings'               => esc_html__( 'Settings', 'wc-gsheetconnector' ),
+    'form_feed_settings'        => esc_html__( 'Feed Settings', 'wc-gsheetconnector' ),
+    'product_sheet_to_woocommerce' => esc_html__( 'Sync', 'wc-gsheetconnector' ),
+    'extension'                 => esc_html__( 'Extension', 'wc-gsheetconnector' ),
+);
+
   echo '<div id="icon-themes" class="icon32"><br></div>';
-  echo '<h2 class="nav-tab-wrapper">';
+  echo '<div class="nav-tab-wrapper">';
   foreach ($tabs as $tab => $name) {
     // FILTER_SANITIZE_STRING
     $class = ($tab === $active_tab) ? ' nav-tab-active' : '';
     echo '<a class="nav-tab' . esc_attr($class) . '" href="' . esc_url('?page=wc-gsheetconnector-config&tab=' . $tab) . '">' . esc_html($name) . '</a>';
 
   }
-  echo '</h2>';
+  echo '</div><div class="wrap-gsc">';
   switch ($active_tab) {
     case 'integration':
       include(WC_GSHEETCONNECTOR_PATH . 'includes/pages/wc-gsheetconnector-integration.php');
@@ -74,15 +84,11 @@ $plugin_version = defined('WC_GSHEETCONNECTOR_VERSION') ? WC_GSHEETCONNECTOR_VER
     case 'settings':
       include(WC_GSHEETCONNECTOR_PATH . 'includes/pages/wc-gsheetconnector-setting.php');
       break;
-    case 'role_settings':
-      $role_settings = new wc_gsheetconnector_role_settings_free();
-      $role_settings->add_role_setting_page_free();
+    case 'form_feed_settings':
+      include(WC_GSHEETCONNECTOR_PATH . 'includes/pages/wc-gsheetconnector-feed-settings.php');
       break;
-    case 'beta_version':
-      include(WC_GSHEETCONNECTOR_PATH . 'includes/pages/wc-beta-version.php');
-      break;
-    case 'system_status':
-      include(WC_GSHEETCONNECTOR_PATH . 'includes/pages/wc-gsheetconnector-systeminfo.php');
+    case 'wc_settings':
+      include(WC_GSHEETCONNECTOR_PATH . 'includes/pages/google-sheet-inner-settings.php');
       break;
     case 'product_sheet_to_woocommerce':
       include(WC_GSHEETCONNECTOR_PATH . 'includes/pages/wc-product-sheet.php');

@@ -6,7 +6,7 @@ Tested up to: 6.8
 Requires at least: 5.3
 Requires PHP: 7.4
 Requires Plugins: woocommerce
-Stable tag: 1.4.4
+Stable tag: 1.4.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,7 +18,7 @@ Google Spreadsheet addon plugin for WooCommerce to connect your store data direc
 
 This plugin is a bridge between your [WooCommerce](https://wordpress.org/plugins/woocommerce/) orders and [Google Sheets](https://www.google.com/sheets/about/). Whenever any new order is placed in **WooCommerce** a new row with the order details will be added or moved to the appropriate **Google Sheet Tabs as per the order status.**
 
-[Documentation](https://www.gsheetconnector.com/docs) | [Support](https://www.gsheetconnector.com/support) | [Demo](https://woogsheets.gsheetconnector.com/) | [Premium Version](https://www.gsheetconnector.com/woocommerce-google-sheet-connector-pro)
+[Documentation](https://www.gsheetconnector.com/docs/woocommerce-gsheetconnector/installation-process-free-version) | [Support](https://www.gsheetconnector.com/support) | [Demo](https://woogsheets.gsheetconnector.com/) | [Premium Version](https://www.gsheetconnector.com/woocommerce-google-sheet-connector-pro)
 
 = Still haven't purchased ? <a href="https://www.gsheetconnector.com/wc-gsheetconnector-pro?wp-repo" target="_blank">Get it Now</a> =
 
@@ -104,6 +104,11 @@ Please double-check those items and hopefully getting them right will fix the is
 Make sure to <a href="https://www.gsheetconnector.com/how-to-enable-debugging-in-wordpress">enable debug log from wp-config.php</a> if submitted order is not showing in sheet, It will helps to show the conflict issue (if there is any) or shows what is making an issue.
 
 == Changelog ==
+
+= 1.4.5 (19-09-2025) =
+- Updated: Readme file.
+- Updated: UI design improvements.
+- Added: Feed settings for Pro features.
 
 = 1.4.4 (23-07-2025) =
 - Added: Extension tab added.

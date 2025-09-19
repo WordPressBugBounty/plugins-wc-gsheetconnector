@@ -66,8 +66,7 @@ class GSCWOO_googlesheet
 	{
 		$tokenData['expire'] = time() + intval($tokenData['expires_in']);
 		try {
-			//$tokenJson = json_encode($tokenData);
-			//update_option('gfgs_token', $tokenJson);
+			
 			//resolved - google sheet permission issues - START
 			if (isset($tokenData['scope'])) {
 				$permission = explode(" ", $tokenData['scope']);
@@ -82,7 +81,7 @@ class GSCWOO_googlesheet
 			//resolved - google sheet permission issues - END
 
 		} catch (Exception $e) {
-			
+			wc_gsheetconnector_utility::gs_debug_log($e->getMessage());
 		}
 	}
 
@@ -119,7 +118,7 @@ class GSCWOO_googlesheet
 
 			self::setInstance($client);
 		} catch (Exception $e) {
-			
+			wc_gsheetconnector_utility::gs_debug_log($e->getMessage());
 			exit();
 		}
 	}
@@ -167,7 +166,7 @@ class GSCWOO_googlesheet
 				}
 			}
 		} catch (Exception $e) {
-			
+			wc_gsheetconnector_utility::gs_debug_log($e->getMessage());
 			return null;
 			exit();
 		}
@@ -192,7 +191,7 @@ class GSCWOO_googlesheet
 				);
 			}
 		} catch (Exception $e) {
-			
+			wc_gsheetconnector_utility::gs_debug_log($e->getMessage());
 			return null;
 			exit();
 		}
@@ -318,7 +317,7 @@ class GSCWOO_googlesheet
 			}
 
 		} catch (Exception $e) {
-			
+			wc_gsheetconnector_utility::gs_debug_log($e->getMessage());
 			return false;
 		}
 	}
@@ -370,7 +369,7 @@ class GSCWOO_googlesheet
 			
 
 		} catch (Exception $e) {
-			
+			wc_gsheetconnector_utility::gs_debug_log($e->getMessage());
 			return false;
 		}
 	}
@@ -426,7 +425,7 @@ class GSCWOO_googlesheet
 			}
 			return true;
 		} catch (Exception $e) {
-			
+			wc_gsheetconnector_utility::gs_debug_log($e->getMessage());
 			return false;
 		}
 	}
@@ -468,6 +467,7 @@ class GSCWOO_googlesheet
 				}
 			}
 		} catch (Exception $e) {
+			wc_gsheetconnector_utility::gs_debug_log($e->getMessage());
 			$header_cells = array();
 			
 		}
@@ -490,7 +490,7 @@ class GSCWOO_googlesheet
 			$service = new Google_Service_Oauth2($client);
 			$user = $service->userinfo->get();
 		} catch (Exception $e) {
-			
+			wc_gsheetconnector_utility::gs_debug_log($e->getMessage());
 			return false;
 		}
 
@@ -524,7 +524,7 @@ class GSCWOO_googlesheet
 				update_option("wcgsc_email_account", $email);
 				return $email;
 		    } catch (Exception $e) {
-			
+			wc_gsheetconnector_utility::gs_debug_log($e->getMessage());
 			return false;
 		}
 	}

@@ -7,14 +7,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
      data-deactivate-nonce="<?php echo esc_attr(wp_create_nonce('deactivate_plugin_nonce')); ?>">
 </div>
 <!-- tab extenion page  -->
-<div class="wrap">
+<div class="extension">
     <h2></h2>
     <?php
 
     $all_plugins = get_plugins();
-    // echo "<pre>";
-    // echo print_r($all_plugins);
-    // echo "</pre>";
     $active_theme = wp_get_theme();
 
     $plugins = [

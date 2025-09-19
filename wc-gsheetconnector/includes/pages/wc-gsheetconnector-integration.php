@@ -16,34 +16,46 @@ if (isset($_GET['code'])) {
 
 <!-- save code, alert and css -->
 <div class="card-wcgsc dropdownoption-wcgsc">
-    <div class="lbl-drop-down-select">
-        <label for="wcgsc_dro_option"><?php echo esc_html__('Choose Google API Setting :', 'wc-gsheetconnector'); ?></label>
-    </div>
+	
+	<h2><?php echo esc_html__('Google Sheet Integration - WC GSheetConnector', 'wc-gsheetconnector'); ?></h2>
+	<p class="sub-desc"><?php 
+echo wp_kses_post( __(
+    'Choose your Google API Setting from the dropdown. In the Free version, only the <strong>Auto Google API Configuration (Use Existing Client/Secret Key)</strong> option is available.
+    The other methods – <strong>Manual Client/Secret Key</strong> and <strong>Service Account</strong> – are exclusive features of the Pro version. 
+    You can <a href="https://www.gsheetconnector.com/pricing/" target="_blank">upgrade to Pro</a> to unlock these advanced options.
+    After saving your selected setting, the related integration options will appear, allowing you to complete the setup easily.',
+    'wc-gsheetconnector'
+) );
+?></p> 
+    
+	<div class="row">
+        <label for="wcgsc_dro_option"><?php echo esc_html__('Choose Google API Setting ', 'wc-gsheetconnector'); ?></label>
+    
     <div class="drop-down-select-btn">
         <select id="wcgsc_dro_option" name="wcgsc_dro_option">
             <option value="wcgsc_existing" selected><?php echo esc_html__('Use Existing Client/Secret Key (Auto Google API Configuration)', 'wc-gsheetconnector'); ?>
             </option>
             <option value="wcgsc_manual" disabled=""><?php echo esc_html__('Use Manual Client/Secret Key (Use Your Google API Configuration) (Upgrade To PRO)', 'wc-gsheetconnector'); ?></option>
+            <option value="wcgsc_service" disabled=""><?php echo esc_html__('Service Account (Recommended) (Upgrade To PRO)', 'wc-gsheetconnector'); ?></option>
         </select>
         <p class="int-meth-btn-wcgs"><a href="https://www.gsheetconnector.com/woocommerce-google-sheet-connector-pro" target="_blank"><input type="button" name="save-method-api-wcgs" id="save-method-api-wcgs"
-                value="<?php esc_html_e('Upgrade To PRO', 'wc-gsheetconnector'); ?>" class="button button-primary" />
+                value="<?php esc_html_e('Upgrade To PRO', 'wc-gsheetconnector'); ?>" class="upgrade-btn" />
             </a>
-            <span class="tooltip"> <img src="<?php esc_url(WC_GSHEETCONNECTOR_URL); ?>assets/img/help.png"
-                        class="help-icon"> <span
-                        class="tooltiptext tooltip-right"><?php esc_html_e('Manual Client/Secret Key (Use Your Google API Configuration) method is available in the PRO version of the plugin.', 'wc-gsheetconnector'); ?></span></span>
+             
         </p>
     </div>
+		</div>
+		
 </div> 
 <input type="hidden" name="redirect_auth" id="redirect_auth"
     value="<?php echo (isset($header)) ? esc_attr($header) : ''; ?>">
 <div class="card-wp">
   <div class="wcgsc-in-fields">
-    <h2>
-      <span class="title1"><?php esc_html_e( 'WooCommerce -', 'wc-gsheetconnector' ); ?></span>
-      <span class="title"><?php esc_html_e( 'Google Sheets Integration', 'wc-gsheetconnector' ); ?></span>
-    </h2>
+    <h2> <?php esc_html_e( 'Google Sheet Integration - Use Existing Client/Secret Key (Auto Google API Configuration)', 'wc-gsheetconnector' ); ?></h2>
+	  
+	 <p class="sub-desc"><?php esc_html_e( 'Automatic integration allows you to connect Woocommerce with Google Sheets using built-in Google API configuration. By authorizing your Google account, the plugin will handle API setup and authentication automatically, enabling seamless form data sync. Learn more in the documentation', 'wc-gsheetconnector' ); ?> <a href="https://www.gsheetconnector.com/docs/woocommerce-gsheetconnector/integration-with-google-existing-method" target="_blank"><?php echo esc_html__('click here', 'wc-gsheetconnector'); ?></a>.</p>
 
-    <hr>
+     
     <?php if (empty($Code)) { ?>
     <div class="wcgsc-alert-kk" id="google-drive-msg">
       <p class="wcgsc-alert-heading"> <?php echo esc_html__('Authenticate with your Google account, follow these steps:', 'wc-gsheetconnector'); ?> </p>
@@ -59,8 +71,8 @@ if (isset($_GET['code'])) {
       </ol>
     </div>
     <?php } ?>
-    <p>
-      <label style="/* color: #1d9838; *//* font-size: 14px; */color: #242628;font-size: 14px;font-weight: 600;line-height: 2.3;"> <?php echo esc_html__('Google Access Code', 'wc-gsheetconnector'); ?> </label>
+    <div class="row">
+      <label> <?php echo esc_html__('Google Access Code', 'wc-gsheetconnector'); ?> </label>
       <?php if (!empty(get_option('wcgsc_token')) && get_option('wcgsc_token') !== "") { ?>
       <input type="text" name="wcgsc-code" id="wcgsc-code" value=""
                 placeholder="<?php esc_html_e('Currently Active', 'wc-gsheetconnector'); ?>" disabled />
@@ -89,7 +101,7 @@ if (isset($_GET['code'])) {
 
       <button type="button" name="wcgsc-save-code" class="blinking-button-wc" id="wcgsc-save-code"><?php echo esc_html__('Click here to Save Authentication Code', 'wc-gsheetconnector'); ?></button>
       <?php } ?>
-      <span class="loading-sign">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> </p>
+      <span class="loading-sign">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> </div>
     <span id="deactivate-msg"></span>
     <input type="hidden" name="wcgsc-ajax-nonce" id="wcgsc-ajax-nonce"
        value="<?php echo esc_attr( wp_create_nonce( 'wcgsc-ajax-nonce' ) ); ?>" />
@@ -114,17 +126,26 @@ if (isset($_GET['code'])) {
                     $email_account = $google_sheet->gsheet_print_google_account_email();
                     if ($email_account) {
                     ?>
-    <p class="connected-account">
-        <?php
+    <div class="connected-account row">
+        <label><?php
         $raw_output = sprintf(
             // translators: %s is the connected email address.
-            __( 'Connected Email Account: <u>%s</u>', 'wc-gsheetconnector' ),
+            __( 'Connected Email Account', 'wc-gsheetconnector' ),
             esc_html( $email_account )
         );
 
         echo wp_kses( $raw_output, array( 'u' => array() ) );
-        ?>
-    </p>
+        ?></label>
+		<span class='gfgsc-service-email'><?php
+        $raw_output = sprintf(
+            // translators: %s is the connected email address.
+            __( '%s', 'wc-gsheetconnector' ),
+            esc_html( $email_account )
+        );
+
+        echo wp_kses( $raw_output, array( 'u' => array() ) );
+        ?></span>
+    </div>
 
     <?php
                     } else {
@@ -141,12 +162,13 @@ if (isset($_GET['code'])) {
       <?php
         printf(
             // translators: %s is the HTML <a> link for syncing WooCommerce settings.
-            esc_html__( '%s to fetch sheets detail for "WooCommerce Data Settings" tab.', 'wc-gsheetconnector' ),
-            '<a id="wcgsc-sync" data-init="yes">' . esc_html__( 'Click here', 'wc-gsheetconnector' ) . '</a>'
+            esc_html__( 'Spreadsheet Name and URL not showing? %s to fetch sheets', 'wc-gsheetconnector' ),
+            '&nbsp;<a id="wcgsc-sync" data-init="yes">' . esc_html__( ' Click here ', 'wc-gsheetconnector' ) . '</a>&nbsp;'
         );
         ?>
       <span class="loading-sign">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    </p>
+    </p> 
+	  
 
     <?php } 
        ?>
@@ -162,14 +184,20 @@ if (isset($_GET['code'])) {
         <p id="wcgsc-validation-message"></p>
     </p>
     
-    <div id="wc-gsc-cta" class="wc-gsc-privacy-box">
-      <div class="wc-gsc-table">
-        <div class="wc-gsc-less-free"> <i class="dashicons dashicons-lock"></i>
-          <p> <?php esc_html_e('We do not store any of the data from your Google account on our servers, everything is processed & stored on your server. We take your privacy extremely seriously and ensure it is never misused.', 'wc-gsheetconnector'); ?><br />
-            <a href="https://gsheetconnector.com/usage-tracking/" target="_blank"><?php esc_html_e('Learn more.', 'wc-gsheetconnector'); ?></a></p>
-        </div>
-      </div>
-    </div>
+     
+	
+	
+	<div class="msg success-msg">
+    <i class="fa-solid fa-lock"></i>
+    <p><?php echo esc_html__('We do not store any of the data from your Google account on our servers, everything is processed &amp; stored on your server. We take your privacy extremely seriously and ensure it is never misused.', 'wc-gsheetconnector'); ?>
+     <a href="https://gsheetconnector.com/usage-tracking/" target="_blank" rel="noopener noreferrer">
+            <?php echo esc_html__('Learn more', 'wc-gsheetconnector'); ?>. </a>
+    </p>
+</div>
+	
+	
+	
+	
   </div>
 </div>
 

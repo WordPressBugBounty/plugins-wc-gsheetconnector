@@ -5,7 +5,7 @@
  * Description: Send your WooCommerce data to your Google Sheets spreadsheet.
  * Author: GSheetConnector
  * Author URI: https://www.gsheetconnector.com/
- * Version: 1.4.4
+ * Version: 1.4.5
  * Text Domain: wc-gsheetconnector
  * Domain Path:  /languages
  * WooCommerce requires at least: 3.2.0
@@ -68,8 +68,8 @@ if (function_exists('is_plugin_active') && is_plugin_active('wc-gsheetconnector/
 /*freemius*/
 
 // Declare some global constants
-define('WC_GSHEETCONNECTOR_VERSION', '1.4.4');
-define('WC_GSHEETCONNECTOR_DB_VERSION', '1.4.4');
+define('WC_GSHEETCONNECTOR_VERSION', '1.4.5');
+define('WC_GSHEETCONNECTOR_DB_VERSION', '1.4.5');
 define('WC_GSHEETCONNECTOR_ROOT', dirname(__FILE__));
 define('WC_GSHEETCONNECTOR_URL', plugins_url('/', __FILE__));
 define('WC_GSHEETCONNECTOR_BASE_FILE', basename(dirname(__FILE__)) . '/wc-gsheetconnector.php');
@@ -438,6 +438,13 @@ class wc_gsheetconnector_Init
                 WC_GSHEETCONNECTOR_VERSION,
                 'all'
             );
+			wp_enqueue_style(
+                'gs-fontawesome-css',
+                WC_GSHEETCONNECTOR_URL . 'assets/css/fontawesome.css',
+                [],
+                WC_GSHEETCONNECTOR_VERSION,
+                'all'
+            );
             wp_enqueue_style(
                 'wc-gsheetconnector-debug-css',
                 WC_GSHEETCONNECTOR_URL . 'assets/css/system-debug.css',
@@ -587,6 +594,9 @@ class wc_gsheetconnector_Init
         // Check plugin version and subscription plan
         $plugin_version = defined('WC_GSHEETCONNECTOR_VERSION') ? WC_GSHEETCONNECTOR_VERSION : 'N/A';
         $subscription_plan = 'FREE';
+      
+        $plugin_name = 'GSheetConnector for WC';
+
 
         // Check Google Account Authentication
         $api_token_auto = get_option('wcgsc_token');
@@ -611,6 +621,7 @@ class wc_gsheetconnector_Init
         $system_info .= '<div id="info-container" class="info-content" style="display:none;">';
         $system_info .= '<h3>GSheetConnector</h3>';
         $system_info .= '<table>';
+         $system_info .= '<tr><td>Plugin Name</td><td>' . esc_html($plugin_name) . '</td></tr>';
         $system_info .= '<tr><td>Plugin Version</td><td>' . esc_html($plugin_version) . '</td></tr>';
         $system_info .= '<tr><td>Plugin Subscription Plan</td><td>' . esc_html($subscription_plan) . '</td></tr>';
         $system_info .= '<tr><td>Connected Email Account</td><td>' . $connected_email . '</td></tr>';

@@ -79,8 +79,7 @@ class wc_gsheetconnector_role_settings_free {
             <div class="card" id="googlesheet">
                <div class="wrap wcgsc-form">
                   <div class="wcgsc-card">
-                     <h2>
-                        <span class="title1"><?php echo esc_html( __( 'Roles that can access Google Sheet Page', 'wc-gsheetconnector' ) ); ?></span>
+                     <h2> <?php echo esc_html( __( 'Roles that can access Google Sheet Page', 'wc-gsheetconnector' ) ); ?> 
                         <span class="pro-ver"><?php echo esc_html( __( 'PRO', 'wc-gsheetconnector' ) ); ?></span>
                      </h2>
                      <?php
@@ -88,8 +87,7 @@ class wc_gsheetconnector_role_settings_free {
                         $this->gs_woo_page_roles_setting_option_name . '[]',
                         $gs_woo_page_roles
                      );
-                     ?>
-                     <br/>
+                     ?> 
                      <div class="select-info">
                         <input type="submit" class="button button-primary button-large" name="gs_woo_gs_settings"
                                value="<?php echo esc_attr( __( 'Buy Pro', 'wc-gsheetconnector' ) ); ?>"/>

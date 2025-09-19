@@ -10,11 +10,10 @@ if ( ! defined( 'ABSPATH' ) ) {
   <div class="card" id="googlesheet">
     <div class="wrap gs-form">
       <div class="wcgsc-card">
-        <h2>
-          <span><?php esc_html_e('Beta Opt-in', 'wc-gsheetconnector'); ?></span>
+        <h2> <?php esc_html_e('Beta Opt-in', 'wc-gsheetconnector'); ?> 
           <span class="pro-ver"><?php esc_html_e('PRO', 'wc-gsheetconnector'); ?></span>
         </h2>
-        <hr />
+       
 
         <div style="opacity: 0.8; pointer-events: none;">
           <p>
@@ -34,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             <?php esc_html_e('Get updates for pre-release versions', 'wc-gsheetconnector'); ?>
           </p>
 
-          <input type="button" value="<?php esc_html_e('Save', 'wc-gsheetconnector'); ?>" />
+          <input type="button" class="beta-btn" value="<?php esc_html_e('Save', 'wc-gsheetconnector'); ?>" />
         </div>
       </div>
     </div>

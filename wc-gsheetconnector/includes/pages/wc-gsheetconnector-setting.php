@@ -45,17 +45,12 @@ if($show_setting == 1){
     <form method="post" id="gsSettingFormFree">
 
         <div class="wcgsc-fields">
-            <h2>
-                <span
-                    class="title11"><?php echo esc_html( __( 'WooCommerce Google Sheet Settings', 'wc-gsheetconnector' ) ); ?></span>
-
-            </h2>
-            <hr>
-            </br>
+            <h2><?php echo esc_html( __( 'WooCommerce Google Sheet Settings', 'wc-gsheetconnector' ) ); ?></h2>
+         
 
             <div class="wcgsc-in-fields">
                 <div class="sheet-details <?php echo esc_attr( $class ); ?>">
-                    <p>
+                    <div class="row">
                         <label><?php echo esc_html__( 'Google Sheet Name', 'wc-gsheetconnector' ); ?></label>
                         <select name="wcgsc-sheet-id" id="wcgsc-sheet-id">
                             <option value=""><?php echo esc_html__( 'Select', 'wc-gsheetconnector' ); ?></option>
@@ -80,9 +75,9 @@ if($show_setting == 1){
                         <span class="loading-sign">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                         <input type="hidden" name="wcgsc-ajax-nonce" id="wcgsc-ajax-nonce"
                             value="<?php echo esc_attr( wp_create_nonce( 'wcgsc-ajax-nonce' ) ); ?>" />
-                    </p>
+                    </div>
 
-                    <p class="sheet-url" id="sheet-url">
+                    <div class="sheet-url row" id="sheet-url">
                         <?php
                         $sheet_id = '';
                         if ( ! empty( $selected_sheet_key ) ) {
@@ -95,18 +90,19 @@ if($show_setting == 1){
                             <?php
                         }
                         ?>
-                    </p>
+                    </div>
 
-                    <br />
+                    
 
                     <p class="wcgsc-sync-row">
                       <?php
                         printf(
                             // translators: %s is the HTML <a> link for syncing WooCommerce settings.
-                            esc_html__( '%s to fetch sheets detail for "WooCommerce Data Settings" tab.', 'wc-gsheetconnector' ),
-                            '<a id="wcgsc-sync" data-init="yes">' . esc_html__( 'Click here', 'wc-gsheetconnector' ) . '</a>'
+                            esc_html__( 'Spreadsheet Name and URL not showing? %s to fetch sheets', 'wc-gsheetconnector' ),
+                            '<a id="wcgsc-sync" data-init="yes">&nbsp;' . esc_html__( 'Click here', 'wc-gsheetconnector' ) . '&nbsp;</a>'
                         );
-                        ?>
+                        ?> 
+						 
                       <span class="loading-sign">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                     </p>
 
@@ -115,12 +111,10 @@ if($show_setting == 1){
             </div>
 
         </div>
-        </br>
+        
 
         <div class="wcgsc-tabs-set" >
-            <h2><span class="title1"><?php echo esc_html( __( 'Google Sheets/Tab Name ', 'wc-gsheetconnector' ) ); ?>
-                </span>
-            </h2>
+            <h2><?php echo esc_html( __( 'Google Sheets/Tab Name ', 'wc-gsheetconnector' ) ); ?></h2>
           <span class="error_msg" id="error_gsTabName"></span>
             <?php $order_state_list = $woo_service->status_and_sheets;
              foreach ( $order_state_list as $key => $state_name ) {
@@ -158,13 +152,10 @@ if($show_setting == 1){
             
           
         </div>
-        <br class="clear">
+         
         <div class="wcgsc-header1" hidden>
-            <h2>
-                <span class="title1"><?php echo esc_html( __( 'Headers ', 'wc-gsheetconnector' ) ); ?> </span>
-            </h2>
-            <hr>
-            <br class="clear">
+            <h2><?php echo esc_html( __( 'Headers ', 'wc-gsheetconnector' ) ); ?></h2>
+           
             <ul>
                 <?php 
     		$header_list = $woo_service->sheet_headers;
@@ -209,13 +200,10 @@ if($show_setting == 1){
     <a class="wcgsc-list-set" data-id="12" href="#0">
         <p class="maxi_mize maxi_mize12"><i class="fa fa-plus" aria-hidden="true"></i></p>
         <p class="mini_mize mini_mize12"><i class="fa fa-minus" aria-hidden="true"></i></p>
-        <h2>
-            <span class="title1"><?php echo esc_html( __( 'Custom Order Status', 'wc-gsheetconnector' ) ); ?></span>
+        <h2><?php echo esc_html( __( 'Custom Order Status', 'wc-gsheetconnector' ) ); ?> 
             <span class="pro-ver"><?php echo esc_html__( 'PRO', 'wc-gsheetconnector' ); ?></span>
         </h2>
-    </a>
-    <hr>
-    <br>
+    </a> 
 
     <div class="wcgsc-list-set12">
         <?php 
@@ -252,22 +240,17 @@ if($show_setting == 1){
 </div>
 
 
-    <br class="clear">
+   
 
     <div class="wcgsc-google-set" >
         <a class="gs-woo-list-set" data-id="13" href="#0">
             <p class="maxi_mize maxi_mize13"><i class="fa fa-plus" aria-hidden="true"></i></i></p>
             <p class="mini_mize mini_mize13"><i class="fa fa-minus" aria-hidden="true"></i></p>
-            <h2>
-                <span
-                    class="title1"><?php echo esc_html( __( ' Other Sheet Tabs to Enable ', 'wc-gsheetconnector' ) ); ?>
-                </span>
+            <h2> <?php echo esc_html( __( ' Other Sheet Tabs to Enable ', 'wc-gsheetconnector' ) ); ?> 
                 <span class="pro-ver"><?php echo esc_html( __( 'PRO', 'wc-gsheetconnector' ) ); ?></span>
                 
             </h2>
-        </a>
-        <hr>
-        </br>
+        </a> 
         <!-- Other Sheet Tabs to Enable -->
         <div class="wcgsc-list-set13">
 
@@ -328,23 +311,19 @@ if($show_setting == 1){
 
  </div>
 
-    <br class="clear">
+     
         <!-- product category filter start-->
         <div  class="wcgsc-google-set">
                 <a class="wcgsc-list-set" data-id="7" href="#0">
                     <p class="maxi_mize maxi_mize7"><i class="fa fa-plus" aria-hidden="true"></i></i></p>
                     <p class="mini_mize mini_mize7"><i class="fa fa-minus" aria-hidden="true"></i></p>
-                    <h2>
-                        <span class="title1">
-                            <?php echo esc_html( __( 'Product Category Filter:', 'wc-gsheetconnector' ) ); ?>
-                        </span>
+                    <h2> <?php echo esc_html( __( 'Product Category Filter', 'wc-gsheetconnector' ) ); ?> 
                         <span class="pro-ver">
                             <?php esc_html_e( 'PRO', 'wc-gsheetconnector' ); ?>
                         </span>
                     </h2>
                 </a>
-                <hr>
-                </br>
+                 
                 <?php 
                 // get all product categories
                 $product_categories = get_terms(array(
@@ -394,16 +373,12 @@ if($show_setting == 1){
                 <a class="wcgsc-list-set" data-id="8" href="#0">
                     <p class="maxi_mize maxi_mize8"><i class="fa fa-plus" aria-hidden="true"></i></i></p>
                     <p class="mini_mize mini_mize8"><i class="fa fa-minus" aria-hidden="true"></i></p>
-                    <h2>
-                        <span
-                            class="title1"><?php echo esc_html( __( 'Order Category Filter:', 'wc-gsheetconnector' ) ); ?>
-                        </span>
+                    <h2> <?php echo esc_html( __( 'Order Category Filter', 'wc-gsheetconnector' ) ); ?> 
                         <span class="pro-ver"><?php echo esc_html( __( 'PRO', 'wc-gsheetconnector' ) ); ?></span>
                        
                     </h2>
                 </a>
-                <hr>
-                </br>
+                
                 <?php 
                 // Get all product categories
                 $order_categories = get_terms(array(
@@ -447,7 +422,7 @@ if($show_setting == 1){
                 </div>
             <?php } ?>
         </div>
-    <br class="clear">
+    
  <!-- order category filter end-->
         <div id="gform_setting_gsheet_field_maps" class="gform-settings-field gform-settings-field__map_form_fields"
             titlea="Upgrade to Pro">
@@ -457,14 +432,11 @@ if($show_setting == 1){
                 <a class="wcgsc-list-set" data-id="3" href="#0">
                     <p class="maxi_mize maxi_mize3"><i class="fa fa-plus" aria-hidden="true"></i></i></p>
                     <p class="mini_mize mini_mize3"><i class="fa fa-minus" aria-hidden="true"></i></p>
-                    <h2>
-                        <span
-                            class="title1"><?php echo esc_html( __( 'Google Sheet Headers (Column Name) ', 'wc-gsheetconnector' ) ); ?>
-                        </span>
+                    <h2> <?php echo esc_html( __( 'Google Sheet Headers (Column Name) ', 'wc-gsheetconnector' ) ); ?> 
                         <span class="pro-ver"><?php echo esc_html( __( 'PRO', 'wc-gsheetconnector' ) ); ?></span>
                       </h2>
                 </a>
-               <hr>
+              
                 <div class="wcgsc-header-wrapper wcgsc-list-set3">
 
                     <div class="tabs-gs-back">
@@ -721,15 +693,8 @@ if($show_setting == 1){
                                 </li>
                                 <?php } ?>
                                 <!-- Toggle button -->
-                                <div class="remove_col_name">
-                                </div>
-                                </li>
-                                <!-- order header -->
-                                <li class="li-wcgsc-header li-wcgsc-header-order remove-currency ui-sortable-handle">
-                                    <i class="fa fa-sort sort-icon"></i>
-
-
-                                </li>
+                                 
+                                 
                             </ul>
                     </div>
                     <!-- 32 product headers -->
@@ -899,6 +864,45 @@ if($show_setting == 1){
                     <!-- 34 ahmed -->
                     <div class="wcgsc-header-wrapper wcgsc-list-set34" >
                         <div class="checkallmaindiv">
+                            <table class="table table-light adding_extra_table">
+                                    <tbody>
+                                        <tr>
+                                            <td><label class="check-all-lbl"><?php echo esc_html( __( 'Additional Headers for Product Variation', 'wc-gsheetconnector' ) ); ?></label></td>
+                                            <td>
+                                                <select class="adding_extra_order_row adding_extra_css"
+                                                    id="adding_extra_order_row">
+                                                    <option value=""><?php echo esc_html('--Select--','wc-gsheetconnector'); ?></option>
+                                                    <?php if(!empty($adding_extra_product_row)){
+                                                        foreach ($adding_extra_product_row as $key => $value) {
+                                                        ?>
+                                                    <option value="<?php echo esc_attr($value); ?>" disabled>
+                                                        <?php echo esc_html($value); ?>
+                                                    </option>
+
+                                                    <?php
+                                                        }
+                                                    }
+                                                    ?>
+                                                </select>
+                                            </td>
+                                            <td><label class="check-all-lbl" disabled><?php echo esc_html( __( 'Label', 'wc-gsheetconnector' ) ); ?></label></td>
+                                            <td>
+                                                <input type="text" name="ext_row_label_order" id="ext_row_label_order"
+                                                    class="ext_row_label_order" disabled />
+                                            </td>
+                                            <td><button type="button" id="btn_extra_order_row"
+                                                    class="btn_extra_order_row tooltip11">
+                                                   <?php echo esc_html( __( ' Add New Extra Fields', 'wc-gsheetconnector' ) ); ?>
+                                                    <span class="tooltiptext11"><?php echo esc_html( __( ' Upgrade To Pro', 'wc-gsheetconnector' ) ); ?></span>
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="loading-btn-extra-order-row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             <div class="checked-all-div">
                                 <label class="check-all-lbl"><?php echo esc_html( __( 'Check All', 'wc-gsheetconnector' ) ); ?></label>
                                 <input type="radio" id="customer_headers-one" name="switch-one" class="radio-btn-hide"
@@ -1074,37 +1078,36 @@ if($show_setting == 1){
                 <a class="wcgsc-list-set" data-id="6" href="#0">
                     <p class="maxi_mize maxi_mize6"><i class="fa fa-plus" aria-hidden="true"></i></p>
                     <p class="mini_mize mini_mize6"><i class="fa fa-minus" aria-hidden="true"></i></p>
-                    <h2>
-                        <span class="title1"><?php echo esc_html( __( "WooCommerce orders row's management", 'wc-gsheetconnector' ) ); ?></span>
+                    <h2> <?php echo esc_html( __( "WooCommerce orders row's management", 'wc-gsheetconnector' ) ); ?> 
                         <span class="pro-ver"><?php echo esc_html( __( "PRO", 'wc-gsheetconnector' ) ); ?></span>
                    </h2>
                 </a>
-                <hr>
+                
              
                 <div class="wcgsc-list-set6">
 
                     <div class="wcgsc-op-wise">
-                        <label style="font-weight: bold;"><?php echo esc_html( __( "Manage row's by :", 'wc-gsheetconnector' ) ); ?> </label>
+                        <label style="font-weight: bold;"><?php echo esc_html( __( "Manage row's by", 'wc-gsheetconnector' ) ); ?> </label>
 
                         <span class="wcgsc-pointer">
                             <input type="radio" name="order_wise_product_wise" value="productwise" id="product_wise">
-                            <label><?php echo esc_html( __( "Product Wise :", 'wc-gsheetconnector' ) ); ?></label>
+                            <label><?php echo esc_html( __( "Product Wise", 'wc-gsheetconnector' ) ); ?></label>
 
                             <input type="radio" name="order_wise_product_wise" value="orderwise" id="order_wise" checked="">
 
-                            <label><?php echo esc_html( __( "Order Wise :", 'wc-gsheetconnector' ) ); ?></label>
+                            <label><?php echo esc_html( __( "Order Wise", 'wc-gsheetconnector' ) ); ?></label>
 
                         </span>
                     </div>
                     <div class="note_orderwise">
-                        <p class="notes"><?php echo esc_html( __( "Notes :", 'wc-gsheetconnector' ) ); ?></p>
+                        <p class="notes"><?php echo esc_html( __( "Notes - ", 'wc-gsheetconnector' ) ); ?></p>
                         <div class="message">
                             <p>
-                                <i><?php echo esc_html( __( "Order-Wise:", 'wc-gsheetconnector' ) ); ?></i>
+                                <i><?php echo esc_html( __( "Order-Wise - ", 'wc-gsheetconnector' ) ); ?></i>
                                 <?php echo esc_html( __( "Single Entry will be saved in Google Sheet!", 'wc-gsheetconnector' ) ); ?>
                             </p>
                             <p>
-                                <i><?php echo esc_html( __( "Product Wise:", 'wc-gsheetconnector' ) ); ?></i>
+                                <i><?php echo esc_html( __( "Product Wise - ", 'wc-gsheetconnector' ) ); ?></i>
                                 <?php echo esc_html( __( "Each Entry will be shown product wise with same Order ID, if multiple products are there
                                 in
                                 order", 'wc-gsheetconnector' ) ); ?>
@@ -1113,15 +1116,15 @@ if($show_setting == 1){
                     </div>
                     <br>
                     <div class="wcgsc-op-wise">
-                        <label style="font-weight: bold;"> <?php echo esc_html( __( "Sorting :", 'wc-gsheetconnector' ) ); ?></label>
+                        <label style="font-weight: bold;"> <?php echo esc_html( __( "Sorting", 'wc-gsheetconnector' ) ); ?></label>
 
                         <span class="wcgsc-pointer">
                             <input type="radio" name="asc_desc_sorting" value="ASC" id="asc_sorting" checked="">
-                            <label><?php echo esc_html( __( "Ascending :", 'wc-gsheetconnector' ) ); ?></label>
+                            <label><?php echo esc_html( __( "Ascending", 'wc-gsheetconnector' ) ); ?></label>
 
                             <input type="radio" name="asc_desc_sorting" value="DESC" id="desc_sorting">
 
-                            <label><?php echo esc_html( __( "Descending :", 'wc-gsheetconnector' ) ); ?></label>
+                            <label><?php echo esc_html( __( "Descending", 'wc-gsheetconnector' ) ); ?></label>
 
                         </span>
                     </div>
@@ -1137,18 +1140,16 @@ if($show_setting == 1){
                 <a class="wcgsc-list-set" data-id="4" href="#0">
                     <p class="maxi_mize maxi_mize4"><i class="fa fa-plus" aria-hidden="true"></i></p>
                     <p class="mini_mize mini_mize4"><i class="fa fa-minus" aria-hidden="true"></i></p>
-                    <h2>
-                        <span class="title1"><?php echo esc_html( __( "Google Sheet Settings.", 'wc-gsheetconnector' ) ); ?></span>
+                    <h2> <?php echo esc_html( __( "Google Sheet Settings", 'wc-gsheetconnector' ) ); ?> 
                         <span class="pro-ver"><?php echo esc_html( __( "PRO", 'wc-gsheetconnector' ) ); ?></span>
                       
                     </h2>
                 </a>
-                <hr>
-                <br class="clear">
+                 
                 <div class="wcgsc-list-set4">
                     <div class="freez_order_sort">
                         <div class="">
-                            <label style="font-weight: bold;"><?php echo esc_html( __( "Freeze Header :", 'wc-gsheetconnector' ) ); ?></label>
+                            <label style="font-weight: bold;"><?php echo esc_html( __( "Freeze Header", 'wc-gsheetconnector' ) ); ?></label>
                             <span class="wcgsc-pointer">
                                 <input type="checkbox" name="freeze_header" value="true" class="check-toggle"
                                     id="freeze_header" style="display: none;">
@@ -1156,21 +1157,22 @@ if($show_setting == 1){
                                 <label for="freeze_header" class="button-wcgsc-toggle"></label>
                             </span>
                      
-                    <label style="font-weight: bold;"><?php echo esc_html( __( "Background Color :", 'wc-gsheetconnector' ) ); ?> </label><br>
+                    <label style="font-weight: bold;"><?php echo esc_html( __( "Background Color", 'wc-gsheetconnector' ) ); ?> </label>
+
                     <div class="wcgsc-cards">
-                        <label><?php echo esc_html( __( "Header Row :", 'wc-gsheetconnector' ) ); ?> </label>
+                        <label><?php echo esc_html( __( "Header Row", 'wc-gsheetconnector' ) ); ?> </label>
                         <span class="wcgsc-pointer">
                             <input type="color" name="wcgsc_header_color" value="#ffffff">
                         </span>
                     </div>
                     <div class="wcgsc-cards">
-                        <label><?php echo esc_html( __( "Odd Rows :", 'wc-gsheetconnector' ) ); ?></label>
+                        <label><?php echo esc_html( __( "Odd Rows", 'wc-gsheetconnector' ) ); ?></label>
                         <span class="wcgsc-pointer">
                             <input type="color" name="wcgsc_odd_color" value="#ffffff">
                         </span>
                     </div>
                     <div class="wcgsc-cards">
-                    	<label><?php echo esc_html( __( "Even Rows :", 'wc-gsheetconnector' ) ); ?></label>
+                    	<label><?php echo esc_html( __( "Even Rows", 'wc-gsheetconnector' ) ); ?></label>
                         <span class="wcgsc-pointer">
                             <input type="color" name="wcgsc_even_color" value="#ffffff">
                         </span>
@@ -1185,13 +1187,10 @@ if($show_setting == 1){
                 <a class="wcgsc-list-set" data-id="5" href="#0">
                     <p class="maxi_mize maxi_mize5"><i class="fa fa-plus" aria-hidden="true"></i></p>
                     <p class="mini_mize mini_mize5"><i class="fa fa-minus" aria-hidden="true"></i></p>
-                    <h2>
-                        <span class="title1"><?php echo esc_html( __( "Google Sheet Sync", 'wc-gsheetconnector' ) ); ?></span>
+                    <h2> <?php echo esc_html( __( "Google Sheet Sync", 'wc-gsheetconnector' ) ); ?> 
                         <span class="pro-ver"><?php echo esc_html( __( "PRO", 'wc-gsheetconnector' ) ); ?></span>
                      </h2>
-                </a>
-                <hr>
-                <br class="clear">
+                </a> 
                 
                 <div class="wcgsc-list-set5"  class="popup-click"  >
                     <div class=" sync-card">
@@ -1205,11 +1204,11 @@ if($show_setting == 1){
                                        <?php echo esc_html( __( "Descending", 'wc-gsheetconnector' ) ); ?> </option>
                                 </select>
 
-                                <label class="design-syn-ele"><?php echo esc_html( __( "From Date :", 'wc-gsheetconnector' ) ); ?></label>
+                                <label class="design-syn-ele"><?php echo esc_html( __( "From Date", 'wc-gsheetconnector' ) ); ?></label>
                                 <input type="date" name="sync_all_fromdate" id="sync_all_fromdate" class="design-syn-ele">
-                                <label class="design-syn-ele"><?php echo esc_html( __( "To Date :", 'wc-gsheetconnector' ) ); ?></label>
+                                <label class="design-syn-ele"><?php echo esc_html( __( "To Date", 'wc-gsheetconnector' ) ); ?></label>
                                 <input type="date" name="sync_all_todate" id="sync_all_todate" class="design-syn-ele">
-                                <label class="design-syn-ele"><?php echo esc_html( __( "Sync Orders", 'wc-gsheetconnector' ) ); ?> </label>
+                                <label class="design-syn-ele"><?php echo esc_html( __( "Select Order Status", 'wc-gsheetconnector' ) ); ?> </label>
                                 <select name="asc_desc_order" id="asc_desc_order" class="design-syn-ele">
                                     <option value="ASC">
                                         <?php echo esc_html( __( "All", 'wc-gsheetconnector' ) ); ?></option>
@@ -1233,10 +1232,10 @@ if($show_setting == 1){
                                     <option value="ASC" selected=""><?php echo esc_html( __( "Ascending", 'wc-gsheetconnector' ) ); ?></option>
                                     <option value="DESC"><?php echo esc_html( __( "Descending", 'wc-gsheetconnector' ) ); ?></option>
                                 </select>
-                                <label class="design-syn-ele"><?php echo esc_html( __( "From Date :", 'wc-gsheetconnector' ) ); ?></label>
+                                <label class="design-syn-ele"><?php echo esc_html( __( "From Date", 'wc-gsheetconnector' ) ); ?></label>
                                 <input type="date" name="sync_all_fromdate_pro" id="sync_all_fromdate_pro"
                                     class="design-syn-ele">
-                                <label class="design-syn-ele"><?php echo esc_html( __( "To Date :", 'wc-gsheetconnector' ) ); ?></label>
+                                <label class="design-syn-ele"><?php echo esc_html( __( "To Date", 'wc-gsheetconnector' ) ); ?></label>
                                 <input type="date" name="sync_all_todate_pro" id="sync_all_todate_pro"
                                     class="design-syn-ele">
 
@@ -1259,10 +1258,10 @@ if($show_setting == 1){
                                     <option value="ASC" selected=""><?php echo esc_html( __( "Ascending", 'wc-gsheetconnector' ) ); ?></option>
                                     <option value="DESC"><?php echo esc_html( __( "Descending", 'wc-gsheetconnector' ) ); ?></option>
                                 </select>
-                                <label class="design-syn-ele"><?php echo esc_html( __( "From Date :", 'wc-gsheetconnector' ) ); ?></label>
+                                <label class="design-syn-ele"><?php echo esc_html( __( "From Date", 'wc-gsheetconnector' ) ); ?></label>
                                 <input type="date" name="sync_all_fromdate_cus" id="sync_all_fromdate_cus"
                                     class="design-syn-ele">
-                                <label class="design-syn-ele"><?php echo esc_html( __( "To Date :", 'wc-gsheetconnector' ) ); ?></label>
+                                <label class="design-syn-ele"><?php echo esc_html( __( "To Date", 'wc-gsheetconnector' ) ); ?></label>
                                 <input type="date" name="sync_all_todate_cus" id="sync_all_todate_cus"
                                     class="design-syn-ele">
 
@@ -1285,10 +1284,10 @@ if($show_setting == 1){
                                     <option value="ASC" selected=""><?php echo esc_html( __( "Ascending", 'wc-gsheetconnector' ) ); ?></option>
                                     <option value="DESC"><?php echo esc_html( __( "Descending", 'wc-gsheetconnector' ) ); ?></option>
                                 </select>
-                                <label class="design-syn-ele"><?php echo esc_html( __( "From Date :", 'wc-gsheetconnector' ) ); ?></label>
+                                <label class="design-syn-ele"><?php echo esc_html( __( "From Date", 'wc-gsheetconnector' ) ); ?></label>
                                 <input type="date" name="sync_all_fromdate_cus" id="sync_all_fromdate_cus"
                                     class="design-syn-ele">
-                                <label class="design-syn-ele"><?php echo esc_html( __( "To Date :", 'wc-gsheetconnector' ) ); ?></label>
+                                <label class="design-syn-ele"><?php echo esc_html( __( "To Date", 'wc-gsheetconnector' ) ); ?></label>
                                 <input type="date" name="sync_all_todate_cus" id="sync_all_todate_cus"
                                     class="design-syn-ele">
 
@@ -1310,10 +1309,10 @@ if($show_setting == 1){
                                     <option value="ASC" selected=""><?php echo esc_html( __( "Ascending", 'wc-gsheetconnector' ) ); ?></option>
                                     <option value="DESC"><?php echo esc_html( __( "Descending", 'wc-gsheetconnector' ) ); ?></option>
                                 </select>
-                                <label class="design-syn-ele"><?php echo esc_html( __( "From Date :", 'wc-gsheetconnector' ) ); ?></label>
+                                <label class="design-syn-ele"><?php echo esc_html( __( "From Date", 'wc-gsheetconnector' ) ); ?></label>
                                 <input type="date" name="sync_all_fromdate_coupons" id="sync_all_fromdate_coupons"
                                     class="design-syn-ele">
-                                <label class="design-syn-ele"><?php echo esc_html( __( "To Date :", 'wc-gsheetconnector' ) ); ?></label>
+                                <label class="design-syn-ele"><?php echo esc_html( __( "To Date", 'wc-gsheetconnector' ) ); ?></label>
                                 <input type="date" name="sync_all_todate_coupons" id="sync_all_todate_coupons"
                                     class="design-syn-ele">
 
@@ -1337,10 +1336,10 @@ if($show_setting == 1){
                                     <option value="ASC" selected=""><?php echo esc_html( __( "Ascending", 'wc-gsheetconnector' ) ); ?></option>
                                     <option value="DESC"><?php echo esc_html( __( "Descending", 'wc-gsheetconnector' ) ); ?></option>
                                 </select>
-                                <label class="design-syn-ele"><?php echo esc_html( __( "From Date :", 'wc-gsheetconnector' ) ); ?></label>
+                                <label class="design-syn-ele"><?php echo esc_html( __( "From Date", 'wc-gsheetconnector' ) ); ?></label>
                                 <input type="date" name="sync_all_fromdate_subscription" id="sync_all_fromdate_subscription"
                                     class="design-syn-ele">
-                                <label class="design-syn-ele"><?php echo esc_html( __( "To Date :", 'wc-gsheetconnector' ) ); ?></label>
+                                <label class="design-syn-ele"><?php echo esc_html( __( "To Date", 'wc-gsheetconnector' ) ); ?></label>
                                 <input type="date" name="sync_all_todate_subscription" id="sync_all_todate_subscription"
                                     class="design-syn-ele">
 
@@ -1386,7 +1385,7 @@ if($show_setting == 1){
                             <span class="download-message"></span>
                         </div>
                     </div>
-                    <br class="clear">
+                    
                 </div>
             </div>
         </div>
