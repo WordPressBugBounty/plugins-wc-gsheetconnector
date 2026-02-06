@@ -140,7 +140,7 @@ class wc_gsheetconnector_processes {
 	 * @since 1.0
 	 */
 	public function wcgsc_add_summary_widget() {
-		$image_url = esc_url( WC_GSHEETCONNECTOR_URL . 'assets/img/woocommerce-gsc.png' );
+		$image_url = esc_url( WC_GSHEETCONNECTOR_URL . 'assets/img/woo-gsc.svg' );
 		// phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Plugin-bundled static image, not a Media Library attachment
 		$title = "<img style='width:30px;margin-right: 10px; vertical-align:middle;' src='{$image_url}' alt='WooCommerce GSheetConnector' />";
 

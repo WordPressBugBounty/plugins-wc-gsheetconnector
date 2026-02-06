@@ -36,7 +36,7 @@ $plugin_version = defined('WC_GSHEETCONNECTOR_VERSION') ? WC_GSHEETCONNECTOR_VER
   <div class="gsheet-logo">
     <a href="https://www.gsheetconnector.com/"><i></i></a>
   </div>
-  <h1 class="gsheet-logo-text"><span><?php echo esc_html(__('WC GSheetConnector', 'wc-gsheetconnector')); ?></span>
+  <h1 class="gsheet-logo-text"><span><?php echo esc_html(__('GSheetConnector for WC', 'wc-gsheetconnector')); ?></span>
     <small><?php echo esc_html(__('Version :', 'wc-gsheetconnector')); ?>
       <?php echo esc_html($plugin_version, 'wc-gsheetconnector'); ?> </small>
   </h1>

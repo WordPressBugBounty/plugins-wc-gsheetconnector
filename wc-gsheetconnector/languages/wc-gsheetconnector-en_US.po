@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce GSheetConnector\n"
-"POT-Creation-Date: 2025-09-19 19:14+0530\n"
-"PO-Revision-Date: 2025-09-19 19:14+0530\n"
+"POT-Creation-Date: 2025-11-14 19:02+0530\n"
+"PO-Revision-Date: 2025-11-14 19:02+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -103,9 +103,10 @@ msgstr "Docs"
 msgid "Free Plugins"
 msgstr "Free Plugins"
 
+#. Plugin Name of the plugin/theme
 #: includes/pages/google-sheet-settings.php:39
-msgid "WC GSheetConnector"
-msgstr "WC GSheetConnector"
+msgid "GSheetConnector for WC"
+msgstr "GSheetConnector for WC"
 
 #: includes/pages/google-sheet-settings.php:40
 msgid "Version :"
@@ -222,8 +223,8 @@ msgid "Submit"
 msgstr "Submit"
 
 #: includes/pages/wc-gsheetconnector-integration.php:20
-msgid "Google Sheet Integration - WC GSheetConnector"
-msgstr "Google Sheet Integration - WC GSheetConnector"
+msgid "Google Sheet Integration - GSheetConnector for WC"
+msgstr "Google Sheet Integration - GSheetConnector for WC"
 
 #: includes/pages/wc-gsheetconnector-integration.php:23
 msgid ""
@@ -336,16 +337,6 @@ msgstr "Currently Active"
 #: includes/pages/wc-gsheetconnector-integration.php:80
 msgid "Deactivate"
 msgstr "Deactivate"
-
-#: includes/pages/wc-gsheetconnector-integration.php:82
-msgid ""
-"On deactivation, all your data saved with authentication will be removed and "
-"you need to reauthenticate with your Google account and configure sheet name "
-"and tab."
-msgstr ""
-"On deactivation, all your data saved with authentication will be removed and "
-"you need to reauthenticate with your Google account and configure sheet name "
-"and tab."
 
 #: includes/pages/wc-gsheetconnector-integration.php:87
 msgid "Click on Sign In With Google"
@@ -1275,10 +1266,6 @@ msgstr ""
 "GSheetConnector WooCommerce Add-on requires WooCommerce plugin to be "
 "installed and activated."
 
-#. Plugin Name of the plugin/theme
-msgid "GSheetConnector for WC"
-msgstr "GSheetConnector for WC"
-
 #. Plugin URI of the plugin/theme
 msgid "https://wordpress.org/plugins/wc-gsheetconnector/"
 msgstr "https://wordpress.org/plugins/wc-gsheetconnector/"
@@ -1294,6 +1281,18 @@ msgstr "GSheetConnector"
 #. Author URI of the plugin/theme
 msgid "https://www.gsheetconnector.com/"
 msgstr "https://www.gsheetconnector.com/"
+
+#~ msgid "WC GSheetConnector"
+#~ msgstr "WC GSheetConnector"
+
+#~ msgid ""
+#~ "On deactivation, all your data saved with authentication will be removed "
+#~ "and you need to reauthenticate with your Google account and configure "
+#~ "sheet name and tab."
+#~ msgstr ""
+#~ "On deactivation, all your data saved with authentication will be removed "
+#~ "and you need to reauthenticate with your Google account and configure "
+#~ "sheet name and tab."
 
 #~ msgid "VIP Circle"
 #~ msgstr "VIP Circle"

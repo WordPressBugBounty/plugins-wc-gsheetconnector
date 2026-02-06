@@ -17,7 +17,7 @@ if (isset($_GET['code'])) {
 <!-- save code, alert and css -->
 <div class="card-wcgsc dropdownoption-wcgsc">
 	
-	<h2><?php echo esc_html__('Google Sheet Integration - WC GSheetConnector', 'wc-gsheetconnector'); ?></h2>
+	<h2><?php echo esc_html__('Google Sheet Integration - GSheetConnector for WC', 'wc-gsheetconnector'); ?></h2>
 	<p class="sub-desc"><?php 
 echo wp_kses_post( __(
     'Choose your Google API Setting from the dropdown. In the Free version, only the <strong>Auto Google API Configuration (Use Existing Client/Secret Key)</strong> option is available.
@@ -78,8 +78,8 @@ echo wp_kses_post( __(
                 placeholder="<?php esc_html_e('Currently Active', 'wc-gsheetconnector'); ?>" disabled />
       <input type="button" name="wcgsc-deactivate-log" id="wcgsc-deactivate-log"
                 value="<?php esc_html_e('Deactivate', 'wc-gsheetconnector'); ?>" class="button button-primary" />
-      <span class="tooltip"> <img src="<?php esc_url (WC_GSHEETCONNECTOR_URL); ?>assets/img/help.png" class="help-icon"> <span class="tooltiptext tooltip-right">
-      <?php esc_html_e('On deactivation, all your data saved with authentication will be removed and you need to reauthenticate with your Google account and configure sheet name and tab.', 'wc-gsheetconnector'); ?>
+     
+     
       </span> </span> <span class="loading-sign-deactive">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
       <?php } else {
                 $redirct_uri = admin_url('admin.php?page=wc-gsheetconnector-config');
@@ -93,7 +93,7 @@ echo wp_kses_post( __(
 
       <?php } ?>
       <?php } ?>
-      <br>
+     
       <?php
       // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- OAuth callback, nonce not required
       if ( ! empty( $_GET['code'] ) ) {
@@ -211,8 +211,8 @@ echo wp_kses_post( __(
         if (!empty($wcexistDebugFile) && file_exists($wcexistDebugFile)) {
             $displaywcfreeLogs = nl2br(file_get_contents($wcexistDebugFile));
             if (!empty($displaywcfreeLogs)) {
-                // Display the logs within a span to enable copying
-                echo '<span id="log-text">' . esc_html($displaywcfreeLogs) . '</span>';
+              // Escape output properly while preserving new lines (convert new lines to <br> after escaping)
+               echo wp_kses_post( nl2br( esc_html( $displaywcfreeLogs ) ) );
             } else {
                 echo esc_html(__('No errors found.', 'wc-gsheetconnector'));
             }
@@ -262,7 +262,7 @@ echo wp_kses_post( __(
         </li>
 
         <li>
-          <a href="https://www.gsheetconnector.com/docs/woocommerce-google-sheet-connector-pro" target="_blank">
+          <a href="https://www.gsheetconnector.com/docs/woocommerce-gsheetconnector/woocommerce-data-settings-pro-version" target="_blank">
             <div>
               <button class="icon-button">
                 <span class="dashicons dashicons-chart-bar"></span>
@@ -274,7 +274,7 @@ echo wp_kses_post( __(
         </li>
 
         <li>
-          <a href="https://www.gsheetconnector.com/docs/woocommerce-google-sheet-connector-pro" target="_blank">
+          <a href="https://www.gsheetconnector.com/docs/woocommerce-gsheetconnector/woocommerce-data-settings-free-version" target="_blank">
             <div>
               <button class="icon-button">
                 <span class="dashicons dashicons-download"></span>
@@ -302,7 +302,7 @@ echo wp_kses_post( __(
     <div class="wc-free-box-content13">
       <ul class="wc-free-list-icon13">
         <li>
-          <a href="https://www.gsheetconnector.com/docs/woocommerce-google-sheet-connector-pro" target="_blank">
+          <a href="https://www.gsheetconnector.com/docs/woocommerce-gsheetconnector" target="_blank">
             <div>
               <span class="dashicons dashicons-book"></span>
               <strong><?php echo esc_html__( 'Online Documentation', 'wc-gsheetconnector' ); ?></strong>
@@ -312,7 +312,7 @@ echo wp_kses_post( __(
         </li>
 
         <li>
-          <a href="https://www.gsheetconnector.com/docs/woocommerce-google-sheet-connector-pro" target="_blank">
+          <a href="https://www.gsheetconnector.com/support" target="_blank">
             <div>
               <span class="dashicons dashicons-sos"></span>
               <strong><?php echo esc_html__( 'Ticket Support', 'wc-gsheetconnector' ); ?></strong>

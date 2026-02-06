@@ -5,7 +5,7 @@
  * Description: Send your WooCommerce data to your Google Sheets spreadsheet.
  * Author: GSheetConnector
  * Author URI: https://www.gsheetconnector.com/
- * Version: 1.4.5
+ * Version: 1.4.6
  * Text Domain: wc-gsheetconnector
  * Domain Path:  /languages
  * WooCommerce requires at least: 3.2.0
@@ -68,8 +68,8 @@ if (function_exists('is_plugin_active') && is_plugin_active('wc-gsheetconnector/
 /*freemius*/
 
 // Declare some global constants
-define('WC_GSHEETCONNECTOR_VERSION', '1.4.5');
-define('WC_GSHEETCONNECTOR_DB_VERSION', '1.4.5');
+define('WC_GSHEETCONNECTOR_VERSION', '1.4.6');
+define('WC_GSHEETCONNECTOR_DB_VERSION', '1.4.6');
 define('WC_GSHEETCONNECTOR_ROOT', dirname(__FILE__));
 define('WC_GSHEETCONNECTOR_URL', plugins_url('/', __FILE__));
 define('WC_GSHEETCONNECTOR_BASE_FILE', basename(dirname(__FILE__)) . '/wc-gsheetconnector.php');

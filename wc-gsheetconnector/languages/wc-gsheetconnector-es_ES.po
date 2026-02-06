@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce GSheetConnector\n"
-"POT-Creation-Date: 2025-09-19 19:15+0530\n"
-"PO-Revision-Date: 2025-09-19 19:15+0530\n"
+"POT-Creation-Date: 2025-11-14 19:02+0530\n"
+"PO-Revision-Date: 2025-11-14 19:03+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -106,9 +106,10 @@ msgstr "Documentos"
 msgid "Free Plugins"
 msgstr "Plugins gratuitos"
 
+#. Plugin Name of the plugin/theme
 #: includes/pages/google-sheet-settings.php:39
-msgid "WC GSheetConnector"
-msgstr "WC GSheetConnector"
+msgid "GSheetConnector for WC"
+msgstr "GSheetConnector para WC"
 
 #: includes/pages/google-sheet-settings.php:40
 msgid "Version :"
@@ -236,7 +237,7 @@ msgstr "Enviar"
 #: includes/pages/wc-gsheetconnector-integration.php:20
 #, fuzzy
 #| msgid "Google Sheets Integration"
-msgid "Google Sheet Integration - WC GSheetConnector"
+msgid "Google Sheet Integration - GSheetConnector for WC"
 msgstr "Integración con Hojas de cálculo de Google"
 
 #: includes/pages/wc-gsheetconnector-integration.php:23
@@ -267,8 +268,6 @@ msgstr ""
 "configuración fácilmente."
 
 #: includes/pages/wc-gsheetconnector-integration.php:32
-#, fuzzy
-#| msgid "Choose Google API Setting :"
 msgid "Choose Google API Setting "
 msgstr "Elija la configuración de la API de Google:"
 
@@ -360,16 +359,6 @@ msgstr "Actualmente activo"
 #: includes/pages/wc-gsheetconnector-integration.php:80
 msgid "Deactivate"
 msgstr "Desactivar"
-
-#: includes/pages/wc-gsheetconnector-integration.php:82
-msgid ""
-"On deactivation, all your data saved with authentication will be removed and "
-"you need to reauthenticate with your Google account and configure sheet name "
-"and tab."
-msgstr ""
-"Tras la desactivación, se eliminarán todos los datos guardados con la "
-"autenticación y deberá volver a autenticarse con su cuenta de Google y "
-"configurar el nombre y la pestaña de la hoja."
 
 #: includes/pages/wc-gsheetconnector-integration.php:87
 msgid "Click on Sign In With Google"
@@ -1409,10 +1398,6 @@ msgstr ""
 "GSheetConnector WooCommerce Add-on requiere que el plugin WooCommerce esté "
 "instalado y activado."
 
-#. Plugin Name of the plugin/theme
-msgid "GSheetConnector for WC"
-msgstr "GSheetConnector para WC"
-
 #. Plugin URI of the plugin/theme
 msgid "https://wordpress.org/plugins/wc-gsheetconnector/"
 msgstr "https://wordpress.org/plugins/wc-gsheetconnector/"
@@ -1430,6 +1415,18 @@ msgstr "GSheetConnector"
 #. Author URI of the plugin/theme
 msgid "https://www.gsheetconnector.com/"
 msgstr "https://www.gsheetconnector.com/"
+
+#~ msgid "WC GSheetConnector"
+#~ msgstr "WC GSheetConnector"
+
+#~ msgid ""
+#~ "On deactivation, all your data saved with authentication will be removed "
+#~ "and you need to reauthenticate with your Google account and configure "
+#~ "sheet name and tab."
+#~ msgstr ""
+#~ "Tras la desactivación, se eliminarán todos los datos guardados con la "
+#~ "autenticación y deberá volver a autenticarse con su cuenta de Google y "
+#~ "configurar el nombre y la pestaña de la hoja."
 
 #~ msgid "VIP Circle"
 #~ msgstr "Círculo VIP"

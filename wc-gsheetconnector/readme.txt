@@ -1,12 +1,13 @@
 === GSheetConnector for WC ===
 Contributors: westerndeal, abdullah17, gsheetconnector
 Author URI: https://www.gsheetconnector.com/
-Tags:  woocommerce, woocommerce addon, woocommerce google sheets, sync woocommerce with google sheets, woocommerce orders sync to google sheets,
-Tested up to: 6.8
+Tags:  woocommerce, woocommerce addon, woocommerce google sheets, sync woocommerce with google sheets, woocommerce orders sync to google sheets
+Docs: https://www.gsheetconnector.com/docs/woocommerce-gsheetconnector
+Tested up to: 6.9
 Requires at least: 5.3
 Requires PHP: 7.4
 Requires Plugins: woocommerce
-Stable tag: 1.4.5
+Stable tag: 1.4.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -87,8 +88,12 @@ Enjoy!
 2. Fetch Sheets.
 3. Google Sheet Tab Creation as per order status and Google Sheet headers with form submitted data.
 4. Role Settings.
-5. System Status.
-6. Beta-version.
+5. Beta-version.
+6. System Status.
+7. Feed Settings.
+8. 2way Sync.
+9. Extensions.
+
 7. 2 way sync settings.
 
 == Frequently Asked Questions ==
@@ -104,6 +109,11 @@ Please double-check those items and hopefully getting them right will fix the is
 Make sure to <a href="https://www.gsheetconnector.com/how-to-enable-debugging-in-wordpress">enable debug log from wp-config.php</a> if submitted order is not showing in sheet, It will helps to show the conflict issue (if there is any) or shows what is making an issue.
 
 == Changelog ==
+
+= 1.4.6 (14-11-2025) =
+- Fixed: Improved responsive CSS.
+- Added: "Next Steps…" section in the Integration tab.
+- Updated: Updated the header logo and the dashboard widget logo.
 
 = 1.4.5 (19-09-2025) =
 - Updated: Readme file.
