@@ -44,9 +44,8 @@ class wc_gsheetconnector_utility
      */
     public function logger($message)
     {
-        if ( defined( 'WP_DEBUG' ) && WP_DEBUG === true ) {
-            // Use your internal logging function instead of error_log
-            
+        if ( defined('WP_DEBUG') && WP_DEBUG === true ) {
+            self::gs_debug_log($message);
         }
     }
 
@@ -66,21 +65,21 @@ class wc_gsheetconnector_utility
         
         switch ($message_type) {
             case 'error':
-                $admin_notice = '<div id="message" class="error notice is-dismissible">';
-                break;
+            $admin_notice = '<div id="message" class="error notice is-dismissible">';
+            break;
             case 'update':
-                $admin_notice = '<div id="message" class="updated notice is-dismissible">';
-                break;
+            $admin_notice = '<div id="message" class="updated notice is-dismissible">';
+            break;
             case 'update-nag':
-                $admin_notice = '<div id="message" class="update-nag">';
-                break;
+            $admin_notice = '<div id="message" class="update-nag">';
+            break;
             case 'upgrade':
-                $admin_notice = '<div id="message" class="error notice wpforms-gs-upgrade is-dismissible">';
-                break;
+            $admin_notice = '<div id="message" class="error notice wpforms-gs-upgrade is-dismissible">';
+            break;
             default:
-                $message = __('There\'s something wrong with your code...', 'wc-gsheetconnector');
-                $admin_notice = "<div id=\"message\" class=\"error\">";
-                break;
+            $message = __('There\'s something wrong with your code...', 'wc-gsheetconnector');
+            $admin_notice = "<div id=\"message\" class=\"error\">";
+            break;
         }
 
         $admin_notice .= '<p>' . esc_html( $message ) . '</p>';
@@ -97,11 +96,13 @@ class wc_gsheetconnector_utility
      */
     public function get_current_user_role()
     {
-        global $wp_roles;
-        foreach ($wp_roles->role_names as $role => $name):
-            if (current_user_can($role))
-                return $role;
-        endforeach;
+        $user = wp_get_current_user();
+
+        if ( ! empty( $user->roles ) ) {
+            return $user->roles[0];
+        }
+
+        return '';
     }
 
     /**
@@ -123,78 +124,85 @@ class wc_gsheetconnector_utility
         );
 
         // Add nonce and any other security parameters to the API request
-        $api_url = add_query_arg($params, WC_GSHEETCONNECTOR_API_URL);
+        $api_url = esc_url_raw(add_query_arg($params, WC_GSHEETCONNECTOR_API_URL));
 
         // Make the API call using wp_remote_get
         $response = wp_remote_get($api_url);
 
         // Check for errors
         if (is_wp_error($response)) {
-            // Handle error
-           
-        } else {
+         self::gs_debug_log($response->get_error_message());
+         return;
+
+     } else {
             // API call was successful, process the data
-            $response = wp_remote_retrieve_body($response);
+        $response = wp_remote_retrieve_body($response);
 
-            $decoded_response = json_decode($response);
+        $decoded_response = json_decode($response);
 
-            if (isset($decoded_response->api_creds) && (!empty($decoded_response->api_creds))) {
-                $api_creds = wp_parse_args($decoded_response->api_creds);
-                if (is_multisite()) {
+        if ( json_last_error() !== JSON_ERROR_NONE ) {
+            self::gs_debug_log('Invalid API JSON response');
+            return;
+        }
+
+        if (isset($decoded_response->api_creds) && (!empty($decoded_response->api_creds))) {
+            $api_creds = wp_parse_args($decoded_response->api_creds);
+            if (is_multisite()) {
                     // If it's a multisite, update the site option (network-wide)
-                    update_site_option('wcgsc_api_free_creds', $api_creds);
-                } else {
-                    // If it's not a multisite, update the regular option
-                    update_option('wcgsc_api_free_creds', $api_creds);
-                }
-            }
-        }
-    }
-
-    public static function gs_debug_log( $error ) {
-        if ( ! function_exists( 'WP_Filesystem' ) ) {
-            require_once ABSPATH . 'wp-admin/includes/file.php';
-        }
-        global $wp_filesystem;
-        WP_Filesystem();
-
-        $upload_dir = wp_upload_dir();
-        $log_dir = trailingslashit( $upload_dir['basedir'] ) . 'wc-gsheetconnector-logs/';
-        $log_file = get_option( 'wcfgs_debug_log_file' );
-        $timestamp = gmdate( 'Y-m-d H:i:s' ) . "\t PHP " . phpversion() . "\t";
-
-        try {
-            if ( ! $wp_filesystem->is_dir( $log_dir ) ) {
-                $wp_filesystem->mkdir( $log_dir, FS_CHMOD_DIR );
-            }
-
-            $old_file = $log_dir . 'log.txt';
-            if ( $wp_filesystem->exists( $old_file ) ) {
-                wp_delete_file( $old_file );
-            }
-
-            $log_message = is_array( $error ) || is_object( $error )
-                ? $timestamp . wp_json_encode( $error ) . "\r\n"
-                : $timestamp . $error . "\r\n";
-
-            if ( ! empty( $log_file ) && $wp_filesystem->exists( $log_file ) ) {
-                $existing = $wp_filesystem->get_contents( $log_file );
-                $wp_filesystem->put_contents( $log_file, $existing . $log_message, FS_CHMOD_FILE );
+                update_site_option('wcgsc_api_free_creds', $api_creds);
             } else {
-                $new_log_file = $log_dir . 'log-' . uniqid() . '.txt';
-                $log_content = "Log created at " . gmdate( 'Y-m-d H:i:s' ) . "\r\n" . $log_message;
-
-                if ( $wp_filesystem->put_contents( $new_log_file, $log_content, FS_CHMOD_FILE ) ) {
-                    update_option( 'wcfgs_debug_log_file', $new_log_file );
-                } else {
-                    
-                }
+                    // If it's not a multisite, update the regular option
+                update_option('wcgsc_api_free_creds', $api_creds);
             }
-
-        } catch ( Exception $e ) {
-            
         }
     }
+}
+
+public static function gs_debug_log( $error ) {
+    if ( ! function_exists( 'WP_Filesystem' ) ) {
+        require_once ABSPATH . 'wp-admin/includes/file.php';
+    }
+    global $wp_filesystem;
+    WP_Filesystem();
+
+    $upload_dir = wp_upload_dir();
+    $log_dir = trailingslashit( $upload_dir['basedir'] ) . 'wc-gsheetconnector-logs/';
+    $log_file = get_option( 'wcfgs_debug_log_file' );
+    $timestamp = gmdate( 'Y-m-d H:i:s' ) . "\t PHP " . phpversion() . "\t";
+
+    try {
+        if ( ! $wp_filesystem->is_dir( $log_dir ) ) {
+            $wp_filesystem->mkdir( $log_dir, FS_CHMOD_DIR );
+        }
+
+        $old_file = $log_dir . 'log.txt';
+        if ( $wp_filesystem->exists( $old_file ) ) {
+            wp_delete_file( $old_file );
+        }
+
+        $log_message = is_array( $error ) || is_object( $error )
+        ? $timestamp . wp_json_encode( $error ) . "\r\n"
+        : $timestamp . $error . "\r\n";
+
+        if ( ! empty( $log_file ) && $wp_filesystem->exists( $log_file ) ) {
+            $existing = $wp_filesystem->get_contents( $log_file );
+            $wp_filesystem->put_contents( $log_file, $existing . $log_message, FS_CHMOD_FILE );
+        } else {
+            $new_log_file = $log_dir . 'log-' . uniqid() . '.txt';
+            $log_content = "Log created at " . gmdate( 'Y-m-d H:i:s' ) . "\r\n" . $log_message;
+
+            if ( $wp_filesystem->put_contents( $new_log_file, $log_content, FS_CHMOD_FILE ) ) {
+                update_option( 'wcfgs_debug_log_file', $new_log_file );
+            } else {
+                self::gs_debug_log('Failed to write debug log file');
+            }
+        }
+
+    } catch ( Exception $e ) {
+        self::gs_debug_log( $e->getMessage() );
+
+    }
+}
 
     /**
      * 

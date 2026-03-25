@@ -53,8 +53,10 @@ class GSCWOO_googlesheet
 		$client->setClientId($clientId);
 		$client->setClientSecret($clientSecret);
 		$client->setRedirectUri('https://oauth.gsheetconnector.com');
-		$client->setScopes(Google_Service_Sheets::SPREADSHEETS);
-		$client->setScopes(Google_Service_Drive::DRIVE_METADATA_READONLY);
+		$client->setScopes([
+			Google_Service_Sheets::SPREADSHEETS,
+			Google_Service_Drive::DRIVE_METADATA_READONLY
+		]);
 		$client->setAccessType('offline');
 		$client->fetchAccessTokenWithAuthCode($access_code);
 		$tokenData = $client->getAccessToken();
@@ -110,8 +112,10 @@ class GSCWOO_googlesheet
 			$client->setClientId($clientId);
 			$client->setClientSecret($clientSecret);
 
-			$client->setScopes(Google_Service_Sheets::SPREADSHEETS);
-			$client->setScopes(Google_Service_Drive::DRIVE_METADATA_READONLY);
+			$client->setScopes([
+				Google_Service_Sheets::SPREADSHEETS,
+				Google_Service_Drive::DRIVE_METADATA_READONLY
+			]);
 			$client->refreshToken($tokenData['refresh_token']);
 			$client->setAccessType('offline');
 			GSCWOO_googlesheet::updateToken($tokenData);
@@ -168,7 +172,6 @@ class GSCWOO_googlesheet
 		} catch (Exception $e) {
 			wc_gsheetconnector_utility::gs_debug_log($e->getMessage());
 			return null;
-			exit();
 		}
 		return $all_sheets;
 	}
@@ -193,7 +196,6 @@ class GSCWOO_googlesheet
 		} catch (Exception $e) {
 			wc_gsheetconnector_utility::gs_debug_log($e->getMessage());
 			return null;
-			exit();
 		}
 
 		return $work_tabs_list;
@@ -212,9 +214,12 @@ class GSCWOO_googlesheet
 	public function getTabId($selected_sheet_id, $gscwoo_sheetname)
 	{
 		$tabsArr = $this->get_worktabs($selected_sheet_id);
-		foreach ($tabsArr as $key => $value) {
-			if ($value["title"] == $gscwoo_sheetname)
+		$tabId = '';
+		foreach ($tabsArr as $value) {
+			if ($value["title"] == $gscwoo_sheetname) {
 				$tabId = $value["id"];
+				break;
+			}
 		}
 		return $tabId;
 	}
@@ -236,6 +241,10 @@ class GSCWOO_googlesheet
 
 		$all_sheet_data = get_option('wcgsc_sheetId');
 
+		if (!is_array($all_sheet_data)) {
+			return "";
+		}
+
 		$tab_name = "";
 		foreach ($all_sheet_data as $spreadsheet) {
 
@@ -249,8 +258,8 @@ class GSCWOO_googlesheet
 				}
 			}
 		}
-
 		$tab_name = apply_filters("gcwoo_filter_tab_name", $tab_name, $spreadsheet_id, $tab_id);
+		
 		return $tab_name;
 	}
 
@@ -259,6 +268,10 @@ class GSCWOO_googlesheet
 
 		$all_sheet_data = get_option('wcgsc_sheetId');
 
+		if (!is_array($all_sheet_data)) {
+			return "";
+		}
+
 		$spreadsheetName = "";
 		foreach ($all_sheet_data as $spreadsheet_name => $spreadsheet) {
 
@@ -266,13 +279,14 @@ class GSCWOO_googlesheet
 				$spreadsheetName = $spreadsheet_name;
 			}
 		}
-
+		
 		$spreadsheetName = apply_filters("gcwoo_filter_spreasheet_name", $spreadsheetName, $spreadsheet_id);
 
+		
 		return $spreadsheetName;
 	}
 
-	
+
 
 	public function remove_row_by_order_id($spreadsheet_id, $tab_name, $order_id, $order_id_index)
 	{
@@ -284,6 +298,10 @@ class GSCWOO_googlesheet
 		}
 
 		try {
+			$spreadsheet_id = sanitize_text_field($spreadsheet_id);
+			$tab_name = sanitize_text_field($tab_name);
+			$order_id = sanitize_text_field($order_id);
+
 			$tab_id = $this->getTabId($spreadsheet_id, $tab_name);
 			$service = new Google_Service_Sheets($client);
 			$full_range = $tab_name . "!A1:Z";
@@ -292,11 +310,11 @@ class GSCWOO_googlesheet
 
 			$order_ids = wp_list_pluck($get_values, $order_id_index);
 
-			
+
 
 			$index = array_search($order_id, $order_ids);
 
-			if ($index != false) {
+			if ($index !== false){
 
 				$conf = array(
 					'requests' => array(
@@ -332,6 +350,9 @@ class GSCWOO_googlesheet
 		}
 
 		try {
+			$spreadsheet_id = sanitize_text_field($spreadsheet_id);
+			$tab_name = sanitize_text_field($tab_name);
+			$order_id = sanitize_text_field($order_id);
 			$tab_id = $this->getTabId($spreadsheet_id, $tab_name);
 			$service = new Google_Service_Sheets($client);
 			$full_range = $tab_name . "!A1:Z";
@@ -366,7 +387,7 @@ class GSCWOO_googlesheet
 				$result = $service->spreadsheets_values->update($spreadsheet_id, $range, $valueRange, $conf);
 			}
 
-			
+
 
 		} catch (Exception $e) {
 			wc_gsheetconnector_utility::gs_debug_log($e->getMessage());
@@ -384,6 +405,8 @@ class GSCWOO_googlesheet
 		ksort($row_data);
 
 		try {
+			$spreadsheet_id = sanitize_text_field($spreadsheet_id);
+			$tab_name = sanitize_text_field($tab_name);
 			$client = self::getInstance();
 
 			if (!$client) {
@@ -469,11 +492,10 @@ class GSCWOO_googlesheet
 		} catch (Exception $e) {
 			wc_gsheetconnector_utility::gs_debug_log($e->getMessage());
 			$header_cells = array();
-			
+
 		}
-
 		$header_cells = apply_filters("gcwoo_fetched_header_cells", $header_cells, $spreadsheet_id, $tab_id);
-
+		
 		return $header_cells;
 	}
 
@@ -518,12 +540,12 @@ class GSCWOO_googlesheet
 	{
 
 		try {
-		        $google_sheet = new GSCWOO_googlesheet();
-				$google_sheet->auth();
-				$email = $google_sheet->gsheet_get_google_account_email();
-				update_option("wcgsc_email_account", $email);
-				return $email;
-		    } catch (Exception $e) {
+			$google_sheet = new GSCWOO_googlesheet();
+			$google_sheet->auth();
+			$email = $google_sheet->gsheet_get_google_account_email();
+			update_option("wcgsc_email_account", $email);
+			return $email;
+		} catch (Exception $e) {
 			wc_gsheetconnector_utility::gs_debug_log($e->getMessage());
 			return false;
 		}

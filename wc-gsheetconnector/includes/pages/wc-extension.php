@@ -1,20 +1,23 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 ?>
 <div id="plugin-manager-data"
-     data-ajaxurl="<?php echo esc_url(admin_url('admin-ajax.php')); ?>"
-     data-plugin-nonce="<?php echo esc_attr(wp_create_nonce('plugin_manager_nonce')); ?>"
-     data-deactivate-nonce="<?php echo esc_attr(wp_create_nonce('deactivate_plugin_nonce')); ?>">
+data-ajaxurl="<?php echo esc_url(admin_url('admin-ajax.php')); ?>"
+data-plugin-nonce="<?php echo esc_attr(wp_create_nonce('plugin_manager_nonce')); ?>"
+data-deactivate-nonce="<?php echo esc_attr(wp_create_nonce('deactivate_plugin_nonce')); ?>">
 </div>
 <!-- tab extenion page  -->
 <div class="extension">
     <h2></h2>
     <?php
+    if ( ! function_exists( 'get_plugins' ) ) {
+        require_once ABSPATH . 'wp-admin/includes/plugin.php';
+    }
+    $wcgsc_all_plugins = get_plugins();
+    $wcgsc_active_theme = wp_get_theme();
 
-    $all_plugins = get_plugins();
-    $active_theme = wp_get_theme();
-
-    $plugins = [
+    $wcgsc_plugins = [
         'woocommerce/woocommerce.php' => [
             'connector' => 'wc-gsheetconnector/wc-gsheetconnector.php',
             'connector-pro' => 'wc-gsheetconnector-pro/wc-gsheetconnector-pro.php',
@@ -231,57 +234,57 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
     ?>
 
-    <h2>Install and Activated Plugins</h2>
+    <h2><?php echo esc_html__( 'Install and Activated Plugins', 'wc-gsheetconnector' ); ?></h2>
     <div class="gsheetconnector-addons-list">
         <?php
         // Iterate through each plugin and verify if both the main plugin and its connector are active
-        foreach ($plugins as $plugin => $details) {
-            $is_main_installed = false;
-            $is_main_active = false;
-            if (!empty($details['mainPlugin']) && is_array($details['mainPlugin'])) {
-                foreach ($details['mainPlugin'] as $main_plugin) {
-                    if (isset($all_plugins[$main_plugin])) {
-                        $is_main_installed = true;
+        foreach ($wcgsc_plugins as $wcgsc_plugin => $wcgsc_details) {
+            $wcgsc_is_main_installed = false;
+            $wcgsc_is_main_active = false;
+            if (!empty($wcgsc_details['mainPlugin']) && is_array($wcgsc_details['mainPlugin'])) {
+                foreach ($wcgsc_details['mainPlugin'] as $wcgsc_main_plugin) {
+                    if (isset($wcgsc_all_plugins[$wcgsc_main_plugin])) {
+                        $wcgsc_is_main_installed = true;
                     }
-                    if (is_plugin_active($main_plugin)) {
-                        $is_main_active = true;
+                    if (is_plugin_active($wcgsc_main_plugin)) {
+                        $wcgsc_is_main_active = true;
                         break; // Stop checking if at least one is active
                     }
                 }
-            } elseif (!empty($details['mainPlugin']) && is_string($details['mainPlugin'])) {
+            } elseif (!empty($wcgsc_details['mainPlugin']) && is_string($wcgsc_details['mainPlugin'])) {
                 // If `mainPlugin` is a single string (not an array), check directly
-                $is_main_installed = isset($all_plugins[$details['mainPlugin']]);
-                $is_main_active = is_plugin_active($details['mainPlugin']);
+                $wcgsc_is_main_installed = isset($wcgsc_all_plugins[$wcgsc_details['mainPlugin']]);
+                $wcgsc_is_main_active = is_plugin_active($wcgsc_details['mainPlugin']);
             }
-            $active_theme = wp_get_theme();
-            $active_theme_slug = $active_theme->get_stylesheet();
+            $wcgsc_active_theme = wp_get_theme();
+            $wcgsc_active_theme_slug = $wcgsc_active_theme->get_stylesheet();
 
-            $is_pro_installed = isset($details['pro_plugin_active']) && isset($all_plugins[$details['pro_plugin_active']]);
-            $is_pro_active = is_plugin_active($details['pro_plugin_active']);
-            $is_free_installed = isset($details['connector']) && isset($all_plugins[$details['connector']]);
-            $is_free_active = is_plugin_active($details['connector']);
+            $wcgsc_is_pro_installed = isset($wcgsc_details['pro_plugin_active']) && isset($wcgsc_all_plugins[$wcgsc_details['pro_plugin_active']]);
+            $wcgsc_is_pro_active = is_plugin_active($wcgsc_details['pro_plugin_active']);
+            $wcgsc_is_free_installed = isset($wcgsc_details['connector']) && isset($wcgsc_all_plugins[$wcgsc_details['connector']]);
+            $wcgsc_is_free_active = is_plugin_active($wcgsc_details['connector']);
 
 
-            if (isset($details['pro_plugin_active']) && $is_main_active) {
-                if (!is_plugin_active($details['pro_plugin_active'])) {
-                    if ($is_free_active || $is_pro_installed) {
-                        if ($is_pro_installed) { ?>
+            if (isset($wcgsc_details['pro_plugin_active']) && $wcgsc_is_main_active) {
+                if (!is_plugin_active($wcgsc_details['pro_plugin_active'])) {
+                    if ($wcgsc_is_free_active || $wcgsc_is_pro_installed) {
+                        if ($wcgsc_is_pro_installed) { ?>
                             <div class="gsheetconnector-list-item">
                                 <div class="addon-item-header">
-                                    <div class="plugin-premium">PRO</div>
-                                    <a href="<?php echo esc_url($details['buyLink']); ?>" target="_blank">
+                                    <div class="plugin-premium"><?php esc_html( 'PRO', 'wc-gsheetconnector' ); ?></div>
+                                    <a href="<?php echo esc_url($wcgsc_details['buyLink']); ?>" target="_blank">
                                         <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Image is not from WP Media Library -->
-                                        <img src="<?php echo esc_url($details['img']); ?>" alt="<?php echo esc_attr($details['name']); ?>">
+                                        <img src="<?php echo esc_url($wcgsc_details['img']); ?>" alt="<?php echo esc_attr($wcgsc_details['name']); ?>">
                                     </a>
                                     <div class="addon-item-header-meta">
                                         <div class="addon-item-meta-title">
-                                            <a href="<?php echo esc_url($details['buyLink']); ?>" target="_blank" class="addon-link">
-                                                <?php echo esc_html($details['name']); ?>
+                                            <a href="<?php echo esc_url($wcgsc_details['buyLink']); ?>" target="_blank" class="addon-link">
+                                                <?php echo esc_html($wcgsc_details['name']); ?>
                                             </a>
                                         </div>
                                         <div class="addon-item-header-meta-excerpt">
 
-                                            <?php echo esc_html($details['text']); ?>
+                                            <?php echo esc_html($wcgsc_details['text']); ?>
 
                                         </div>
                                     </div>
@@ -289,264 +292,264 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
                                 <div class="addon-item-footer">
                                     <div class="button-bar">
                                         <button class="activate-plugin-btn button button-free proactive"
-                                            data-plugin="<?php echo esc_attr($details['pro_plugin_active']); ?>">
-                                            <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Safe static plugin image -->
-                                            <img src="<?php echo esc_url(WC_GSHEETCONNECTOR_URL . 'assets/img/ajax-loader.gif'); ?>"
-                                                alt="Loading..." class="loaderimg" />
-                                           <?php esc_html_e('Activate', 'wc-gsheetconnector'); ?>
-                                        </button>
-                                    </div>
+                                        data-plugin="<?php echo esc_attr($wcgsc_details['pro_plugin_active']); ?>">
+                                        <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Safe static plugin image -->
+                                        <img src="<?php echo esc_url(WC_GSHEETCONNECTOR_URL . 'assets/img/ajax-loader.gif'); ?>"
+                                        alt="Loading..." class="loaderimg" />
+                                        <?php esc_html_e('Activate', 'wc-gsheetconnector'); ?>
+                                    </button>
                                 </div>
                             </div>
-                        <?php } else { ?>
-                            <div class="gsheetconnector-list-item">
-                                <div class="activated">
-                                    <a href="#" class="button button-free deactivate-plugin"
-                                        data-download="<?php echo esc_url($details['connector']); ?>"
-                                        data-plugin="<?php echo esc_attr($details['connector']); ?>">Deactivate</a>
-                                </div>
-                                <div class="addon-item-header">
-                                    <div class="plugin-free">Free</div>
-                                    <a href="<?php echo esc_url($details['buyLink']); ?>" target="_blank">
-                                        <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Image is not from WP Media Library -->
-                                        <img src="<?php echo esc_url($details['img']); ?>" alt="<?php echo esc_attr($details['name']); ?>">
-                                    </a>
-                                    <div class="addon-item-header-meta">
-                                        <div class="addon-item-meta-title">
-                                            <a href="<?php echo esc_url($details['buyLink']); ?>" target="_blank" class="addon-link">
-                                                <?php echo esc_html($details['name']); ?>
-                                            </a>
-                                        </div>
-                                        <div class="addon-item-header-meta-excerpt">
-                                            <a href="<?php echo esc_url($details['buyLink']); ?>" target="_blank" class="addon-link">
-                                               <?php esc_html_e( 'Upgrade to PRO', 'wc-gsheetconnector' ); ?>
-                                            </a>
-                                        </div>
+                        </div>
+                    <?php } else { ?>
+                        <div class="gsheetconnector-list-item">
+                            <div class="activated">
+                                <a href="#" class="button button-free deactivate-plugin"
+                                data-download="<?php echo esc_url($wcgsc_details['connector']); ?>"
+                                data-plugin="<?php echo esc_attr($wcgsc_details['connector']); ?>">Deactivate</a>
+                            </div>
+                            <div class="addon-item-header">
+                                <div class="plugin-free">Free</div>
+                                <a href="<?php echo esc_url($wcgsc_details['buyLink']); ?>" target="_blank">
+                                    <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Image is not from WP Media Library -->
+                                    <img src="<?php echo esc_url($wcgsc_details['img']); ?>" alt="<?php echo esc_attr($wcgsc_details['name']); ?>">
+                                </a>
+                                <div class="addon-item-header-meta">
+                                    <div class="addon-item-meta-title">
+                                        <a href="<?php echo esc_url($wcgsc_details['buyLink']); ?>" target="_blank" class="addon-link">
+                                            <?php echo esc_html($wcgsc_details['name']); ?>
+                                        </a>
                                     </div>
-                                </div>
-                                <div class="addon-item-footer">
-                                    <div class="button-bar">
+                                    <div class="addon-item-header-meta-excerpt">
+                                        <a href="<?php echo esc_url($wcgsc_details['buyLink']); ?>" target="_blank" class="addon-link">
+                                         <?php esc_html_e( 'Upgrade to PRO', 'wc-gsheetconnector' ); ?>
+                                     </a>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="addon-item-footer">
+                            <div class="button-bar">
 
-                                    </div>
-                                </div>
                             </div>
-                        <?php }
-                    }
-                } else { ?>
-                    <div class="gsheetconnector-list-item">
-                        <div class="activated">
-                            <a href="#" class="button button-free deactivate-plugin"
-                                data-download="<?php echo esc_url($details['connector-pro']); ?>"
-                                data-plugin="<?php echo esc_attr($details['connector-pro']); ?>">Deactivate</a>
-                        </div>
-                        <div class="addon-item-header">
-                            <div class="plugin-premium">PRO</div>
-                            <a href="<?php echo esc_url($details['link']); ?>" target="_blank">
-                                <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Image is not from WP Media Library -->
-                                <img src="<?php echo esc_url($details['img']); ?>" alt="<?php echo esc_attr($details['name']); ?>">
-                            </a>
-                            <div class="addon-item-header-meta">
-                                <div class="addon-item-meta-title">
-                                    <a href="<?php echo esc_url($details['link']); ?>" target="_blank" class="addon-link">
-                                        <?php echo esc_html($details['name'] . ' Pro'); ?>
-                                    </a>
-                                </div>
-                                <div class="addon-item-header-meta-excerpt">
-                                   <strong><?php esc_html_e( 'Already using PRO version', 'wc-gsheetconnector' ); ?></strong>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="addon-item-footer">
-                            <div class="button-bar"></div>
                         </div>
                     </div>
                 <?php }
             }
-        }
-        ?>
-    </div>
+        } else { ?>
+            <div class="gsheetconnector-list-item">
+                <div class="activated">
+                    <a href="#" class="button button-free deactivate-plugin"
+                    data-download="<?php echo esc_url($wcgsc_details['connector-pro']); ?>"
+                    data-plugin="<?php echo esc_attr($wcgsc_details['connector-pro']); ?>"><?php esc_html( 'Deactivate', 'wc-gsheetconnector' ); ?></a>
+                </div>
+                <div class="addon-item-header">
+                    <div class="plugin-premium"><?php esc_html( 'PRO', 'wc-gsheetconnector' ); ?></div>
+                    <a href="<?php echo esc_url($wcgsc_details['link']); ?>" target="_blank">
+                        <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Image is not from WP Media Library -->
+                        <img src="<?php echo esc_url($wcgsc_details['img']); ?>" alt="<?php echo esc_attr($wcgsc_details['name']); ?>">
+                    </a>
+                    <div class="addon-item-header-meta">
+                        <div class="addon-item-meta-title">
+                            <a href="<?php echo esc_url($wcgsc_details['link']); ?>" target="_blank" class="addon-link">
+                                <?php echo esc_html($wcgsc_details['name'] . ' Pro'); ?>
+                            </a>
+                        </div>
+                        <div class="addon-item-header-meta-excerpt">
+                         <strong><?php esc_html_e( 'Already using PRO version', 'wc-gsheetconnector' ); ?></strong>
+                     </div>
+                 </div>
+             </div>
+             <div class="addon-item-footer">
+                <div class="button-bar"></div>
+            </div>
+        </div>
+    <?php }
+}
+}
+?>
+</div>
 
-    <!-- second section -->
-    <h2>Recommended Plugins</h2>
-    <div class="gsheetconnector-addons-list">
-        <?php foreach ($plugins as $plugin => $data):
-            $is_main_active = false;
+<!-- second section -->
+<h2><?php echo esc_html__( 'Recommended Plugins', 'wc-gsheetconnector' ); ?></h2>
+<div class="gsheetconnector-addons-list">
+    <?php foreach ($wcgsc_plugins as $wcgsc_plugin => $wcgsc_data):
+        $wcgsc_is_main_active = false;
 
-            if (!empty($data['mainPlugin']) && is_array($data['mainPlugin'])) {
-                foreach ($data['mainPlugin'] as $main_plugin) {
-                    if (is_plugin_active($main_plugin)) { // Use WordPress function directly
-                        $is_main_active = true;
+        if (!empty($wcgsc_data['mainPlugin']) && is_array($wcgsc_data['mainPlugin'])) {
+            foreach ($wcgsc_data['mainPlugin'] as $wcgsc_main_plugin) {
+                    if (is_plugin_active($wcgsc_main_plugin)) { // Use WordPress function directly
+                        $wcgsc_is_main_active = true;
                         break; // Stop checking once one is active
                     }
                 }
-            } elseif (!empty($data['mainPlugin']) && is_string($data['mainPlugin'])) {
+            } elseif (!empty($wcgsc_data['mainPlugin']) && is_string($wcgsc_data['mainPlugin'])) {
                 // If `mainPlugin` is a single string, check directly
-                $is_main_active = is_plugin_active($data['mainPlugin']);
+                $wcgsc_is_main_active = is_plugin_active($wcgsc_data['mainPlugin']);
             }
-            $active_theme = wp_get_theme();
-            $active_theme_slug = $active_theme->get_stylesheet();
+            $wcgsc_active_theme = wp_get_theme();
+            $wcgsc_active_theme_slug = $wcgsc_active_theme->get_stylesheet();
 
-            $is_pro_installed = isset($data['pro_plugin_active']) && isset($all_plugins[$data['pro_plugin_active']]);
-            $is_pro_active = is_plugin_active($data['pro_plugin_active']);
-            $is_free_installed = isset($data['connector']) && isset($all_plugins[$data['connector']]);
-            $is_free_active = is_plugin_active($data['connector']);
-            if (!($active_theme_slug === $data['theme'])) {
-                if ($is_main_active && !$is_pro_installed && !$is_pro_active && !$is_free_active): ?>
+            $wcgsc_is_pro_installed = isset($wcgsc_data['pro_plugin_active']) && isset($wcgsc_all_plugins[$wcgsc_data['pro_plugin_active']]);
+            $wcgsc_is_pro_active = is_plugin_active($wcgsc_data['pro_plugin_active']);
+            $wcgsc_is_free_installed = isset($wcgsc_data['connector']) && isset($wcgsc_all_plugins[$wcgsc_data['connector']]);
+            $wcgsc_is_free_active = is_plugin_active($wcgsc_data['connector']);
+            if (!($wcgsc_active_theme_slug === $wcgsc_data['theme'])) {
+                if ($wcgsc_is_main_active && !$wcgsc_is_pro_installed && !$wcgsc_is_pro_active && !$wcgsc_is_free_active): ?>
                     <div class="gsheetconnector-list-item">
                         <div class="addon-item-header">
                             <div class="plugin-free">Free</div>
-                            <a href="<?php echo esc_url($data['url']); ?>" target="_blank">
+                            <a href="<?php echo esc_url($wcgsc_data['url']); ?>" target="_blank">
                                 <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Image is not from WP Media Library -->
-                                <img src="<?php echo esc_url($data['img']); ?>" alt="<?php echo esc_attr($data['name']); ?>">
+                                <img src="<?php echo esc_url($wcgsc_data['img']); ?>" alt="<?php echo esc_attr($wcgsc_data['name']); ?>">
                             </a>
                             <div class="addon-item-header-meta">
                                 <div class="addon-item-meta-title">
-                                    <a href="<?php echo esc_url($data['url']); ?>" target="_blank" class="addon-link ">
-                                        <?php echo esc_html($data['name']); ?>
+                                    <a href="<?php echo esc_url($wcgsc_data['url']); ?>" target="_blank" class="addon-link ">
+                                        <?php echo esc_html($wcgsc_data['name']); ?>
                                     </a>
                                 </div>
                                 <div class="addon-item-header-meta-excerpt">
-                                    <?php echo esc_html($data['text']); ?>
+                                    <?php echo esc_html( $wcgsc_data['text'] ); ?>
                                 </div>
                             </div>
                         </div>
                         <div class="addon-item-footer">
                             <div class="button-bar">
-                                <?php if ($is_free_active): ?>
+                                <?php if ($wcgsc_is_free_active): ?>
                                     <button class="button button-secondary" disabled>
                                         <?php esc_html_e( 'Activated', 'wc-gsheetconnector' ); ?>
                                     </button>
-                                <?php elseif ($is_free_installed && !$is_free_active): ?>
-                                    <button class="activate-plugin-btn button button-free"
-                                        data-plugin="<?php echo esc_attr($data['connector']); ?>">
+                                    <?php elseif ($wcgsc_is_free_installed && !$wcgsc_is_free_active): ?>
+                                        <button class="activate-plugin-btn button button-free"
+                                        data-plugin="<?php echo esc_attr($wcgsc_data['connector']); ?>">
                                         <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Safe static plugin image -->
                                         <img src="<?php echo esc_url(WC_GSHEETCONNECTOR_URL . 'assets/img/ajax-loader.gif'); ?>"
-                                            alt="Loading..." class="loaderimg" />
-                                       <?php esc_html_e('Activate', 'wc-gsheetconnector'); ?>
+                                        alt="Loading..." class="loaderimg" />
+                                        <?php esc_html_e('Activate', 'wc-gsheetconnector'); ?>
                                     </button>
 
-                                <?php else: ?>
-                                    <button class="install-plugin-btn button "
-                                        data-download="<?php echo esc_url($data['downloadLink']); ?>"
-                                        data-plugin="<?php echo esc_attr($plugin); ?>">
+                                    <?php else: ?>
+                                        <button class="install-plugin-btn button "
+                                        data-download="<?php echo esc_url($wcgsc_data['downloadLink']); ?>"
+                                        data-plugin="<?php echo esc_attr($wcgsc_plugin); ?>">
                                         <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Safe static plugin image -->
                                         <img src="<?php echo esc_url(WC_GSHEETCONNECTOR_URL . 'assets/img/ajax-loader.gif'); ?>"
-                                            alt="Loading..." class="loaderimg" />
-                                        <?php echo esc_html($data['button']); ?>
+                                        alt="Loading..." class="loaderimg" />
+                                        <?php echo esc_html($wcgsc_data['button']); ?>
                                     </button>
                                     <!-- Ensure Activate button exists but is hidden -->
                                     <button class="activate-plugin-btn button button-free"
-                                        data-plugin="<?php echo esc_attr($data['connector']); ?>" style="display: none;">
-                                        <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Safe static plugin image -->
-                                        <img src="<?php echo esc_url(WC_GSHEETCONNECTOR_URL . 'assets/img/ajax-loader.gif'); ?>"
-                                            alt="Loading..." class="loaderimg" />
-                                       <?php esc_html_e('Activate', 'wc-gsheetconnector'); ?>
-                                    </button>
-                                <?php endif; ?>
-                            </div>
-                        </div>
-                    </div>
-                <?php endif; ?>
-            <?php } else { ?>
-                <div class="gsheetconnector-list-item">
-                    <div class="addon-item-header">
-
-                        <a href="<?php echo esc_url($data['buyLink']); ?>" target="_blank">
-                            <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Image is not from WP Media Library -->
-                            <img src="<?php echo esc_url($data['img']); ?>" alt="<?php echo esc_attr($data['name']); ?>">
-                        </a>
-                        <div class="addon-item-header-meta">
-                            <div class="plugin-premium">PRO</div>
-                            <div class="addon-item-meta-title">
-                                <a href="<?php echo esc_url($data['buyLink']); ?>" target="_blank" class="addon-link">
-                                    <?php echo esc_html($data['name']); ?>
-                                </a>
-                            </div>
-                            <div class="addon-item-header-meta-excerpt">
-                                <?php echo esc_html($data['text']); ?>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="addon-item-footer">
-                        <div class="button-bar">
-                            <div class="addon-item-meta-title">
-                                <a href="<?php echo esc_url($data['link']); ?>" target="_blank" class="button">
-                                    <?php echo esc_html($data['button']); ?>
-                                </a>
-                            </div>
+                                    data-plugin="<?php echo esc_attr($wcgsc_data['connector']); ?>" style="display: none;">
+                                    <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Safe static plugin image -->
+                                    <img src="<?php echo esc_url(WC_GSHEETCONNECTOR_URL . 'assets/img/ajax-loader.gif'); ?>"
+                                    alt="Loading..." class="loaderimg" />
+                                    <?php esc_html_e('Activate', 'wc-gsheetconnector'); ?>
+                                </button>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
-            <?php } ?>
-        <?php endforeach; ?>
-    </div>
+            <?php endif; ?>
+        <?php } else { ?>
+            <div class="gsheetconnector-list-item">
+                <div class="addon-item-header">
+
+                    <a href="<?php echo esc_url($wcgsc_data['buyLink']); ?>" target="_blank">
+                        <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Image is not from WP Media Library -->
+                        <img src="<?php echo esc_url($wcgsc_data['img']); ?>" alt="<?php echo esc_attr($wcgsc_data['name']); ?>">
+                    </a>
+                    <div class="addon-item-header-meta">
+                        <div class="plugin-premium">PRO</div>
+                        <div class="addon-item-meta-title">
+                            <a href="<?php echo esc_url($wcgsc_data['buyLink']); ?>" target="_blank" class="addon-link">
+                                <?php echo esc_html($wcgsc_data['name']); ?>
+                            </a>
+                        </div>
+                        <div class="addon-item-header-meta-excerpt">
+                            <?php echo esc_html($wcgsc_data['text']); ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="addon-item-footer">
+                    <div class="button-bar">
+                        <div class="addon-item-meta-title">
+                            <a href="<?php echo esc_url($wcgsc_data['link']); ?>" target="_blank" class="button">
+                                <?php echo esc_html($wcgsc_data['button']); ?>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+    <?php endforeach; ?>
+</div>
 
 
-    <!-- 3th section-->
-    <h2> Our Other Plugins</h2>
-    <div class="gsheetconnector-addons-list">
-        <?php
+<!-- 3th section-->
+<h2> <?php echo esc_html__( 'Our Other Plugins', 'wc-gsheetconnector' ); ?></h2>
+<div class="gsheetconnector-addons-list">
+    <?php
         // Loop through the array and generate HTML
-        foreach ($plugins as $plugin => $data) {
-            $is_main_active = false;
+    foreach ($wcgsc_plugins as $wcgsc_plugin => $wcgsc_data) {
+        $wcgsc_is_main_active = false;
 
-            if (!empty($data['mainPlugin']) && is_array($data['mainPlugin'])) {
-                foreach ($data['mainPlugin'] as $main_plugin) {
-                    if (is_plugin_active($main_plugin)) {
-                        $is_main_active = true;
+        if (!empty($wcgsc_data['mainPlugin']) && is_array($wcgsc_data['mainPlugin'])) {
+            foreach ($wcgsc_data['mainPlugin'] as $wcgsc_main_plugin) {
+                if (is_plugin_active($wcgsc_main_plugin)) {
+                    $wcgsc_is_main_active = true;
                         break; // Stop checking once one is active
                     }
                 }
-            } elseif (!empty($data['mainPlugin']) && is_string($data['mainPlugin'])) {
+            } elseif (!empty($wcgsc_data['mainPlugin']) && is_string($wcgsc_data['mainPlugin'])) {
                 // If `mainPlugin` is a single string, check directly
-                $is_main_active = is_plugin_active($data['mainPlugin']);
+                $wcgsc_is_main_active = is_plugin_active($wcgsc_data['mainPlugin']);
             }
 
             // Check if the required theme is active
-            $active_theme = wp_get_theme();
-            $active_theme_slug = $active_theme->get_stylesheet(); // Get active theme slug
-            $is_pro_installed = isset($data['pro_plugin_active']) && isset($all_plugins[$data['pro_plugin_active']]);
-            $is_free_installed = isset($data['connector']) && isset($all_plugins[$data['connector']]);
-            $is_pro_active = is_plugin_active($data['pro_plugin_active']);
-            $is_free_active = is_plugin_active($data['connector']);
-            $is_pro_active = is_plugin_active($data['pro_plugin_active']);
+            $wcgsc_active_theme = wp_get_theme();
+            $wcgsc_active_theme_slug = $wcgsc_active_theme->get_stylesheet(); // Get active theme slug
+            $wcgsc_is_pro_installed = isset($wcgsc_data['pro_plugin_active']) && isset($wcgsc_all_plugins[$wcgsc_data['pro_plugin_active']]);
+            $wcgsc_is_free_installed = isset($wcgsc_data['connector']) && isset($wcgsc_all_plugins[$wcgsc_data['connector']]);
+            $wcgsc_is_pro_active = is_plugin_active($wcgsc_data['pro_plugin_active']);
+            $wcgsc_is_free_active = is_plugin_active($wcgsc_data['connector']);
+            $wcgsc_is_pro_active = is_plugin_active($wcgsc_data['pro_plugin_active']);
             // Check if the main plugin(main plugin) is active
-            if (!($active_theme_slug === $data['theme'])):
-                if (!$is_main_active): ?>
+            if (!($wcgsc_active_theme_slug === $wcgsc_data['theme'])):
+                if (!$wcgsc_is_main_active): ?>
                     <div class="gsheetconnector-list-item">
                         <div class="addon-item-header">
-                            <?php if (('Avada' === $data['theme']) || ('Divi' === $data['theme'])) { ?>
-                                <div class="plugin-premium">PRO</div>
+                            <?php if (('Avada' === $wcgsc_data['theme']) || ('Divi' === $wcgsc_data['theme'])) { ?>
+                                <div class="plugin-premium"><?php esc_html( 'PRO', 'wc-gsheetconnector' ); ?></div>
                             <?php } else { ?>
-                                <div class="plugin-free">Free</div>
+                                <div class="plugin-free"><?php esc_html( 'Free', 'wc-gsheetconnector' ); ?></div>
                             <?php } ?>
-                            <a href="<?php echo esc_url( $data['link'] ); ?>" target="_blank" rel="noopener noreferrer">
+                            <a href="<?php echo esc_url( $wcgsc_data['link'] ); ?>" target="_blank" rel="noopener noreferrer">
                                 <!-- phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Image is not from WP Media Library -->
-                                <img src="<?php echo esc_url( $data['img'] ); ?>" alt="<?php echo esc_attr__( 'logo', 'wc-gsheetconnector' ); ?>">
+                                <img src="<?php echo esc_url( $wcgsc_data['img'] ); ?>" alt="<?php echo esc_attr__( 'logo', 'wc-gsheetconnector' ); ?>">
                             </a>
                             <div class="addon-item-header-meta">
                                 <div class="addon-item-meta-title">
-                                    <a href="<?php echo esc_url( $data['link'] ); ?>" target="_blank" rel="noopener noreferrer">
-                                        <?php echo esc_html( $data['name'] ); ?>
+                                    <a href="<?php echo esc_url( $wcgsc_data['link'] ); ?>" target="_blank" rel="noopener noreferrer">
+                                        <?php echo esc_html( $wcgsc_data['name'] ); ?>
                                     </a>
                                 </div>
                                 <div class="addon-item-header-meta-excerpt">
-                                   <?php echo wp_kses_post( $data['text'] ); ?>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="addon-item-footer">
+                                 <?php echo wp_kses_post( $wcgsc_data['text'] ); ?>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="addon-item-footer">
 
-                            <div class="button-bar">
+                        <div class="button-bar">
 
-                            </div>
                         </div>
                     </div>
-                <?php endif;
-            endif;
-        }
+                </div>
+            <?php endif;
+        endif;
+    }
 
-        ?>
-    </div>
+    ?>
+</div>
 </div>
 <!-- wrap #end -->

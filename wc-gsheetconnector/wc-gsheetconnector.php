@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name: GSheetConnector for WC
+ * Plugin Name: GSheetConnector for WooCommerce
  * Plugin URI: https://wordpress.org/plugins/wc-gsheetconnector/
  * Description: Send your WooCommerce data to your Google Sheets spreadsheet.
  * Author: GSheetConnector
  * Author URI: https://www.gsheetconnector.com/
- * Version: 1.4.6
+ * Version: 1.4.7
  * Text Domain: wc-gsheetconnector
  * Domain Path:  /languages
  * WooCommerce requires at least: 3.2.0
@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
-if (wc_gsheetconnector_Init::gscwoo_is_pugin_active('wc_gsheetconnector_Init_Pro')) {
+if (wc_gsheetconnector_Init::wcgsc_is_plugin_active('wc_gsheetconnector_Init_Pro')) {
     return;
 }
 
@@ -68,8 +68,8 @@ if (function_exists('is_plugin_active') && is_plugin_active('wc-gsheetconnector/
 /*freemius*/
 
 // Declare some global constants
-define('WC_GSHEETCONNECTOR_VERSION', '1.4.6');
-define('WC_GSHEETCONNECTOR_DB_VERSION', '1.4.6');
+define('WC_GSHEETCONNECTOR_VERSION', '1.4.7');
+define('WC_GSHEETCONNECTOR_DB_VERSION', '1.4.7');
 define('WC_GSHEETCONNECTOR_ROOT', dirname(__FILE__));
 define('WC_GSHEETCONNECTOR_URL', plugins_url('/', __FILE__));
 define('WC_GSHEETCONNECTOR_BASE_FILE', basename(dirname(__FILE__)) . '/wc-gsheetconnector.php');
@@ -78,14 +78,13 @@ define('WC_GSHEETCONNECTOR_PATH', plugin_dir_path(__FILE__)); //use for include 
 define('WC_GSHEETCONNECTOR_CURRENT_THEME', get_stylesheet_directory());
 define('WC_GSHEETCONNECTOR_API_URL', 'https://oauth.gsheetconnector.com/api-cred.php');
 
-load_plugin_textdomain('wc-gsheetconnector', false, basename(dirname(__FILE__)) . '/languages');
-
 /*
  * include utility classes
  */
 if (!class_exists('wc_gsheetconnector_utility')) {
     include(WC_GSHEETCONNECTOR_ROOT . '/includes/class-wc-gsheetconnector-utility.php');
 }
+
 //Include Library Files
 require_once WC_GSHEETCONNECTOR_ROOT . '/lib/vendor/autoload.php';
 
@@ -114,9 +113,6 @@ class wc_gsheetconnector_Init
         //run on uninstall
         register_uninstall_hook(__FILE__, array('wc_gsheetconnector_Init', 'wcgsc_free_uninstall'));
 
-        // clear debug logs method using ajax for system status tab
-        add_action('wp_ajax_wcgsc_clear_debug_logs', array($this, 'wcgsc_clear_debug_logs'));
-
         // validate is woocommerce plugin exist
         add_action('admin_init', array($this, 'validate_parent_plugin_exists'));
 
@@ -125,6 +121,9 @@ class wc_gsheetconnector_Init
 
         // load the js and css files
         add_action('init', array($this, 'load_css_and_js_files'));
+
+        // Load text domain
+        add_action('init', array($this, 'wcgsc_load_plugin_textdomain'));
 
         // load the classes
         add_action('init', array($this, 'load_all_classes'));
@@ -136,6 +135,28 @@ class wc_gsheetconnector_Init
 
     }
 
+
+/**
+ * Load plugin textdomain for translation.
+ *
+ * This function loads the translation files for the plugin
+ * so that it can be translated into different languages.
+ * It looks for translation files inside the /languages directory
+ * of the plugin.
+ *
+ * @since 1.0.0
+ * @return void
+ */
+public function wcgsc_load_plugin_textdomain()
+{
+
+    // phpcs:ignore PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound
+    load_plugin_textdomain(
+        'wc-gsheetconnector',
+        false,
+        plugin_basename(dirname(__FILE__)) . '/languages'
+    );
+}
 
     /**
      * Plugin row meta.
@@ -158,8 +179,8 @@ class wc_gsheetconnector_Init
     {
         if (WC_GSHEETCONNECTOR_BASE_NAME === $plugin_file) {
             $row_meta = [
-                'docs' => '<a href="https://support.gsheetconnector.com/kb-category/woocommerce-gsheetconnector" aria-label="' . esc_attr(esc_html__('View Documentation', 'wc-gsheetconnector')) . '" target="_blank">' . esc_html__('Docs', 'wc-gsheetconnector') . '</a>',
-                'ideo' => '<a href="https://www.gsheetconnector.com/support" aria-label="' . esc_attr(esc_html__('Get Support', 'wc-gsheetconnector')) . '" target="_blank">' . esc_html__('Support', 'wc-gsheetconnector') . '</a>',
+                'docs' => '<a href="https://www.gsheetconnector.com/docs/woocommerce-gsheetconnector" aria-label="' . esc_attr(esc_html__('View Documentation', 'wc-gsheetconnector')) . '" target="_blank">' . esc_html__('Docs', 'wc-gsheetconnector') . '</a>',
+                'support' => '<a href="https://www.gsheetconnector.com/support" aria-label="' . esc_attr(esc_html__('Get Support', 'wc-gsheetconnector')) . '" target="_blank">' . esc_html__('Support', 'wc-gsheetconnector') . '</a>',
             ];
 
             $plugin_meta = array_merge($plugin_meta, $row_meta);
@@ -214,10 +235,10 @@ class wc_gsheetconnector_Init
                 $this->run_on_upgrade();
             }
            // Fetch and save the API credentails.
-           wc_gsheetconnector_utility::instance()->save_api_credentials();
+            wc_gsheetconnector_utility::instance()->save_api_credentials();
 
-          } catch (Exception $e) {
-            
+        } catch (Exception $e) {
+
         }
     }
 
@@ -226,20 +247,26 @@ class wc_gsheetconnector_Init
      * checks the current version and applies the necessary upgrades from that version onwards
      * @since 1.0
      */
-    public function run_on_upgrade()
-    {
-        $plugin_options = get_site_option('WC_GS_info');
-        if ($plugin_options['version'] == '1.3.18') {
-            $this->upgrade_database_18();
+    public function run_on_upgrade() {
+
+        $plugin_options = get_site_option( 'WC_GS_info' );
+
+      // Ensure it's an array before accessing
+        if ( is_array( $plugin_options ) && isset( $plugin_options['version'] ) ) {
+
+            if ( $plugin_options['version'] === '1.3.18' ) {
+                $this->upgrade_database_18();
+            }
+
         }
 
-        // update the version value
+      // update the version value
         $google_sheet_info = array(
-            'version'     => WC_GSHEETCONNECTOR_VERSION,
-            'db_version'  => WC_GSHEETCONNECTOR_DB_VERSION
+            'version'    => WC_GSHEETCONNECTOR_VERSION,
+            'db_version' => WC_GSHEETCONNECTOR_DB_VERSION
         );
 
-        update_site_option('WC_GS_info', $google_sheet_info);
+        update_site_option( 'WC_GS_info', $google_sheet_info );
     }
 
     public function upgrade_database_18()
@@ -266,7 +293,7 @@ class wc_gsheetconnector_Init
         wc_gsheetconnector_utility::instance()->save_api_credentials();
     }
 
-   
+
     /**
      * deactivate the plugin
      * @since 1.0
@@ -346,7 +373,9 @@ class wc_gsheetconnector_Init
             deactivate_plugins($plugin);
 
             // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Activation context, handled by WordPress core
-            if (isset($_GET['activate']) && $_GET['activate'] === 'true') {
+            $activate = isset($_GET['activate']) ? sanitize_text_field(wp_unslash($_GET['activate'])) : '';
+
+            if ($activate === 'true') {
                 unset($_GET['activate']);
             }
 
@@ -427,10 +456,8 @@ class wc_gsheetconnector_Init
      */
     public function add_css_files()
     {
-        if (is_admin() && (
-            // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Safe usage for enqueue logic based on admin page check
-            isset($_GET['page']) && $_GET['page'] == 'wc-gsheetconnector-config'
-        )) {
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- safe because this is just an admin page check
+        if ( is_admin() && isset($_GET['page']) && sanitize_text_field(wp_unslash($_GET['page'])) === 'wc-gsheetconnector-config' ) {
             wp_enqueue_style(
                 'gs-woocommerce-connector-css',
                 WC_GSHEETCONNECTOR_URL . 'assets/css/gs-woocommerce-connector.css',
@@ -438,7 +465,7 @@ class wc_gsheetconnector_Init
                 WC_GSHEETCONNECTOR_VERSION,
                 'all'
             );
-			wp_enqueue_style(
+            wp_enqueue_style(
                 'gs-fontawesome-css',
                 WC_GSHEETCONNECTOR_URL . 'assets/css/fontawesome.css',
                 [],
@@ -452,6 +479,15 @@ class wc_gsheetconnector_Init
                 WC_GSHEETCONNECTOR_VERSION,
                 'all'
             );
+
+            // Google Fonts (Montserrat)
+            wp_enqueue_style(
+                'gs-google-fonts',
+                'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap',
+                [],
+                WC_GSHEETCONNECTOR_VERSION
+            );
+
         }
 
     }
@@ -462,35 +498,33 @@ class wc_gsheetconnector_Init
      */
     public function add_js_files()
     {
-        if (is_admin() &&
-            // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Safe usage for enqueue logic based on admin page check
-            isset($_GET['page']) && $_GET['page'] === 'wc-gsheetconnector-config'
-        ) {
-            wp_enqueue_script(
-                'gs-connector-js',
-                WC_GSHEETCONNECTOR_URL . 'assets/js/gs-connector.js',
-                array('jquery'),
-                WC_GSHEETCONNECTOR_VERSION,
-                true
-            );
+    // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- safe because this is just an admin page check
+       if (is_admin() && isset($_GET['page']) && sanitize_text_field(wp_unslash($_GET['page'])) === 'wc-gsheetconnector-config'){
+        wp_enqueue_script(
+            'gs-connector-js',
+            WC_GSHEETCONNECTOR_URL . 'assets/js/gs-connector.js',
+            array('jquery'),
+            WC_GSHEETCONNECTOR_VERSION,
+            true
+        );
 
-            wp_enqueue_script(
-                'wc-gsheetconnector-popup-js',
-                WC_GSHEETCONNECTOR_URL . 'assets/js/wc-gsheet-popup.js',
-                array('jquery'),
-                WC_GSHEETCONNECTOR_VERSION,
-                true
-            );
+        wp_enqueue_script(
+            'wc-gsheetconnector-popup-js',
+            WC_GSHEETCONNECTOR_URL . 'assets/js/wc-gsheet-popup.js',
+            array('jquery'),
+            WC_GSHEETCONNECTOR_VERSION,
+            true
+        );
 
-            wp_enqueue_script(
-                'wc-gsheetconnector-debug-js',
-                WC_GSHEETCONNECTOR_URL . 'assets/js/system-debug.js',
-                array('jquery'),
-                WC_GSHEETCONNECTOR_VERSION,
-                true
-            );
-        }
+        wp_enqueue_script(
+            'wc-gsheetconnector-debug-js',
+            WC_GSHEETCONNECTOR_URL . 'assets/js/system-debug.js',
+            array('jquery'),
+            WC_GSHEETCONNECTOR_VERSION,
+            true
+        );
     }
+}
 
 
 
@@ -558,7 +592,7 @@ class wc_gsheetconnector_Init
      * @return true/false    * 
      * @since 2.0.2
      */
-    public static function gscwoo_is_pugin_active($class)
+    public static function wcgsc_is_plugin_active($class)
     {
         if (class_exists($class)) {
             return true;
@@ -594,8 +628,8 @@ class wc_gsheetconnector_Init
         // Check plugin version and subscription plan
         $plugin_version = defined('WC_GSHEETCONNECTOR_VERSION') ? WC_GSHEETCONNECTOR_VERSION : 'N/A';
         $subscription_plan = 'FREE';
-      
-        $plugin_name = 'GSheetConnector for WC';
+
+        $plugin_name = 'GSheetConnector for WooCommerce';
 
 
         // Check Google Account Authentication
@@ -621,7 +655,7 @@ class wc_gsheetconnector_Init
         $system_info .= '<div id="info-container" class="info-content" style="display:none;">';
         $system_info .= '<h3>GSheetConnector</h3>';
         $system_info .= '<table>';
-         $system_info .= '<tr><td>Plugin Name</td><td>' . esc_html($plugin_name) . '</td></tr>';
+        $system_info .= '<tr><td>Plugin Name</td><td>' . esc_html($plugin_name) . '</td></tr>';
         $system_info .= '<tr><td>Plugin Version</td><td>' . esc_html($plugin_version) . '</td></tr>';
         $system_info .= '<tr><td>Plugin Subscription Plan</td><td>' . esc_html($subscription_plan) . '</td></tr>';
         $system_info .= '<tr><td>Connected Email Account</td><td>' . $connected_email . '</td></tr>';
@@ -929,7 +963,7 @@ class wc_gsheetconnector_Init
         // Check if the debug log file exists
         if (file_exists($debug_log_file)) {
             // Read the contents of the debug log file
-            $debug_log_contents = file_get_contents($debug_log_file);
+            $debug_log_contents = wp_kses_post(file_get_contents($debug_log_file));
 
             // Split the log content into an array of lines
             $log_lines = explode("\n", $debug_log_contents);
@@ -952,6 +986,6 @@ class wc_gsheetconnector_Init
 }
 
 // Initialize the google sheet connector class
-$init = new wc_gsheetconnector_Init();
+$wcgsc_init = new wc_gsheetconnector_Init();
 
-add_filter('plugin_action_links_' . WC_GSHEETCONNECTOR_BASE_NAME, array($init, 'wc_gsheet_setting_link'));
+add_filter('plugin_action_links_' . WC_GSHEETCONNECTOR_BASE_NAME, array($wcgsc_init, 'wc_gsheet_setting_link'));

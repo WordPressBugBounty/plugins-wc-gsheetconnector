@@ -1,153 +1,203 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce GSheetConnector\n"
-"POT-Creation-Date: 2025-11-14 19:02+0530\n"
-"PO-Revision-Date: 2025-11-14 19:02+0530\n"
+"POT-Creation-Date: 2026-03-25 19:33+0530\n"
+"PO-Revision-Date: 2026-03-25 19:33+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.3\n"
-"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.9\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: wc-gsheetconnector.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: includes/class-wc-gsheetconnector-processes.php:147
+#: includes/class-wc-gsheetconnector-processes.php:149
 msgid "WooCommerce - GSheetConnector"
 msgstr "WooCommerce Google Sheet Connector"
 
-#: includes/class-wc-gsheetconnector-processes.php:295
-#: includes/pages/wc-gsheetconnector-setting.php:56
+#: includes/class-wc-gsheetconnector-processes.php:311
+#: includes/pages/wc-gsheetconnector-setting.php:59
 msgid "Select"
 msgstr "Select"
 
-#: includes/class-wc-gsheetconnector-role-settings-free.php:67
+#: includes/class-wc-gsheetconnector-role-settings-free.php:65
 msgid "Permission Not Allowed"
 msgstr "Permission Not Allowed"
 
-#: includes/class-wc-gsheetconnector-role-settings-free.php:82
-#: includes/pages/wc-gsheetconnector-role-settings-free.php:13
+#: includes/class-wc-gsheetconnector-role-settings-free.php:80
+#: includes/pages/wc-gsheetconnector-role-settings-free.php:28
 msgid "Roles that can access Google Sheet Page"
 msgstr "Roles that can access Google Sheet Page"
 
-#: includes/class-wc-gsheetconnector-role-settings-free.php:83
-#: includes/pages/wc-beta-version.php:14
-#: includes/pages/wc-gsheetconnector-feed-settings.php:3
-#: includes/pages/wc-gsheetconnector-setting.php:204
-#: includes/pages/wc-gsheetconnector-setting.php:250
-#: includes/pages/wc-gsheetconnector-setting.php:322
-#: includes/pages/wc-gsheetconnector-setting.php:377
-#: includes/pages/wc-gsheetconnector-setting.php:436
-#: includes/pages/wc-gsheetconnector-setting.php:1082
-#: includes/pages/wc-gsheetconnector-setting.php:1144
-#: includes/pages/wc-gsheetconnector-setting.php:1191
-#: includes/pages/wc-product-sheet.php:14
-#: includes/pages/wc-product-sheet.php:49
+#: includes/class-wc-gsheetconnector-role-settings-free.php:81
+#: includes/pages/wc-beta-version.php:15
+#: includes/pages/wc-gsheetconnector-feed-settings.php:10
+#: includes/pages/wc-gsheetconnector-setting.php:219
+#: includes/pages/wc-gsheetconnector-setting.php:265
+#: includes/pages/wc-gsheetconnector-setting.php:337
+#: includes/pages/wc-gsheetconnector-setting.php:392
+#: includes/pages/wc-gsheetconnector-setting.php:451
+#: includes/pages/wc-gsheetconnector-setting.php:1096
+#: includes/pages/wc-gsheetconnector-setting.php:1158
+#: includes/pages/wc-gsheetconnector-setting.php:1205
+#: includes/pages/wc-product-sheet.php:13
+#: includes/pages/wc-product-sheet.php:48
 msgid "PRO"
 msgstr "Pro"
 
-#: includes/class-wc-gsheetconnector-role-settings-free.php:93
+#: includes/class-wc-gsheetconnector-role-settings-free.php:91
 msgid "Buy Pro"
 msgstr "Buy now"
 
-#: includes/class-wc-gsheetconnector-services.php:588
+#: includes/class-wc-gsheetconnector-services.php:597
 msgid "WooCommerce Data Settings saved successfully."
 msgstr "Forminator Data Settings saved successfully."
 
-#: includes/class-wc-gsheetconnector-services.php:663
+#: includes/class-wc-gsheetconnector-services.php:674
 msgid "Please select Google Sheet Name and Check Atleast on Google Sheet Tab !"
 msgstr ""
 "Please select Google Sheet Name and Check Atleast on Google Sheet Tab !"
 
-#: includes/class-wc-gsheetconnector-utility.php:81
+#: includes/class-wc-gsheetconnector-utility.php:80
 msgid "There's something wrong with your code..."
 msgstr "There's something wrong with your code..."
 
-#: includes/class-wc-gsheetconnector-utility.php:220
-#: includes/pages/wc-gsheetconnector-dashboard-widget.php:64
-#: includes/pages/wc-gsheetconnector-dashboard-widget.php:73
+#: includes/class-wc-gsheetconnector-utility.php:228
+#: includes/pages/wc-gsheetconnector-dashboard-widget.php:67
+#: includes/pages/wc-gsheetconnector-dashboard-widget.php:76
 msgid "Administrator"
 msgstr "Administrator"
 
-#: includes/pages/admin-footer.php:10
+#: includes/pages/admin-footer.php:12
 #, fuzzy, php-format
 msgid "Enjoy using %1$s? Check out our reviews or leave your own on %2$s."
 msgstr "Enjoy using %1$s? Check out our reviews or leave your own on %2$s."
 
-#: includes/pages/admin-footer.php:14
+#: includes/pages/admin-footer.php:16
 msgid "WordPress.org"
 msgstr "RayanPixel.com"
 
-#: includes/pages/admin-footer.php:23
-msgid "Made with ♥ by the GSheetConnector Team"
-msgstr "Made with ♥ by the GSheetConnector Team"
+#: includes/pages/admin-footer.php:39
+#, fuzzy
+#| msgid "Made with ♥ by the GSheetConnector Team"
+msgid "Made with love by the GSheetConnector Team"
+msgstr "Made with love by the GSheetConnector Team"
 
-#: includes/pages/admin-footer.php:26 wc-gsheetconnector.php:162
+#: includes/pages/admin-footer.php:44
+#: includes/pages/google-sheet-settings.php:60 wc-gsheetconnector.php:183
 msgid "Support"
 msgstr "Support"
 
-#: includes/pages/admin-footer.php:27 wc-gsheetconnector.php:161
+#: includes/pages/admin-footer.php:49 wc-gsheetconnector.php:182
 msgid "Docs"
 msgstr "Docs"
 
-#: includes/pages/admin-footer.php:28
+#: includes/pages/admin-footer.php:54
 msgid "Free Plugins"
 msgstr "Free"
 
-#. Plugin Name of the plugin/theme
-#: includes/pages/google-sheet-settings.php:39
-msgid "GSheetConnector for WC"
-msgstr "GSheetConnector for WC"
+#: includes/pages/google-sheet-inner-settings.php:21
+msgid "Role Settings"
+msgstr "Role Settings"
 
-#: includes/pages/google-sheet-settings.php:40
-msgid "Version :"
-msgstr "Version :"
+#: includes/pages/google-sheet-inner-settings.php:22
+#, fuzzy
+#| msgid "Beta - Version"
+msgid "Beta Version Controls"
+msgstr "Beta Version Controls"
 
-#: includes/pages/google-sheet-settings.php:56
-msgid "DASHBOARD"
-msgstr "DASHBOARD"
+#: includes/pages/google-sheet-inner-settings.php:23
+msgid "System Status"
+msgstr "System Status"
 
-#: includes/pages/google-sheet-settings.php:63
+#: includes/pages/google-sheet-settings.php:18
+#: includes/pages/google-sheet-settings.php:80
 msgid "Integration"
 msgstr "Integration"
 
-#: includes/pages/google-sheet-settings.php:64
+#: includes/pages/google-sheet-settings.php:20
+#: includes/pages/google-sheet-settings.php:81
 msgid "WooCommerce Data Settings"
 msgstr "WooCommerce Data Settings"
 
-#: includes/pages/google-sheet-settings.php:65 wc-gsheetconnector.php:550
+#: includes/pages/google-sheet-settings.php:22
+#: includes/pages/google-sheet-settings.php:82 wc-gsheetconnector.php:584
 msgid "Settings"
 msgstr "Settings"
 
-#: includes/pages/google-sheet-settings.php:66
-#: includes/pages/wc-gsheetconnector-feed-settings.php:3
+#: includes/pages/google-sheet-settings.php:24
 #, fuzzy
-#| msgid "Role Settings"
-msgid "Feed Settings"
-msgstr "Enable Feed/Settings"
+msgid "2 Way Sync"
+msgstr "2 Way Sync"
 
-#: includes/pages/google-sheet-settings.php:67
-msgid "Sync"
-msgstr "Sync"
-
-#: includes/pages/google-sheet-settings.php:68
+#: includes/pages/google-sheet-settings.php:26
+#: includes/pages/google-sheet-settings.php:85
 msgid "Extension"
 msgstr "Extension"
 
-#: includes/pages/pro-popup.php:9
-msgid "GSheetConnector for WC PRO Features"
-msgstr "GSheetConnector for WC PRO Features"
+#: includes/pages/google-sheet-settings.php:28
+#, fuzzy
+#| msgid "Role Settings"
+msgid "Form Feed Settings"
+msgstr "Form Feed Settings"
 
-#: includes/pages/pro-popup.php:10
+#. Plugin Name of the plugin/theme
+#: includes/pages/google-sheet-settings.php:41
+#, fuzzy
+#| msgid "GSheetConnector for WC"
+msgid "GSheetConnector for WooCommerce"
+msgstr "GSheetConnector for WooCommerce"
+
+#: includes/pages/google-sheet-settings.php:43
+msgid "Version :"
+msgstr "Version :"
+
+#: includes/pages/google-sheet-settings.php:50
+msgid "Extensions"
+msgstr "Extensions"
+
+#: includes/pages/google-sheet-settings.php:55
+#, fuzzy
+#| msgid "View Documentation"
+msgid "Document"
+msgstr "Document"
+
+#: includes/pages/google-sheet-settings.php:65
+#, fuzzy
+msgid "Changelog"
+msgstr "Changelog"
+
+#: includes/pages/google-sheet-settings.php:73
+msgid "DASHBOARD"
+msgstr "DASHBOARD"
+
+#: includes/pages/google-sheet-settings.php:83
+#: includes/pages/wc-gsheetconnector-feed-settings.php:9
+#, fuzzy
+#| msgid "Role Settings"
+msgid "Feed Settings"
+msgstr "Feed Settings"
+
+#: includes/pages/google-sheet-settings.php:84
+msgid "Sync"
+msgstr "Sync"
+
+#: includes/pages/pro-popup.php:17
+#, fuzzy
+#| msgid "GSheetConnector for WC PRO Features"
+msgid "GSheetConnector for WooCommerce PRO Features"
+msgstr "GSheetConnector for WooCommerce PRO Features"
+
+#: includes/pages/pro-popup.php:19
 #, fuzzy
 #| msgid ""
 #| "This features is available in the PRO version of the plugin. To "
@@ -156,27 +206,23 @@ msgstr "GSheetConnector for WC PRO Features"
 msgid ""
 "This feature is available in the PRO version. Upgrade to unlock all features."
 msgstr ""
-"This features is available in the PRO version of the plugin. To "
-"<strong>Enable the options Upgrade to the PRO</strong> version to unlock all "
-"these awesome features."
+"This feature is available in the PRO version. Upgrade to unlock all features."
 
-#: includes/pages/pro-popup.php:12
-#: includes/pages/wc-gsheetconnector-integration.php:42
+#: includes/pages/pro-popup.php:25
+#: includes/pages/wc-gsheetconnector-integration.php:49
 msgid "Upgrade To PRO"
 msgstr "Upgrade to Pro"
 
-#: includes/pages/pro-popup.php:15
+#: includes/pages/pro-popup.php:30
 #, fuzzy
 #| msgid ""
 #| "Bonus: GSheetConnector for WC Lite users will get <strong>Special "
 #| "Discounts</strong> for unlimited site licence, automatically applied at "
 #| "checkout."
 msgid "Bonus: Lite users get special discounts automatically at checkout."
-msgstr ""
-"Bonus: GSheetConnector for WC Lite users will get <strong>Special Discounts</"
-"strong> for unlimited site licence, automatically applied at checkout."
+msgstr "Bonus: Lite users get special discounts automatically at checkout."
 
-#: includes/pages/wc-beta-version.php:13
+#: includes/pages/wc-beta-version.php:14
 msgid "Beta Opt-in"
 msgstr "Beta Opt-in"
 
@@ -190,98 +236,176 @@ msgstr ""
 "The beta version will not install automatically and you always have the "
 "option to ignore it."
 
-#: includes/pages/wc-beta-version.php:29
+#: includes/pages/wc-beta-version.php:30
 msgid "Enable Beta Version"
 msgstr "Enable Beta Version"
 
-#: includes/pages/wc-beta-version.php:33
+#: includes/pages/wc-beta-version.php:35
 msgid "Get updates for pre-release versions"
 msgstr "Get updates for pre-release versions"
 
-#: includes/pages/wc-beta-version.php:36
-#: includes/pages/wc-gsheetconnector-role-settings-free.php:27
+#: includes/pages/wc-beta-version.php:38
+#: includes/pages/wc-gsheetconnector-role-settings-free.php:49
 msgid "Save"
 msgstr "Save"
 
-#: includes/pages/wc-extension.php:296 includes/pages/wc-extension.php:425
-#: includes/pages/wc-extension.php:443
+#: includes/pages/wc-extension.php:237
+#, fuzzy
+msgid "Install and Activated Plugins"
+msgstr "Install and Activated Plugins"
+
+#: includes/pages/wc-extension.php:299 includes/pages/wc-extension.php:428
+#: includes/pages/wc-extension.php:446
 msgid "Activate"
 msgstr "Activate"
 
-#: includes/pages/wc-extension.php:322
-#: includes/pages/wc-gsheetconnector-integration.php:246
-#: wc-gsheetconnector.php:551
+#: includes/pages/wc-extension.php:325
+#: includes/pages/wc-gsheetconnector-integration.php:259
+#: wc-gsheetconnector.php:585
 msgid "Upgrade to PRO"
 msgstr "Upgrade to Pro"
 
-#: includes/pages/wc-extension.php:355
+#: includes/pages/wc-extension.php:358
 msgid "Already using PRO version"
 msgstr "( Fetch your sheets automatically using PRO )"
 
-#: includes/pages/wc-extension.php:417
+#: includes/pages/wc-extension.php:373
+#, fuzzy
+#| msgid "Free Plugins"
+msgid "Recommended Plugins"
+msgstr "Recommended Plugins"
+
+#: includes/pages/wc-extension.php:420
 msgid "Activated"
 msgstr ""
 "GSheetConnector WooCommerce Add-on requires WooCommerce plugin to be "
 "installed and activated."
 
-#: includes/pages/wc-extension.php:525
+#: includes/pages/wc-extension.php:489
+#, fuzzy
+#| msgid "Free Plugins"
+msgid "Our Other Plugins"
+msgstr "Our Other Plugins"
+
+#: includes/pages/wc-extension.php:528
 msgid "logo"
 msgstr "logo"
 
-#: includes/pages/wc-gsheetconnector-dashboard-widget.php:48
+#: includes/pages/wc-gsheetconnector-dashboard-widget.php:21
+#, fuzzy
+#| msgid "Google Sheet Name"
+msgid "Google Sheet Not Connected"
+msgstr "Google Sheet Not Connected"
+
+#: includes/pages/wc-gsheetconnector-dashboard-widget.php:45
 msgid "Sheet URL"
 msgstr "Sheet URL:"
 
-#: includes/pages/wc-gsheetconnector-dashboard-widget.php:57
+#: includes/pages/wc-gsheetconnector-dashboard-widget.php:60
 msgid "Permission To Access GSheetConnector WooCommerce"
 msgstr "Permission To Access GSheetConnector WooCommerce"
 
-#: includes/pages/wc-gsheetconnector-feed-settings.php:40
+#: includes/pages/wc-gsheetconnector-feed-settings.php:14
+#, fuzzy
+msgid "Add Feeds"
+msgstr "Add Feeds"
+
+#: includes/pages/wc-gsheetconnector-feed-settings.php:21
+msgid "Feed Name"
+msgstr "Feed Name"
+
+#: includes/pages/wc-gsheetconnector-feed-settings.php:27
+#, fuzzy
+msgid "Select Location"
+msgstr "Select Location"
+
+#: includes/pages/wc-gsheetconnector-feed-settings.php:28
+#, fuzzy
+#| msgid "Order Wise :"
+msgid "Orders"
+msgstr "Orders"
+
+#: includes/pages/wc-gsheetconnector-feed-settings.php:29
+#, fuzzy
+#| msgid "All Products"
+msgid "Products"
+msgstr "Products"
+
+#: includes/pages/wc-gsheetconnector-feed-settings.php:30
+#, fuzzy
+#| msgid "All Products Variation"
+msgid "Products Variation"
+msgstr "Products Variation"
+
+#: includes/pages/wc-gsheetconnector-feed-settings.php:31
+#, fuzzy
+#| msgid "All Customers"
+msgid "Customers"
+msgstr "Customers"
+
+#: includes/pages/wc-gsheetconnector-feed-settings.php:32
+#, fuzzy
+#| msgid "All Coupons"
+msgid "Coupons"
+msgstr "Coupons"
+
+#: includes/pages/wc-gsheetconnector-feed-settings.php:33
+#, fuzzy
+#| msgid "All Subscriptions"
+msgid "Subscriptions"
+msgstr "Subscriptions"
+
+#: includes/pages/wc-gsheetconnector-feed-settings.php:34
+#: includes/pages/wc-gsheetconnector-setting.php:1228
+msgid "All"
+msgstr "All"
+
+#: includes/pages/wc-gsheetconnector-feed-settings.php:50
 msgid "Submit"
 msgstr "Submit"
 
-#: includes/pages/wc-gsheetconnector-integration.php:20
+#: includes/pages/wc-gsheetconnector-integration.php:19
 #, fuzzy
 #| msgid "Google Sheets Integration"
-msgid "Google Sheet Integration - GSheetConnector for WC"
-msgstr "Google Sheets Integration"
+msgid "Google Sheet Integration - GSheetConnector for WooCommerce"
+msgstr "Google Sheet Integration - GSheetConnector for WooCommerce"
 
-#: includes/pages/wc-gsheetconnector-integration.php:23
-#, fuzzy
+#: includes/pages/wc-gsheetconnector-integration.php:26
+#, fuzzy, php-format
 msgid ""
 "Choose your Google API Setting from the dropdown. In the Free version, only "
 "the <strong>Auto Google API Configuration (Use Existing Client/Secret Key)</"
 "strong> option is available.\n"
-"    The other methods – <strong>Manual Client/Secret Key</strong> and "
+"          The other methods – <strong>Manual Client/Secret Key</strong> and "
 "<strong>Service Account</strong> – are exclusive features of the Pro "
 "version. \n"
-"    You can <a href=\"https://www.gsheetconnector.com/pricing/\" target="
-"\"_blank\">upgrade to Pro</a> to unlock these advanced options.\n"
-"    After saving your selected setting, the related integration options will "
-"appear, allowing you to complete the setup easily."
+"          You can <a href=\"%s\" target=\"_blank\" rel=\"noopener "
+"noreferrer\">upgrade to Pro</a> to unlock these advanced options.\n"
+"          After saving your selected setting, the related integration "
+"options will appear, allowing you to complete the setup easily."
 msgstr ""
 "Choose your Google API Setting from the dropdown. In the Free version, only "
 "the <strong>Auto Google API Configuration (Use Existing Client/Secret Key)</"
 "strong> option is available.\n"
-"    The other methods – <strong>Manual Client/Secret Key</strong> and "
+"          The other methods – <strong>Manual Client/Secret Key</strong> and "
 "<strong>Service Account</strong> – are exclusive features of the Pro "
 "version. \n"
-"    You can <a href=\"https://www.gsheetconnector.com/pricing/\" target="
-"\"_blank\">upgrade to Pro</a> to unlock these advanced options.\n"
-"    After saving your selected setting, the related integration options will "
-"appear, allowing you to complete the setup easily."
+"          You can <a href=\"%s\" target=\"_blank\" rel=\"noopener "
+"noreferrer\">upgrade to Pro</a> to unlock these advanced options.\n"
+"          After saving your selected setting, the related integration "
+"options will appear, allowing you to complete the setup easily."
 
-#: includes/pages/wc-gsheetconnector-integration.php:32
+#: includes/pages/wc-gsheetconnector-integration.php:39
 #, fuzzy
 #| msgid "Choose Google API Setting :"
 msgid "Choose Google API Setting "
 msgstr "Choose Google API Setting "
 
-#: includes/pages/wc-gsheetconnector-integration.php:36
+#: includes/pages/wc-gsheetconnector-integration.php:43
 msgid "Use Existing Client/Secret Key (Auto Google API Configuration)"
 msgstr "Use Existing Client/Secret Key (Auto Google API Configuration)"
 
-#: includes/pages/wc-gsheetconnector-integration.php:38
+#: includes/pages/wc-gsheetconnector-integration.php:45
 msgid ""
 "Use Manual Client/Secret Key (Use Your Google API Configuration) (Upgrade To "
 "PRO)"
@@ -289,20 +413,22 @@ msgstr ""
 "Use Manual Client/Secret Key (Use Your Google API Configuration) (Upgrade To "
 "PRO)"
 
-#: includes/pages/wc-gsheetconnector-integration.php:39
+#: includes/pages/wc-gsheetconnector-integration.php:46
 #, fuzzy
 msgid "Service Account (Recommended) (Upgrade To PRO)"
 msgstr "Service Account (Recommended) (Upgrade To PRO)"
 
-#: includes/pages/wc-gsheetconnector-integration.php:54
+#: includes/pages/wc-gsheetconnector-integration.php:61
 #, fuzzy
 #| msgid "Use Existing Client/Secret Key (Auto Google API Configuration)"
 msgid ""
 "Google Sheet Integration - Use Existing Client/Secret Key (Auto Google API "
 "Configuration)"
-msgstr "Use Existing Client/Secret Key (Auto Google API Configuration)"
+msgstr ""
+"Google Sheet Integration - Use Existing Client/Secret Key (Auto Google API "
+"Configuration)"
 
-#: includes/pages/wc-gsheetconnector-integration.php:56
+#: includes/pages/wc-gsheetconnector-integration.php:63
 #, fuzzy
 msgid ""
 "Automatic integration allows you to connect Woocommerce with Google Sheets "
@@ -315,35 +441,36 @@ msgstr ""
 "the plugin will handle API setup and authentication automatically, enabling "
 "seamless form data sync. Learn more in the documentation"
 
-#: includes/pages/wc-gsheetconnector-integration.php:56
-msgid "click here"
+#: includes/pages/wc-gsheetconnector-integration.php:63
+#: includes/pages/wc-gsheetconnector-setting.php:105
+msgid "Click here"
 msgstr "Click here"
 
-#: includes/pages/wc-gsheetconnector-integration.php:61
+#: includes/pages/wc-gsheetconnector-integration.php:68
 msgid "Authenticate with your Google account, follow these steps:"
 msgstr "Authenticate with your Google account, follow these steps:"
 
-#: includes/pages/wc-gsheetconnector-integration.php:63
+#: includes/pages/wc-gsheetconnector-integration.php:70
 msgid "Click on the \"Sign In With Google\" button."
 msgstr "Click on the \"Sign In With Google\" button."
 
-#: includes/pages/wc-gsheetconnector-integration.php:64
+#: includes/pages/wc-gsheetconnector-integration.php:71
 msgid "Grant permissions for the following:"
 msgstr "Grant permissions for the following:"
 
-#: includes/pages/wc-gsheetconnector-integration.php:66
+#: includes/pages/wc-gsheetconnector-integration.php:73
 msgid "Google Drive"
 msgstr "Google Drive"
 
-#: includes/pages/wc-gsheetconnector-integration.php:67
+#: includes/pages/wc-gsheetconnector-integration.php:74
 msgid "Google Sheets"
 msgstr "Google Sheets"
 
-#: includes/pages/wc-gsheetconnector-integration.php:67
+#: includes/pages/wc-gsheetconnector-integration.php:74
 msgid "Ensure that you enable the checkbox for each of these services."
 msgstr "Ensure that you enable the checkbox for each of these services."
 
-#: includes/pages/wc-gsheetconnector-integration.php:70
+#: includes/pages/wc-gsheetconnector-integration.php:77
 msgid ""
 "This will allow the integration to access your Google Drive and Google "
 "Sheets."
@@ -351,27 +478,27 @@ msgstr ""
 "This will allow the integration to access your Google Drive and Google "
 "Sheets."
 
-#: includes/pages/wc-gsheetconnector-integration.php:75
+#: includes/pages/wc-gsheetconnector-integration.php:82
 msgid "Google Access Code"
 msgstr "Google Access Code"
 
-#: includes/pages/wc-gsheetconnector-integration.php:78
+#: includes/pages/wc-gsheetconnector-integration.php:88
 msgid "Currently Active"
 msgstr "Currently Active"
 
-#: includes/pages/wc-gsheetconnector-integration.php:80
+#: includes/pages/wc-gsheetconnector-integration.php:90
 msgid "Deactivate"
 msgstr "Deactivate"
 
-#: includes/pages/wc-gsheetconnector-integration.php:87
+#: includes/pages/wc-gsheetconnector-integration.php:97
 msgid "Click on Sign In With Google"
 msgstr "Click on sign in with Google button"
 
-#: includes/pages/wc-gsheetconnector-integration.php:102
+#: includes/pages/wc-gsheetconnector-integration.php:112
 msgid "Click here to Save Authentication Code"
 msgstr "Click here to generate an Authentication Token"
 
-#: includes/pages/wc-gsheetconnector-integration.php:115
+#: includes/pages/wc-gsheetconnector-integration.php:125
 msgid ""
 "Something went wrong! It looks you have not given the permission of Google "
 "Drive and Google Sheets from your google account.Please Deactivate Auth and "
@@ -381,15 +508,15 @@ msgstr ""
 "Drive and Google Sheets from your google account.Please Deactivate Auth and "
 "Re-Authenticate again with the permissions."
 
-#: includes/pages/wc-gsheetconnector-integration.php:118
+#: includes/pages/wc-gsheetconnector-integration.php:128
 msgid "Also,"
 msgstr "Also,"
 
-#: includes/pages/wc-gsheetconnector-integration.php:119
+#: includes/pages/wc-gsheetconnector-integration.php:129
 msgid "Click Here "
 msgstr "Click Here "
 
-#: includes/pages/wc-gsheetconnector-integration.php:119
+#: includes/pages/wc-gsheetconnector-integration.php:129
 msgid ""
 " and if it displays \"GSheetConnector for WooCommerce\" under Third-party "
 "apps with account access then remove it."
@@ -397,20 +524,13 @@ msgstr ""
 "and if it displays \"GSheetConnector for WooCommerce\" under Third-party "
 "apps with account access then remove it."
 
-#. translators: %s is the connected email address.
-#: includes/pages/wc-gsheetconnector-integration.php:133
+#: includes/pages/wc-gsheetconnector-integration.php:144
 #, fuzzy
 #| msgid "Connected Email Account:   <u>%s </u>"
 msgid "Connected Email Account"
 msgstr "Connected Email Account:"
 
-#. translators: %s is the connected email address.
-#: includes/pages/wc-gsheetconnector-integration.php:142
-#, php-format
-msgid "%s"
-msgstr "%s"
-
-#: includes/pages/wc-gsheetconnector-integration.php:153
+#: includes/pages/wc-gsheetconnector-integration.php:158
 msgid ""
 "Something went wrong! Your Auth code may be wrong or expired. Please "
 "Deactivate and Re-Authenticate."
@@ -419,33 +539,32 @@ msgstr ""
 "Deactivate and Re-Authenticate."
 
 #. translators: %s is the HTML <a> link for syncing WooCommerce settings.
-#: includes/pages/wc-gsheetconnector-integration.php:165
-#: includes/pages/wc-gsheetconnector-setting.php:101
+#: includes/pages/wc-gsheetconnector-integration.php:172
+#: includes/pages/wc-gsheetconnector-setting.php:104
 #, fuzzy, php-format
 msgid "Spreadsheet Name and URL not showing? %s to fetch sheets"
 msgstr "Spreadsheet Name and URL not showing? %s to fetch sheets"
 
-#: includes/pages/wc-gsheetconnector-integration.php:166
+#: includes/pages/wc-gsheetconnector-integration.php:173
 #, fuzzy
 #| msgid "Click here"
 msgid " Click here "
-msgstr "Click Here "
+msgstr " Click here "
 
-#: includes/pages/wc-gsheetconnector-integration.php:177
+#: includes/pages/wc-gsheetconnector-integration.php:184
 msgid "Debug Log"
 msgstr "Debug Log"
 
-#: includes/pages/wc-gsheetconnector-integration.php:178
-#: includes/pages/wc-gsheetconnector-integration.php:180
+#: includes/pages/wc-gsheetconnector-integration.php:185
 msgid "View"
 msgstr "View"
 
-#: includes/pages/wc-gsheetconnector-integration.php:181
-#: includes/pages/wc-gsheetconnector-systeminfo.php:34
+#: includes/pages/wc-gsheetconnector-integration.php:187
+#: includes/pages/wc-gsheetconnector-systeminfo.php:52
 msgid "Clear"
 msgstr "Clear"
 
-#: includes/pages/wc-gsheetconnector-integration.php:192
+#: includes/pages/wc-gsheetconnector-integration.php:198
 #, fuzzy
 #| msgid ""
 #| "We do not store any of the data from your Google account on our servers, "
@@ -457,54 +576,54 @@ msgid ""
 "extremely seriously and ensure it is never misused."
 msgstr ""
 "We do not store any of the data from your Google account on our servers, "
-"everything is processed & stored on your server. We take your privacy "
+"everything is processed &amp; stored on your server. We take your privacy "
 "extremely seriously and ensure it is never misused."
 
-#: includes/pages/wc-gsheetconnector-integration.php:194
+#: includes/pages/wc-gsheetconnector-integration.php:200
 msgid "Learn more"
 msgstr "Learn more"
 
-#: includes/pages/wc-gsheetconnector-integration.php:206
+#: includes/pages/wc-gsheetconnector-integration.php:212
 msgid "Copy Logs"
 msgstr "Copy Logs"
 
-#: includes/pages/wc-gsheetconnector-integration.php:217
+#: includes/pages/wc-gsheetconnector-integration.php:230
 msgid "No errors found."
 msgstr "Errors Found!"
 
-#: includes/pages/wc-gsheetconnector-integration.php:221
+#: includes/pages/wc-gsheetconnector-integration.php:234
 msgid "No log file exists as no errors are generated."
 msgstr "No log file exists as no errors are generated"
 
-#: includes/pages/wc-gsheetconnector-integration.php:233
+#: includes/pages/wc-gsheetconnector-integration.php:246
 msgid "Next steps…"
 msgstr "Next steps"
 
-#: includes/pages/wc-gsheetconnector-integration.php:247
+#: includes/pages/wc-gsheetconnector-integration.php:260
 msgid "Sync Orders, Order wise data and much more..."
 msgstr "Sync Orders, Order wise data and much more..."
 
-#: includes/pages/wc-gsheetconnector-integration.php:258
+#: includes/pages/wc-gsheetconnector-integration.php:271
 msgid "Compatibility"
 msgstr "Compatibilidade"
 
-#: includes/pages/wc-gsheetconnector-integration.php:259
+#: includes/pages/wc-gsheetconnector-integration.php:272
 msgid "Compatibility with WooCommerce Third-Party Plugins"
 msgstr "Compatibility with WooCommerce Third-Party Plugins"
 
-#: includes/pages/wc-gsheetconnector-integration.php:270
+#: includes/pages/wc-gsheetconnector-integration.php:283
 msgid "Multi Languages"
 msgstr "Multi Languages"
 
-#: includes/pages/wc-gsheetconnector-integration.php:271
+#: includes/pages/wc-gsheetconnector-integration.php:284
 msgid "This plugin supports multi-languages as well!"
 msgstr "This plugin supports multi-languages as well!"
 
-#: includes/pages/wc-gsheetconnector-integration.php:282
+#: includes/pages/wc-gsheetconnector-integration.php:295
 msgid "Support WordPress multisites"
 msgstr "Support Wordpress multisites"
 
-#: includes/pages/wc-gsheetconnector-integration.php:283
+#: includes/pages/wc-gsheetconnector-integration.php:296
 msgid ""
 "With the use of a Multisite, you’ll also have a new level of user-available: "
 "the Super Admin."
@@ -513,36 +632,41 @@ msgstr ""
 "the Super\n"
 "              Admin."
 
-#: includes/pages/wc-gsheetconnector-integration.php:297
+#: includes/pages/wc-gsheetconnector-integration.php:310
 msgid "Product Support"
 msgstr "Soporte"
 
-#: includes/pages/wc-gsheetconnector-integration.php:308
+#: includes/pages/wc-gsheetconnector-integration.php:321
 msgid "Online Documentation"
 msgstr "View documentation"
 
-#: includes/pages/wc-gsheetconnector-integration.php:309
+#: includes/pages/wc-gsheetconnector-integration.php:322
 msgid "Understand all the capabilities of Woocommerce GsheetConnector"
 msgstr "Understand all the capabilities of Woocommerce GsheetConnector"
 
-#: includes/pages/wc-gsheetconnector-integration.php:318
+#: includes/pages/wc-gsheetconnector-integration.php:331
 msgid "Ticket Support"
 msgstr "Get support"
 
-#: includes/pages/wc-gsheetconnector-integration.php:319
+#: includes/pages/wc-gsheetconnector-integration.php:332
 msgid "Direct help from our qualified support team"
 msgstr "Direct help from our qualified support team"
 
-#: includes/pages/wc-gsheetconnector-integration.php:328
+#: includes/pages/wc-gsheetconnector-integration.php:341
 msgid "Affiliate Program"
 msgstr "Programa de Afiliados"
 
-#: includes/pages/wc-gsheetconnector-integration.php:329
-#, php-format
+#: includes/pages/wc-gsheetconnector-integration.php:342
 msgid "Earn flat 30% on every sale!"
 msgstr "Earn flat 30% on every sale!"
 
-#: includes/pages/wc-gsheetconnector-setting.php:34
+#: includes/pages/wc-gsheetconnector-role-settings-free.php:8
+#, fuzzy
+#| msgid "Permission Not Allowed"
+msgid "Permission not allowed."
+msgstr "Permission not allowed."
+
+#: includes/pages/wc-gsheetconnector-setting.php:37
 #, fuzzy
 #| msgid ""
 #| "<strong>Authentication Required:</strong>\n"
@@ -552,274 +676,270 @@ msgstr "Earn flat 30% on every sale!"
 #| "Permissions in order to enable the settings for configuration."
 msgid ""
 "<strong>Authentication Required:</strong>\n"
-"            You must have to <a href=\"admin.php?page=wc-gsheetconnector-"
+"        You must have to <a href=\"admin.php?page=wc-gsheetconnector-"
 "config&tab=integration\" target=\"_blank\">Authenticate using your Google "
 "Account</a> along with Google Drive and Google Sheets Permissions in order "
 "to enable the settings for configuration."
 msgstr ""
 "<strong>Authentication Required:</strong>\n"
-"              You must have to <a href=\"admin.php?page=wc-gsheetconnector-"
+"        You must have to <a href=\"admin.php?page=wc-gsheetconnector-"
 "config&tab=integration\" target=\"_blank\">Authenticate using your Google "
 "Account</a> along with Google Drive and Google Sheets Permissions in order "
 "to enable the settings for configuration."
 
-#: includes/pages/wc-gsheetconnector-setting.php:48
+#: includes/pages/wc-gsheetconnector-setting.php:51
 msgid "WooCommerce Google Sheet Settings"
 msgstr "WooCommerce Google Sheet Settings"
 
-#: includes/pages/wc-gsheetconnector-setting.php:54
+#: includes/pages/wc-gsheetconnector-setting.php:57
 msgid "Google Sheet Name"
 msgstr "Google Sheet Name"
 
-#: includes/pages/wc-gsheetconnector-setting.php:86
+#: includes/pages/wc-gsheetconnector-setting.php:89
 msgid "Google Sheet URL"
 msgstr "Google Sheet URL"
 
-#: includes/pages/wc-gsheetconnector-setting.php:88
-#: includes/pages/wc-product-sheet.php:37
+#: includes/pages/wc-gsheetconnector-setting.php:91
+#: includes/pages/wc-product-sheet.php:32
 msgid "View Spreadsheet"
 msgstr "View documentation"
 
-#: includes/pages/wc-gsheetconnector-setting.php:102
-msgid "Click here"
-msgstr "Click here"
-
-#: includes/pages/wc-gsheetconnector-setting.php:117
+#: includes/pages/wc-gsheetconnector-setting.php:120
 msgid "Google Sheets/Tab Name "
 msgstr "Google Sheets/Tab Name "
 
-#: includes/pages/wc-gsheetconnector-setting.php:144
+#: includes/pages/wc-gsheetconnector-setting.php:159
 msgid "All Orders "
 msgstr "All orders"
 
-#: includes/pages/wc-gsheetconnector-setting.php:146
-#: includes/pages/wc-gsheetconnector-setting.php:171
-#: includes/pages/wc-gsheetconnector-setting.php:182
-#: includes/pages/wc-gsheetconnector-setting.php:224
-#: includes/pages/wc-gsheetconnector-setting.php:261
-#: includes/pages/wc-gsheetconnector-setting.php:271
-#: includes/pages/wc-gsheetconnector-setting.php:281
-#: includes/pages/wc-gsheetconnector-setting.php:291
-#: includes/pages/wc-gsheetconnector-setting.php:302
-#: includes/pages/wc-gsheetconnector-setting.php:344
-#: includes/pages/wc-gsheetconnector-setting.php:357
-#: includes/pages/wc-gsheetconnector-setting.php:399
-#: includes/pages/wc-gsheetconnector-setting.php:413
-#: includes/pages/wc-gsheetconnector-setting.php:606
+#: includes/pages/wc-gsheetconnector-setting.php:161
+#: includes/pages/wc-gsheetconnector-setting.php:186
+#: includes/pages/wc-gsheetconnector-setting.php:197
+#: includes/pages/wc-gsheetconnector-setting.php:239
+#: includes/pages/wc-gsheetconnector-setting.php:276
+#: includes/pages/wc-gsheetconnector-setting.php:286
+#: includes/pages/wc-gsheetconnector-setting.php:296
+#: includes/pages/wc-gsheetconnector-setting.php:306
+#: includes/pages/wc-gsheetconnector-setting.php:317
+#: includes/pages/wc-gsheetconnector-setting.php:359
+#: includes/pages/wc-gsheetconnector-setting.php:372
+#: includes/pages/wc-gsheetconnector-setting.php:414
+#: includes/pages/wc-gsheetconnector-setting.php:428
 #: includes/pages/wc-gsheetconnector-setting.php:620
-#: includes/pages/wc-gsheetconnector-setting.php:642
-#: includes/pages/wc-gsheetconnector-setting.php:652
-#: includes/pages/wc-gsheetconnector-setting.php:675
-#: includes/pages/wc-gsheetconnector-setting.php:684
-#: includes/pages/wc-gsheetconnector-setting.php:770
-#: includes/pages/wc-gsheetconnector-setting.php:779
-#: includes/pages/wc-gsheetconnector-setting.php:841
-#: includes/pages/wc-gsheetconnector-setting.php:851
-#: includes/pages/wc-gsheetconnector-setting.php:936
-#: includes/pages/wc-gsheetconnector-setting.php:946
-#: includes/pages/wc-gsheetconnector-setting.php:992
-#: includes/pages/wc-gsheetconnector-setting.php:1000
-#: includes/pages/wc-gsheetconnector-setting.php:1046
-#: includes/pages/wc-gsheetconnector-setting.php:1056
+#: includes/pages/wc-gsheetconnector-setting.php:634
+#: includes/pages/wc-gsheetconnector-setting.php:656
+#: includes/pages/wc-gsheetconnector-setting.php:666
+#: includes/pages/wc-gsheetconnector-setting.php:689
+#: includes/pages/wc-gsheetconnector-setting.php:698
+#: includes/pages/wc-gsheetconnector-setting.php:784
+#: includes/pages/wc-gsheetconnector-setting.php:793
+#: includes/pages/wc-gsheetconnector-setting.php:855
+#: includes/pages/wc-gsheetconnector-setting.php:865
+#: includes/pages/wc-gsheetconnector-setting.php:950
+#: includes/pages/wc-gsheetconnector-setting.php:960
+#: includes/pages/wc-gsheetconnector-setting.php:1006
+#: includes/pages/wc-gsheetconnector-setting.php:1014
+#: includes/pages/wc-gsheetconnector-setting.php:1060
+#: includes/pages/wc-gsheetconnector-setting.php:1070
 msgid "Upgrade To Pro"
 msgstr "Upgrade to Pro"
 
-#: includes/pages/wc-gsheetconnector-setting.php:157
+#: includes/pages/wc-gsheetconnector-setting.php:172
 msgid "Headers "
 msgstr "Headers"
 
-#: includes/pages/wc-gsheetconnector-setting.php:203
+#: includes/pages/wc-gsheetconnector-setting.php:218
 msgid "Custom Order Status"
 msgstr " Custom Order Status "
 
-#: includes/pages/wc-gsheetconnector-setting.php:234
+#: includes/pages/wc-gsheetconnector-setting.php:249
 msgid "No Custom Orders found in your WooCommerce Store"
 msgstr "No Custom Orders found in your WooCommerce Store"
 
-#: includes/pages/wc-gsheetconnector-setting.php:249
+#: includes/pages/wc-gsheetconnector-setting.php:264
 msgid " Other Sheet Tabs to Enable "
 msgstr " Other Sheet Tabs to Enable "
 
-#: includes/pages/wc-gsheetconnector-setting.php:259
+#: includes/pages/wc-gsheetconnector-setting.php:274
 msgid "All Products"
 msgstr "Check all"
 
-#: includes/pages/wc-gsheetconnector-setting.php:269
+#: includes/pages/wc-gsheetconnector-setting.php:284
 msgid "All Products Variation"
 msgstr "All Products Variation"
 
-#: includes/pages/wc-gsheetconnector-setting.php:279
+#: includes/pages/wc-gsheetconnector-setting.php:294
 msgid "All Customers"
 msgstr "All Customers"
 
-#: includes/pages/wc-gsheetconnector-setting.php:289
+#: includes/pages/wc-gsheetconnector-setting.php:304
 msgid "All Coupons"
 msgstr "All Coupons"
 
-#: includes/pages/wc-gsheetconnector-setting.php:300
+#: includes/pages/wc-gsheetconnector-setting.php:315
 msgid "All Subscriptions"
 msgstr "All Subscriptions"
 
-#: includes/pages/wc-gsheetconnector-setting.php:320
+#: includes/pages/wc-gsheetconnector-setting.php:335
 #, fuzzy
 #| msgid "Product Category Filter:"
 msgid "Product Category Filter"
-msgstr "Product Category Filter:"
+msgstr "Product Category Filter"
 
-#: includes/pages/wc-gsheetconnector-setting.php:342
-#: includes/pages/wc-gsheetconnector-setting.php:397
+#: includes/pages/wc-gsheetconnector-setting.php:357
+#: includes/pages/wc-gsheetconnector-setting.php:412
 msgid "Select All Category"
 msgstr "Select All Category"
 
-#: includes/pages/wc-gsheetconnector-setting.php:376
+#: includes/pages/wc-gsheetconnector-setting.php:391
 #, fuzzy
 #| msgid "Order Category Filter:"
 msgid "Order Category Filter"
-msgstr "Order Category Filter:"
+msgstr "Order Category Filter"
 
-#: includes/pages/wc-gsheetconnector-setting.php:435
+#: includes/pages/wc-gsheetconnector-setting.php:450
 msgid "Google Sheet Headers (Column Name) "
 msgstr "Google Sheet Headers (Column Name) "
 
-#: includes/pages/wc-gsheetconnector-setting.php:445
+#: includes/pages/wc-gsheetconnector-setting.php:460
 msgid "Orders Header"
 msgstr "Orders Header"
 
-#: includes/pages/wc-gsheetconnector-setting.php:446
+#: includes/pages/wc-gsheetconnector-setting.php:461
 msgid "Products Header"
 msgstr "Products Header"
 
-#: includes/pages/wc-gsheetconnector-setting.php:447
+#: includes/pages/wc-gsheetconnector-setting.php:462
 msgid "Product Variation Header"
 msgstr "Product Variation Header"
 
-#: includes/pages/wc-gsheetconnector-setting.php:448
+#: includes/pages/wc-gsheetconnector-setting.php:463
 msgid "Customers Header"
 msgstr "Customers Header"
 
-#: includes/pages/wc-gsheetconnector-setting.php:449
+#: includes/pages/wc-gsheetconnector-setting.php:464
 msgid "Coupons Header"
 msgstr "Coupons Header"
 
-#: includes/pages/wc-gsheetconnector-setting.php:451
+#: includes/pages/wc-gsheetconnector-setting.php:466
 msgid "Subscriptions Header"
 msgstr "Subscriptions Header"
 
-#: includes/pages/wc-gsheetconnector-setting.php:462
+#: includes/pages/wc-gsheetconnector-setting.php:477
 msgid "Extra Header Related To Order"
 msgstr "Extra Header Related To Order"
 
-#: includes/pages/wc-gsheetconnector-setting.php:480
-#: includes/pages/wc-gsheetconnector-setting.php:598
-#: includes/pages/wc-gsheetconnector-setting.php:725
-#: includes/pages/wc-gsheetconnector-setting.php:888
+#: includes/pages/wc-gsheetconnector-setting.php:495
+#: includes/pages/wc-gsheetconnector-setting.php:612
+#: includes/pages/wc-gsheetconnector-setting.php:739
+#: includes/pages/wc-gsheetconnector-setting.php:902
 msgid "Label"
 msgstr "Label"
 
-#: includes/pages/wc-gsheetconnector-setting.php:487
-#: includes/pages/wc-gsheetconnector-setting.php:523
-#: includes/pages/wc-gsheetconnector-setting.php:732
-#: includes/pages/wc-gsheetconnector-setting.php:895
+#: includes/pages/wc-gsheetconnector-setting.php:502
+#: includes/pages/wc-gsheetconnector-setting.php:538
+#: includes/pages/wc-gsheetconnector-setting.php:746
+#: includes/pages/wc-gsheetconnector-setting.php:909
 msgid " Add New Extra Fields"
 msgstr " Add New Extra Fields"
 
-#: includes/pages/wc-gsheetconnector-setting.php:488
-#: includes/pages/wc-gsheetconnector-setting.php:524
-#: includes/pages/wc-gsheetconnector-setting.php:565
-#: includes/pages/wc-gsheetconnector-setting.php:733
-#: includes/pages/wc-gsheetconnector-setting.php:896
+#: includes/pages/wc-gsheetconnector-setting.php:503
+#: includes/pages/wc-gsheetconnector-setting.php:539
+#: includes/pages/wc-gsheetconnector-setting.php:580
+#: includes/pages/wc-gsheetconnector-setting.php:747
+#: includes/pages/wc-gsheetconnector-setting.php:910
 msgid " Upgrade To Pro"
 msgstr "Upgrade to Pro"
 
-#: includes/pages/wc-gsheetconnector-setting.php:497
+#: includes/pages/wc-gsheetconnector-setting.php:512
 msgid "Extra Header Related To Order's Product"
 msgstr "Extra Header Related To Order's Product"
 
-#: includes/pages/wc-gsheetconnector-setting.php:516
-#: includes/pages/wc-gsheetconnector-setting.php:557
+#: includes/pages/wc-gsheetconnector-setting.php:531
+#: includes/pages/wc-gsheetconnector-setting.php:572
 msgid " Label"
 msgstr "Label"
 
-#: includes/pages/wc-gsheetconnector-setting.php:535
+#: includes/pages/wc-gsheetconnector-setting.php:550
 msgid " Custom Static Headers"
 msgstr " Custom Static Headers"
 
-#: includes/pages/wc-gsheetconnector-setting.php:564
+#: includes/pages/wc-gsheetconnector-setting.php:579
 msgid " Add New Custom Static Headers"
 msgstr " Add New Custom Static Headers"
 
-#: includes/pages/wc-gsheetconnector-setting.php:575
+#: includes/pages/wc-gsheetconnector-setting.php:590
 msgid "Custom Static Blank Headers"
 msgstr "Custom Static Blank Headers"
 
-#: includes/pages/wc-gsheetconnector-setting.php:605
+#: includes/pages/wc-gsheetconnector-setting.php:619
 msgid "Add New Custom Static Blank Headers"
 msgstr "Add New Custom Static Blank Headers"
 
-#: includes/pages/wc-gsheetconnector-setting.php:619
-#: includes/pages/wc-gsheetconnector-setting.php:745
-#: includes/pages/wc-gsheetconnector-setting.php:812
-#: includes/pages/wc-gsheetconnector-setting.php:907
-#: includes/pages/wc-gsheetconnector-setting.php:965
-#: includes/pages/wc-gsheetconnector-setting.php:1019
+#: includes/pages/wc-gsheetconnector-setting.php:633
+#: includes/pages/wc-gsheetconnector-setting.php:759
+#: includes/pages/wc-gsheetconnector-setting.php:826
+#: includes/pages/wc-gsheetconnector-setting.php:921
+#: includes/pages/wc-gsheetconnector-setting.php:979
+#: includes/pages/wc-gsheetconnector-setting.php:1033
 msgid "Check All"
 msgstr "Check all"
 
-#: includes/pages/wc-gsheetconnector-setting.php:707
+#: includes/pages/wc-gsheetconnector-setting.php:721
 msgid "Additional Headers for Products"
 msgstr "Additional Headers for Products"
 
-#: includes/pages/wc-gsheetconnector-setting.php:870
+#: includes/pages/wc-gsheetconnector-setting.php:884
 #, fuzzy
 #| msgid "Additional Headers for Products"
 msgid "Additional Headers for Product Variation"
-msgstr "Additional Headers for Products"
+msgstr "Additional Headers for Product Variation"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1081
+#: includes/pages/wc-gsheetconnector-setting.php:1095
 msgid "WooCommerce orders row's management"
 msgstr "WooCommerce orders row's management"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1090
+#: includes/pages/wc-gsheetconnector-setting.php:1104
 #, fuzzy
 #| msgid "Manage row's by :"
 msgid "Manage row's by"
-msgstr "Manage row's by :"
+msgstr "Manage row's by"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1094
+#: includes/pages/wc-gsheetconnector-setting.php:1108
 #, fuzzy
 #| msgid "Product Wise:"
 msgid "Product Wise"
-msgstr "Product Wise:"
+msgstr "Product Wise"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1098
+#: includes/pages/wc-gsheetconnector-setting.php:1112
 #, fuzzy
 #| msgid "Order Wise :"
 msgid "Order Wise"
-msgstr "Order-Wise:"
+msgstr "Order Wise"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1103
+#: includes/pages/wc-gsheetconnector-setting.php:1117
 #, fuzzy
 #| msgid "Notes :"
 msgid "Notes - "
-msgstr "Notes:"
+msgstr "Notes - "
 
-#: includes/pages/wc-gsheetconnector-setting.php:1106
+#: includes/pages/wc-gsheetconnector-setting.php:1120
 #, fuzzy
 #| msgid "Order-Wise:"
 msgid "Order-Wise - "
-msgstr "Order Wise :"
+msgstr "Order-Wise - "
 
-#: includes/pages/wc-gsheetconnector-setting.php:1107
+#: includes/pages/wc-gsheetconnector-setting.php:1121
 msgid "Single Entry will be saved in Google Sheet!"
 msgstr "Single Entry will be saved in Google Sheet!"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1110
+#: includes/pages/wc-gsheetconnector-setting.php:1124
 #, fuzzy
 #| msgid "Product Wise :"
 msgid "Product Wise - "
-msgstr "Product Wise :"
+msgstr "Product Wise - "
 
-#: includes/pages/wc-gsheetconnector-setting.php:1111
+#: includes/pages/wc-gsheetconnector-setting.php:1125
 msgid ""
 "Each Entry will be shown product wise with same Order ID, if multiple "
 "products are there\n"
@@ -831,159 +951,155 @@ msgstr ""
 "                                in\n"
 "                                order"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1119
+#: includes/pages/wc-gsheetconnector-setting.php:1133
 #, fuzzy
 #| msgid "Sorting :"
 msgid "Sorting"
-msgstr "Sorting :"
+msgstr "Sorting"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1123
-#: includes/pages/wc-gsheetconnector-setting.php:1202
-#: includes/pages/wc-gsheetconnector-setting.php:1232
-#: includes/pages/wc-gsheetconnector-setting.php:1258
-#: includes/pages/wc-gsheetconnector-setting.php:1284
-#: includes/pages/wc-gsheetconnector-setting.php:1309
-#: includes/pages/wc-gsheetconnector-setting.php:1336
+#: includes/pages/wc-gsheetconnector-setting.php:1137
+#: includes/pages/wc-gsheetconnector-setting.php:1216
+#: includes/pages/wc-gsheetconnector-setting.php:1245
+#: includes/pages/wc-gsheetconnector-setting.php:1270
+#: includes/pages/wc-gsheetconnector-setting.php:1295
+#: includes/pages/wc-gsheetconnector-setting.php:1319
+#: includes/pages/wc-gsheetconnector-setting.php:1345
 msgid "Ascending"
 msgstr "Sort the sheet in Ascending or Descending order."
 
-#: includes/pages/wc-gsheetconnector-setting.php:1127
-#: includes/pages/wc-gsheetconnector-setting.php:1204
-#: includes/pages/wc-gsheetconnector-setting.php:1233
-#: includes/pages/wc-gsheetconnector-setting.php:1259
-#: includes/pages/wc-gsheetconnector-setting.php:1285
-#: includes/pages/wc-gsheetconnector-setting.php:1310
-#: includes/pages/wc-gsheetconnector-setting.php:1337
+#: includes/pages/wc-gsheetconnector-setting.php:1141
+#: includes/pages/wc-gsheetconnector-setting.php:1218
+#: includes/pages/wc-gsheetconnector-setting.php:1246
+#: includes/pages/wc-gsheetconnector-setting.php:1271
+#: includes/pages/wc-gsheetconnector-setting.php:1296
+#: includes/pages/wc-gsheetconnector-setting.php:1320
+#: includes/pages/wc-gsheetconnector-setting.php:1346
 msgid "Descending"
 msgstr "Descending"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1143
+#: includes/pages/wc-gsheetconnector-setting.php:1157
 msgid "Google Sheet Settings"
 msgstr "EDD Google Sheet Settings"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1152
+#: includes/pages/wc-gsheetconnector-setting.php:1166
 msgid "Freeze Header"
 msgstr "Freeze Header Row"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1160
+#: includes/pages/wc-gsheetconnector-setting.php:1174
 #, fuzzy
 #| msgid "Background Color :"
 msgid "Background Color"
-msgstr "Background: Colour"
+msgstr "Background Color"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1163
+#: includes/pages/wc-gsheetconnector-setting.php:1177
 #, fuzzy
 #| msgid "Header Row :"
 msgid "Header Row"
-msgstr "Header Row :"
+msgstr "Header Row"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1169
+#: includes/pages/wc-gsheetconnector-setting.php:1183
 #, fuzzy
 #| msgid "Odd Rows :"
 msgid "Odd Rows"
-msgstr "Odd Rows :"
+msgstr "Odd Rows"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1175
+#: includes/pages/wc-gsheetconnector-setting.php:1189
 #, fuzzy
 #| msgid "Even Rows :"
 msgid "Even Rows"
-msgstr "Even Rows :"
+msgstr "Even Rows"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1190
+#: includes/pages/wc-gsheetconnector-setting.php:1204
 msgid "Google Sheet Sync"
 msgstr "Google Sheet Sync"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1199
-#: includes/pages/wc-gsheetconnector-setting.php:1218
+#: includes/pages/wc-gsheetconnector-setting.php:1213
+#: includes/pages/wc-gsheetconnector-setting.php:1232
 msgid "Sync Orders"
 msgstr "Sync Orders"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1207
-#: includes/pages/wc-gsheetconnector-setting.php:1235
-#: includes/pages/wc-gsheetconnector-setting.php:1261
-#: includes/pages/wc-gsheetconnector-setting.php:1287
-#: includes/pages/wc-gsheetconnector-setting.php:1312
-#: includes/pages/wc-gsheetconnector-setting.php:1339
+#: includes/pages/wc-gsheetconnector-setting.php:1221
+#: includes/pages/wc-gsheetconnector-setting.php:1248
+#: includes/pages/wc-gsheetconnector-setting.php:1273
+#: includes/pages/wc-gsheetconnector-setting.php:1298
+#: includes/pages/wc-gsheetconnector-setting.php:1322
+#: includes/pages/wc-gsheetconnector-setting.php:1348
 msgid "From Date"
 msgstr "From Date"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1209
-#: includes/pages/wc-gsheetconnector-setting.php:1238
-#: includes/pages/wc-gsheetconnector-setting.php:1264
-#: includes/pages/wc-gsheetconnector-setting.php:1290
-#: includes/pages/wc-gsheetconnector-setting.php:1315
-#: includes/pages/wc-gsheetconnector-setting.php:1342
+#: includes/pages/wc-gsheetconnector-setting.php:1223
+#: includes/pages/wc-gsheetconnector-setting.php:1251
+#: includes/pages/wc-gsheetconnector-setting.php:1276
+#: includes/pages/wc-gsheetconnector-setting.php:1301
+#: includes/pages/wc-gsheetconnector-setting.php:1325
+#: includes/pages/wc-gsheetconnector-setting.php:1351
 msgid "To Date"
 msgstr "To Date"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1211
+#: includes/pages/wc-gsheetconnector-setting.php:1225
 #, fuzzy
 #| msgid "Custom Order Status"
 msgid "Select Order Status"
-msgstr " Custom Order Status "
+msgstr "Select Order Status"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1214
-msgid "All"
-msgstr "All"
-
-#: includes/pages/wc-gsheetconnector-setting.php:1230
-#: includes/pages/wc-gsheetconnector-setting.php:1244
+#: includes/pages/wc-gsheetconnector-setting.php:1243
+#: includes/pages/wc-gsheetconnector-setting.php:1257
 msgid "Sync Products"
 msgstr "Sync Products"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1256
-#: includes/pages/wc-gsheetconnector-setting.php:1270
+#: includes/pages/wc-gsheetconnector-setting.php:1268
+#: includes/pages/wc-gsheetconnector-setting.php:1282
 msgid "Sync Products Variation"
 msgstr "Sync Products Variation"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1282
-#: includes/pages/wc-gsheetconnector-setting.php:1296
+#: includes/pages/wc-gsheetconnector-setting.php:1293
+#: includes/pages/wc-gsheetconnector-setting.php:1307
 msgid "Sync Customers"
 msgstr "All Customers"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1307
-#: includes/pages/wc-gsheetconnector-setting.php:1321
+#: includes/pages/wc-gsheetconnector-setting.php:1317
+#: includes/pages/wc-gsheetconnector-setting.php:1331
 msgid "Sync Coupons"
 msgstr "Sync Coupons"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1334
-#: includes/pages/wc-gsheetconnector-setting.php:1348
+#: includes/pages/wc-gsheetconnector-setting.php:1343
+#: includes/pages/wc-gsheetconnector-setting.php:1357
 msgid "Sync Subscriptions"
 msgstr "All Subscriptions"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1373
+#: includes/pages/wc-gsheetconnector-setting.php:1381
 msgid "Download Spreadsheet"
 msgstr "Download"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1379
+#: includes/pages/wc-gsheetconnector-setting.php:1386
 msgid "(You can download connected Google Spreadsheet )"
 msgstr "(You can download connected Google Spreadsheet )"
 
-#: includes/pages/wc-gsheetconnector-setting.php:1398
+#: includes/pages/wc-gsheetconnector-setting.php:1405
 msgid "Submit Data"
 msgstr "Submit"
 
-#: includes/pages/wc-gsheetconnector-systeminfo.php:10
+#: includes/pages/wc-gsheetconnector-systeminfo.php:16
 msgid "System Info"
 msgstr "System Status"
 
-#: includes/pages/wc-gsheetconnector-systeminfo.php:11
+#: includes/pages/wc-gsheetconnector-systeminfo.php:20
 msgid "Copy System Info to Clipboard"
 msgstr "Copy System Info to Clipboard"
 
-#: includes/pages/wc-gsheetconnector-systeminfo.php:25
+#: includes/pages/wc-gsheetconnector-systeminfo.php:34
 msgid "Error Log"
 msgstr "Error Log"
 
-#: includes/pages/wc-gsheetconnector-systeminfo.php:27
+#: includes/pages/wc-gsheetconnector-systeminfo.php:38
 msgid "If you have"
 msgstr "If you have"
 
-#: includes/pages/wc-gsheetconnector-systeminfo.php:29
+#: includes/pages/wc-gsheetconnector-systeminfo.php:42
 msgid "WP_DEBUG_LOG"
 msgstr "WP_DEBUG_LOG"
 
-#: includes/pages/wc-gsheetconnector-systeminfo.php:31
+#: includes/pages/wc-gsheetconnector-systeminfo.php:44
 msgid ""
 "enabled, errors are stored in a log file. Here you can find the last 100 "
 "lines in reversed order so that you or the GSheetConnector support team can "
@@ -993,411 +1109,85 @@ msgstr ""
 "lines in reversed order so that you or the GSheetConnector support team can "
 "view it easily. The file cannot be edited here."
 
-#: includes/pages/wc-gsheetconnector-systeminfo.php:33
+#: includes/pages/wc-gsheetconnector-systeminfo.php:48
 msgid "Copy Error Log to Clipboard"
 msgstr "Copy Error Log to Clipboard"
 
-#: includes/pages/wc-gsheetconnector-systeminfo.php:38
+#: includes/pages/wc-gsheetconnector-systeminfo.php:64
 msgid "Copied"
 msgstr "Copied"
 
-#: includes/pages/wc-product-sheet.php:13
+#: includes/pages/wc-product-sheet.php:12
 msgid "Google Sheet to WooCommerce Sync Configuration"
 msgstr "Google Sheet to WooCommerce Sync Configuration"
 
-#: includes/pages/wc-product-sheet.php:25
+#: includes/pages/wc-product-sheet.php:21
 msgid "Connected WooCommerce Google Sheet"
 msgstr "Connected WooCommerce Google Sheet"
 
-#: includes/pages/wc-product-sheet.php:30
+#: includes/pages/wc-product-sheet.php:25
 msgid "Google Spreadsheet Name"
 msgstr "Google Spreadsheet Name"
 
-#: includes/pages/wc-product-sheet.php:35
+#: includes/pages/wc-product-sheet.php:30
 msgid "Google Spreadsheet URL"
 msgstr "Google Spreadsheet URL"
 
-#: includes/pages/wc-product-sheet.php:48
+#: includes/pages/wc-product-sheet.php:47
 msgid "Sync Settings for Two-Way Sync - Insert & Updates"
 msgstr "Sync Settings for Two-Way Sync - Insert & Updates"
 
-#: includes/pages/wc-product-sheet.php:57
-msgid "2-Way Sync Settings Insert & Updates"
-msgstr "2-Way Sync Settings Insert & Updates"
-
-#: includes/pages/wc-product-sheet.php:60
-#: includes/pages/wc-product-sheet.php:152
-#: includes/pages/wc-product-sheet.php:217
-msgid ""
-"These sync settings facilitate the seamless transfer of records to "
-"WooCommerce within the selected Google Sheet!"
-msgstr ""
-"These sync settings facilitate the seamless transfer of records to "
-"WooCommerce within the selected Google Sheet!"
-
-#: includes/pages/wc-product-sheet.php:64
-#, fuzzy
-#| msgid "Considerations for Two-Way Sync Insert & Updates:"
-msgid "Considerations for Two-Way Sync Insert & Updates"
-msgstr "Considerations for Two-Way Sync Insert & Updates:"
-
-#: includes/pages/wc-product-sheet.php:66
-#: includes/pages/wc-product-sheet.php:160
-#: includes/pages/wc-product-sheet.php:225
-msgid ""
-"Ensure the header names remain unchanged from the default settings during "
-"synchronization."
-msgstr ""
-"Ensure the header names remain unchanged from the default settings during "
-"synchronization."
-
-#: includes/pages/wc-product-sheet.php:67
-#: includes/pages/wc-product-sheet.php:91
-msgid ""
-"Leave the Product ID field blank; it will be automatically updated once the "
-"sync is processed. If a Product ID is present, the sync will fail and "
-"display an error."
-msgstr ""
-"Leave the Product ID field blank; it will be automatically updated once the "
-"sync is processed. If a Product ID is present, the sync will fail and "
-"display an error."
-
-#: includes/pages/wc-product-sheet.php:68
-msgid ""
-"To add multiple Product Categories and tags, separate them with commas (,)."
-msgstr ""
-"To add multiple Product Categories and tags, separate them with commas (,)."
-
-#: includes/pages/wc-product-sheet.php:69
-msgid ""
-"Mandatory fields required Product name to be entered, and make sure to add a "
-"dash (-) in the last column, if the last column is empty."
-msgstr ""
-"Mandatory fields required Product name to be entered, and make sure to add a "
-"dash (-) in the last column, if the last column is empty."
-
-#: includes/pages/wc-product-sheet.php:70
-#: includes/pages/wc-product-sheet.php:161
-#: includes/pages/wc-product-sheet.php:228
-msgid ""
-"Specify the rows for synchronization. For a single row, input the same "
-"number in both text boxes."
-msgstr ""
-"Specify the rows for synchronization. For a single row, input the same "
-"number in both text boxes."
-
+#: includes/pages/wc-product-sheet.php:58
 #: includes/pages/wc-product-sheet.php:71
-#, fuzzy
-#| msgid ""
-#| "Example of Single Row: If the product is in row 5, enter \"5\" in both "
-#| "boxes and click to sync."
-msgid ""
-"Example of Single Row - If the product is in row 5, enter \"5\" in both "
-"boxes and click to sync."
-msgstr ""
-"Example of Single Row: If the product is in row 5, enter \"5\" in both boxes "
-"and click to sync."
-
-#: includes/pages/wc-product-sheet.php:72
-#, fuzzy
-#| msgid ""
-#| "Example of Multiple Rows: If products are listed in rows 5-10, input "
-#| "\"5\" and \"10\" in the respective boxes and initiate the sync."
-msgid ""
-"Example of Multiple Rows - If products are listed in rows 5-10, input \"5\" "
-"and \"10\" in the respective boxes and initiate the sync."
-msgstr ""
-"Example of Multiple Rows: If products are listed in rows 5-10, input \"5\" "
-"and \"10\" in the respective boxes and initiate the sync."
-
-#: includes/pages/wc-product-sheet.php:73
-msgid ""
-"In the Image column, upload the image from media, copy the uploaded image "
-"path, and paste it in the corresponding column for each product."
-msgstr ""
-"In the Image column, upload the image from media, copy the uploaded image "
-"path, and paste it in the corresponding column for each product."
-
-#: includes/pages/wc-product-sheet.php:74
-msgid ""
-"For the Product Downloadable Files column, upload a single file from media, "
-"copy the uploaded file path, and paste it in the relevant column for each "
-"product."
-msgstr ""
-"For the Product Downloadable Files column, upload a single file from media, "
-"copy the uploaded file path, and paste it in the relevant column for each "
-"product."
-
-#: includes/pages/wc-product-sheet.php:75
-#, fuzzy
-#| msgid ""
-#| "Please refer to the knowledgebase/docs for a comprehensive <a href="
-#| "\"https://support.gsheetconnector.com/kb/woocommerce-gsheetconnector-2-"
-#| "way-sync-products\" target=\"_blank\">list of supported fields available "
-#| "for two-way synchronization.</a>"
-msgid ""
-"Please refer to the knowledgebase/docs for a comprehensive <a href=\"https://"
-"www.gsheetconnector.com/docs/woocommerce-gsheetconnector/2-way-sync-products"
-"\" target=\"_blank\">list of supported fields available for two-way "
-"synchronization.</a>"
-msgstr ""
-"Please refer to the knowledgebase/docs for a comprehensive <a href=\"https://"
-"support.gsheetconnector.com/kb/woocommerce-gsheetconnector-2-way-sync-"
-"products\" target=\"_blank\">list of supported fields available for two-way "
-"synchronization.</a>"
-
-#: includes/pages/wc-product-sheet.php:80
-#, fuzzy
-#| msgid "Product Sync Configuration: Sheet to WooCommerce Insert"
-msgid "Product Sync Configuration - Sheet to WooCommerce Insert"
-msgstr "Product Sync Configuration: Sheet to WooCommerce Insert"
-
-#: includes/pages/wc-product-sheet.php:84
-#: includes/pages/wc-product-sheet.php:111
-#, fuzzy
-#| msgid ""
-#| "This configuration includes two selection boxes for specifying the range "
-#| "of rows to sync.\n"
-#| "                            Example of Single Row: If you've added a "
-#| "product in row 5, input '5' in both boxes and click to sync.\n"
-#| "                            Example of Multiple Rows: If products are "
-#| "listed in rows 5 through 10, input '5' and '10' in the respective boxes "
-#| "and click to sync. "
-msgid ""
-"This configuration includes two selection boxes for specifying the range of "
-"rows to sync.\n"
-"              Example of Single Row - If you've added a product in row 5, "
-"input '5' in both boxes and click to sync.\n"
-"              Example of Multiple Rows - If products are listed in rows 5 "
-"through 10, input '5' and '10' in the respective boxes and click to sync."
-msgstr ""
-"This configuration includes two selection boxes for specifying the range of "
-"rows to sync.\n"
-"                            Example of Single Row: If you've added a product "
-"in row 5, input '5' in both boxes and click to sync.\n"
-"                            Example of Multiple Rows: If products are listed "
-"in rows 5 through 10, input '5' and '10' in the respective boxes and click "
-"to sync. "
-
-#: includes/pages/wc-product-sheet.php:94
-#: includes/pages/wc-product-sheet.php:121
-#, fuzzy
-#| msgid " Enter Rows Range: from "
-msgid " Enter Rows Range - from "
-msgstr " Enter Rows Range: from "
-
-#: includes/pages/wc-product-sheet.php:96
-#: includes/pages/wc-product-sheet.php:123
-msgid " to "
-msgstr "To"
-
-#: includes/pages/wc-product-sheet.php:99
-msgid "Click to Sync Insert"
-msgstr "Click to Sync Insert"
-
-#: includes/pages/wc-product-sheet.php:107
-#, fuzzy
-#| msgid "Product Sync Configuration: Sheet to WooCommerce Update"
-msgid "Product Sync Configuration - Sheet to WooCommerce Update"
-msgstr "Product Sync Configuration: Sheet to WooCommerce Update"
-
-#: includes/pages/wc-product-sheet.php:118
-msgid ""
-"Product ID can not be empty in the sheet. If a Product ID is not present in "
-"the sheet, the sync will fail and display an error."
-msgstr ""
-"Product ID can not empty in the sheet.If a Product ID is not present in the "
-"sheet, the sync will fail and display an error."
-
-#: includes/pages/wc-product-sheet.php:126
-msgid "Click to Sync Update"
-msgstr "Click to Sync Update"
-
-#: includes/pages/wc-product-sheet.php:138
-msgid "Sync Settings for Two-Way Sync - Order Status Updates"
-msgstr "Sync Settings for Two-Way Sync - Order Status Updates"
-
-#: includes/pages/wc-product-sheet.php:148
-msgid "2-Way Sync Settings Order Status"
-msgstr "2-Way Sync Settings Order Status"
-
-#: includes/pages/wc-product-sheet.php:157
-#, fuzzy
-#| msgid "Considerations for Two-Way Sync Order Status Updates:"
-msgid "Considerations for Two-Way Sync Order Status Updates"
-msgstr "Considerations for Two-Way Sync Order Status Updates:"
-
-#: includes/pages/wc-product-sheet.php:159
-msgid ""
-"To update the Orders Status from Google Sheet to WooCommerce Store use the "
-"“All Orders” named Sheet Tab."
-msgstr ""
-"To update the Orders Status from Google Sheet to WooCommerce Store use the "
-"“All Orders” named Sheet Tab."
-
-#: includes/pages/wc-product-sheet.php:162
-#: includes/pages/wc-product-sheet.php:229
-#, fuzzy
-#| msgid ""
-#| "Example of Single Row: If the order is in row 5, enter \"5\" in both "
-#| "boxes and click to sync."
-msgid ""
-"Example of Single Row - If the order is in row 5, enter \"5\" in both boxes "
-"and click to sync."
-msgstr ""
-"Example of Single Row: If the order is in row 5, enter \"5\" in both boxes "
-"and click to sync."
-
-#: includes/pages/wc-product-sheet.php:163
-#: includes/pages/wc-product-sheet.php:230
-#, fuzzy
-#| msgid ""
-#| "Example of Multiple Rows: If orders are listed in rows 5-10, input \"5\" "
-#| "and \"10\" in the respective boxes and initiate the sync."
-msgid ""
-"Example of Multiple Rows - If orders are listed in rows 5-10, input \"5\" "
-"and \"10\" in the respective boxes and initiate the sync."
-msgstr ""
-"Example of Multiple Rows: If orders are listed in rows 5-10, input \"5\" and "
-"\"10\" in the respective boxes and initiate the sync."
-
-#: includes/pages/wc-product-sheet.php:164
-#: includes/pages/wc-product-sheet.php:231
-#, fuzzy
-#| msgid ""
-#| "Please refer to the knowledgebase/docs for a comprehensive <a href="
-#| "\"https://support.gsheetconnector.com/kb/woocommerce-gsheetconnector-2-"
-#| "way-sync-products\" target=\"_blank\">list of supported fields available "
-#| "for two-way synchronization.</a>"
-msgid ""
-"Please refer to the knowledgebase/docs for a comprehensive <a href=\"https://"
-"www.gsheetconnector.com/docs/woocommerce-gsheetconnector/2-way-sync-orders\" "
-"target=\"_blank\">list of supported fields available for two-way "
-"synchronization.</a>"
-msgstr ""
-"Please refer to the knowledgebase/docs for a comprehensive <a href=\"https://"
-"support.gsheetconnector.com/kb/woocommerce-gsheetconnector-2-way-sync-"
-"products\" target=\"_blank\">list of supported fields available for two-way "
-"synchronization.</a>"
-
-#: includes/pages/wc-product-sheet.php:171
-#, fuzzy
-#| msgid "Order Status Sync Configuration: Sheet to WooCommerce Update"
-msgid "Order Status Sync Configuration - Sheet to WooCommerce Update"
-msgstr " Order Status Sync Configuration: Sheet to WooCommerce Update"
-
-#: includes/pages/wc-product-sheet.php:175
-#: includes/pages/wc-product-sheet.php:241
-#, fuzzy
-#| msgid ""
-#| "This configuration includes two selection boxes for specifying the range "
-#| "of rows to sync.\n"
-#| "              Example of Single Row: If you've added an order in row 5, "
-#| "input '5' in both boxes and click to sync.\n"
-#| "              Example of Multiple Rows: If orders are listed in rows 5 "
-#| "through 10, input '5' and '10' in the respective boxes and click to sync."
-msgid ""
-"This configuration includes two selection boxes for specifying the range of "
-"rows to sync.\n"
-"              Example of Single Row - If you've added an order in row 5, "
-"input '5' in both boxes and click to sync.\n"
-"              Example of Multiple Rows - If orders are listed in rows 5 "
-"through 10, input '5' and '10' in the respective boxes and click to sync."
-msgstr ""
-"This configuration includes two selection boxes for specifying the range of "
-"rows to sync.\n"
-"                            Example of Single Row: If you've added a product "
-"in row 5, input '5' in both boxes and click to sync.\n"
-"                            Example of Multiple Rows: If products are listed "
-"in rows 5 through 10, input '5' and '10' in the respective boxes and click "
-"to sync. "
-
-#: includes/pages/wc-product-sheet.php:182
-msgid ""
-"Order Id can not be empty in the sheet. If an Order Id is not present in the "
-"sheet, the sync will fail and display an error."
-msgstr ""
-"Order Id can not be empty in the sheet. If a Order Id is not present in the "
-"sheet, the sync will fail and display an error."
-
-#: includes/pages/wc-product-sheet.php:185
-#: includes/pages/wc-product-sheet.php:251
+#: includes/pages/wc-product-sheet.php:104
+#: includes/pages/wc-product-sheet.php:137
 #, fuzzy
 #| msgid "Enter Rows Range: from"
 msgid "Enter Rows Range - from"
-msgstr " Enter Rows Range: from "
+msgstr "Enter Rows Range - from"
 
-#: includes/pages/wc-product-sheet.php:187
-#: includes/pages/wc-product-sheet.php:253
+#: includes/pages/wc-product-sheet.php:61
+#: includes/pages/wc-product-sheet.php:74
+#: includes/pages/wc-product-sheet.php:107
+#: includes/pages/wc-product-sheet.php:140
 #, fuzzy
 #| msgid " to "
 msgid "to"
-msgstr "To"
+msgstr "to"
 
-#: includes/pages/wc-product-sheet.php:191
+#: includes/pages/wc-product-sheet.php:65
+msgid "Click to Sync Insert"
+msgstr "Click to Sync Insert"
+
+#: includes/pages/wc-product-sheet.php:78
+msgid "Click to Sync Update"
+msgstr "Click to Sync Update"
+
+#: includes/pages/wc-product-sheet.php:94
+msgid "Sync Settings for Two-Way Sync - Order Status Updates"
+msgstr "Sync Settings for Two-Way Sync - Order Status Updates"
+
+#: includes/pages/wc-product-sheet.php:111
 msgid "Click to Order Status Sync Update"
 msgstr "Click to Order Status Sync Update"
 
-#: includes/pages/wc-product-sheet.php:204
+#: includes/pages/wc-product-sheet.php:127
 msgid "Sync Settings for Two-Way Sync - Insert Orders"
 msgstr "Sync Settings for Two-Way Sync - Insert Orders"
 
-#: includes/pages/wc-product-sheet.php:213
-msgid "2-Way Sync Settings Insert Orders"
-msgstr "2-Way Sync Settings Insert Orders"
-
-#: includes/pages/wc-product-sheet.php:222
-#, fuzzy
-#| msgid "Considerations for Two-Way Sync Insert Orders:"
-msgid "Considerations for Two-Way Sync Insert Orders"
-msgstr "Considerations for Two-Way Sync Insert Orders:"
-
-#: includes/pages/wc-product-sheet.php:224
-msgid ""
-"To Insert the Orders from Google Sheet to WooCommerce Store use the “All "
-"Orders” named Sheet Tab."
-msgstr ""
-"To Insert the Orders from Google Sheet to WooCommerce Store use the “All "
-"Orders” named Sheet Tab."
-
-#: includes/pages/wc-product-sheet.php:226
-#: includes/pages/wc-product-sheet.php:248
-msgid ""
-"Leave the Order Id field blank; it will be automatically updated once the "
-"sync is processed. If a Order Id is present, the sync will fail and display "
-"an error."
-msgstr ""
-"Leave the Order Id field blank; it will be automatically updated once the "
-"sync is processed. If a Order Id is present, the sync will fail and display "
-"an error."
-
-#: includes/pages/wc-product-sheet.php:227
-msgid ""
-"Mandatory fields required Product ID and Order Status to be entered, and "
-"make sure to add a dash (-) in the last column, if the last column is empty."
-msgstr ""
-"Mandatory fields required Product ID and Order Status to be entered, and "
-"make sure to add a dash (-) in the last column, if the last column is empty."
-
-#: includes/pages/wc-product-sheet.php:237
-#, fuzzy
-#| msgid "Order Insert Sync Configuration: Sheet to WooCommerce Insert"
-msgid "Order Insert Sync Configuration - Sheet to WooCommerce Insert"
-msgstr "Order Insert Sync Configuration: Sheet to WooCommerce Insert"
-
-#: includes/pages/wc-product-sheet.php:257
+#: includes/pages/wc-product-sheet.php:144
 msgid "Click to Sync Order"
 msgstr "Click to Sync Order"
 
-#: wc-gsheetconnector.php:161
+#: wc-gsheetconnector.php:182
 msgid "View Documentation"
 msgstr "View documentation"
 
-#: wc-gsheetconnector.php:162
+#: wc-gsheetconnector.php:183
 msgid "Get Support"
 msgstr "Get support"
 
-#: wc-gsheetconnector.php:372
+#: wc-gsheetconnector.php:401
 msgid ""
 "GSheetConnector WooCommerce Add-on requires WooCommerce plugin to be "
 "installed and activated."
@@ -1421,6 +1211,298 @@ msgstr "GSheetConnector"
 msgid "https://www.gsheetconnector.com/"
 msgstr "https://www.gsheetconnector.com/"
 
+#~ msgid "click here"
+#~ msgstr "Click here"
+
+#, php-format
+#~ msgid "%s"
+#~ msgstr "%s"
+
+#~ msgid "2-Way Sync Settings Insert & Updates"
+#~ msgstr "2-Way Sync Settings Insert & Updates"
+
+#~ msgid ""
+#~ "These sync settings facilitate the seamless transfer of records to "
+#~ "WooCommerce within the selected Google Sheet!"
+#~ msgstr ""
+#~ "These sync settings facilitate the seamless transfer of records to "
+#~ "WooCommerce within the selected Google Sheet!"
+
+#, fuzzy
+#~| msgid "Considerations for Two-Way Sync Insert & Updates:"
+#~ msgid "Considerations for Two-Way Sync Insert & Updates"
+#~ msgstr "Considerations for Two-Way Sync Insert & Updates:"
+
+#~ msgid ""
+#~ "Ensure the header names remain unchanged from the default settings during "
+#~ "synchronization."
+#~ msgstr ""
+#~ "Ensure the header names remain unchanged from the default settings during "
+#~ "synchronization."
+
+#~ msgid ""
+#~ "Leave the Product ID field blank; it will be automatically updated once "
+#~ "the sync is processed. If a Product ID is present, the sync will fail and "
+#~ "display an error."
+#~ msgstr ""
+#~ "Leave the Product ID field blank; it will be automatically updated once "
+#~ "the sync is processed. If a Product ID is present, the sync will fail and "
+#~ "display an error."
+
+#~ msgid ""
+#~ "To add multiple Product Categories and tags, separate them with commas "
+#~ "(,)."
+#~ msgstr ""
+#~ "To add multiple Product Categories and tags, separate them with commas "
+#~ "(,)."
+
+#~ msgid ""
+#~ "Mandatory fields required Product name to be entered, and make sure to "
+#~ "add a dash (-) in the last column, if the last column is empty."
+#~ msgstr ""
+#~ "Mandatory fields required Product name to be entered, and make sure to "
+#~ "add a dash (-) in the last column, if the last column is empty."
+
+#~ msgid ""
+#~ "Specify the rows for synchronization. For a single row, input the same "
+#~ "number in both text boxes."
+#~ msgstr ""
+#~ "Specify the rows for synchronization. For a single row, input the same "
+#~ "number in both text boxes."
+
+#, fuzzy
+#~| msgid ""
+#~| "Example of Single Row: If the product is in row 5, enter \"5\" in both "
+#~| "boxes and click to sync."
+#~ msgid ""
+#~ "Example of Single Row - If the product is in row 5, enter \"5\" in both "
+#~ "boxes and click to sync."
+#~ msgstr ""
+#~ "Example of Single Row: If the product is in row 5, enter \"5\" in both "
+#~ "boxes and click to sync."
+
+#, fuzzy
+#~| msgid ""
+#~| "Example of Multiple Rows: If products are listed in rows 5-10, input "
+#~| "\"5\" and \"10\" in the respective boxes and initiate the sync."
+#~ msgid ""
+#~ "Example of Multiple Rows - If products are listed in rows 5-10, input "
+#~ "\"5\" and \"10\" in the respective boxes and initiate the sync."
+#~ msgstr ""
+#~ "Example of Multiple Rows: If products are listed in rows 5-10, input "
+#~ "\"5\" and \"10\" in the respective boxes and initiate the sync."
+
+#~ msgid ""
+#~ "In the Image column, upload the image from media, copy the uploaded image "
+#~ "path, and paste it in the corresponding column for each product."
+#~ msgstr ""
+#~ "In the Image column, upload the image from media, copy the uploaded image "
+#~ "path, and paste it in the corresponding column for each product."
+
+#~ msgid ""
+#~ "For the Product Downloadable Files column, upload a single file from "
+#~ "media, copy the uploaded file path, and paste it in the relevant column "
+#~ "for each product."
+#~ msgstr ""
+#~ "For the Product Downloadable Files column, upload a single file from "
+#~ "media, copy the uploaded file path, and paste it in the relevant column "
+#~ "for each product."
+
+#, fuzzy
+#~| msgid ""
+#~| "Please refer to the knowledgebase/docs for a comprehensive <a "
+#~| "href=\"https://support.gsheetconnector.com/kb/woocommerce-"
+#~| "gsheetconnector-2-way-sync-products\" target=\"_blank\">list of "
+#~| "supported fields available for two-way synchronization.</a>"
+#~ msgid ""
+#~ "Please refer to the knowledgebase/docs for a comprehensive <a "
+#~ "href=\"https://www.gsheetconnector.com/docs/woocommerce-gsheetconnector/2-"
+#~ "way-sync-products\" target=\"_blank\">list of supported fields available "
+#~ "for two-way synchronization.</a>"
+#~ msgstr ""
+#~ "Please refer to the knowledgebase/docs for a comprehensive <a "
+#~ "href=\"https://support.gsheetconnector.com/kb/woocommerce-"
+#~ "gsheetconnector-2-way-sync-products\" target=\"_blank\">list of supported "
+#~ "fields available for two-way synchronization.</a>"
+
+#, fuzzy
+#~| msgid "Product Sync Configuration: Sheet to WooCommerce Insert"
+#~ msgid "Product Sync Configuration - Sheet to WooCommerce Insert"
+#~ msgstr "Product Sync Configuration: Sheet to WooCommerce Insert"
+
+#, fuzzy
+#~| msgid ""
+#~| "This configuration includes two selection boxes for specifying the range "
+#~| "of rows to sync.\n"
+#~| "                            Example of Single Row: If you've added a "
+#~| "product in row 5, input '5' in both boxes and click to sync.\n"
+#~| "                            Example of Multiple Rows: If products are "
+#~| "listed in rows 5 through 10, input '5' and '10' in the respective boxes "
+#~| "and click to sync. "
+#~ msgid ""
+#~ "This configuration includes two selection boxes for specifying the range "
+#~ "of rows to sync.\n"
+#~ "              Example of Single Row - If you've added a product in row 5, "
+#~ "input '5' in both boxes and click to sync.\n"
+#~ "              Example of Multiple Rows - If products are listed in rows 5 "
+#~ "through 10, input '5' and '10' in the respective boxes and click to sync."
+#~ msgstr ""
+#~ "This configuration includes two selection boxes for specifying the range "
+#~ "of rows to sync.\n"
+#~ "                            Example of Single Row: If you've added a "
+#~ "product in row 5, input '5' in both boxes and click to sync.\n"
+#~ "                            Example of Multiple Rows: If products are "
+#~ "listed in rows 5 through 10, input '5' and '10' in the respective boxes "
+#~ "and click to sync. "
+
+#, fuzzy
+#~| msgid " Enter Rows Range: from "
+#~ msgid " Enter Rows Range - from "
+#~ msgstr " Enter Rows Range: from "
+
+#~ msgid " to "
+#~ msgstr "To"
+
+#, fuzzy
+#~| msgid "Product Sync Configuration: Sheet to WooCommerce Update"
+#~ msgid "Product Sync Configuration - Sheet to WooCommerce Update"
+#~ msgstr "Product Sync Configuration: Sheet to WooCommerce Update"
+
+#~ msgid ""
+#~ "Product ID can not be empty in the sheet. If a Product ID is not present "
+#~ "in the sheet, the sync will fail and display an error."
+#~ msgstr ""
+#~ "Product ID can not empty in the sheet.If a Product ID is not present in "
+#~ "the sheet, the sync will fail and display an error."
+
+#~ msgid "2-Way Sync Settings Order Status"
+#~ msgstr "2-Way Sync Settings Order Status"
+
+#, fuzzy
+#~| msgid "Considerations for Two-Way Sync Order Status Updates:"
+#~ msgid "Considerations for Two-Way Sync Order Status Updates"
+#~ msgstr "Considerations for Two-Way Sync Order Status Updates:"
+
+#~ msgid ""
+#~ "To update the Orders Status from Google Sheet to WooCommerce Store use "
+#~ "the “All Orders” named Sheet Tab."
+#~ msgstr ""
+#~ "To update the Orders Status from Google Sheet to WooCommerce Store use "
+#~ "the “All Orders” named Sheet Tab."
+
+#, fuzzy
+#~| msgid ""
+#~| "Example of Single Row: If the order is in row 5, enter \"5\" in both "
+#~| "boxes and click to sync."
+#~ msgid ""
+#~ "Example of Single Row - If the order is in row 5, enter \"5\" in both "
+#~ "boxes and click to sync."
+#~ msgstr ""
+#~ "Example of Single Row: If the order is in row 5, enter \"5\" in both "
+#~ "boxes and click to sync."
+
+#, fuzzy
+#~| msgid ""
+#~| "Example of Multiple Rows: If orders are listed in rows 5-10, input \"5\" "
+#~| "and \"10\" in the respective boxes and initiate the sync."
+#~ msgid ""
+#~ "Example of Multiple Rows - If orders are listed in rows 5-10, input \"5\" "
+#~ "and \"10\" in the respective boxes and initiate the sync."
+#~ msgstr ""
+#~ "Example of Multiple Rows: If orders are listed in rows 5-10, input \"5\" "
+#~ "and \"10\" in the respective boxes and initiate the sync."
+
+#, fuzzy
+#~| msgid ""
+#~| "Please refer to the knowledgebase/docs for a comprehensive <a "
+#~| "href=\"https://support.gsheetconnector.com/kb/woocommerce-"
+#~| "gsheetconnector-2-way-sync-products\" target=\"_blank\">list of "
+#~| "supported fields available for two-way synchronization.</a>"
+#~ msgid ""
+#~ "Please refer to the knowledgebase/docs for a comprehensive <a "
+#~ "href=\"https://www.gsheetconnector.com/docs/woocommerce-gsheetconnector/2-"
+#~ "way-sync-orders\" target=\"_blank\">list of supported fields available "
+#~ "for two-way synchronization.</a>"
+#~ msgstr ""
+#~ "Please refer to the knowledgebase/docs for a comprehensive <a "
+#~ "href=\"https://support.gsheetconnector.com/kb/woocommerce-"
+#~ "gsheetconnector-2-way-sync-products\" target=\"_blank\">list of supported "
+#~ "fields available for two-way synchronization.</a>"
+
+#, fuzzy
+#~| msgid "Order Status Sync Configuration: Sheet to WooCommerce Update"
+#~ msgid "Order Status Sync Configuration - Sheet to WooCommerce Update"
+#~ msgstr " Order Status Sync Configuration: Sheet to WooCommerce Update"
+
+#, fuzzy
+#~| msgid ""
+#~| "This configuration includes two selection boxes for specifying the range "
+#~| "of rows to sync.\n"
+#~| "              Example of Single Row: If you've added an order in row 5, "
+#~| "input '5' in both boxes and click to sync.\n"
+#~| "              Example of Multiple Rows: If orders are listed in rows 5 "
+#~| "through 10, input '5' and '10' in the respective boxes and click to sync."
+#~ msgid ""
+#~ "This configuration includes two selection boxes for specifying the range "
+#~ "of rows to sync.\n"
+#~ "              Example of Single Row - If you've added an order in row 5, "
+#~ "input '5' in both boxes and click to sync.\n"
+#~ "              Example of Multiple Rows - If orders are listed in rows 5 "
+#~ "through 10, input '5' and '10' in the respective boxes and click to sync."
+#~ msgstr ""
+#~ "This configuration includes two selection boxes for specifying the range "
+#~ "of rows to sync.\n"
+#~ "                            Example of Single Row: If you've added a "
+#~ "product in row 5, input '5' in both boxes and click to sync.\n"
+#~ "                            Example of Multiple Rows: If products are "
+#~ "listed in rows 5 through 10, input '5' and '10' in the respective boxes "
+#~ "and click to sync. "
+
+#~ msgid ""
+#~ "Order Id can not be empty in the sheet. If an Order Id is not present in "
+#~ "the sheet, the sync will fail and display an error."
+#~ msgstr ""
+#~ "Order Id can not be empty in the sheet. If a Order Id is not present in "
+#~ "the sheet, the sync will fail and display an error."
+
+#~ msgid "2-Way Sync Settings Insert Orders"
+#~ msgstr "2-Way Sync Settings Insert Orders"
+
+#, fuzzy
+#~| msgid "Considerations for Two-Way Sync Insert Orders:"
+#~ msgid "Considerations for Two-Way Sync Insert Orders"
+#~ msgstr "Considerations for Two-Way Sync Insert Orders:"
+
+#~ msgid ""
+#~ "To Insert the Orders from Google Sheet to WooCommerce Store use the “All "
+#~ "Orders” named Sheet Tab."
+#~ msgstr ""
+#~ "To Insert the Orders from Google Sheet to WooCommerce Store use the “All "
+#~ "Orders” named Sheet Tab."
+
+#~ msgid ""
+#~ "Leave the Order Id field blank; it will be automatically updated once the "
+#~ "sync is processed. If a Order Id is present, the sync will fail and "
+#~ "display an error."
+#~ msgstr ""
+#~ "Leave the Order Id field blank; it will be automatically updated once the "
+#~ "sync is processed. If a Order Id is present, the sync will fail and "
+#~ "display an error."
+
+#~ msgid ""
+#~ "Mandatory fields required Product ID and Order Status to be entered, and "
+#~ "make sure to add a dash (-) in the last column, if the last column is "
+#~ "empty."
+#~ msgstr ""
+#~ "Mandatory fields required Product ID and Order Status to be entered, and "
+#~ "make sure to add a dash (-) in the last column, if the last column is "
+#~ "empty."
+
+#, fuzzy
+#~| msgid "Order Insert Sync Configuration: Sheet to WooCommerce Insert"
+#~ msgid "Order Insert Sync Configuration - Sheet to WooCommerce Insert"
+#~ msgstr "Order Insert Sync Configuration: Sheet to WooCommerce Insert"
+
 #~ msgid "WC GSheetConnector"
 #~ msgstr "WC GSheetConnector"
 
@@ -1435,12 +1517,6 @@ msgstr "https://www.gsheetconnector.com/"
 
 #~ msgid "VIP Circle"
 #~ msgstr "VIP Circle"
-
-#~ msgid "System Status"
-#~ msgstr "System Status"
-
-#~ msgid "Beta - Version"
-#~ msgstr "Beta Version"
 
 #~ msgid ""
 #~ "Manual Client/Secret Key (Use Your Google API Configuration) method is "
