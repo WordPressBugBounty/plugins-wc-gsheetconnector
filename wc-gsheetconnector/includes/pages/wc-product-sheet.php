@@ -147,10 +147,3 @@ if ( ! defined( 'ABSPATH' ) ) {
     </div>
   </div>
 </div>
-
-<?php
-$wcgsc_popup_file = WC_GSHEETCONNECTOR_PATH . 'includes/pages/pro-popup.php';
-if ( file_exists( $wcgsc_popup_file ) ) {
-  include $wcgsc_popup_file;
-}
-?>

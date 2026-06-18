@@ -159,49 +159,14 @@ class wc_gsheetconnector_utility
 }
 
 public static function gs_debug_log( $error ) {
-    if ( ! function_exists( 'WP_Filesystem' ) ) {
-        require_once ABSPATH . 'wp-admin/includes/file.php';
+
+// ===============================
+// 🔥 DATABASE LOG (ADD ONLY THIS)
+// ===============================
+    if (class_exists('wcgsc_error_logs')) {
+        wcgsc_error_logs::log_from_debug($error);
     }
-    global $wp_filesystem;
-    WP_Filesystem();
 
-    $upload_dir = wp_upload_dir();
-    $log_dir = trailingslashit( $upload_dir['basedir'] ) . 'wc-gsheetconnector-logs/';
-    $log_file = get_option( 'wcfgs_debug_log_file' );
-    $timestamp = gmdate( 'Y-m-d H:i:s' ) . "\t PHP " . phpversion() . "\t";
-
-    try {
-        if ( ! $wp_filesystem->is_dir( $log_dir ) ) {
-            $wp_filesystem->mkdir( $log_dir, FS_CHMOD_DIR );
-        }
-
-        $old_file = $log_dir . 'log.txt';
-        if ( $wp_filesystem->exists( $old_file ) ) {
-            wp_delete_file( $old_file );
-        }
-
-        $log_message = is_array( $error ) || is_object( $error )
-        ? $timestamp . wp_json_encode( $error ) . "\r\n"
-        : $timestamp . $error . "\r\n";
-
-        if ( ! empty( $log_file ) && $wp_filesystem->exists( $log_file ) ) {
-            $existing = $wp_filesystem->get_contents( $log_file );
-            $wp_filesystem->put_contents( $log_file, $existing . $log_message, FS_CHMOD_FILE );
-        } else {
-            $new_log_file = $log_dir . 'log-' . uniqid() . '.txt';
-            $log_content = "Log created at " . gmdate( 'Y-m-d H:i:s' ) . "\r\n" . $log_message;
-
-            if ( $wp_filesystem->put_contents( $new_log_file, $log_content, FS_CHMOD_FILE ) ) {
-                update_option( 'wcfgs_debug_log_file', $new_log_file );
-            } else {
-                self::gs_debug_log('Failed to write debug log file');
-            }
-        }
-
-    } catch ( Exception $e ) {
-        self::gs_debug_log( $e->getMessage() );
-
-    }
 }
 
     /**
@@ -221,29 +186,44 @@ public static function gs_debug_log( $error ) {
             }
         }
 
-        // Static Administrator role (always on)
-        $selected_row .= "<div class='role-name'><label class='toggle-role'> <input type='checkbox' class='woforms-gs-checkbox' disabled='disabled' checked='checked'/>";
-        $selected_row .= "<span class='slider-role'></span>";
-        $selected_row .= "</label>";
-        $selected_row .= "<label>" . esc_html__( "Administrator", "wc-gsheetconnector" ) . "</label>";
-        $selected_row .= "</div>";
+        
+
+		// Static Administrator role (always enabled)
+        $selected_row .= "<div class='gsc-role-card mb-10'>
+        <div class='custom-check d-flex justify-between alien-center'>
+        <label class='role-label gsc-switch'>" . esc_html__("Administrator", "wc-gsheetconnector") . "</label>
+        <input type='checkbox' class='check-toggle' disabled='disabled' checked='checked'>
+        <label class='button-toggle'></label>
+        </div>
+        </div>";
 
         foreach ($system_roles as $role => $display_name) {
+
             if ($role === "administrator") {
                 continue;
             }
 
-            if (!empty($roles) && is_array($roles) && in_array( esc_attr($role), $roles )) {
-                $checked = " checked='checked' ";
-            } else {
-                $checked = '';
+            $checked = '';
+            if (!empty($roles) && is_array($roles) && in_array(esc_attr($role), $roles)) {
+                $checked = "checked='checked'";
             }
 
-            $selected_row .= "<div class='role-name'><label class='toggle-role'> <input type='checkbox' class='gs-checkbox' name='" . esc_attr($setting_name) . "' value='" . esc_attr($role) . "'$checked />";
-            $selected_row .= "<span class='slider-role'></span>";
-            $selected_row .= "</label>";
-            $selected_row .= "<label>" . esc_html($display_name) . "</label>";
-            $selected_row .= "</div>";
+            $selected_row .= "<div class='gsc-role-card mb-10'>
+            <div class='custom-check d-flex justify-between alien-center'>
+            
+            <label class='role-label gsc-switch'>" . esc_html($display_name) . "</label>
+            
+            <input 
+            type='checkbox' 
+            class='check-toggle' 
+            name='" . esc_attr($setting_name) . "[]' 
+            value='" . esc_attr($role) . "' 
+            $checked
+            >
+            
+            <label class='button-toggle'></label>
+            </div>
+            </div>";
         }
 
         //  Properly escaped final output
@@ -258,12 +238,20 @@ public static function gs_debug_log( $error ) {
 
     public function get_system_roles()
     {
+
         $participating_roles = array();
-        $editable_roles = get_editable_roles();
+        $editable_roles      = get_editable_roles();
 
         foreach ($editable_roles as $role => $details) {
+
+            // Remove unwanted roles
+            if ('subscriber' === $role || 'customer' === $role || 'shop_manager' === $role) {
+                continue;
+            }
+
             $participating_roles[$role] = $details['name'];
         }
+
         return $participating_roles;
     }
 

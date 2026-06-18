@@ -2,15 +2,15 @@
 Contributors: westerndeal, abdullah17, gsheetconnector
 Author URI: https://www.gsheetconnector.com/
 Tags: woocommerce, google sheets, woocommerce export, order export, integration
-Tested up to: 6.9
+Tested up to: 7.0
 Requires at least: 5.3
 Requires PHP: 7.4
 Requires Plugins: woocommerce
-Stable tag: 1.4.7
+Stable tag: 1.4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Google Sheets Integration for WooCommerce – Automatically send WooCommerce orders, products, variations, coupons, and customers to Google Sheets in real-time. Easy setup, automatic sync, and compatibility with WooCommerce core and third-party plugins.
+WooCommerce Google Sheet Connector automatically syncs orders, products, customers, coupons, and variations to Google Sheets.
 
 == Description ==
 
@@ -33,11 +33,9 @@ This plugin is perfect for store owners, marketing teams, and accounting departm
 
 ### 🧪 Check Live Demo
 
-- **Demo Link:**  
-https://woogsheets.gsheetconnector.com/
+Demo Link: [Open Demo](https://woogsheets.gsheetconnector.com/)
 
-- **Google Sheet (View Submitted Data):**  
-https://docs.google.com/spreadsheets/d/1BLkcJLk8bQvSSuIRPHXLDnSNBNmrEVGZ2o44x5uZVlI/edit#gid=1091708451
+Google Sheet (View Submitted Data): [View Sheet](https://docs.google.com/spreadsheets/d/1BLkcJLk8bQvSSuIRPHXLDnSNBNmrEVGZ2o44x5uZVlI/edit#gid=1091708451)
 
 = How to Use this Plugin =
 
@@ -132,6 +130,15 @@ Please double-check those items and hopefully getting them right will fix the is
 Make sure to <a href="https://www.gsheetconnector.com/how-to-enable-debugging-in-wordpress">enable debug log from wp-config.php</a> if submitted order is not showing in sheet, It will helps to show the conflict issue (if there is any) or shows what is making an issue.
 
 == Changelog ==
+
+= 1.4.8 (18-06-2026) =
+* Added: Admin notice slider for plugin announcements, review requests, upgrade prompts, and authentication reminders.
+* Added: Dashboard tab for quick access to plugin information, notices, and settings.
+* Improved: Optimized bundled library files by including only the required components.
+* Fixed: Proper handling and display of error messages when required Google Sheets and Google Drive permissions are not granted in the Integration tab.
+* Fixed: Improved handling of invalid OAuth tokens to prevent repeated debug log entries during page refresh.
+* Fixed: Issues with Activate, Install, and Deactivate actions in the Extensions tab.
+* Fixed: Improved compatibility with PHP 8.x versions.
 
 = 1.4.7 (25-03-2026) =
 * Fixed: Addressed all identified issues to improve overall stability and compliance.
