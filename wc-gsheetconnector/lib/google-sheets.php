@@ -33,8 +33,8 @@ private static function creds()
  *
  * @since 1.0
  *
- * @param string $access_code Google OAuth authorization code.
- * @return void
+ * @param string $code Google OAuth authorization code.
+ * @return bool True when a valid access token was stored, false otherwise.
  */
 public static function preauth($code)
 {
@@ -62,9 +62,6 @@ public static function preauth($code)
 		if (!is_array($body)) {
 			$body = [];
 		}
-
-		$body = json_decode(wp_remote_retrieve_body($response), true);
-
 
 		if (empty($body['access_token'])) {
 			self::updateToken($body);
@@ -957,6 +954,44 @@ public function remove_row_by_order_id( $spreadsheet_id, $tab_name, $order_id, $
 }
 
 /**
+ * Sanitize values before sending them to Google Sheets.
+ *
+ * This method ensures that values written to Google Sheets
+ * are properly formatted. It recursively sanitizes array values
+ * and trims string values.
+ *
+ * If a string starts with a "+" followed by a digit (for example
+ * phone numbers like +919876543210), the value is prefixed with
+ * a single quote to force Google Sheets to treat it as TEXT
+ * instead of converting it to a formula or number.
+ *
+ * This prevents formatting issues when syncing WooCommerce data
+ * such as phone numbers or special identifiers.
+ *
+ * @param mixed $value Value or array of values to sanitize.
+ *
+ * @return mixed Sanitized value or sanitized array.
+ */
+public function gs_sanitize_sheet_value( $value ) {
+
+  if ( is_array( $value ) ) {
+    foreach ( $value as $k => $v ) {
+      $value[ $k ] = $this->gs_sanitize_sheet_value( $v );
+    }
+    return $value;
+  }
+
+  if ( is_string( $value ) ) {
+    $value = trim( $value );
+    if ( preg_match( '/^\+\d/', $value ) ) {
+            return "'" . $value; // force TEXT in Google Sheets
+          }
+        }
+
+        return $value;
+      }
+
+/**
  * Insert or update a row in Google Sheet by order ID.
  *
  * Updates the existing row if the order ID exists,
@@ -1444,6 +1479,7 @@ public function add_row_to_sheet( $spreadsheet_id, $tab_name, $row_data, $order,
 	return false;
 }
 }
+
 /**
  * Get header row cells from a worksheet tab.
  *

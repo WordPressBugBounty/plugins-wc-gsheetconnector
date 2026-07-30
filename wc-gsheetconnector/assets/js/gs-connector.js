@@ -3,36 +3,36 @@ jQuery(document).ready(function () {
    * verify the api code
    * @since 1.0
    */
-   jQuery(document).on("click", "#wcgsc-save-code", function (event) {
-    event.preventDefault();
-    jQuery(".loading-sign").addClass("loading");
-    var data = {
-      action: "wcgsc_verify_integration",
-      code: jQuery("#wcgsc-code").val(),
-      security: jQuery("#wcgsc-ajax-nonce").val(),
-    };
-    jQuery.post(ajaxurl, data, function (response) {
-      var clear_msg = response.data;
+ jQuery(document).on("click", "#wcgsc-save-code", function (event) {
+  event.preventDefault();
+  jQuery(".loading-sign").addClass("loading");
+  var data = {
+    action: "wcgsc_verify_integration",
+    code: jQuery("#wcgsc-code").val(),
+    security: jQuery("#wcgsc-ajax-nonce").val(),
+  };
+  jQuery.post(ajaxurl, data, function (response) {
+    var clear_msg = response.data;
 
-      if (!response.success) {
-        jQuery(".loading-sign").removeClass("loading");
-        jQuery("#gs-woo-validation-message").empty();
-        jQuery(
-          "<span class='gsc-msg gsc-error fw-400 text-dark text-center pt-10 pb-10 manual-margin'>Access code Can't be blank.</span>",
-          ).appendTo("#gs-woo-validation-message");
-      } else {
-        jQuery(".loading-sign").removeClass("loading");
-        jQuery("#gs-woo-validation-message").empty();
-        jQuery(
-          "<div class='gsc-msg gsc-success fw-400 text-dark text-center pt-10 pb-10 manual-margin'>Google account connected successfully. You can now sync your WooCommerce data with Google Sheets.</div>",
-          ).appendTo("#gs-woo-validation-message");
+    if (!response.success) {
+      jQuery(".loading-sign").removeClass("loading");
+      jQuery("#gs-woo-validation-message").empty();
+      jQuery(
+        "<span class='gsc-msg gsc-error fw-400 text-dark text-center pt-10 pb-10 manual-margin'>Access code Can't be blank.</span>",
+        ).appendTo("#gs-woo-validation-message");
+    } else {
+      jQuery(".loading-sign").removeClass("loading");
+      jQuery("#gs-woo-validation-message").empty();
+      jQuery(
+        "<div class='gsc-msg gsc-success fw-400 text-dark text-center pt-10 pb-10 manual-margin'>Google account connected successfully. You can now sync your WooCommerce data with Google Sheets.</div>",
+        ).appendTo("#gs-woo-validation-message");
 
-        setTimeout(function () {
-          window.location.href = jQuery("#redirect_auth").val();
-        }, 1000);
-      }
-    });
+      setTimeout(function () {
+        window.location.href = jQuery("#redirect_auth").val();
+      }, 1000);
+    }
   });
+});
 
   /**
    * deactivate the api code
@@ -48,80 +48,80 @@ jQuery(document).ready(function () {
    */
 
   // Open popup (NO confirm alert)
-  jQuery(document).on("click", "#wcgsc-deactivate-log", function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    jQuery("#wcgsc-confirm-popup").removeClass("d-none");
-  });
+ jQuery(document).on("click", "#wcgsc-deactivate-log", function (e) {
+  e.preventDefault();
+  e.stopPropagation();
+  jQuery("#wcgsc-confirm-popup").removeClass("d-none");
+});
 
   // Cancel popup
-  jQuery(document).on("click", "#wcgsc-popup-cancel", function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    jQuery("#wcgsc-confirm-popup").addClass("d-none");
-  });
+ jQuery(document).on("click", "#wcgsc-popup-cancel", function (e) {
+  e.preventDefault();
+  e.stopPropagation();
+  jQuery("#wcgsc-confirm-popup").addClass("d-none");
+});
 
   // Confirm deactivate (AJAX same as before)
-  jQuery(document).on("click", "#wcgsc-popup-confirm", function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    jQuery("#wcgsc-confirm-popup").addClass("d-none");
-    jQuery(".loading-sign-deactive").addClass("loading");
+ jQuery(document).on("click", "#wcgsc-popup-confirm", function (e) {
+  e.preventDefault();
+  e.stopPropagation();
+  jQuery("#wcgsc-confirm-popup").addClass("d-none");
+  jQuery(".loading-sign-deactive").addClass("loading");
 
-    var data = {
-      action: "wcgsc_deactivate_integration",
-      security: jQuery("#wcgsc-ajax-nonce").val(),
-    };
+  var data = {
+    action: "wcgsc_deactivate_integration",
+    security: jQuery("#wcgsc-ajax-nonce").val(),
+  };
 
-    jQuery.post(ajaxurl, data, function (response) {
-      jQuery(".loading-sign-deactive").removeClass("loading");
-      jQuery("#deactivate-msg").empty();
+  jQuery.post(ajaxurl, data, function (response) {
+    jQuery(".loading-sign-deactive").removeClass("loading");
+    jQuery("#deactivate-msg").empty();
 
-      if (response && response.success) {
-        jQuery(
-          "<div class='gsc-msg gsc-success fw-400 text-dark text-center mt-10 pt-10 pb-10 manual-margin'>Google account disconnected. WooCommerce data will not sync with Google Sheets until it is reconnected.</div>",
-          ).appendTo("#deactivate-msg");
+    if (response && response.success) {
+      jQuery(
+        "<div class='gsc-msg gsc-success fw-400 text-dark text-center mt-10 pt-10 pb-10 manual-margin'>Google account disconnected. WooCommerce data will not sync with Google Sheets until it is reconnected.</div>",
+        ).appendTo("#deactivate-msg");
 
-        setTimeout(function () {
-          location.reload();
-        }, 1000);
-      } else {
-        jQuery(
-          "<div class='gsc-msg gsc-error fw-400 text-dark text-center mt-10 pt-10 pb-10 manual-margin'>Error while deactivation. Please try again.</div>",
-          ).appendTo("#deactivate-msg");
-      }
-    });
+      setTimeout(function () {
+        location.reload();
+      }, 1000);
+    } else {
+      jQuery(
+        "<div class='gsc-msg gsc-error fw-400 text-dark text-center mt-10 pt-10 pb-10 manual-margin'>Error while deactivation. Please try again.</div>",
+        ).appendTo("#deactivate-msg");
+    }
   });
+});
 
   /** hide notice  */
-  jQuery(document).on("click", "#wcgsc-pro-dismiss-header-notice", function () {
-    var nonce = jQuery("#wcgsc-ajax-nonce").val();
+ jQuery(document).on("click", "#wcgsc-pro-dismiss-header-notice", function () {
+  var nonce = jQuery("#wcgsc-ajax-nonce").val();
 
-    jQuery("#pro-notice-bar").hide();
+  jQuery("#pro-notice-bar").hide();
 
-    jQuery.post(ajaxurl, {
-      action: "wcgsc_dismiss_pro_notice",
-      nonce: nonce,
-    });
+  jQuery.post(ajaxurl, {
+    action: "wcgsc_dismiss_pro_notice",
+    nonce: nonce,
   });
+});
 
-  function html_decode(input) {
-    var doc = new DOMParser().parseFromString(input, "text/html");
-    return doc.documentElement.textContent;
-  }
+ function html_decode(input) {
+  var doc = new DOMParser().parseFromString(input, "text/html");
+  return doc.documentElement.textContent;
+}
 
-  jQuery(document).on("click", "#wcgsc-sync", function () {
-    jQuery(this).parent().children(".loading-sign").addClass("loading");
-    var integration = jQuery(this).data("init");
-    var data = {
-      action: "wcgsc_sync_google_account",
-      isajax: "yes",
-      isinit: integration,
-      security: jQuery("#wcgsc-ajax-nonce").val(),
-    };
+jQuery(document).on("click", "#wcgsc-sync", function () {
+  jQuery(this).parent().children(".loading-sign").addClass("loading");
+  var integration = jQuery(this).data("init");
+  var data = {
+    action: "wcgsc_sync_google_account",
+    isajax: "yes",
+    isinit: integration,
+    security: jQuery("#wcgsc-ajax-nonce").val(),
+  };
 
-    jQuery.post(ajaxurl, data, function (response) {
-      if (response == -1) {
+  jQuery.post(ajaxurl, data, function (response) {
+    if (response == -1) {
         return false; // Invalid nonce
       }
 
@@ -139,101 +139,101 @@ jQuery(document).ready(function () {
         location.reload(); // simply reload the page
       }
     });
-  });
+});
 
   /**
    * Clear debug
    */
-   jQuery(document).on("click", ".debug-clear", function () {
-    jQuery(".clear-loading-sign").addClass("loading");
-    var data = {
-      action: "wcgsc_clear_log",
-      security: jQuery("#wcgsc-ajax-nonce").val(),
-    };
-    jQuery.post(ajaxurl, data, function (response) {
-      var clear_msg = response.data;
-      if (response.success) {
-        jQuery(".clear-loading-sign").removeClass("loading");
-        jQuery("#wcgsc-validation-message").empty();
-        jQuery(
-          "<span class='wcgsc-valid-message'>" + clear_msg + "</span>",
-          ).appendTo("#wcgsc-validation-message");
-        setTimeout(function () {
-          location.reload();
-        }, 1000);
-      }
-    });
-  });
-
-   jQuery(document).on("submit", "#gsSettingFormFree", function (event) {
-    console.log("prevent the subitting the form");
-    jQuery("#error_spread").html("");
-    jQuery("#error_gsTabName").html("");
-
-    var submit = true;
-    var spreadsheetsName = jQuery("#wcgsc-sheet-id").val();
-    var gsTabName = jQuery("input.wcgsc_order_state:checked").length;
-
-    if (spreadsheetsName == "") {
-      jQuery("#error_spread").html("* Please Select Spreadsheet Name !");
-      submit = false;
-    }
-    if (gsTabName <= 0) {
-      jQuery("#error_gsTabName").html("* Please select atleast one Tabs !");
-      submit = false;
-    }
-
-    if (submit == false) {
-      event.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+jQuery(document).on("click", ".debug-clear", function () {
+  jQuery(".clear-loading-sign").addClass("loading");
+  var data = {
+    action: "wcgsc_clear_log",
+    security: jQuery("#wcgsc-ajax-nonce").val(),
+  };
+  jQuery.post(ajaxurl, data, function (response) {
+    var clear_msg = response.data;
+    if (response.success) {
+      jQuery(".clear-loading-sign").removeClass("loading");
+      jQuery("#wcgsc-validation-message").empty();
+      jQuery(
+        "<span class='wcgsc-valid-message'>" + clear_msg + "</span>",
+        ).appendTo("#wcgsc-validation-message");
+      setTimeout(function () {
+        location.reload();
+      }, 1000);
     }
   });
+});
 
-   jQuery(".wcgsc-list-set32").hide();
-   jQuery(".wcgsc-list-set33").hide();
-   jQuery(".wcgsc-list-set34").hide();
-   jQuery(".wcgsc-list-set35").hide();
-   jQuery(".wcgsc-list-set36").hide();
-   jQuery(document).on("click", ".wcgsc-list-set", function (event) {
-    var $this = jQuery(this);
-    var $id = $this.attr("data-id");
+jQuery(document).on("submit", "#gsSettingFormFree", function (event) {
+  console.log("prevent the subitting the form");
+  jQuery("#error_spread").html("");
+  jQuery("#error_gsTabName").html("");
 
-    if (
-      $id == "31" ||
-      $id == "32" ||
-      $id == "33" ||
-      $id == "34" ||
-      $id == "35" ||
-      $id == "36"
-      ) {
-      if (jQuery(".wcgsc-list-set" + $id).css("display") == "none") {
-        jQuery(".wcgsc-list-set31").hide();
-        jQuery(".wcgsc-list-set32").hide();
-        jQuery(".wcgsc-list-set33").hide();
-        jQuery(".wcgsc-list-set34").hide();
-        jQuery(".wcgsc-list-set").removeClass("active-t-gs");
-        jQuery(this).addClass("active-t-gs");
-        jQuery(".wcgsc-list-set" + $id).show();
-      } else {
-        if (!$this.hasClass("active-t-gs")) {
-          jQuery(".wcgsc-list-set" + $id).hide();
-        }
-      }
+  var submit = true;
+  var spreadsheetsName = jQuery("#wcgsc-sheet-id").val();
+  var gsTabName = jQuery("input.wcgsc_order_state:checked").length;
+
+  if (spreadsheetsName == "") {
+    jQuery("#error_spread").html("* Please Select Spreadsheet Name !");
+    submit = false;
+  }
+  if (gsTabName <= 0) {
+    jQuery("#error_gsTabName").html("* Please select atleast one Tabs !");
+    submit = false;
+  }
+
+  if (submit == false) {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+});
+
+jQuery(".wcgsc-list-set32").hide();
+jQuery(".wcgsc-list-set33").hide();
+jQuery(".wcgsc-list-set34").hide();
+jQuery(".wcgsc-list-set35").hide();
+jQuery(".wcgsc-list-set36").hide();
+jQuery(document).on("click", ".wcgsc-list-set", function (event) {
+  var $this = jQuery(this);
+  var $id = $this.attr("data-id");
+
+  if (
+    $id == "31" ||
+    $id == "32" ||
+    $id == "33" ||
+    $id == "34" ||
+    $id == "35" ||
+    $id == "36"
+    ) {
+    if (jQuery(".wcgsc-list-set" + $id).css("display") == "none") {
+      jQuery(".wcgsc-list-set31").hide();
+      jQuery(".wcgsc-list-set32").hide();
+      jQuery(".wcgsc-list-set33").hide();
+      jQuery(".wcgsc-list-set34").hide();
+      jQuery(".wcgsc-list-set").removeClass("active-t-gs");
+      jQuery(this).addClass("active-t-gs");
+      jQuery(".wcgsc-list-set" + $id).show();
     } else {
-      if (jQuery(".wcgsc-list-set" + $id).css("display") == "none") {
-        //jQuery(".gs-woo-list-set"+$id).css("display", "block");
-        jQuery(".wcgsc-list-set" + $id).show("slow");
-        jQuery(".mini_mize" + $id).show();
-        jQuery(".maxi_mize" + $id).hide();
-      } else {
-        //jQuery(".gs-woo-list-set"+$id).css("display", "none");
-        jQuery(".wcgsc-list-set" + $id).hide("slow");
-        jQuery(".mini_mize" + $id).hide();
-        jQuery(".maxi_mize" + $id).show();
+      if (!$this.hasClass("active-t-gs")) {
+        jQuery(".wcgsc-list-set" + $id).hide();
       }
     }
-  });
- });
+  } else {
+    if (jQuery(".wcgsc-list-set" + $id).css("display") == "none") {
+        //jQuery(".gs-woo-list-set"+$id).css("display", "block");
+      jQuery(".wcgsc-list-set" + $id).show("slow");
+      jQuery(".mini_mize" + $id).show();
+      jQuery(".maxi_mize" + $id).hide();
+    } else {
+        //jQuery(".gs-woo-list-set"+$id).css("display", "none");
+      jQuery(".wcgsc-list-set" + $id).hide("slow");
+      jQuery(".mini_mize" + $id).hide();
+      jQuery(".maxi_mize" + $id).show();
+    }
+  }
+});
+});
 
 jQuery(document).ready(function () {
   jQuery(".wcgsc-addons-list").each(function () {
@@ -247,7 +247,7 @@ jQuery(document).ready(function () {
 /**
  * Clear debug for system status tab
  */
- jQuery(document).on("click", ".wcgsc-clear-content-logs", function () {
+jQuery(document).on("click", ".wcgsc-clear-content-logs", function () {
   jQuery(".wcgsc-clear-loading-sign-logs").addClass("loading");
   var data = {
     action: "wcgsc_log_systeminfo",
@@ -269,7 +269,7 @@ jQuery(document).ready(function () {
   });
 });
 
- jQuery(document).ready(function ($) {
+jQuery(document).ready(function ($) {
   $("#wcgsc_dro_option").on("change", function () {
     var selectedValue = $(this).val();
 
@@ -370,7 +370,7 @@ jQuery(document).ready(function () {
 
 });
 
- document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".notification-gsc-slide");
   const prevBtn = document.querySelector(".notification-gsc-slider-btn.prev");
   const nextBtn = document.querySelector(".notification-gsc-slider-btn.next");
@@ -483,138 +483,138 @@ jQuery(document).ready(function () {
         const message = (cols[3].innerText || "").trim();
 
       // 🔥 Proper details extraction
-      const detailsCell = cols[4];
-      const details = detailsCell.querySelector("pre")
-      ? detailsCell.querySelector("pre").innerText.trim()
-      : (detailsCell.innerText || "").trim();
+        const detailsCell = cols[4];
+        const details = detailsCell.querySelector("pre")
+        ? detailsCell.querySelector("pre").innerText.trim()
+        : (detailsCell.innerText || "").trim();
 
-      output += `Date: ${date}\n`;
-      output += `Error ID: ${errorId}\n`;
-      output += `Code: ${code}\n`;
-      output += `Message: ${message}\n`;
-      output += `Details: ${details}\n`;
-      output += `\n==========================\n\n`;
-    });
+        output += `Date: ${date}\n`;
+        output += `Error ID: ${errorId}\n`;
+        output += `Code: ${code}\n`;
+        output += `Message: ${message}\n`;
+        output += `Details: ${details}\n`;
+        output += `\n==========================\n\n`;
+      });
 
     // Modern Clipboard API
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard
-      .writeText(output)
-      .then(function () {
-        wcgscshowMessage("Copied successfully.", "success");
-      })
-      .catch(function () {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard
+        .writeText(output)
+        .then(function () {
+          wcgscshowMessage("Copied successfully.", "success");
+        })
+        .catch(function () {
+          wcgscfallbackCopy(output);
+        });
+      } else {
         wcgscfallbackCopy(output);
-      });
-    } else {
-      wcgscfallbackCopy(output);
-    }
+      }
 
     // Fallback Method
-    function wcgscfallbackCopy(text) {
-      const ta = document.createElement("textarea");
-      ta.value = text;
-      document.body.appendChild(ta);
-      ta.select();
-      try {
-        document.execCommand("copy");
-        wcgscshowMessage("Copied successfully.", "success");
-      } catch (err) {
-        wcgscshowMessage("Copy failed. Please copy manually.", "error");
+      function wcgscfallbackCopy(text) {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand("copy");
+          wcgscshowMessage("Copied successfully.", "success");
+        } catch (err) {
+          wcgscshowMessage("Copy failed. Please copy manually.", "error");
+        }
+        document.body.removeChild(ta);
       }
-      document.body.removeChild(ta);
-    }
 
-    function wcgscshowMessage(text, type) {
-      msgDiv.innerText = text;
-      msgDiv.classList.remove("d-none");
+      function wcgscshowMessage(text, type) {
+        msgDiv.innerText = text;
+        msgDiv.classList.remove("d-none");
 
-      setTimeout(function () {
-        msgDiv.classList.add("d-none");
-      }, 2000);
-    }
-  });
+        setTimeout(function () {
+          msgDiv.classList.add("d-none");
+        }, 2000);
+      }
+    });
   }
 });
 
   /* Select box JS  */
-  document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     // ONLY select with class "gsc-select"
-    document.querySelectorAll("select.gsc-select").forEach((select) => {
+  document.querySelectorAll("select.gsc-select").forEach((select) => {
       // skip already processed
-      if (select.classList.contains("auto-processed")) return;
-      select.classList.add("auto-processed");
+    if (select.classList.contains("auto-processed")) return;
+    select.classList.add("auto-processed");
 
       // hide original select
-      select.style.display = "none";
+    select.style.display = "none";
 
-      const wrapper = document.createElement("div");
-      wrapper.className = "auto-select";
+    const wrapper = document.createElement("div");
+    wrapper.className = "auto-select";
 
-      const display = document.createElement("div");
-      display.className = "auto-select-display";
-      display.innerText =
-      select.options[select.selectedIndex]?.text || "Select";
+    const display = document.createElement("div");
+    display.className = "auto-select-display";
+    display.innerText =
+    select.options[select.selectedIndex]?.text || "Select";
 
-      const optionsBox = document.createElement("div");
-      optionsBox.className = "auto-select-options";
+    const optionsBox = document.createElement("div");
+    optionsBox.className = "auto-select-options";
 
-      [...select.options].forEach((opt, index) => {
-        const item = document.createElement("div");
-        item.className = "auto-select-option";
-        item.innerText = opt.text;
+    [...select.options].forEach((opt, index) => {
+      const item = document.createElement("div");
+      item.className = "auto-select-option";
+      item.innerText = opt.text;
 
-        item.addEventListener("click", () => {
-          select.selectedIndex = index;
-          display.innerText = opt.text;
-          optionsBox.style.display = "none";
+      item.addEventListener("click", () => {
+        select.selectedIndex = index;
+        display.innerText = opt.text;
+        optionsBox.style.display = "none";
 
           // trigger change event (WordPress + plugins compatible)
-          select.dispatchEvent(new Event("change", { bubbles: true }));
-        });
-
-        optionsBox.appendChild(item);
+        select.dispatchEvent(new Event("change", { bubbles: true }));
       });
 
-      display.addEventListener("click", (e) => {
-        e.stopPropagation();
-        optionsBox.style.display =
-        optionsBox.style.display === "block" ? "none" : "block";
-      });
+      optionsBox.appendChild(item);
+    });
 
-      wrapper.appendChild(display);
-      wrapper.appendChild(optionsBox);
+    display.addEventListener("click", (e) => {
+      e.stopPropagation();
+      optionsBox.style.display =
+      optionsBox.style.display === "block" ? "none" : "block";
+    });
+
+    wrapper.appendChild(display);
+    wrapper.appendChild(optionsBox);
 
       // insert before select & move select inside
-      select.parentNode.insertBefore(wrapper, select);
-      wrapper.appendChild(select);
-    });
+    select.parentNode.insertBefore(wrapper, select);
+    wrapper.appendChild(select);
+  });
 
     // close dropdown on outside click
-    document.addEventListener("click", function (e) {
-      document.querySelectorAll(".auto-select-options").forEach((box) => {
-        if (!box.parentElement.contains(e.target)) {
-          box.style.display = "none";
-        }
-      });
+  document.addEventListener("click", function (e) {
+    document.querySelectorAll(".auto-select-options").forEach((box) => {
+      if (!box.parentElement.contains(e.target)) {
+        box.style.display = "none";
+      }
     });
+  });
 
 });
 
-  
 
-  
+
+
 
 
 
 /**jQuery for save uninstall settings */
 jQuery(document).ready(function ($) {
 // uninstall plugin settings
-const $wcgsc_unistall_checkbox = $("#gs_woo_unistall_settings");
-const $wcgsc_unistall_saveBtn = $(".wcgsc-uninstall-settings-save");
-const $wcgsc_unistall_msg = $("#wcgsc-uninstall-msg");
-const $wcgsc_unistall_loader = $(".wcgsc-loading-uninstall");
-const $wcgsc_unistall_popup = $("#wcgsc-uninstall-free");
+  const $wcgsc_unistall_checkbox = $("#gs_woo_unistall_settings");
+  const $wcgsc_unistall_saveBtn = $(".wcgsc-uninstall-settings-save");
+  const $wcgsc_unistall_msg = $("#wcgsc-uninstall-msg");
+  const $wcgsc_unistall_loader = $(".wcgsc-loading-uninstall");
+  const $wcgsc_unistall_popup = $("#wcgsc-uninstall-free");
 
   // Page load → disable button
   $wcgsc_unistall_saveBtn.prop("disabled", true).addClass("common-disable");
@@ -640,142 +640,191 @@ const $wcgsc_unistall_popup = $("#wcgsc-uninstall-free");
      POPUP CONFIRM BUTTON
      ========================= */
 
-     $("#wcgsc-confirm-enable-uninstall").on("click", function () {
-      $wcgsc_unistall_checkbox.prop("checked", true);
+  $("#wcgsc-confirm-enable-uninstall").on("click", function () {
+    $wcgsc_unistall_checkbox.prop("checked", true);
 
-      $wcgsc_unistall_popup.addClass("d-none");
+    $wcgsc_unistall_popup.addClass("d-none");
 
-      $wcgsc_unistall_saveBtn.prop("disabled", false).removeClass("common-disable");
-    });
+    $wcgsc_unistall_saveBtn.prop("disabled", false).removeClass("common-disable");
+  });
 
   /* =========================
      POPUP CANCEL BUTTON
      ========================= */
 
-     $("#wcgsc-free-uninstall-cancel").on("click", function () {
-      $wcgsc_unistall_checkbox.prop("checked", false);
+  $("#wcgsc-free-uninstall-cancel").on("click", function () {
+    $wcgsc_unistall_checkbox.prop("checked", false);
 
-      $wcgsc_unistall_popup.addClass("d-none");
-    });
+    $wcgsc_unistall_popup.addClass("d-none");
+  });
 
   /* =========================
      SAVE SETTINGS
      ========================= */
 
-     $wcgsc_unistall_saveBtn.on("click", function (e) {
-      e.preventDefault();
-      var isChecked = $wcgsc_unistall_checkbox.is(":checked");
-      $.ajax({
-        url: ajaxurl,
-        type: "POST",
-        dataType: "json",
-        data: {
-          action: "wcgsc_save_uninstall_settings",
-          uninstall_setting: isChecked ? 1 : 0,
-          security: $("#wcgsc-uninstall-ajax-nonce").val(),
-        },
+  $wcgsc_unistall_saveBtn.on("click", function (e) {
+    e.preventDefault();
+    var isChecked = $wcgsc_unistall_checkbox.is(":checked");
+    $.ajax({
+      url: ajaxurl,
+      type: "POST",
+      dataType: "json",
+      data: {
+        action: "wcgsc_save_uninstall_settings",
+        uninstall_setting: isChecked ? 1 : 0,
+        security: $("#wcgsc-uninstall-ajax-nonce").val(),
+      },
 
-        beforeSend: function () {
-          $wcgsc_unistall_loader.addClass("loading");
-          $wcgsc_unistall_saveBtn.prop("disabled", true).addClass("common-disable");
-        },
+      beforeSend: function () {
+        $wcgsc_unistall_loader.addClass("loading");
+        $wcgsc_unistall_saveBtn.prop("disabled", true).addClass("common-disable");
+      },
 
-        success: function (response) {
-          if (!response.success) return;
+      success: function (response) {
+        if (!response.success) return;
 
-          $wcgsc_unistall_msg.removeClass("gsc-success gsc-error d-none");
+        $wcgsc_unistall_msg.removeClass("gsc-success gsc-error d-none");
 
-          $wcgsc_unistall_msg
-          .addClass("gsc-success")
-          .text("Plugin preferences updated successfully.");
+        $wcgsc_unistall_msg
+        .addClass("gsc-success")
+        .text("Plugin preferences updated successfully.");
 
-          setTimeout(function () {
-            $wcgsc_unistall_msg.addClass("d-none").text("");
-          }, 2000);
-        },
+        setTimeout(function () {
+          $wcgsc_unistall_msg.addClass("d-none").text("");
+        }, 2000);
+      },
 
-        error: function () {
-          $wcgsc_unistall_msg
-          .removeClass("d-none")
-          .addClass("gsc-error")
-          .text("Something went wrong");
+      error: function () {
+        $wcgsc_unistall_msg
+        .removeClass("d-none")
+        .addClass("gsc-error")
+        .text("Something went wrong");
 
-          $wcgsc_unistall_saveBtn.prop("disabled", false).removeClass("common-disable");
-        },
+        $wcgsc_unistall_saveBtn.prop("disabled", false).removeClass("common-disable");
+      },
 
-        complete: function () {
-          $wcgsc_unistall_loader.removeClass("loading");
-        },
-      });
+      complete: function () {
+        $wcgsc_unistall_loader.removeClass("loading");
+      },
     });
-   });
+  });
+});
 /**
  * Scroll to auth code field after OAuth redirect
  */
 function wcgscScrollToAuthCode() {
-    const code = new URLSearchParams(window.location.search).get("code");
+  const code = new URLSearchParams(window.location.search).get("code");
 
-    if (!code) {
-        return;
+  if (!code) {
+    return;
+  }
+
+  const selectors = ["#wcgsc-code"];
+
+  let target = null;
+
+  for (let sel of selectors) {
+    if (document.querySelector(sel)) {
+      target = sel;
+      break;
     }
+  }
 
-    const selectors = ["#wcgsc-code"];
+  if (target) {
+    window.location.hash = target.replace("#", "");
 
-    let target = null;
-
-    for (let sel of selectors) {
-        if (document.querySelector(sel)) {
-            target = sel;
-            break;
-        }
-    }
-
-    if (target) {
-        window.location.hash = target.replace("#", "");
-
-        document.querySelector(target).scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-        });
-    }
+    document.querySelector(target).scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
 }
 jQuery(document).ready(function () {
-    wcgscScrollToAuthCode();
+  wcgscScrollToAuthCode();
 });
 
 /****Extenxion Counter****/
-  jQuery(document).ready(function ($) {
-    $(".wc-free-counter").each(function () {
-      let $this = $(this);
-      let countTo = parseFloat($this.attr("data-count"));
+jQuery(document).ready(function ($) {
+  $(".wc-free-counter").each(function () {
+    let $this = $(this);
+    let countTo = parseFloat($this.attr("data-count"));
 
-      $({ countNum: 0 }).animate(
-      {
-        countNum: countTo,
+    $({ countNum: 0 }).animate(
+    {
+      countNum: countTo,
+    },
+    {
+      duration: 2500,
+      easing: "swing",
+
+      step: function () {
+        if (countTo % 1 !== 0) {
+          $this.text(this.countNum.toFixed(1));
+        } else {
+          $this.text(Math.floor(this.countNum));
+        }
       },
-      {
-        duration: 2500,
-        easing: "swing",
 
-        step: function () {
-          if (countTo % 1 !== 0) {
-            $this.text(this.countNum.toFixed(1));
-          } else {
-            $this.text(Math.floor(this.countNum));
-          }
-        },
-
-        complete: function () {
-          if (countTo % 1 !== 0) {
-            $this.text(countTo.toFixed(1));
-          } else {
-            $this.text(countTo);
-          }
-        },
+      complete: function () {
+        if (countTo % 1 !== 0) {
+          $this.text(countTo.toFixed(1));
+        } else {
+          $this.text(countTo);
+        }
       },
+    },
+    );
+  }); 
+
+  function wcgscfreeLoadFeedPage(page) {
+    $.post(
+      ajaxurl,
+      {
+        action: "wcgsc_free_paginate_feed_list",
+        paged: page,
+        security: $("#wcgsc-pagination-nonce").val()
+      },
+      function (res) {
+        if (res.success) {
+          let rows = res.data.rows_html;
+          let pagination = res.data.pagination_html;
+
+                // Inject table rows
+          $("#wcgsc-feed-table-body").html(rows);
+
+                // Inject pagination links
+          $("#wcgsc-pagination-wrap").html(pagination);
+
+                // Toggle headers and pagination visibility based on feed existence
+          if (!res.data.has_feeds) {
+            $("#wcgsc-feed-table thead").hide();
+            $("#wcgsc-pagination-wrap").hide();
+          } else {
+            $("#wcgsc-feed-table thead").show();
+            $("#wcgsc-pagination-wrap").show();
+          }
+
+          $("#wcgsc-feed-table").attr("data-page", page);
+        }
+      }
       );
-    });  
+  }
+
+// Initial load
+  $(document).ready(function () {
+    wcgscfreeLoadFeedPage(1);
   });
+
+// Event delegation for pagination buttons
+  $(document).on("click", ".wcgsc-page-link", function (e) {
+    e.preventDefault();
+    let page = $(this).data("page");
+    if (page) {
+      wcgscfreeLoadFeedPage(page);
+    }
+  });
+
+});
   /***new slider for without permission for existing method */
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".gsc-slider-wrapper").forEach(function (wrapper) {
@@ -811,21 +860,21 @@ document.addEventListener("DOMContentLoaded", function () {
      AUTO MOVE TO STEP 4
      ========================== */
 
-     setTimeout(function () {
-      const errorBox = document.querySelector(".wcgsc-free-permission-error");
-      const target = document.querySelector(".wc-free-connection-guide-slider");
+  setTimeout(function () {
+    const errorBox = document.querySelector(".wcgsc-free-permission-error");
+    const target = document.querySelector(".wc-free-connection-guide-slider");
 
-      if (!errorBox) {
-        console.log("No permission error.");
-        return;
-      }
+    if (!errorBox) {
+      console.log("No permission error.");
+      return;
+    }
 
-      if (!target) {
-        console.log("Slider not found.");
-        return;
-      }
+    if (!target) {
+      console.log("Slider not found.");
+      return;
+    }
 
-      if (target.goToSlide) {
+    if (target.goToSlide) {
       target.goToSlide(3); // Step-4
       target.scrollIntoView({
         behavior: "smooth",
@@ -836,4 +885,4 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("goToSlide not available.");
     }
   }, 800);
-   });
+});

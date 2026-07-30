@@ -95,17 +95,16 @@ if (!class_exists('wcgsc_error_logs')) {
             ) {
                 return false;
             }
-            //    IMPORTANT FIX START
+            // Normalize string details into an array (decode JSON when possible).
             if (is_string($details)) {
                 $decoded = json_decode($details, true);
 
                 if (json_last_error() === JSON_ERROR_NONE) {
-                    $details = $decoded; // already JSON → convert to array
+                    $details = $decoded;
                 } else {
                     $details = ['raw_error' => $details];
                 }
             }
-            //    IMPORTANT FIX END
 
             // Prevent duplicate error log entries for identical errors within 30 minutes.
             // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching

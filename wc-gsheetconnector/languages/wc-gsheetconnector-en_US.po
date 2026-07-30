@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce GSheetConnector\n"
-"POT-Creation-Date: 2026-06-17 21:34+0530\n"
-"PO-Revision-Date: 2026-06-17 21:35+0530\n"
+"POT-Creation-Date: 2026-07-30 19:13+0530\n"
+"PO-Revision-Date: 2026-07-30 19:13+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -10,31 +10,30 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Poedit 3.9\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: wc-gsheetconnector.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: includes/class-wc-gsheetconnector-error-logs.php:217
+#: includes/class-wc-gsheetconnector-error-logs.php:216
 msgid "Invalid log table name."
 msgstr "Invalid log table name."
 
-#: includes/class-wc-gsheetconnector-error-logs.php:237
+#: includes/class-wc-gsheetconnector-error-logs.php:236
 msgid "Log table not found."
 msgstr "Log table not found."
 
-#: includes/class-wc-gsheetconnector-error-logs.php:267
+#: includes/class-wc-gsheetconnector-error-logs.php:266
 #: includes/pages/system-status/wc-gsheetconnector-systeminfo.php:879
 msgid "Error Log"
 msgstr "Error Log"
 
-#: includes/class-wc-gsheetconnector-error-logs.php:269
+#: includes/class-wc-gsheetconnector-error-logs.php:268
 msgid ""
 "Error logs are saved in the database. Please clear them regularly to avoid "
 "increasing the database size."
@@ -42,55 +41,55 @@ msgstr ""
 "Error logs are saved in the database. Please clear them regularly to avoid "
 "increasing the database size."
 
-#: includes/class-wc-gsheetconnector-error-logs.php:279
+#: includes/class-wc-gsheetconnector-error-logs.php:278
 #: includes/pages/system-status/wc-gsheetconnector-systeminfo.php:887
 msgid "Clear Logs"
 msgstr "Clear Logs"
 
-#: includes/class-wc-gsheetconnector-error-logs.php:288
+#: includes/class-wc-gsheetconnector-error-logs.php:287
 #: includes/pages/system-status/wc-gsheetconnector-systeminfo.php:892
 msgid "Download CSV"
 msgstr "Download CSV"
 
-#: includes/class-wc-gsheetconnector-error-logs.php:292
+#: includes/class-wc-gsheetconnector-error-logs.php:291
 #: includes/pages/system-status/wc-gsheetconnector-systeminfo.php:897
 msgid "Copy Logs"
 msgstr "Copy Logs"
 
-#: includes/class-wc-gsheetconnector-error-logs.php:304
+#: includes/class-wc-gsheetconnector-error-logs.php:303
 #: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1583
 msgid "Date"
 msgstr "Date"
 
-#: includes/class-wc-gsheetconnector-error-logs.php:305
+#: includes/class-wc-gsheetconnector-error-logs.php:304
 msgid "Error ID"
 msgstr "Error ID"
 
-#: includes/class-wc-gsheetconnector-error-logs.php:306
+#: includes/class-wc-gsheetconnector-error-logs.php:305
 msgid "Code"
 msgstr "Code"
 
-#: includes/class-wc-gsheetconnector-error-logs.php:307
+#: includes/class-wc-gsheetconnector-error-logs.php:306
 msgid "Message"
 msgstr "Message"
 
-#: includes/class-wc-gsheetconnector-error-logs.php:308
+#: includes/class-wc-gsheetconnector-error-logs.php:307
 msgid "Details"
 msgstr "Details"
 
-#: includes/class-wc-gsheetconnector-error-logs.php:368
+#: includes/class-wc-gsheetconnector-error-logs.php:367
 msgid "No logs found."
 msgstr "No logs found."
 
-#: includes/class-wc-gsheetconnector-error-logs.php:493
+#: includes/class-wc-gsheetconnector-error-logs.php:502
 msgid "Permission denied."
 msgstr "Permission denied."
 
-#: includes/class-wc-gsheetconnector-utility.php:80
+#: includes/class-wc-gsheetconnector-utility.php:95
 msgid "There's something wrong with your code..."
 msgstr "There's something wrong with your code..."
 
-#: includes/class-wc-gsheetconnector-utility.php:194
+#: includes/class-wc-gsheetconnector-utility.php:228
 #: includes/pages/wc-gsheetconnector-dashboard-widget.php:67
 #: includes/pages/wc-gsheetconnector-dashboard-widget.php:76
 msgid "Administrator"
@@ -626,6 +625,7 @@ msgstr "- Close Feeds"
 
 #: includes/pages/feeds/wc-gsheetconnector-feed-settings.php:25
 #: includes/pages/feeds/wc-gsheetconnector-feed-settings.php:102
+#: includes/pages/wc-dashboard.php:95
 msgid "Feed Name"
 msgstr "Feed Name"
 
@@ -748,7 +748,6 @@ msgstr "Rename Feed"
 #: includes/pages/feeds/wc-gsheetconnector-feed-settings.php:381
 #: includes/pages/feeds/wc-gsheetconnector-feed-settings.php:446
 #: includes/pages/feeds/wc-gsheetconnector-feed-settings.php:511
-#: includes/pages/settings/wc-gsheetconnector-role-settings-free.php:49
 msgid "Save"
 msgstr "Save"
 
@@ -855,11 +854,12 @@ msgstr "Integration"
 
 #: includes/pages/google-sheet-settings.php:31
 #: includes/pages/google-sheet-settings.php:395
+#: includes/pages/integration/class-wc-gsheetconnector-processes.php:101
 msgid "WooCommerce Data Settings"
 msgstr "WooCommerce Data Settings"
 
 #: includes/pages/google-sheet-settings.php:33
-#: includes/pages/google-sheet-settings.php:397 wc-gsheetconnector.php:888
+#: includes/pages/google-sheet-settings.php:397 wc-gsheetconnector.php:825
 msgid "Settings"
 msgstr "Settings"
 
@@ -894,6 +894,7 @@ msgid "Existing"
 msgstr "Existing"
 
 #: includes/pages/google-sheet-settings.php:74
+#: includes/pages/wc-dashboard.php:39
 msgid "Auth Required"
 msgstr "Auth Required"
 
@@ -1025,37 +1026,37 @@ msgstr ""
 "customization features."
 
 #: includes/pages/google-sheet-settings.php:491
-#: includes/pages/wc-dashboard.php:300
+#: includes/pages/wc-dashboard.php:399
 msgid "Google Sheets API v4"
 msgstr "Google Sheets API v4"
 
 #: includes/pages/google-sheet-settings.php:492
-#: includes/pages/wc-dashboard.php:301
+#: includes/pages/wc-dashboard.php:400
 msgid "One-Click Authentication"
 msgstr "One-Click Authentication"
 
 #: includes/pages/google-sheet-settings.php:493
-#: includes/pages/wc-dashboard.php:302
+#: includes/pages/wc-dashboard.php:401
 msgid "Authenticated Email Display"
 msgstr "Authenticated Email Display"
 
 #: includes/pages/google-sheet-settings.php:494
-#: includes/pages/wc-dashboard.php:303
+#: includes/pages/wc-dashboard.php:402
 msgid "Click & Fetch Automation"
 msgstr "Click & Fetch Automation"
 
 #: includes/pages/google-sheet-settings.php:495
-#: includes/pages/wc-dashboard.php:304
+#: includes/pages/wc-dashboard.php:403
 msgid "Create New Spreadsheet"
 msgstr "Create New Spreadsheet"
 
 #: includes/pages/google-sheet-settings.php:496
-#: includes/pages/wc-dashboard.php:308
+#: includes/pages/wc-dashboard.php:407
 msgid "Automated Sheet & Tab"
 msgstr "Automated Sheet & Tab"
 
 #: includes/pages/google-sheet-settings.php:497
-#: includes/pages/wc-dashboard.php:309
+#: includes/pages/wc-dashboard.php:408
 msgid "Multiple Feeds to Sheets"
 msgstr "Multiple Feeds to Sheets"
 
@@ -1102,42 +1103,42 @@ msgid "Cron Settings "
 msgstr "Cron Settings "
 
 #: includes/pages/google-sheet-settings.php:513
-#: includes/pages/wc-dashboard.php:310
+#: includes/pages/wc-dashboard.php:409
 msgid "Drag-and-Drop Column Order"
 msgstr "Drag-and-Drop Column Order"
 
 #: includes/pages/google-sheet-settings.php:514
-#: includes/pages/wc-dashboard.php:313
+#: includes/pages/wc-dashboard.php:412
 msgid "Freeze & Color Headers"
 msgstr "Freeze & Color Headers"
 
 #: includes/pages/google-sheet-settings.php:515
-#: includes/pages/wc-dashboard.php:316
+#: includes/pages/wc-dashboard.php:415
 msgid "Sync Past Entries"
 msgstr "Sync Past Entries"
 
 #: includes/pages/google-sheet-settings.php:516
-#: includes/pages/wc-dashboard.php:317
+#: includes/pages/wc-dashboard.php:416
 msgid "Role Management"
 msgstr "Role Management"
 
 #: includes/pages/google-sheet-settings.php:517
-#: includes/pages/wc-dashboard.php:318
+#: includes/pages/wc-dashboard.php:417
 msgid "Quick Configuration"
 msgstr "Quick Configuration"
 
 #: includes/pages/google-sheet-settings.php:518
-#: includes/pages/wc-dashboard.php:319
+#: includes/pages/wc-dashboard.php:418
 msgid "Multi-Language Support"
 msgstr "Multi-Language Support"
 
 #: includes/pages/google-sheet-settings.php:519
-#: includes/pages/wc-dashboard.php:320
+#: includes/pages/wc-dashboard.php:419
 msgid "Multi-Site Support"
 msgstr "Multi-Site Support"
 
 #: includes/pages/google-sheet-settings.php:520
-#: includes/pages/wc-dashboard.php:321
+#: includes/pages/wc-dashboard.php:420
 msgid "Latest WP & PHP Support"
 msgstr "Latest WP & PHP Support"
 
@@ -1149,11 +1150,22 @@ msgstr "Upgrad Now"
 msgid "Free vs Pro"
 msgstr "Free vs Pro"
 
-#: includes/pages/integration/class-wc-gsheetconnector-processes.php:139
+#: includes/pages/integration/class-wc-gsheetconnector-processes.php:87
+#: includes/pages/wc-gsheetconnector-dashboard-widget.php:21
+msgid "Google Sheet Not Connected"
+msgstr "Google Sheet Not Connected"
+
+#: includes/pages/integration/class-wc-gsheetconnector-processes.php:114
+#, fuzzy
+#| msgid "Connected"
+msgid "Not connected"
+msgstr "Connected"
+
+#: includes/pages/integration/class-wc-gsheetconnector-processes.php:231
 msgid "WooCommerce - GSheetConnector"
 msgstr "WooCommerce - GSheetConnector"
 
-#: includes/pages/integration/class-wc-gsheetconnector-processes.php:330
+#: includes/pages/integration/class-wc-gsheetconnector-processes.php:423
 #: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:86
 msgid "Select"
 msgstr "Select"
@@ -1167,6 +1179,7 @@ msgid "Choose Google API Setting"
 msgstr "Choose Google API Setting"
 
 #: includes/pages/integration/wc-gsheetconnector-integration.php:29
+#: includes/pages/wc-dashboard.php:36
 msgid "Existing Client / Secret Key (Auto Setup)"
 msgstr "Existing Client / Secret Key (Auto Setup)"
 
@@ -1179,6 +1192,7 @@ msgid "Service Account (Recommended)"
 msgstr "Service Account (Recommended)"
 
 #: includes/pages/integration/wc-gsheetconnector-integration.php:53
+#: includes/pages/wc-dashboard.php:47
 msgid "Google Account Connection"
 msgstr "Google Account Connection"
 
@@ -1718,17 +1732,17 @@ msgid "Version Control"
 msgstr "Version Control"
 
 #: includes/pages/settings/google-sheet-inner-settings.php:68
-#: includes/pages/wc-dashboard.php:253
+#: includes/pages/wc-dashboard.php:352
 msgid "Need more support? We're here to help."
 msgstr "Need more support? We're here to help."
 
 #: includes/pages/settings/google-sheet-inner-settings.php:71
-#: includes/pages/wc-dashboard.php:256
+#: includes/pages/wc-dashboard.php:355
 msgid "Submit a Support Ticket"
 msgstr "Submit a Support Ticket"
 
 #: includes/pages/settings/google-sheet-inner-settings.php:91
-#: includes/pages/wc-dashboard.php:276
+#: includes/pages/wc-dashboard.php:375
 msgid "Our fast and friendly support team is always happy to help!"
 msgstr "Our fast and friendly support team is always happy to help!"
 
@@ -1991,14 +2005,6 @@ msgstr "Disable this option to import plain text without HTML formatting."
 msgid "Use this option only if your sheet contains valid HTML content."
 msgstr "Use this option only if your sheet contains valid HTML content."
 
-#: includes/pages/settings/wc-gsheetconnector-role-settings-free.php:8
-msgid "Permission not allowed."
-msgstr "Permission not allowed."
-
-#: includes/pages/settings/wc-gsheetconnector-role-settings-free.php:28
-msgid "Roles that can access Google Sheet Page"
-msgstr "Roles that can access Google Sheet Page"
-
 #: includes/pages/system-status/wc-gsheetconnector-systeminfo.php:10
 msgid "You do not have permission to access this page."
 msgstr "You do not have permission to access this page."
@@ -2038,6 +2044,7 @@ msgid "Plugin Subscription Plan"
 msgstr "Plugin Subscription Plan"
 
 #: includes/pages/system-status/wc-gsheetconnector-systeminfo.php:102
+#: includes/pages/wc-dashboard.php:62
 msgid "Connected Email Account"
 msgstr "Connected Email Account"
 
@@ -2405,15 +2412,30 @@ msgstr ""
 "Elementor Forms, along with 10+ additional WordPress integrations for "
 "efficient data management."
 
-#: includes/pages/wc-dashboard.php:25
+#: includes/pages/wc-dashboard.php:83
+#, fuzzy
+#| msgid "Connected"
+msgid " Connected"
+msgstr "Connected"
+
+#: includes/pages/wc-dashboard.php:96
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:84
+msgid "Sheet Name"
+msgstr "Sheet Name"
+
+#: includes/pages/wc-dashboard.php:105
+msgid "Loading..."
+msgstr ""
+
+#: includes/pages/wc-dashboard.php:121
 msgid "Let's Connect"
 msgstr "Let's Connect"
 
-#: includes/pages/wc-dashboard.php:35
+#: includes/pages/wc-dashboard.php:134
 msgid "Setup Guide & Troubleshooting"
 msgstr "Setup Guide & Troubleshooting"
 
-#: includes/pages/wc-dashboard.php:38
+#: includes/pages/wc-dashboard.php:137
 msgid ""
 "Sync WooCommerce data with Google Sheets in real-time effortlessly and "
 "accurately."
@@ -2421,131 +2443,131 @@ msgstr ""
 "Sync WooCommerce data with Google Sheets in real-time effortlessly and "
 "accurately."
 
-#: includes/pages/wc-dashboard.php:45
+#: includes/pages/wc-dashboard.php:144
 msgid "Getting Started"
 msgstr "Getting Started"
 
-#: includes/pages/wc-dashboard.php:47
+#: includes/pages/wc-dashboard.php:146
 msgid "Installation Process"
 msgstr "Installation Process"
 
-#: includes/pages/wc-dashboard.php:48
+#: includes/pages/wc-dashboard.php:147
 msgid "Integration with Google (Existing Method)"
 msgstr "Integration with Google (Existing Method)"
 
-#: includes/pages/wc-dashboard.php:49
+#: includes/pages/wc-dashboard.php:148
 msgid "Integration of WooCommerce with Google Sheet"
 msgstr "Integration of WooCommerce with Google Sheet"
 
-#: includes/pages/wc-dashboard.php:53
+#: includes/pages/wc-dashboard.php:152
 msgid "Docs & Troubleshooting"
 msgstr "Docs & Troubleshooting"
 
-#: includes/pages/wc-dashboard.php:55
+#: includes/pages/wc-dashboard.php:154
 msgid "How to Enable Debugging in WordPress"
 msgstr "How to Enable Debugging in WordPress"
 
-#: includes/pages/wc-dashboard.php:56
+#: includes/pages/wc-dashboard.php:155
 msgid "Invalid OAuth2 token"
 msgstr "Invalid OAuth2 token"
 
-#: includes/pages/wc-dashboard.php:57
+#: includes/pages/wc-dashboard.php:156
 msgid "Change Date/Time Format and Time Zone in Google Sheets"
 msgstr "Change Date/Time Format and Time Zone in Google Sheets"
 
-#: includes/pages/wc-dashboard.php:64
+#: includes/pages/wc-dashboard.php:163
 msgid "Additional Resources"
 msgstr "Additional Resources"
 
-#: includes/pages/wc-dashboard.php:66
+#: includes/pages/wc-dashboard.php:165
 msgid "Integration with Google (Manual Method)"
 msgstr "Integration with Google (Manual Method)"
 
-#: includes/pages/wc-dashboard.php:67
+#: includes/pages/wc-dashboard.php:166
 msgid "Integration with Google (Service Method)"
 msgstr "Integration with Google (Service Method)"
 
-#: includes/pages/wc-dashboard.php:68
+#: includes/pages/wc-dashboard.php:167
 msgid "WooCommerce Data Settings – PRO Version"
 msgstr "WooCommerce Data Settings – PRO Version"
 
-#: includes/pages/wc-dashboard.php:69
+#: includes/pages/wc-dashboard.php:168
 msgid "Feed Settings  – PRO Version"
 msgstr "Feed Settings  – PRO Version"
 
-#: includes/pages/wc-dashboard.php:70
+#: includes/pages/wc-dashboard.php:169
 msgid "Settings Tab – PRO Version"
 msgstr "Settings Tab – PRO Version"
 
-#: includes/pages/wc-dashboard.php:71
+#: includes/pages/wc-dashboard.php:170
 msgid "Role Settings – PRO Version"
 msgstr "Role Settings – PRO Version"
 
-#: includes/pages/wc-dashboard.php:72
+#: includes/pages/wc-dashboard.php:171
 msgid "2-Way Sync - PRO Version"
 msgstr "2-Way Sync - PRO Version"
 
-#: includes/pages/wc-dashboard.php:73
+#: includes/pages/wc-dashboard.php:172
 msgid "Third-Party Plugins Compatibility"
 msgstr "Third-Party Plugins Compatibility"
 
-#: includes/pages/wc-dashboard.php:84
+#: includes/pages/wc-dashboard.php:183
 msgid "Plugins by Category"
 msgstr "Plugins by Category"
 
-#: includes/pages/wc-dashboard.php:87
+#: includes/pages/wc-dashboard.php:186
 msgid "Find the perfect connector for your WordPress workflow."
 msgstr "Find the perfect connector for your WordPress workflow."
 
-#: includes/pages/wc-dashboard.php:102
+#: includes/pages/wc-dashboard.php:201
 msgid "Contact Form Connectors"
 msgstr "Contact Form Connectors"
 
-#: includes/pages/wc-dashboard.php:105
+#: includes/pages/wc-dashboard.php:204
 msgid "6 plugins available"
 msgstr "6 plugins available"
 
-#: includes/pages/wc-dashboard.php:126
+#: includes/pages/wc-dashboard.php:225
 msgid "eCommerce Connectors"
 msgstr "eCommerce Connectors"
 
-#: includes/pages/wc-dashboard.php:129
+#: includes/pages/wc-dashboard.php:228
 msgid "2 plugins available"
 msgstr "2 plugins available"
 
-#: includes/pages/wc-dashboard.php:150
+#: includes/pages/wc-dashboard.php:249
 msgid "Page Builder Forms"
 msgstr "Page Builder Forms"
 
-#: includes/pages/wc-dashboard.php:153
+#: includes/pages/wc-dashboard.php:252
 msgid "3 plugins available"
 msgstr "3 plugins available"
 
-#: includes/pages/wc-dashboard.php:199
+#: includes/pages/wc-dashboard.php:298
 msgid "WP Core Connector"
 msgstr "WP Core Connector"
 
-#: includes/pages/wc-dashboard.php:202
+#: includes/pages/wc-dashboard.php:301
 msgid "1 plugin available"
 msgstr "1 plugin available"
 
-#: includes/pages/wc-dashboard.php:224
+#: includes/pages/wc-dashboard.php:323
 msgid "Free Plugins"
 msgstr "Free Plugins"
 
-#: includes/pages/wc-dashboard.php:227
+#: includes/pages/wc-dashboard.php:326
 msgid "12 plugins available"
 msgstr "12 plugins available"
 
-#: includes/pages/wc-dashboard.php:289
+#: includes/pages/wc-dashboard.php:388
 msgid "Amazing Key Features"
 msgstr "Amazing Key Features"
 
-#: includes/pages/wc-dashboard.php:290
+#: includes/pages/wc-dashboard.php:389
 msgid "Everything You Need to Sync Data"
 msgstr "Everything You Need to Sync Data"
 
-#: includes/pages/wc-dashboard.php:292
+#: includes/pages/wc-dashboard.php:391
 msgid ""
 "Common features shared across every GSheetConnector Pro add-on built for "
 "reliability, flexibility, and scale."
@@ -2553,69 +2575,65 @@ msgstr ""
 "Common features shared across every GSheetConnector Pro add-on built for "
 "reliability, flexibility, and scale."
 
-#: includes/pages/wc-dashboard.php:305
+#: includes/pages/wc-dashboard.php:404
 msgid "Manual Sheet / Tab Name"
 msgstr "Manual Sheet / Tab Name"
 
-#: includes/pages/wc-dashboard.php:311
+#: includes/pages/wc-dashboard.php:410
 msgid "Headers On / Off + Rename"
 msgstr "Headers On / Off + Rename"
 
-#: includes/pages/wc-dashboard.php:312
+#: includes/pages/wc-dashboard.php:411
 msgid "Image / PDF Attachment Link"
 msgstr "Image / PDF Attachment Link"
 
-#: includes/pages/wc-dashboard.php:440 wc-gsheetconnector.php:898
+#: includes/pages/wc-dashboard.php:539 wc-gsheetconnector.php:835
 msgid "Upgrade to Pro"
 msgstr "Upgrade to Pro"
 
-#: includes/pages/wc-dashboard.php:441
+#: includes/pages/wc-dashboard.php:540
 msgid "View Full Features"
 msgstr "View Full Features"
 
-#: includes/pages/wc-dashboard.php:453
+#: includes/pages/wc-dashboard.php:552
 msgid "Form"
 msgstr "Form"
 
-#: includes/pages/wc-dashboard.php:455
+#: includes/pages/wc-dashboard.php:554
 msgid "Processing"
 msgstr "Processing"
 
-#: includes/pages/wc-dashboard.php:457
+#: includes/pages/wc-dashboard.php:556
 msgid "Sheet"
 msgstr "Sheet"
 
-#: includes/pages/wc-dashboard.php:463
+#: includes/pages/wc-dashboard.php:562
 msgid "Instant"
 msgstr "Instant"
 
-#: includes/pages/wc-dashboard.php:464
+#: includes/pages/wc-dashboard.php:563
 msgid "Real-time updates"
 msgstr "Real-time updates"
 
-#: includes/pages/wc-dashboard.php:467
+#: includes/pages/wc-dashboard.php:566
 msgid "100%"
 msgstr "100%"
 
-#: includes/pages/wc-dashboard.php:468
+#: includes/pages/wc-dashboard.php:567
 msgid "Accuracy"
 msgstr "Accuracy"
 
-#: includes/pages/wc-dashboard.php:471
+#: includes/pages/wc-dashboard.php:570
 msgid "Flexible"
 msgstr "Flexible"
 
-#: includes/pages/wc-dashboard.php:472
+#: includes/pages/wc-dashboard.php:571
 msgid "Custom mapping"
 msgstr "Custom mapping"
 
-#: includes/pages/wc-dashboard.php:488
+#: includes/pages/wc-dashboard.php:587
 msgid "Video Tutorials"
 msgstr "Video Tutorials"
-
-#: includes/pages/wc-gsheetconnector-dashboard-widget.php:21
-msgid "Google Sheet Not Connected"
-msgstr "Google Sheet Not Connected"
 
 #: includes/pages/wc-gsheetconnector-dashboard-widget.php:45
 msgid "Sheet URL"
@@ -2722,10 +2740,6 @@ msgstr ""
 "Select a Google Sheets to connect your data. If your sheet is not listed, "
 "fetch the latest sheets or create a new one. Then complete the setup and "
 "save your changes to start syncing."
-
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:84
-msgid "Sheet Name"
-msgstr "Sheet Name"
 
 #: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:136
 msgid "Fetch Sheets"
@@ -3387,7 +3401,7 @@ msgstr "View Documentation"
 msgid "Get Support"
 msgstr "Get Support"
 
-#: wc-gsheetconnector.php:594
+#: wc-gsheetconnector.php:541
 msgid ""
 "GSheetConnector WooCommerce Add-on requires WooCommerce plugin to be "
 "installed and activated."
@@ -3410,6 +3424,12 @@ msgstr "GSheetConnector"
 #. Author URI of the plugin/theme
 msgid "https://www.gsheetconnector.com/"
 msgstr "https://www.gsheetconnector.com/"
+
+#~ msgid "Permission not allowed."
+#~ msgstr "Permission not allowed."
+
+#~ msgid "Roles that can access Google Sheet Page"
+#~ msgstr "Roles that can access Google Sheet Page"
 
 #~ msgid "WordPress Plugin Founder"
 #~ msgstr "WordPress Plugin Founder"
@@ -3885,15 +3905,15 @@ msgstr "https://www.gsheetconnector.com/"
 #~ "for each product."
 
 #~ msgid ""
-#~ "Please refer to the knowledgebase/docs for a comprehensive <a href="
-#~ "\"https://www.gsheetconnector.com/docs/woocommerce-gsheetconnector/2-way-"
-#~ "sync-products\" target=\"_blank\">list of supported fields available for "
-#~ "two-way synchronization.</a>"
+#~ "Please refer to the knowledgebase/docs for a comprehensive <a "
+#~ "href=\"https://www.gsheetconnector.com/docs/woocommerce-gsheetconnector/2-"
+#~ "way-sync-products\" target=\"_blank\">list of supported fields available "
+#~ "for two-way synchronization.</a>"
 #~ msgstr ""
-#~ "Please refer to the knowledgebase/docs for a comprehensive <a href="
-#~ "\"https://www.gsheetconnector.com/docs/woocommerce-gsheetconnector/2-way-"
-#~ "sync-products\" target=\"_blank\">list of supported fields available for "
-#~ "two-way synchronization.</a>"
+#~ "Please refer to the knowledgebase/docs for a comprehensive <a "
+#~ "href=\"https://www.gsheetconnector.com/docs/woocommerce-gsheetconnector/2-"
+#~ "way-sync-products\" target=\"_blank\">list of supported fields available "
+#~ "for two-way synchronization.</a>"
 
 #~ msgid "Product Sync Configuration - Sheet to WooCommerce Insert"
 #~ msgstr "Product Sync Configuration - Sheet to WooCommerce Insert"
@@ -3957,15 +3977,15 @@ msgstr "https://www.gsheetconnector.com/"
 #~ "and \"10\" in the respective boxes and initiate the sync."
 
 #~ msgid ""
-#~ "Please refer to the knowledgebase/docs for a comprehensive <a href="
-#~ "\"https://www.gsheetconnector.com/docs/woocommerce-gsheetconnector/2-way-"
-#~ "sync-orders\" target=\"_blank\">list of supported fields available for "
-#~ "two-way synchronization.</a>"
+#~ "Please refer to the knowledgebase/docs for a comprehensive <a "
+#~ "href=\"https://www.gsheetconnector.com/docs/woocommerce-gsheetconnector/2-"
+#~ "way-sync-orders\" target=\"_blank\">list of supported fields available "
+#~ "for two-way synchronization.</a>"
 #~ msgstr ""
-#~ "Please refer to the knowledgebase/docs for a comprehensive <a href="
-#~ "\"https://www.gsheetconnector.com/docs/woocommerce-gsheetconnector/2-way-"
-#~ "sync-orders\" target=\"_blank\">list of supported fields available for "
-#~ "two-way synchronization.</a>"
+#~ "Please refer to the knowledgebase/docs for a comprehensive <a "
+#~ "href=\"https://www.gsheetconnector.com/docs/woocommerce-gsheetconnector/2-"
+#~ "way-sync-orders\" target=\"_blank\">list of supported fields available "
+#~ "for two-way synchronization.</a>"
 
 #~ msgid "Order Status Sync Configuration - Sheet to WooCommerce Update"
 #~ msgstr "Order Status Sync Configuration - Sheet to WooCommerce Update"

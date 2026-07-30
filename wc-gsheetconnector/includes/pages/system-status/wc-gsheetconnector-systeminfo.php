@@ -645,7 +645,7 @@ $wcgsc_total_active_plugins = is_array($wcgsc_active_plugins) ? count($wcgsc_act
         <tr>
             <td><?php echo esc_html__('Max Allowed Packet Size', 'wc-gsheetconnector'); ?></td>
             <td class="fw-600">
-                <?php echo esc_html($max_allowed_packet_size); ?>
+                <?php echo esc_html($wcgsc_max_allowed_packet_size); ?>
             </td>
         </tr>
 

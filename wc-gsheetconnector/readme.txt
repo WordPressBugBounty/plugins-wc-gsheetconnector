@@ -6,7 +6,7 @@ Tested up to: 7.0
 Requires at least: 5.3
 Requires PHP: 7.4
 Requires Plugins: woocommerce
-Stable tag: 1.4.8
+Stable tag: 1.4.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -130,6 +130,17 @@ Please double-check those items and hopefully getting them right will fix the is
 Make sure to <a href="https://www.gsheetconnector.com/how-to-enable-debugging-in-wordpress">enable debug log from wp-config.php</a> if submitted order is not showing in sheet, It will helps to show the conflict issue (if there is any) or shows what is making an issue.
 
 == Changelog ==
+
+= 1.4.9 (30-07-2026) =
+* Added: Connected feeds table to the Dashboard for quick access to Google Sheet connections.
+* Refactored: Improved overall code quality by removing unused code, consolidating duplicate logic, and updating inline documentation.
+* Removed: Unused initialization methods related to error log management.
+* Removed: Duplicate and unused role settings file.
+* Improved: Consolidated error log table creation into a single reusable helper.
+* Improved: Extracted WordPress Filesystem initialization into a reusable helper function.
+* Improved: Removed redundant JSON decoding during the authentication process.
+* Improved: Updated and corrected PHPDoc comments for improved code documentation.
+* Cleaned: Removed obsolete development comments and legacy code annotations.
 
 = 1.4.8 (18-06-2026) =
 * Added: Admin notice slider for plugin announcements, review requests, upgrade prompts, and authentication reminders.
