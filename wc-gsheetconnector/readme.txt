@@ -1,11 +1,11 @@
-=== GSheetConnector – WooCommerce Google Sheets Connector, Export Orders & Products ===
-Contributors: westerndeal, abdullah17, gsheetconnector
+=== GSheetConnector – WooCommerce Google Sheets Connector, Export Orders & Products to Google Sheets in Real-Time ===
+Contributors: westerndeal, abdullah17
 Author URI: https://www.gsheetconnector.com/
 Tags: woocommerce, google sheets, woocommerce export, order export, integration
-Tested up to: 7.0
 Requires at least: 5.3
+Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.4.10
+Stable tag: 1.4.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -129,6 +129,14 @@ Please double-check those items and hopefully getting them right will fix the is
 Make sure to <a href="https://www.gsheetconnector.com/how-to-enable-debugging-in-wordpress">enable debug log from wp-config.php</a> if submitted order is not showing in sheet, It will helps to show the conflict issue (if there is any) or shows what is making an issue.
 
 == Changelog ==
+
+= 1.4.11 (23-09-2026) =
+* Added: Added Pro-only display blocks for Product Category as Sheet Tabs and Graph Sheets in the WooCommerce Data Settings tab.
+* Added: Added Pro-only display support for premium features in the Extensions tab.
+* Added: Added a Pro-only display block for Sync Orders (Product Category Tabs) in the Google Sheets Data Sync section.
+* Fixed: An issue where variable product names could contain unfiltered HTML/non-breaking space characters around the - separator when exporting Product Name (QTY) (SKU) to Google Sheets.
+* Fixed: Improved the display and activation/deactivation handling of Pro integrations in the Extensions tab.
+* Fixed: An issue where the Copy Logs, Clear Logs, and Download CSV buttons were not working correctly in the System Status Debug Log section.
 
 = 1.4.10 (06-08-2026) =
 * Added: HPOS compatibility support for WooCommerce order data handling.

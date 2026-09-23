@@ -11,6 +11,17 @@ jQuery(document).ready(function (jQuery) {
   });
 
   /**
+   * Hide cards whose Install button has no label text
+   * (e.g. an entry with an empty 'button' value in the data array).
+   */
+
+   jQuery(".wcgsc-install-plugin-btn").each(function () {
+    if (jQuery(this).text().trim().length === 0) {
+      jQuery(this).closest(".gsheetconnector-list-item").hide();
+    }
+  });
+
+  /**
    * Handle plugin install button click via AJAX.
    *
    * - Shows loading spinner
@@ -148,24 +159,33 @@ jQuery(document).ready(function (jQuery) {
    */
 
    let gselefproPluginSlug = null;
+  let gselefproDeactivateButton = null;
 
   // Open confirmation popup
   jQuery(document).on("click", ".wcgsc-deactivate-plugin", function (e) {
     e.preventDefault();
 
     gselefproPluginSlug = jQuery(this).data("plugin");
+    gselefproDeactivateButton = jQuery(this);
     jQuery("#wcgsc-confirm-deactive-popup-free").removeClass("d-none");
   });
 
   // Cancel popup
   jQuery("#wcgsc-deactive-popup-cancel-free").on("click", function () {
     gselefproPluginSlug = null;
+    gselefproDeactivateButton = null;
     jQuery("#wcgsc-confirm-deactive-popup-free").addClass("d-none");
   });
 
   // Confirm deactivate
   jQuery("#wcgsc-deactive-popup-confirm-free").on("click", function () {
     if (!gselefproPluginSlug) return;
+
+    var deactivateLoader = gselefproDeactivateButton
+      ? gselefproDeactivateButton.siblings(".loading-sign-deactivate")
+      : jQuery();
+
+    deactivateLoader.addClass("loading");
 
     jQuery.ajax({
       url: ajaxurl,
@@ -185,10 +205,26 @@ jQuery(document).ready(function (jQuery) {
           .fadeOut();
 
           location.reload();
+        } else {
+          deactivateLoader.removeClass("loading");
+
+          jQuery(".popup-actions-active-msg").text(
+            (response.data && response.data.message) ||
+            response.data ||
+            "Failed to deactivate plugin. Please try again."
+            );
+
+          jQuery("#wcgsc-confirm-active-popup-free").removeClass("d-none");
         }
       },
       error: function () {
-        console.log("AJAX error while deactivating plugin");
+        deactivateLoader.removeClass("loading");
+
+        jQuery(".popup-actions-active-msg").text(
+          "Something went wrong. Please try again."
+          );
+
+        jQuery("#wcgsc-confirm-active-popup-free").removeClass("d-none");
       },
     });
 

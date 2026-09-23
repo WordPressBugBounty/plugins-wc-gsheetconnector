@@ -1219,7 +1219,16 @@ public static function extract_product_qty_sku($order, $order_data = false)
 			if ($product && method_exists($product, 'get_sku')){
 				$sku = $product->get_sku();
 			}
-			$create_product_name = $item->get_name();
+			$product_name = $item->get_name();
+			// Normalize stray HTML tags/entities (e.g. "&nbsp;") and literal
+			// non-breaking-space characters that can appear around the " - "
+			// variation separator, without altering the separator itself.
+			$product_name = wp_strip_all_tags( $product_name );
+			$product_name = html_entity_decode( $product_name, ENT_QUOTES, 'UTF-8' );
+			$product_name = str_replace( "\xc2\xa0", ' ', $product_name );
+			$product_name = trim( $product_name );
+
+			$create_product_name = $product_name;
 			$create_product_name .= '(' . $item->get_quantity() . ')';
 			$create_product_name .= $sku ? '(' . $sku . ')' : '';
 

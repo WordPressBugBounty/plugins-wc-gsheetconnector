@@ -72,7 +72,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
               } else {
                ?>
-               <a href="<?php echo esc_url( admin_url( 'admin.php?page=wc-gsheetconnector-config&tab=role_settings' ) ); ?>">
+               <a href="<?php echo esc_url( admin_url( 'admin.php?page=wc-gsheetconnector-config&tab=wc_settings&sub_tab=role_settings' ) ); ?>">
                  <?php esc_html_e( 'Administrator', 'wc-gsheetconnector' ); ?>
                </a>
                <?php

@@ -37,9 +37,13 @@ jQuery(document).ready(function ($) {
         if (cols.length >= 2) {
 
           var label = cols[0].innerText.trim();
-          var value = cols[1].innerText.trim();
+          var values = [];
 
-          textToCopy += label + ": " + value + "\n";
+          for (var i = 1; i < cols.length; i++) {
+            values.push(cols[i].innerText.trim());
+          }
+
+          textToCopy += label + ": " + values.join(" - ") + "\n";
         }
       });
 
@@ -217,10 +221,10 @@ jQuery(document).ready(function ($) {
   }
 });
  jQuery(document).ready(function ($) {
-  $("#wcgsc-copy-logs-system-info").on("click", function (e) {
+  $("#wcgsc-copy-logs-info").on("click", function (e) {
     e.preventDefault();
 
-    var rows = $("table tbody tr");
+    var rows = $("#wcgsc-debug-log-table tbody tr");
     var copyText = "";
 
     if (!rows.length) {
@@ -260,10 +264,10 @@ jQuery(document).ready(function ($) {
 
 
  jQuery(document).ready(function ($) {
-  $("#wcgsc-csv-system-info").on("click", function (e) {
+  $("#wcgsc-csv-info").on("click", function (e) {
     e.preventDefault();
 
-    var rows = $("table.widefat tr");
+    var rows = $("#wcgsc-debug-log-table tr");
     var csvContent = "";
 
     if (rows.length === 0) {

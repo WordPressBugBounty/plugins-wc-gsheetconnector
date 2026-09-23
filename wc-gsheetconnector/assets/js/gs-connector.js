@@ -211,6 +211,8 @@ jQuery(document).on("click", ".wcgsc-list-set", function (event) {
       jQuery(".wcgsc-list-set32").hide();
       jQuery(".wcgsc-list-set33").hide();
       jQuery(".wcgsc-list-set34").hide();
+      jQuery(".wcgsc-list-set35").hide();
+      jQuery(".wcgsc-list-set36").hide();
       jQuery(".wcgsc-list-set").removeClass("active-t-gs");
       jQuery(this).addClass("active-t-gs");
       jQuery(".wcgsc-list-set" + $id).show();
@@ -248,7 +250,7 @@ jQuery(document).ready(function () {
  * Clear debug for system status tab
  */
 jQuery(document).on("click", ".wcgsc-clear-content-logs", function () {
-  jQuery(".wcgsc-clear-loading-sign-logs").addClass("loading");
+  jQuery(".clear-loading-sign").addClass("loading");
   var data = {
     action: "wcgsc_log_systeminfo",
     security: jQuery("#wcgsc-ajax-nonce").val(),
@@ -260,8 +262,8 @@ jQuery(document).on("click", ".wcgsc-clear-content-logs", function () {
     }
 
     if (response.success) {
-      jQuery(".wcgsc-clear-loading-sign-logs").removeClass("loading");
-      jQuery(".wcgsc-clear-content-logs-msg").html("Logs are cleared.");
+      jQuery(".clear-loading-sign").removeClass("loading");
+      jQuery(".wcgsc-clear-content-logs-msg").html("Logs are cleared.").removeClass("d-none");
       setTimeout(function () {
         location.reload();
       }, 1000);

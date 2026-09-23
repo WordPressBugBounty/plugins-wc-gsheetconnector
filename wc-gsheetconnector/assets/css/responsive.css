@@ -285,11 +285,16 @@
   }
 
   /**End WC data setting**/
+  /**Start System Status**/
+  #system-info-wrapper tr {
+    border-bottom: 1px dashed #e5e7eb !important;
+    margin-top: unset !important;
+  }
+  /**End System Status**/
 }
 @media (max-width: 767px) {
   /***START NOTICE SLIDER***/
   .gswc-free .notification-gsc-slider-arrows {
-    /*top: auto;*/
     bottom: 10px;
     right: 10px;
     transform: none;
@@ -417,6 +422,9 @@
     display: flex !important;
     flex-direction: column;
   }
+  .gswc-free .form-feed-table-common table tr {
+    display: block;
+  }
   /**End Form Feed Tab Panel Section**/
   /** Start Settings Tab Panel Section **/
   .gswc-free .info-content tr {
@@ -432,6 +440,7 @@
     flex-direction: column;
     text-align: center;
     gap: 15px;
+    align-items: center;
   }
   .gswc-free .gsc-support-left {
     flex-direction: column;
@@ -504,6 +513,9 @@
   .gswc-free .wcgsc-cards,
   .gswc-free .wcgsc-cards1 {
     width: 100% !important;
+  }
+  .gswc-free .gs-options {
+    grid-template-columns: 1fr;
   }
   /**End WC data setting**/
 }

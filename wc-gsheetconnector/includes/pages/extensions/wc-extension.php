@@ -14,10 +14,10 @@ if (!defined('ABSPATH')) {
                 <div class="gsc-about-hero-content">
 
                     <div class="about-us-heading fw-500 mb-20 text-center">
-                        <?php esc_html_e('About GSheetConnector','wc-gsheetconnector'); ?>
+                        <?php esc_html_e('About GSheetConnector', 'wc-gsheetconnector'); ?>
                     </div>
                     <div class="about-us-subheading fw-300 mb-20 text-center">
-                        <?php esc_html_e('Built by Experts. Trusted by Thousands.','wc-gsheetconnector'); ?>
+                        <?php esc_html_e('Built by Experts. Trusted by Thousands.', 'wc-gsheetconnector'); ?>
                     </div>
 
                     <p class="text-dark about-us-descs text-center mb-10">
@@ -50,7 +50,7 @@ if (!defined('ABSPATH')) {
                         </div>
                     </div>
                     <div class="heading mb-20 mt-20 text-center">
-                        <?php esc_html_e('Meet Our Core Team','wc-gsheetconnector'); ?>
+                        <?php esc_html_e('Meet Our Core Team', 'wc-gsheetconnector'); ?>
                     </div>
                     <!-- Team Avatars -->
                     <div class="gsc-about-avatars d-flex align-center flex-wrap gap-10 mt-30 justify-center">
@@ -74,7 +74,7 @@ if (!defined('ABSPATH')) {
                 <div class="gsc-about-text">
 
                     <div class="heading mt-0">
-                        <?php esc_html_e('Our Mission','wc-gsheetconnector'); ?>
+                        <?php esc_html_e('Our Mission', 'wc-gsheetconnector'); ?>
                     </div>
 
                     <p>
@@ -87,15 +87,15 @@ if (!defined('ABSPATH')) {
 
                     <ul class="gsc-about-list">
 
-                        <li><?php esc_html_e('Fast & Reliable Data Sync','wc-gsheetconnector'); ?></li>
+                        <li><?php esc_html_e('Fast & Reliable Data Sync', 'wc-gsheetconnector'); ?></li>
 
-                        <li><?php esc_html_e('100% Secure Authentication','wc-gsheetconnector'); ?></li>
+                        <li><?php esc_html_e('100% Secure Authentication', 'wc-gsheetconnector'); ?></li>
 
-                        <li><?php esc_html_e('Real-Time Google Sheets Updates','wc-gsheetconnector'); ?></li>
+                        <li><?php esc_html_e('Real-Time Google Sheets Updates', 'wc-gsheetconnector'); ?></li>
 
-                        <li><?php esc_html_e('Easy Setup & Configuration','wc-gsheetconnector'); ?></li>
+                        <li><?php esc_html_e('Easy Setup & Configuration', 'wc-gsheetconnector'); ?></li>
 
-                        <li><?php esc_html_e('Dedicated Support Team','wc-gsheetconnector'); ?></li>
+                        <li><?php esc_html_e('Dedicated Support Team', 'wc-gsheetconnector'); ?></li>
 
 
                     </ul>
@@ -110,28 +110,28 @@ if (!defined('ABSPATH')) {
                         <div class="gsc-stat-card-header">
                             <span class="wc-free-counter" data-count="11">0</span><span class="suffix">+</span>
                         </div>
-                        <span><?php esc_html_e('Forms Successfully Synced','wc-gsheetconnector'); ?></span>
+                        <span><?php esc_html_e('Forms Successfully Synced', 'wc-gsheetconnector'); ?></span>
                     </div>
 
                     <div class="gsc-stat-card d-flex align-center justify-center bg-white text-white">
                         <div class="gsc-stat-card-header">
                             <span class="wc-free-counter" data-count="50">0</span><span class="suffix">+</span>
                         </div>
-                        <span><?php esc_html_e('Trusted by Active Users','wc-gsheetconnector'); ?></span>
+                        <span><?php esc_html_e('Trusted by Active Users', 'wc-gsheetconnector'); ?></span>
                     </div>
 
                     <div class="gsc-stat-card d-flex align-center justify-center bg-white text-white">
                         <div class="gsc-stat-card-header">
                             <span class="wc-free-counter" data-count="99.9">0</span><span class="suffix">%</span>
                         </div>
-                        <span><?php esc_html_e('Reliable Uptime','wc-gsheetconnector'); ?></span>
+                        <span><?php esc_html_e('Reliable Uptime', 'wc-gsheetconnector'); ?></span>
                     </div>
 
                     <div class="gsc-stat-card d-flex align-center justify-center bg-white text-white">
                         <div class="gsc-stat-card-header">
                             <span class="wc-free-counter" data-count="24">0</span><span class="suffix">/7</span>
                         </div>
-                        <span><?php esc_html_e('Dedicated Support','wc-gsheetconnector'); ?></span>
+                        <span><?php esc_html_e('Dedicated Support', 'wc-gsheetconnector'); ?></span>
                     </div>
 
                 </div>
@@ -139,13 +139,32 @@ if (!defined('ABSPATH')) {
             </div>
 
             <div class="extensions-list">
-                <div class="heading mt-40"><?php esc_html_e('Add-ons & Extensions','wc-gsheetconnector'); ?></div>
-                <p><?php echo esc_html__('Extend your Google Sheets integration with powerful add-ons. Install, manage, and activate extensions to unlock advanced features.','wc-gsheetconnector'); ?></p>
+                <div class="heading mt-40"><?php esc_html_e('Add-ons & Extensions', 'wc-gsheetconnector'); ?></div>
+                <p><?php echo esc_html__('Extend your Google Sheets integration with powerful add-ons. Install, manage, and activate extensions to unlock advanced features.', 'wc-gsheetconnector'); ?></p>
 
                 <?php
                 $wcgsc_all_plugins = get_plugins();
                 $wcgsc_active_theme = wp_get_theme();
                 $wcgsc_plugins = [
+                    'woocommerce/woocommerce.php' => [
+                        'connector' => 'wc-gsheetconnector/wc-gsheetconnector.php',
+                        'connector-pro' => 'wc-gsheetconnector-pro/wc-gsheetconnector-pro.php',
+                        'name' => __('WooCommerce Google Sheet Connector', 'wc-gsheetconnector'),
+                        'link' => 'https://www.gsheetconnector.com/woocommerce-google-sheet-connector-pro',
+                        'img' => esc_url(WC_GSHEETCONNECTOR_URL) . '/assets/img/pro-woo-gsc.webp',
+                        'text' => __('Sync WooCommerce orders with Google Sheets automatically. Store order details, customer information, and transaction data in real-time for easy reporting, accounting, and business analysis.', 'wc-gsheetconnector'),
+                        'pro_plugin_active' => 'wc-gsheetconnector-pro/wc-gsheetconnector-pro.php',
+                        'url' => 'https://wordpress.org/plugins/wc-gsheetconnector/',
+                        'button' => __('Install', 'wc-gsheetconnector'),
+                        'badge' => __('PRO', 'wc-gsheetconnector'),
+                        'freeLink' => 'https://wordpress.org/plugins/wc-gsheetconnector/',
+                        'downloadLink' => 'https://downloads.wordpress.org/plugin/wc-gsheetconnector.zip',
+                        'buyLink' => 'https://www.gsheetconnector.com/woocommerce-google-sheet-connector-pro',
+                        'mainPlugin' => 'woocommerce/woocommerce.php',
+                        'theme' => 'woocommerce',
+                        'docs' => 'https://www.gsheetconnector.com/docs/woocommerce-gsheetconnector',
+                        'demo' => 'https://woogsheets.gsheetconnector.com'
+                    ],
                     'contact-form-7/wp-contact-form-7.php' => [
                         'connector' => 'cf7-google-sheets-connector/google-sheet-connector.php',
                         'connector-pro' => 'cf7-google-sheets-connector-pro/google-sheet-connector-pro.php',
@@ -178,7 +197,7 @@ if (!defined('ABSPATH')) {
                         'link' => 'https://www.gsheetconnector.com/wpforms-google-sheet-connector-pro',
                         'img' => esc_url(WC_GSHEETCONNECTOR_URL) . '/assets/img/pro-wpf-gsc.webp',
                         'text' => __('Integrate WPForms with Google Sheets and send form entries directly to your spreadsheet automatically. Track leads, manage customer data, and streamline reporting with seamless Google Sheets integration and real-time sync.', 'wc-gsheetconnector'),
-                        'pro_plugin_active' => 'gsheetconnector-wpform-pro/gsheetconnector-wpforms-pro.php',
+                        'pro_plugin_active' => 'gsheetconnector-wpforms-pro/gsheetconnector-wpforms-pro.php',
                         'url' => 'https://wordpress.org/plugins/gsheetconnector-wpforms/',
                         'button' => __('Install', 'wc-gsheetconnector'),
                         'badge' => __('PRO', 'wc-gsheetconnector'),
@@ -193,12 +212,12 @@ if (!defined('ABSPATH')) {
 
                     'gravityforms/gravityforms.php' => [
                         'connector' => 'gsheetconnector-gravity-forms/gsheetconnector-gravityforms.php',
-                        'connector-pro' => 'gsheetconnector-gravity-forms-pro/gsheetconnector-gravity-forms-pro.php',
+                        'connector-pro' => 'gsheetconnector-gravityforms-pro/gsheetconnector-gravityforms-pro.php',
                         'name' => __('Gravity Forms Google Sheet Connector', 'wc-gsheetconnector'),
                         'link' => 'https://www.gsheetconnector.com/gravity-forms-google-sheet-connector',
                         'img' => esc_url(WC_GSHEETCONNECTOR_URL) . '/assets/img/pro-gravity-gsc.webp',
                         'text' => __('Connect Gravity Forms to Google Sheets and automatically push form submissions to your spreadsheet. Simplify data management, improve workflow automation, and keep all entries organized in one secure location.', 'wc-gsheetconnector'),
-                        'pro_plugin_active' => 'gsheetconnector-gravity-forms-pro/gsheetconnector-gravity-forms-pro.php',
+                        'pro_plugin_active' => 'gsheetconnector-gravityforms-pro/gsheetconnector-gravityforms-pro.php',
                         'url' => 'https://wordpress.org/plugins/gsheetconnector-gravity-forms/',
                         'button' => __('Install', 'wc-gsheetconnector'),
                         'badge' => __('PRO', 'wc-gsheetconnector'),
@@ -213,7 +232,7 @@ if (!defined('ABSPATH')) {
 
                     'ninja-forms/ninja-forms.php' => [
                         'connector' => 'gsheetconnector-ninja-forms/gsheetconnector-ninjaforms.php',
-                        'connector-pro' => 'gsheetconnector-ninja-forms-pro/gsheetconnector-ninjaform-pro.php',
+                        'connector-pro' => 'gsheetconnector-ninja-forms-pro/gsheetconnector-ninjaforms-pro.php',
                         'name' => __('Ninja Forms Google Sheet Connector', 'wc-gsheetconnector'),
                         'link' => 'https://www.gsheetconnector.com/ninja-forms-google-sheet-connector-pro',
                         'img' => esc_url(WC_GSHEETCONNECTOR_URL) . '/assets/img/pro-ninjaf-gsc.webp',
@@ -257,7 +276,7 @@ if (!defined('ABSPATH')) {
                         'link' => 'https://wordpress.org/plugins/gsheetconnector-formidable-forms/',
                         'img' => esc_url(WC_GSHEETCONNECTOR_URL) . '/assets/img/formidable-addon.webp',
                         'text' => __('Automatically sync Formidable Forms entries to Google Sheets. Manage leads, track submissions, and simplify data reporting with real-time integration.', 'wc-gsheetconnector'),
-                        'pro_plugin_active' => 'gsheetconnector-forminator-pro/gsheetconnector-forminator-pro.php',
+                        'pro_plugin_active' => 'gsheetconnector-formidable-forms-pro/gsheetconnector-formidable-forms-pro.php',
                         'url' => 'https://wordpress.org/plugins/gsheetconnector-formidable-forms/',
                         'button' => __('Install', 'wc-gsheetconnector'),
                         'badge' => __('Free', 'wc-gsheetconnector'),
@@ -310,13 +329,13 @@ if (!defined('ABSPATH')) {
                         'demo' => 'https://demo.gsheetconnector.com/elementor-forms-gsheetconnector-pro'
                     ],
                     'avada/avada.php' => [
-                        'connector' => 'avada-forms-google-sheet-connector-pro/avada-forms-google-sheet-connector-pro.php',
-                        'connector-pro' => 'avada-forms-google-sheet-connector-pro/avada-forms-google-sheet-connector-pro.php',
+                        'connector' => 'avada-gsheetconnector-pro/avada-gsheetconnector-pro.php',
+                        'connector-pro' => 'avada-gsheetconnector-pro/avada-gsheetconnector-pro.php',
                         'name' => __('Avada Forms Google Sheet Connector', 'wc-gsheetconnector'),
                         'link' => 'https://www.gsheetconnector.com/avada-forms-google-sheet-connector-pro',
                         'img' => esc_url(WC_GSHEETCONNECTOR_URL) . '/assets/img/pro-avada-gsc.webp',
                         'text' => __('Connect Avada Forms to Google Sheets and automatically transfer form entries to your spreadsheet. Streamline lead management, automate data collection, and improve business reporting with seamless integration.', 'wc-gsheetconnector'),
-                        'pro_plugin_active' => 'avada-forms-google-sheet-connector-pro/avada-forms-google-sheet-connector-pro.php',
+                        'pro_plugin_active' => 'avada-gsheetconnector-pro/avada-gsheetconnector-pro.php',
                         'url' => '',
                         'button' => __('Install', 'wc-gsheetconnector'),
                         'badge' => __('Available PRO Version', 'wc-gsheetconnector'),
@@ -349,45 +368,27 @@ if (!defined('ABSPATH')) {
                         'demo' => 'https://demo.gsheetconnector.com/divi-forms-gsheetconnector-pro'
                     ],
 
-                    'gsheetconnector-for-wp-core/gsheetconnector-for-wp-core.php' => [
-                        'connector' => 'gsheetconnector-easy-digital-downloads/gsheetconnector-easy-digital-downloads.php',
-                        'connector-pro' => 'gsheetconnector-easy-digital-downloads-pro/gsheetconnector-easy-digital-downloads-pro.php',
+                    'gsheetconnector-for-core-lite/gsheetconnector-for-core-lite.php' => [
+                        'connector' => 'gsheetconnector-for-core-lite/gsheetconnector-for-core-lite.php',
+                        'connector-pro' => 'gsheetconnector-for-core-pro/gsheetconnector-for-core-pro.php',
                         'name' => __('WP Core Google Sheet Connector', 'wc-gsheetconnector'),
-                        'link' => 'https://www.gsheetconnector.com/gsheetconnector-for-wp-core',
+                        'link' => 'https://wordpress.org/plugins/gsheetconnector-for-core-lite/',
                         'img' => esc_url(WC_GSHEETCONNECTOR_URL) . '/assets/img/gsc-wp-core.webp',
                         'text' => __('Automatically send WordPress core data (like comments or custom submissions) to Google Sheets. Simplify website data tracking, automate record keeping, and centralize important information in one organized spreadsheet.', 'wc-gsheetconnector'),
-                        'pro_plugin_active' => 'gsheetconnector-easy-digital-downloads-pro/gsheetconnector-easy-digital-downloads-pro.php',
-                        'url' => 'https://wordpress.org/plugins/gsheetconnector-easy-digital-downloads/',
-                        'button' => __('Install', 'wc-gsheetconnector'),
+                        'pro_plugin_active' => 'gsheetconnector-for-core-pro/gsheetconnector-for-core-pro.php',
+                        'url' => 'https://wordpress.org/plugins/gsheetconnector-for-core-lite/',
+                        'button' => (' '),
                         'badge' => __('PRO', 'wc-gsheetconnector'),
                         'freeLink' => '',
-                        'downloadLink' => 'https://downloads.wordpress.org/plugin/gsheetconnector-easy-digital-downloads.zip',
+                        'downloadLink' => 'https://downloads.wordpress.org/plugin/gsheetconnector-for-core-lite.zip',
                         'buyLink' => 'https://www.gsheetconnector.com/gsheetconnector-for-wp-core',
-                        'mainPlugin' => 'gsheetconnector-for-wp-core',
+                        'mainPlugin' => ['woocommerce/woocommerce.php', 'gsheetconnector-for-core-lite/gsheetconnector-for-core-lite.php'],
                         'theme' => 'gsheetconnector-for-wp-core',
                         'docs' => 'https://www.gsheetconnector.com/docs/gsheetconnector-for-wp-core',
                         'demo' => ''
                     ],
 
-                    'woocommerce/woocommerce.php' => [
-                        'connector' => 'wc-gsheetconnector/wc-gsheetconnector.php',
-                        'connector-pro' => 'wc-gsheetconnector/wc-gsheetconnector.php',
-                        'name' => __('WooCommerce Google Sheet Connector', 'wc-gsheetconnector'),
-                        'link' => 'https://www.gsheetconnector.com/woocommerce-google-sheet-connector-pro',
-                        'img' => esc_url(WC_GSHEETCONNECTOR_URL) . '/assets/img/pro-woo-gsc.webp',
-                        'text' => __('Sync WooCommerce orders with Google Sheets automatically. Store order details, customer information, and transaction data in real-time for easy reporting, accounting, and business analysis.', 'wc-gsheetconnector'),
-                        'pro_plugin_active' => 'wc-gsheetconnector/wc-gsheetconnector.php',
-                        'url' => 'https://wordpress.org/plugins/wc-gsheetconnector/',
-                        'button' => __('Install', 'wc-gsheetconnector'),
-                        'badge' => __('PRO', 'wc-gsheetconnector'),
-                        'freeLink' => 'https://wordpress.org/plugins/wc-gsheetconnector/',
-                        'downloadLink' => 'https://downloads.wordpress.org/plugin/wc-gsheetconnector.zip',
-                        'buyLink' => 'https://www.gsheetconnector.com/woocommerce-google-sheet-connector-pro',
-                        'mainPlugin' => 'woocommerce/woocommerce.php',
-                        'theme' => 'woocommerce',
-                        'docs' => 'https://www.gsheetconnector.com/docs/woocommerce-gsheetconnector',
-                        'demo' => 'https://woogsheets.gsheetconnector.com'
-                    ],
+
 
                     'easy-digital-downloads/easy-digital-downloads.php' => [
                         'connector' => 'gsheetconnector-easy-digital-downloads/gsheetconnector-easy-digital-downloads.php',
@@ -403,7 +404,7 @@ if (!defined('ABSPATH')) {
                         'freeLink' => 'https://wordpress.org/plugins/gsheetconnector-easy-digital-downloads/',
                         'downloadLink' => 'https://downloads.wordpress.org/plugin/gsheetconnector-easy-digital-downloads.zip',
                         'buyLink' => 'https://www.gsheetconnector.com/edd-google-sheet-connector-pro',
-                        'mainPlugin' => 'easy-digital-downloads/easy-digital-downloads.php',
+                        'mainPlugin' => 'easy-digital-downloads-pro/easy-digital-downloads.php',
                         'theme' => 'easy-digital-downloads',
                         'docs' => 'https://www.gsheetconnector.com/docs/edd-gsheetconnector',
                         'demo' => 'https://demo.gsheetconnector.com/easydigitaldownloads-google-sheet-connector-pro'
@@ -411,368 +412,389 @@ if (!defined('ABSPATH')) {
                 ];
                 ?>
                 <div class="gsc-market-header">
-                    <div class="extensions-sub-heading"><?php echo esc_html(__('Installed & Active Plugins','wc-gsheetconnector')); ?></div>
+                    <div class="extensions-sub-heading"><?php echo esc_html(__('Installed & Active Plugins', 'wc-gsheetconnector')); ?></div>
                     <div>
-                        <p><?php echo esc_html(__('View and manage all currently installed and active connectors on your site. You can activate, deactivate, or upgrade plugins from here.','wc-gsheetconnector')); ?>
-                    </p>
+                        <p><?php echo esc_html(__('View and manage all currently installed and active connectors on your site. You can activate, deactivate, or upgrade plugins from here.', 'wc-gsheetconnector')); ?>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="gsheetconnector-addons-list gsc-ext-grid">
+                <div class="gsheetconnector-addons-list gsc-ext-grid">
 
-                <?php
-                foreach ($wcgsc_plugins as $wcgsc_plugin => $wcgsc_details) {
+                    <?php
+                    foreach ($wcgsc_plugins as $wcgsc_plugin => $wcgsc_details) {
 
                         // =========================
                         // MAIN PLUGIN CHECK
                         // =========================
-                    $wcgsc_is_main_installed = false;
-                    $wcgsc_is_main_active    = false;
+                        $wcgsc_is_main_installed = false;
+                        $wcgsc_is_main_active    = false;
 
-                    if (!empty($wcgsc_details['mainPlugin']) && is_array($wcgsc_details['mainPlugin'])) {
+                        if (!empty($wcgsc_details['mainPlugin']) && is_array($wcgsc_details['mainPlugin'])) {
 
-                        foreach ($wcgsc_details['mainPlugin'] as $wcgsc_main_plugin) {
+                            foreach ($wcgsc_details['mainPlugin'] as $wcgsc_main_plugin) {
 
-                            if (isset($wcgsc_all_plugins[$wcgsc_main_plugin])) {
-                                $wcgsc_is_main_installed = true;
+                                if (isset($wcgsc_all_plugins[$wcgsc_main_plugin])) {
+                                    $wcgsc_is_main_installed = true;
+                                }
+
+                                if (is_plugin_active($wcgsc_main_plugin)) {
+                                    $wcgsc_is_main_active = true;
+                                    break;
+                                }
                             }
+                        } elseif (!empty($wcgsc_details['mainPlugin']) && is_string($wcgsc_details['mainPlugin'])) {
 
-                            if (is_plugin_active($wcgsc_main_plugin)) {
-                                $wcgsc_is_main_active = true;
-                                break;
-                            }
+                            $wcgsc_is_main_installed = isset($wcgsc_all_plugins[$wcgsc_details['mainPlugin']]);
+
+                            $wcgsc_is_main_active = is_plugin_active($wcgsc_details['mainPlugin']);
                         }
-                    } elseif (!empty($wcgsc_details['mainPlugin']) && is_string($wcgsc_details['mainPlugin'])) {
-
-                        $wcgsc_is_main_installed = isset($wcgsc_all_plugins[$wcgsc_details['mainPlugin']]);
-
-                        $wcgsc_is_main_active = is_plugin_active($wcgsc_details['mainPlugin']);
-                    }
 
                         // =========================
                         // FREE / PRO STATUS
                         // =========================
-                    $wcgsc_is_pro_installed = !empty($wcgsc_details['pro_plugin_active']) &&
-                    isset($wcgsc_all_plugins[$wcgsc_details['pro_plugin_active']]);
+                        $wcgsc_is_pro_installed = !empty($wcgsc_details['pro_plugin_active']) &&
+                            isset($wcgsc_all_plugins[$wcgsc_details['pro_plugin_active']]);
 
-                    $wcgsc_is_pro_active = !empty($wcgsc_details['pro_plugin_active']) &&
-                    is_plugin_active($wcgsc_details['pro_plugin_active']);
+                        $wcgsc_is_pro_active = !empty($wcgsc_details['pro_plugin_active']) &&
+                            is_plugin_active($wcgsc_details['pro_plugin_active']);
 
-                    $wcgsc_is_free_installed = !empty($wcgsc_details['connector']) &&
-                    isset($wcgsc_all_plugins[$wcgsc_details['connector']]);
+                        $wcgsc_is_free_installed = !empty($wcgsc_details['connector']) &&
+                            isset($wcgsc_all_plugins[$wcgsc_details['connector']]);
 
-                    $wcgsc_is_free_active = !empty($wcgsc_details['connector']) &&
-                    is_plugin_active($wcgsc_details['connector']);
+                        $wcgsc_is_free_active = !empty($wcgsc_details['connector']) &&
+                            is_plugin_active($wcgsc_details['connector']);
 
                         // =========================
                         // MAIN INACTIVE → HIDE
                         // =========================
-                    if (!$wcgsc_is_main_active) {
-                        continue;
-                    }
+                        if (!$wcgsc_is_main_active) {
+                            continue;
+                        }
 
                         // =========================
                         // PRO ACTIVE → SHOW PRO
                         // =========================
-                    if ($wcgsc_is_pro_active) {
-                        ?>
-
-                        <div class="gsheetconnector-list-item gsc-ext-card">
-                            <div class="addon-item-header">
-                                <div class="extension-bg-color-set">
-                                    <div class="gsc-ext-top">
-                                        <a href="<?php echo esc_url($wcgsc_details['link']); ?>" target="_blank">
-                                            <img src="<?php echo esc_url($wcgsc_details['img']); ?>"
-                                            alt="<?php echo esc_attr($wcgsc_details['name']); ?>"
-                                            class="gsc-ext-icon">
-                                        </a>
-
-                                        <div class="plugin-premium gsc-ext-badge pro-badge">
-                                            <?php esc_html_e('Pro','wc-gsheetconnector'); ?>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="addon-item-header-meta">
-                                    <div class="addon-item-meta-title">
-                                        <a href="<?php echo esc_url($wcgsc_details['link']); ?>"
-                                            target="_blank"
-                                            class="addon-link">
-                                            <?php echo esc_html($wcgsc_details['name']); ?>
-                                        </a>
-                                    </div>
-
-                                    <div class="addon-item-header-meta-excerpt">
-                                        <?php echo esc_html($wcgsc_details['text']); ?>
-                                    </div>
-
-                                    <div class="activated gsc-ext-actions">
-                                        <a href="<?php echo esc_url($wcgsc_details['docs']); ?>"
-                                            target="_blank"
-                                            class="addon-link btn btn-default link-hover-white">
-                                            <?php esc_attr_e('View Docs','wc-gsheetconnector'); ?>
-                                        </a>
-
-                                        <a
-                                        class="btn deactivate-btn wcgsc-deactivate-plugin"
-                                        data-download="<?php echo esc_attr($wcgsc_details['connector-pro']); ?>"
-                                        data-plugin="<?php echo esc_attr($wcgsc_details['connector-pro']); ?>">
-                                        <?php esc_html_e('Deactivate','wc-gsheetconnector'); ?>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <?php
-
-                // =========================
-                // FREE ACTIVE → SHOW FREE
-                // =========================
-                } elseif ($wcgsc_is_free_active) {
+                        if ($wcgsc_is_pro_active) {
                     ?>
 
-                    <div class="gsheetconnector-list-item gsc-ext-card">
+                            <div class="gsheetconnector-list-item gsc-ext-card">
+                                <div class="addon-item-header">
+                                    <div class="extension-bg-color-set">
+                                        <div class="gsc-ext-top">
+                                            <a href="<?php echo esc_url($wcgsc_details['link']); ?>" target="_blank">
+                                                <img src="<?php echo esc_url($wcgsc_details['img']); ?>"
+                                                    alt="<?php echo esc_attr($wcgsc_details['name']); ?>"
+                                                    class="gsc-ext-icon">
+                                            </a>
 
-                        <div class="addon-item-header">
-                            <div class="extension-bg-color-set">
-                                <div class="gsc-ext-top">
-                                    <a href="<?php echo esc_url($wcgsc_details['buyLink']); ?>" target="_blank">
-                                        <img src="<?php echo esc_url($wcgsc_details['img']); ?>"
-                                        alt="<?php echo esc_attr($wcgsc_details['name']); ?>"
-                                        class="gsc-ext-icon">
-                                    </a>
-
-                                    <div class="plugin-free gsc-ext-badge free-green">
-                                        <?php esc_html_e('Free','wc-gsheetconnector'); ?>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="addon-item-header-meta">
-                                <div class="addon-item-meta-title">
-                                    <a href="<?php echo esc_url($wcgsc_details['buyLink']); ?>"
-                                        target="_blank"
-                                        class="addon-link">
-                                        <?php echo esc_html($wcgsc_details['name']); ?>
-                                    </a>
-                                </div>
-
-                                <div class="addon-item-header-meta-excerpt">
-                                    <?php echo esc_html($wcgsc_details['text']); ?>
-                                </div>
-
-                                <div class="activated gsc-ext-actions">
-                                 <a href="<?php echo esc_url($wcgsc_details['docs']); ?>"
-                                    target="_blank"
-                                    class="addon-link btn btn-default link-hover-white">
-                                    <?php esc_attr_e('View Docs','wc-gsheetconnector'); ?>
-                                </a>
-
-                                <a href="javascript:void(0);"
-                                class="btn deactivate-btn wcgsc-deactivate-plugin"
-                                data-download="<?php echo esc_attr($wcgsc_details['connector']); ?>"
-                                data-plugin="<?php echo esc_attr($wcgsc_details['connector']); ?>">
-                                <?php esc_html_e('Deactivate','wc-gsheetconnector'); ?>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <?php
-        }
-    }
-    ?>
-</div>
-
-<!-- Second section -->
-<div class="gsc-market-header">
-    <div class="extensions-sub-heading"><?php echo esc_html(__('Recommended Plugins','wc-gsheetconnector')); ?></div>
-    <div>
-        <p><?php echo esc_html(__('Discover recommended plugins that enhance your workflow and help you get more value from your Google Sheets integration.','wc-gsheetconnector')); ?>
-    </p>
-</div>
-</div>
-<div class="gsheetconnector-addons-list gsc-ext-grid">
-    <?php foreach ($wcgsc_plugins as $wcgsc_plugin => $wcgsc_data):
-        $wcgsc_is_main_active = false;
-        if (!empty($wcgsc_data['mainPlugin'])) {
-            $wcgsc_main_plugins = is_array($wcgsc_data['mainPlugin']) ? $wcgsc_data['mainPlugin'] : [$wcgsc_data['mainPlugin']];
-            foreach ($wcgsc_main_plugins as $wcgsc_main_plugin) {
-                if (is_plugin_active($wcgsc_main_plugin)) {
-                    $wcgsc_is_main_active = true;
-                    break;
-                }
-            }
-        }
-        $wcgsc_active_theme      = wp_get_theme();
-        $wcgsc_active_theme_slug = $wcgsc_active_theme->get_stylesheet();
-        $wcgsc_is_theme_match    = ($wcgsc_active_theme_slug === $wcgsc_data['theme']);
-        $wcgsc_is_pro_installed  = !empty($wcgsc_data['pro_plugin_active']) && isset($wcgsc_all_plugins[$wcgsc_data['pro_plugin_active']]);
-        $wcgsc_is_pro_active     = !empty($wcgsc_data['pro_plugin_active']) && is_plugin_active($wcgsc_data['pro_plugin_active']);
-        $wcgsc_is_free_installed = !empty($wcgsc_data['connector']) && isset($wcgsc_all_plugins[$wcgsc_data['connector']]);
-        $wcgsc_is_free_active    = !empty($wcgsc_data['connector']) && is_plugin_active($wcgsc_data['connector']);
-        if (!$wcgsc_is_theme_match) {
-            if (!$wcgsc_is_main_active)                        continue;
-            if ($wcgsc_is_pro_active)                          continue;
-            if ($wcgsc_is_free_active && !$wcgsc_is_pro_installed)   continue;
-        }
-        ?>
-
-        <?php if ($wcgsc_is_theme_match): ?>
-            <div class="gsheetconnector-list-item gsc-ext-card">
-                <div class="addon-item-header">
-                    <div class="extension-bg-color-set">
-                        <a href="<?php echo esc_url($wcgsc_data['buyLink']); ?>" target="_blank">
-                            <img src="<?php echo esc_url($wcgsc_data['img']); ?>" class="gsc-ext-icon"
-                            alt="<?php echo esc_attr($wcgsc_data['name']); ?>">
-                        </a>
-                    </div>
-                    <div class="addon-item-header-meta">
-                        <div class="plugin-premium gsc-ext-badge pro-badge">
-                            <?php echo esc_html(__('Pro','wc-gsheetconnector')); ?>
-                        </div>
-                        <div class="addon-item-meta-title">
-                            <a href="<?php echo esc_url($wcgsc_data['buyLink']); ?>" target="_blank" class="addon-link">
-                                <?php echo esc_html($wcgsc_data['name']); ?>
-                            </a>
-                        </div>
-                        <div class="addon-item-header-meta-excerpt">
-                            <?php echo esc_html($wcgsc_data['text']); ?>
-                        </div>
-
-                        <div class="addon-item-footer">
-                            <div class="button-bar">
-                                <div class="addon-item-meta-title gsc-ext-actions">
-                                    <a href="<?php echo esc_url($wcgsc_data['link']); ?>" target="_blank" class="btn activate">
-                                        <?php echo esc_html($wcgsc_data['button']); ?>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <?php else: ?>
-                <div class="gsheetconnector-list-item gsc-ext-card">
-                    <div class="addon-item-header">
-                        <div class="extension-bg-color-set">
-                            <div class="gsc-ext-top">
-                                <a href="<?php echo esc_url($wcgsc_data['url']); ?>" target="_blank">
-                                    <img src="<?php echo esc_url($wcgsc_data['img']); ?>"
-                                    alt="<?php echo esc_attr($wcgsc_data['name']); ?>"
-                                    class="gsc-ext-icon">
-                                </a>
-                                <?php if ($wcgsc_is_pro_installed && !$wcgsc_is_pro_active): ?>
-                                    <div class="plugin-premium gsc-ext-badge pro-badge">
-                                        <?php echo esc_html(__('Pro','wc-gsheetconnector')); ?>
-                                    </div>
-                                    <?php else: ?>
-                                        <div class="plugin-free gsc-ext-badge free-green">
-                                            <?php echo esc_html(__('Free','wc-gsheetconnector')); ?>
+                                            <div class="plugin-premium gsc-ext-badge pro-badge">
+                                                <?php esc_html_e('Pro', 'wc-gsheetconnector'); ?>
+                                            </div>
                                         </div>
-                                    <?php endif; ?>
-                                </div>
-                            </div>
-                            <div class="addon-item-header-meta">
-                                <div class="addon-item-meta-title">
-                                    <a href="<?php echo esc_url($wcgsc_data['url']); ?>" target="_blank" class="addon-link">
-                                        <?php echo esc_html($wcgsc_data['name']); ?>
-                                    </a>
-                                </div>
-                                <div class="addon-item-header-meta-excerpt">
-                                    <?php echo esc_html($wcgsc_data['text']); ?>
-                                </div>
+                                    </div>
 
-                                <div class="addon-item-footer">
-                                    <div class="button-bar gsc-ext-actions">
-                                        <a href="<?php echo esc_url($wcgsc_data['docs']); ?>" target="_blank"
-                                            class="btn btn-default link-hover-white"><?php echo esc_html(__('View Docs','wc-gsheetconnector')); ?>
-                                        </a>
-                                        <?php if ($wcgsc_is_pro_installed && !$wcgsc_is_pro_active): ?>
-                                            <button class="wcgsc-activate-plugin-btn btn activate button-pro"
-                                            data-plugin="<?php echo esc_attr($wcgsc_data['pro_plugin_active']); ?>">
-                                            <?php esc_html_e('Activate','wc-gsheetconnector'); ?>
-                                        </button>
-                                        <span class="loading-sign-active mt-25"></span>
-                                        <?php elseif ($wcgsc_is_free_installed && !$wcgsc_is_free_active): ?>
-                                            <button class="wcgsc-activate-plugin-btn btn activate button-free"
-                                            data-plugin="<?php echo esc_attr($wcgsc_data['connector']); ?>">
-                                            <?php esc_html_e('Activate','wc-gsheetconnector'); ?>
-                                        </button>
-                                        <span class="loading-sign-active mt-25"></span>
-                                        <?php else: ?>
-                                            <button class="wcgsc-install-plugin-btn btn btn-default"
-                                            data-download="<?php echo esc_url($wcgsc_data['downloadLink']); ?>"
-                                            data-plugin="<?php echo esc_attr($wcgsc_plugin); ?>">
-                                            <?php echo esc_html($wcgsc_data['button']); ?>
-                                        </button>
-                                        <span class="loading-sign-install mt-25"></span>
-                                        <button class="d-none wcgsc-activate-plugin-btn btn activate button-free"
-                                        data-plugin="<?php echo esc_attr($wcgsc_data['connector']); ?>"
-                                        >
-                                        <?php esc_html_e('Activate','wc-gsheetconnector'); ?>
-                                    </button>
-                                    <span class="loading-sign-active mt-25"></span>
-                                <?php endif; ?>
+                                    <div class="addon-item-header-meta">
+                                        <div class="addon-item-meta-title">
+                                            <a href="<?php echo esc_url($wcgsc_details['link']); ?>"
+                                                target="_blank"
+                                                class="addon-link">
+                                                <?php echo esc_html($wcgsc_details['name']); ?>
+                                            </a>
+                                        </div>
+
+                                        <div class="addon-item-header-meta-excerpt">
+                                            <?php echo esc_html($wcgsc_details['text']); ?>
+                                        </div>
+
+                                        <div class="activated gsc-ext-actions">
+                                            <a href="<?php echo esc_url($wcgsc_details['docs']); ?>"
+                                                target="_blank"
+                                                class="addon-link btn btn-default link-hover-white">
+                                                <?php esc_attr_e('View Docs', 'wc-gsheetconnector'); ?>
+                                            </a>
+
+                                            <a
+                                                href="javascript:void(0);"
+                                                class="btn deactivate-btn wcgsc-deactivate-plugin"
+                                                data-download="<?php echo esc_attr($wcgsc_details['connector-pro']); ?>"
+                                                data-plugin="<?php echo esc_attr($wcgsc_details['connector-pro']); ?>">
+                                                <?php esc_html_e('Deactivate', 'wc-gsheetconnector'); ?>
+                                            </a>
+                                            <span class="loading-sign-deactivate mt-25"></span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        <?php
+
+                            // =========================
+                            // FREE ACTIVE → SHOW FREE
+                            // =========================
+                        } elseif ($wcgsc_is_free_active) {
+                        ?>
+
+                            <div class="gsheetconnector-list-item gsc-ext-card">
+
+                                <div class="addon-item-header">
+                                    <div class="extension-bg-color-set">
+                                        <div class="gsc-ext-top">
+                                            <a href="<?php echo esc_url($wcgsc_details['buyLink']); ?>" target="_blank">
+                                                <img src="<?php echo esc_url($wcgsc_details['img']); ?>"
+                                                    alt="<?php echo esc_attr($wcgsc_details['name']); ?>"
+                                                    class="gsc-ext-icon">
+                                            </a>
+
+                                            <div class="plugin-free gsc-ext-badge free-green">
+                                                <?php esc_html_e('Free', 'wc-gsheetconnector'); ?>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="addon-item-header-meta">
+                                        <div class="addon-item-meta-title">
+                                            <a href="<?php echo esc_url($wcgsc_details['buyLink']); ?>"
+                                                target="_blank"
+                                                class="addon-link">
+                                                <?php echo esc_html($wcgsc_details['name']); ?>
+                                            </a>
+                                        </div>
+
+                                        <div class="addon-item-header-meta-excerpt">
+                                            <?php echo esc_html($wcgsc_details['text']); ?>
+                                        </div>
+
+                                        <div class="activated gsc-ext-actions">
+                                            <a href="<?php echo esc_url($wcgsc_details['docs']); ?>"
+                                                target="_blank"
+                                                class="addon-link btn btn-default link-hover-white">
+                                                <?php esc_attr_e('View Docs', 'wc-gsheetconnector'); ?>
+                                            </a>
+
+                                            <a href="javascript:void(0);"
+                                                class="btn deactivate-btn wcgsc-deactivate-plugin"
+                                                data-download="<?php echo esc_attr($wcgsc_details['connector']); ?>"
+                                                data-plugin="<?php echo esc_attr($wcgsc_details['connector']); ?>">
+                                                <?php esc_html_e('Deactivate', 'wc-gsheetconnector'); ?>
+                                            </a>
+                                            <span class="loading-sign-deactivate mt-25"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    <?php
+                        }
+                    }
+                    ?>
+                </div>
+
+                <!-- Second section -->
+                <div class="gsc-market-header">
+                    <div class="extensions-sub-heading"><?php echo esc_html(__('Recommended Plugins', 'wc-gsheetconnector')); ?></div>
+                    <div>
+                        <p><?php echo esc_html(__('Discover recommended plugins that enhance your workflow and help you get more value from your Google Sheets integration.', 'wc-gsheetconnector')); ?>
+                        </p>
                     </div>
                 </div>
-            </div>
-        <?php endif; ?>
-    <?php endforeach; ?>
-</div>
+                <div class="gsheetconnector-addons-list gsc-ext-grid">
+                    <?php foreach ($wcgsc_plugins as $wcgsc_plugin => $wcgsc_data):
+                        $wcgsc_is_main_active = false;
+                        if (!empty($wcgsc_data['mainPlugin'])) {
+                            $wcgsc_main_plugins = is_array($wcgsc_data['mainPlugin']) ? $wcgsc_data['mainPlugin'] : [$wcgsc_data['mainPlugin']];
+                            foreach ($wcgsc_main_plugins as $wcgsc_main_plugin) {
+                                if (is_plugin_active($wcgsc_main_plugin)) {
+                                    $wcgsc_is_main_active = true;
+                                    break;
+                                }
+                            }
+                        }
+                        $wcgsc_active_theme      = wp_get_theme();
+                        $wcgsc_active_theme_slug = $wcgsc_active_theme->get_stylesheet();
+                        $wcgsc_is_theme_match    = ($wcgsc_active_theme_slug === $wcgsc_data['theme']);
+                        $wcgsc_is_pro_installed  = !empty($wcgsc_data['pro_plugin_active']) && isset($wcgsc_all_plugins[$wcgsc_data['pro_plugin_active']]);
+                        $wcgsc_is_pro_active     = !empty($wcgsc_data['pro_plugin_active']) && is_plugin_active($wcgsc_data['pro_plugin_active']);
+                        $wcgsc_is_free_installed = !empty($wcgsc_data['connector']) && isset($wcgsc_all_plugins[$wcgsc_data['connector']]);
+                        $wcgsc_is_free_active    = !empty($wcgsc_data['connector']) && is_plugin_active($wcgsc_data['connector']);
+                        if ($wcgsc_is_pro_active) {
+                            continue;
+                        }
+                        // if (empty($wcgsc_data['button'])) {
+                        //     continue;
+                        // }
+                        if (!$wcgsc_is_theme_match) {
+                            if (!$wcgsc_is_main_active)                        continue;
+                            if ($wcgsc_is_free_active && !$wcgsc_is_pro_installed)   continue;
+                        }
+                    ?>
+
+                        <?php if ($wcgsc_is_theme_match): ?>
+                            <div class="gsheetconnector-list-item gsc-ext-card">
+                                <div class="addon-item-header">
+                                    <div class="extension-bg-color-set">
+                                        <a href="<?php echo esc_url($wcgsc_data['buyLink']); ?>" target="_blank">
+                                            <img src="<?php echo esc_url($wcgsc_data['img']); ?>" class="gsc-ext-icon"
+                                                alt="<?php echo esc_attr($wcgsc_data['name']); ?>">
+                                        </a>
+                                    </div>
+                                    <div class="addon-item-header-meta">
+                                        <div class="plugin-premium gsc-ext-badge pro-badge">
+                                            <?php echo esc_html(__('Pro', 'wc-gsheetconnector')); ?>
+                                        </div>
+                                        <div class="addon-item-meta-title">
+                                            <a href="<?php echo esc_url($wcgsc_data['buyLink']); ?>" target="_blank" class="addon-link">
+                                                <?php echo esc_html($wcgsc_data['name']); ?>
+                                            </a>
+                                        </div>
+                                        <div class="addon-item-header-meta-excerpt">
+                                            <?php echo esc_html($wcgsc_data['text']); ?>
+                                        </div>
+
+                                        <div class="addon-item-footer">
+
+                                            <div class="button-bar gsc-ext-actions">
+                                                <a href="<?php echo esc_url($wcgsc_data['docs']); ?>" target="_blank"
+                                                    class="btn btn-default link-hover-white"><?php echo esc_html(__('View Docs', 'wc-gsheetconnector')); ?>
+                                                </a>
+                                                <?php if ($wcgsc_is_pro_installed): ?>
+                                                    <button class="wcgsc-activate-plugin-btn btn activate button-pro"
+                                                        data-plugin="<?php echo esc_attr($wcgsc_data['pro_plugin_active']); ?>">
+                                                        <?php esc_html_e('Activate', 'wc-gsheetconnector'); ?>
+                                                    </button>
+                                                    <span class="loading-sign-active mt-25"></span>
+                                                <?php else: ?>
+                                                    <a href="<?php echo esc_url($wcgsc_data['link']); ?>" target="_blank" class="btn activate">
+                                                        <?php echo esc_html($wcgsc_data['button']); ?>
+                                                    </a>
+                                                <?php endif; ?>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php else: ?>
+                            <div class="gsheetconnector-list-item gsc-ext-card">
+                                <div class="addon-item-header">
+                                    <div class="extension-bg-color-set">
+                                        <div class="gsc-ext-top">
+                                            <a href="<?php echo esc_url($wcgsc_data['url']); ?>" target="_blank">
+                                                <img src="<?php echo esc_url($wcgsc_data['img']); ?>"
+                                                    alt="<?php echo esc_attr($wcgsc_data['name']); ?>"
+                                                    class="gsc-ext-icon">
+                                            </a>
+                                            <?php if ($wcgsc_is_pro_installed && !$wcgsc_is_pro_active): ?>
+                                                <div class="plugin-premium gsc-ext-badge pro-badge">
+                                                    <?php echo esc_html(__('Pro', 'wc-gsheetconnector')); ?>
+                                                </div>
+                                            <?php else: ?>
+                                                <div class="plugin-free gsc-ext-badge free-green">
+                                                    <?php echo esc_html(__('Free', 'wc-gsheetconnector')); ?>
+                                                </div>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+                                    <div class="addon-item-header-meta">
+                                        <div class="addon-item-meta-title">
+                                            <a href="<?php echo esc_url($wcgsc_data['url']); ?>" target="_blank" class="addon-link">
+                                                <?php echo esc_html($wcgsc_data['name']); ?>
+                                            </a>
+                                        </div>
+                                        <div class="addon-item-header-meta-excerpt">
+                                            <?php echo esc_html($wcgsc_data['text']); ?>
+                                        </div>
+
+                                        <div class="addon-item-footer">
+                                            <div class="button-bar gsc-ext-actions">
+                                                <a href="<?php echo esc_url($wcgsc_data['docs']); ?>" target="_blank"
+                                                    class="btn btn-default link-hover-white"><?php echo esc_html(__('View Docs', 'wc-gsheetconnector')); ?>
+                                                </a>
+                                                <?php if ($wcgsc_is_pro_installed && !$wcgsc_is_pro_active): ?>
+                                                    <button class="wcgsc-activate-plugin-btn btn activate button-pro"
+                                                        data-plugin="<?php echo esc_attr($wcgsc_data['pro_plugin_active']); ?>">
+                                                        <?php esc_html_e('Activate', 'wc-gsheetconnector'); ?>
+                                                    </button>
+                                                    <span class="loading-sign-active mt-25"></span>
+                                                <?php elseif ($wcgsc_is_free_installed && !$wcgsc_is_free_active): ?>
+                                                    <button class="wcgsc-activate-plugin-btn btn activate button-free"
+                                                        data-plugin="<?php echo esc_attr($wcgsc_data['connector']); ?>">
+                                                        <?php esc_html_e('Activate', 'wc-gsheetconnector'); ?>
+                                                    </button>
+                                                    <span class="loading-sign-active mt-25"></span>
+                                                <?php else: ?>
+                                                    <button class="wcgsc-install-plugin-btn btn btn-default"
+                                                        data-download="<?php echo esc_url($wcgsc_data['downloadLink']); ?>"
+                                                        data-plugin="<?php echo esc_attr($wcgsc_plugin); ?>">
+                                                        <?php echo esc_html($wcgsc_data['button']); ?>
+                                                    </button>
+                                                    <span class="loading-sign-install mt-25"></span>
+                                                    <button class="d-none wcgsc-activate-plugin-btn btn activate button-free"
+                                                        data-plugin="<?php echo esc_attr($wcgsc_data['connector']); ?>">
+                                                        <?php esc_html_e('Activate', 'wc-gsheetconnector'); ?>
+                                                    </button>
+                                                    <span class="loading-sign-active mt-25"></span>
+                                                <?php endif; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </div>
 
 
-<!-- 3th section-->
-<!--NEW-->
-<div class="gsc-marketplace">
-    <div class="gsc-market-header">
-        <div>
-            <div class="extensions-sub-heading"><?php echo esc_html(__('Explore More Plugins','wc-gsheetconnector')); ?></div>
-            <div>
-                <p class="mt-15 mb-0"><?php echo esc_html(__('Discover the right connector for your workflow and automate data syncing.','wc-gsheetconnector')); ?>
-            </p>
-        </div>
-    </div>
+                <!-- 3th section-->
+                <!--NEW-->
+                <div class="gsc-marketplace">
+                    <div class="gsc-market-header">
+                        <div>
+                            <div class="extensions-sub-heading"><?php echo esc_html(__('Explore More Plugins', 'wc-gsheetconnector')); ?></div>
+                            <div>
+                                <p class="mt-15 mb-0"><?php echo esc_html(__('Discover the right connector for your workflow and automate data syncing.', 'wc-gsheetconnector')); ?>
+                                </p>
+                            </div>
+                        </div>
 
-    <div class="gsc-market-tabs d-flex flex-wrap gap-10 pt-15 pb-15 pl-15 pr-15">
-        <button class="market-tab active fw-600" data-filter="all"><?php echo esc_html(__('All','wc-gsheetconnector')); ?></button>
-        <button class="market-tab fw-600" data-filter="forms"><?php echo esc_html(__('Forms','wc-gsheetconnector')); ?></button>
-        <button class="market-tab fw-600" data-filter="builders"><?php echo esc_html(__('Page Builders','wc-gsheetconnector')); ?></button>
-        <button class="market-tab fw-600" data-filter="shop"><?php echo esc_html(__('eCommerce','wc-gsheetconnector')); ?></button>
-    </div>
-</div>
+                        <div class="gsc-market-tabs d-flex flex-wrap gap-10 pt-15 pb-15 pl-15 pr-15">
+                            <button class="market-tab active fw-600" data-filter="all"><?php echo esc_html(__('All', 'wc-gsheetconnector')); ?></button>
+                            <button class="market-tab fw-600" data-filter="forms"><?php echo esc_html(__('Forms', 'wc-gsheetconnector')); ?></button>
+                            <button class="market-tab fw-600" data-filter="builders"><?php echo esc_html(__('Page Builders', 'wc-gsheetconnector')); ?></button>
+                            <button class="market-tab fw-600" data-filter="shop"><?php echo esc_html(__('eCommerce', 'wc-gsheetconnector')); ?></button>
+                        </div>
+                    </div>
 
-<div class="gsheetconnector-addons-list gsc-ext-grid">
+                    <div class="gsheetconnector-addons-list gsc-ext-grid">
 
-    <?php foreach ($wcgsc_plugins as $wcgsc_plugin => $wcgsc_data):
+                        <?php foreach ($wcgsc_plugins as $wcgsc_plugin => $wcgsc_data):
 
-        // ---------------------------------
-        // MAIN PLUGIN ACTIVE CHECK
-        // ---------------------------------
-        $wcgsc_is_main_active = false;
+                            // ---------------------------------
+                            // MAIN PLUGIN ACTIVE CHECK
+                            // ---------------------------------
+                            $wcgsc_is_main_active = false;
 
-        if (!empty($wcgsc_data['mainPlugin'])) {
-            if (is_array($wcgsc_data['mainPlugin'])) {
-                foreach ($wcgsc_data['mainPlugin'] as $wcgsc_main_plugin) {
-                    if (is_plugin_active($wcgsc_main_plugin)) {
-                        $wcgsc_is_main_active = true;
-                        break;
-                    }
-                }
-            } elseif (is_string($wcgsc_data['mainPlugin'])) {
-                $wcgsc_is_main_active = is_plugin_active($wcgsc_data['mainPlugin']);
-            }
-        }
+                            if (!empty($wcgsc_data['mainPlugin'])) {
+                                if (is_array($wcgsc_data['mainPlugin'])) {
+                                    foreach ($wcgsc_data['mainPlugin'] as $wcgsc_main_plugin) {
+                                        if (is_plugin_active($wcgsc_main_plugin)) {
+                                            $wcgsc_is_main_active = true;
+                                            break;
+                                        }
+                                    }
+                                } elseif (is_string($wcgsc_data['mainPlugin'])) {
+                                    $wcgsc_is_main_active = is_plugin_active($wcgsc_data['mainPlugin']);
+                                }
+                            }
 
-        // ---------------------------------
-        // FREE / PRO INSTALLED CHECK
-        // ---------------------------------
-        $wcgsc_is_free_installed = !empty($wcgsc_data['connector'])
-        && isset($wcgsc_all_plugins[$wcgsc_data['connector']]);
+                            // ---------------------------------
+                            // FREE / PRO INSTALLED CHECK
+                            // ---------------------------------
+                            $wcgsc_is_free_installed = !empty($wcgsc_data['connector'])
+                                && isset($wcgsc_all_plugins[$wcgsc_data['connector']]);
 
-        $wcgsc_is_pro_installed  = !empty($wcgsc_data['pro_plugin_active'])
-        && isset($wcgsc_all_plugins[$wcgsc_data['pro_plugin_active']]);
+                            $wcgsc_is_pro_installed  = !empty($wcgsc_data['pro_plugin_active'])
+                                && isset($wcgsc_all_plugins[$wcgsc_data['pro_plugin_active']]);
+                            $wcgsc_active_theme      = wp_get_theme();
+                            $wcgsc_active_theme_slug = $wcgsc_active_theme->get_stylesheet();
+                            $wcgsc_is_theme_match    = ($wcgsc_active_theme_slug === $wcgsc_data['theme']);
 
                             /**
                              *  HIDE ADDON ONLY WHEN:
@@ -782,7 +804,9 @@ if (!defined('ABSPATH')) {
                             if ($wcgsc_is_main_active) {
                                 continue;
                             }
-
+                            if ($wcgsc_is_theme_match) {
+                                if (!$wcgsc_is_main_active)                        continue;
+                            }
                             // ---------------------------------
                             // CATEGORY (FILTERING SAFE)
                             // ---------------------------------
@@ -793,7 +817,7 @@ if (!defined('ABSPATH')) {
                             } elseif (in_array($wcgsc_data['theme'], ['woocommerce', 'easy-digital-downloads'], true)) {
                                 $wcgsc_category = 'shop';
                             }
-                            ?>
+                        ?>
 
                             <div class="gsheetconnector-list-item gsc-ext-card gsc-market-item <?php echo esc_attr($wcgsc_category); ?>">
 
@@ -804,42 +828,42 @@ if (!defined('ABSPATH')) {
                                         </a>
 
                                         <?php if (!empty($wcgsc_data['freeLink'])): ?>
-                                            <span class="plugin-free gsc-ext-badge free-green"><?php echo esc_html(__('Free','wc-gsheetconnector')); ?></span>
+                                            <span class="plugin-free gsc-ext-badge free-green"><?php echo esc_html(__('Free', 'wc-gsheetconnector')); ?></span>
 
-                                            <?php else: ?>
-                                                <span class="plugin-premium gsc-ext-badge pro-badge"><?php echo esc_html(__('Pro','wc-gsheetconnector')); ?></span>
-                                            <?php endif; ?>
-                                        </div>
+                                        <?php else: ?>
+                                            <span class="plugin-premium gsc-ext-badge pro-badge"><?php echo esc_html(__('Pro', 'wc-gsheetconnector')); ?></span>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+
+                                <div class="addon-item-header-meta">
+
+                                    <div class="addon-item-meta-title">
+                                        <a href="<?php echo esc_url($wcgsc_data['link']); ?>"
+                                            target="_blank"
+                                            class="addon-link">
+                                            <?php echo esc_attr($wcgsc_data['name']); ?>
+                                        </a>
                                     </div>
 
-                                    <div class="addon-item-header-meta">
+                                    <div class="addon-item-header-meta-excerpt">
+                                        <?php echo esc_attr($wcgsc_data['text']); ?>
+                                    </div>
 
-                                        <div class="addon-item-meta-title">
-                                            <a href="<?php echo esc_url($wcgsc_data['link']); ?>"
-                                                target="_blank"
-                                                class="addon-link">
-                                                <?php echo esc_attr($wcgsc_data['name']); ?>
-                                            </a>
-                                        </div>
-
-                                        <div class="addon-item-header-meta-excerpt">
-                                            <?php echo esc_attr($wcgsc_data['text']); ?>
-                                        </div>
-
-                                        <div class="addon-item-footer">
-                                            <div class="button-bar gsc-ext-actions">
+                                    <div class="addon-item-footer">
+                                        <div class="button-bar gsc-ext-actions">
 
                                             <?php //if (!empty($wcgsc_data['downloadLink'])): 
                                             ?>
                                             <a href="<?php echo esc_url($wcgsc_data['docs']); ?>" target="_blank"
-                                                class="btn btn-default link-hover-white"><?php echo esc_html(__('View Docs','wc-gsheetconnector')); ?>
+                                                class="btn btn-default link-hover-white"><?php echo esc_html(__('View Docs', 'wc-gsheetconnector')); ?>
                                             </a>
                                             <?php //endif; 
                                             ?>
                                             <?php if (!empty($wcgsc_data['demo'])): ?>
 
                                                 <a href="<?php echo esc_url($wcgsc_data['demo']); ?>" target="_blank"
-                                                    class="btn buy text-decoration-none"><?php echo esc_html(__('View Demo','wc-gsheetconnector')); ?>
+                                                    class="btn buy text-decoration-none"><?php echo esc_html(__('View Demo', 'wc-gsheetconnector')); ?>
                                                 </a>
 
                                             <?php endif; ?>
@@ -866,49 +890,49 @@ if (!defined('ABSPATH')) {
                     </div>
 
                     <div class="gsc-modal-title">
-                        <?php echo esc_html__('Deactivate Plugin','wc-gsheetconnector'); ?>
+                        <?php echo esc_html__('Deactivate Plugin', 'wc-gsheetconnector'); ?>
                     </div>
 
                     <p class="gsc-modal-text">
-                        <?php echo esc_html__('Are you sure you want to deactivate this plugin?','wc-gsheetconnector'); ?>
+                        <?php echo esc_html__('Are you sure you want to deactivate this plugin?', 'wc-gsheetconnector'); ?>
                     </p>
 
                     <div class="popup-actions d-flex justify-center gap-10">
-                       <button type="button"
-                       class="btn deactivate-btn"
-                       id="wcgsc-deactive-popup-cancel-free">
-                       <?php echo esc_html__('Cancel','wc-gsheetconnector'); ?>
-                   </button>
+                        <button type="button"
+                            class="btn deactivate-btn"
+                            id="wcgsc-deactive-popup-cancel-free">
+                            <?php echo esc_html__('Cancel', 'wc-gsheetconnector'); ?>
+                        </button>
 
-                   <button type="button"
-                   class="btn btn-primary"
-                   id="wcgsc-deactive-popup-confirm-free">
-                   <?php echo esc_html__('Deactivate','wc-gsheetconnector'); ?>
-               </button>
-           </div>
-       </div>
-   </div>
+                        <button type="button"
+                            class="btn btn-primary"
+                            id="wcgsc-deactive-popup-confirm-free">
+                            <?php echo esc_html__('Deactivate', 'wc-gsheetconnector'); ?>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-   <div id="wcgsc-confirm-active-popup-free" class="wcgsc-popup-overlay d-none">
-    <div class="wcgsc-popup text-center">
+            <div id="wcgsc-confirm-active-popup-free" class="wcgsc-popup-overlay d-none">
+                <div class="wcgsc-popup text-center">
 
-        <div class="gsc-modal-icon">
-            <svg width="30px" height="30px" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18.2202 21.25H5.78015C5.14217 21.2775 4.50834 21.1347 3.94373 20.8364C3.37911 20.5381 2.90402 20.095 2.56714 19.5526C2.23026 19.0101 2.04372 18.3877 2.02667 17.7494C2.00963 17.111 2.1627 16.4797 2.47015 15.92L8.69013 5.10999C9.03495 4.54078 9.52077 4.07013 10.1006 3.74347C10.6804 3.41681 11.3346 3.24518 12.0001 3.24518C12.6656 3.24518 13.3199 3.41681 13.8997 3.74347C14.4795 4.07013 14.9654 4.54078 15.3102 5.10999L21.5302 15.92C21.8376 16.4797 21.9907 17.111 21.9736 17.7494C21.9566 18.3877 21.7701 19.0101 21.4332 19.5526C21.0963 20.095 20.6211 20.5381 20.0565 20.8364C19.4919 21.1347 18.8581 21.2775 18.2202 21.25V21.25Z" stroke="#d97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                <path d="M10.8809 17.15C10.8809 17.0021 10.9102 16.8556 10.9671 16.7191C11.024 16.5825 11.1074 16.4586 11.2125 16.3545C11.3175 16.2504 11.4422 16.1681 11.5792 16.1124C11.7163 16.0567 11.8629 16.0287 12.0109 16.03C12.2291 16.034 12.4413 16.1021 12.621 16.226C12.8006 16.3499 12.9398 16.5241 13.0211 16.7266C13.1023 16.9292 13.122 17.1512 13.0778 17.3649C13.0335 17.5786 12.9272 17.7745 12.7722 17.9282C12.6172 18.0818 12.4203 18.1863 12.2062 18.2287C11.9921 18.2711 11.7703 18.2494 11.5685 18.1663C11.3666 18.0833 11.1938 17.9426 11.0715 17.7618C10.9492 17.5811 10.8829 17.3683 10.8809 17.15ZM11.2409 14.42L11.1009 9.20001C11.0876 9.07453 11.1008 8.94766 11.1398 8.82764C11.1787 8.70761 11.2424 8.5971 11.3268 8.5033C11.4112 8.40949 11.5144 8.33449 11.6296 8.28314C11.7449 8.2318 11.8697 8.20526 11.9959 8.20526C12.1221 8.20526 12.2469 8.2318 12.3621 8.28314C12.4774 8.33449 12.5805 8.40949 12.6649 8.5033C12.7493 8.5971 12.8131 8.70761 12.852 8.82764C12.8909 8.94766 12.9042 9.07453 12.8909 9.20001L12.7609 14.42C12.7609 14.6215 12.6808 14.8149 12.5383 14.9574C12.3957 15.0999 12.2024 15.18 12.0009 15.18C11.7993 15.18 11.606 15.0999 11.4635 14.9574C11.321 14.8149 11.2409 14.6215 11.2409 14.42Z" fill="#d97706"></path>
-            </svg>
+                    <div class="gsc-modal-icon">
+                        <svg width="30px" height="30px" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.2202 21.25H5.78015C5.14217 21.2775 4.50834 21.1347 3.94373 20.8364C3.37911 20.5381 2.90402 20.095 2.56714 19.5526C2.23026 19.0101 2.04372 18.3877 2.02667 17.7494C2.00963 17.111 2.1627 16.4797 2.47015 15.92L8.69013 5.10999C9.03495 4.54078 9.52077 4.07013 10.1006 3.74347C10.6804 3.41681 11.3346 3.24518 12.0001 3.24518C12.6656 3.24518 13.3199 3.41681 13.8997 3.74347C14.4795 4.07013 14.9654 4.54078 15.3102 5.10999L21.5302 15.92C21.8376 16.4797 21.9907 17.111 21.9736 17.7494C21.9566 18.3877 21.7701 19.0101 21.4332 19.5526C21.0963 20.095 20.6211 20.5381 20.0565 20.8364C19.4919 21.1347 18.8581 21.2775 18.2202 21.25V21.25Z" stroke="#d97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M10.8809 17.15C10.8809 17.0021 10.9102 16.8556 10.9671 16.7191C11.024 16.5825 11.1074 16.4586 11.2125 16.3545C11.3175 16.2504 11.4422 16.1681 11.5792 16.1124C11.7163 16.0567 11.8629 16.0287 12.0109 16.03C12.2291 16.034 12.4413 16.1021 12.621 16.226C12.8006 16.3499 12.9398 16.5241 13.0211 16.7266C13.1023 16.9292 13.122 17.1512 13.0778 17.3649C13.0335 17.5786 12.9272 17.7745 12.7722 17.9282C12.6172 18.0818 12.4203 18.1863 12.2062 18.2287C11.9921 18.2711 11.7703 18.2494 11.5685 18.1663C11.3666 18.0833 11.1938 17.9426 11.0715 17.7618C10.9492 17.5811 10.8829 17.3683 10.8809 17.15ZM11.2409 14.42L11.1009 9.20001C11.0876 9.07453 11.1008 8.94766 11.1398 8.82764C11.1787 8.70761 11.2424 8.5971 11.3268 8.5033C11.4112 8.40949 11.5144 8.33449 11.6296 8.28314C11.7449 8.2318 11.8697 8.20526 11.9959 8.20526C12.1221 8.20526 12.2469 8.2318 12.3621 8.28314C12.4774 8.33449 12.5805 8.40949 12.6649 8.5033C12.7493 8.5971 12.8131 8.70761 12.852 8.82764C12.8909 8.94766 12.9042 9.07453 12.8909 9.20001L12.7609 14.42C12.7609 14.6215 12.6808 14.8149 12.5383 14.9574C12.3957 15.0999 12.2024 15.18 12.0009 15.18C11.7993 15.18 11.606 15.0999 11.4635 14.9574C11.321 14.8149 11.2409 14.6215 11.2409 14.42Z" fill="#d97706"></path>
+                        </svg>
+                    </div>
+                    <div class="popup-actions-active justify-center">
+                        <div class="popup-actions-active-msg mb-20"></div>
+                        <button type="button"
+                            class="btn btn-active"
+                            id="wcgsc-popup-active-free">
+                            <?php echo esc_html__('Cancel', 'wc-gsheetconnector'); ?>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="popup-actions-active justify-center">
-            <div class="popup-actions-active-msg mb-20"></div>
-            <button type="button"
-            class="btn btn-active"
-            id="wcgsc-popup-active-free">
-            <?php echo esc_html__('Cancel','wc-gsheetconnector'); ?>
-        </button>
     </div>
-</div>
-</div>
-</div>
-</div>
 </div>
 <!--end popup start-->
