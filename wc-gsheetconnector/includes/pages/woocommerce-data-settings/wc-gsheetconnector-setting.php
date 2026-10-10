@@ -87,6 +87,10 @@ if ($wcgsc_show_setting == 1) {
 
                                     <?php
                                     if (! empty($wcgsc_sheet_data)) {
+                                        // Sort sheet names A-Z (case-insensitive), keeping sheet ID keys intact.
+                                        uasort($wcgsc_sheet_data, function ($a, $b) {
+                                            return strcasecmp((string) ($a['sheet_name'] ?? ''), (string) ($b['sheet_name'] ?? ''));
+                                        });
                                         foreach ($wcgsc_sheet_data as $wcgsc_key => $wcgsc_value) {
                                             $wcgsc_selected = '';
                                             if ($wcgsc_selected_sheet_key !== '' && $wcgsc_key == $wcgsc_selected_sheet_key) {

@@ -1,16 +1,9 @@
 # Translation file
+
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "Language: hi_IN\n"
-"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.9\n"
 
 msgid "11"
 msgstr "11"
@@ -648,9 +641,6 @@ msgstr "Google शीट कनेक्ट नहीं है"
 msgid "Not connected"
 msgstr "जुड़ा हुआ"
 
-msgid "WooCommerce - GSheetConnector"
-msgstr "WooCommerce - GSheetConnector"
-
 msgid "Select"
 msgstr "चुनें"
 
@@ -708,8 +698,10 @@ msgstr "यदि संकेत दिया जाए तो प्रमा�
 msgid "This allows the plugin to securely sync your form data with Google Sheets."
 msgstr "यह प्लगइन को आपके फॉर्म डेटा को Google Sheets के साथ सुरक्षित रूप से समन्वयित करने की अनुमति देता है।"
 
-msgid "<p class=\"fw-400 text-dark\"><strong>Google Drive</strong> and <strong>Google Sheets</strong> permissions were not granted during authentication with Google.</p"
-msgstr "<p class=\"fw-400 text-dark\"><strong>Google Drive</strong> और <strong>Google Sheets</strong> की अनुमतियाँ Google के साथ प्रमाणीकरण के दौरान प्रदान नहीं की गई थीं।</p"
+msgid "<p class="fw-400 text-dark"><strong>Google Drive</strong> and <strong>Google Sheets</strong> permissions were not granted during authentication with Google.</p>
+                  <p class="fw-400 text-dark"><strong>Refer to Step 4 in the Connection Guide shown alongside.</strong><br> Then, deactivate the connection and re-authorize it, ensuring both Google Drive and Google Sheets permissions are enabled.</p>"
+msgstr "<p class="fw-400 text-dark">Google के साथ ऑथेंटिकेशन के दौरान <strong>Google Drive</strong> और <strong>Google Sheets</strong> की परमिशन नहीं दी गई थीं।</p>
+<p class="fw-400 text-dark"><strong>साथ में दिए गए कनेक्शन गाइड के स्टेप 4 को देखें।</strong><br> इसके बाद, कनेक्शन को डीएक्टिवेट करें और उसे फिर से ऑथराइज़ करें, और यह पक्का करें कि Google Drive और Google Sheets दोनों की परमिशन चालू (enabled) हों।</p>"
 
 msgid "Connected Google Account"
 msgstr "कनेक्टेड Google खाता"
@@ -1167,7 +1159,8 @@ msgstr "आपको इस पृष्ठ तक पहुँचने की 
 msgid "System Information"
 msgstr "सिस्टम जानकारी"
 
-msgid "View detailed information about your plugin, server, and WordPress setup for troubleshooting and support"
+msgid "View detailed information about your plugin, server, and WordPress setup for troubleshooting and support.
+        "
 msgstr "समस्या निवारण और समर्थन के लिए अपने plugin, server, और WordPress setup के बारे में विस्तृत जानकारी देखें"
 
 msgid "Copy System Info"
@@ -1962,8 +1955,8 @@ msgstr "आदेश स्थिति"
 msgid "Sync Orders (Product Category Tabs)"
 msgstr "ऑर्डर और उत्पाद श्रेणी फ़िल्टर"
 
-msgid "Backfill existing <b class=\"f-weight\">WooCommerce orders</b> into the Product Category sheet tabs. Only orders that contain a product from a selected category are synced, and only into those matching category tabs. Orders already present in a tab are skipped."
-msgstr "मौजूदा <b class=\"f-weight\">WooCommerce ऑर्डर</b> को Product Category शीट टैब में बैकफ़िल करें। केवल चुनी गई श्रेणी का उत्पाद शामिल करने वाले ऑर्डर ही सिंक किए जाते हैं, और केवल उन मिलते-जुलते श्रेणी टैब में। जो ऑर्डर पहले से किसी टैब में मौजूद हैं, उन्हें छोड़ा जाता है।"
+msgid "Backfill existing <b class="f-weight">WooCommerce orders</b> into the Product Category sheet tabs. Only orders that contain a product from a selected category are synced, and only into those matching category tabs. Orders already present in a tab are skipped."
+msgstr "मौजूदा <b class="f-weight">WooCommerce ऑर्डर</b> को Product Category शीट टैब में बैकफ़िल करें। केवल चुनी गई श्रेणी का उत्पाद शामिल करने वाले ऑर्डर ही सिंक किए जाते हैं, और केवल उन मिलते-जुलते श्रेणी टैब में। जो ऑर्डर पहले से किसी टैब में मौजूद हैं, उन्हें छोड़ा जाता है।"
 
 msgid "Product Categories"
 msgstr "उत्पाद श्रेणी फ़िल्टर"
@@ -1994,6 +1987,9 @@ msgstr "एक क्लिक में अपने WooCommerce कूपन�
 
 msgid "Sync Subscriptions"
 msgstr "सदस्यता समन्वय करें"
+
+msgid "display"
+msgstr "प्रदर्शन"
 
 msgid "View Documentation"
 msgstr "दस्तावेज़ देखें"

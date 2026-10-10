@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce GSheetConnector\n"
-"POT-Creation-Date: 2026-09-23 16:09+0530\n"
+"POT-Creation-Date: 2026-10-10 12:00+0530\n"
 "PO-Revision-Date: 2024-02-20 18:46+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -54,7 +54,7 @@ msgid "Copy Logs"
 msgstr ""
 
 #: includes/class-wc-gsheetconnector-error-logs.php:303
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1681
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1685
 msgid "Date"
 msgstr ""
 
@@ -99,6 +99,7 @@ msgstr ""
 #. Plugin Name of the plugin/theme
 #: includes/pages/admin-footer.php:17
 #: includes/pages/google-sheet-settings.php:341
+#: includes/pages/integration/class-wc-gsheetconnector-processes.php:243
 msgid "GSheetConnector for WooCommerce"
 msgstr ""
 
@@ -120,7 +121,7 @@ msgstr ""
 msgid "Version: %s"
 msgstr ""
 
-#: includes/pages/admin-footer.php:128 wc-gsheetconnector.php:190
+#: includes/pages/admin-footer.php:128 wc-gsheetconnector.php:189
 msgid "Docs"
 msgstr ""
 
@@ -128,7 +129,7 @@ msgstr ""
 msgid "Plugins"
 msgstr ""
 
-#: includes/pages/admin-footer.php:148 wc-gsheetconnector.php:191
+#: includes/pages/admin-footer.php:148 wc-gsheetconnector.php:190
 msgid "Support"
 msgstr ""
 
@@ -252,20 +253,20 @@ msgstr ""
 #: includes/pages/settings/wc-general-settings.php:115
 #: includes/pages/wc-product-sheet.php:13
 #: includes/pages/wc-product-sheet.php:48
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:252
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:360
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:412
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:463
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:532
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:599
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:642
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:688
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:748
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:807
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:891
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1599
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1723
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1906
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:256
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:364
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:416
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:467
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:536
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:603
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:646
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:692
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:752
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:811
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:895
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1603
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1727
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1910
 msgid "PRO"
 msgstr ""
 
@@ -431,7 +432,7 @@ msgstr ""
 #: includes/pages/extensions/wc-extension.php:640
 #: includes/pages/extensions/wc-extension.php:686
 #: includes/pages/extensions/wc-extension.php:834
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:230
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:234
 msgid "Pro"
 msgstr ""
 
@@ -481,7 +482,7 @@ msgstr ""
 #: includes/pages/feeds/wc-gsheetconnector-feed-settings.php:43
 #: includes/pages/feeds/wc-gsheetconnector-feed-settings.php:66
 #: includes/pages/feeds/wc-gsheetconnector-feed-settings.php:550
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1945
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1949
 msgid "All"
 msgstr ""
 
@@ -583,19 +584,19 @@ msgstr ""
 
 #: includes/pages/feeds/wc-gsheetconnector-feed-settings.php:37
 #: includes/pages/feeds/wc-gsheetconnector-feed-settings.php:160
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:903
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1933
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1976
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2025
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2058
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2087
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2145
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:907
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1937
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1980
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2029
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2062
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2091
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2149
 msgid "Orders"
 msgstr ""
 
 #: includes/pages/feeds/wc-gsheetconnector-feed-settings.php:38
 #: includes/pages/feeds/wc-gsheetconnector-feed-settings.php:225
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:904
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:908
 msgid "Products"
 msgstr ""
 
@@ -606,19 +607,19 @@ msgstr ""
 
 #: includes/pages/feeds/wc-gsheetconnector-feed-settings.php:40
 #: includes/pages/feeds/wc-gsheetconnector-feed-settings.php:355
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:906
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:910
 msgid "Customers"
 msgstr ""
 
 #: includes/pages/feeds/wc-gsheetconnector-feed-settings.php:41
 #: includes/pages/feeds/wc-gsheetconnector-feed-settings.php:420
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:907
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:911
 msgid "Coupons"
 msgstr ""
 
 #: includes/pages/feeds/wc-gsheetconnector-feed-settings.php:42
 #: includes/pages/feeds/wc-gsheetconnector-feed-settings.php:485
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:909
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:913
 msgid "Subscriptions"
 msgstr ""
 
@@ -659,8 +660,8 @@ msgid "Status"
 msgstr ""
 
 #: includes/pages/feeds/wc-gsheetconnector-feed-settings.php:114
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1783
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1842
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1787
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1846
 msgid "15"
 msgstr ""
 
@@ -803,7 +804,7 @@ msgid "WooCommerce Data Settings"
 msgstr ""
 
 #: includes/pages/google-sheet-settings.php:33
-#: includes/pages/google-sheet-settings.php:397 wc-gsheetconnector.php:831
+#: includes/pages/google-sheet-settings.php:397 wc-gsheetconnector.php:825
 msgid "Settings"
 msgstr ""
 
@@ -993,7 +994,7 @@ msgid "Multiple Feeds to Sheets"
 msgstr ""
 
 #: includes/pages/google-sheet-settings.php:498
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:185
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:189
 msgid "Order Status Sheet Tabs"
 msgstr ""
 
@@ -1002,17 +1003,17 @@ msgid "Language Translation "
 msgstr ""
 
 #: includes/pages/google-sheet-settings.php:503
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:359
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:363
 msgid "Custom Order Sheet Tabs"
 msgstr ""
 
 #: includes/pages/google-sheet-settings.php:504
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:462
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:466
 msgid "Sync Additional Sheet Tabs"
 msgstr ""
 
 #: includes/pages/google-sheet-settings.php:505
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:531
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:535
 msgid "How Orders Are Synced"
 msgstr ""
 
@@ -1021,12 +1022,12 @@ msgid "Order & Product Category Filter"
 msgstr ""
 
 #: includes/pages/google-sheet-settings.php:507
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:806
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:810
 msgid "2-Way Sync"
 msgstr ""
 
 #: includes/pages/google-sheet-settings.php:508
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:890
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:894
 msgid "Add Extra Google Sheet Columns"
 msgstr ""
 
@@ -1091,10 +1092,6 @@ msgstr ""
 msgid "Not connected"
 msgstr ""
 
-#: includes/pages/integration/class-wc-gsheetconnector-processes.php:243
-msgid "WooCommerce - GSheetConnector"
-msgstr ""
-
 #: includes/pages/integration/class-wc-gsheetconnector-processes.php:452
 #: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:86
 msgid "Select"
@@ -1138,7 +1135,7 @@ msgid ""
 msgstr ""
 
 #: includes/pages/integration/wc-gsheetconnector-integration.php:55
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:142
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:146
 msgid "Click here"
 msgstr ""
 
@@ -1596,7 +1593,7 @@ msgstr ""
 #: includes/pages/settings/wc-beta-version.php:160
 #: includes/pages/settings/wc-general-settings.php:66
 #: includes/pages/settings/wc-general-settings.php:163
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1897
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1901
 msgid "Save Settings"
 msgstr ""
 
@@ -2432,7 +2429,7 @@ msgstr ""
 msgid "Image / PDF Attachment Link"
 msgstr ""
 
-#: includes/pages/wc-dashboard.php:395 wc-gsheetconnector.php:841
+#: includes/pages/wc-dashboard.php:395 wc-gsheetconnector.php:835
 msgid "Upgrade to Pro"
 msgstr ""
 
@@ -2505,7 +2502,7 @@ msgid "Google Spreadsheet URL"
 msgstr ""
 
 #: includes/pages/wc-product-sheet.php:32
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:118
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:122
 msgid "View Spreadsheet"
 msgstr ""
 
@@ -2582,251 +2579,251 @@ msgid ""
 "save your changes to start syncing."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:136
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:140
 msgid "Fetch Sheets"
 msgstr ""
 
 #. translators: %s is the HTML <a> link for syncing WooCommerce settings.
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:141
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:145
 #, php-format
 msgid "If your sheets is not listed,  %s to fetch all Google Sheets. "
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:166
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:170
 msgid "Last synced :"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:187
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:191
 msgid ""
 "Choose which order statuses should create separate tabs in your Google "
 "Sheet; when enabled, a new tab will be created for each selected status to "
 "help organize your data more clearly."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:229
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:233
 msgid "All Orders"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:233
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:296
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:332
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:341
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:388
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:447
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:476
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:486
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:496
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:506
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:517
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:655
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:664
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:673
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:725
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:786
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1108
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1122
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1144
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1155
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1174
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1183
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1279
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1288
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1348
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1358
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1455
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1465
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1511
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1519
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1565
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1575
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:237
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:300
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:336
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:345
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:392
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:451
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:480
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:490
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:500
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:510
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:521
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:659
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:668
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:677
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:729
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:790
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1112
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1126
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1148
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1159
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1178
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1187
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1283
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1292
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1352
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1362
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1459
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1469
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1515
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1523
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1569
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1579
 msgid "Upgrade To Pro"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:250
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:254
 msgid "Translate Google Sheets Tab Names"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:256
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:260
 msgid ""
 "This setting displays tab names according to your WordPress site language."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:292
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:296
 msgid "Enable Language Translation"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:293
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:297
 msgid ""
 "When enabled, Google Sheet tab names will be displayed in the language "
 "selected for your WordPress site."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:318
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:322
 msgid "Headers"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:363
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:367
 msgid ""
 "Custom order statuses will appear here. Turn them on to create a new tab for "
 "each in your Google Sheet."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:398
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:402
 msgid "No custom order statuses are currently available."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:411
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:415
 msgid "Product Category as Sheet Tabs"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:415
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:419
 msgid ""
 "Organize category-based order data into dedicated Google Sheet tabs. Enable "
 "the product categories you want to use, and orders containing products from "
 "those categories will be synced to their corresponding category tabs."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:432
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:710
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:771
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:436
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:714
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:775
 msgid "Select Category"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:466
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:470
 msgid ""
 "Enable additional Sheet tabs to sync more WooCommerce information to your "
 "Google Sheet. Each selected option will create and update its own tab "
 "automatically."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:474
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:478
 msgid "All Products"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:484
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:488
 msgid "All Products Variation"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:494
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:498
 msgid "All Customers"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:504
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:508
 msgid "All Coupons"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:515
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:519
 msgid "All Subscriptions"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:543
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:547
 msgid "Choose how orders should appear in your Google Sheet:"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:550
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:554
 msgid "Order Wise :"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:552
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:556
 msgid ""
 "Each order is added as a single row, even if it contains multiple products."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:557
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:561
 msgid "Product Wise :"
 msgstr ""
 
 #. translators: Explains that each product in an order will be saved separately with the same order ID
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:561
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:565
 msgid ""
 "Each product in an order is added as a separate row, so you can see details "
 "for every item."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:568
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:572
 msgid ""
 "You can also choose how the entries are sorted (ascending or descending). "
 "Your selected format and sorting will be applied across all tabs in the "
 "sheet."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:577
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:581
 msgid "Select Sync Format"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:587
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:591
 msgid "Order Wise"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:597
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:601
 msgid "Product Wise"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:604
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:608
 msgid "Sorting"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:614
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1936
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1978
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2028
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2060
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2090
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2117
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2147
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:618
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1940
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1982
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2032
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2064
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2094
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2121
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2151
 msgid "Ascending"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:626
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1938
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1979
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2029
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2061
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2091
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2118
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2148
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:630
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1942
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1983
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2033
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2065
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2095
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2122
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2152
 msgid "Descending"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:641
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:645
 msgid "Sheet Charts"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:645
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:649
 msgid ""
 "Create visual charts for your WooCommerce data. Choose a chart type for "
 "Sales Orders, Total Orders, or Products Sold, and the selected charts will "
 "be created and updated automatically in your Google Sheet."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:653
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:657
 msgid "Sales Orders"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:662
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:666
 msgid "Total Orders"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:671
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:675
 msgid "Products Sold"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:687
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:691
 msgid "Order Category Filter"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:691
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:695
 msgid ""
 "Filter orders by category before syncing to your Google Sheet. When enabled, "
 "only selected categories will be synced. When disabled, all orders will be "
 "included. This applies to adding, updating, and syncing orders."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:746
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:750
 msgid "Product Category Filter"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:752
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:756
 msgid ""
 "Filter products by category before syncing to your Google Sheet. When "
 "enabled, only selected categories will be synced. When disabled, all "
@@ -2834,274 +2831,274 @@ msgid ""
 "products."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:810
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:814
 msgid ""
 "Sync data between WooCommerce and Google Sheets in real-time. Enable this "
 "feature to manage orders, products, and more directly from your spreadsheet."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:815
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:819
 msgid "Enable 2-Way Sync"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:816
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:820
 msgid "Allow Google Sheets to update WooCommerce data."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:834
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:838
 msgid "Select Sync Modules"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:855
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:859
 msgid "Allowed Actions"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:857
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:861
 msgid "Insert"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:863
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:867
 msgid "Update"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:869
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:873
 msgid "Delete"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:894
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:898
 msgid ""
 "Select fields to add as new columns in your sheet. Enter a column name for "
 "each field. These columns will be included when your data syncs."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:905
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:909
 msgid "Product Variation"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:919
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:923
 msgid "Additional Order Columns"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:948
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:996
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1049
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1100
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1234
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1407
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:952
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1000
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1053
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1104
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1238
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1411
 msgid "Enter Column Name"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:955
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1003
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1056
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1107
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1241
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1414
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:959
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1007
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1060
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1111
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1245
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1418
 msgid "Add"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:956
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1004
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1057
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1242
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1415
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:960
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1008
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1061
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1246
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1419
 msgid " Upgrade To Pro"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:965
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1204
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:969
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1208
 msgid "Additional Product Columns"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1015
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1019
 msgid "Additional Custom Columns"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1067
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1071
 msgid "Additional Empty Columns"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1121
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1254
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1319
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1426
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1484
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1538
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1125
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1258
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1323
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1430
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1488
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1542
 msgid "Enable All Columns"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1377
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1381
 msgid "Additional Product Variation Columns"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1598
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1602
 msgid "Cron Settings"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1607
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1611
 msgid "Enable Cron Sync"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1608
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1612
 msgid "Turn on automatic scheduling"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1623
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1627
 msgid "Set Schedule"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1626
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1630
 msgid "No Schedule"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1634
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1638
 msgid "Choose Schedule Type"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1637
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1641
 msgid "Repeat Weekly"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1640
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1644
 msgid "Run Once"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1647
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1651
 msgid "How Often"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1663
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1667
 msgid "Select Day"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1686
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1690
 msgid "Time"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1696
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1700
 msgid "Real-Time Sync"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1697
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1701
 msgid "Sync instantly when new orders are created"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1722
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1726
 msgid "Header Settings"
 msgstr ""
 
 #. translators: Explains advanced Google Sheet settings like freezing headers and background colors.
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1727
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1731
 msgid ""
 "Customize the appearance and behavior of your sheet headers and rows for "
 "better readability and organization."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1738
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1742
 msgid "Header Behavior"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1741
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1745
 msgid "Freeze Header"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1749
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1753
 msgid "Header Style"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1753
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1757
 msgid "Header Appearance"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1763
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1822
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1767
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1826
 msgid "Font Style"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1766
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1825
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1770
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1829
 msgid "Normal"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1768
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1827
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1772
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1831
 msgid "Italic"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1769
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1828
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1773
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1832
 msgid "Bold"
-msgstr ""
-
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1774
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1833
-msgid "Font Size"
 msgstr ""
 
 #: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1778
 #: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1837
-msgid "Select size"
-msgstr ""
-
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1779
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1838
-msgid "11"
-msgstr ""
-
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1780
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1839
-msgid "12"
-msgstr ""
-
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1781
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1840
-msgid "13"
+msgid "Font Size"
 msgstr ""
 
 #: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1782
 #: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1841
+msgid "Select size"
+msgstr ""
+
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1783
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1842
+msgid "11"
+msgstr ""
+
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1784
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1843
+msgid "12"
+msgstr ""
+
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1785
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1844
+msgid "13"
+msgstr ""
+
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1786
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1845
 msgid "14"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1790
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1849
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1794
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1853
 msgid "Font Color"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1796
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1800
 msgid "Header Background"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1809
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1813
 msgid "Row Style"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1812
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1816
 msgid "Row Appearance"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1856
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1860
 msgid "Odd Row Color"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1862
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1866
 msgid "Even Row Color"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1873
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1877
 msgid "Spreadsheet Download"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1882
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1886
 msgid "Download"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1905
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1909
 msgid "Google Sheets Data Sync"
 msgstr ""
 
 #. translators: Explains advanced Google Sheet settings like freezing headers and background colors.
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1910
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1914
 msgid ""
 "Effortlessly sync your WooCommerce data with Google Sheets. Available "
 "options include Orders, Products, Product Variations, Customers, Coupons, "
@@ -3110,13 +3107,13 @@ msgid ""
 "management."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1918
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1951
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2003
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1922
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1955
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2007
 msgid "Sync Orders"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1919
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1923
 msgid ""
 "Initiate the synchronization of your WooCommerce orders seamlessly with a "
 "single click. This ensures that your Google Sheet stays up-to-date with the "
@@ -3125,35 +3122,35 @@ msgid ""
 "workflow with the convenience of synchronized orders."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1922
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1965
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2013
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2046
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2076
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2105
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2134
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1926
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1969
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2017
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2050
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2080
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2109
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2138
 msgid "From Date"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1926
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1969
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2018
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2051
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2081
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2110
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2139
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1930
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1973
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2022
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2055
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2085
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2114
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2143
 msgid "To Date"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1942
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1946
 msgid "Order Status"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1960
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1964
 msgid "Sync Orders (Product Category Tabs)"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1961
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1965
 msgid ""
 "Backfill existing <b class=\"f-weight\">WooCommerce orders</b> into the "
 "Product Category sheet tabs. Only orders that contain a product from a "
@@ -3161,16 +3158,16 @@ msgid ""
 "Orders already present in a tab are skipped."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1983
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:1987
 msgid "Product Categories"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2009
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2035
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2013
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2039
 msgid "Sync Products"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2010
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2014
 msgid ""
 "Initiate the synchronization of your WooCommerce products seamlessly with a "
 "single click. This ensures that your Google Sheet stays up-to-date with the "
@@ -3180,12 +3177,12 @@ msgid ""
 "optimize your workflow with the convenience of synchronized product data."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2042
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2066
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2046
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2070
 msgid "Sync Products Variation"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2043
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2047
 msgid ""
 "Initiate the synchronization of your WooCommerce products variations "
 "seamlessly with a single click. This ensures that your Google Sheet stays up-"
@@ -3196,12 +3193,12 @@ msgid ""
 "synchronized product data."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2072
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2096
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2076
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2100
 msgid "Sync Customers"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2073
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2077
 msgid ""
 "Initiate the synchronization of your WooCommerce Customers seamlessly with a "
 "single click. This ensures that your Google Sheet stays up-to-date with the "
@@ -3210,12 +3207,12 @@ msgid ""
 "workflow with the convenience of synchronized orders."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2101
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2123
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2105
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2127
 msgid "Sync Coupons"
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2102
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2106
 msgid ""
 "Initiate the synchronization of your WooCommerce coupons seamlessly with a "
 "single click. This process ensures that your Google Sheet reflects the "
@@ -3225,20 +3222,24 @@ msgid ""
 "with the convenience of synchronized coupon data."
 msgstr ""
 
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2130
-#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2154
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2134
+#: includes/pages/woocommerce-data-settings/wc-gsheetconnector-setting.php:2158
 msgid "Sync Subscriptions"
 msgstr ""
 
-#: wc-gsheetconnector.php:190
+#: lib/vendor/freemius/assets/js/pricing/freemius-pricing.js:2
+msgid "display"
+msgstr ""
+
+#: wc-gsheetconnector.php:189
 msgid "View Documentation"
 msgstr ""
 
-#: wc-gsheetconnector.php:191
+#: wc-gsheetconnector.php:190
 msgid "Get Support"
 msgstr ""
 
-#: wc-gsheetconnector.php:547
+#: wc-gsheetconnector.php:543
 msgid ""
 "GSheetConnector WooCommerce Add-on requires WooCommerce plugin to be "
 "installed and activated."

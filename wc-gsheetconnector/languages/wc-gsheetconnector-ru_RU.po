@@ -1,16 +1,9 @@
 # Translation file
+
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "Language: ru_RU\n"
-"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.9\n"
 
 msgid "11"
 msgstr "11"
@@ -648,9 +641,6 @@ msgstr "Google Sheet не подключен"
 msgid "Not connected"
 msgstr "Подключено"
 
-msgid "WooCommerce - GSheetConnector"
-msgstr "WooCommerce - GSheetConnector"
-
 msgid "Select"
 msgstr "Выбрать"
 
@@ -708,8 +698,10 @@ msgstr "Сохраните код аутентификации, если буд�
 msgid "This allows the plugin to securely sync your form data with Google Sheets."
 msgstr "Это позволяет плагину безопасно синхронизировать ваши данные формы с Google Sheets."
 
-msgid "<p class=\"fw-400 text-dark\"><strong>Google Drive</strong> and <strong>Google Sheets</strong> permissions were not granted during authentication with Google.</p"
-msgstr "<p class=\"fw-400 text-dark\"><strong>Разрешения Google Drive</strong> и <strong>Google Sheets</strong> не были предоставлены во время аутентификации через Google.</p"
+msgid "<p class="fw-400 text-dark"><strong>Google Drive</strong> and <strong>Google Sheets</strong> permissions were not granted during authentication with Google.</p>
+                  <p class="fw-400 text-dark"><strong>Refer to Step 4 in the Connection Guide shown alongside.</strong><br> Then, deactivate the connection and re-authorize it, ensuring both Google Drive and Google Sheets permissions are enabled.</p>"
+msgstr "<p class="fw-400 text-dark">При аутентификации через Google не были предоставлены разрешения для <strong>Google Диска</strong> и <strong>Google Таблиц</strong>.</p>
+<p class="fw-400 text-dark"><strong>Обратитесь к шагу 4 в руководстве по подключению, расположенном рядом.</strong><br> Затем отключите соединение и выполните повторную авторизацию, убедившись, что предоставлены разрешения как для Google Диска, так и для Google Таблиц.</p>"
 
 msgid "Connected Google Account"
 msgstr "Подключенная учетная запись Google"
@@ -1167,7 +1159,8 @@ msgstr "У вас нет разрешения на доступ к этой ст
 msgid "System Information"
 msgstr "Информация о системе"
 
-msgid "View detailed information about your plugin, server, and WordPress setup for troubleshooting and support"
+msgid "View detailed information about your plugin, server, and WordPress setup for troubleshooting and support.
+        "
 msgstr "Просмотрите подробную информацию о вашем плагине, сервере и настройках WordPress для устранения неполадок и поддержки"
 
 msgid "Copy System Info"
@@ -1962,8 +1955,8 @@ msgstr "Статус заказа"
 msgid "Sync Orders (Product Category Tabs)"
 msgstr "Фильтр по статусу заказа и категории продукта"
 
-msgid "Backfill existing <b class=\"f-weight\">WooCommerce orders</b> into the Product Category sheet tabs. Only orders that contain a product from a selected category are synced, and only into those matching category tabs. Orders already present in a tab are skipped."
-msgstr "Добавьте существующие <b class=\"f-weight\">заказы WooCommerce</b> во вкладки листов категорий товаров. Синхронизируются только заказы, содержащие товар из выбранной категории, и только в соответствующие вкладки категорий. Заказы, уже присутствующие во вкладке, пропускаются."
+msgid "Backfill existing <b class="f-weight">WooCommerce orders</b> into the Product Category sheet tabs. Only orders that contain a product from a selected category are synced, and only into those matching category tabs. Orders already present in a tab are skipped."
+msgstr "Добавьте существующие <b class="f-weight">заказы WooCommerce</b> во вкладки листов категорий товаров. Синхронизируются только заказы, содержащие товар из выбранной категории, и только в соответствующие вкладки категорий. Заказы, уже присутствующие во вкладке, пропускаются."
 
 msgid "Product Categories"
 msgstr "Фильтр по категории продукта"
@@ -1994,6 +1987,9 @@ msgstr "Инициируйте синхронизацию ваших купон�
 
 msgid "Sync Subscriptions"
 msgstr "Синхронизировать подписки"
+
+msgid "display"
+msgstr "отображать"
 
 msgid "View Documentation"
 msgstr "Просмотреть документацию"

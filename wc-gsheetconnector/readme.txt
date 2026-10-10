@@ -5,7 +5,7 @@ Tags: woocommerce, google sheets, woocommerce export, order export, integration
 Requires at least: 5.3
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.4.11
+Stable tag: 1.4.12
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -129,6 +129,10 @@ Please double-check those items and hopefully getting them right will fix the is
 Make sure to <a href="https://www.gsheetconnector.com/how-to-enable-debugging-in-wordpress">enable debug log from wp-config.php</a> if submitted order is not showing in sheet, It will helps to show the conflict issue (if there is any) or shows what is making an issue.
 
 == Changelog ==
+
+= 1.4.12 (10-10-2026) =
+* Updated: Freemius integration code and related files.
+* Improved: Spreadsheet names in the "Choose Google Spreadsheet" dropdown are now displayed in alphabetical (A–Z), case-insensitive order.
 
 = 1.4.11 (23-09-2026) =
 * Added: Added Pro-only display blocks for Product Category as Sheet Tabs and Graph Sheets in the WooCommerce Data Settings tab.

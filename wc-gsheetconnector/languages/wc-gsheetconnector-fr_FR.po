@@ -1,16 +1,9 @@
 # Translation file
+
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "Language: fr_FR\n"
-"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.9\n"
 
 msgid "11"
 msgstr "11"
@@ -648,9 +641,6 @@ msgstr "Feuille Google non connectée"
 msgid "Not connected"
 msgstr "Connecté"
 
-msgid "WooCommerce - GSheetConnector"
-msgstr "WooCommerce - GSheetConnector"
-
 msgid "Select"
 msgstr "Sélectionner"
 
@@ -708,8 +698,10 @@ msgstr "Enregistrez le code d'authentification si cela vous est demandé."
 msgid "This allows the plugin to securely sync your form data with Google Sheets."
 msgstr "Cela permet au plugin de synchroniser en toute sécurité vos données de formulaire avec Google Sheets."
 
-msgid "<p class=\"fw-400 text-dark\"><strong>Google Drive</strong> and <strong>Google Sheets</strong> permissions were not granted during authentication with Google.</p"
-msgstr "<p class=\"fw-400 text-dark\"><strong>Google Drive</strong> et les autorisations <strong>Google Sheets</strong> n’ont pas été accordées lors de l’authentification avec Google.</p"
+msgid "<p class="fw-400 text-dark"><strong>Google Drive</strong> and <strong>Google Sheets</strong> permissions were not granted during authentication with Google.</p>
+                  <p class="fw-400 text-dark"><strong>Refer to Step 4 in the Connection Guide shown alongside.</strong><br> Then, deactivate the connection and re-authorize it, ensuring both Google Drive and Google Sheets permissions are enabled.</p>"
+msgstr "<p class="fw-400 text-dark">Les autorisations pour <strong>Google Drive</strong> et <strong>Google Sheets</strong> n'ont pas été accordées lors de l'authentification avec Google.</p>
+<p class="fw-400 text-dark"><strong>Consultez l'étape 4 du guide de connexion ci-contre.</strong><br> Ensuite, désactivez la connexion et réautorisez-la, en veillant à activer les autorisations pour Google Drive et Google Sheets.</p>"
 
 msgid "Connected Google Account"
 msgstr "Compte Google connecté"
@@ -1167,7 +1159,8 @@ msgstr "Vous n'avez pas la permission d'accéder à cette page."
 msgid "System Information"
 msgstr "Informations système"
 
-msgid "View detailed information about your plugin, server, and WordPress setup for troubleshooting and support"
+msgid "View detailed information about your plugin, server, and WordPress setup for troubleshooting and support.
+        "
 msgstr "Voir des informations détaillées sur votre plugin, serveur et configuration WordPress pour le dépannage et le support"
 
 msgid "Copy System Info"
@@ -1962,8 +1955,8 @@ msgstr "Statut de la commande"
 msgid "Sync Orders (Product Category Tabs)"
 msgstr "Filtre de catégorie de commande et de produit"
 
-msgid "Backfill existing <b class=\"f-weight\">WooCommerce orders</b> into the Product Category sheet tabs. Only orders that contain a product from a selected category are synced, and only into those matching category tabs. Orders already present in a tab are skipped."
-msgstr "Rétroimportez les <b class=\"f-weight\">commandes WooCommerce</b> existantes dans les onglets de feuille par catégorie de produit. Seules les commandes contenant un produit d’une catégorie sélectionnée sont synchronisées, et uniquement vers les onglets de catégorie correspondants. Les commandes déjà présentes dans un onglet sont ignorées."
+msgid "Backfill existing <b class="f-weight">WooCommerce orders</b> into the Product Category sheet tabs. Only orders that contain a product from a selected category are synced, and only into those matching category tabs. Orders already present in a tab are skipped."
+msgstr "Rétroimportez les <b class="f-weight">commandes WooCommerce</b> existantes dans les onglets de feuille par catégorie de produit. Seules les commandes contenant un produit d’une catégorie sélectionnée sont synchronisées, et uniquement vers les onglets de catégorie correspondants. Les commandes déjà présentes dans un onglet sont ignorées."
 
 msgid "Product Categories"
 msgstr "Filtre de catégorie de produit"
@@ -1994,6 +1987,9 @@ msgstr "Initiez la synchronisation de vos coupons WooCommerce en toute transpare
 
 msgid "Sync Subscriptions"
 msgstr "Synchroniser les abonnements"
+
+msgid "display"
+msgstr "afficher"
 
 msgid "View Documentation"
 msgstr "Voir la documentation"

@@ -1,16 +1,9 @@
 # Translation file
+
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "Language: nl_NL\n"
-"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.9\n"
 
 msgid "11"
 msgstr "11"
@@ -648,9 +641,6 @@ msgstr "Google Sheet Niet Verbonden"
 msgid "Not connected"
 msgstr "Verbonden"
 
-msgid "WooCommerce - GSheetConnector"
-msgstr "WooCommerce - GSheetConnector"
-
 msgid "Select"
 msgstr "Selecteer"
 
@@ -708,8 +698,10 @@ msgstr "Bewaar de authenticatiecode als daarom wordt gevraagd."
 msgid "This allows the plugin to securely sync your form data with Google Sheets."
 msgstr "Dit stelt de plugin in staat om uw formuliergegevens veilig te synchroniseren met Google Sheets."
 
-msgid "<p class=\"fw-400 text-dark\"><strong>Google Drive</strong> and <strong>Google Sheets</strong> permissions were not granted during authentication with Google.</p"
-msgstr "<p class=\"fw-400 text-dark\"><strong>Google Drive</strong> en <strong>Google Sheets</strong>-machtigingen zijn niet verleend tijdens de authenticatie met Google.</p"
+msgid "<p class="fw-400 text-dark"><strong>Google Drive</strong> and <strong>Google Sheets</strong> permissions were not granted during authentication with Google.</p>
+                  <p class="fw-400 text-dark"><strong>Refer to Step 4 in the Connection Guide shown alongside.</strong><br> Then, deactivate the connection and re-authorize it, ensuring both Google Drive and Google Sheets permissions are enabled.</p>"
+msgstr "<p class="fw-400 text-dark">Er zijn tijdens de authenticatie met Google geen rechten verleend voor <strong>Google Drive</strong> en <strong>Google Sheets</strong>.</p>
+<p class="fw-400 text-dark"><strong>Raadpleeg stap 4 in de hiernaast weergegeven verbindingsgids.</strong><br> Deactiveer vervolgens de verbinding en autoriseer deze opnieuw, waarbij u ervoor zorgt dat de rechten voor zowel Google Drive als Google Sheets zijn ingeschakeld.</p>"
 
 msgid "Connected Google Account"
 msgstr "Verbonden Google-account"
@@ -1167,7 +1159,8 @@ msgstr "Je hebt geen toestemming om deze pagina te openen."
 msgid "System Information"
 msgstr "Systeeminformatie"
 
-msgid "View detailed information about your plugin, server, and WordPress setup for troubleshooting and support"
+msgid "View detailed information about your plugin, server, and WordPress setup for troubleshooting and support.
+        "
 msgstr "Bekijk gedetailleerde informatie over uw plugin, server en WordPress-configuratie voor probleemoplossing en ondersteuning"
 
 msgid "Copy System Info"
@@ -1432,7 +1425,7 @@ msgid "Sheet Name"
 msgstr "Sheet Naam"
 
 msgid "Loading..."
-msgstr ""
+msgstr "Laden..."
 
 msgid "Let's Connect"
 msgstr "Laten we Verbinden"
@@ -1696,7 +1689,7 @@ msgid "Product Category as Sheet Tabs"
 msgstr "Productcategorie Filter"
 
 msgid "Organize category-based order data into dedicated Google Sheet tabs. Enable the product categories you want to use, and orders containing products from those categories will be synced to their corresponding category tabs."
-msgstr ""
+msgstr "Organiseer bestelgegevens op basis van categorie in aparte tabbladen in Google Sheets. Schakel de gewenste productcategorieën in; bestellingen met producten uit die categorieën worden vervolgens gesynchroniseerd naar de bijbehorende tabbladen."
 
 msgid "Select Category"
 msgstr "Selecteer Categorie"
@@ -1759,7 +1752,7 @@ msgid "Sheet Charts"
 msgstr "Sheet Naam"
 
 msgid "Create visual charts for your WooCommerce data. Choose a chart type for Sales Orders, Total Orders, or Products Sold, and the selected charts will be created and updated automatically in your Google Sheet."
-msgstr ""
+msgstr "Maak visuele grafieken voor uw WooCommerce-gegevens. Kies een grafiektype voor verkooporders, het totaal aantal bestellingen of verkochte producten; de geselecteerde grafieken worden vervolgens automatisch aangemaakt en bijgewerkt in uw Google-spreadsheet."
 
 msgid "Sales Orders"
 msgstr "Alle Bestellingen"
@@ -1962,8 +1955,8 @@ msgstr "Bestelstatus"
 msgid "Sync Orders (Product Category Tabs)"
 msgstr "Bestel- & Productcategorie Filter"
 
-msgid "Backfill existing <b class=\"f-weight\">WooCommerce orders</b> into the Product Category sheet tabs. Only orders that contain a product from a selected category are synced, and only into those matching category tabs. Orders already present in a tab are skipped."
-msgstr ""
+msgid "Backfill existing <b class="f-weight">WooCommerce orders</b> into the Product Category sheet tabs. Only orders that contain a product from a selected category are synced, and only into those matching category tabs. Orders already present in a tab are skipped."
+msgstr "Vul bestaande <b class="f-weight">WooCommerce-bestellingen</b> in de tabbladen voor productcategorieën in. Alleen bestellingen die een product uit een geselecteerde categorie bevatten, worden gesynchroniseerd, en wel naar de bijbehorende categorietabbladen. Bestellingen die al in een tabblad staan, worden overgeslagen."
 
 msgid "Product Categories"
 msgstr "Productcategorie Filter"
@@ -1994,6 +1987,9 @@ msgstr "Start de synchronisatie van uw WooCommerce-coupons naadloos met een enke
 
 msgid "Sync Subscriptions"
 msgstr "Synchroniseer abonnementen"
+
+msgid "display"
+msgstr "weergave"
 
 msgid "View Documentation"
 msgstr "Bekijk documentatie"

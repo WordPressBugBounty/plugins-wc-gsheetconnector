@@ -240,7 +240,7 @@ public function wcgsc_add_summary_widget() {
 		// phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage -- Plugin-bundled static image, not a Media Library attachment
   $title = "<img style='width:30px;margin-right: 10px; vertical-align:middle;' src='{$image_url}' alt='WooCommerce GSheetConnector' />";
 
-  $title .= '<span style="vertical-align:middle;">' . esc_html__( 'WooCommerce - GSheetConnector', 'wc-gsheetconnector' ) . '</span>';
+  $title .= '<span style="vertical-align:middle;">' . esc_html__( 'GSheetConnector for WooCommerce', 'wc-gsheetconnector' ) . '</span>';
 
   wp_add_dashboard_widget(
    'wc_gsheetconnector_dashboard',

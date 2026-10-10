@@ -1,16 +1,9 @@
 # Translation file
+
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "Language: es_ES\n"
-"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.9\n"
 
 msgid "11"
 msgstr "11"
@@ -648,9 +641,6 @@ msgstr "Hoja de Google No Conectada"
 msgid "Not connected"
 msgstr "Conectado"
 
-msgid "WooCommerce - GSheetConnector"
-msgstr "WooCommerce - GSheetConnector"
-
 msgid "Select"
 msgstr "Seleccionar"
 
@@ -708,8 +698,10 @@ msgstr "Guarde el código de autenticación si se le solicita."
 msgid "This allows the plugin to securely sync your form data with Google Sheets."
 msgstr "Esto permite que el plugin sincronice de forma segura los datos de su formulario con Google Sheets."
 
-msgid "<p class=\"fw-400 text-dark\"><strong>Google Drive</strong> and <strong>Google Sheets</strong> permissions were not granted during authentication with Google.</p"
-msgstr "<p class=\"fw-400 text-dark\"><strong>Google Drive</strong> y los permisos de <strong>Google Sheets</strong> no se concedieron durante la autenticación con Google.</p"
+msgid "<p class="fw-400 text-dark"><strong>Google Drive</strong> and <strong>Google Sheets</strong> permissions were not granted during authentication with Google.</p>
+                  <p class="fw-400 text-dark"><strong>Refer to Step 4 in the Connection Guide shown alongside.</strong><br> Then, deactivate the connection and re-authorize it, ensuring both Google Drive and Google Sheets permissions are enabled.</p>"
+msgstr "<p class="fw-400 text-dark">No se concedieron los permisos de <strong>Google Drive</strong> y <strong>Google Sheets</strong> durante la autenticación con Google.</p>
+<p class="fw-400 text-dark"><strong>Consulta el paso 4 de la guía de conexión que aparece al lado.</strong><br> A continuación, desactiva la conexión y vuelve a autorizarla, asegurándote de habilitar los permisos tanto de Google Drive como de Google Sheets.</p>"
 
 msgid "Connected Google Account"
 msgstr "Cuenta de Google conectada"
@@ -1167,7 +1159,8 @@ msgstr "No tienes permiso para acceder a esta página."
 msgid "System Information"
 msgstr "Información del Sistema"
 
-msgid "View detailed information about your plugin, server, and WordPress setup for troubleshooting and support"
+msgid "View detailed information about your plugin, server, and WordPress setup for troubleshooting and support.
+        "
 msgstr "Ver información detallada sobre tu plugin, servidor y configuración de WordPress para solucionar problemas y soporte"
 
 msgid "Copy System Info"
@@ -1696,7 +1689,7 @@ msgid "Product Category as Sheet Tabs"
 msgstr "Filtro por Categoría de Producto"
 
 msgid "Organize category-based order data into dedicated Google Sheet tabs. Enable the product categories you want to use, and orders containing products from those categories will be synced to their corresponding category tabs."
-msgstr ""
+msgstr "Organiza los datos de pedidos por categoría en pestañas específicas de Google Sheets. Habilita las categorías de productos que desees utilizar y los pedidos que contengan productos de dichas categorías se sincronizarán con sus correspondientes pestañas."
 
 msgid "Select Category"
 msgstr "Seleccionar Categoría"
@@ -1759,7 +1752,7 @@ msgid "Sheet Charts"
 msgstr "Nombre de la Hoja"
 
 msgid "Create visual charts for your WooCommerce data. Choose a chart type for Sales Orders, Total Orders, or Products Sold, and the selected charts will be created and updated automatically in your Google Sheet."
-msgstr ""
+msgstr "Crea gráficos visuales para tus datos de WooCommerce. Elige un tipo de gráfico para pedidos de venta, total de pedidos o productos vendidos, y los gráficos seleccionados se crearán y actualizarán automáticamente en tu hoja de cálculo de Google."
 
 msgid "Sales Orders"
 msgstr "Todos los Pedidos"
@@ -1962,8 +1955,8 @@ msgstr "Estado del pedido"
 msgid "Sync Orders (Product Category Tabs)"
 msgstr "Filtro de Categoría de Pedido y Producto"
 
-msgid "Backfill existing <b class=\"f-weight\">WooCommerce orders</b> into the Product Category sheet tabs. Only orders that contain a product from a selected category are synced, and only into those matching category tabs. Orders already present in a tab are skipped."
-msgstr "Rellena las pestañas de hojas de categorías de producto con los <b class=\"f-weight\">pedidos de WooCommerce</b> existentes. Solo se sincronizan los pedidos que contienen un producto de una categoría seleccionada, y solo en las pestañas de categoría coincidentes. Los pedidos que ya están presentes en una pestaña se omiten."
+msgid "Backfill existing <b class="f-weight">WooCommerce orders</b> into the Product Category sheet tabs. Only orders that contain a product from a selected category are synced, and only into those matching category tabs. Orders already present in a tab are skipped."
+msgstr "Rellena las pestañas de hojas de categorías de producto con los <b class="f-weight">pedidos de WooCommerce</b> existentes. Solo se sincronizan los pedidos que contienen un producto de una categoría seleccionada, y solo en las pestañas de categoría coincidentes. Los pedidos que ya están presentes en una pestaña se omiten."
 
 msgid "Product Categories"
 msgstr "Filtro por Categoría de Producto"
@@ -1994,6 +1987,9 @@ msgstr "Inicie la sincronización de sus cupones de WooCommerce sin problemas co
 
 msgid "Sync Subscriptions"
 msgstr "Sincronizar suscripciones"
+
+msgid "display"
+msgstr "mostrar"
 
 msgid "View Documentation"
 msgstr "Ver Documentación"

@@ -1,16 +1,9 @@
 # Translation file
+
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "Language: gu\n"
-"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.9\n"
 
 msgid "11"
 msgstr "૧૧"
@@ -648,9 +641,6 @@ msgstr "ગૂગલ શીટ જોડાયેલ નથી"
 msgid "Not connected"
 msgstr "જોડાયેલ"
 
-msgid "WooCommerce - GSheetConnector"
-msgstr "WooCommerce - GSheetConnector"
-
 msgid "Select"
 msgstr "ચૂંટો"
 
@@ -708,8 +698,10 @@ msgstr "જો સૂચવવામાં આવે તો પ્રમાણ�
 msgid "This allows the plugin to securely sync your form data with Google Sheets."
 msgstr "આ પ્લગિનને તમારા ફોર્મ ડેટાને Google Sheets સાથે સુરક્ષિત રીતે સમન્વયિત કરવાની મંજૂરી આપે છે."
 
-msgid "<p class=\"fw-400 text-dark\"><strong>Google Drive</strong> and <strong>Google Sheets</strong> permissions were not granted during authentication with Google.</p"
-msgstr "<p class=\"fw-400 text-dark\"><strong>Google Drive</strong> અને <strong>Google Sheets</strong> માટેની પરવાનગીઓ Google સાથેની ઓથેન્ટિકેશન દરમિયાન આપવામાં આવી નહોતી.</p"
+msgid "<p class="fw-400 text-dark"><strong>Google Drive</strong> and <strong>Google Sheets</strong> permissions were not granted during authentication with Google.</p>
+                  <p class="fw-400 text-dark"><strong>Refer to Step 4 in the Connection Guide shown alongside.</strong><br> Then, deactivate the connection and re-authorize it, ensuring both Google Drive and Google Sheets permissions are enabled.</p>"
+msgstr "<p class="fw-400 text-dark">Google સાથે પ્રમાણીકરણ (authentication) કરતી વખતે <strong>Google Drive</strong> અને <strong>Google Sheets</strong> માટેની પરવાનગીઓ આપવામાં આવી ન હતી.</p>
+<p class="fw-400 text-dark"><strong>બાજુમાં દર્શાવેલ કનેક્શન ગાઇડના સ્ટેપ 4 (ચરણ 4) ને અનુસરો.</strong><br> ત્યારબાદ, કનેક્શનને નિષ્ક્રિય (deactivate) કરો અને તેને ફરીથી અધિકૃત (re-authorize) કરો, અને ખાતરી કરો કે Google Drive અને Google Sheets બંનેની પરવાનગીઓ સક્ષમ (enabled) છે.</p>"
 
 msgid "Connected Google Account"
 msgstr "જોડાયેલ Google ખાતું"
@@ -1167,7 +1159,8 @@ msgstr "આ પૃષ્ઠ પર ઍક્સેસ કરવાની તમ�
 msgid "System Information"
 msgstr "સિસ્ટમ માહિતી"
 
-msgid "View detailed information about your plugin, server, and WordPress setup for troubleshooting and support"
+msgid "View detailed information about your plugin, server, and WordPress setup for troubleshooting and support.
+        "
 msgstr "સમસ્યા નિવારણ અને સપોર્ટ માટે તમારા plugin, server, અને WordPress setup વિશે વિગતવાર માહિતી જુઓ"
 
 msgid "Copy System Info"
@@ -1962,8 +1955,8 @@ msgstr "ઓર્ડર સ્થિતિ"
 msgid "Sync Orders (Product Category Tabs)"
 msgstr "ઓર્ડર અને ઉત્પાદન શ્રેણી ફિલ્ટર"
 
-msgid "Backfill existing <b class=\"f-weight\">WooCommerce orders</b> into the Product Category sheet tabs. Only orders that contain a product from a selected category are synced, and only into those matching category tabs. Orders already present in a tab are skipped."
-msgstr "અસ્તિત્વમાં રહેલા <b class=\"f-weight\">WooCommerce ઓર્ડર્સ</b>ને Product Category શીટ ટૅબમાં પાછા ભરો. માત્ર પસંદ કરેલી શ્રેણીના પ્રોડક્ટ ધરાવતા ઓર્ડર્સ જ સમન્વિત થાય છે, અને તે પણ માત્ર સંબંધિત શ્રેણી ટૅબમાં. કોઈ ટૅબમાં પહેલેથી હાજર ઓર્ડર્સને છોડવામાં આવે છે."
+msgid "Backfill existing <b class="f-weight">WooCommerce orders</b> into the Product Category sheet tabs. Only orders that contain a product from a selected category are synced, and only into those matching category tabs. Orders already present in a tab are skipped."
+msgstr "અસ્તિત્વમાં રહેલા <b class="f-weight">WooCommerce ઓર્ડર્સ</b>ને Product Category શીટ ટૅબમાં પાછા ભરો. માત્ર પસંદ કરેલી શ્રેણીના પ્રોડક્ટ ધરાવતા ઓર્ડર્સ જ સમન્વિત થાય છે, અને તે પણ માત્ર સંબંધિત શ્રેણી ટૅબમાં. કોઈ ટૅબમાં પહેલેથી હાજર ઓર્ડર્સને છોડવામાં આવે છે."
 
 msgid "Product Categories"
 msgstr "ઉત્પાદન શ્રેણી ફિલ્ટર"
@@ -1994,6 +1987,9 @@ msgstr "તમારા WooCommerce કૂપનનું સમન્વય એ
 
 msgid "Sync Subscriptions"
 msgstr "સબ્સ્ક્રિપ્શન સિંક"
+
+msgid "display"
+msgstr "પ્રદર્શન"
 
 msgid "View Documentation"
 msgstr "દસ્તાવેજીકરણ જુઓ"

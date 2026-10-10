@@ -1,16 +1,9 @@
 # Translation file
+
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "Language: zh_CN\n"
-"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.9\n"
 
 msgid "11"
 msgstr "11"
@@ -648,9 +641,6 @@ msgstr "Google 表格未连接"
 msgid "Not connected"
 msgstr "已连接"
 
-msgid "WooCommerce - GSheetConnector"
-msgstr "WooCommerce - GSheetConnector"
-
 msgid "Select"
 msgstr "选择"
 
@@ -708,8 +698,10 @@ msgstr "如果提示，请保存身份验证代码。"
 msgid "This allows the plugin to securely sync your form data with Google Sheets."
 msgstr "这允许插件安全地将您的表单数据与 Google Sheets 同步。"
 
-msgid "<p class=\"fw-400 text-dark\"><strong>Google Drive</strong> and <strong>Google Sheets</strong> permissions were not granted during authentication with Google.</p"
-msgstr "<p class=\"fw-400 text-dark\"><strong>Google Drive</strong> 和 <strong>Google Sheets</strong> 权限在通过 Google 进行身份验证时未被授予。</p"
+msgid "<p class="fw-400 text-dark"><strong>Google Drive</strong> and <strong>Google Sheets</strong> permissions were not granted during authentication with Google.</p>
+                  <p class="fw-400 text-dark"><strong>Refer to Step 4 in the Connection Guide shown alongside.</strong><br> Then, deactivate the connection and re-authorize it, ensuring both Google Drive and Google Sheets permissions are enabled.</p>"
+msgstr "<p class="fw-400 text-dark">在通过 Google 进行身份验证时，未授予 <strong>Google Drive</strong> 和 <strong>Google Sheets</strong> 的访问权限。</p>
+<p class="fw-400 text-dark"><strong>请参阅旁边的“连接指南”中的第 4 步。</strong><br> 随后，停用该连接并重新进行授权，确保同时启用了 Google Drive 和 Google Sheets 的访问权限。</p>"
 
 msgid "Connected Google Account"
 msgstr "已连接的 Google 帐户"
@@ -1167,7 +1159,8 @@ msgstr "您没有权限访问此页面。"
 msgid "System Information"
 msgstr "系统信息"
 
-msgid "View detailed information about your plugin, server, and WordPress setup for troubleshooting and support"
+msgid "View detailed information about your plugin, server, and WordPress setup for troubleshooting and support.
+        "
 msgstr "查看有关您的插件、服务器和 WordPress 设置的详细信息，以便进行故障排除和支持"
 
 msgid "Copy System Info"
@@ -1962,8 +1955,8 @@ msgstr "订单状态"
 msgid "Sync Orders (Product Category Tabs)"
 msgstr "订单和产品类别过滤器"
 
-msgid "Backfill existing <b class=\"f-weight\">WooCommerce orders</b> into the Product Category sheet tabs. Only orders that contain a product from a selected category are synced, and only into those matching category tabs. Orders already present in a tab are skipped."
-msgstr "将现有的 <b class=\"f-weight\">WooCommerce 订单</b>回填到商品分类表格标签页中。仅同步包含所选分类商品的订单，且只同步到对应的分类标签页。已存在于某个标签页中的订单将被跳过。"
+msgid "Backfill existing <b class="f-weight">WooCommerce orders</b> into the Product Category sheet tabs. Only orders that contain a product from a selected category are synced, and only into those matching category tabs. Orders already present in a tab are skipped."
+msgstr "将现有的 <b class="f-weight">WooCommerce 订单</b>回填到商品分类表格标签页中。仅同步包含所选分类商品的订单，且只同步到对应的分类标签页。已存在于某个标签页中的订单将被跳过。"
 
 msgid "Product Categories"
 msgstr "产品类别过滤器"
@@ -1994,6 +1987,9 @@ msgstr "通过单击一次无缝启动您的 WooCommerce 优惠券同步。此�
 
 msgid "Sync Subscriptions"
 msgstr "同步订阅"
+
+msgid "display"
+msgstr "展示"
 
 msgid "View Documentation"
 msgstr "查看文档"

@@ -1,16 +1,9 @@
 # Translation file
+
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "Language: ja\n"
-"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.9\n"
 
 msgid "11"
 msgstr "11"
@@ -648,9 +641,6 @@ msgstr "Googleシートが接続されていません"
 msgid "Not connected"
 msgstr "接続済み"
 
-msgid "WooCommerce - GSheetConnector"
-msgstr "WooCommerce - GSheetConnector"
-
 msgid "Select"
 msgstr "選択"
 
@@ -708,8 +698,10 @@ msgstr "プロンプトが表示された場合は、認証コードを保存し
 msgid "This allows the plugin to securely sync your form data with Google Sheets."
 msgstr "これにより、プラグインはGoogle Sheetsと安全にフォームデータを同期できます。"
 
-msgid "<p class=\"fw-400 text-dark\"><strong>Google Drive</strong> and <strong>Google Sheets</strong> permissions were not granted during authentication with Google.</p"
-msgstr "<p class=\"fw-400 text-dark\"><strong>Google Drive</strong> と <strong>Google Sheets</strong> の権限が、Google での認証時に付与されませんでした。</p"
+msgid "<p class="fw-400 text-dark"><strong>Google Drive</strong> and <strong>Google Sheets</strong> permissions were not granted during authentication with Google.</p>
+                  <p class="fw-400 text-dark"><strong>Refer to Step 4 in the Connection Guide shown alongside.</strong><br> Then, deactivate the connection and re-authorize it, ensuring both Google Drive and Google Sheets permissions are enabled.</p>"
+msgstr "<p class="fw-400 text-dark">Googleでの認証時に、<strong>Googleドライブ</strong>および<strong>Googleスプレッドシート</strong>へのアクセス権限が許可されませんでした。</p>
+<p class="fw-400 text-dark"><strong>併せて表示されている接続ガイドの「ステップ4」をご確認ください。</strong><br>その後、接続を解除してから再度認証を行い、GoogleドライブとGoogleスプレッドシートの両方の権限が有効になっていることを確認してください。</p>"
 
 msgid "Connected Google Account"
 msgstr "接続されたGoogleアカウント"
@@ -1167,7 +1159,8 @@ msgstr "このページにアクセスする権限がありません。"
 msgid "System Information"
 msgstr "システム情報"
 
-msgid "View detailed information about your plugin, server, and WordPress setup for troubleshooting and support"
+msgid "View detailed information about your plugin, server, and WordPress setup for troubleshooting and support.
+        "
 msgstr "トラブルシューティングとサポートのために、プラグイン、サーバー、およびWordPressの設定に関する詳細情報を表示します"
 
 msgid "Copy System Info"
@@ -1962,8 +1955,8 @@ msgstr "注文ステータス"
 msgid "Sync Orders (Product Category Tabs)"
 msgstr "注文 & 商品カテゴリフィルター"
 
-msgid "Backfill existing <b class=\"f-weight\">WooCommerce orders</b> into the Product Category sheet tabs. Only orders that contain a product from a selected category are synced, and only into those matching category tabs. Orders already present in a tab are skipped."
-msgstr "既存の <b class=\"f-weight\">WooCommerce 注文</b>を商品カテゴリーのシートタブにバックフィルします。選択したカテゴリーの商品を含む注文のみが同期され、該当するカテゴリータブにのみ反映されます。すでにタブに存在する注文はスキップされます。"
+msgid "Backfill existing <b class="f-weight">WooCommerce orders</b> into the Product Category sheet tabs. Only orders that contain a product from a selected category are synced, and only into those matching category tabs. Orders already present in a tab are skipped."
+msgstr "既存の <b class="f-weight">WooCommerce 注文</b>を商品カテゴリーのシートタブにバックフィルします。選択したカテゴリーの商品を含む注文のみが同期され、該当するカテゴリータブにのみ反映されます。すでにタブに存在する注文はスキップされます。"
 
 msgid "Product Categories"
 msgstr "製品カテゴリフィルター"
@@ -1994,6 +1987,9 @@ msgstr "WooCommerceのクーポンの同期をワンクリックでシームレ�
 
 msgid "Sync Subscriptions"
 msgstr "サブスクリプションを同期"
+
+msgid "display"
+msgstr "画面"
 
 msgid "View Documentation"
 msgstr "ドキュメントを見る"
