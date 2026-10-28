@@ -38,6 +38,15 @@ if (!defined('ABSPATH')) {
                             } else {
                                 $wcgsc_selected_method = esc_html(__('Auth Required', 'wc-gsheetconnector'));
                             }
+
+                            // Service Account: show the saved account only; the connection is not verified in Free.
+                            $wcgsc_service_email = '';
+                            if ('2' === (string) $wcgsc_manual_setting) {
+                                $wcgsc_service_json = json_decode((string) get_option('wcgsc_service_account_json', ''), true);
+                                if (is_array($wcgsc_service_json) && !empty($wcgsc_service_json['client_email'])) {
+                                    $wcgsc_service_email = sanitize_email($wcgsc_service_json['client_email']);
+                                }
+                            }
                             ?>
                             <div class="unlock-pro-button-sections mt-20">
                                 <?php if ($wcgsc_email_account) { ?>
@@ -116,7 +125,34 @@ if (!defined('ABSPATH')) {
                                 value="<?php echo esc_attr(wp_create_nonce('wcgsc-pagination')); ?>">
                             </div>
                             <?php
-                        } else { ?>
+                        } elseif (!empty($wcgsc_service_email)) { ?>
+                            <div class="wcgsc-integration-box">
+                                <div class="gsc-google-auth-card mt-30 mb-30">
+                                    <div>
+                                        <div class="heading mt-0 mb-30"> <?php echo esc_html__('Google Account Connection', 'wc-gsheetconnector'); ?>
+                                            <span class="badge"><?php echo esc_html__('Service Account', 'wc-gsheetconnector'); ?></span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-wrap gap-20 justify-between align-center">
+                                        <div class="gsc-google-auth-left d-flex flex-wrap align-center gap-15">
+                                            <div class="gsc-google-icon">G</div>
+                                            <div class="connected-account">
+                                                <div class="gsc-connected-left d-flex">
+                                                    <span class="gsc-connected-label"><?php echo esc_html__('Service Account Email', 'wc-gsheetconnector'); ?></span>
+                                                    <span class="connected-account-manual gsc-connected-email"><?php echo esc_html($wcgsc_service_email); ?></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gsc-google-auth-right">
+                                            <div class="gsc-connected-pill">
+                                                <span class="dot"></span>
+                                                <?php echo esc_html__('Credentials Saved', 'wc-gsheetconnector'); ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } else { ?>
                             <a class="btn btn-primary link-hover-white" href="<?php echo esc_html(admin_url('admin.php?page=wc-gsheetconnector-config&tab=integration')); ?>">
                                 <?php echo esc_html__("Let's Connect", 'wc-gsheetconnector'); ?>
                             </a>

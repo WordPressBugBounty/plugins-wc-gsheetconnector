@@ -24,14 +24,14 @@ $wcgsc_verify = get_option('wcgsc_verify');
     <div class="form-group">
       <label for="wcgsc_dro_option"><?php echo esc_html__('Choose Google API Setting', 'wc-gsheetconnector'); ?></label>
       <div class="drop-down-select-btn">
-        <select id="wcgsc_dro_option" name="wcgsc_dro_option" class="gsc-select">
-          <option value="wcgsc_existing" <?php selected($wcgsc_auth_method, 'wcgsc_existing'); ?>>
+        <select id="wcgsc_dro_option" name="wcgsc_dro_option" class="gsc-select" data-current="<?php echo esc_attr('2' === (string) $wcgsc_auth_method ? 'wcgsc_service' : 'wcgsc_existing'); ?>">
+          <option value="wcgsc_existing" <?php selected('2' !== (string) $wcgsc_auth_method, true); ?>>
             <?php echo esc_html__('Existing Client / Secret Key (Auto Setup)', 'wc-gsheetconnector'); ?>
           </option>
           <option value="wcgsc_manual" <?php selected($wcgsc_auth_method, 'wcgsc_manual'); ?>>
             <?php echo esc_html__('Manual Client/Secret Key (Use Your Google API Configuration)', 'wc-gsheetconnector'); ?>
           </option>
-          <option value="wcgsc_service" <?php selected($wcgsc_auth_method, 'wcgsc_service'); ?>>
+          <option value="wcgsc_service" <?php selected('2' === (string) $wcgsc_auth_method, true); ?>>
             <?php echo esc_html__('Service Account (Recommended)', 'wc-gsheetconnector'); ?>
           </option>
         </select>
@@ -39,10 +39,22 @@ $wcgsc_verify = get_option('wcgsc_verify');
     </div>
   </div>
   <!-- col-6 #end  -->
+  <div class="col-6">
+    <div class="int-meth-btn-woo ml-15">
+      <input type="button" name="save-method-api-woo" id="save-method-api-woo"
+        value="<?php echo esc_attr__('Save', 'wc-gsheetconnector'); ?>" class="btn btn-primary" />
+      <span class="loading-sign-method-api"></span>
+    </div>
+  </div>
 </div>
 <!--card wsgs #end -->
 <input type="hidden" name="redirect_auth" id="redirect_auth"
   value="<?php echo (isset($wcgsc_header)) ? esc_attr($wcgsc_header) : ''; ?>">
+<?php
+if ('2' === (string) $wcgsc_auth_method) {
+  include WC_GSHEETCONNECTOR_PATH . 'includes/pages/integration/wc-gsheetconnector-integration-service.php';
+} else {
+?>
 <div class="oauth-method row justify-between shadow-box mt-40 p-30">
   <div class="col-7">
     <div class="existing-method mr-20">
@@ -433,6 +445,7 @@ $wcgsc_verify = get_option('wcgsc_verify');
   </div>
   <!-- col-5 #end -->
 </div> <!-- oauth-method #end  -->
+<?php } ?>
 <?php
 if (class_exists('wcgsc_error_logs')) {
   $wcgsc_logs = new wcgsc_error_logs();

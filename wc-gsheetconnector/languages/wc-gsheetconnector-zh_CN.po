@@ -1,9 +1,17 @@
-# Translation file
-
 msgid ""
 msgstr ""
+"Project-Id-Version: WooCommerce GSheetConnector\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-28 19:04+0530\n"
+"PO-Revision-Date: 2026-10-28 19:45+0530\n"
+"Last-Translator: POForge <noreply@poforge.com>\n"
+"Language-Team: zh_CN <noreply@poforge.com>\n"
 "Language: zh_CN\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
 
 msgid "11"
 msgstr "11"
@@ -41,13 +49,753 @@ msgstr "21"
 msgid "Invalid log table name."
 msgstr "无效的日志表名称。"
 
+msgid "GSheetConnector for WooCommerce"
+msgstr "GSheetConnector for WooCommerce"
+
+msgid "You do not have permission to install plugin."
+msgstr "您没有权限安装插件。"
+
+msgid "Missing required parameters."
+msgstr "缺少必需的参数。"
+
+msgid "You do not have permission to activate plugin."
+msgstr "您没有权限激活插件。"
+
+msgid "Plugin slug is missing."
+msgstr "插件名称丢失。"
+
+msgid "Plugin is already activated."
+msgstr "插件已激活。"
+
+msgid "- Close Feeds"
+msgstr "- 关闭提要"
+
+msgid "Orders"
+msgstr "订单"
+
+msgid "Products"
+msgstr "产品"
+
+msgid "Products Variation"
+msgstr "产品变体"
+
+msgid "Customers"
+msgstr "客户"
+
+msgid "Coupons"
+msgstr "优惠券"
+
+msgid "Subscriptions"
+msgstr "订阅"
+
+msgid "Trash"
+msgstr "垃圾箱"
+
+msgid "feed"
+msgstr "提要"
+
+msgid "Rename Feed"
+msgstr "重命名提要"
+
+msgid "admin"
+msgstr "管理员"
+
+msgid "2026-04-27 09:30:53"
+msgstr "2026-04-27 09:30:53"
+
+msgid "feed1"
+msgstr "提要1"
+
+msgid "2026-04-27 09:31:18"
+msgstr "2026-04-27 09:31:18"
+
+msgid "feed2"
+msgstr "提要2"
+
+msgid "2026-04-27 09:31:35"
+msgstr "2026-04-27 09:31:35"
+
+msgid "feed3"
+msgstr "提要3"
+
+msgid "2026-04-27 09:31:47"
+msgstr "2026-04-27 09:31:47"
+
+msgid "feed4"
+msgstr "提要4"
+
+msgid "2026-04-27 09:32:00"
+msgstr "2026-04-27 09:32:00"
+
+msgid "feed5"
+msgstr "提要5"
+
+msgid "2026-04-27 09:32:17"
+msgstr "2026-04-27 09:32:17"
+
+msgid "feed6"
+msgstr "提要6"
+
+msgid "2026-04-27 09:32:27"
+msgstr "2026-04-27 09:32:27"
+
+msgid "WooCommerce Data Settings"
+msgstr "WooCommerce 数据设置"
+
+msgid "Form Feed Settings"
+msgstr "表单提要设置"
+
+msgid ""
+"You`re using GSheetConnector for WooCommerce Lite. To unlock more features "
+"consider "
+msgstr "您正在使用 GSheetConnector for WooCommerce Lite。若要解锁更多功能，请考虑"
+
+msgid "Unlock Advance Features of GSheetConnector for WooCommerce Pro"
+msgstr "解锁 GSheetConnector for WooCommerce Pro 的高级功能"
+
+msgid ""
+"Use advanced features like Manual Authentication and automatic field mapping, no "
+"need to create columns in Google Sheets manually. Choose only the fields you "
+"need with simple toggles, use advanced tags, sync past form entries, and get "
+"priority support."
+msgstr ""
+"使用手动身份验证和自动字段映射等高级功能，无需手动在 Google 表格中创建列。只需通"
+"过简单的切换选择所需的字段，使用高级标签，同步过去的表单条目，并获得优先支持。"
+
+msgid "Feed Settings (PRO)"
+msgstr "提要设置（PRO）"
+
+msgid "Order Status Sheet Tabs"
+msgstr "订单状态表标签"
+
+msgid "Custom Order Sheet Tabs"
+msgstr "自定义订单表标签"
+
+msgid "Sync Additional Sheet Tabs"
+msgstr "同步附加表标签"
+
+msgid "How Orders Are Synced"
+msgstr "订单如何同步"
+
+msgid "Order & Product Category Filter"
+msgstr "订单和产品类别过滤器"
+
+msgid "2-Way Sync"
+msgstr "双向同步"
+
+msgid "Add Extra Google Sheet Columns"
+msgstr "添加额外的 Google 表格列"
+
+msgid "Cron Settings "
+msgstr "Cron 设置"
+
+msgid "Google Sheet Not Connected"
+msgstr "Google 表格未连接"
+
+msgid "Unable to authenticate with the Service Account."
+msgstr "无法用服务账号进行身份验证。"
+
+msgid ""
+"No spreadsheets found. Share your Google Sheet with the service account email "
+"and grant Editor access."
+msgstr ""
+"未找到电子表格。请与服务账号电子邮件共享您的 Google 表格，并授予编辑访问权限。"
+
+msgid ""
+"Connect WooCommerce to Google Sheets using a secure service account. Upload your "
+"JSON credentials and share your spreadsheet with the service account email to "
+"enable syncing."
+msgstr ""
+"使用安全的服务账号将 WooCommerce 与 Google 表格连接。上传您的 JSON 凭据，并与服务"
+"账号电子邮件共享您的电子表格以启用同步。"
+
+msgid "Are you sure you want to remove the saved service account credentials?"
+msgstr "您确定要删除保存的服务账户凭证吗？"
+
+msgid ""
+"Click Create Service Account and enter a meaningful name like ex.WooCommerce "
+"GSheet."
+msgstr "点击创建服务账户并输入一个有意义的名称，比如 ex.WooCommerce GSheet。"
+
+msgid "Step-6 Upload JSON Key in WooCommerce"
+msgstr "步骤 6 在 WooCommerce 中上传 JSON 密钥"
+
+msgid ""
+"Follow these step-by-step instructions to create and configure your Google "
+"service account and securely connect it with WooCommerce."
+msgstr ""
+"按照这些逐步说明创建并配置您的 Google 服务账户，并与 WooCommerce 安全连接。"
+
+msgid " Google Sheets Integration for WooCommerce"
+msgstr "WooCommerce 的 Google 表格集成"
+
+msgid ""
+"Sign in with your Google account to connect WooCommerce with Google Sheets. Once "
+"connected, your data syncs based on your settings. Learn more in the "
+"documentation"
+msgstr ""
+"使用您的 Google 账户登录以将 WooCommerce 与 Google 表格连接。一旦连接，您的数据将"
+"根据您的设置同步。详细信息请参见文档"
+
+msgid ""
+"<p class=\"fw-400 text-dark\"><strong>Google Drive</strong> and <strong>Google "
+"Sheets</strong> permissions were not granted during authentication with Google.</"
+"p>\n"
+"                  <p class=\"fw-400 text-dark\"><strong>Refer to Step 4 in the "
+"Connection Guide shown alongside.</strong><br> Then, deactivate the connection "
+"and re-authorize it, ensuring both Google Drive and Google Sheets permissions "
+"are enabled.</p>"
+msgstr ""
+"<p class=\"fw-400 text-dark\"><strong>Google Drive</strong> 和 <strong>Google "
+"Sheets</strong> 权限在与 Google 进行身份验证时未被授予。</p>\n"
+"                  <p class=\"fw-400 text-dark\"><strong>请参阅旁边显示的连接指南"
+"中的步骤 4。</strong><br> 然后，停用连接并重新授权，确保同时启用 Google Drive 和 "
+"Google Sheets 权限。</p>"
+
+msgid ""
+"Your Google account has been successfully connected. You are now ready to sync "
+"your WooCommerce data with Google Sheets securely and automatically."
+msgstr ""
+"您的 Google 账户已成功连接。您现在可以安全、自动地将 WooCommerce 数据与 Google 表"
+"格同步。"
+
+msgid "Map WooCommerce Fields"
+msgstr "映射 WooCommerce 字段"
+
+msgid "Enable Order Sync"
+msgstr "启用订单同步"
+
+msgid "Are you sure you want to deactivate Google Sheets integration?"
+msgstr "您确定要停用 Google 表格集成吗？"
+
+msgid ""
+"Connect WooCommerce to Google Sheets using your own Google Cloud project. Ideal "
+"for advanced users who need full API control and custom OAuth setup."
+msgstr ""
+"使用您自己的 Google Cloud 项目将 WooCommerce 连接到 Google 表格。适合需要完全 "
+"API 控制和自定义 OAuth 设置的高级用户。"
+
+msgid ""
+"Connect WooCommerce to Google Sheets using a Service Account for automated "
+"syncing without manual login."
+msgstr ""
+"使用服务账户将 WooCommerce 连接到 Google 表格，以实现无需手动登录的自动同步。"
+
+msgid "Control WooCommerce sync visibility"
+msgstr "控制 WooCommerce 同步可见性"
+
+msgid ""
+"Control which user roles can access and manage WooCommerce Google Sheets "
+"integration."
+msgstr "控制哪些用户角色可以访问和管理 WooCommerce Google 表格集成。"
+
+msgid "Do not enable on live production websites without proper backups."
+msgstr "在没有适当备份的情况下，不要在实时生产网站上启用。"
+
+msgid "Description Input Format Settings"
+msgstr "描述输入格式设置"
+
+msgid ""
+"Enable this option to allow HTML formatting in Product Description and Short "
+"Description fields. When enabled, HTML content from the sheet will be imported "
+"as is. Disable it to use plain text only."
+msgstr ""
+"启用此选项，以允许产品描述和短描述字段中使用 HTML 格式。当启用时，来自表格的 "
+"HTML 内容将按原样导入。禁用时，仅使用纯文本。"
+
+msgid "Enable HTML Formatting for Description Fields"
+msgstr "启用描述字段的 HTML 格式"
+
+msgid ""
+"Allow HTML content in Product Description and Short Description fields during "
+"import."
+msgstr "在导入过程中允许产品描述和短描述字段中的 HTML 内容。"
+
+msgid ""
+"When enabled, HTML tags from the sheet (e.g., <p>, <br>, <strong>) will be "
+"imported as is."
+msgstr "启用后，来自表中的 HTML 标签（例如，<p>、<br>、<strong>）将按原样导入。"
+
+msgid "Loading..."
+msgstr "加载中..."
+
+msgid "Credentials Saved"
+msgstr "凭证已保存"
+
+msgid ""
+"Sync WooCommerce data with Google Sheets in real-time effortlessly and "
+"accurately."
+msgstr "实时无缝、准确地将 WooCommerce 数据与 Google 表格同步。"
+
+msgid "Integration of WooCommerce with Google Sheet"
+msgstr "WooCommerce 与 Google 表格的集成"
+
+msgid "WooCommerce Data Settings – PRO Version"
+msgstr "WooCommerce 数据设置 – 专业版"
+
+msgid "Feed Settings  – PRO Version"
+msgstr "提要设置 – 专业版"
+
+msgid "Settings Tab – PRO Version"
+msgstr "设置标签 – 专业版"
+
+msgid "Role Settings – PRO Version"
+msgstr "角色设置 – 专业版"
+
+msgid "2-Way Sync - PRO Version"
+msgstr "双向同步 - 专业版"
+
+msgid "Third-Party Plugins Compatibility"
+msgstr "第三方插件兼容性"
+
+msgid "Permission To Access GSheetConnector WooCommerce"
+msgstr "访问 GSheetConnector WooCommerce 的权限"
+
+msgid "Google Sheet to WooCommerce Sync Configuration"
+msgstr "Google 表格与 WooCommerce 同步配置"
+
+msgid "Connected WooCommerce Google Sheet"
+msgstr "已连接的 WooCommerce Google 表格"
+
+msgid "Google Spreadsheet URL"
+msgstr "Google 电子表格 URL"
+
+msgid "Sync Settings for Two-Way Sync - Insert & Updates"
+msgstr "双向同步的同步设置 - 插入和更新"
+
+msgid "Enter Rows Range - from"
+msgstr "输入行范围 - 从"
+
+msgid "Click to Sync Insert"
+msgstr "点击以同步插入"
+
+msgid "Click to Sync Update"
+msgstr "点击以同步更新"
+
+msgid "Sync Settings for Two-Way Sync - Order Status Updates"
+msgstr "双向同步的同步设置 - 订单状态更新"
+
+msgid "Click to Order Status Sync Update"
+msgstr "点击以更新订单状态同步"
+
+msgid "Sync Settings for Two-Way Sync - Insert Orders"
+msgstr "双向同步的同步设置 - 插入订单"
+
+msgid "Click to Sync Order"
+msgstr "点击以同步订单"
+
+msgid "WooCommerce Data Settings saved successfully."
+msgstr "WooCommerce 数据设置已成功保存。"
+
+msgid "Please select Google Sheet Name and Check Atleast on Google Sheet Tab !"
+msgstr "请先选择 Google 表格名称，并在 Google 表格标签上至少检查一次！"
+
+msgid ""
+"Please save your Service Account JSON credentials in the Integration tab first."
+msgstr "请先在集成标签中保存您的服务账户 JSON 凭证。"
+
+msgid "Choose Google Spreadsheet"
+msgstr "选择 Google 电子表格"
+
+msgid ""
+"Select a Google Sheets to connect your data. If your sheet is not listed, fetch "
+"the latest sheets or create a new one. Then complete the setup and save your "
+"changes to start syncing."
+msgstr ""
+"选择一个 Google 表格以连接您的数据。如果您的表格未列出，请获取最新表格或创建一个"
+"新的，然后完成设置并保存更改以开始同步。"
+
+msgid "If your sheets is not listed,  %s to fetch all Google Sheets. "
+msgstr "如果您的表格未列出，%s 以获取所有 Google 表格。"
+
+msgid "Last synced :"
+msgstr "最后同步："
+
+msgid "Connected Successfully."
+msgstr "成功连接。"
+
+msgid ""
+"Choose which order statuses should create separate tabs in your Google Sheet; "
+"when enabled, a new tab will be created for each selected status to help "
+"organize your data more clearly."
+msgstr ""
+"选择哪些订单状态应在您的 Google 表格中创建单独的标签；启用时，将为每个选定的状态"
+"创建一个新标签，以帮助更清晰地组织您的数据。"
+
+msgid "All Orders"
+msgstr "所有订单"
+
+msgid "Upgrade To Pro"
+msgstr "升级到专业版"
+
+msgid "Translate Google Sheets Tab Names"
+msgstr "翻译 Google 表格标签名称"
+
+msgid "This setting displays tab names according to your WordPress site language."
+msgstr "此设置根据您的 WordPress 网站语言显示标签名称。"
+
+msgid "Enable Language Translation"
+msgstr "启用语言翻译"
+
+msgid ""
+"When enabled, Google Sheet tab names will be displayed in the language selected "
+"for your WordPress site."
+msgstr "启用时，Google 表格标签名称将以您为 WordPress 网站选择的语言显示。"
+
+msgid "Headers"
+msgstr "标题"
+
+msgid ""
+"Custom order statuses will appear here. Turn them on to create a new tab for "
+"each in your Google Sheet."
+msgstr ""
+"自定义订单状态将显示在这里。启用它们以在您的 Google 表格中为每个创建一个新标签。"
+
+msgid "No custom order statuses are currently available."
+msgstr "当前没有可用的自定义订单状态。"
+
+msgid "Product Category as Sheet Tabs"
+msgstr "产品类别作为表标签"
+
+msgid ""
+"Organize category-based order data into dedicated Google Sheet tabs. Enable the "
+"product categories you want to use, and orders containing products from those "
+"categories will be synced to their corresponding category tabs."
+msgstr ""
+"将基于类别的订单数据组织到专用的 Google 表格标签中。启用要使用的产品类别，包含这"
+"些类别产品的订单将同步到相应的类别标签。"
+
+msgid "Select Category"
+msgstr "选择类别"
+
+msgid ""
+"Enable additional Sheet tabs to sync more WooCommerce information to your Google "
+"Sheet. Each selected option will create and update its own tab automatically."
+msgstr ""
+"启用附加表标签以将更多 WooCommerce 信息同步到您的 Google 表格。每个选定的选项将自"
+"动创建和更新自己的标签。"
+
+msgid "All Products"
+msgstr "所有产品"
+
+msgid "All Products Variation"
+msgstr "所有产品变体"
+
+msgid "All Customers"
+msgstr "所有客户"
+
+msgid "All Coupons"
+msgstr "所有优惠券"
+
+msgid "All Subscriptions"
+msgstr "所有订阅"
+
+msgid "Choose how orders should appear in your Google Sheet:"
+msgstr "选择订单在您的 Google 表格中应如何显示："
+
+msgid "Order Wise :"
+msgstr "按订单："
+
+msgid "Each order is added as a single row, even if it contains multiple products."
+msgstr "每个订单作为单独的一行添加，即使它包含多个产品。"
+
+msgid "Product Wise :"
+msgstr "按产品："
+
+msgid ""
+"Each product in an order is added as a separate row, so you can see details for "
+"every item."
+msgstr "每个产品在订单中作为单独一行添加，因此您可以查看每个项目的详细信息。"
+
+msgid ""
+"You can also choose how the entries are sorted (ascending or descending). Your "
+"selected format and sorting will be applied across all tabs in the sheet."
+msgstr ""
+"您还可以选择条目的排序方式（升序或降序）。您选择的格式和排序将应用到表中的所有标"
+"签。"
+
+msgid "Select Sync Format"
+msgstr "选择同步格式"
+
+msgid "Order Wise"
+msgstr "按订单"
+
+msgid "Product Wise"
+msgstr "按产品"
+
+msgid "Sorting"
+msgstr "排序"
+
+msgid "Sheet Charts"
+msgstr "表格图表"
+
+msgid ""
+"Create visual charts for your WooCommerce data. Choose a chart type for Sales "
+"Orders, Total Orders, or Products Sold, and the selected charts will be created "
+"and updated automatically in your Google Sheet."
+msgstr ""
+"为您的 WooCommerce 数据创建可视化图表。选择销售订单、总订单或已售产品的图表类型，"
+"所选图表将在您的 Google 表格中自动创建和更新。"
+
+msgid "Sales Orders"
+msgstr "销售订单"
+
+msgid "Total Orders"
+msgstr "总订单"
+
+msgid "Products Sold"
+msgstr "已售产品"
+
+msgid "Order Category Filter"
+msgstr "订单类别过滤器"
+
+msgid ""
+"Filter orders by category before syncing to your Google Sheet. When enabled, "
+"only selected categories will be synced. When disabled, all orders will be "
+"included. This applies to adding, updating, and syncing orders."
+msgstr ""
+"在同步到您的 Google 表格之前按类别过滤订单。启用时，仅选定的类别将被同步。禁用"
+"时，所有订单都将被包含。这适用于添加、更新和同步订单。"
+
+msgid "Product Category Filter"
+msgstr "产品类别过滤器"
+
+msgid ""
+"Filter products by category before syncing to your Google Sheet. When enabled, "
+"only selected categories will be synced. When disabled, all products will be "
+"included. This applies to adding, updating, and syncing products."
+msgstr ""
+"在同步到您的 Google 表格之前按类别过滤产品。启用时，仅选定的类别将被同步。禁用"
+"时，所有产品都将被包含。这适用于添加、更新和同步产品。"
+
+msgid ""
+"Sync data between WooCommerce and Google Sheets in real-time. Enable this "
+"feature to manage orders, products, and more directly from your spreadsheet."
+msgstr ""
+"实时在 WooCommerce 和 Google 表格之间同步数据。启用此功能以直接从电子表格管理订"
+"单、产品等。"
+
+msgid "Enable 2-Way Sync"
+msgstr "启用双向同步"
+
+msgid "Allow Google Sheets to update WooCommerce data."
+msgstr "允许 Google 表格更新 WooCommerce 数据。"
+
+msgid "Select Sync Modules"
+msgstr "选择同步模块"
+
+msgid "Allowed Actions"
+msgstr "允许的操作"
+
+msgid "Insert"
+msgstr "插入"
+
+msgid ""
+"Select fields to add as new columns in your sheet. Enter a column name for each "
+"field. These columns will be included when your data syncs."
+msgstr ""
+"选择字段以便作为新列添加到您的表中。为每个字段输入列名称。这些列将在您同步数据时"
+"包含。"
+
+msgid "Product Variation"
+msgstr "产品变体"
+
+msgid "Additional Order Columns"
+msgstr "附加订单列"
+
+msgid " Upgrade To Pro"
+msgstr "升级到专业版"
+
+msgid "Additional Product Columns"
+msgstr "附加产品列"
+
+msgid "Additional Custom Columns"
+msgstr "附加自定义列"
+
+msgid "Additional Empty Columns"
+msgstr "附加空白列"
+
+msgid "Enable All Columns"
+msgstr "启用所有列"
+
+msgid "Additional Product Variation Columns"
+msgstr "附加产品变体列"
+
+msgid "Cron Settings"
+msgstr "Cron 设置"
+
+msgid "Enable Cron Sync"
+msgstr "启用 Cron 同步"
+
+msgid "Turn on automatic scheduling"
+msgstr "开启自动调度"
+
+msgid "Set Schedule"
+msgstr "设置计划"
+
+msgid "No Schedule"
+msgstr "无计划"
+
+msgid "Choose Schedule Type"
+msgstr "选择计划类型"
+
+msgid "Repeat Weekly"
+msgstr "每周重复"
+
+msgid "Run Once"
+msgstr "运行一次"
+
+msgid "How Often"
+msgstr "多长时间"
+
+msgid "Select Day"
+msgstr "选择日期"
+
+msgid "Real-Time Sync"
+msgstr "实时同步"
+
+msgid "Sync instantly when new orders are created"
+msgstr "在创建新订单时立即同步"
+
+msgid ""
+"Effortlessly sync your WooCommerce data with Google Sheets. Available options "
+"include Orders, Products, Product Variations, Customers, Coupons, and "
+"Subscriptions. Select only the sync types that best suit your needs. This "
+"ensures seamless integration and real-time updates for efficient data management."
+msgstr ""
+"无缝地将您的 WooCommerce 数据与 Google 表格同步。可用的选项包括订单、产品、产品变"
+"体、客户、优惠券和订阅。仅选择最符合您需求的同步类型。这确保了无缝集成和实时更"
+"新，以有效管理数据。"
+
+msgid "Sync Orders"
+msgstr "同步订单"
+
+msgid ""
+"Initiate the synchronization of your WooCommerce orders seamlessly with a single "
+"click. This ensures that your Google Sheet stays up-to-date with the latest "
+"order information, based on your configuration done above, providing you with "
+"real-time insights and streamlined data management. Optimize your workflow with "
+"the convenience of synchronized orders."
+msgstr ""
+"一键无缝启动 WooCommerce 订单的同步。这确保您的 Google 表格与最新的订单信息保持同"
+"步，基于您上述的配置，提供实时洞察和流畅的数据管理。优化您的工作流程，享受同步订"
+"单的便利。"
+
+msgid "Order Status"
+msgstr "订单状态"
+
+msgid "Sync Orders (Product Category Tabs)"
+msgstr "同步订单（产品类别标签）"
+
+msgid ""
+"Backfill existing <b class=\"f-weight\">WooCommerce orders</b> into the Product "
+"Category sheet tabs. Only orders that contain a product from a selected category "
+"are synced, and only into those matching category tabs. Orders already present "
+"in a tab are skipped."
+msgstr ""
+"将现有的 <b class=\"f-weight\">WooCommerce 订单</b> 回填到产品类别表标签中。仅同"
+"步包含所选类别产品的订单，并且仅同步到相应的类别标签。已存在于标签中的订单将被跳"
+"过。"
+
+msgid "Product Categories"
+msgstr "产品类别"
+
+msgid "Sync Products"
+msgstr "同步产品"
+
+msgid ""
+"Initiate the synchronization of your WooCommerce products seamlessly with a "
+"single click. This ensures that your Google Sheet stays up-to-date with the "
+"latest product information, based on your configuration done above, providing "
+"you with real-time insights and streamlined data management. Before starting the "
+"sync, ensure that the products tab toggle is enabled to optimize your workflow "
+"with the convenience of synchronized product data."
+msgstr ""
+"一键无缝启动 WooCommerce 产品的同步。这确保您的 Google 表格与最新的产品信息保持同"
+"步，基于您上述的配置。若您使用可变产品，则电子表格中仅会显示数据。在开始同步之"
+"前，请确保启用产品标签切换，以优化您的工作流程，享受同步产品数据的便利。"
+
+msgid "Sync Products Variation"
+msgstr "同步产品变体"
+
+msgid ""
+"Initiate the synchronization of your WooCommerce products variations seamlessly "
+"with a single click. This ensures that your Google Sheet stays up-to-date with "
+"the latest product information, based on your configuration done above. If you "
+"are using variable products, then only data will be shown in the sheet. Before "
+"starting the sync, ensure that the products variation tab toggle is enabled to "
+"optimize your workflow with the convenience of synchronized product data."
+msgstr ""
+"一键无缝启动 WooCommerce 产品变体的同步。这确保您的 Google 表格与最新的产品信息保"
+"持同步，基于您上述的配置。如果您使用可变产品，则电子表格中仅会显示数据。在开始同"
+"步之前，请确保启用产品变体标签切换，以优化您的工作流程，享受同步产品数据的便利。"
+
+msgid "Sync Customers"
+msgstr "同步客户"
+
+msgid ""
+"Initiate the synchronization of your WooCommerce Customers seamlessly with a "
+"single click. This ensures that your Google Sheet stays up-to-date with the "
+"latest order information, based on your configuration done above, providing you "
+"with real-time insights and streamlined data management. Optimize your workflow "
+"with the convenience of synchronized orders."
+msgstr ""
+"一键无缝启动 WooCommerce 客户的同步。这确保您的 Google 表格与最新的订单信息保持同"
+"步，基于您上述的配置，提供实时洞察和流畅的数据管理。优化您的工作流程，享受同步订"
+"单的便利。"
+
+msgid "Sync Coupons"
+msgstr "同步优惠券"
+
+msgid ""
+"Initiate the synchronization of your WooCommerce coupons seamlessly with a "
+"single click. This process ensures that your Google Sheet reflects the latest "
+"coupon information, following the configuration set above. Benefit from real-"
+"time insights and streamlined data management. Before starting the sync, confirm "
+"that the coupons tab toggle is enabled enhancing your workflow with the "
+"convenience of synchronized coupon data."
+msgstr ""
+"一键无缝启动 WooCommerce 优惠券的同步。此过程确保您的 Google 表格反映最新的优惠券"
+"信息，遵循上面设置的配置。受益于实时洞察和流畅的数据管理。在开始同步之前，请确认"
+"启用优惠券标签切换以提升您的工作效率，享受同步优惠券数据的便利。"
+
+msgid "Sync Subscriptions"
+msgstr "同步订阅"
+
+msgid "Service Account JSON is missing. Please save it in the Integration tab."
+msgstr "缺少服务账户 JSON。请在集成标签中保存。"
+
+msgid ""
+"Service Account JSON is invalid. Please save valid credentials in the "
+"Integration tab."
+msgstr "服务账户 JSON 无效。请在集成标签中保存有效的凭据。"
+
+msgid "Service Account private key is invalid."
+msgstr "服务账户私钥无效。"
+
+msgid "Google did not return an access token for this Service Account."
+msgstr "Google 未返回该服务账户的访问令牌。"
+
+msgid ""
+"GSheetConnector WooCommerce Add-on requires WooCommerce plugin to be installed "
+"and activated."
+msgstr "GSheetConnector WooCommerce 插件需要安装并激活 WooCommerce 插件。"
+
+msgid "https://wordpress.org/plugins/wc-gsheetconnector/"
+msgstr "https://wordpress.org/plugins/wc-gsheetconnector/"
+
+msgid "Send your WooCommerce data to your Google Sheets spreadsheet."
+msgstr "将您的 WooCommerce 数据发送到 Google 表格电子表格。"
+
 msgid "Log table not found."
 msgstr "未找到日志表。"
 
 msgid "Error Log"
 msgstr "错误日志"
 
-msgid "Error logs are saved in the database. Please clear them regularly to avoid increasing the database size."
+msgid ""
+"Error logs are saved in the database. Please clear them regularly to avoid "
+"increasing the database size."
 msgstr "错误日志已保存在数据库中。请定期清理以避免增加数据库大小。"
 
 msgid "Clear Logs"
@@ -89,9 +837,6 @@ msgstr "管理员"
 msgid "Please rate"
 msgstr "请评分"
 
-msgid "GSheetConnector for WooCommerce"
-msgstr "GSheetConnector for WooCommerce"
-
 msgid "on"
 msgstr "开启"
 
@@ -119,10 +864,16 @@ msgstr "关于 GSheetConnector"
 msgid "Built by Experts. Trusted by Thousands."
 msgstr "由专家构建，受到数千人的信任。"
 
-msgid "Led by experienced developers and powered by a passionate team, GSheetConnector helps WordPress users automate their workflows with confidence."
-msgstr "由经验丰富的开发者领导，拥有一支充满热情的团队，GSheetConnector 帮助 WordPress 用户自信地自动化他们的工作流程。"
+msgid ""
+"Led by experienced developers and powered by a passionate team, GSheetConnector "
+"helps WordPress users automate their workflows with confidence."
+msgstr ""
+"由经验丰富的开发者领导，拥有一支充满热情的团队，GSheetConnector 帮助 WordPress 用"
+"户自信地自动化他们的工作流程。"
 
-msgid "We focus on building tools that are fast, secure, and easy to use - so you can spend less time managing data."
+msgid ""
+"We focus on building tools that are fast, secure, and easy to use - so you can "
+"spend less time managing data."
 msgstr "我们专注于构建快速、安全、易于使用的工具，让您可以花更少的时间管理数据。"
 
 msgid "Meet Our Core Team"
@@ -131,8 +882,12 @@ msgstr "认识我们的核心团队"
 msgid "Our Mission"
 msgstr "我们的使命"
 
-msgid "Our mission is to make form automation simple, secure, and reliable for every WordPress user - from beginners to enterprise teams."
-msgstr "我们的使命是让表单自动化对每个 WordPress 用户来说都简单、安全和可靠——从初学者到企业团队。"
+msgid ""
+"Our mission is to make form automation simple, secure, and reliable for every "
+"WordPress user - from beginners to enterprise teams."
+msgstr ""
+"我们的使命是让表单自动化对每个 WordPress 用户来说都简单、安全和可靠——从初学者到企"
+"业团队。"
 
 msgid "Fast & Reliable Data Sync"
 msgstr "快速可靠的数据同步"
@@ -164,14 +919,23 @@ msgstr "专属支持"
 msgid "Add-ons & Extensions"
 msgstr "附加组件与扩展"
 
-msgid "Extend your Google Sheets integration with powerful add-ons. Install, manage, and activate extensions to unlock advanced features."
-msgstr "通过强大的附加组件扩展您的 Google Sheets 集成。安装、管理和激活扩展以解锁高级功能。"
+msgid ""
+"Extend your Google Sheets integration with powerful add-ons. Install, manage, "
+"and activate extensions to unlock advanced features."
+msgstr ""
+"通过强大的附加组件扩展您的 Google Sheets 集成。安装、管理和激活扩展以解锁高级功"
+"能。"
 
 msgid "WooCommerce Google Sheet Connector"
 msgstr "WooCommerce Google Sheet 连接器"
 
-msgid "Sync WooCommerce orders with Google Sheets automatically. Store order details, customer information, and transaction data in real-time for easy reporting, accounting, and business analysis."
-msgstr "自动将 WooCommerce 订单与 Google 表格同步。实时存储订单详情、客户信息和交易数据，以便于报告、会计和业务分析。"
+msgid ""
+"Sync WooCommerce orders with Google Sheets automatically. Store order details, "
+"customer information, and transaction data in real-time for easy reporting, "
+"accounting, and business analysis."
+msgstr ""
+"自动将 WooCommerce 订单与 Google 表格同步。实时存储订单详情、客户信息和交易数据，"
+"以便于报告、会计和业务分析。"
 
 msgid "Install"
 msgstr "安装"
@@ -182,32 +946,58 @@ msgstr "专业版"
 msgid "CF7 Google Sheet Connector"
 msgstr "CF7 Google Sheet 连接器"
 
-msgid "Easily connect Contact Form 7 to Google Sheets and automatically sync form submissions in real-time. Every entry is instantly added to your selected spreadsheet, helping you manage leads, inquiries, and customer data efficiently without manual export."
-msgstr "轻松将联系表单 7 连接到 Google 表格，并实时自动同步表单提交。每个条目会立即添加到您选择的电子表格中，帮助您高效管理潜在客户、咨询和客户数据，无需手动导出。"
+msgid ""
+"Easily connect Contact Form 7 to Google Sheets and automatically sync form "
+"submissions in real-time. Every entry is instantly added to your selected "
+"spreadsheet, helping you manage leads, inquiries, and customer data efficiently "
+"without manual export."
+msgstr ""
+"轻松将联系表单 7 连接到 Google 表格，并实时自动同步表单提交。每个条目会立即添加到"
+"您选择的电子表格中，帮助您高效管理潜在客户、咨询和客户数据，无需手动导出。"
 
 msgid "WPForms Google Sheet Connector"
 msgstr "WPForms Google Sheet 连接器"
 
-msgid "Integrate WPForms with Google Sheets and send form entries directly to your spreadsheet automatically. Track leads, manage customer data, and streamline reporting with seamless Google Sheets integration and real-time sync."
-msgstr "将 WPForms 与 Google 表格集成，自动将表单条目直接发送到您的电子表格中。通过无缝的 Google 表格集成和实时同步，跟踪潜在客户、管理客户数据并简化报告。"
+msgid ""
+"Integrate WPForms with Google Sheets and send form entries directly to your "
+"spreadsheet automatically. Track leads, manage customer data, and streamline "
+"reporting with seamless Google Sheets integration and real-time sync."
+msgstr ""
+"将 WPForms 与 Google 表格集成，自动将表单条目直接发送到您的电子表格中。通过无缝"
+"的 Google 表格集成和实时同步，跟踪潜在客户、管理客户数据并简化报告。"
 
 msgid "Gravity Forms Google Sheet Connector"
 msgstr "Gravity Forms Google Sheet 连接器"
 
-msgid "Connect Gravity Forms to Google Sheets and automatically push form submissions to your spreadsheet. Simplify data management, improve workflow automation, and keep all entries organized in one secure location."
-msgstr "将 Gravity Forms 连接到 Google 表格，并自动将表单提交推送到您的电子表格中。简化数据管理，改善工作流程自动化，并将所有条目组织在一个安全的位置。"
+msgid ""
+"Connect Gravity Forms to Google Sheets and automatically push form submissions "
+"to your spreadsheet. Simplify data management, improve workflow automation, and "
+"keep all entries organized in one secure location."
+msgstr ""
+"将 Gravity Forms 连接到 Google 表格，并自动将表单提交推送到您的电子表格中。简化数"
+"据管理，改善工作流程自动化，并将所有条目组织在一个安全的位置。"
 
 msgid "Ninja Forms Google Sheet Connector"
 msgstr "Ninja Forms Google Sheet 连接器"
 
-msgid "Automatically sync Ninja Forms submissions to Google Sheets with one-click integration. Capture leads, monitor responses, and manage data efficiently with instant spreadsheet updates and easy reporting."
-msgstr "通过一键集成自动将 Ninja Forms 提交同步到 Google 表格。捕获潜在客户，监控响应，并通过即时电子表格更新和简单报告高效管理数据。"
+msgid ""
+"Automatically sync Ninja Forms submissions to Google Sheets with one-click "
+"integration. Capture leads, monitor responses, and manage data efficiently with "
+"instant spreadsheet updates and easy reporting."
+msgstr ""
+"通过一键集成自动将 Ninja Forms 提交同步到 Google 表格。捕获潜在客户，监控响应，并"
+"通过即时电子表格更新和简单报告高效管理数据。"
 
 msgid "Forminator Forms Google Sheet Connector"
 msgstr "Forminator Forms Google Sheet 连接器"
 
-msgid "Integrate Forminator Forms with Google Sheets to automatically store form entries in your spreadsheet. Eliminate manual data entry and ensure accurate, real-time syncing for better data tracking and analysis."
-msgstr "将 Forminator 表单与 Google 表格集成，以自动将表单条目存储在您的电子表格中。消除手动数据输入，确保准确的实时同步，以便更好地跟踪和分析数据。"
+msgid ""
+"Integrate Forminator Forms with Google Sheets to automatically store form "
+"entries in your spreadsheet. Eliminate manual data entry and ensure accurate, "
+"real-time syncing for better data tracking and analysis."
+msgstr ""
+"将 Forminator 表单与 Google 表格集成，以自动将表单条目存储在您的电子表格中。消除"
+"手动数据输入，确保准确的实时同步，以便更好地跟踪和分析数据。"
 
 msgid "Free"
 msgstr "免费"
@@ -215,26 +1005,48 @@ msgstr "免费"
 msgid "Formidable Forms Google Sheet Connector"
 msgstr "Formidable Forms Google Sheet 连接器"
 
-msgid "Automatically sync Formidable Forms entries to Google Sheets. Manage leads, track submissions, and simplify data reporting with real-time integration."
-msgstr "自动将 Formidable 表单条目同步到 Google 表格。管理潜在客户，跟踪提交，并通过实时集成简化数据报告。"
+msgid ""
+"Automatically sync Formidable Forms entries to Google Sheets. Manage leads, "
+"track submissions, and simplify data reporting with real-time integration."
+msgstr ""
+"自动将 Formidable 表单条目同步到 Google 表格。管理潜在客户，跟踪提交，并通过实时"
+"集成简化数据报告。"
 
 msgid "Fluent Forms Google Sheet Connector"
 msgstr "Fluent Forms Google Sheet 连接器"
 
-msgid "Automatically sync Fluent Forms submissions to Google Sheets in real-time. Every form entry is instantly added to your selected spreadsheet, helping you manage leads, customer inquiries, and business data without manual export. Streamline your workflow, improve reporting accuracy, and keep all submissions organized with seamless Google Sheets integration."
-msgstr "实时自动将 Fluent Forms 提交同步到 Google Sheets。每个表单条目会立即添加到您选择的电子表格中，帮助您管理潜在客户、客户咨询和业务数据，无需手动导出。简化您的工作流程，提高报告准确性，并通过无缝的 Google Sheets 集成保持所有提交的有序。"
+msgid ""
+"Automatically sync Fluent Forms submissions to Google Sheets in real-time. Every "
+"form entry is instantly added to your selected spreadsheet, helping you manage "
+"leads, customer inquiries, and business data without manual export. Streamline "
+"your workflow, improve reporting accuracy, and keep all submissions organized "
+"with seamless Google Sheets integration."
+msgstr ""
+"实时自动将 Fluent Forms 提交同步到 Google Sheets。每个表单条目会立即添加到您选择"
+"的电子表格中，帮助您管理潜在客户、客户咨询和业务数据，无需手动导出。简化您的工作"
+"流程，提高报告准确性，并通过无缝的 Google Sheets 集成保持所有提交的有序。"
 
 msgid "Elementor Forms Google Sheet Connector"
 msgstr "Elementor Forms Google Sheet 连接器"
 
-msgid "Sync Elementor Forms with Google Sheets instantly. Automatically add new form submissions to your spreadsheet, manage leads efficiently, and simplify reporting with real-time data synchronization."
-msgstr "立即将 Elementor 表单与 Google 表格同步。自动将新表单提交添加到您的电子表格中，高效管理潜在客户，并通过实时数据同步简化报告。"
+msgid ""
+"Sync Elementor Forms with Google Sheets instantly. Automatically add new form "
+"submissions to your spreadsheet, manage leads efficiently, and simplify "
+"reporting with real-time data synchronization."
+msgstr ""
+"立即将 Elementor 表单与 Google 表格同步。自动将新表单提交添加到您的电子表格中，高"
+"效管理潜在客户，并通过实时数据同步简化报告。"
 
 msgid "Avada Forms Google Sheet Connector"
 msgstr "Avada Forms Google Sheet 连接器"
 
-msgid "Connect Avada Forms to Google Sheets and automatically transfer form entries to your spreadsheet. Streamline lead management, automate data collection, and improve business reporting with seamless integration."
-msgstr "将 Avada 表单连接到 Google 表格，并自动将表单条目转移到您的电子表格中。简化潜在客户管理，自动化数据收集，并通过无缝集成改善业务报告。"
+msgid ""
+"Connect Avada Forms to Google Sheets and automatically transfer form entries to "
+"your spreadsheet. Streamline lead management, automate data collection, and "
+"improve business reporting with seamless integration."
+msgstr ""
+"将 Avada 表单连接到 Google 表格，并自动将表单条目转移到您的电子表格中。简化潜在客"
+"户管理，自动化数据收集，并通过无缝集成改善业务报告。"
 
 msgid "Available PRO Version"
 msgstr "可用的专业版"
@@ -242,26 +1054,44 @@ msgstr "可用的专业版"
 msgid "Divi Forms Google Sheet Connector"
 msgstr "Divi Forms Google Sheet 连接器"
 
-msgid "Integrate Divi Forms with Google Sheets and automatically sync submissions in real-time. Store customer data securely, track inquiries efficiently, and eliminate manual spreadsheet updates."
-msgstr "将 Divi 表单与 Google 表格集成，并实时自动同步提交。安全存储客户数据，高效跟踪查询，消除手动更新电子表格的工作。"
+msgid ""
+"Integrate Divi Forms with Google Sheets and automatically sync submissions in "
+"real-time. Store customer data securely, track inquiries efficiently, and "
+"eliminate manual spreadsheet updates."
+msgstr ""
+"将 Divi 表单与 Google 表格集成，并实时自动同步提交。安全存储客户数据，高效跟踪查"
+"询，消除手动更新电子表格的工作。"
 
 msgid "WP Core Google Sheet Connector"
 msgstr "WP Core Google Sheet 连接器"
 
-msgid "Automatically send WordPress core data (like comments or custom submissions) to Google Sheets. Simplify website data tracking, automate record keeping, and centralize important information in one organized spreadsheet."
-msgstr "自动将 WordPress 核心数据（如评论或自定义提交）发送到 Google 表格。简化网站数据跟踪，自动化记录保存，并在一个有序的电子表格中集中重要信息。"
+msgid ""
+"Automatically send WordPress core data (like comments or custom submissions) to "
+"Google Sheets. Simplify website data tracking, automate record keeping, and "
+"centralize important information in one organized spreadsheet."
+msgstr ""
+"自动将 WordPress 核心数据（如评论或自定义提交）发送到 Google 表格。简化网站数据跟"
+"踪，自动化记录保存，并在一个有序的电子表格中集中重要信息。"
 
 msgid "Easy Digital Downloads Google Sheet Connector"
 msgstr "Easy Digital Downloads Google Sheet 连接器"
 
-msgid "Automatically send Easy Digital Downloads (EDD) order details to Google Sheets. Track digital product sales, monitor transactions, and manage customer data effortlessly with real-time spreadsheet integration."
-msgstr "自动将 Easy Digital Downloads (EDD) 订单详情发送到 Google 表格。轻松跟踪数字产品销售，监控交易，并通过实时电子表格集成管理客户数据。"
+msgid ""
+"Automatically send Easy Digital Downloads (EDD) order details to Google Sheets. "
+"Track digital product sales, monitor transactions, and manage customer data "
+"effortlessly with real-time spreadsheet integration."
+msgstr ""
+"自动将 Easy Digital Downloads (EDD) 订单详情发送到 Google 表格。轻松跟踪数字产品"
+"销售，监控交易，并通过实时电子表格集成管理客户数据。"
 
 msgid "Installed & Active Plugins"
 msgstr "已安装和激活的插件"
 
-msgid "View and manage all currently installed and active connectors on your site. You can activate, deactivate, or upgrade plugins from here."
-msgstr "查看和管理您网站上当前安装和激活的所有连接器。您可以从这里激活、停用或升级插件。"
+msgid ""
+"View and manage all currently installed and active connectors on your site. You "
+"can activate, deactivate, or upgrade plugins from here."
+msgstr ""
+"查看和管理您网站上当前安装和激活的所有连接器。您可以从这里激活、停用或升级插件。"
 
 msgid "Pro"
 msgstr "专业版"
@@ -275,8 +1105,11 @@ msgstr "停用"
 msgid "Recommended Plugins"
 msgstr "推荐插件"
 
-msgid "Discover recommended plugins that enhance your workflow and help you get more value from your Google Sheets integration."
-msgstr "发现推荐的插件，以增强您的工作流程，并帮助您从 Google Sheets 集成中获得更多价值。"
+msgid ""
+"Discover recommended plugins that enhance your workflow and help you get more "
+"value from your Google Sheets integration."
+msgstr ""
+"发现推荐的插件，以增强您的工作流程，并帮助您从 Google Sheets 集成中获得更多价值。"
 
 msgid "Activate"
 msgstr "激活"
@@ -311,12 +1144,6 @@ msgstr "您确定要停用此插件吗？"
 msgid "Cancel"
 msgstr "取消"
 
-msgid "You do not have permission to install plugin."
-msgstr "您没有安装插件的权限。"
-
-msgid "Missing required parameters."
-msgstr "缺少必需的参数。"
-
 msgid "Installation failed: "
 msgstr "安装失败："
 
@@ -326,62 +1153,31 @@ msgstr "插件安装成功。"
 msgid "Invalid security token."
 msgstr "无效的安全令牌。"
 
-msgid "You do not have permission to activate plugin."
-msgstr "您没有启用插件的权限。"
-
-msgid "Plugin slug is missing."
-msgstr "缺少插件 slug。"
-
-msgid "Plugin is already activated."
-msgstr "插件已启用。"
-
 msgid "Plugin activated successfully."
 msgstr "插件激活成功。"
 
 msgid "Sheet Sync Feeds"
 msgstr "表格同步数据"
 
-msgid "Create, connect, manage, and monitor how your form submissions are automatically synced to Google Sheets in real time."
+msgid ""
+"Create, connect, manage, and monitor how your form submissions are automatically "
+"synced to Google Sheets in real time."
 msgstr "创建、连接、管理和监控您的表单提交如何实时自动同步到 Google Sheets。"
-
-msgid "- Close Feeds"
-msgstr "- 关闭源"
 
 msgid "Feed Name"
 msgstr "Feed 名称"
 
 msgid "Feed Type"
-msgstr "数据源类型"
+msgstr "源类型"
 
 msgid "Select Feed Type"
 msgstr "选择源类型"
-
-msgid "Orders"
-msgstr "订单"
-
-msgid "Products"
-msgstr "产品"
-
-msgid "Products Variation"
-msgstr "产品变体"
-
-msgid "Customers"
-msgstr "客户"
-
-msgid "Coupons"
-msgstr "优惠券"
-
-msgid "Subscriptions"
-msgstr "订阅"
 
 msgid "Submit"
 msgstr "提交"
 
 msgid "Inactive"
-msgstr "非活动"
-
-msgid "Trash"
-msgstr "垃圾箱"
+msgstr "未激活"
 
 msgid "Feed ID"
 msgstr "源 ID"
@@ -395,65 +1191,14 @@ msgstr "时间戳"
 msgid "Status"
 msgstr "状态"
 
-msgid "feed"
-msgstr "feed"
-
-msgid "Rename Feed"
-msgstr "重命名源"
-
 msgid "Save"
 msgstr "保存"
 
 msgid "Edit"
 msgstr "编辑"
 
-msgid "admin"
-msgstr "admin"
-
-msgid "2026-04-27 09:30:53"
-msgstr "2026-04-27 09:30:53"
-
-msgid "feed1"
-msgstr "feed1"
-
-msgid "2026-04-27 09:31:18"
-msgstr "2026-04-27 09:31:18"
-
-msgid "feed2"
-msgstr "feed2"
-
-msgid "2026-04-27 09:31:35"
-msgstr "2026-04-27 09:31:35"
-
-msgid "feed3"
-msgstr "feed3"
-
-msgid "2026-04-27 09:31:47"
-msgstr "2026-04-27 09:31:47"
-
-msgid "feed4"
-msgstr "feed4"
-
-msgid "2026-04-27 09:32:00"
-msgstr "2026-04-27 09:32:00"
-
-msgid "feed5"
-msgstr "feed5"
-
-msgid "2026-04-27 09:32:17"
-msgstr "2026-04-27 09:32:17"
-
-msgid "feed6"
-msgstr "feed6"
-
-msgid "2026-04-27 09:32:27"
-msgstr "2026-04-27 09:32:27"
-
 msgid "Integration"
 msgstr "集成"
-
-msgid "WooCommerce Data Settings"
-msgstr "WooCommerce 数据设置"
 
 msgid "Settings"
 msgstr "设置"
@@ -464,14 +1209,11 @@ msgstr "系统状态"
 msgid "Extensions"
 msgstr "扩展"
 
-msgid "Form Feed Settings"
-msgstr "表单提交设置"
-
-msgid "You`re using GSheetConnector for WooCommerce Lite. To unlock more features consider "
-msgstr "您正在使用 GSheetConnector for WooCommerce Lite。要解锁更多功能，请考虑"
-
 msgid "upgrading to Pro"
 msgstr "升级到专业版"
+
+msgid "Service"
+msgstr "服务"
 
 msgid "Existing"
 msgstr "现有"
@@ -485,7 +1227,9 @@ msgstr "使用您的 Google 帐户进行身份验证"
 msgid "Your connection has expired or hasn’t been set up yet."
 msgstr "您的连接已过期或尚未设置。"
 
-msgid "Your Google connection is missing or expired. Please authenticate to continue syncing data without interruptions."
+msgid ""
+"Your Google connection is missing or expired. Please authenticate to continue "
+"syncing data without interruptions."
 msgstr "您的 Google 连接缺失或已过期。请进行身份验证以继续无中断地同步数据。"
 
 msgid "Authenticate Now"
@@ -497,7 +1241,9 @@ msgstr "了解如何"
 msgid "Enjoying the Plugin?"
 msgstr "您喜欢这个插件吗？"
 
-msgid "If you are enjoying the plugin, please consider leaving a 5-star review. Your support helps us improve and grow."
+msgid ""
+"If you are enjoying the plugin, please consider leaving a 5-star review. Your "
+"support helps us improve and grow."
 msgstr "如果您喜欢这个插件，请考虑留下 5 星评价。您的支持帮助我们改进和成长。"
 
 msgid "Ok, you deserve it!"
@@ -527,12 +1273,6 @@ msgstr "探索附加组件"
 msgid "View Details"
 msgstr "查看详情"
 
-msgid "Unlock Advance Features of GSheetConnector for WooCommerce Pro"
-msgstr "解锁 GSheetConnector for WooCommerce Pro 的高级功能"
-
-msgid "Use advanced features like Manual Authentication and automatic field mapping, no need to create columns in Google Sheets manually. Choose only the fields you need with simple toggles, use advanced tags, sync past form entries, and get priority support."
-msgstr "使用手动身份验证和自动字段映射等高级功能，无需在 Google Sheets 中手动创建列。通过简单的开关仅选择您需要的字段，使用高级标签，同步过去的表单条目，并获得优先支持。"
-
 msgid "View License Types"
 msgstr "查看许可证类型"
 
@@ -548,13 +1288,12 @@ msgstr "Google 表格"
 msgid "Dashboard"
 msgstr "仪表板"
 
-msgid "Feed Settings (PRO)"
-msgstr "Feed 设置（PRO）"
-
 msgid "Advanced Tools for Easy Spreadsheet Control"
 msgstr "用于轻松控制电子表格的高级工具"
 
-msgid "Improve your sheet management with smart automation and flexible customization features."
+msgid ""
+"Improve your sheet management with smart automation and flexible customization "
+"features."
 msgstr "通过智能自动化和灵活的自定义功能改善您的表格管理。"
 
 msgid "Google Sheets API v4"
@@ -578,32 +1317,8 @@ msgstr "自动化表格和标签"
 msgid "Multiple Feeds to Sheets"
 msgstr "多个 Feed 到 Sheets"
 
-msgid "Order Status Sheet Tabs"
-msgstr "订单状态表选项卡"
-
 msgid "Language Translation "
 msgstr "语言翻译"
-
-msgid "Custom Order Sheet Tabs"
-msgstr "自定义订单表选项卡"
-
-msgid "Sync Additional Sheet Tabs"
-msgstr "同步附加表选项卡"
-
-msgid "How Orders Are Synced"
-msgstr "订单同步方式"
-
-msgid "Order & Product Category Filter"
-msgstr "订单和产品类别过滤器"
-
-msgid "2-Way Sync"
-msgstr "双向同步"
-
-msgid "Add Extra Google Sheet Columns"
-msgstr "添加额外的 Google 表格列"
-
-msgid "Cron Settings "
-msgstr "Cron 设置"
 
 msgid "Drag-and-Drop Column Order"
 msgstr "拖放列顺序"
@@ -633,19 +1348,131 @@ msgid "Upgrad Now"
 msgstr "立即升级"
 
 msgid "Free vs Pro"
-msgstr "免费版与 Pro 版"
-
-msgid "Google Sheet Not Connected"
-msgstr "Google 表格未连接"
+msgstr "免费版与专业版"
 
 msgid "Not connected"
-msgstr "已连接"
+msgstr "未连接"
 
 msgid "Select"
 msgstr "选择"
 
-msgid " Google Sheets Integration for WooCommerce"
-msgstr "WooCommerce 的 Google Sheets 集成"
+msgid "Google Sheets Integration"
+msgstr "Google Sheets 集成"
+
+msgid "Service Account"
+msgstr "服务帐户"
+
+msgid "Upload or paste your JSON credentials"
+msgstr "上传或粘贴您的 JSON 凭据"
+
+msgid "Service Account JSON File"
+msgstr "服务账户 JSON 文件"
+
+msgid "Paste your service account JSON credentials here..."
+msgstr "在此粘贴您的服务账户 JSON 凭据..."
+
+msgid "This JSON file is used for authentication and is stored securely."
+msgstr "此 JSON 文件用于身份验证，并安全存储。"
+
+msgid "Please fill out this field"
+msgstr "请填写此字段"
+
+msgid "Upload JSON File"
+msgstr "上传 JSON 文件"
+
+msgid "Click to select your .json file"
+msgstr "点击选择您的 .json 文件"
+
+msgid ""
+"Choose your service account JSON file. Its contents will be auto-filled above."
+msgstr "选择您的服务账户 JSON 文件。其内容将自动填充在上方。"
+
+msgid ""
+"To enable syncing, share your Google Sheet with the service account email "
+"connected to this plugin and grant Editor access."
+msgstr ""
+"要启用同步，请将您的 Google 表格与连接到此插件的服务帐户电子邮件共享，并授予编辑"
+"访问权限。"
+
+msgid "Service Account Email"
+msgstr "服务帐户电子邮件"
+
+msgid ""
+"Your Google Sheet must be shared with this service account email and granted "
+"Editor access to enable data synchronization."
+msgstr ""
+"您的 Google 表格必须与此服务账户电子邮件共享，并授予编辑权限以启用数据同步。"
+
+msgid "Share sheet for sync"
+msgstr "共享表格以进行同步"
+
+msgid "Deactivate Integration"
+msgstr "停用集成"
+
+msgid "Step-1 Open Google Cloud > Service Accounts"
+msgstr "步骤 1 打开 Google Cloud > 服务帐户"
+
+msgid ""
+"Open your Google Cloud project and go to IAM & Admin > Service Accounts to "
+"manage service identities."
+msgstr "打开您的 Google Cloud 项目，转到 IAM 和管理员 > 服务帐户以管理服务身份。"
+
+msgid "Navigate to Service Accounts"
+msgstr "导航到服务帐户"
+
+msgid "Step-2 Create a New Service Account"
+msgstr "步骤 2 创建新的服务帐户"
+
+msgid "Create a Service Account"
+msgstr "创建服务帐户"
+
+msgid "Step-3 Fill Service Account Details"
+msgstr "步骤 3 填写服务帐户详细信息"
+
+msgid "Add Service Account Name & ID"
+msgstr "添加服务帐户名称和 ID"
+
+msgid "Google Console"
+msgstr "Google 控制台"
+
+msgid "Step-4 Open Service Account Keys Section"
+msgstr "步骤 4 打开服务帐户密钥部分"
+
+msgid ""
+"Open the created service account and switch to the Keys tab to generate "
+"credentials."
+msgstr "打开创建的服务帐户并切换到密钥选项卡以生成凭据。"
+
+msgid "Go to Service Account → Keys"
+msgstr "转到服务帐户 → 密钥"
+
+msgid "Step-5 Download JSON Key File"
+msgstr "步骤 5 下载 JSON 密钥文件"
+
+msgid "Select JSON format and download the key file securely to your computer."
+msgstr "选择 JSON 格式并将密钥文件安全地下载到您的计算机。"
+
+msgid "Download JSON Key File"
+msgstr "下载 JSON 密钥文件"
+
+msgid "Check our detailed guideline"
+msgstr "查看我们的详细指南"
+
+msgid "Connection Guide"
+msgstr "连接指南"
+
+msgid "Step-by-Step"
+msgstr "逐步操作"
+
+msgid "How to Connect Google Sheets"
+msgstr "如何连接 Google 表格"
+
+msgid ""
+"This guide shows how to share your Google Sheet with the connected service "
+"account and grant editor access for seamless synchronization."
+msgstr ""
+"本指南展示了如何将您的 Google 表格与连接的服务帐户共享，并授予编辑权限以实现无缝"
+"同步。"
 
 msgid "Choose Google API Setting"
 msgstr "选择 Google API 设置"
@@ -664,9 +1491,6 @@ msgstr "Google 账户连接"
 
 msgid "Auto Setup"
 msgstr "自动设置"
-
-msgid "Sign in with your Google account to connect WooCommerce with Google Sheets. Once connected, your data syncs based on your settings. Learn more in the documentation"
-msgstr "使用您的 Google 账户登录以将 WooCommerce 连接到 Google 表格。连接后，您的数据将根据您的设置进行同步。详细信息请参阅文档。"
 
 msgid "Click here"
 msgstr "点击这里"
@@ -698,24 +1522,23 @@ msgstr "如果提示，请保存身份验证代码。"
 msgid "This allows the plugin to securely sync your form data with Google Sheets."
 msgstr "这允许插件安全地将您的表单数据与 Google Sheets 同步。"
 
-msgid "<p class="fw-400 text-dark"><strong>Google Drive</strong> and <strong>Google Sheets</strong> permissions were not granted during authentication with Google.</p>
-                  <p class="fw-400 text-dark"><strong>Refer to Step 4 in the Connection Guide shown alongside.</strong><br> Then, deactivate the connection and re-authorize it, ensuring both Google Drive and Google Sheets permissions are enabled.</p>"
-msgstr "<p class="fw-400 text-dark">在通过 Google 进行身份验证时，未授予 <strong>Google Drive</strong> 和 <strong>Google Sheets</strong> 的访问权限。</p>
-<p class="fw-400 text-dark"><strong>请参阅旁边的“连接指南”中的第 4 步。</strong><br> 随后，停用该连接并重新进行授权，确保同时启用了 Google Drive 和 Google Sheets 的访问权限。</p>"
-
 msgid "Connected Google Account"
 msgstr "已连接的 Google 帐户"
 
 msgid "Connected"
 msgstr "已连接"
 
-msgid "Authentication failed. Your Google access token may be expired or invalid. Please re-authenticate your account with the required permissions."
-msgstr "认证失败。您的 Google 访问令牌可能已过期或无效。请使用所需权限重新验证您的帐户。"
+msgid ""
+"Authentication failed. Your Google access token may be expired or invalid. "
+"Please re-authenticate your account with the required permissions."
+msgstr ""
+"认证失败。您的 Google 访问令牌可能已过期或无效。请使用所需权限重新验证您的帐户。"
 
 msgid "Connect Your Google Account"
 msgstr "连接您的 Google 帐户"
 
-msgid "Securely link your Google account to start syncing form entries automatically."
+msgid ""
+"Securely link your Google account to start syncing form entries automatically."
 msgstr "安全地链接您的 Google 帐户以开始自动同步表单条目。"
 
 msgid "Sign in with Google"
@@ -727,8 +1550,13 @@ msgstr "客户端令牌"
 msgid "Save Client Token"
 msgstr "保存客户端令牌"
 
-msgid "We do not store any of the data from your Google account on our servers, everything is processed & stored on your server. We take your privacy extremely seriously and ensure it is never misused. Learn more in the documentation"
-msgstr "我们不会在我们的服务器上存储您 Google 帐户的任何数据，所有数据都在您的服务器上处理和存储。我们非常重视您的隐私，并确保不会被滥用。详细信息请参见文档"
+msgid ""
+"We do not store any of the data from your Google account on our servers, "
+"everything is processed & stored on your server. We take your privacy extremely "
+"seriously and ensure it is never misused. Learn more in the documentation"
+msgstr ""
+"我们不会在我们的服务器上存储您 Google 帐户的任何数据，所有数据都在您的服务器上处"
+"理和存储。我们非常重视您的隐私，并确保不会被滥用。详细信息请参见文档"
 
 msgid "click here."
 msgstr "点击这里。"
@@ -736,43 +1564,26 @@ msgstr "点击这里。"
 msgid "Connection Status & Next Steps"
 msgstr "连接状态与后续步骤"
 
-msgid "Your Google account has been successfully connected. You are now ready to sync your WooCommerce data with Google Sheets securely and automatically."
-msgstr "您的 Google 账户已成功连接。您现在可以安全、自动地将 WooCommerce 数据与 Google Sheets 同步。"
-
 msgid "Create New Feed"
 msgstr "创建新 Feed"
 
 msgid "Select Google Spreadsheet"
 msgstr "选择 Google 电子表格"
 
-msgid "Map WooCommerce Fields"
-msgstr "映射 WooCommerce 字段"
-
-msgid "Enable Order Sync"
-msgstr "启用订单同步"
-
 msgid "Upgrade to unlock"
 msgstr "升级以解锁"
 
-msgid "Deactivate Integration"
-msgstr "停用集成"
-
-msgid "Are you sure you want to deactivate Google Sheets integration?"
-msgstr "您确定要停用 Google Sheets 集成吗？"
-
-msgid "Connection Guide"
-msgstr "连接指南"
-
-msgid "Step-by-Step"
-msgstr "逐步操作"
-
-msgid "Follow these steps to connect your Google account and start syncing your form data with Google Sheets."
+msgid ""
+"Follow these steps to connect your Google account and start syncing your form "
+"data with Google Sheets."
 msgstr "按照以下步骤连接您的 Google 账户并开始将表单数据与 Google Sheets 同步。"
 
 msgid "Step-1 Connect Your Google Account"
 msgstr "步骤-1 连接您的 Google 账户"
 
-msgid "Sign in with your Google account to start the automatic Google Sheets integration."
+msgid ""
+"Sign in with your Google account to start the automatic Google Sheets "
+"integration."
 msgstr "使用您的 Google 账户登录以开始自动 Google Sheets 集成。"
 
 msgid "Step-2 Choose Google Account"
@@ -811,31 +1622,36 @@ msgstr "您的 Google 账户现在已成功连接。"
 msgid "Manual Google Sheets Integration"
 msgstr "手动 Google Sheets 集成"
 
-msgid "Connect WooCommerce to Google Sheets using your own Google Cloud project. Ideal for advanced users who need full API control and custom OAuth setup."
-msgstr "使用您自己的 Google Cloud 项目将 WooCommerce 连接到 Google Sheets。适合需要完全 API 控制和自定义 OAuth 设置的高级用户。"
-
 msgid "Custom API Credentials"
 msgstr "自定义 API 凭证"
 
-msgid "Connect using your own Google Cloud Client ID and Client Secret for full authentication control."
+msgid ""
+"Connect using your own Google Cloud Client ID and Client Secret for full "
+"authentication control."
 msgstr "使用您自己的 Google Cloud 客户端 ID 和客户端密钥进行完整的认证控制。"
 
 msgid "Secure Authentication"
 msgstr "安全认证"
 
-msgid "Authenticate directly with Google using a secure Authentication flow without third-party dependency."
+msgid ""
+"Authenticate directly with Google using a secure Authentication flow without "
+"third-party dependency."
 msgstr "直接使用安全认证流程与 Google 进行认证，无需第三方依赖。"
 
 msgid "Advanced Configuration"
 msgstr "高级配置"
 
-msgid "Set custom Redirect URIs, manage scopes, and configure API settings based on your project needs."
+msgid ""
+"Set custom Redirect URIs, manage scopes, and configure API settings based on "
+"your project needs."
 msgstr "设置自定义重定向 URI，管理范围，并根据您的项目需求配置 API 设置。"
 
 msgid "Priority Technical Support"
 msgstr "优先技术支持"
 
-msgid "Get fast assistance from our expert team for setup, troubleshooting, and optimization."
+msgid ""
+"Get fast assistance from our expert team for setup, troubleshooting, and "
+"optimization."
 msgstr "从我们的专家团队获取快速帮助，进行设置、故障排除和优化。"
 
 msgid "Upgrade to Unlock"
@@ -847,31 +1663,38 @@ msgstr "查看专业功能"
 msgid "Service Account Google Sheets Integration"
 msgstr "服务账户 Google Sheets 集成"
 
-msgid "Connect WooCommerce to Google Sheets using a Service Account for automated syncing without manual login."
-msgstr "使用服务帐户将 WooCommerce 连接到 Google Sheets，以实现无需手动登录的自动同步。"
-
 msgid "Secure JSON Authentication"
 msgstr "安全 JSON 认证"
 
-msgid "Authenticate using a secure Google Cloud JSON key file for direct and encrypted communication with Google Sheets."
-msgstr "使用安全的 Google Cloud JSON 密钥文件进行身份验证，以便与 Google Sheets 进行直接和加密的通信。"
+msgid ""
+"Authenticate using a secure Google Cloud JSON key file for direct and encrypted "
+"communication with Google Sheets."
+msgstr ""
+"使用安全的 Google Cloud JSON 密钥文件进行身份验证，以便与 Google Sheets 进行直接"
+"和加密的通信。"
 
 msgid "No Authentication Login Required"
 msgstr "无需身份验证登录"
 
-msgid "Enable automatic background syncing without requiring Google account sign-in during setup."
+msgid ""
+"Enable automatic background syncing without requiring Google account sign-in "
+"during setup."
 msgstr "启用自动后台同步，无需在设置过程中进行 Google 账户登录。"
 
 msgid "Direct Spreadsheet Access"
 msgstr "直接电子表格访问"
 
-msgid "Share your Google Sheet with the service account email to enable automatic data transfer."
+msgid ""
+"Share your Google Sheet with the service account email to enable automatic data "
+"transfer."
 msgstr "与服务账户电子邮件共享您的 Google Sheet，以启用自动数据传输。"
 
 msgid "Production-Ready & Reliable"
 msgstr "生产就绪且可靠"
 
-msgid "Built for stable, uninterrupted syncing in professional and high-traffic environments."
+msgid ""
+"Built for stable, uninterrupted syncing in professional and high-traffic "
+"environments."
 msgstr "为专业和高流量环境中的稳定、不间断同步而构建。"
 
 msgid "Permission Not Allowed"
@@ -891,9 +1714,6 @@ msgstr "允许特定的 WordPress 角色"
 
 msgid "Enable/disable integration access"
 msgstr "启用/禁用集成访问"
-
-msgid "Control WooCommerce sync visibility"
-msgstr "控制 WooCommerce 同步可见性"
 
 msgid "Restrict settings management"
 msgstr "限制设置管理"
@@ -945,9 +1765,6 @@ msgstr "维护管理员责任"
 
 msgid "Access Management"
 msgstr "访问管理"
-
-msgid "Control which user roles can access and manage WooCommerce Google Sheets integration."
-msgstr "控制哪些用户角色可以访问和管理 WooCommerce Google Sheets 集成。"
 
 msgid "Plugin Access Control"
 msgstr "插件访问控制"
@@ -1060,13 +1877,20 @@ msgstr "随时切换开/关"
 msgid "Beta Program Access"
 msgstr "Beta 程序访问"
 
-msgid "Get early access to upcoming features and improvements before they are officially released. Beta versions may include experimental updates and should be used for testing purposes only."
-msgstr "在即将发布的功能和改进正式发布之前，提前获取访问权限。Beta 版本可能包含实验性更新，仅应用于测试目的。"
+msgid ""
+"Get early access to upcoming features and improvements before they are "
+"officially released. Beta versions may include experimental updates and should "
+"be used for testing purposes only."
+msgstr ""
+"在即将发布的功能和改进正式发布之前，提前获取访问权限。Beta 版本可能包含实验性更"
+"新，仅应用于测试目的。"
 
 msgid "Enable Beta Updates"
 msgstr "启用 Beta 更新"
 
-msgid "Receive notifications and access to beta releases. Updates will not be installed automatically."
+msgid ""
+"Receive notifications and access to beta releases. Updates will not be installed "
+"automatically."
 msgstr "接收通知并访问 Beta 版本。更新将不会自动安装。"
 
 msgid "Beta Usage Notice"
@@ -1084,13 +1908,11 @@ msgstr "可能会出现小错误或性能问题"
 msgid "We recommend enabling beta only on test or staging sites"
 msgstr "我们建议仅在测试或暂存网站上启用测试版"
 
-msgid "Do not enable on live production websites without proper backups."
-msgstr "在没有适当备份的情况下，请勿在实时生产网站上启用。"
-
 msgid "Plugin Preferences"
 msgstr "插件偏好设置"
 
-msgid "Manage how plugin settings and data are handled when the plugin is uninstalled."
+msgid ""
+"Manage how plugin settings and data are handled when the plugin is uninstalled."
 msgstr "管理插件卸载时设置和数据的处理方式。"
 
 msgid "Delete Plugin Data on Uninstall"
@@ -1114,10 +1936,14 @@ msgstr "不正确的设置可能会删除所有敏感表单和用户数据"
 msgid "Confirm Data Deletion"
 msgstr "确认数据删除"
 
-msgid "Enabling this option will permanently delete all plugin data, including settings and integrations, when the plugin is uninstalled."
+msgid ""
+"Enabling this option will permanently delete all plugin data, including settings "
+"and integrations, when the plugin is uninstalled."
 msgstr "启用此选项将在卸载插件时永久删除所有插件数据，包括设置和集成。"
 
-msgid "If you plan to upgrade from Free to Pro, you may lose your existing configuration data."
+msgid ""
+"If you plan to upgrade from Free to Pro, you may lose your existing "
+"configuration data."
 msgstr "如果您计划从免费版升级到专业版，您可能会丢失现有的配置数据。"
 
 msgid "Proceed only if you want a complete cleanup. This action cannot be undone."
@@ -1126,32 +1952,19 @@ msgstr "仅在您想要完全清理时继续。此操作无法撤销。"
 msgid "Enable Deletion"
 msgstr "启用删除"
 
-msgid "Description Input Format Settings"
-msgstr "描述输入格式设置"
-
-msgid "Enable this option to allow HTML formatting in Product Description and Short Description fields. When enabled, HTML content from the sheet will be imported as is. Disable it to use plain text only."
-msgstr "启用此选项以允许在产品描述和简短描述字段中使用 HTML 格式。当启用时，来自表格的 HTML 内容将按原样导入。禁用它以仅使用纯文本。"
-
-msgid "Enable HTML Formatting for Description Fields"
-msgstr "启用描述字段的 HTML 格式"
-
-msgid "Allow HTML content in Product Description and Short Description fields during import."
-msgstr "在导入期间允许产品描述和简短描述字段中的 HTML 内容。"
-
 msgid "HTML Formatting Guide"
 msgstr "HTML 格式指南"
 
-msgid "Enable this option to allow HTML content in Product Description and Short Description fields."
+msgid ""
+"Enable this option to allow HTML content in Product Description and Short "
+"Description fields."
 msgstr "启用此选项以允许产品描述和简短描述字段中的 HTML 内容。"
 
-msgid "When enabled, HTML tags from the sheet (e.g., <p>, <br>, <strong>) will be imported as is."
-msgstr "当启用时，来自表格的 HTML 标签（例如 <p>、<br>、<strong>）将按原样导入。"
-
 msgid "Disable this option to import plain text without HTML formatting."
-msgstr "禁用此选项以导入没有 HTML 格式的纯文本。"
+msgstr "禁用此选项，以便导入不带 HTML 格式的纯文本。"
 
 msgid "Use this option only if your sheet contains valid HTML content."
-msgstr "仅在您的表格包含有效的 HTML 内容时使用此选项。"
+msgstr "仅在您的工作表包含有效的 HTML 内容时使用此选项。"
 
 msgid "You do not have permission to access this page."
 msgstr "您没有权限访问此页面。"
@@ -1159,9 +1972,13 @@ msgstr "您没有权限访问此页面。"
 msgid "System Information"
 msgstr "系统信息"
 
-msgid "View detailed information about your plugin, server, and WordPress setup for troubleshooting and support.
-        "
-msgstr "查看有关您的插件、服务器和 WordPress 设置的详细信息，以便进行故障排除和支持"
+msgid ""
+"View detailed information about your plugin, server, and WordPress setup for "
+"troubleshooting and support.\n"
+"        "
+msgstr ""
+"查看有关您的插件、服务器和 WordPress 设置的详细信息，以便进行故障排除和支持。\n"
+"        "
 
 msgid "Copy System Info"
 msgstr "复制系统信息"
@@ -1269,7 +2086,7 @@ msgid "Theme directory location"
 msgstr "主题目录位置"
 
 msgid "Network Active plugins"
-msgstr "活动插件"
+msgstr "网络活动插件"
 
 msgid "Active Plugins"
 msgstr "活动插件"
@@ -1277,8 +2094,12 @@ msgstr "活动插件"
 msgid "Server"
 msgstr "服务器"
 
-msgid "The options shown below relate to your server setup. If changes are required, you may need your web host’s assistance."
-msgstr "以下选项与您的服务器设置相关。如果需要更改，您可能需要您的网络托管服务提供商的协助。"
+msgid ""
+"The options shown below relate to your server setup. If changes are required, "
+"you may need your web host’s assistance."
+msgstr ""
+"以下选项与您的服务器设置相关。如果需要更改，您可能需要您的网络托管服务提供商的协"
+"助。"
 
 msgid "Server Architecture"
 msgstr "服务器架构"
@@ -1388,7 +2209,8 @@ msgstr "WordPress 常量"
 msgid "Filesystem Permission"
 msgstr "文件系统权限"
 
-msgid "Shows whether WordPress is able to write to the directories it needs access to."
+msgid ""
+"Shows whether WordPress is able to write to the directories it needs access to."
 msgstr "显示 WordPress 是否能够写入所需访问的目录。"
 
 msgid "The main WordPress directory"
@@ -1407,7 +2229,7 @@ msgid "The themes directory"
 msgstr "主题目录"
 
 msgid "Debug Log"
-msgstr "调试模式"
+msgstr "调试日志"
 
 msgid "No error logs found."
 msgstr "未找到错误日志。"
@@ -1415,26 +2237,28 @@ msgstr "未找到错误日志。"
 msgid "Welcome To GSheetConnector"
 msgstr "欢迎使用 GSheetConnector"
 
-msgid "GSheetConnector is a powerful automation plugin that syncs WordPress data with Google Sheets in real time. It supports WooCommerce, Easy Digital Downloads, and popular form plugins such as Contact Form 7, Gravity Forms, Elementor Forms, along with 10+ additional WordPress integrations for efficient data management."
-msgstr "GSheetConnector 是一个强大的自动化插件，可以实时将 WordPress 数据与 Google 表格同步。它支持 WooCommerce、Easy Digital Downloads 和流行的表单插件，如 Contact Form 7、Gravity Forms、Elementor Forms，以及 10 多个其他 WordPress 集成，以实现高效的数据管理。"
+msgid ""
+"GSheetConnector is a powerful automation plugin that syncs WordPress data with "
+"Google Sheets in real time. It supports WooCommerce, Easy Digital Downloads, and "
+"popular form plugins such as Contact Form 7, Gravity Forms, Elementor Forms, "
+"along with 10+ additional WordPress integrations for efficient data management."
+msgstr ""
+"GSheetConnector 是一个强大的自动化插件，可以实时将 WordPress 数据与 Google 表格同"
+"步。它支持 WooCommerce、Easy Digital Downloads 和流行的表单插件，如 Contact Form "
+"7、Gravity Forms、Elementor Forms，以及 10 多个其他 WordPress 集成，以实现高效的"
+"数据管理。"
 
 msgid " Connected"
-msgstr "已连接"
+msgstr " 已连接"
 
 msgid "Sheet Name"
 msgstr "表格名称"
-
-msgid "Loading..."
-msgstr "加载中..."
 
 msgid "Let's Connect"
 msgstr "让我们连接"
 
 msgid "Setup Guide & Troubleshooting"
 msgstr "设置指南与故障排除"
-
-msgid "Sync WooCommerce data with Google Sheets in real-time effortlessly and accurately."
-msgstr "实时轻松准确地将 WooCommerce 数据与 Google Sheets 同步。"
 
 msgid "Getting Started"
 msgstr "开始使用"
@@ -1444,9 +2268,6 @@ msgstr "安装过程"
 
 msgid "Integration with Google (Existing Method)"
 msgstr "与 Google 的集成（现有方法）"
-
-msgid "Integration of WooCommerce with Google Sheet"
-msgstr "WooCommerce 与 Google Sheet 的集成"
 
 msgid "Docs & Troubleshooting"
 msgstr "文档与故障排除"
@@ -1468,24 +2289,6 @@ msgstr "与 Google 的集成（手动方法）"
 
 msgid "Integration with Google (Service Method)"
 msgstr "与 Google 的集成（服务方法）"
-
-msgid "WooCommerce Data Settings – PRO Version"
-msgstr "WooCommerce 数据设置 – PRO 版本"
-
-msgid "Feed Settings  – PRO Version"
-msgstr "Feed 设置 – PRO 版本"
-
-msgid "Settings Tab – PRO Version"
-msgstr "设置选项卡 – PRO 版本"
-
-msgid "Role Settings – PRO Version"
-msgstr "角色设置 – PRO 版本"
-
-msgid "2-Way Sync - PRO Version"
-msgstr "双向同步 - PRO 版本"
-
-msgid "Third-Party Plugins Compatibility"
-msgstr "第三方插件兼容性"
 
 msgid "Plugins by Category"
 msgstr "按类别划分的插件"
@@ -1529,8 +2332,12 @@ msgstr "惊人的关键功能"
 msgid "Everything You Need to Sync Data"
 msgstr "您所需的一切以同步数据"
 
-msgid "Common features shared across every GSheetConnector Pro add-on built for reliability, flexibility, and scale."
-msgstr "每个 GSheetConnector Pro 附加组件共享的常见功能，旨在提供可靠性、灵活性和可扩展性。"
+msgid ""
+"Common features shared across every GSheetConnector Pro add-on built for "
+"reliability, flexibility, and scale."
+msgstr ""
+"每个 GSheetConnector Pro 附加组件共享的常见功能，旨在提供可靠性、灵活性和可扩展"
+"性。"
 
 msgid "Manual Sheet / Tab Name"
 msgstr "手动表格/标签名称"
@@ -1580,56 +2387,14 @@ msgstr "视频教程"
 msgid "Sheet URL"
 msgstr "表格 URL"
 
-msgid "Permission To Access GSheetConnector WooCommerce"
-msgstr "访问 GSheetConnector WooCommerce 的权限"
-
-msgid "Google Sheet to WooCommerce Sync Configuration"
-msgstr "Google 表格与 WooCommerce 同步配置"
-
-msgid "Connected WooCommerce Google Sheet"
-msgstr "连接的 WooCommerce Google 表格"
-
 msgid "Google Spreadsheet Name"
-msgstr "Google 表格名称"
-
-msgid "Google Spreadsheet URL"
-msgstr "Google 电子表格 URL"
+msgstr "Google 电子表格名称"
 
 msgid "View Spreadsheet"
 msgstr "查看电子表格"
 
-msgid "Sync Settings for Two-Way Sync - Insert & Updates"
-msgstr "双向同步的同步设置 - 插入和更新"
-
-msgid "Enter Rows Range - from"
-msgstr "输入行范围 - 从"
-
 msgid "to"
-msgstr "到"
-
-msgid "Click to Sync Insert"
-msgstr "点击同步插入"
-
-msgid "Click to Sync Update"
-msgstr "点击同步更新"
-
-msgid "Sync Settings for Two-Way Sync - Order Status Updates"
-msgstr "双向同步的设置 - 订单状态更新"
-
-msgid "Click to Order Status Sync Update"
-msgstr "点击订单状态同步更新"
-
-msgid "Sync Settings for Two-Way Sync - Insert Orders"
-msgstr "双向同步的设置 - 插入订单"
-
-msgid "Click to Sync Order"
-msgstr "点击同步订单"
-
-msgid "WooCommerce Data Settings saved successfully."
-msgstr "WooCommerce 数据设置成功保存。"
-
-msgid "Please select Google Sheet Name and Check Atleast on Google Sheet Tab !"
-msgstr "请选定 Google 表格名称并至少在 Google 表格标签上勾选!"
+msgstr "至"
 
 msgid "Google Sheets Setup Required"
 msgstr "需要 Google 表格设置"
@@ -1637,110 +2402,47 @@ msgstr "需要 Google 表格设置"
 msgid "Your selected method is: "
 msgstr "您选择的方法是："
 
+msgid "Service Account (Recommended)."
+msgstr "服务帐户（推荐）。"
+
 msgid "Go to Integration Setup"
 msgstr "前往集成设置"
-
-msgid "Choose Google Spreadsheet"
-msgstr "选择 Google 表格"
-
-msgid "Select a Google Sheets to connect your data. If your sheet is not listed, fetch the latest sheets or create a new one. Then complete the setup and save your changes to start syncing."
-msgstr "选择一个 Google 表格以连接您的数据。如果您的表格未列出，请获取最新的表格或创建一个新的。然后完成设置并保存更改以开始同步。"
 
 msgid "Fetch Sheets"
 msgstr "获取表格"
 
-msgid "If your sheets is not listed,  %s to fetch all Google Sheets. "
-msgstr "如果您的表格未列出，请 %s 以获取所有 Google Sheets。"
+msgid "Google Sheets Connection"
+msgstr "Google Sheets 连接"
 
-msgid "Last synced :"
-msgstr "最后同步："
+msgid ""
+"Your Google Spreadsheet is securely connected and ready to receive form "
+"submissions in real time."
+msgstr "您的 Google 电子表格已安全连接，并准备实时接收表单提交。"
 
-msgid "Choose which order statuses should create separate tabs in your Google Sheet; when enabled, a new tab will be created for each selected status to help organize your data more clearly."
-msgstr "选择哪些订单状态应在您的 Google 表格中创建单独的标签；启用后，将为每个选定的状态创建一个新标签，以帮助更清晰地组织您的数据。"
+msgid "Green status means the spreadsheet access is configured correctly."
+msgstr "绿色状态表示电子表格访问配置正确。"
 
-msgid "All Orders"
-msgstr "所有订单"
+msgid "Red status means permission is missing please grant editor access."
+msgstr "红色状态表示缺少权限，请授予编辑访问权限。"
 
-msgid "Upgrade To Pro"
-msgstr "升级到专业版"
+msgid "Sharing Required"
+msgstr "需要共享"
 
-msgid "Translate Google Sheets Tab Names"
-msgstr "翻译 Google Sheets 选项卡名称"
+msgid ""
+"Please share your Google Spreadsheet with the following service account to "
+"enable automatic syncing."
+msgstr "请将您的 Google 电子表格分享给以下服务帐号以启用自动同步。"
 
-msgid "This setting displays tab names according to your WordPress site language."
-msgstr "此设置根据您的WordPress网站语言显示标签名称。"
+msgid ""
+"After sharing the spreadsheet, click Fetch Sheets to get the sheets into the "
+"dropdown, then select the sheet you shared and save the settings. The page will "
+"refresh and display the sharing status."
+msgstr ""
+"分享电子表格后，点击获取表格以将表格添加到下拉菜单中，然后选择您分享的表格并保存"
+"设置。页面将刷新并显示分享状态。"
 
-msgid "Enable Language Translation"
-msgstr "启用语言翻译"
-
-msgid "When enabled, Google Sheet tab names will be displayed in the language selected for your WordPress site."
-msgstr "启用后，Google Sheet 选项卡名称将以您 WordPress 网站所选语言显示。"
-
-msgid "Headers"
-msgstr "标题"
-
-msgid "Custom order statuses will appear here. Turn them on to create a new tab for each in your Google Sheet."
-msgstr "自定义订单状态将出现在这里。启用它们以在您的 Google 表格中为每个状态创建一个新标签。"
-
-msgid "No custom order statuses are currently available."
-msgstr "当前没有可用的自定义订单状态。"
-
-msgid "Product Category as Sheet Tabs"
-msgstr "产品类别过滤器"
-
-msgid "Organize category-based order data into dedicated Google Sheet tabs. Enable the product categories you want to use, and orders containing products from those categories will be synced to their corresponding category tabs."
-msgstr "将按分类的订单数据整理到专用的 Google 表格标签页中。启用要使用的商品分类后，包含这些分类商品的订单将同步到对应的分类标签页。"
-
-msgid "Select Category"
-msgstr "选择类别"
-
-msgid "Enable additional Sheet tabs to sync more WooCommerce information to your Google Sheet. Each selected option will create and update its own tab automatically."
-msgstr "启用额外的表格标签以同步更多WooCommerce信息到您的Google表格。每个选定的选项将自动创建和更新其自己的标签。"
-
-msgid "All Products"
-msgstr "所有产品"
-
-msgid "All Products Variation"
-msgstr "所有产品变体"
-
-msgid "All Customers"
-msgstr "所有客户"
-
-msgid "All Coupons"
-msgstr "所有优惠券"
-
-msgid "All Subscriptions"
-msgstr "所有订阅"
-
-msgid "Choose how orders should appear in your Google Sheet:"
-msgstr "选择订单在您的 Google 表格中应如何显示："
-
-msgid "Order Wise :"
-msgstr "按订单："
-
-msgid "Each order is added as a single row, even if it contains multiple products."
-msgstr "每个订单作为一行添加，即使它包含多个产品。"
-
-msgid "Product Wise :"
-msgstr "按产品："
-
-msgid "Each product in an order is added as a separate row, so you can see details for every item."
-msgstr "订单中的每个产品作为单独的一行添加，因此您可以查看每个项目的详细信息。"
-
-msgid "You can also choose how the entries are sorted (ascending or descending). Your selected format and sorting will be applied across all tabs in the sheet."
-msgstr "您还可以选择条目的排序方式（升序或降序）。您选择的格式和排序将应用于表中的所有标签。"
-
-msgid "Select Sync Format"
-msgstr "选择同步格式"
-
-msgid "Order Wise"
-msgstr "按订单"
-
-msgid "Product Wise"
-msgstr "按产品"
-
-msgid "Sorting"
-msgstr "排序"
+msgid "Copy"
+msgstr "复制"
 
 msgid "Ascending"
 msgstr "升序"
@@ -1748,65 +2450,11 @@ msgstr "升序"
 msgid "Descending"
 msgstr "降序"
 
-msgid "Sheet Charts"
-msgstr "表格名称"
-
-msgid "Create visual charts for your WooCommerce data. Choose a chart type for Sales Orders, Total Orders, or Products Sold, and the selected charts will be created and updated automatically in your Google Sheet."
-msgstr "为您的 WooCommerce 数据创建可视化图表。请选择销售订单、订单总数或已售商品的图表类型，所选图表将自动在您的 Google 表格中创建并更新。"
-
-msgid "Sales Orders"
-msgstr "所有订单"
-
-msgid "Total Orders"
-msgstr "所有订单"
-
-msgid "Products Sold"
-msgstr "产品"
-
-msgid "Order Category Filter"
-msgstr "订单类别过滤器"
-
-msgid "Filter orders by category before syncing to your Google Sheet. When enabled, only selected categories will be synced. When disabled, all orders will be included. This applies to adding, updating, and syncing orders."
-msgstr "在同步到您的 Google 表格之前按类别过滤订单。启用时，仅选定的类别将被同步。禁用时，所有订单将被包含。这适用于添加、更新和同步订单。"
-
-msgid "Product Category Filter"
-msgstr "产品类别过滤器"
-
-msgid "Filter products by category before syncing to your Google Sheet. When enabled, only selected categories will be synced. When disabled, all products will be included. This applies to adding, updating, and syncing products."
-msgstr "在同步到您的 Google 表格之前按类别过滤产品。启用后，仅选定的类别将被同步。禁用时，所有产品将被包含。这适用于添加、更新和同步产品。"
-
-msgid "Sync data between WooCommerce and Google Sheets in real-time. Enable this feature to manage orders, products, and more directly from your spreadsheet."
-msgstr "实时在 WooCommerce 和 Google 表格之间同步数据。启用此功能以直接从您的电子表格管理订单、产品等。"
-
-msgid "Enable 2-Way Sync"
-msgstr "启用双向同步"
-
-msgid "Allow Google Sheets to update WooCommerce data."
-msgstr "允许 Google 表格更新 WooCommerce 数据。"
-
-msgid "Select Sync Modules"
-msgstr "选择同步模块"
-
-msgid "Allowed Actions"
-msgstr "允许的操作"
-
-msgid "Insert"
-msgstr "插入"
-
 msgid "Update"
 msgstr "更新"
 
 msgid "Delete"
 msgstr "删除"
-
-msgid "Select fields to add as new columns in your sheet. Enter a column name for each field. These columns will be included when your data syncs."
-msgstr "选择要作为新列添加到您的表格中的字段。为每个字段输入列名。这些列将在您的数据同步时包含。"
-
-msgid "Product Variation"
-msgstr "产品变体"
-
-msgid "Additional Order Columns"
-msgstr "额外的订单列"
 
 msgid "Enter Column Name"
 msgstr "输入列名"
@@ -1814,67 +2462,15 @@ msgstr "输入列名"
 msgid "Add"
 msgstr "添加"
 
-msgid " Upgrade To Pro"
-msgstr " 升级到专业版"
-
-msgid "Additional Product Columns"
-msgstr "额外的产品列"
-
-msgid "Additional Custom Columns"
-msgstr "额外的自定义列"
-
-msgid "Additional Empty Columns"
-msgstr "额外的空列"
-
-msgid "Enable All Columns"
-msgstr "启用所有列"
-
-msgid "Additional Product Variation Columns"
-msgstr "额外的产品变体列"
-
-msgid "Cron Settings"
-msgstr "Cron 设置"
-
-msgid "Enable Cron Sync"
-msgstr "启用 Cron 同步"
-
-msgid "Turn on automatic scheduling"
-msgstr "开启自动调度"
-
-msgid "Set Schedule"
-msgstr "设置计划"
-
-msgid "No Schedule"
-msgstr "无计划"
-
-msgid "Choose Schedule Type"
-msgstr "选择日程类型"
-
-msgid "Repeat Weekly"
-msgstr "每周重复"
-
-msgid "Run Once"
-msgstr "仅运行一次"
-
-msgid "How Often"
-msgstr "频率"
-
-msgid "Select Day"
-msgstr "选择日期"
-
 msgid "Time"
 msgstr "时间"
-
-msgid "Real-Time Sync"
-msgstr "实时同步"
-
-msgid "Sync instantly when new orders are created"
-msgstr "新订单创建时立即同步"
 
 msgid "Header Settings"
 msgstr "标题设置"
 
-msgid "Customize the appearance and behavior of your sheet headers and rows for better readability and organization."
+msgid ""
+"Customize the appearance and behavior of your sheet headers and rows for better "
+"readability and organization."
 msgstr "自定义您的表头和行的外观和行为，以提高可读性和组织性。"
 
 msgid "Header Behavior"
@@ -1934,77 +2530,20 @@ msgstr "下载"
 msgid "Google Sheets Data Sync"
 msgstr "Google Sheets 数据同步"
 
-msgid "Effortlessly sync your WooCommerce data with Google Sheets. Available options include Orders, Products, Product Variations, Customers, Coupons, and Subscriptions. Select only the sync types that best suit your needs. This ensures seamless integration and real-time updates for efficient data management."
-msgstr "轻松将您的 WooCommerce 数据与 Google Sheets 同步。可用选项包括订单、产品、产品变体、客户、优惠券和订阅。仅选择最适合您需求的同步类型。这确保无缝集成和实时更新，以便高效管理数据。"
-
-msgid "Sync Orders"
-msgstr "同步订单"
-
-msgid "Initiate the synchronization of your WooCommerce orders seamlessly with a single click. This ensures that your Google Sheet stays up-to-date with the latest order information, based on your configuration done above, providing you with real-time insights and streamlined data management. Optimize your workflow with the convenience of synchronized orders."
-msgstr "通过单击一次无缝启动您的 WooCommerce 订单同步。这确保您的 Google 表格与最新的订单信息保持同步，基于您上面所做的配置，为您提供实时洞察和简化的数据管理。通过同步订单的便利性优化您的工作流程。"
-
 msgid "From Date"
 msgstr "开始日期"
 
 msgid "To Date"
 msgstr "结束日期"
 
-msgid "Order Status"
-msgstr "订单状态"
-
-msgid "Sync Orders (Product Category Tabs)"
-msgstr "订单和产品类别过滤器"
-
-msgid "Backfill existing <b class="f-weight">WooCommerce orders</b> into the Product Category sheet tabs. Only orders that contain a product from a selected category are synced, and only into those matching category tabs. Orders already present in a tab are skipped."
-msgstr "将现有的 <b class="f-weight">WooCommerce 订单</b>回填到商品分类表格标签页中。仅同步包含所选分类商品的订单，且只同步到对应的分类标签页。已存在于某个标签页中的订单将被跳过。"
-
-msgid "Product Categories"
-msgstr "产品类别过滤器"
-
-msgid "Sync Products"
-msgstr "同步产品"
-
-msgid "Initiate the synchronization of your WooCommerce products seamlessly with a single click. This ensures that your Google Sheet stays up-to-date with the latest product information, based on your configuration done above, providing you with real-time insights and streamlined data management. Before starting the sync, ensure that the products tab toggle is enabled to optimize your workflow with the convenience of synchronized product data."
-msgstr "通过单击一次无缝启动您的 WooCommerce 产品同步。这确保您的 Google 表格与最新的产品信息保持同步，基于您上面所做的配置，为您提供实时洞察和简化的数据管理。在开始同步之前，请确保产品选项卡切换已启用，以便通过同步的产品数据优化您的工作流程。"
-
-msgid "Sync Products Variation"
-msgstr "同步产品变体"
-
-msgid "Initiate the synchronization of your WooCommerce products variations seamlessly with a single click. This ensures that your Google Sheet stays up-to-date with the latest product information, based on your configuration done above. If you are using variable products, then only data will be shown in the sheet. Before starting the sync, ensure that the products variation tab toggle is enabled to optimize your workflow with the convenience of synchronized product data."
-msgstr "通过单击一次无缝启动您的 WooCommerce 产品变体同步。这确保您的 Google 表格与最新的产品信息保持同步，基于您上面所做的配置。如果您使用的是可变产品，则仅会在表格中显示数据。在开始同步之前，请确保产品变体选项卡切换已启用，以便通过同步的产品数据优化您的工作流程。"
-
-msgid "Sync Customers"
-msgstr "同步客户"
-
-msgid "Initiate the synchronization of your WooCommerce Customers seamlessly with a single click. This ensures that your Google Sheet stays up-to-date with the latest order information, based on your configuration done above, providing you with real-time insights and streamlined data management. Optimize your workflow with the convenience of synchronized orders."
-msgstr "通过单击一次无缝启动您的 WooCommerce 客户同步。这确保您的 Google 表格与最新的订单信息保持同步，基于您上面所做的配置，为您提供实时洞察和简化的数据管理。通过同步订单的便利性优化您的工作流程。"
-
-msgid "Sync Coupons"
-msgstr "同步优惠券"
-
-msgid "Initiate the synchronization of your WooCommerce coupons seamlessly with a single click. This process ensures that your Google Sheet reflects the latest coupon information, following the configuration set above. Benefit from real-time insights and streamlined data management. Before starting the sync, confirm that the coupons tab toggle is enabled enhancing your workflow with the convenience of synchronized coupon data."
-msgstr "通过单击一次无缝启动您的 WooCommerce 优惠券同步。此过程确保您的 Google 表格反映最新的优惠券信息，遵循上面设置的配置。享受实时洞察和简化的数据管理。在开始同步之前，请确认优惠券选项卡切换已启用，以增强您的工作流程，方便同步的优惠券数据。"
-
-msgid "Sync Subscriptions"
-msgstr "同步订阅"
-
 msgid "display"
-msgstr "展示"
+msgstr "显示"
 
 msgid "View Documentation"
 msgstr "查看文档"
 
 msgid "Get Support"
 msgstr "获取支持"
-
-msgid "GSheetConnector WooCommerce Add-on requires WooCommerce plugin to be installed and activated."
-msgstr "GSheetConnector WooCommerce 插件需要安装并激活 WooCommerce 插件。"
-
-msgid "https://wordpress.org/plugins/wc-gsheetconnector/"
-msgstr "https://wordpress.org/plugins/wc-gsheetconnector/"
-
-msgid "Send your WooCommerce data to your Google Sheets spreadsheet."
-msgstr "将您的 WooCommerce 数据发送到您的 Google Sheets 电子表格。"
 
 msgid "GSheetConnector"
 msgstr "GSheetConnector"

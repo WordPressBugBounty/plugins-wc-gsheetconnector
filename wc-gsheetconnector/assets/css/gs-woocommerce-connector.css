@@ -753,7 +753,7 @@
   color: #374151;
   margin-bottom: 6px;
 }
-.gswc-free .gsc-service-json {
+.gswc-free .wcgsc-service-json {
   width: 100%;
   min-height: 200px;
   padding: 14px;
@@ -767,12 +767,12 @@
   resize: vertical;
   transition: all 0.2s ease;
 }
-.gswc-free .gsc-service-json:focus {
+.gswc-free .wcgsc-service-json:focus {
   border-color: #0d6efd;
   outline: none;
   box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
 }
-.gswc-free .gsc-service-json::placeholder {
+.gswc-free .wcgsc-service-json::placeholder {
   color: #9ca3af;
 }
 .gswc-free .gsc-json-help {
@@ -781,7 +781,7 @@
   font-size: 12px;
   color: #6b7280;
 }
-.gswc-free .gsc-service-json[readonly] {
+.gswc-free .wcgsc-service-json[readonly] {
   background: #f9fafb;
   border-color: #e5e7eb;
 }
@@ -789,7 +789,7 @@
 .gswc-free .gsc-upload-wrapper {
   margin-top: 16px;
 }
-#gscfff_upload_service_json_file {
+#wcgsc_upload_service_json_file {
   display: none;
 }
 .gswc-free .gsc-upload-box {
@@ -801,6 +801,7 @@
   border-radius: 12px;
   background: #f9fafb;
   cursor: pointer;
+  width: auto !important;
   transition: all 0.2s ease;
 }
 .gswc-free .gsc-upload-box:hover {

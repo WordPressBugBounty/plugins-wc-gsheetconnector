@@ -1,9 +1,17 @@
-# Translation file
-
 msgid ""
 msgstr ""
+"Project-Id-Version: WooCommerce GSheetConnector\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-28 19:04+0530\n"
+"PO-Revision-Date: 2026-10-28 19:26+0530\n"
+"Last-Translator: POForge <noreply@poforge.com>\n"
+"Language-Team: ja <noreply@poforge.com>\n"
 "Language: ja\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
 
 msgid "11"
 msgstr "11"
@@ -41,14 +49,802 @@ msgstr "21"
 msgid "Invalid log table name."
 msgstr "無効なログテーブル名です。"
 
+msgid "GSheetConnector for WooCommerce"
+msgstr "GSheetConnector for WooCommerce"
+
+msgid "You do not have permission to install plugin."
+msgstr "プラグインをインストールする権限がありません。"
+
+msgid "Missing required parameters."
+msgstr "必須パラメータが欠けています。"
+
+msgid "You do not have permission to activate plugin."
+msgstr "プラグインをアクティブにする権限がありません。"
+
+msgid "Plugin slug is missing."
+msgstr "プラグインスラッグが欠けています。"
+
+msgid "Plugin is already activated."
+msgstr "プラグインはすでにアクティブです。"
+
+msgid "- Close Feeds"
+msgstr "- フィードを閉じる"
+
+msgid "Feed Type"
+msgstr "フィードタイプ"
+
+msgid "Select Feed Type"
+msgstr "フィードタイプを選択"
+
+msgid "Orders"
+msgstr "注文"
+
+msgid "Products"
+msgstr "製品"
+
+msgid "Products Variation"
+msgstr "製品バリエーション"
+
+msgid "Customers"
+msgstr "顧客"
+
+msgid "Coupons"
+msgstr "クーポン"
+
+msgid "Subscriptions"
+msgstr "サブスクリプション"
+
+msgid "Trash"
+msgstr "ゴミ箱"
+
+msgid "Feed ID"
+msgstr "フィードID"
+
+msgid "feed"
+msgstr "フィード"
+
+msgid "Rename Feed"
+msgstr "フィード名を変更"
+
+msgid "admin"
+msgstr "管理者"
+
+msgid "2026-04-27 09:30:53"
+msgstr "2026-04-27 09:30:53"
+
+msgid "feed1"
+msgstr "フィード1"
+
+msgid "2026-04-27 09:31:18"
+msgstr "2026-04-27 09:31:18"
+
+msgid "feed2"
+msgstr "フィード2"
+
+msgid "2026-04-27 09:31:35"
+msgstr "2026-04-27 09:31:35"
+
+msgid "feed3"
+msgstr "フィード3"
+
+msgid "2026-04-27 09:31:47"
+msgstr "2026-04-27 09:31:47"
+
+msgid "feed4"
+msgstr "フィード4"
+
+msgid "2026-04-27 09:32:00"
+msgstr "2026-04-27 09:32:00"
+
+msgid "feed5"
+msgstr "フィード5"
+
+msgid "2026-04-27 09:32:17"
+msgstr "2026-04-27 09:32:17"
+
+msgid "feed6"
+msgstr "フィード6"
+
+msgid "2026-04-27 09:32:27"
+msgstr "2026-04-27 09:32:27"
+
+msgid "WooCommerce Data Settings"
+msgstr "WooCommerceデータ設定"
+
+msgid "Form Feed Settings"
+msgstr "フォームフィード設定"
+
+msgid ""
+"You`re using GSheetConnector for WooCommerce Lite. To unlock more features "
+"consider "
+msgstr ""
+"GSheetConnector for WooCommerce Liteを使用しています。詳細機能を解除するには、"
+
+msgid "Unlock Advance Features of GSheetConnector for WooCommerce Pro"
+msgstr "GSheetConnector for WooCommerce Proの高度な機能を解除する"
+
+msgid ""
+"Use advanced features like Manual Authentication and automatic field mapping, no "
+"need to create columns in Google Sheets manually. Choose only the fields you need "
+"with simple toggles, use advanced tags, sync past form entries, and get priority "
+"support."
+msgstr ""
+"手動認証や自動フィールドマッピングなどの高度な機能を使用し、Google Sheetsで列を手"
+"動で作成する必要はありません。必要なフィールドのみを簡単にトグルして選択し、高度な"
+"タグを使用し、過去のフォームエントリを同期し、優先サポートを受けます。"
+
+msgid "Feed Settings (PRO)"
+msgstr "フィード設定（PRO）"
+
+msgid "Order Status Sheet Tabs"
+msgstr "注文ステータスシートタブ"
+
+msgid "Custom Order Sheet Tabs"
+msgstr "カスタム注文シートタブ"
+
+msgid "Sync Additional Sheet Tabs"
+msgstr "追加シートタブを同期"
+
+msgid "How Orders Are Synced"
+msgstr "注文の同期方法"
+
+msgid "Order & Product Category Filter"
+msgstr "注文と商品カテゴリーのフィルター"
+
+msgid "2-Way Sync"
+msgstr "双方向同期"
+
+msgid "Add Extra Google Sheet Columns"
+msgstr "追加のGoogleシート列を追加"
+
+msgid "Cron Settings "
+msgstr "Cron設定"
+
+msgid "Upgrad Now"
+msgstr "今すぐアップグレード"
+
+msgid "Free vs Pro"
+msgstr "無料対Pro"
+
+msgid "Google Sheet Not Connected"
+msgstr "Googleシートが接続されていません"
+
+msgid "Unable to authenticate with the Service Account."
+msgstr "サービスアカウントで認証できませんでした。"
+
+msgid ""
+"No spreadsheets found. Share your Google Sheet with the service account email and "
+"grant Editor access."
+msgstr ""
+"スプレッドシートが見つかりませんでした。サービスアカウントのメールと共有し、編集者"
+"アクセスを付与してください。"
+
+msgid ""
+"Connect WooCommerce to Google Sheets using a secure service account. Upload your "
+"JSON credentials and share your spreadsheet with the service account email to "
+"enable syncing."
+msgstr ""
+"安全なサービスアカウントを使用してWooCommerceをGoogleシートに接続します。JSON認証"
+"情報をアップロードし、サービスアカウントのメールとスプレッドシートを共有して、同期"
+"を有効にします。"
+
+msgid "Are you sure you want to remove the saved service account credentials?"
+msgstr "保存されたサービスアカウントの認証情報を削除してもよろしいですか？"
+
+msgid ""
+"Click Create Service Account and enter a meaningful name like ex.WooCommerce "
+"GSheet."
+msgstr ""
+"サービスアカウントを作成をクリックし、例：WooCommerce GSheetのような意味のある名前"
+"を入力してください。"
+
+msgid "Step-6 Upload JSON Key in WooCommerce"
+msgstr "ステップ-6 WooCommerceにJSONキーをアップロード"
+
+msgid ""
+"Follow these step-by-step instructions to create and configure your Google "
+"service account and securely connect it with WooCommerce."
+msgstr ""
+"これらのステップバイステップの指示に従って、Googleサービスアカウントを作成し構成"
+"し、WooCommerceと安全に接続します。"
+
+msgid " Google Sheets Integration for WooCommerce"
+msgstr "Google Sheets統合 for WooCommerce"
+
+msgid ""
+"Sign in with your Google account to connect WooCommerce with Google Sheets. Once "
+"connected, your data syncs based on your settings. Learn more in the documentation"
+msgstr ""
+"Googleアカウントでサインインして、WooCommerceをGoogleシートに接続します。接続が完"
+"了すると、設定に基づいてデータが同期されます。詳細はドキュメントをご覧ください"
+
+msgid ""
+"<p class=\"fw-400 text-dark\"><strong>Google Drive</strong> and <strong>Google "
+"Sheets</strong> permissions were not granted during authentication with Google.</"
+"p>\n"
+"                  <p class=\"fw-400 text-dark\"><strong>Refer to Step 4 in the "
+"Connection Guide shown alongside.</strong><br> Then, deactivate the connection "
+"and re-authorize it, ensuring both Google Drive and Google Sheets permissions are "
+"enabled.</p>"
+msgstr ""
+"<p class=\"fw-400 text-dark\"><strong>Google Drive</strong>と<strong>Google "
+"Sheets</strong>の権限が、Googleでの認証中に付与されていませんでした。</p>\n"
+"                  <p class=\"fw-400 text-dark\"><strong>同封の接続ガイドのステップ"
+"4を参照してください。</strong><br> 次に、接続を無効にし、再認証を行い、Google "
+"DriveとGoogle Sheetsの権限が有効であることを確認してください。</p>"
+
+msgid ""
+"Your Google account has been successfully connected. You are now ready to sync "
+"your WooCommerce data with Google Sheets securely and automatically."
+msgstr ""
+"あなたのGoogleアカウントが正常に接続されました。WooCommerceのデータをGoogle Sheets"
+"と安全かつ自動的に同期できる準備が整いました。"
+
+msgid "Map WooCommerce Fields"
+msgstr "WooCommerceフィールドのマッピング"
+
+msgid "Enable Order Sync"
+msgstr "注文の同期を有効にする"
+
+msgid "Are you sure you want to deactivate Google Sheets integration?"
+msgstr "Google Sheets統合を無効にしてもよろしいですか？"
+
+msgid ""
+"Connect WooCommerce to Google Sheets using your own Google Cloud project. Ideal "
+"for advanced users who need full API control and custom OAuth setup."
+msgstr ""
+"独自のGoogle Cloudプロジェクトを使用してWooCommerceをGoogle Sheetsに接続します。完"
+"全なAPI制御とカスタムOAuth設定が必要な上級ユーザー向けに最適です。"
+
+msgid ""
+"Connect WooCommerce to Google Sheets using a Service Account for automated "
+"syncing without manual login."
+msgstr ""
+"サービスアカウントを使用してWooCommerceをGoogle Sheetsに接続します。手動ログインな"
+"しで自動同期が可能です。"
+
+msgid "Control WooCommerce sync visibility"
+msgstr "WooCommerce同期の可視性を制御"
+
+msgid ""
+"Control which user roles can access and manage WooCommerce Google Sheets "
+"integration."
+msgstr ""
+"どのユーザー役割がWooCommerce Google Sheets統合にアクセスし、管理できるかを制御し"
+"ます。"
+
+msgid "Do not enable on live production websites without proper backups."
+msgstr ""
+"適切なバックアップなしでライブプロダクションサイトで有効にしないでください。"
+
+msgid "Description Input Format Settings"
+msgstr "説明入力形式設定"
+
+msgid ""
+"Enable this option to allow HTML formatting in Product Description and Short "
+"Description fields. When enabled, HTML content from the sheet will be imported as "
+"is. Disable it to use plain text only."
+msgstr ""
+"このオプションを有効にすると、製品説明と短い説明フィールドにHTMLフォーマットが許可"
+"されます。有効にすると、シートからのHTMLコンテンツがそのままインポートされます。無"
+"効にすると、プレーンテキストのみが使用されます。"
+
+msgid "Enable HTML Formatting for Description Fields"
+msgstr "説明フィールドのHTMLフォーマットを有効にする"
+
+msgid ""
+"Allow HTML content in Product Description and Short Description fields during "
+"import."
+msgstr "インポート中に製品説明と短い説明フィールドでHTMLコンテンツを許可します。"
+
+msgid ""
+"When enabled, HTML tags from the sheet (e.g., <p>, <br>, <strong>) will be "
+"imported as is."
+msgstr ""
+"有効にすると、シートからのHTMLタグ（例：<p>、<br>、<strong>）がそのままインポート"
+"されます。"
+
+msgid "Loading..."
+msgstr "読み込み中..."
+
+msgid "Credentials Saved"
+msgstr "資格情報が保存されました"
+
+msgid ""
+"Sync WooCommerce data with Google Sheets in real-time effortlessly and accurately."
+msgstr "WooCommerceデータをGoogle Sheetsとリアルタイムで簡単かつ正確に同期します。"
+
+msgid "Integration of WooCommerce with Google Sheet"
+msgstr "WooCommerceとGoogleシートの統合"
+
+msgid "WooCommerce Data Settings – PRO Version"
+msgstr "WooCommerceデータ設定 – PROバージョン"
+
+msgid "Feed Settings  – PRO Version"
+msgstr "フィード設定 – PROバージョン"
+
+msgid "Settings Tab – PRO Version"
+msgstr "設定タブ – PROバージョン"
+
+msgid "Role Settings – PRO Version"
+msgstr "役割設定 – PROバージョン"
+
+msgid "2-Way Sync - PRO Version"
+msgstr "双方向同期 - PROバージョン"
+
+msgid "Third-Party Plugins Compatibility"
+msgstr "サードパーティプラグインの互換性"
+
+msgid "Permission To Access GSheetConnector WooCommerce"
+msgstr "GSheetConnector WooCommerceへのアクセス権"
+
+msgid "Google Sheet to WooCommerce Sync Configuration"
+msgstr "GoogleシートからWooCommerceへの同期設定"
+
+msgid "Connected WooCommerce Google Sheet"
+msgstr "接続されたWooCommerce Googleシート"
+
+msgid "Google Spreadsheet URL"
+msgstr "GoogleスプレッドシートURL"
+
+msgid "Sync Settings for Two-Way Sync - Insert & Updates"
+msgstr "双方向同期のための同期設定 - 挿入と更新"
+
+msgid "Enter Rows Range - from"
+msgstr "行範囲を入力 - から"
+
+msgid "Click to Sync Insert"
+msgstr "挿入を同期するにはクリック"
+
+msgid "Click to Sync Update"
+msgstr "更新を同期するにはクリック"
+
+msgid "Sync Settings for Two-Way Sync - Order Status Updates"
+msgstr "双方向同期のための同期設定 - 注文ステータスの更新"
+
+msgid "Click to Order Status Sync Update"
+msgstr "注文ステータス同期更新をクリック"
+
+msgid "Sync Settings for Two-Way Sync - Insert Orders"
+msgstr "双方向同期のための同期設定 - 注文の挿入"
+
+msgid "Click to Sync Order"
+msgstr "注文を同期するにはクリック"
+
+msgid "WooCommerce Data Settings saved successfully."
+msgstr "WooCommerceデータ設定が正常に保存されました。"
+
+msgid "Please select Google Sheet Name and Check Atleast on Google Sheet Tab !"
+msgstr "Googleシート名を選択し、少なくともGoogleシートタブで確認してください！"
+
+msgid ""
+"Please save your Service Account JSON credentials in the Integration tab first."
+msgstr "最初に統合タブにサービスアカウントのJSON資格情報を保存してください。"
+
+msgid "Choose Google Spreadsheet"
+msgstr "Googleスプレッドシートを選択"
+
+msgid ""
+"Select a Google Sheets to connect your data. If your sheet is not listed, fetch "
+"the latest sheets or create a new one. Then complete the setup and save your "
+"changes to start syncing."
+msgstr ""
+"データを接続するGoogle Sheetsを選択します。シートがリストにない場合は、最新のシー"
+"トを取得するか、新しいシートを作成します。次に、設定を完了し、変更を保存して同期を"
+"開始します。"
+
+msgid "If your sheets is not listed,  %s to fetch all Google Sheets. "
+msgstr "シートがリストにない場合は、%sですべてのGoogle Sheetsを取得してください。"
+
+msgid "Last synced :"
+msgstr "最終同期:"
+
+msgid "Connected Successfully."
+msgstr "接続に成功しました。"
+
+msgid ""
+"Choose which order statuses should create separate tabs in your Google Sheet; "
+"when enabled, a new tab will be created for each selected status to help organize "
+"your data more clearly."
+msgstr ""
+"どの注文ステータスがGoogleシートにそれぞれ異なるタブを作成するべきかを選択します。"
+"有効にすると、選択されたステータスごとに新しいタブが作成され、データの整理がより明"
+"確になります。"
+
+msgid "All Orders"
+msgstr "すべての注文"
+
+msgid "Upgrade To Pro"
+msgstr "Proにアップグレード"
+
+msgid "Translate Google Sheets Tab Names"
+msgstr "Google Sheetsタブ名を翻訳"
+
+msgid "This setting displays tab names according to your WordPress site language."
+msgstr "この設定は、あなたのWordPressサイトの言語に応じてタブ名を表示します。"
+
+msgid "Enable Language Translation"
+msgstr "言語翻訳を有効にする"
+
+msgid ""
+"When enabled, Google Sheet tab names will be displayed in the language selected "
+"for your WordPress site."
+msgstr ""
+"有効にすると、Google Sheetsのタブ名があなたのWordPressサイトで選択された言語で表示"
+"されます。"
+
+msgid "Headers"
+msgstr "ヘッダー"
+
+msgid ""
+"Custom order statuses will appear here. Turn them on to create a new tab for each "
+"in your Google Sheet."
+msgstr ""
+"カスタム注文ステータスがここに表示されます。それらをオンにして、Googleシートに各自"
+"のタブを作成します。"
+
+msgid "No custom order statuses are currently available."
+msgstr "現在利用可能なカスタム注文ステータスはありません。"
+
+msgid "Product Category as Sheet Tabs"
+msgstr "製品カテゴリーをシートタブとして"
+
+msgid ""
+"Organize category-based order data into dedicated Google Sheet tabs. Enable the "
+"product categories you want to use, and orders containing products from those "
+"categories will be synced to their corresponding category tabs."
+msgstr ""
+"カテゴリー別の注文データを専用のGoogleシートタブに整理します。使用したい製品カテゴ"
+"リーを有効にし、それらのカテゴリーの製品を含む注文がそれぞれのカテゴリータブに同期"
+"されます。"
+
+msgid "Select Category"
+msgstr "カテゴリーを選択"
+
+msgid ""
+"Enable additional Sheet tabs to sync more WooCommerce information to your Google "
+"Sheet. Each selected option will create and update its own tab automatically."
+msgstr ""
+"追加のシートタブを有効にして、あなたのGoogleシートにWooCommerce情報をより多く同期"
+"します。選択された各オプションが自動的に独自のタブを作成および更新します。"
+
+msgid "All Products"
+msgstr "すべての製品"
+
+msgid "All Products Variation"
+msgstr "すべての製品バリエーション"
+
+msgid "All Customers"
+msgstr "すべての顧客"
+
+msgid "All Coupons"
+msgstr "すべてのクーポン"
+
+msgid "All Subscriptions"
+msgstr "すべてのサブスクリプション"
+
+msgid "Choose how orders should appear in your Google Sheet:"
+msgstr "注文がGoogleシートにどのように表示されるべきかを選択します："
+
+msgid "Order Wise :"
+msgstr "注文別："
+
+msgid "Each order is added as a single row, even if it contains multiple products."
+msgstr "各注文が1行として追加されます。複数の製品を含む場合でも同様です。"
+
+msgid "Product Wise :"
+msgstr "製品別："
+
+msgid ""
+"Each product in an order is added as a separate row, so you can see details for "
+"every item."
+msgstr ""
+"注文内の各製品が別々の行として追加されるため、すべての項目の詳細を確認できます。"
+
+msgid ""
+"You can also choose how the entries are sorted (ascending or descending). Your "
+"selected format and sorting will be applied across all tabs in the sheet."
+msgstr ""
+"エントリがソートされる方法（昇順または降順）を選択することもできます。選択した形式"
+"とソートは、シート内のすべてのタブに適用されます。"
+
+msgid "Select Sync Format"
+msgstr "同期形式を選択"
+
+msgid "Order Wise"
+msgstr "注文別"
+
+msgid "Product Wise"
+msgstr "製品別"
+
+msgid "Sorting"
+msgstr "ソート"
+
+msgid "Sheet Charts"
+msgstr "シートチャート"
+
+msgid ""
+"Create visual charts for your WooCommerce data. Choose a chart type for Sales "
+"Orders, Total Orders, or Products Sold, and the selected charts will be created "
+"and updated automatically in your Google Sheet."
+msgstr ""
+"WooCommerceデータのビジュアルチャートを作成します。売上注文、総注文、または販売さ"
+"れた製品に対するチャートタイプを選択し、選択されたチャートが自動的にGoogleシートに"
+"作成および更新されます。"
+
+msgid "Sales Orders"
+msgstr "売上注文"
+
+msgid "Total Orders"
+msgstr "総注文"
+
+msgid "Products Sold"
+msgstr "販売された製品"
+
+msgid "Order Category Filter"
+msgstr "注文カテゴリーのフィルター"
+
+msgid ""
+"Filter orders by category before syncing to your Google Sheet. When enabled, only "
+"selected categories will be synced. When disabled, all orders will be included. "
+"This applies to adding, updating, and syncing orders."
+msgstr ""
+"Googleシートに同期する前に、カテゴリーで注文をフィルタリングします。有効にすると、"
+"選択されたカテゴリーのみが同期されます。無効にすると、すべての注文が含まれます。こ"
+"れは、注文の追加、更新、同期に適用されます。"
+
+msgid "Product Category Filter"
+msgstr "製品カテゴリーのフィルター"
+
+msgid ""
+"Filter products by category before syncing to your Google Sheet. When enabled, "
+"only selected categories will be synced. When disabled, all products will be "
+"included. This applies to adding, updating, and syncing products."
+msgstr ""
+"Googleシートに同期する前に、カテゴリーで製品をフィルタリングします。有効にすると、"
+"選択されたカテゴリーのみが同期されます。無効にすると、すべての製品が含まれます。こ"
+"れは、製品の追加、更新、同期に適用されます。"
+
+msgid ""
+"Sync data between WooCommerce and Google Sheets in real-time. Enable this feature "
+"to manage orders, products, and more directly from your spreadsheet."
+msgstr ""
+"WooCommerceとGoogle Sheetsの間でデータをリアルタイムで同期します。この機能を有効に"
+"すると、スプレッドシートから直接注文、製品、およびその他の管理が可能になります。"
+
+msgid "Enable 2-Way Sync"
+msgstr "双方向同期を有効にする"
+
+msgid "Allow Google Sheets to update WooCommerce data."
+msgstr "Google SheetsがWooCommerceデータを更新することを許可します。"
+
+msgid "Select Sync Modules"
+msgstr "同期モジュールを選択"
+
+msgid "Allowed Actions"
+msgstr "許可された操作"
+
+msgid "Insert"
+msgstr "挿入"
+
+msgid ""
+"Select fields to add as new columns in your sheet. Enter a column name for each "
+"field. These columns will be included when your data syncs."
+msgstr ""
+"シートに新しい列を追加するフィールドを選択します。各フィールドの列名を入力します。"
+"これらの列は、データが同期される際に含まれます。"
+
+msgid "Product Variation"
+msgstr "製品バリエーション"
+
+msgid "Additional Order Columns"
+msgstr "追加の注文列"
+
+msgid " Upgrade To Pro"
+msgstr "Proにアップグレード"
+
+msgid "Additional Product Columns"
+msgstr "追加の製品列"
+
+msgid "Additional Custom Columns"
+msgstr "追加のカスタム列"
+
+msgid "Additional Empty Columns"
+msgstr "追加の空の列"
+
+msgid "Enable All Columns"
+msgstr "すべての列を有効にする"
+
+msgid "Additional Product Variation Columns"
+msgstr "追加の製品バリエーション列"
+
+msgid "Cron Settings"
+msgstr "Cron設定"
+
+msgid "Enable Cron Sync"
+msgstr "Cron同期を有効にする"
+
+msgid "Turn on automatic scheduling"
+msgstr "自動スケジューリングをオンにします"
+
+msgid "Set Schedule"
+msgstr "スケジュールを設定"
+
+msgid "No Schedule"
+msgstr "スケジュールなし"
+
+msgid "Choose Schedule Type"
+msgstr "スケジュールタイプを選択"
+
+msgid "Repeat Weekly"
+msgstr "毎週繰り返す"
+
+msgid "Run Once"
+msgstr "1回実行"
+
+msgid "How Often"
+msgstr "どのくらいの頻度で"
+
+msgid "Select Day"
+msgstr "日を選択"
+
+msgid "Real-Time Sync"
+msgstr "リアルタイム同期"
+
+msgid "Sync instantly when new orders are created"
+msgstr "新しい注文が作成されたときに即座に同期します"
+
+msgid ""
+"Effortlessly sync your WooCommerce data with Google Sheets. Available options "
+"include Orders, Products, Product Variations, Customers, Coupons, and "
+"Subscriptions. Select only the sync types that best suit your needs. This ensures "
+"seamless integration and real-time updates for efficient data management."
+msgstr ""
+"WooCommerceデータをGoogle Sheetsと簡単に同期させます。利用可能なオプションには、注"
+"文、製品、製品のバリエーション、顧客、クーポン、サブスクリプションが含まれます。最"
+"も適した同期タイプを選択してください。これにより、シームレスな統合とリアルタイムの"
+"更新が保証され、効率的なデータ管理が可能になります。"
+
+msgid "Sync Orders"
+msgstr "注文を同期"
+
+msgid ""
+"Initiate the synchronization of your WooCommerce orders seamlessly with a single "
+"click. This ensures that your Google Sheet stays up-to-date with the latest order "
+"information, based on your configuration done above, providing you with real-time "
+"insights and streamlined data management. Optimize your workflow with the "
+"convenience of synchronized orders."
+msgstr ""
+"WooCommerceの注文をワンクリックでシームレスに同期を開始します。これは、あなたの"
+"Googleシートが最新の注文情報で最新の状態を保つことを保証し、上記の設定に基づき、リ"
+"アルタイムの洞察を提供し、データ管理を効率化します。同期された注文の便利さでワーク"
+"フローを最適化します。"
+
+msgid "Order Status"
+msgstr "注文ステータス"
+
+msgid "Sync Orders (Product Category Tabs)"
+msgstr "注文を同期（商品カテゴリータブ）"
+
+msgid ""
+"Backfill existing <b class=\"f-weight\">WooCommerce orders</b> into the Product "
+"Category sheet tabs. Only orders that contain a product from a selected category "
+"are synced, and only into those matching category tabs. Orders already present in "
+"a tab are skipped."
+msgstr ""
+"既存の<b class=\"f-weight\">WooCommerce注文</b>を製品カテゴリーシートタブにバック"
+"フィルします。選択したカテゴリーの製品を含む注文のみが同期され、選択されたカテゴ"
+"リータブにのみ同期されます。タブにすでに存在する注文はスキップされます。"
+
+msgid "Product Categories"
+msgstr "製品カテゴリー"
+
+msgid "Sync Products"
+msgstr "製品を同期"
+
+msgid ""
+"Initiate the synchronization of your WooCommerce products seamlessly with a "
+"single click. This ensures that your Google Sheet stays up-to-date with the "
+"latest product information, based on your configuration done above, providing you "
+"with real-time insights and streamlined data management. Before starting the "
+"sync, ensure that the products tab toggle is enabled to optimize your workflow "
+"with the convenience of synchronized product data."
+msgstr ""
+"WooCommerceの製品をワンクリックでシームレスに同期します。これは、あなたのGoogle"
+"シートが最新の製品情報で最新の状態を保つことを保証し、上記の設定に基づき、リアルタ"
+"イムの洞察を提供し、データ管理を効率化します。同期を開始する前に、製品タブのトグル"
+"が有効になっていることを確認してください。"
+
+msgid "Sync Products Variation"
+msgstr "製品バリエーションを同期"
+
+msgid ""
+"Initiate the synchronization of your WooCommerce products variations seamlessly "
+"with a single click. This ensures that your Google Sheet stays up-to-date with "
+"the latest product information, based on your configuration done above. If you "
+"are using variable products, then only data will be shown in the sheet. Before "
+"starting the sync, ensure that the products variation tab toggle is enabled to "
+"optimize your workflow with the convenience of synchronized product data."
+msgstr ""
+"WooCommerceの製品バリエーションをワンクリックでシームレスに同期します。これは、あ"
+"なたのGoogleシートが最新の製品情報で最新の状態を保つことを保証します。可変製品を使"
+"用している場合は、データがシートに表示されます。同期を開始する前に、製品バリエー"
+"ションタブのトグルが有効になっていることを確認してください。"
+
+msgid "Sync Customers"
+msgstr "顧客を同期"
+
+msgid ""
+"Initiate the synchronization of your WooCommerce Customers seamlessly with a "
+"single click. This ensures that your Google Sheet stays up-to-date with the "
+"latest order information, based on your configuration done above, providing you "
+"with real-time insights and streamlined data management. Optimize your workflow "
+"with the convenience of synchronized orders."
+msgstr ""
+"WooCommerceの顧客をワンクリックでシームレスに同期します。これは、あなたのGoogle"
+"シートが最新の注文情報で最新の状態を保つことを保証し、上記の設定に基づき、リアルタ"
+"イムの洞察を提供し、データ管理を効率化します。同期された注文の便利さでワークフロー"
+"を最適化します。"
+
+msgid "Sync Coupons"
+msgstr "クーポンを同期"
+
+msgid ""
+"Initiate the synchronization of your WooCommerce coupons seamlessly with a single "
+"click. This process ensures that your Google Sheet reflects the latest coupon "
+"information, following the configuration set above. Benefit from real-time "
+"insights and streamlined data management. Before starting the sync, confirm that "
+"the coupons tab toggle is enabled enhancing your workflow with the convenience of "
+"synchronized coupon data."
+msgstr ""
+"WooCommerceのクーポンをワンクリックでシームレスに同期します。このプロセスにより、"
+"あなたのGoogleシートが最新のクーポン情報を反映し、上記の設定に従います。リアルタイ"
+"ムの洞察とデータ管理の効率化を享受してください。同期を開始する前に、クーポンタブの"
+"トグルが有効になっていることを確認してください。"
+
+msgid "Sync Subscriptions"
+msgstr "サブスクリプションを同期"
+
+msgid "Service Account JSON is missing. Please save it in the Integration tab."
+msgstr "サービスアカウントJSONが欠けています。統合タブに保存してください。"
+
+msgid ""
+"Service Account JSON is invalid. Please save valid credentials in the Integration "
+"tab."
+msgstr ""
+"サービスアカウントJSONが無効です。有効な資格情報を統合タブに保存してください。"
+
+msgid "Service Account private key is invalid."
+msgstr "サービスアカウントの秘密鍵が無効です。"
+
+msgid "Google did not return an access token for this Service Account."
+msgstr "Googleはこのサービスアカウントのためにアクセストークンを返しませんでした。"
+
+msgid ""
+"GSheetConnector WooCommerce Add-on requires WooCommerce plugin to be installed "
+"and activated."
+msgstr ""
+"GSheetConnector WooCommerceアドオンはWooCommerceプラグインがインストールされ、アク"
+"ティブになっている必要があります。"
+
+msgid "https://wordpress.org/plugins/wc-gsheetconnector/"
+msgstr "https://wordpress.org/plugins/wc-gsheetconnector/"
+
+msgid "Send your WooCommerce data to your Google Sheets spreadsheet."
+msgstr "あなたのWooCommerceデータをGoogle Sheetsスプレッドシートに送信します。"
+
 msgid "Log table not found."
 msgstr "ログテーブルが見つかりません。"
 
 msgid "Error Log"
 msgstr "エラーログ"
 
-msgid "Error logs are saved in the database. Please clear them regularly to avoid increasing the database size."
-msgstr "エラーログはデータベースに保存されています。データベースのサイズが増加しないように、定期的にクリアしてください。"
+msgid ""
+"Error logs are saved in the database. Please clear them regularly to avoid "
+"increasing the database size."
+msgstr ""
+"エラーログはデータベースに保存されています。データベースのサイズが増加しないよう"
+"に、定期的にクリアしてください。"
 
 msgid "Clear Logs"
 msgstr "ログをクリア"
@@ -75,7 +871,7 @@ msgid "Details"
 msgstr "詳細"
 
 msgid "No logs found."
-msgstr "ログが見つかりません。"
+msgstr "ログが見つかりませんでした。"
 
 msgid "Permission denied."
 msgstr "権限が拒否されました。"
@@ -88,9 +884,6 @@ msgstr "管理者"
 
 msgid "Please rate"
 msgstr "評価してください"
-
-msgid "GSheetConnector for WooCommerce"
-msgstr "GSheetConnector for WooCommerce"
 
 msgid "on"
 msgstr "オン"
@@ -119,11 +912,19 @@ msgstr "GSheetConnectorについて"
 msgid "Built by Experts. Trusted by Thousands."
 msgstr "専門家によって構築され、何千人もの信頼を得ています。"
 
-msgid "Led by experienced developers and powered by a passionate team, GSheetConnector helps WordPress users automate their workflows with confidence."
-msgstr "経験豊富な開発者によって主導され、情熱的なチームによって支えられるGSheetConnectorは、WordPressユーザーが自信を持ってワークフローを自動化するのを助けます。"
+msgid ""
+"Led by experienced developers and powered by a passionate team, GSheetConnector "
+"helps WordPress users automate their workflows with confidence."
+msgstr ""
+"経験豊富な開発者によって主導され、情熱的なチームによって支えられるGSheetConnector"
+"は、WordPressユーザーが自信を持ってワークフローを自動化するのを助けます。"
 
-msgid "We focus on building tools that are fast, secure, and easy to use - so you can spend less time managing data."
-msgstr "私たちは、迅速で安全、かつ使いやすいツールの構築に注力しています。これにより、データ管理にかかる時間を短縮できます。"
+msgid ""
+"We focus on building tools that are fast, secure, and easy to use - so you can "
+"spend less time managing data."
+msgstr ""
+"私たちは、迅速で安全、かつ使いやすいツールの構築に注力しています。これにより、デー"
+"タ管理にかかる時間を短縮できます。"
 
 msgid "Meet Our Core Team"
 msgstr "私たちのコアチームに会いましょう"
@@ -131,8 +932,12 @@ msgstr "私たちのコアチームに会いましょう"
 msgid "Our Mission"
 msgstr "私たちの使命"
 
-msgid "Our mission is to make form automation simple, secure, and reliable for every WordPress user - from beginners to enterprise teams."
-msgstr "私たちの使命は、すべてのWordPressユーザーにとって、フォームの自動化をシンプルで安全、かつ信頼できるものにすることです。初心者から企業チームまで。"
+msgid ""
+"Our mission is to make form automation simple, secure, and reliable for every "
+"WordPress user - from beginners to enterprise teams."
+msgstr ""
+"私たちの使命は、すべてのWordPressユーザーにとって、フォームの自動化をシンプルで安"
+"全、かつ信頼できるものにすることです。初心者から企業チームまで。"
 
 msgid "Fast & Reliable Data Sync"
 msgstr "迅速かつ信頼性の高いデータ同期"
@@ -164,14 +969,23 @@ msgstr "専任サポート"
 msgid "Add-ons & Extensions"
 msgstr "アドオン & 拡張機能"
 
-msgid "Extend your Google Sheets integration with powerful add-ons. Install, manage, and activate extensions to unlock advanced features."
-msgstr "強力なアドオンでGoogle Sheets統合を拡張します。拡張機能をインストール、管理、アクティブ化して、先進的な機能をアンロックします。"
+msgid ""
+"Extend your Google Sheets integration with powerful add-ons. Install, manage, and "
+"activate extensions to unlock advanced features."
+msgstr ""
+"強力なアドオンでGoogle Sheets統合を拡張します。拡張機能をインストール、管理、アク"
+"ティブ化して、先進的な機能をアンロックします。"
 
 msgid "WooCommerce Google Sheet Connector"
 msgstr "WooCommerce Google シートコネクタ"
 
-msgid "Sync WooCommerce orders with Google Sheets automatically. Store order details, customer information, and transaction data in real-time for easy reporting, accounting, and business analysis."
-msgstr "WooCommerce の注文を Google シートと自動的に同期します。注文の詳細、顧客情報、取引データをリアルタイムで保存し、報告、会計、ビジネス分析を容易にします。"
+msgid ""
+"Sync WooCommerce orders with Google Sheets automatically. Store order details, "
+"customer information, and transaction data in real-time for easy reporting, "
+"accounting, and business analysis."
+msgstr ""
+"WooCommerce の注文を Google シートと自動的に同期します。注文の詳細、顧客情報、取引"
+"データをリアルタイムで保存し、報告、会計、ビジネス分析を容易にします。"
 
 msgid "Install"
 msgstr "インストール"
@@ -182,32 +996,63 @@ msgstr "PRO"
 msgid "CF7 Google Sheet Connector"
 msgstr "CF7 Google シートコネクタ"
 
-msgid "Easily connect Contact Form 7 to Google Sheets and automatically sync form submissions in real-time. Every entry is instantly added to your selected spreadsheet, helping you manage leads, inquiries, and customer data efficiently without manual export."
-msgstr "Contact Form 7をGoogle Sheetsに簡単に接続し、フォームの送信をリアルタイムで自動的に同期します。すべてのエントリーは選択したスプレッドシートに即座に追加され、リード、問い合わせ、顧客データを手動でエクスポートせずに効率的に管理できます。"
+msgid ""
+"Easily connect Contact Form 7 to Google Sheets and automatically sync form "
+"submissions in real-time. Every entry is instantly added to your selected "
+"spreadsheet, helping you manage leads, inquiries, and customer data efficiently "
+"without manual export."
+msgstr ""
+"Contact Form 7をGoogle Sheetsに簡単に接続し、フォームの送信をリアルタイムで自動的"
+"に同期します。すべてのエントリーは選択したスプレッドシートに即座に追加され、リー"
+"ド、問い合わせ、顧客データを手動でエクスポートせずに効率的に管理できます。"
 
 msgid "WPForms Google Sheet Connector"
 msgstr "WPForms Google シートコネクタ"
 
-msgid "Integrate WPForms with Google Sheets and send form entries directly to your spreadsheet automatically. Track leads, manage customer data, and streamline reporting with seamless Google Sheets integration and real-time sync."
-msgstr "WPFormsをGoogle Sheetsと統合し、フォームのエントリーをスプレッドシートに直接自動送信します。リードを追跡し、顧客データを管理し、シームレスなGoogle Sheets統合とリアルタイム同期でレポートを効率化します。"
+msgid ""
+"Integrate WPForms with Google Sheets and send form entries directly to your "
+"spreadsheet automatically. Track leads, manage customer data, and streamline "
+"reporting with seamless Google Sheets integration and real-time sync."
+msgstr ""
+"WPFormsをGoogle Sheetsと統合し、フォームのエントリーをスプレッドシートに直接自動送"
+"信します。リードを追跡し、顧客データを管理し、シームレスなGoogle Sheets統合とリア"
+"ルタイム同期でレポートを効率化します。"
 
 msgid "Gravity Forms Google Sheet Connector"
 msgstr "Gravity Forms Google シートコネクタ"
 
-msgid "Connect Gravity Forms to Google Sheets and automatically push form submissions to your spreadsheet. Simplify data management, improve workflow automation, and keep all entries organized in one secure location."
-msgstr "Gravity FormsをGoogle Sheetsに接続し、フォームの送信をスプレッドシートに自動的にプッシュします。データ管理を簡素化し、ワークフローの自動化を改善し、すべてのエントリーを1つの安全な場所に整理します。"
+msgid ""
+"Connect Gravity Forms to Google Sheets and automatically push form submissions to "
+"your spreadsheet. Simplify data management, improve workflow automation, and keep "
+"all entries organized in one secure location."
+msgstr ""
+"Gravity FormsをGoogle Sheetsに接続し、フォームの送信をスプレッドシートに自動的に"
+"プッシュします。データ管理を簡素化し、ワークフローの自動化を改善し、すべてのエント"
+"リーを1つの安全な場所に整理します。"
 
 msgid "Ninja Forms Google Sheet Connector"
 msgstr "Ninja Forms Google シートコネクタ"
 
-msgid "Automatically sync Ninja Forms submissions to Google Sheets with one-click integration. Capture leads, monitor responses, and manage data efficiently with instant spreadsheet updates and easy reporting."
-msgstr "Ninja Formsの送信をワンクリック統合でGoogle Sheetsに自動同期します。リードをキャッチし、応答を監視し、即時のスプレッドシート更新と簡単なレポートでデータを効率的に管理します。"
+msgid ""
+"Automatically sync Ninja Forms submissions to Google Sheets with one-click "
+"integration. Capture leads, monitor responses, and manage data efficiently with "
+"instant spreadsheet updates and easy reporting."
+msgstr ""
+"Ninja Formsの送信をワンクリック統合でGoogle Sheetsに自動同期します。リードをキャッ"
+"チし、応答を監視し、即時のスプレッドシート更新と簡単なレポートでデータを効率的に管"
+"理します。"
 
 msgid "Forminator Forms Google Sheet Connector"
 msgstr "Forminator Forms Google シートコネクタ"
 
-msgid "Integrate Forminator Forms with Google Sheets to automatically store form entries in your spreadsheet. Eliminate manual data entry and ensure accurate, real-time syncing for better data tracking and analysis."
-msgstr "Forminator FormsをGoogle Sheetsと統合し、フォームのエントリーをスプレッドシートに自動的に保存します。手動データ入力を排除し、正確でリアルタイムの同期を確保して、データの追跡と分析を向上させます。"
+msgid ""
+"Integrate Forminator Forms with Google Sheets to automatically store form entries "
+"in your spreadsheet. Eliminate manual data entry and ensure accurate, real-time "
+"syncing for better data tracking and analysis."
+msgstr ""
+"Forminator FormsをGoogle Sheetsと統合し、フォームのエントリーをスプレッドシートに"
+"自動的に保存します。手動データ入力を排除し、正確でリアルタイムの同期を確保して、"
+"データの追跡と分析を向上させます。"
 
 msgid "Free"
 msgstr "無料"
@@ -215,26 +1060,52 @@ msgstr "無料"
 msgid "Formidable Forms Google Sheet Connector"
 msgstr "Formidable Forms Google シートコネクタ"
 
-msgid "Automatically sync Formidable Forms entries to Google Sheets. Manage leads, track submissions, and simplify data reporting with real-time integration."
-msgstr "Formidable Forms のエントリーを Google シートに自動的に同期します。リードを管理し、提出を追跡し、リアルタイム統合でデータ報告を簡素化します。"
+msgid ""
+"Automatically sync Formidable Forms entries to Google Sheets. Manage leads, track "
+"submissions, and simplify data reporting with real-time integration."
+msgstr ""
+"Formidable Forms のエントリーを Google シートに自動的に同期します。リードを管理"
+"し、提出を追跡し、リアルタイム統合でデータ報告を簡素化します。"
 
 msgid "Fluent Forms Google Sheet Connector"
 msgstr "Fluent Forms Google シートコネクタ"
 
-msgid "Automatically sync Fluent Forms submissions to Google Sheets in real-time. Every form entry is instantly added to your selected spreadsheet, helping you manage leads, customer inquiries, and business data without manual export. Streamline your workflow, improve reporting accuracy, and keep all submissions organized with seamless Google Sheets integration."
-msgstr "Fluent Formsの送信をリアルタイムでGoogle Sheetsに自動的に同期します。すべてのフォームエントリーは即座に選択したスプレッドシートに追加され、リード、顧客の問い合わせ、ビジネスデータを手動でエクスポートすることなく管理できます。ワークフローを合理化し、報告の正確性を向上させ、すべての送信を整理された状態で保つためにシームレスなGoogle Sheets統合を実現します。"
+msgid ""
+"Automatically sync Fluent Forms submissions to Google Sheets in real-time. Every "
+"form entry is instantly added to your selected spreadsheet, helping you manage "
+"leads, customer inquiries, and business data without manual export. Streamline "
+"your workflow, improve reporting accuracy, and keep all submissions organized "
+"with seamless Google Sheets integration."
+msgstr ""
+"Fluent Formsの送信をリアルタイムでGoogle Sheetsに自動的に同期します。すべての"
+"フォームエントリーは即座に選択したスプレッドシートに追加され、リード、顧客の問い合"
+"わせ、ビジネスデータを手動でエクスポートすることなく管理できます。ワークフローを合"
+"理化し、報告の正確性を向上させ、すべての送信を整理された状態で保つためにシームレス"
+"なGoogle Sheets統合を実現します。"
 
 msgid "Elementor Forms Google Sheet Connector"
 msgstr "Elementor Forms Google シートコネクタ"
 
-msgid "Sync Elementor Forms with Google Sheets instantly. Automatically add new form submissions to your spreadsheet, manage leads efficiently, and simplify reporting with real-time data synchronization."
-msgstr "Elementor Forms を Google シートと瞬時に同期します。新しいフォームの提出を自動的にスプレッドシートに追加し、リードを効率的に管理し、リアルタイムデータ同期で報告を簡素化します。"
+msgid ""
+"Sync Elementor Forms with Google Sheets instantly. Automatically add new form "
+"submissions to your spreadsheet, manage leads efficiently, and simplify reporting "
+"with real-time data synchronization."
+msgstr ""
+"Elementor Forms を Google シートと瞬時に同期します。新しいフォームの提出を自動的に"
+"スプレッドシートに追加し、リードを効率的に管理し、リアルタイムデータ同期で報告を簡"
+"素化します。"
 
 msgid "Avada Forms Google Sheet Connector"
 msgstr "Avada Forms Google シートコネクタ"
 
-msgid "Connect Avada Forms to Google Sheets and automatically transfer form entries to your spreadsheet. Streamline lead management, automate data collection, and improve business reporting with seamless integration."
-msgstr "Avada Forms を Google シートに接続し、フォームエントリーを自動的にスプレッドシートに転送します。リード管理を効率化し、データ収集を自動化し、シームレスな統合でビジネス報告を改善します。"
+msgid ""
+"Connect Avada Forms to Google Sheets and automatically transfer form entries to "
+"your spreadsheet. Streamline lead management, automate data collection, and "
+"improve business reporting with seamless integration."
+msgstr ""
+"Avada Forms を Google シートに接続し、フォームエントリーを自動的にスプレッドシート"
+"に転送します。リード管理を効率化し、データ収集を自動化し、シームレスな統合でビジネ"
+"ス報告を改善します。"
 
 msgid "Available PRO Version"
 msgstr "利用可能な PRO バージョン"
@@ -242,26 +1113,48 @@ msgstr "利用可能な PRO バージョン"
 msgid "Divi Forms Google Sheet Connector"
 msgstr "Divi Forms Google シートコネクタ"
 
-msgid "Integrate Divi Forms with Google Sheets and automatically sync submissions in real-time. Store customer data securely, track inquiries efficiently, and eliminate manual spreadsheet updates."
-msgstr "Divi Forms を Google シートと統合し、リアルタイムで提出を自動的に同期します。顧客データを安全に保存し、問い合わせを効率的に追跡し、手動のスプレッドシート更新を排除します。"
+msgid ""
+"Integrate Divi Forms with Google Sheets and automatically sync submissions in "
+"real-time. Store customer data securely, track inquiries efficiently, and "
+"eliminate manual spreadsheet updates."
+msgstr ""
+"Divi Forms を Google シートと統合し、リアルタイムで提出を自動的に同期します。顧客"
+"データを安全に保存し、問い合わせを効率的に追跡し、手動のスプレッドシート更新を排除"
+"します。"
 
 msgid "WP Core Google Sheet Connector"
 msgstr "WP Core Google シートコネクタ"
 
-msgid "Automatically send WordPress core data (like comments or custom submissions) to Google Sheets. Simplify website data tracking, automate record keeping, and centralize important information in one organized spreadsheet."
-msgstr "WordPress コアデータ（コメントやカスタム提出など）を Google シートに自動的に送信します。ウェブサイトのデータ追跡を簡素化し、記録管理を自動化し、重要な情報を整理されたスプレッドシートに集中させます。"
+msgid ""
+"Automatically send WordPress core data (like comments or custom submissions) to "
+"Google Sheets. Simplify website data tracking, automate record keeping, and "
+"centralize important information in one organized spreadsheet."
+msgstr ""
+"WordPress コアデータ（コメントやカスタム提出など）を Google シートに自動的に送信し"
+"ます。ウェブサイトのデータ追跡を簡素化し、記録管理を自動化し、重要な情報を整理され"
+"たスプレッドシートに集中させます。"
 
 msgid "Easy Digital Downloads Google Sheet Connector"
 msgstr "Easy Digital Downloads Google シートコネクタ"
 
-msgid "Automatically send Easy Digital Downloads (EDD) order details to Google Sheets. Track digital product sales, monitor transactions, and manage customer data effortlessly with real-time spreadsheet integration."
-msgstr "Easy Digital Downloads (EDD) の注文詳細を Google シートに自動的に送信します。デジタル製品の販売を追跡し、取引を監視し、リアルタイムのスプレッドシート統合で顧客データを簡単に管理します。"
+msgid ""
+"Automatically send Easy Digital Downloads (EDD) order details to Google Sheets. "
+"Track digital product sales, monitor transactions, and manage customer data "
+"effortlessly with real-time spreadsheet integration."
+msgstr ""
+"Easy Digital Downloads (EDD) の注文詳細を Google シートに自動的に送信します。デジ"
+"タル製品の販売を追跡し、取引を監視し、リアルタイムのスプレッドシート統合で顧客デー"
+"タを簡単に管理します。"
 
 msgid "Installed & Active Plugins"
 msgstr "インストール済み & アクティブなプラグイン"
 
-msgid "View and manage all currently installed and active connectors on your site. You can activate, deactivate, or upgrade plugins from here."
-msgstr "現在インストールされているすべてのコネクタを表示および管理します。ここからプラグインをアクティブ化、非アクティブ化、またはアップグレードできます。"
+msgid ""
+"View and manage all currently installed and active connectors on your site. You "
+"can activate, deactivate, or upgrade plugins from here."
+msgstr ""
+"現在インストールされているすべてのコネクタを表示および管理します。ここからプラグイ"
+"ンをアクティブ化、非アクティブ化、またはアップグレードできます。"
 
 msgid "Pro"
 msgstr "プロ"
@@ -275,8 +1168,12 @@ msgstr "無効化"
 msgid "Recommended Plugins"
 msgstr "推奨プラグイン"
 
-msgid "Discover recommended plugins that enhance your workflow and help you get more value from your Google Sheets integration."
-msgstr "ワークフローを強化し、Google Sheets統合からより多くの価値を得るための推奨プラグインを見つけましょう。"
+msgid ""
+"Discover recommended plugins that enhance your workflow and help you get more "
+"value from your Google Sheets integration."
+msgstr ""
+"ワークフローを強化し、Google Sheets統合からより多くの価値を得るための推奨プラグイ"
+"ンを見つけましょう。"
 
 msgid "Activate"
 msgstr "有効化"
@@ -311,12 +1208,6 @@ msgstr "このプラグインを無効化してもよろしいですか？"
 msgid "Cancel"
 msgstr "キャンセル"
 
-msgid "You do not have permission to install plugin."
-msgstr "プラグインをインストールする権限がありません。"
-
-msgid "Missing required parameters."
-msgstr "必須パラメータが不足しています。"
-
 msgid "Installation failed: "
 msgstr "インストールに失敗しました: "
 
@@ -326,65 +1217,27 @@ msgstr "プラグインが正常にインストールされました。"
 msgid "Invalid security token."
 msgstr "無効なセキュリティトークンです。"
 
-msgid "You do not have permission to activate plugin."
-msgstr "プラグインを有効化する権限がありません。"
-
-msgid "Plugin slug is missing."
-msgstr "プラグインのスラッグがありません。"
-
-msgid "Plugin is already activated."
-msgstr "プラグインはすでに有効化されています。"
-
 msgid "Plugin activated successfully."
 msgstr "プラグインが正常に有効化されました。"
 
 msgid "Sheet Sync Feeds"
 msgstr "シート同期フィード"
 
-msgid "Create, connect, manage, and monitor how your form submissions are automatically synced to Google Sheets in real time."
-msgstr "フォームの送信がリアルタイムで Google シートに自動的に同期される方法を作成、接続、管理、監視します。"
-
-msgid "- Close Feeds"
-msgstr "- フィードを閉じる"
+msgid ""
+"Create, connect, manage, and monitor how your form submissions are automatically "
+"synced to Google Sheets in real time."
+msgstr ""
+"フォームの送信がリアルタイムで Google シートに自動的に同期される方法を作成、接続、"
+"管理、監視します。"
 
 msgid "Feed Name"
 msgstr "フィード名"
-
-msgid "Feed Type"
-msgstr "フィードタイプ"
-
-msgid "Select Feed Type"
-msgstr "フィードタイプを選択"
-
-msgid "Orders"
-msgstr "注文"
-
-msgid "Products"
-msgstr "製品"
-
-msgid "Products Variation"
-msgstr "製品バリエーション"
-
-msgid "Customers"
-msgstr "顧客"
-
-msgid "Coupons"
-msgstr "クーポン"
-
-msgid "Subscriptions"
-msgstr "サブスクリプション"
 
 msgid "Submit"
 msgstr "送信"
 
 msgid "Inactive"
 msgstr "非アクティブ"
-
-msgid "Trash"
-msgstr "ゴミ箱"
-
-msgid "Feed ID"
-msgstr "フィードID"
 
 msgid "Author"
 msgstr "著者"
@@ -395,65 +1248,14 @@ msgstr "タイムスタンプ"
 msgid "Status"
 msgstr "ステータス"
 
-msgid "feed"
-msgstr "フィード"
-
-msgid "Rename Feed"
-msgstr "フィードの名前を変更"
-
 msgid "Save"
 msgstr "保存"
 
 msgid "Edit"
 msgstr "編集"
 
-msgid "admin"
-msgstr "admin"
-
-msgid "2026-04-27 09:30:53"
-msgstr "2026-04-27 09:30:53"
-
-msgid "feed1"
-msgstr "feed1"
-
-msgid "2026-04-27 09:31:18"
-msgstr "2026-04-27 09:31:18"
-
-msgid "feed2"
-msgstr "feed2"
-
-msgid "2026-04-27 09:31:35"
-msgstr "2026-04-27 09:31:35"
-
-msgid "feed3"
-msgstr "feed3"
-
-msgid "2026-04-27 09:31:47"
-msgstr "2026-04-27 09:31:47"
-
-msgid "feed4"
-msgstr "feed4"
-
-msgid "2026-04-27 09:32:00"
-msgstr "2026-04-27 09:32:00"
-
-msgid "feed5"
-msgstr "feed5"
-
-msgid "2026-04-27 09:32:17"
-msgstr "2026-04-27 09:32:17"
-
-msgid "feed6"
-msgstr "フィード6"
-
-msgid "2026-04-27 09:32:27"
-msgstr "2026-04-27 09:32:27"
-
 msgid "Integration"
 msgstr "統合"
-
-msgid "WooCommerce Data Settings"
-msgstr "WooCommerce データ設定"
 
 msgid "Settings"
 msgstr "設定"
@@ -464,14 +1266,11 @@ msgstr "システムステータス"
 msgid "Extensions"
 msgstr "拡張機能"
 
-msgid "Form Feed Settings"
-msgstr "フォームフィード設定"
-
-msgid "You`re using GSheetConnector for WooCommerce Lite. To unlock more features consider "
-msgstr "GSheetConnector for WooCommerce Lite をご利用中です。さらに多くの機能を利用するには、"
-
 msgid "upgrading to Pro"
 msgstr "Pro にアップグレードする"
+
+msgid "Service"
+msgstr "サービス"
 
 msgid "Existing"
 msgstr "既存"
@@ -485,8 +1284,12 @@ msgstr "Googleアカウントで認証する"
 msgid "Your connection has expired or hasn’t been set up yet."
 msgstr "接続が期限切れまたはまだ設定されていません。"
 
-msgid "Your Google connection is missing or expired. Please authenticate to continue syncing data without interruptions."
-msgstr "あなたのGoogle接続が欠落しているか、期限切れです。中断なくデータを同期し続けるには、認証してください。"
+msgid ""
+"Your Google connection is missing or expired. Please authenticate to continue "
+"syncing data without interruptions."
+msgstr ""
+"あなたのGoogle接続が欠落しているか、期限切れです。中断なくデータを同期し続けるに"
+"は、認証してください。"
 
 msgid "Authenticate Now"
 msgstr "今すぐ認証する"
@@ -497,8 +1300,12 @@ msgstr "方法を学ぶ"
 msgid "Enjoying the Plugin?"
 msgstr "プラグインを楽しんでいますか？"
 
-msgid "If you are enjoying the plugin, please consider leaving a 5-star review. Your support helps us improve and grow."
-msgstr "プラグインを楽しんでいる場合は、5つ星のレビューを残すことを検討してください。あなたのサポートが私たちの改善と成長に役立ちます。"
+msgid ""
+"If you are enjoying the plugin, please consider leaving a 5-star review. Your "
+"support helps us improve and grow."
+msgstr ""
+"プラグインを楽しんでいる場合は、5つ星のレビューを残すことを検討してください。あな"
+"たのサポートが私たちの改善と成長に役立ちます。"
 
 msgid "Ok, you deserve it!"
 msgstr "はい、あなたはそれに値します！"
@@ -519,19 +1326,14 @@ msgid "Extend your workflow with our add-ons."
 msgstr "アドオンでワークフローを拡張しましょう。"
 
 msgid "Discover tools that integrate seamlessly and help you get more done."
-msgstr "シームレスに統合され、より多くの作業を行うのに役立つツールを見つけましょう。"
+msgstr ""
+"シームレスに統合され、より多くの作業を行うのに役立つツールを見つけましょう。"
 
 msgid "Explore Add-ons"
 msgstr "アドオンを探る"
 
 msgid "View Details"
 msgstr "詳細を見る"
-
-msgid "Unlock Advance Features of GSheetConnector for WooCommerce Pro"
-msgstr "GSheetConnector for WooCommerce Pro の高度な機能を解放する"
-
-msgid "Use advanced features like Manual Authentication and automatic field mapping, no need to create columns in Google Sheets manually. Choose only the fields you need with simple toggles, use advanced tags, sync past form entries, and get priority support."
-msgstr "手動認証や自動フィールドマッピングなどの高度な機能を利用できます。Google Sheets に列を手動で作成する必要はありません。シンプルな切り替えで必要なフィールドだけを選択し、高度なタグを使用して、過去のフォーム入力を同期し、優先サポートを受けられます。"
 
 msgid "View License Types"
 msgstr "ライセンスタイプを見る"
@@ -548,13 +1350,12 @@ msgstr "Google シート"
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-msgid "Feed Settings (PRO)"
-msgstr "フィード設定（PRO）"
-
 msgid "Advanced Tools for Easy Spreadsheet Control"
 msgstr "簡単なスプレッドシート管理のための高度なツール"
 
-msgid "Improve your sheet management with smart automation and flexible customization features."
+msgid ""
+"Improve your sheet management with smart automation and flexible customization "
+"features."
 msgstr "スマートな自動化と柔軟なカスタマイズ機能でシート管理を改善します。"
 
 msgid "Google Sheets API v4"
@@ -578,32 +1379,8 @@ msgstr "自動シート＆タブ"
 msgid "Multiple Feeds to Sheets"
 msgstr "複数のフィードをシートに"
 
-msgid "Order Status Sheet Tabs"
-msgstr "注文ステータスシートタブ"
-
 msgid "Language Translation "
 msgstr "言語翻訳"
-
-msgid "Custom Order Sheet Tabs"
-msgstr "カスタム注文シートタブ"
-
-msgid "Sync Additional Sheet Tabs"
-msgstr "追加のシートタブを同期"
-
-msgid "How Orders Are Synced"
-msgstr "注文の同期方法"
-
-msgid "Order & Product Category Filter"
-msgstr "注文 & 商品カテゴリフィルター"
-
-msgid "2-Way Sync"
-msgstr "双方向同期"
-
-msgid "Add Extra Google Sheet Columns"
-msgstr "追加の Google シート列を追加"
-
-msgid "Cron Settings "
-msgstr "Cron 設定"
 
 msgid "Drag-and-Drop Column Order"
 msgstr "ドラッグ＆ドロップ列順"
@@ -629,23 +1406,135 @@ msgstr "マルチサイトサポート"
 msgid "Latest WP & PHP Support"
 msgstr "最新のWP＆PHPサポート"
 
-msgid "Upgrad Now"
-msgstr "今すぐアップグレード"
-
-msgid "Free vs Pro"
-msgstr "無料版 vs Pro版"
-
-msgid "Google Sheet Not Connected"
-msgstr "Googleシートが接続されていません"
-
 msgid "Not connected"
-msgstr "接続済み"
+msgstr "未接続"
 
 msgid "Select"
 msgstr "選択"
 
-msgid " Google Sheets Integration for WooCommerce"
-msgstr "WooCommerce用のGoogle Sheets統合"
+msgid "Google Sheets Integration"
+msgstr "Google Sheets 統合"
+
+msgid "Service Account"
+msgstr "サービスアカウント"
+
+msgid "Upload or paste your JSON credentials"
+msgstr "JSON 認証情報をアップロードまたは貼り付け"
+
+msgid "Service Account JSON File"
+msgstr "サービス アカウント JSON ファイル"
+
+msgid "Paste your service account JSON credentials here..."
+msgstr "ここにサービスアカウントのJSON資格情報を貼り付けてください..."
+
+msgid "This JSON file is used for authentication and is stored securely."
+msgstr "この JSON ファイルは認証に使用され、安全に保存されます。"
+
+msgid "Please fill out this field"
+msgstr "このフィールドを入力してください"
+
+msgid "Upload JSON File"
+msgstr "JSON ファイルをアップロード"
+
+msgid "Click to select your .json file"
+msgstr ".json ファイルを選択するにはクリックしてください"
+
+msgid ""
+"Choose your service account JSON file. Its contents will be auto-filled above."
+msgstr ""
+"サービス アカウントの JSON ファイルを選択してください。その内容は上に自動的に入力"
+"されます。"
+
+msgid ""
+"To enable syncing, share your Google Sheet with the service account email "
+"connected to this plugin and grant Editor access."
+msgstr ""
+"同期を有効にするには、このプラグインに接続されたサービス アカウントのメールで "
+"Google Sheet を共有し、編集者アクセスを付与してください。"
+
+msgid "Service Account Email"
+msgstr "サービス アカウントのメール"
+
+msgid ""
+"Your Google Sheet must be shared with this service account email and granted "
+"Editor access to enable data synchronization."
+msgstr ""
+"データ同期を有効にするために、Googleシートはこのサービスアカウントのメールと共有さ"
+"れ、編集者アクセスが付与されている必要があります。"
+
+msgid "Share sheet for sync"
+msgstr "同期のためにシートを共有"
+
+msgid "Deactivate Integration"
+msgstr "統合を無効にする"
+
+msgid "Step-1 Open Google Cloud > Service Accounts"
+msgstr "ステップ-1 Google Cloud > サービス アカウントを開く"
+
+msgid ""
+"Open your Google Cloud project and go to IAM & Admin > Service Accounts to manage "
+"service identities."
+msgstr ""
+"Google Cloud プロジェクトを開き、IAM & 管理 > サービス アカウントに移動してサービ"
+"ス ID を管理します。"
+
+msgid "Navigate to Service Accounts"
+msgstr "サービス アカウントに移動"
+
+msgid "Step-2 Create a New Service Account"
+msgstr "ステップ-2 新しいサービス アカウントを作成"
+
+msgid "Create a Service Account"
+msgstr "サービス アカウントを作成"
+
+msgid "Step-3 Fill Service Account Details"
+msgstr "ステップ3 サービスアカウントの詳細を入力"
+
+msgid "Add Service Account Name & ID"
+msgstr "サービスアカウント名とIDを追加"
+
+msgid "Google Console"
+msgstr "Google Console"
+
+msgid "Step-4 Open Service Account Keys Section"
+msgstr "ステップ4 サービスアカウントキーのセクションを開く"
+
+msgid ""
+"Open the created service account and switch to the Keys tab to generate "
+"credentials."
+msgstr ""
+"作成したサービスアカウントを開き、キータブに切り替えて認証情報を生成します。"
+
+msgid "Go to Service Account → Keys"
+msgstr "サービスアカウント → キーに移動"
+
+msgid "Step-5 Download JSON Key File"
+msgstr "ステップ5 JSONキーをダウンロード"
+
+msgid "Select JSON format and download the key file securely to your computer."
+msgstr "JSON形式を選択し、キーを安全にコンピュータにダウンロードします。"
+
+msgid "Download JSON Key File"
+msgstr "JSONキーをダウンロード"
+
+msgid "Check our detailed guideline"
+msgstr "詳細なガイドラインをご確認ください"
+
+msgid "Connection Guide"
+msgstr "接続ガイド"
+
+msgid "Step-by-Step"
+msgstr "ステップバイステップ"
+
+msgid "How to Connect Google Sheets"
+msgstr "Google Sheetsに接続する方法"
+
+msgid ""
+"This guide shows how to share your Google Sheet with the connected service "
+"account and grant editor access for seamless synchronization."
+msgstr ""
+"このガイドでは、接続されたサービスアカウントとGoogleシートを共有し、シームレスな同"
+"期のために編集者アクセスを付与する方法を示します。"
 
 msgid "Choose Google API Setting"
 msgstr "Google API設定を選択"
@@ -664,9 +1553,6 @@ msgstr "Googleアカウント接続"
 
 msgid "Auto Setup"
 msgstr "自動セットアップ"
-
-msgid "Sign in with your Google account to connect WooCommerce with Google Sheets. Once connected, your data syncs based on your settings. Learn more in the documentation"
-msgstr "Google アカウントでサインインして、WooCommerce を Google シートに接続します。接続が完了すると、設定に基づいてデータが同期されます。詳細はドキュメントで確認してください。"
 
 msgid "Click here"
 msgstr "ここをクリック"
@@ -698,25 +1584,26 @@ msgstr "プロンプトが表示された場合は、認証コードを保存し
 msgid "This allows the plugin to securely sync your form data with Google Sheets."
 msgstr "これにより、プラグインはGoogle Sheetsと安全にフォームデータを同期できます。"
 
-msgid "<p class="fw-400 text-dark"><strong>Google Drive</strong> and <strong>Google Sheets</strong> permissions were not granted during authentication with Google.</p>
-                  <p class="fw-400 text-dark"><strong>Refer to Step 4 in the Connection Guide shown alongside.</strong><br> Then, deactivate the connection and re-authorize it, ensuring both Google Drive and Google Sheets permissions are enabled.</p>"
-msgstr "<p class="fw-400 text-dark">Googleでの認証時に、<strong>Googleドライブ</strong>および<strong>Googleスプレッドシート</strong>へのアクセス権限が許可されませんでした。</p>
-<p class="fw-400 text-dark"><strong>併せて表示されている接続ガイドの「ステップ4」をご確認ください。</strong><br>その後、接続を解除してから再度認証を行い、GoogleドライブとGoogleスプレッドシートの両方の権限が有効になっていることを確認してください。</p>"
-
 msgid "Connected Google Account"
 msgstr "接続されたGoogleアカウント"
 
 msgid "Connected"
 msgstr "接続済み"
 
-msgid "Authentication failed. Your Google access token may be expired or invalid. Please re-authenticate your account with the required permissions."
-msgstr "認証に失敗しました。Googleアクセス トークンが期限切れまたは無効である可能性があります。必要な権限でアカウントを再認証してください。"
+msgid ""
+"Authentication failed. Your Google access token may be expired or invalid. Please "
+"re-authenticate your account with the required permissions."
+msgstr ""
+"認証に失敗しました。Googleアクセス トークンが期限切れまたは無効である可能性があり"
+"ます。必要な権限でアカウントを再認証してください。"
 
 msgid "Connect Your Google Account"
 msgstr "Googleアカウントを接続する"
 
-msgid "Securely link your Google account to start syncing form entries automatically."
-msgstr "安全にGoogleアカウントをリンクして、フォームエントリの自動同期を開始します。"
+msgid ""
+"Securely link your Google account to start syncing form entries automatically."
+msgstr ""
+"安全にGoogleアカウントをリンクして、フォームエントリの自動同期を開始します。"
 
 msgid "Sign in with Google"
 msgstr "Google でサインイン"
@@ -727,8 +1614,15 @@ msgstr "クライアントトークン"
 msgid "Save Client Token"
 msgstr "クライアントトークンを保存"
 
-msgid "We do not store any of the data from your Google account on our servers, everything is processed & stored on your server. We take your privacy extremely seriously and ensure it is never misused. Learn more in the documentation"
-msgstr "私たちは、あなたのGoogleアカウントからのデータをサーバーに保存することはありません。すべてはあなたのサーバーで処理および保存されます。私たちはあなたのプライバシーを非常に重視しており、決して悪用されることはありません。詳細はドキュメントをご覧ください。"
+msgid ""
+"We do not store any of the data from your Google account on our servers, "
+"everything is processed & stored on your server. We take your privacy extremely "
+"seriously and ensure it is never misused. Learn more in the documentation"
+msgstr ""
+"私たちは、あなたのGoogleアカウントからのデータをサーバーに保存することはありませ"
+"ん。すべてはあなたのサーバーで処理および保存されます。私たちはあなたのプライバシー"
+"を非常に重視しており、決して悪用されることはありません。詳細はドキュメントをご覧く"
+"ださい。"
 
 msgid "click here."
 msgstr "ここをクリック。"
@@ -736,43 +1630,27 @@ msgstr "ここをクリック。"
 msgid "Connection Status & Next Steps"
 msgstr "接続状況と次のステップ"
 
-msgid "Your Google account has been successfully connected. You are now ready to sync your WooCommerce data with Google Sheets securely and automatically."
-msgstr "あなたのGoogleアカウントは正常に接続されました。これで、WooCommerceデータをGoogle Sheetsと安全かつ自動的に同期する準備が整いました。"
-
 msgid "Create New Feed"
 msgstr "新しいフィードを作成"
 
 msgid "Select Google Spreadsheet"
 msgstr "Google スプレッドシートを選択"
 
-msgid "Map WooCommerce Fields"
-msgstr "WooCommerceフィールドをマッピング"
-
-msgid "Enable Order Sync"
-msgstr "注文同期を有効にする"
-
 msgid "Upgrade to unlock"
 msgstr "アップグレードしてロックを解除"
 
-msgid "Deactivate Integration"
-msgstr "統合を無効にする"
-
-msgid "Are you sure you want to deactivate Google Sheets integration?"
-msgstr "Google Sheetsの統合を無効にしてもよろしいですか？"
-
-msgid "Connection Guide"
-msgstr "接続ガイド"
-
-msgid "Step-by-Step"
-msgstr "ステップバイステップ"
-
-msgid "Follow these steps to connect your Google account and start syncing your form data with Google Sheets."
-msgstr "これらの手順に従って、Googleアカウントを接続し、フォームデータをGoogle Sheetsと同期させます。"
+msgid ""
+"Follow these steps to connect your Google account and start syncing your form "
+"data with Google Sheets."
+msgstr ""
+"これらの手順に従って、Googleアカウントを接続し、フォームデータをGoogle Sheetsと同"
+"期させます。"
 
 msgid "Step-1 Connect Your Google Account"
 msgstr "ステップ1 Googleアカウントを接続"
 
-msgid "Sign in with your Google account to start the automatic Google Sheets integration."
+msgid ""
+"Sign in with your Google account to start the automatic Google Sheets integration."
 msgstr "Googleアカウントでサインインして、自動Google Sheets統合を開始します。"
 
 msgid "Step-2 Choose Google Account"
@@ -811,32 +1689,44 @@ msgstr "あなたのGoogleアカウントは正常に接続されました。"
 msgid "Manual Google Sheets Integration"
 msgstr "手動Google Sheets統合"
 
-msgid "Connect WooCommerce to Google Sheets using your own Google Cloud project. Ideal for advanced users who need full API control and custom OAuth setup."
-msgstr "独自のGoogle Cloudプロジェクトを使用してWooCommerceをGoogle Sheetsに接続します。完全なAPI制御とカスタムOAuth設定が必要な上級ユーザーに最適です。"
-
 msgid "Custom API Credentials"
 msgstr "カスタムAPI資格情報"
 
-msgid "Connect using your own Google Cloud Client ID and Client Secret for full authentication control."
-msgstr "完全な認証制御のために独自のGoogle CloudクライアントIDとクライアントシークレットを使用して接続します。"
+msgid ""
+"Connect using your own Google Cloud Client ID and Client Secret for full "
+"authentication control."
+msgstr ""
+"完全な認証制御のために独自のGoogle CloudクライアントIDとクライアントシークレットを"
+"使用して接続します。"
 
 msgid "Secure Authentication"
 msgstr "安全な認証"
 
-msgid "Authenticate directly with Google using a secure Authentication flow without third-party dependency."
-msgstr "サードパーティの依存関係なしに、安全な認証フローを使用してGoogleと直接認証します。"
+msgid ""
+"Authenticate directly with Google using a secure Authentication flow without "
+"third-party dependency."
+msgstr ""
+"サードパーティの依存関係なしに、安全な認証フローを使用してGoogleと直接認証します。"
 
 msgid "Advanced Configuration"
 msgstr "高度な設定"
 
-msgid "Set custom Redirect URIs, manage scopes, and configure API settings based on your project needs."
-msgstr "プロジェクトのニーズに基づいてカスタムリダイレクトURIを設定し、スコープを管理し、API設定を構成します。"
+msgid ""
+"Set custom Redirect URIs, manage scopes, and configure API settings based on your "
+"project needs."
+msgstr ""
+"プロジェクトのニーズに基づいてカスタムリダイレクトURIを設定し、スコープを管理し、"
+"API設定を構成します。"
 
 msgid "Priority Technical Support"
 msgstr "優先技術サポート"
 
-msgid "Get fast assistance from our expert team for setup, troubleshooting, and optimization."
-msgstr "セットアップ、トラブルシューティング、最適化のために、専門チームから迅速な支援を受けます。"
+msgid ""
+"Get fast assistance from our expert team for setup, troubleshooting, and "
+"optimization."
+msgstr ""
+"セットアップ、トラブルシューティング、最適化のために、専門チームから迅速な支援を受"
+"けます。"
 
 msgid "Upgrade to Unlock"
 msgstr "アップグレードしてロックを解除"
@@ -847,32 +1737,45 @@ msgstr "プロ機能を見る"
 msgid "Service Account Google Sheets Integration"
 msgstr "サービスアカウントGoogleシート統合"
 
-msgid "Connect WooCommerce to Google Sheets using a Service Account for automated syncing without manual login."
-msgstr "サービスアカウントを使用して手動ログインなしで自動同期のためにWooCommerceをGoogle Sheetsに接続します。"
-
 msgid "Secure JSON Authentication"
 msgstr "安全なJSON認証"
 
-msgid "Authenticate using a secure Google Cloud JSON key file for direct and encrypted communication with Google Sheets."
-msgstr "Google Sheetsとの直接かつ暗号化された通信のために、安全なGoogle Cloud JSONキーファイルを使用して認証します。"
+msgid ""
+"Authenticate using a secure Google Cloud JSON key file for direct and encrypted "
+"communication with Google Sheets."
+msgstr ""
+"Google Sheetsとの直接かつ暗号化された通信のために、安全なGoogle Cloud JSONキーファ"
+"イルを使用して認証します。"
 
 msgid "No Authentication Login Required"
 msgstr "認証ログインは必要ありません"
 
-msgid "Enable automatic background syncing without requiring Google account sign-in during setup."
-msgstr "セットアップ中にGoogleアカウントのサインインを必要とせず、自動バックグラウンド同期を有効にします。"
+msgid ""
+"Enable automatic background syncing without requiring Google account sign-in "
+"during setup."
+msgstr ""
+"セットアップ中にGoogleアカウントのサインインを必要とせず、自動バックグラウンド同期"
+"を有効にします。"
 
 msgid "Direct Spreadsheet Access"
 msgstr "直接スプレッドシートアクセス"
 
-msgid "Share your Google Sheet with the service account email to enable automatic data transfer."
-msgstr "自動データ転送を有効にするために、サービスアカウントのメールアドレスでGoogleシートを共有してください。"
+msgid ""
+"Share your Google Sheet with the service account email to enable automatic data "
+"transfer."
+msgstr ""
+"自動データ転送を有効にするために、サービスアカウントのメールアドレスでGoogleシート"
+"を共有してください。"
 
 msgid "Production-Ready & Reliable"
 msgstr "プロダクション準備完了 & 信頼性の高い"
 
-msgid "Built for stable, uninterrupted syncing in professional and high-traffic environments."
-msgstr "プロフェッショナルで高トラフィックな環境での安定した中断のない同期のために構築されています。"
+msgid ""
+"Built for stable, uninterrupted syncing in professional and high-traffic "
+"environments."
+msgstr ""
+"プロフェッショナルで高トラフィックな環境での安定した中断のない同期のために構築され"
+"ています。"
 
 msgid "Permission Not Allowed"
 msgstr "許可されていない権限"
@@ -891,9 +1794,6 @@ msgstr "特定のWordPressロールを許可"
 
 msgid "Enable/disable integration access"
 msgstr "統合アクセスの有効化/無効化"
-
-msgid "Control WooCommerce sync visibility"
-msgstr "WooCommerceの同期表示を制御"
 
 msgid "Restrict settings management"
 msgstr "設定管理を制限"
@@ -946,9 +1846,6 @@ msgstr "管理者の責任を維持する"
 msgid "Access Management"
 msgstr "アクセス管理"
 
-msgid "Control which user roles can access and manage WooCommerce Google Sheets integration."
-msgstr "WooCommerce Google Sheets統合にアクセスし管理できるユーザーロールを制御します。"
-
 msgid "Plugin Access Control"
 msgstr "プラグインアクセス制御"
 
@@ -989,7 +1886,9 @@ msgid "Submit a Support Ticket"
 msgstr "サポートチケットを提出する"
 
 msgid "Our fast and friendly support team is always happy to help!"
-msgstr "私たちの迅速でフレンドリーなサポートチームは、いつでもお手伝いすることを喜んでいます！"
+msgstr ""
+"私たちの迅速でフレンドリーなサポートチームは、いつでもお手伝いすることを喜んでいま"
+"す！"
 
 msgid "Unlock Beta Version Control"
 msgstr "ベータ版コントロールを解除"
@@ -1060,14 +1959,23 @@ msgstr "いつでもオン/オフを切り替え"
 msgid "Beta Program Access"
 msgstr "ベータプログラムアクセス"
 
-msgid "Get early access to upcoming features and improvements before they are officially released. Beta versions may include experimental updates and should be used for testing purposes only."
-msgstr "正式にリリースされる前に、今後の機能や改善に早期アクセスを取得します。ベータ版には実験的な更新が含まれる場合があり、テスト目的のみで使用する必要があります。"
+msgid ""
+"Get early access to upcoming features and improvements before they are officially "
+"released. Beta versions may include experimental updates and should be used for "
+"testing purposes only."
+msgstr ""
+"正式にリリースされる前に、今後の機能や改善に早期アクセスを取得します。ベータ版には"
+"実験的な更新が含まれる場合があり、テスト目的のみで使用する必要があります。"
 
 msgid "Enable Beta Updates"
 msgstr "ベータ更新を有効にする"
 
-msgid "Receive notifications and access to beta releases. Updates will not be installed automatically."
-msgstr "通知を受け取り、ベータリリースにアクセスします。更新は自動的にインストールされません。"
+msgid ""
+"Receive notifications and access to beta releases. Updates will not be installed "
+"automatically."
+msgstr ""
+"通知を受け取り、ベータリリースにアクセスします。更新は自動的にインストールされませ"
+"ん。"
 
 msgid "Beta Usage Notice"
 msgstr "ベータ使用通知"
@@ -1084,20 +1992,21 @@ msgstr "軽微なバグやパフォーマンスの問題が発生する可能性
 msgid "We recommend enabling beta only on test or staging sites"
 msgstr "テストまたはステージングサイトでのみベータを有効にすることをお勧めします"
 
-msgid "Do not enable on live production websites without proper backups."
-msgstr "適切なバックアップなしで本番サイトで有効にしないでください。"
-
 msgid "Plugin Preferences"
 msgstr "プラグインの設定"
 
-msgid "Manage how plugin settings and data are handled when the plugin is uninstalled."
-msgstr "プラグインがアンインストールされたときの設定とデータの取り扱いを管理します。"
+msgid ""
+"Manage how plugin settings and data are handled when the plugin is uninstalled."
+msgstr ""
+"プラグインがアンインストールされたときの設定とデータの取り扱いを管理します。"
 
 msgid "Delete Plugin Data on Uninstall"
 msgstr "アンインストール時にプラグインデータを削除"
 
 msgid "Removes all plugin data (options, metadata) when the plugin is deleted."
-msgstr "プラグインが削除されると、すべてのプラグインデータ（オプション、メタデータ）が削除されます。"
+msgstr ""
+"プラグインが削除されると、すべてのプラグインデータ（オプション、メタデータ）が削除"
+"されます。"
 
 msgid "Uninstall Data Notice"
 msgstr "アンインストールデータ通知"
@@ -1109,49 +2018,53 @@ msgid "All plugin settings and data will be permanently removed"
 msgstr "すべてのプラグイン設定とデータが永久に削除されます"
 
 msgid "Incorrect settings can delete all sensitive form and user data"
-msgstr "不正な設定により、すべての機密フォームおよびユーザーデータが削除される可能性があります"
+msgstr ""
+"不正な設定により、すべての機密フォームおよびユーザーデータが削除される可能性があり"
+"ます"
 
 msgid "Confirm Data Deletion"
 msgstr "データ削除の確認"
 
-msgid "Enabling this option will permanently delete all plugin data, including settings and integrations, when the plugin is uninstalled."
-msgstr "このオプションを有効にすると、プラグインがアンインストールされるときに設定や統合を含むすべてのプラグインデータが永久に削除されます。"
+msgid ""
+"Enabling this option will permanently delete all plugin data, including settings "
+"and integrations, when the plugin is uninstalled."
+msgstr ""
+"このオプションを有効にすると、プラグインがアンインストールされるときに設定や統合を"
+"含むすべてのプラグインデータが永久に削除されます。"
 
-msgid "If you plan to upgrade from Free to Pro, you may lose your existing configuration data."
-msgstr "無料版からプロ版にアップグレードする予定がある場合、既存の設定データが失われる可能性があります。"
+msgid ""
+"If you plan to upgrade from Free to Pro, you may lose your existing configuration "
+"data."
+msgstr ""
+"無料版からプロ版にアップグレードする予定がある場合、既存の設定データが失われる可能"
+"性があります。"
 
 msgid "Proceed only if you want a complete cleanup. This action cannot be undone."
-msgstr "完全なクリーンアップを希望する場合のみ進めてください。この操作は元に戻せません。"
+msgstr ""
+"完全なクリーンアップを希望する場合のみ進めてください。この操作は元に戻せません。"
 
 msgid "Enable Deletion"
 msgstr "削除を有効にする"
 
-msgid "Description Input Format Settings"
-msgstr "説明入力形式設定"
-
-msgid "Enable this option to allow HTML formatting in Product Description and Short Description fields. When enabled, HTML content from the sheet will be imported as is. Disable it to use plain text only."
-msgstr "このオプションを有効にして、製品説明および短い説明フィールドでHTMLフォーマットを許可します。有効にすると、シートからのHTMLコンテンツがそのままインポートされます。無効にすると、プレーンテキストのみが使用されます。"
-
-msgid "Enable HTML Formatting for Description Fields"
-msgstr "説明フィールドのHTMLフォーマットを有効にする"
-
-msgid "Allow HTML content in Product Description and Short Description fields during import."
-msgstr "インポート中に製品説明および短い説明フィールドでHTMLコンテンツを許可します。"
-
 msgid "HTML Formatting Guide"
 msgstr "HTMLフォーマットガイド"
 
-msgid "Enable this option to allow HTML content in Product Description and Short Description fields."
-msgstr "このオプションを有効にして、製品説明および短い説明フィールドでHTMLコンテンツを許可します。"
-
-msgid "When enabled, HTML tags from the sheet (e.g., <p>, <br>, <strong>) will be imported as is."
-msgstr "有効にすると、シートからのHTMLタグ（例：<p>、<br>、<strong>）がそのままインポートされます。"
+msgid ""
+"Enable this option to allow HTML content in Product Description and Short "
+"Description fields."
+msgstr ""
+"商品説明と短い説明フィールドにHTMLコンテンツを許可するためにこのオプションを有効に"
+"します。"
 
 msgid "Disable this option to import plain text without HTML formatting."
-msgstr "このオプションを無効にして、HTMLフォーマットなしのプレーンテキストをインポートします。"
+msgstr ""
+"このオプションを無効にすると、HTMLフォーマットなしでプレーンテキストがインポートさ"
+"れます。"
 
 msgid "Use this option only if your sheet contains valid HTML content."
-msgstr "このオプションは、シートに有効なHTMLコンテンツが含まれている場合のみ使用してください。"
+msgstr ""
+"シートに有効なHTMLコンテンツが含まれている場合のみこのオプションを使用してくださ"
+"い。"
 
 msgid "You do not have permission to access this page."
 msgstr "このページにアクセスする権限がありません。"
@@ -1159,9 +2072,14 @@ msgstr "このページにアクセスする権限がありません。"
 msgid "System Information"
 msgstr "システム情報"
 
-msgid "View detailed information about your plugin, server, and WordPress setup for troubleshooting and support.
-        "
-msgstr "トラブルシューティングとサポートのために、プラグイン、サーバー、およびWordPressの設定に関する詳細情報を表示します"
+msgid ""
+"View detailed information about your plugin, server, and WordPress setup for "
+"troubleshooting and support.\n"
+"        "
+msgstr ""
+"トラブルシューティングとサポートのために、プラグイン、サーバー、およびWordPressの"
+"設定に関する詳細情報を表示します。\n"
+"        "
 
 msgid "Copy System Info"
 msgstr "システム情報をコピー"
@@ -1269,7 +2187,7 @@ msgid "Theme directory location"
 msgstr "テーマディレクトリの場所"
 
 msgid "Network Active plugins"
-msgstr "アクティブプラグイン"
+msgstr "ネットワークアクティブプラグイン"
 
 msgid "Active Plugins"
 msgstr "アクティブプラグイン"
@@ -1277,8 +2195,12 @@ msgstr "アクティブプラグイン"
 msgid "Server"
 msgstr "サーバー"
 
-msgid "The options shown below relate to your server setup. If changes are required, you may need your web host’s assistance."
-msgstr "以下のオプションは、あなたのサーバー設定に関連しています。変更が必要な場合は、ウェブホストの支援が必要になることがあります。"
+msgid ""
+"The options shown below relate to your server setup. If changes are required, you "
+"may need your web host’s assistance."
+msgstr ""
+"以下のオプションは、あなたのサーバー設定に関連しています。変更が必要な場合は、ウェ"
+"ブホストの支援が必要になることがあります。"
 
 msgid "Server Architecture"
 msgstr "サーバーアーキテクチャ"
@@ -1388,7 +2310,8 @@ msgstr "WordPress定数"
 msgid "Filesystem Permission"
 msgstr "ファイルシステムの権限"
 
-msgid "Shows whether WordPress is able to write to the directories it needs access to."
+msgid ""
+"Shows whether WordPress is able to write to the directories it needs access to."
 msgstr "WordPressが必要なディレクトリに書き込むことができるかどうかを示します。"
 
 msgid "The main WordPress directory"
@@ -1407,7 +2330,7 @@ msgid "The themes directory"
 msgstr "themesディレクトリ"
 
 msgid "Debug Log"
-msgstr "デバッグモード"
+msgstr "デバッグログ"
 
 msgid "No error logs found."
 msgstr "エラーログは見つかりませんでした。"
@@ -1415,26 +2338,28 @@ msgstr "エラーログは見つかりませんでした。"
 msgid "Welcome To GSheetConnector"
 msgstr "GSheetConnectorへようこそ"
 
-msgid "GSheetConnector is a powerful automation plugin that syncs WordPress data with Google Sheets in real time. It supports WooCommerce, Easy Digital Downloads, and popular form plugins such as Contact Form 7, Gravity Forms, Elementor Forms, along with 10+ additional WordPress integrations for efficient data management."
-msgstr "GSheetConnectorは、WordPressデータをリアルタイムでGoogleシートと同期する強力な自動化プラグインです。WooCommerce、Easy Digital Downloads、およびContact Form 7、Gravity Forms、Elementor Formsなどの人気のあるフォームプラグインをサポートし、効率的なデータ管理のために10以上の追加のWordPress統合を提供します。"
+msgid ""
+"GSheetConnector is a powerful automation plugin that syncs WordPress data with "
+"Google Sheets in real time. It supports WooCommerce, Easy Digital Downloads, and "
+"popular form plugins such as Contact Form 7, Gravity Forms, Elementor Forms, "
+"along with 10+ additional WordPress integrations for efficient data management."
+msgstr ""
+"GSheetConnectorは、WordPressデータをリアルタイムでGoogleシートと同期する強力な自動"
+"化プラグインです。WooCommerce、Easy Digital Downloads、およびContact Form 7、"
+"Gravity Forms、Elementor Formsなどの人気のあるフォームプラグインをサポートし、効率"
+"的なデータ管理のために10以上の追加のWordPress統合を提供します。"
 
 msgid " Connected"
-msgstr "接続済み"
+msgstr " 接続済み"
 
 msgid "Sheet Name"
 msgstr "シート名"
-
-msgid "Loading..."
-msgstr "読み込み中..."
 
 msgid "Let's Connect"
 msgstr "接続しましょう"
 
 msgid "Setup Guide & Troubleshooting"
 msgstr "セットアップガイドとトラブルシューティング"
-
-msgid "Sync WooCommerce data with Google Sheets in real-time effortlessly and accurately."
-msgstr "WooCommerceデータをGoogle Sheetsとリアルタイムで簡単かつ正確に同期します。"
 
 msgid "Getting Started"
 msgstr "始めに"
@@ -1444,9 +2369,6 @@ msgstr "インストールプロセス"
 
 msgid "Integration with Google (Existing Method)"
 msgstr "Googleとの統合（既存の方法）"
-
-msgid "Integration of WooCommerce with Google Sheet"
-msgstr "WooCommerceとGoogle Sheetsの統合"
 
 msgid "Docs & Troubleshooting"
 msgstr "ドキュメントとトラブルシューティング"
@@ -1468,24 +2390,6 @@ msgstr "Googleとの統合（手動の方法）"
 
 msgid "Integration with Google (Service Method)"
 msgstr "Googleとの統合（サービスの方法）"
-
-msgid "WooCommerce Data Settings – PRO Version"
-msgstr "WooCommerceデータ設定 - PROバージョン"
-
-msgid "Feed Settings  – PRO Version"
-msgstr "フィード設定 - PROバージョン"
-
-msgid "Settings Tab – PRO Version"
-msgstr "設定タブ - PROバージョン"
-
-msgid "Role Settings – PRO Version"
-msgstr "ロール設定 - PROバージョン"
-
-msgid "2-Way Sync - PRO Version"
-msgstr "2ウェイ同期 - PROバージョン"
-
-msgid "Third-Party Plugins Compatibility"
-msgstr "サードパーティプラグインの互換性"
 
 msgid "Plugins by Category"
 msgstr "カテゴリ別プラグイン"
@@ -1529,8 +2433,12 @@ msgstr "驚くべき主な機能"
 msgid "Everything You Need to Sync Data"
 msgstr "データを同期するために必要なすべて"
 
-msgid "Common features shared across every GSheetConnector Pro add-on built for reliability, flexibility, and scale."
-msgstr "信頼性、柔軟性、スケールのために構築されたすべてのGSheetConnector Proアドオンで共有される一般的な機能。"
+msgid ""
+"Common features shared across every GSheetConnector Pro add-on built for "
+"reliability, flexibility, and scale."
+msgstr ""
+"信頼性、柔軟性、スケールのために構築されたすべてのGSheetConnector Proアドオンで共"
+"有される一般的な機能。"
 
 msgid "Manual Sheet / Tab Name"
 msgstr "手動シート / タブ名"
@@ -1580,167 +2488,71 @@ msgstr "ビデオチュートリアル"
 msgid "Sheet URL"
 msgstr "シート URL"
 
-msgid "Permission To Access GSheetConnector WooCommerce"
-msgstr "GSheetConnector WooCommerceへのアクセス許可"
-
-msgid "Google Sheet to WooCommerce Sync Configuration"
-msgstr "GoogleシートとWooCommerceの同期設定"
-
-msgid "Connected WooCommerce Google Sheet"
-msgstr "接続されたWooCommerce Googleシート"
-
 msgid "Google Spreadsheet Name"
 msgstr "Googleスプレッドシート名"
-
-msgid "Google Spreadsheet URL"
-msgstr "GoogleスプレッドシートのURL"
 
 msgid "View Spreadsheet"
 msgstr "スプレッドシートを表示"
 
-msgid "Sync Settings for Two-Way Sync - Insert & Updates"
-msgstr "双方向同期のための同期設定 - 挿入と更新"
-
-msgid "Enter Rows Range - from"
-msgstr "行範囲を入力 - から"
-
 msgid "to"
-msgstr "まで"
-
-msgid "Click to Sync Insert"
-msgstr "挿入を同期するにはクリック"
-
-msgid "Click to Sync Update"
-msgstr "更新を同期するにはクリック"
-
-msgid "Sync Settings for Two-Way Sync - Order Status Updates"
-msgstr "双方向同期の設定 - 注文ステータスの更新"
-
-msgid "Click to Order Status Sync Update"
-msgstr "注文ステータス同期更新をクリック"
-
-msgid "Sync Settings for Two-Way Sync - Insert Orders"
-msgstr "双方向同期の設定 - 注文の挿入"
-
-msgid "Click to Sync Order"
-msgstr "注文を同期するにはクリック"
-
-msgid "WooCommerce Data Settings saved successfully."
-msgstr "WooCommerceデータ設定が正常に保存されました。"
-
-msgid "Please select Google Sheet Name and Check Atleast on Google Sheet Tab !"
-msgstr "Googleシート名を選択し、Googleシートタブで少なくとも1つチェックしてください！"
+msgstr "から"
 
 msgid "Google Sheets Setup Required"
 msgstr "Google Sheets の設定が必要です"
 
 msgid "Your selected method is: "
-msgstr "選択した方法は: "
+msgstr "選択された方法: "
+
+msgid "Service Account (Recommended)."
+msgstr "サービスアカウント (推奨)."
 
 msgid "Go to Integration Setup"
 msgstr "統合設定に移動"
 
-msgid "Choose Google Spreadsheet"
-msgstr "Googleスプレッドシートを選択"
-
-msgid "Select a Google Sheets to connect your data. If your sheet is not listed, fetch the latest sheets or create a new one. Then complete the setup and save your changes to start syncing."
-msgstr "データを接続するGoogleシートを選択してください。シートがリストにない場合は、最新のシートを取得するか、新しいシートを作成してください。その後、設定を完了し、変更を保存して同期を開始します。"
-
 msgid "Fetch Sheets"
 msgstr "シートを取得"
 
-msgid "If your sheets is not listed,  %s to fetch all Google Sheets. "
-msgstr "シートがリストに表示されない場合は、%sですべてのGoogle Sheetsを取得します。"
+msgid "Google Sheets Connection"
+msgstr "Google Sheets接続"
 
-msgid "Last synced :"
-msgstr "最終同期："
+msgid ""
+"Your Google Spreadsheet is securely connected and ready to receive form "
+"submissions in real time."
+msgstr ""
+"あなたのGoogleスプレッドシートは安全に接続されており、リアルタイムでフォームの送信"
+"を受け取る準備ができています。"
 
-msgid "Choose which order statuses should create separate tabs in your Google Sheet; when enabled, a new tab will be created for each selected status to help organize your data more clearly."
-msgstr "どの注文ステータスがGoogleシートに別々のタブを作成するかを選択してください。有効にすると、選択した各ステータスのために新しいタブが作成され、データをより明確に整理できます。"
+msgid "Green status means the spreadsheet access is configured correctly."
+msgstr ""
+"緑のステータスは、スプレッドシートのアクセスが正しく構成されていることを意味しま"
+"す。"
 
-msgid "All Orders"
-msgstr "すべての注文"
+msgid "Red status means permission is missing please grant editor access."
+msgstr ""
+"赤のステータスは、権限が不足していることを意味します。編集者アクセスを付与してくだ"
+"さい。"
 
-msgid "Upgrade To Pro"
-msgstr "プロ版にアップグレード"
+msgid "Sharing Required"
+msgstr "共有が必要"
 
-msgid "Translate Google Sheets Tab Names"
-msgstr "Google Sheets タブ名を翻訳する"
+msgid ""
+"Please share your Google Spreadsheet with the following service account to enable "
+"automatic syncing."
+msgstr ""
+"自動同期を有効にするために、次のサービスアカウントとGoogleスプレッドシートを共有し"
+"てください。"
 
-msgid "This setting displays tab names according to your WordPress site language."
-msgstr "この設定は、あなたのWordPressサイトの言語に応じてタブ名を表示します。"
+msgid ""
+"After sharing the spreadsheet, click Fetch Sheets to get the sheets into the "
+"dropdown, then select the sheet you shared and save the settings. The page will "
+"refresh and display the sharing status."
+msgstr ""
+"スプレッドシートを共有した後、シートを取得するには「シートを取得」をクリックし、共"
+"有したシートを選択して設定を保存してください。ページが更新され、共有ステータスが表"
+"示されます。"
 
-msgid "Enable Language Translation"
-msgstr "言語翻訳を有効にする"
-
-msgid "When enabled, Google Sheet tab names will be displayed in the language selected for your WordPress site."
-msgstr "有効にすると、Google Sheet のタブ名が WordPress サイトで選択した言語で表示されます。"
-
-msgid "Headers"
-msgstr "ヘッダー"
-
-msgid "Custom order statuses will appear here. Turn them on to create a new tab for each in your Google Sheet."
-msgstr "カスタム注文ステータスがここに表示されます。有効にすると、Googleシートにそれぞれの新しいタブが作成されます。"
-
-msgid "No custom order statuses are currently available."
-msgstr "現在利用可能なカスタム注文ステータスはありません。"
-
-msgid "Product Category as Sheet Tabs"
-msgstr "製品カテゴリフィルター"
-
-msgid "Organize category-based order data into dedicated Google Sheet tabs. Enable the product categories you want to use, and orders containing products from those categories will be synced to their corresponding category tabs."
-msgstr "カテゴリ別の注文データを専用の Google スプレッドシートのタブに整理します。使用する商品カテゴリーを有効にすると、それらのカテゴリーの商品を含む注文が対応するカテゴリータブに同期されます。"
-
-msgid "Select Category"
-msgstr "カテゴリを選択"
-
-msgid "Enable additional Sheet tabs to sync more WooCommerce information to your Google Sheet. Each selected option will create and update its own tab automatically."
-msgstr "追加のシートタブを有効にして、より多くのWooCommerce情報をGoogleシートに同期します。選択した各オプションは、自動的に独自のタブを作成および更新します。"
-
-msgid "All Products"
-msgstr "すべての製品"
-
-msgid "All Products Variation"
-msgstr "すべての製品のバリエーション"
-
-msgid "All Customers"
-msgstr "すべての顧客"
-
-msgid "All Coupons"
-msgstr "すべてのクーポン"
-
-msgid "All Subscriptions"
-msgstr "すべてのサブスクリプション"
-
-msgid "Choose how orders should appear in your Google Sheet:"
-msgstr "Googleシートに注文がどのように表示されるかを選択してください："
-
-msgid "Order Wise :"
-msgstr "注文ごと："
-
-msgid "Each order is added as a single row, even if it contains multiple products."
-msgstr "各注文は単一の行として追加されます。複数の製品が含まれていても同様です。"
-
-msgid "Product Wise :"
-msgstr "製品ごと："
-
-msgid "Each product in an order is added as a separate row, so you can see details for every item."
-msgstr "注文内の各製品は別々の行として追加されるため、各アイテムの詳細を確認できます。"
-
-msgid "You can also choose how the entries are sorted (ascending or descending). Your selected format and sorting will be applied across all tabs in the sheet."
-msgstr "エントリのソート方法（昇順または降順）も選択できます。選択した形式とソートは、シート内のすべてのタブに適用されます。"
-
-msgid "Select Sync Format"
-msgstr "同期形式を選択"
-
-msgid "Order Wise"
-msgstr "注文ごと"
-
-msgid "Product Wise"
-msgstr "製品ごと"
-
-msgid "Sorting"
-msgstr "ソート"
+msgid "Copy"
+msgstr "コピー"
 
 msgid "Ascending"
 msgstr "昇順"
@@ -1748,65 +2560,11 @@ msgstr "昇順"
 msgid "Descending"
 msgstr "降順"
 
-msgid "Sheet Charts"
-msgstr "シート名"
-
-msgid "Create visual charts for your WooCommerce data. Choose a chart type for Sales Orders, Total Orders, or Products Sold, and the selected charts will be created and updated automatically in your Google Sheet."
-msgstr "WooCommerce データの視覚的なグラフを作成します。受注数、総注文数、または販売商品からグラフの種類を選択すると、選択したグラフが Google スプレッドシートに自動作成され、更新されます。"
-
-msgid "Sales Orders"
-msgstr "すべての注文"
-
-msgid "Total Orders"
-msgstr "すべての注文"
-
-msgid "Products Sold"
-msgstr "製品"
-
-msgid "Order Category Filter"
-msgstr "注文カテゴリフィルター"
-
-msgid "Filter orders by category before syncing to your Google Sheet. When enabled, only selected categories will be synced. When disabled, all orders will be included. This applies to adding, updating, and syncing orders."
-msgstr "Google シートに同期する前に、カテゴリで注文をフィルタリングします。有効にすると、選択したカテゴリのみが同期されます。無効にすると、すべての注文が含まれます。これは、注文の追加、更新、および同期に適用されます。"
-
-msgid "Product Category Filter"
-msgstr "製品カテゴリフィルター"
-
-msgid "Filter products by category before syncing to your Google Sheet. When enabled, only selected categories will be synced. When disabled, all products will be included. This applies to adding, updating, and syncing products."
-msgstr "Googleシートに同期する前に、カテゴリで製品をフィルタリングします。有効にすると、選択したカテゴリのみが同期されます。無効にすると、すべての製品が含まれます。これは、製品の追加、更新、および同期に適用されます。"
-
-msgid "Sync data between WooCommerce and Google Sheets in real-time. Enable this feature to manage orders, products, and more directly from your spreadsheet."
-msgstr "WooCommerceとGoogle Sheetsの間でリアルタイムでデータを同期します。この機能を有効にすると、スプレッドシートから直接注文、製品などを管理できます。"
-
-msgid "Enable 2-Way Sync"
-msgstr "双方向同期を有効にする"
-
-msgid "Allow Google Sheets to update WooCommerce data."
-msgstr "Google SheetsがWooCommerceデータを更新できるようにします。"
-
-msgid "Select Sync Modules"
-msgstr "同期モジュールを選択"
-
-msgid "Allowed Actions"
-msgstr "許可されたアクション"
-
-msgid "Insert"
-msgstr "挿入"
-
 msgid "Update"
 msgstr "更新"
 
 msgid "Delete"
 msgstr "削除"
-
-msgid "Select fields to add as new columns in your sheet. Enter a column name for each field. These columns will be included when your data syncs."
-msgstr "シートに新しい列として追加するフィールドを選択します。各フィールドの列名を入力してください。これらの列は、データが同期されるときに含まれます。"
-
-msgid "Product Variation"
-msgstr "商品バリエーション"
-
-msgid "Additional Order Columns"
-msgstr "追加の注文列"
 
 msgid "Enter Column Name"
 msgstr "列名を入力"
@@ -1814,68 +2572,18 @@ msgstr "列名を入力"
 msgid "Add"
 msgstr "追加"
 
-msgid " Upgrade To Pro"
-msgstr " プロにアップグレード"
-
-msgid "Additional Product Columns"
-msgstr "追加の製品列"
-
-msgid "Additional Custom Columns"
-msgstr "追加のカスタム列"
-
-msgid "Additional Empty Columns"
-msgstr "追加の空列"
-
-msgid "Enable All Columns"
-msgstr "すべての列を有効にする"
-
-msgid "Additional Product Variation Columns"
-msgstr "追加の製品バリエーション列"
-
-msgid "Cron Settings"
-msgstr "Cron設定"
-
-msgid "Enable Cron Sync"
-msgstr "Cron 同期を有効にする"
-
-msgid "Turn on automatic scheduling"
-msgstr "自動スケジューリングをオンにする"
-
-msgid "Set Schedule"
-msgstr "スケジュールを設定"
-
-msgid "No Schedule"
-msgstr "スケジュールなし"
-
-msgid "Choose Schedule Type"
-msgstr "スケジュールタイプを選択"
-
-msgid "Repeat Weekly"
-msgstr "毎週繰り返す"
-
-msgid "Run Once"
-msgstr "一度だけ実行"
-
-msgid "How Often"
-msgstr "頻度"
-
-msgid "Select Day"
-msgstr "日を選択"
-
 msgid "Time"
 msgstr "時間"
-
-msgid "Real-Time Sync"
-msgstr "リアルタイム同期"
-
-msgid "Sync instantly when new orders are created"
-msgstr "新しい注文が作成されたときに即座に同期"
 
 msgid "Header Settings"
 msgstr "ヘッダー設定"
 
-msgid "Customize the appearance and behavior of your sheet headers and rows for better readability and organization."
-msgstr "シートのヘッダーと行の外観と動作をカスタマイズして、読みやすさと整理を向上させます。"
+msgid ""
+"Customize the appearance and behavior of your sheet headers and rows for better "
+"readability and organization."
+msgstr ""
+"シートのヘッダーと行の外観と動作をカスタマイズして、読みやすさと整理を向上させま"
+"す。"
 
 msgid "Header Behavior"
 msgstr "ヘッダーの動作"
@@ -1934,77 +2642,20 @@ msgstr "ダウンロード"
 msgid "Google Sheets Data Sync"
 msgstr "Google Sheets データ同期"
 
-msgid "Effortlessly sync your WooCommerce data with Google Sheets. Available options include Orders, Products, Product Variations, Customers, Coupons, and Subscriptions. Select only the sync types that best suit your needs. This ensures seamless integration and real-time updates for efficient data management."
-msgstr "手間なくWooCommerceデータをGoogle Sheetsと同期します。利用可能なオプションには、注文、製品、製品のバリエーション、顧客、クーポン、サブスクリプションが含まれます。ニーズに最適な同期タイプのみを選択してください。これにより、シームレスな統合とリアルタイムの更新が実現し、効率的なデータ管理が可能になります。"
-
-msgid "Sync Orders"
-msgstr "注文を同期"
-
-msgid "Initiate the synchronization of your WooCommerce orders seamlessly with a single click. This ensures that your Google Sheet stays up-to-date with the latest order information, based on your configuration done above, providing you with real-time insights and streamlined data management. Optimize your workflow with the convenience of synchronized orders."
-msgstr "WooCommerceの注文の同期をワンクリックでシームレスに開始します。これにより、上記の設定に基づいて、Googleシートが最新の注文情報で更新され、リアルタイムのインサイトと効率的なデータ管理が提供されます。同期された注文の便利さでワークフローを最適化します。"
-
 msgid "From Date"
 msgstr "開始日"
 
 msgid "To Date"
 msgstr "終了日"
 
-msgid "Order Status"
-msgstr "注文ステータス"
-
-msgid "Sync Orders (Product Category Tabs)"
-msgstr "注文 & 商品カテゴリフィルター"
-
-msgid "Backfill existing <b class="f-weight">WooCommerce orders</b> into the Product Category sheet tabs. Only orders that contain a product from a selected category are synced, and only into those matching category tabs. Orders already present in a tab are skipped."
-msgstr "既存の <b class="f-weight">WooCommerce 注文</b>を商品カテゴリーのシートタブにバックフィルします。選択したカテゴリーの商品を含む注文のみが同期され、該当するカテゴリータブにのみ反映されます。すでにタブに存在する注文はスキップされます。"
-
-msgid "Product Categories"
-msgstr "製品カテゴリフィルター"
-
-msgid "Sync Products"
-msgstr "製品を同期"
-
-msgid "Initiate the synchronization of your WooCommerce products seamlessly with a single click. This ensures that your Google Sheet stays up-to-date with the latest product information, based on your configuration done above, providing you with real-time insights and streamlined data management. Before starting the sync, ensure that the products tab toggle is enabled to optimize your workflow with the convenience of synchronized product data."
-msgstr "WooCommerceの製品の同期をワンクリックでシームレスに開始します。これにより、上記の設定に基づいて、Googleシートが最新の製品情報で更新され、リアルタイムのインサイトと効率的なデータ管理が提供されます。同期を開始する前に、製品タブのトグルが有効になっていることを確認し、同期された製品データの便利さでワークフローを最適化します。"
-
-msgid "Sync Products Variation"
-msgstr "製品のバリエーションを同期"
-
-msgid "Initiate the synchronization of your WooCommerce products variations seamlessly with a single click. This ensures that your Google Sheet stays up-to-date with the latest product information, based on your configuration done above. If you are using variable products, then only data will be shown in the sheet. Before starting the sync, ensure that the products variation tab toggle is enabled to optimize your workflow with the convenience of synchronized product data."
-msgstr "WooCommerceの製品バリエーションの同期をワンクリックでシームレスに開始します。これにより、上記の設定に基づいて、Googleシートが最新の製品情報で更新されます。可変製品を使用している場合、シートにはデータが表示されます。同期を開始する前に、製品バリエーションタブのトグルが有効になっていることを確認し、同期された製品データの便利さでワークフローを最適化します。"
-
-msgid "Sync Customers"
-msgstr "顧客を同期"
-
-msgid "Initiate the synchronization of your WooCommerce Customers seamlessly with a single click. This ensures that your Google Sheet stays up-to-date with the latest order information, based on your configuration done above, providing you with real-time insights and streamlined data management. Optimize your workflow with the convenience of synchronized orders."
-msgstr "WooCommerceの顧客の同期をワンクリックでシームレスに開始します。これにより、上記の設定に基づいて、Googleシートが最新の注文情報で更新され、リアルタイムのインサイトと効率的なデータ管理が提供されます。同期された注文の便利さでワークフローを最適化します。"
-
-msgid "Sync Coupons"
-msgstr "クーポンを同期"
-
-msgid "Initiate the synchronization of your WooCommerce coupons seamlessly with a single click. This process ensures that your Google Sheet reflects the latest coupon information, following the configuration set above. Benefit from real-time insights and streamlined data management. Before starting the sync, confirm that the coupons tab toggle is enabled enhancing your workflow with the convenience of synchronized coupon data."
-msgstr "WooCommerceのクーポンの同期をワンクリックでシームレスに開始します。このプロセスにより、上記の設定に従って、Googleシートが最新のクーポン情報を反映します。リアルタイムのインサイトと効率的なデータ管理の恩恵を受けます。同期を開始する前に、クーポンタブのトグルが有効になっていることを確認し、同期されたクーポンデータの便利さでワークフローを強化します。"
-
-msgid "Sync Subscriptions"
-msgstr "サブスクリプションを同期"
-
 msgid "display"
-msgstr "画面"
+msgstr "表示"
 
 msgid "View Documentation"
 msgstr "ドキュメントを見る"
 
 msgid "Get Support"
 msgstr "サポートを受ける"
-
-msgid "GSheetConnector WooCommerce Add-on requires WooCommerce plugin to be installed and activated."
-msgstr "GSheetConnector WooCommerceアドオンは、WooCommerceプラグインがインストールされ、有効化されている必要があります。"
-
-msgid "https://wordpress.org/plugins/wc-gsheetconnector/"
-msgstr "https://wordpress.org/plugins/wc-gsheetconnector/"
-
-msgid "Send your WooCommerce data to your Google Sheets spreadsheet."
-msgstr "WooCommerceのデータをGoogle Sheetsのスプレッドシートに送信します。"
 
 msgid "GSheetConnector"
 msgstr "GSheetConnector"

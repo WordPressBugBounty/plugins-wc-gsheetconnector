@@ -67,14 +67,23 @@ $wcgsc_plugin_version = defined('WC_GSHEETCONNECTOR_VERSION') ? WC_GSHEETCONNECT
   $wcgsc_email_account = "";
 
   // Check if the user is authenticated when saving existing API method
-  if (!empty($wcgsc_authenticated) && $wcgsc_per == 'valid') {
+  // '0' = Existing, '2' = Service Account (settings saved only; no connection check here).
+  $wcgsc_auth_method = (string) get_option('wcgsc_manual_setting', '0');
+  if ('' === $wcgsc_auth_method) {
+    $wcgsc_auth_method = '0';
+  }
+
+  if ('2' === $wcgsc_auth_method && !empty(get_option('wcgsc_service_account_json', ''))) {
+    $wcgsc_selected_method = esc_html(__('Service', 'wc-gsheetconnector'));
+  } elseif ('0' === $wcgsc_auth_method && !empty($wcgsc_authenticated) && $wcgsc_per == 'valid') {
     $wcgsc_is_authenticated = true;
     $wcgsc_selected_method = esc_html(__('Existing', 'wc-gsheetconnector'));
   } else {
     $wcgsc_selected_method = esc_html(__('Auth Required', 'wc-gsheetconnector'));
   }
 
-  $wcgsc_show_auth_notice = !$wcgsc_is_authenticated;
+  // The Google account notice only applies to Existing authentication, not Service Account.
+  $wcgsc_show_auth_notice = !$wcgsc_is_authenticated && '2' !== $wcgsc_auth_method;
 
   $wcgsc_install_time = strtotime(get_option('wcgsc_free_install_time'));
   $wcgsc_install_time_raw = get_option('wcgsc_free_install_time');

@@ -8,6 +8,10 @@ if (! function_exists('is_plugin_active')) {
 <?php
 // Get selected Sheet
 $wcgsc_selected_sheet_key = get_option('wcgsc_settings');
+// Pro stores an array with 'spreadsheet_id'; Free stores the plain ID. Accept both.
+if (is_array($wcgsc_selected_sheet_key)) {
+    $wcgsc_selected_sheet_key = isset($wcgsc_selected_sheet_key['spreadsheet_id']) ? $wcgsc_selected_sheet_key['spreadsheet_id'] : '';
+}
 // Get all sheet details of the connected account
 $wcgsc_sheet_data = get_option('wcgsc_sheet_feeds');
 // Get order states/ Tab names
@@ -26,7 +30,10 @@ $wcgsc_per = get_option('wcgsc_verify');
 // check user is authenticated when save existing api method
 $wcgsc_show_setting = 0;
 
-if ((!empty($wcgsc_authenticated) && $wcgsc_per == "valid")) {
+$wcgsc_is_service = '2' === (string) get_option('wcgsc_manual_setting');
+
+// Service Account: settings are available once its JSON is saved (the old Existing token is ignored).
+if ($wcgsc_is_service ? !empty(get_option('wcgsc_service_account_json', '')) : (!empty($wcgsc_authenticated) && $wcgsc_per == "valid")) {
     $wcgsc_show_setting = 1;
 } else {
 ?>
@@ -45,9 +52,12 @@ if ((!empty($wcgsc_authenticated) && $wcgsc_per == "valid")) {
 
             <p>
                 <?php esc_html_e('Your selected method is: ', 'wc-gsheetconnector'); ?>
-                <?php echo esc_html('Existing Client / Secret Key (Auto Setup).', 'wc-gsheetconnector'); ?>
+                <?php echo $wcgsc_is_service ? esc_html__('Service Account (Recommended).', 'wc-gsheetconnector') : esc_html('Existing Client / Secret Key (Auto Setup).', 'wc-gsheetconnector'); ?>
             </p>
 
+            <?php if ($wcgsc_is_service) : ?>
+            <p><?php esc_html_e('Please save your Service Account JSON credentials in the Integration tab first.', 'wc-gsheetconnector'); ?></p>
+            <?php else : ?>
             <p><?php echo esc_html('To start sending form entries to Google Sheets, please connect your Google account first.', 'wc-gsheetconnector'); ?></p>
 
             <ul>
@@ -57,6 +67,7 @@ if ((!empty($wcgsc_authenticated) && $wcgsc_per == "valid")) {
                 <li><?php echo esc_html('✔ Grant access to: Google Drive & Google Sheets', 'wc-gsheetconnector'); ?></li>
                 <li><?php echo esc_html('✔ Save the authentication code if prompted', 'wc-gsheetconnector'); ?></li>
             </ul>
+            <?php endif; ?>
 
             <a href="<?php echo esc_url(admin_url('admin.php?page=wc-gsheetconnector-config&tab=integration')); ?>" class="gsc-alert-btn link-hover-white">
                 <?php esc_html_e('Go to Integration Setup', 'wc-gsheetconnector'); ?>
@@ -151,8 +162,10 @@ if ($wcgsc_show_setting == 1) {
                             </div>
                         </div>
                         <?php
-                        if ((!empty($wcgsc_per) && $wcgsc_per == "valid")) {
-                            $wcgsc_sheet_fetch_date = get_option('wcgsc_sheet_fetch_date');
+                        // Same per-method verify/date options as Pro: 0 => wcgsc_verify / wcgsc_sheet_fetch_date, 2 => wcgsc_verify_service / wcgsc_service_sheet_fetch_date.
+                        $wcgsc_date_verified = $wcgsc_is_service ? ('valid' === get_option('wcgsc_verify_service')) : (!empty($wcgsc_per) && $wcgsc_per == "valid");
+                        if ($wcgsc_date_verified) {
+                            $wcgsc_sheet_fetch_date = get_option($wcgsc_is_service ? 'wcgsc_service_sheet_fetch_date' : 'wcgsc_sheet_fetch_date');
                             if (! empty($wcgsc_sheet_fetch_date)) :
 
                                 // Convert saved datetime string into timestamp.
@@ -178,6 +191,63 @@ if ($wcgsc_show_setting == 1) {
                     </div>
 
                     <p id="wcgsc-validation-message"></p>
+
+                    <?php
+                    // Service Account sharing status (same logic and markup as Pro).
+                    if ($wcgsc_is_service) {
+                        $wcgsc_service_creds = json_decode((string) get_option('wcgsc_service_account_json', ''), true);
+                        $wcgsc_client_email  = (is_array($wcgsc_service_creds) && !empty($wcgsc_service_creds['client_email'])) ? sanitize_email($wcgsc_service_creds['client_email']) : '';
+                        $wcgsc_result        = array('status' => false);
+
+                        if ($wcgsc_client_email !== '' && trim((string) $wcgsc_selected_sheet_key) !== '') {
+                            $wcgsc_doc = new GSCWOO_googlesheet();
+                            $wcgsc_doc->auth();
+                            $wcgsc_result = $wcgsc_doc->check_sheet_access(trim($wcgsc_selected_sheet_key));
+                        }
+
+                        if (!empty($wcgsc_result['status'])) { ?>
+                            <div class="gsc-sheet-info mt-30">
+                                <div class="gsc-sheet-status-header">
+                                    <div class="gsc-status-headings fw-600"><?php echo esc_html__('Google Sheets Connection', 'wc-gsheetconnector'); ?></div>
+                                </div>
+                                <p class="gsc-sheet-status-desc"><?php echo esc_html__('Your Google Spreadsheet is securely connected and ready to receive form submissions in real time.', 'wc-gsheetconnector'); ?></p>
+                                <div class="gsc-sheet-email-box flex-wrap mt-10">
+                                    <span class="email-text email-success-service"><?php echo esc_html($wcgsc_client_email); ?></span>
+                                    <span class="gsc-sheet-badge connected"><?php echo esc_html__('Connected Successfully.', 'wc-gsheetconnector'); ?></span>
+                                </div>
+                                <ul class="gsc-status-list">
+                                    <li class="success d-flex align-center gap-5 text-dark">
+                                        <svg fill="#199436" viewBox="10 10 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" width=20 height=20><path d="M12.096 16q0 1.632 1.152 2.784t2.752 1.12 2.752-1.12 1.152-2.784-1.152-2.752-2.752-1.152-2.752 1.152-1.152 2.752z"></path></svg>
+                                        <?php echo esc_html__('Green status means the spreadsheet access is configured correctly.', 'wc-gsheetconnector'); ?>
+                                    </li>
+                                    <li class="error d-flex align-center gap-5 text-dark">
+                                        <svg fill="#D63638" viewBox="10 10 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" width=20 height=20><path d="M12.096 16q0 1.632 1.152 2.784t2.752 1.12 2.752-1.12 1.152-2.784-1.152-2.752-2.752-1.152-2.752 1.152-1.152 2.752z"></path></svg>
+                                        <?php echo esc_html__('Red status means permission is missing please grant editor access.', 'wc-gsheetconnector'); ?>
+                                    </li>
+                                </ul>
+                            </div>
+                        <?php } elseif ($wcgsc_client_email !== '') { ?>
+                            <div class="sheet-email gsc-sheet-info mt-30" id="sheet-email">
+                                <div class="gsc-status-headings fw-600"><?php echo esc_html__('Sharing Required', 'wc-gsheetconnector'); ?></div>
+                                <p><?php echo esc_html__('Please share your Google Spreadsheet with the following service account to enable automatic syncing.', 'wc-gsheetconnector'); ?></p>
+                                <p><?php echo esc_html__('After sharing the spreadsheet, click Fetch Sheets to get the sheets into the dropdown, then select the sheet you shared and save the settings. The page will refresh and display the sharing status.', 'wc-gsheetconnector'); ?></p>
+                                <div class="gsc-email-box d-flex align-center justify-between email-unsuccess-service mt-10" data-email="<?php echo esc_attr($wcgsc_client_email); ?>">
+                                    <span class="email-unsuccess-service"><?php echo esc_html($wcgsc_client_email); ?></span>
+                                    <a href="javascript:void(0);" class="wcgsc-service-email-copy-btn-setting text-decoration-none link-hover-white"><?php echo esc_html__('Copy', 'wc-gsheetconnector'); ?></a>
+                                </div>
+                                <ul class="gsc-status-list">
+                                    <li class="success d-flex align-center gap-5 text-dark">
+                                        <svg fill="#199436" viewBox="10 10 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" width=20 height=20><path d="M12.096 16q0 1.632 1.152 2.784t2.752 1.12 2.752-1.12 1.152-2.784-1.152-2.752-2.752-1.152-2.752 1.152-1.152 2.752z"></path></svg>
+                                        <?php echo esc_html__('Green status means the spreadsheet access is configured correctly.', 'wc-gsheetconnector'); ?>
+                                    </li>
+                                    <li class="error d-flex align-center gap-5 text-dark">
+                                        <svg fill="#D63638" viewBox="10 10 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" width=20 height=20><path d="M12.096 16q0 1.632 1.152 2.784t2.752 1.12 2.752-1.12 1.152-2.784-1.152-2.752-2.752-1.152-2.752 1.152-1.152 2.752z"></path></svg>
+                                        <?php echo esc_html__('Red status means permission is missing please grant editor access.', 'wc-gsheetconnector'); ?>
+                                    </li>
+                                </ul>
+                            </div>
+                        <?php }
+                    } ?>
                 </div>
             </div>
 

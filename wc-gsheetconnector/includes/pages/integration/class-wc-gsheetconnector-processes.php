@@ -27,6 +27,15 @@ class wc_gsheetconnector_processes {
 
     add_action( 'wp_ajax_wcgsc_verify_integration', array( $this, 'wcgsc_verify_integration' ) );
 
+    // save Google API setting (authentication method)
+    add_action( 'wp_ajax_save_method_api_woo', array( $this, 'save_method_api_woo' ) );
+
+    // save service account json
+    add_action( 'wp_ajax_wcgsc_save_service_account_json', array( $this, 'wcgsc_save_service_account_json' ) );
+
+    // deactivate service account
+    add_action( 'wp_ajax_wcgsc_deactivate_service_account', array( $this, 'wcgsc_deactivate_service_account' ) );
+
 		//deactivate google sheet integration
     add_action( 'wp_ajax_wcgsc_deactivate_integration', array( $this, 'wcgsc_deactivate_integration' ) );
 
@@ -315,6 +324,89 @@ if ( get_option( 'wcgsc_access_code' ) !== '' ) {
 }
 
 /**
+ * AJAX Handler: Save Google API Setting (authentication method).
+ *
+ * Stores the selection in the same option and format as the Pro plugin
+ * ('0' = Existing, '1' = Manual, '2' = Service Account). Only Existing
+ * and Service Account can be selected from the Free plugin.
+ *
+ * @since 1.5.0
+ * @return void Sends JSON response.
+ */
+public function save_method_api_woo() {
+  check_ajax_referer( 'wcgsc-ajax-nonce', 'security' );
+
+  if ( ! current_user_can( 'manage_options' ) ) {
+    wp_send_json_error( 'Unauthorized', 403 );
+  }
+
+  $method = isset( $_POST['method_api_woo'] ) ? sanitize_text_field( wp_unslash( $_POST['method_api_woo'] ) ) : '';
+
+  if ( 'wcgsc_service' === $method ) {
+    update_option( 'wcgsc_manual_setting', '2' );
+  } elseif ( 'wcgsc_existing' === $method ) {
+    update_option( 'wcgsc_manual_setting', '0' );
+  } else {
+    wp_send_json_error( 'Invalid method.' );
+  }
+
+  wp_send_json_success();
+}
+
+/**
+ * AJAX Handler: Save Service Account JSON credentials.
+ *
+ * Same option keys and sanitization as the Pro plugin:
+ * wcgsc_service_account_json (raw JSON string) and wcgsc_verify_service.
+ * Only the settings are stored; no token is requested here.
+ *
+ * @since 1.5.0
+ * @return void Sends JSON response.
+ */
+public function wcgsc_save_service_account_json() {
+  check_ajax_referer( 'wcgsc-ajax-nonce', 'security' );
+
+  if ( ! current_user_can( 'manage_options' ) ) {
+    wp_send_json_error( array( 'error' => 'Permission denied' ) );
+  }
+
+  $json = isset( $_POST['json'] ) ? sanitize_text_field( wp_unslash( $_POST['json'] ) ) : '';
+
+  // Validate JSON before saving.
+  json_decode( $json, true );
+  if ( json_last_error() !== JSON_ERROR_NONE ) {
+    wp_send_json_error( array( 'error' => 'Invalid JSON format' ) );
+  }
+
+  update_option( 'wcgsc_service_account_json', $json );
+  // Invalidate any cached token from previous credentials.
+  delete_option( 'wcgsc_service_account_token' );
+  update_option( 'wcgsc_verify_service', 'valid' );
+
+  wp_send_json_success( array( 'saved' => true ) );
+}
+
+/**
+ * AJAX Handler: Remove saved Service Account credentials.
+ *
+ * @since 1.5.0
+ * @return void Sends JSON response.
+ */
+public function wcgsc_deactivate_service_account() {
+  check_ajax_referer( 'wcgsc-ajax-nonce', 'security' );
+
+  if ( ! current_user_can( 'manage_options' ) ) {
+    wp_send_json_error( array( 'error' => 'Permission denied' ) );
+  }
+
+  delete_option( 'wcgsc_service_account_json' );
+  delete_option( 'wcgsc_service_account_token' );
+  update_option( 'wcgsc_verify_service', '' );
+
+  wp_send_json_success( array( 'removed' => true ) );
+}
+
+/**
  * Deactivate the Google Sheets integration via AJAX.
  *
  * Removes stored authentication tokens, feed data,
@@ -389,8 +481,29 @@ if ( class_exists( 'GSCWOO_googlesheet' ) ) {
   return;
 }
 
+// Service Account: fail with a clear message instead of storing an empty list or a new date.
+$is_service = '2' === (string) get_option( 'wcgsc_manual_setting' );
+if ( $is_service && ! $doc->auth() ) {
+  $service_message = ! empty( $doc->service_error ) ? $doc->service_error : __( 'Unable to authenticate with the Service Account.', 'wc-gsheetconnector' );
+  if ( $return_ajax === true ) {
+    wp_send_json_error( array( 'message' => $service_message ) );
+  }
+  return;
+}
+
 			// Get all spreadsheets
 $spreadsheetFeed = $doc->get_spreadsheets();
+
+if ( $is_service && empty( $spreadsheetFeed ) ) {
+  $service_message = ! empty( $doc->service_error )
+    ? $doc->service_error
+    : __( 'No spreadsheets found. Share your Google Sheet with the service account email and grant Editor access.', 'wc-gsheetconnector' );
+  if ( $return_ajax === true ) {
+    wp_send_json_error( array( 'message' => $service_message ) );
+  }
+  return;
+}
+
 $sheet_array = array();
 
 foreach ( $spreadsheetFeed as $sheetfeeds ) {
@@ -405,7 +518,8 @@ foreach ( $spreadsheetFeed as $sheetfeeds ) {
 update_option( 'wcgsc_sheet_feeds', $sheet_array );
 
 $cdate = current_time( 'Y-m-d H:i:s' ); // date + time in WP local timezone
-update_option( 'wcgsc_sheet_fetch_date', $cdate );
+// Same per-method option keys as Pro.
+update_option( $is_service ? 'wcgsc_service_sheet_fetch_date' : 'wcgsc_sheet_fetch_date', $cdate );
 if ( $return_ajax === true ) {
   if ( $init === 'yes' ) {
    wp_send_json_success( array( 'success' => 'yes' ) );

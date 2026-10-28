@@ -11,6 +11,13 @@ class GSCWOO_googlesheet
 	private $worksheet;
 	private $header_row_cache = array();
 
+	/**
+	 * Last Service Account error message (empty when none).
+	 *
+	 * @var string
+	 */
+	public $service_error = '';
+
 
 
 /**
@@ -270,12 +277,17 @@ public function getWorkTabId()
  * Get the active Google API access token based on selected auth mode
  *
  * Modes:
+ * 2 = Service Account
  * Default = Existing/Auto token method
  * @since 1.0.0
  */
 public function get_active_token()
 {
 	try {
+
+		if ('2' === (string) get_option('wcgsc_manual_setting')) {
+			return $this->get_service_account_token();
+		}
 
 		return $this->token();
 	} catch (Exception $e) {
@@ -286,6 +298,137 @@ public function get_active_token()
 	}
 }
 
+
+/**
+ * CHECK WHETHER THE ACTIVE ACCOUNT CAN READ A SPREADSHEET
+ *
+ * Same request and result shape as the Pro plugin's check_sheet_access().
+ *
+ * @since 1.5.0
+ * @param string $sheet_id Spreadsheet ID.
+ * @return array { status: bool, message: string }
+ */
+public function check_sheet_access($sheet_id)
+{
+	$token = $this->get_active_token();
+	if (!$token) {
+		return array('status' => false, 'message' => 'Token not found');
+	}
+
+	$response = wp_remote_get(
+		'https://sheets.googleapis.com/v4/spreadsheets/' . rawurlencode($sheet_id),
+		array('headers' => array('Authorization' => 'Bearer ' . $token))
+	);
+
+	if (is_wp_error($response)) {
+		return array('status' => false, 'message' => $response->get_error_message());
+	}
+
+	$code = wp_remote_retrieve_response_code($response);
+	$body = json_decode(wp_remote_retrieve_body($response), true);
+
+	if (200 === (int) $code && !empty($body['spreadsheetId'])) {
+		return array('status' => true, 'message' => 'Sheet is accessible');
+	}
+
+	return array('status' => false, 'message' => $body['error']['message'] ?? 'Access denied');
+}
+
+/**
+ * GET ACCESS TOKEN USING THE SAVED SERVICE ACCOUNT JSON
+ *
+ * Same option keys and token cache format as the Pro plugin:
+ * wcgsc_service_account_json and wcgsc_service_account_token.
+ *
+ * @since 1.5.0
+ * @return string|false Access token, or false (see $service_error).
+ */
+public function get_service_account_token()
+{
+	$this->service_error = '';
+
+	$json = get_option('wcgsc_service_account_json');
+	if (empty($json)) {
+		$this->service_error = __('Service Account JSON is missing. Please save it in the Integration tab.', 'wc-gsheetconnector');
+		return false;
+	}
+
+	$creds = json_decode($json, true);
+	if (json_last_error() !== JSON_ERROR_NONE || empty($creds['client_email']) || empty($creds['private_key'])) {
+		$this->service_error = __('Service Account JSON is invalid. Please save valid credentials in the Integration tab.', 'wc-gsheetconnector');
+		return false;
+	}
+
+	$cache_hash = md5($creds['client_email'] . '|' . md5((string) $creds['private_key']));
+	$cached     = json_decode((string) get_option('wcgsc_service_account_token'), true);
+
+	if (
+		!empty($cached['access_token']) && !empty($cached['expire'])
+		&& ($cached['hash'] ?? '') === $cache_hash
+		&& time() < (int) $cached['expire'] - 120
+	) {
+		return $cached['access_token'];
+	}
+
+	$now     = time();
+	$base64  = function ($data) {
+		return rtrim(strtr(base64_encode(json_encode($data)), '+/', '-_'), '=');
+	};
+	$payload = array(
+		'iss'   => $creds['client_email'],
+		'scope' => implode(' ', array(
+			'https://www.googleapis.com/auth/spreadsheets',
+			'https://www.googleapis.com/auth/drive',
+			'https://www.googleapis.com/auth/drive.metadata.readonly',
+		)),
+		'aud' => 'https://oauth2.googleapis.com/token',
+		'exp' => $now + 3600,
+		'iat' => $now,
+	);
+
+	$signature_input = $base64(array('alg' => 'RS256', 'typ' => 'JWT')) . '.' . $base64($payload);
+
+	if (!@openssl_sign($signature_input, $signature, $creds['private_key'], 'sha256')) {
+		$this->service_error = __('Service Account private key is invalid.', 'wc-gsheetconnector');
+		return false;
+	}
+
+	$response = wp_remote_post(
+		'https://oauth2.googleapis.com/token',
+		array(
+			'body' => array(
+				'grant_type' => 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+				'assertion'  => $signature_input . '.' . strtr(base64_encode($signature), '+/', '-_'),
+			),
+		)
+	);
+
+	if (is_wp_error($response)) {
+		$this->service_error = $response->get_error_message();
+		return false;
+	}
+
+	$body = json_decode(wp_remote_retrieve_body($response), true);
+
+	if (empty($body['access_token'])) {
+		$this->service_error = !empty($body['error_description'])
+			? sanitize_text_field($body['error_description'])
+			: __('Google did not return an access token for this Service Account.', 'wc-gsheetconnector');
+		return false;
+	}
+
+	update_option(
+		'wcgsc_service_account_token',
+		wp_json_encode(array(
+			'access_token' => $body['access_token'],
+			'expire'       => $now + (int) ($body['expires_in'] ?? 3600),
+			'hash'         => $cache_hash,
+		)),
+		false
+	);
+
+	return $body['access_token'];
+}
 
 /**
  * GET ACCESS TOKEN
@@ -446,10 +589,15 @@ public function get_spreadsheets()
 		);
 
 		if (is_wp_error($response)) {
+			$this->service_error = $response->get_error_message();
 			return [];
 		}
 
 		$body = json_decode(wp_remote_retrieve_body($response), true);
+
+		if (200 !== (int) wp_remote_retrieve_response_code($response) && !empty($body['error']['message'])) {
+			$this->service_error = sanitize_text_field($body['error']['message']);
+		}
 
 		$sheets = [];
 

@@ -125,6 +125,15 @@ jQuery(document).on("click", "#wcgsc-sync", function () {
         return false; // Invalid nonce
       }
 
+      if (response.success === false && response.data && response.data.message) {
+        jQuery(".loading-sign").removeClass("loading");
+        jQuery("#wcgsc-validation-message").empty();
+        jQuery("<span class='gsc-msg gsc-error'></span>")
+          .text(response.data.message)
+          .appendTo("#wcgsc-validation-message");
+        return false;
+      }
+
       if (response.data.success == "yes") {
         jQuery(".loading-sign").removeClass("loading");
         jQuery("#wcgsc-validation-message").empty();
@@ -279,14 +288,7 @@ jQuery(document).ready(function ($) {
       $("#wcgsc-confirm-manual-popup-pro").removeClass("d-none");
 
       // reset dropdown
-      $(this).val("wcgsc_existing");
-    }
-
-    if (selectedValue === "wcgsc_service") {
-      $("#wcgsc-confirm-service-popup-pro").removeClass("d-none");
-
-      // reset dropdown
-      $(this).val("wcgsc_existing");
+      $(this).val($(this).data("current"));
     }
 
     $(".wcgsc-popup-close-pro, .wcgsc-popup-service-close-pro").on(
@@ -887,4 +889,161 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("goToSlide not available.");
     }
   }, 800);
+});
+
+/**
+ * Save the selected Google API setting (Existing / Service Account).
+ */
+jQuery(document).on("click", "#save-method-api-woo", function (event) {
+  event.preventDefault();
+  jQuery(".loading-sign-method-api").addClass("loading");
+  var data = {
+    action: "save_method_api_woo",
+    method_api_woo: jQuery("#wcgsc_dro_option").val(),
+    security: jQuery("#wcgsc-ajax-nonce").val(),
+  };
+  jQuery.post(ajaxurl, data, function () {
+    setTimeout(function () {
+      location.reload();
+    }, 1000);
+  });
+});
+
+// Service Account settings (save / upload / remove)
+jQuery(document).ready(function ($) {
+  const $textarea = $("#wcgsc_service_account_json");
+  const $saveBtn = $("#wcgsc-save-service-json");
+  const $fileInput = $("#wcgsc_upload_service_json_file");
+
+  if ($textarea.length && $saveBtn.length) {
+    function toggleSaveButton() {
+      const hasValue = ($textarea.val() || "").trim() !== "";
+      $saveBtn.toggleClass("common-disable", !hasValue).prop("disabled", !hasValue);
+    }
+
+    toggleSaveButton();
+    $textarea.on("keyup change paste input", toggleSaveButton);
+    $fileInput.on("change", function () {
+      setTimeout(toggleSaveButton, 100);
+    });
+
+    $saveBtn.on("click", function (e) {
+      var json = $textarea.val().trim();
+      var $msg = $textarea.closest(".gsc-json-wrapper").find(".input-msg");
+
+      $msg.addClass("d-none");
+
+      if (json === "") {
+        e.preventDefault();
+        $msg.removeClass("d-none");
+        return;
+      }
+
+      $(".wcgsc-loading-sign-service-auth").addClass("loading");
+
+      $.post(ajaxurl, {
+        action: "wcgsc_save_service_account_json",
+        json: json,
+        security: $("#wcgsc-ajax-nonce").val(),
+      }, function (res) {
+        $("#gs-woo-validation-message").empty();
+        $(".wcgsc-loading-sign-service-auth").removeClass("loading");
+
+        if (res.success) {
+          $(
+            "<div class='woo-valid-message gsc-msg gsc-success fw-400 text-dark text-center pt-10 pb-10 manual-margin'>Your Service Account has been saved.</div>",
+          ).appendTo("#gs-woo-validation-message");
+          location.reload();
+        } else {
+          $(
+            "<div class='gsc-msg gsc-error fw-400 text-dark text-center pt-10 pb-10 manual-margin'>Error saving JSON. Please check the format.</div>",
+          ).appendTo("#gs-woo-validation-message");
+        }
+      });
+    });
+
+    // Read the selected .json file into the textarea
+    $fileInput.on("change", function (e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function (event) {
+        try {
+          const content = JSON.parse(event.target.result);
+          $textarea.val(JSON.stringify(content, null, 2));
+        } catch (err) {
+          alert("Invalid JSON file");
+        }
+      };
+      reader.readAsText(file);
+    });
+  }
+});
+
+jQuery(document).on("click", "#wcgsc-deactivate-service-auth", function (e) {
+  e.preventDefault();
+  jQuery("#wcgsc-confirm-service-popup").removeClass("d-none");
+});
+jQuery(document).on("click", "#wcgsc-service-popup-cancel", function () {
+  jQuery("#wcgsc-confirm-service-popup").addClass("d-none");
+});
+jQuery(document).on("click", "#wcgsc-service-popup-confirm", function () {
+  jQuery("#wcgsc-confirm-service-popup").addClass("d-none");
+  jQuery(".wcgsc-loading-sign-service-auth").addClass("loading");
+
+  jQuery.post(ajaxurl, {
+    action: "wcgsc_deactivate_service_account",
+    security: jQuery("#wcgsc-ajax-nonce").val(),
+  }, function () {
+    jQuery(".wcgsc-loading-sign-service-auth").removeClass("loading");
+    location.reload();
+  });
+});
+
+
+// Copy the service account email
+jQuery(document).on("click", ".wcgsc-copy-btn", function (e) {
+  e.preventDefault();
+
+  var $parent = jQuery(this).closest(".service-email");
+  var text = $parent.clone().children("a").remove().end().text().trim();
+  if (!text || !navigator.clipboard) return;
+
+  navigator.clipboard.writeText(text).then(function () {
+    $parent.find(".position-relative-copy").remove();
+    var msgDiv = jQuery(
+      '<div class="position-relative-copy"><div class="wcgsc-copy-msg">Copied successfully.</div></div>'
+    );
+    $parent.append(msgDiv);
+    setTimeout(function () {
+      msgDiv.fadeOut(300, function () {
+        jQuery(this).remove();
+      });
+    }, 1500);
+  });
+});
+
+
+// Copy the service account email (WooCommerce Data Settings)
+jQuery(document).on("click", ".wcgsc-service-email-copy-btn-setting", function (e) {
+  e.preventDefault();
+  var $parent = jQuery(this).closest(".gsc-email-box");
+  var emailText = $parent.data("email");
+  if (!emailText) return;
+
+  var tempInput = document.createElement("textarea");
+  tempInput.value = emailText;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  document.execCommand("copy");
+  document.body.removeChild(tempInput);
+
+  $parent.find(".wcgsc-copy-msg").remove();
+  $parent.append('<div class="wcgsc-copy-msg">Copied successfully.</div>');
+  setTimeout(function () {
+    $parent.find(".wcgsc-copy-msg").fadeOut(300, function () {
+      jQuery(this).remove();
+    });
+  }, 2000);
 });
